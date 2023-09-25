@@ -1,0 +1,25 @@
+{
+	"color": "#ffffffff",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1681255640.json",
+	"mirror_portraits": false,
+	"name": "Guide",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": ""
+		},
+		{
+			"name": "Guide",
+			"path": "res://People/Guide.png"
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}

@@ -1,0 +1,69 @@
+{
+	"events": [
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1672562911.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"port_defn": "1677471168-787",
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1672562911.json",
+			"event_id": "dialogic_001",
+			"port_defn": "1677471168-787",
+			"portrait": "(Don't change)",
+			"text": "[wave amp=50 freq=4]Guaaaaghhh![/wave]"
+		},
+		{
+			"character": "character-1672562911.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "It's already 6:45 AM."
+		},
+		{
+			"character": "character-1672562911.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I better eat breakfast and prepare for school!"
+		},
+		{
+			"animation": "4-fade_out.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1672562911.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1672563100.json",
+		"name": "WakingUp"
+	}
+}

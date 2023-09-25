@@ -1,0 +1,258 @@
+{
+	"files": [
+
+	],
+	"folders": {
+		"Characters": {
+			"files": [
+				"character-1672562911.json",
+				"character-1672563024.json",
+				"character-1672563403.json",
+				"character-1677468000.json",
+				"character-1677469249.json",
+				"character-1681255640.json"
+			],
+			"folders": {
+
+			},
+			"metadata": {
+				"color": null,
+				"folded": false
+			}
+		},
+		"Definitions": {
+			"files": [
+				"1677469048-648",
+				"1677471168-787",
+				"1681382572-648",
+				"1681470696-648",
+				"1682321738-953"
+			],
+			"folders": {
+				"Review": {
+					"files": [
+						"1682314010-713",
+						"1682314244-339",
+						"1682314269-785",
+						"1682314296-842",
+						"1682314576-905",
+						"1682314583-192",
+						"1682314803-574",
+						"1682315919-250",
+						"1682316237-416",
+						"1682324984-918",
+						"1682325344-403",
+						"1684850942-648",
+						"1684852517-787"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": true
+					}
+				}
+			},
+			"metadata": {
+				"color": null,
+				"folded": true
+			}
+		},
+		"Themes": {
+			"files": [
+				"default-theme.cfg"
+			],
+			"folders": {
+
+			},
+			"metadata": {
+				"color": null,
+				"folded": false
+			}
+		},
+		"Timelines": {
+			"files": [
+
+			],
+			"folders": {
+				"EndScene": {
+					"files": [
+						"timeline-1681712997.json",
+						"timeline-1681713158.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": true
+					}
+				},
+				"ReviewScenes": {
+					"files": [
+						"timeline-1682313013.json",
+						"timeline-1682332366.json",
+						"timeline-1682332898.json",
+						"timeline-1682704967.json",
+						"timeline-1682851962.json",
+						"timeline-1682852072.json",
+						"timeline-1682852076.json",
+						"timeline-1682852080.json",
+						"timeline-1683816148.json",
+						"timeline-1683817154.json",
+						"timeline-1684850979.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": false
+					}
+				},
+				"Scene1": {
+					"files": [
+						"timeline-1672563100.json",
+						"timeline-1673870679.json",
+						"timeline-1674024568.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": true
+					}
+				},
+				"Scene10": {
+					"files": [
+						"timeline-1681650042.json",
+						"timeline-1681651486.json",
+						"timeline-1681651818.json",
+						"timeline-1681653624.json",
+						"timeline-1681706882.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": true
+					}
+				},
+				"Scene2": {
+					"files": [
+						"timeline-1677467914.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": true
+					}
+				},
+				"Scene3": {
+					"files": [
+						"timeline-1679982438.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": true
+					}
+				},
+				"Scene4": {
+					"files": [
+						"timeline-1681114490.json",
+						"timeline-1681149315.json",
+						"timeline-1681255588.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": true
+					}
+				},
+				"Scene5": {
+					"files": [
+						"timeline-1681255820.json",
+						"timeline-1681275986.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": true
+					}
+				},
+				"Scene6": {
+					"files": [
+						"timeline-1681404916.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": true
+					}
+				},
+				"Scene7": {
+					"files": [
+						"timeline-1681466244.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": true
+					}
+				},
+				"Scene8": {
+					"files": [
+						"timeline-1681495147.json",
+						"timeline-1681497573.json",
+						"timeline-1681576656.json",
+						"timeline-1681579219.json",
+						"timeline-1681580178.json",
+						"timeline-1684936913.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": true
+					}
+				},
+				"Scene9": {
+					"files": [
+						"timeline-1682235063.json",
+						"timeline-1682236860.json",
+						"timeline-1682246571.json",
+						"timeline-1682250767.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": false
+					}
+				}
+			},
+			"metadata": {
+				"color": null,
+				"folded": false
+			}
+		}
+	}
+}

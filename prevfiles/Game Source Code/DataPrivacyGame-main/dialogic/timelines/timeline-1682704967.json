@@ -1,0 +1,77 @@
+{
+	"events": [
+		{
+			"character": "character-1681255640.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Did you know that some websites sell your information including your location without you knowing?!"
+		},
+		{
+			"character": "character-1681255640.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You can protect yourself by revealing as little information to websites and app as possible."
+		},
+		{
+			"condition": "",
+			"definition": "1682314244-339",
+			"event_id": "dialogic_012",
+			"value": "A"
+		},
+		{
+			"character": "character-1681255640.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Here, it looks like the photo that you have posted contains the location that you have been too."
+		},
+		{
+			"character": "character-1681255640.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "This can be seen by other people, and possibly the social media website that you are using."
+		},
+		{
+			"character": "character-1681255640.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "It might be better to pick photos that do not reveal your location."
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "1682314269-785",
+			"event_id": "dialogic_012",
+			"value": "0"
+		},
+		{
+			"emit_signal": "tag_header",
+			"event_id": "dialogic_040"
+		},
+		{
+			"emit_signal": "show_tags",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1681255640.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You have tagged your friends incorrectly."
+		},
+		{
+			"character": "character-1681255640.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": " Please tag your friends correctly when posting."
+		},
+		{
+			"event_id": "dialogic_013"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1682704967.json",
+		"name": "Scene5"
+	}
+}

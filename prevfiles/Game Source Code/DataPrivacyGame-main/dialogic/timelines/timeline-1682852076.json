@@ -1,0 +1,33 @@
+{
+	"events": [
+		{
+			"character": "character-1681255640.json",
+			"event_id": "dialogic_001",
+			"portrait": "Guide",
+			"text": "Let's look at the scenario where your friend wanted you to remove the tag."
+		},
+		{
+			"character": "character-1681255640.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "It looks like you have removed the wrong tag!"
+		},
+		{
+			"character": "character-1681255640.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You should properly remove the tag of your friend when asked."
+		},
+		{
+			"character": "character-1681255640.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Everyone has the right of erasure on their data! This means that if you want an information about you on the internet to be removed, you have the right to get it removed!"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1682852076.json",
+		"name": "Scene8"
+	}
+}

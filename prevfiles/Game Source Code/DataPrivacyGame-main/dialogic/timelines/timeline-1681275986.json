@@ -1,0 +1,15 @@
+{
+	"events": [
+		{
+			"character": "character-1681255640.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Nice photo! Now you can your friends. Tagging lets people know who you're with!"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1681275986.json",
+		"name": "5_TagGuide"
+	}
+}

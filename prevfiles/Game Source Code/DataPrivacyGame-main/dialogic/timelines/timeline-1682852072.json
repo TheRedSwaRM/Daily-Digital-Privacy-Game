@@ -1,0 +1,66 @@
+{
+	"events": [
+		{
+			"character": "character-1681255640.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Let's review the additional settings of the post that you have chosen."
+		},
+		{
+			"condition": "",
+			"definition": "1682314576-905",
+			"event_id": "dialogic_012",
+			"value": "0"
+		},
+		{
+			"character": "character-1681255640.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You have set the Location to be on. It would be better to turn it off on your post for better data privacy."
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "1682314583-192",
+			"event_id": "dialogic_012",
+			"value": "2"
+		},
+		{
+			"character": "character-1681255640.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You have set the visibility option to be seen by everyone! This can be dangerous and can be a comrpomise for your data privacy."
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "1682314583-192",
+			"event_id": "dialogic_012",
+			"value": "1"
+		},
+		{
+			"character": "character-1681255640.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You have set the visibility option to be seen by Friends of Friends. This is better than everyone seeing your data."
+		},
+		{
+			"character": "character-1681255640.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You might also want to consider sharing this to your Friends only."
+		},
+		{
+			"event_id": "dialogic_013"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1682852072.json",
+		"name": "Scene7"
+	}
+}

@@ -1,0 +1,20 @@
+Privacy Risk: Tagging of Friends 
+Privacy Risk: App Permissions 
+Privacy Risk: Username Selection 
+Privacy Risk: Photo Selection
+Privacy Risk: Caption Selection 
+Privacy Risk: Location Data and Post Visibility
+Privacy Risk: Removal of Tags 
+Privacy Risk: Persuasive Features 
+Privacy Risk: Tagging Behavior 
+
+	$ScoreBreakdown/end.text = "App Permission: " + str(scene2_score) + 
+    "\nUsername Selection: " + str(scene3_score) + 
+    "\nPhoto Selection: " + str(scene4_score) + 
+    "\nTagging of Friends: " + str(scene5_score) + 
+    "\nCaption Selection: " + str(scene6_score) + 
+    "\nLocation and Post Visibility: " + str(scene7_score) + 
+    "\nTag Removal" + str(scene8_score) + 
+    "\nFeature Persuasion: " + str(scene9_score)  +
+    "\nTag Setting Behavior: " + str(scene10_score) + 
+    "\nTotal Score: " + str(player_score)

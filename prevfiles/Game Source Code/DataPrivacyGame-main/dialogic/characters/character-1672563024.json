@@ -1,0 +1,21 @@
+{
+	"color": "#ff2b7785",
+	"description": "The news reporter at scene 1",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1672563024.json",
+	"mirror_portraits": false,
+	"name": "News Reporter",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": ""
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}

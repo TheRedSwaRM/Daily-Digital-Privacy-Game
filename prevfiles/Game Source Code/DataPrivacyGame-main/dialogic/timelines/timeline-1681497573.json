@@ -1,0 +1,15 @@
+{
+	"events": [
+		{
+			"character": "character-1681255640.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Looks like your friend would prefer not to be included in the tags. Don't worry, this can easily be fixed!"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1681497573.json",
+		"name": "8_Guide"
+	}
+}

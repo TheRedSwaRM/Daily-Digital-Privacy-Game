@@ -1,0 +1,15 @@
+{
+	"events": [
+		{
+			"character": "character-1681255640.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Good, you've tagged your friends. Now time to add a caption to your post!"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1681404916.json",
+		"name": "6_Guide"
+	}
+}
