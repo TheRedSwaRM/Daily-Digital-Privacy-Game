@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b7ul0t6mwkvk8"
+path="res://.godot/imported/wellDone.ogg-e3a8a5c589eacb7a25754daae0a216db.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/wellDone.ogg"
+dest_files=["res://.godot/imported/wellDone.ogg-e3a8a5c589eacb7a25754daae0a216db.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

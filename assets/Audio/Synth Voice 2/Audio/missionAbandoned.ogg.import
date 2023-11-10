@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://lb01lt1wa3qn"
+path="res://.godot/imported/missionAbandoned.ogg-9d5da1e54482d443c02fdf70f99d66d7.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/missionAbandoned.ogg"
+dest_files=["res://.godot/imported/missionAbandoned.ogg-9d5da1e54482d443c02fdf70f99d66d7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

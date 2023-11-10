@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c0pe7bq7k83qn"
+path="res://.godot/imported/neptune.ogg-78b9c0c87e8d801dc20a7f61c85e891f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/neptune.ogg"
+dest_files=["res://.godot/imported/neptune.ogg-78b9c0c87e8d801dc20a7f61c85e891f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

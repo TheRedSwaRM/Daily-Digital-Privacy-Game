@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dq3tfv4o4x5uw"
+path="res://.godot/imported/youNeedMoreCredits.ogg-d32458987c46a94480357da243c1444f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/youNeedMoreCredits.ogg"
+dest_files=["res://.godot/imported/youNeedMoreCredits.ogg-d32458987c46a94480357da243c1444f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

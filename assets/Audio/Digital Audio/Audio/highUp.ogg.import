@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d1rsasyx2ld0m"
+path="res://.godot/imported/highUp.ogg-4292ea146c05523d4413cec6fa351c7a.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Digital Audio/Audio/highUp.ogg"
+dest_files=["res://.godot/imported/highUp.ogg-4292ea146c05523d4413cec6fa351c7a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

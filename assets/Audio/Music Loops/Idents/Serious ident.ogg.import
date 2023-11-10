@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b1yualivoew16"
+path="res://.godot/imported/Serious ident.ogg-65ba47bb563c0264c84002b0cf90e071.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Music Loops/Idents/Serious ident.ogg"
+dest_files=["res://.godot/imported/Serious ident.ogg-65ba47bb563c0264c84002b0cf90e071.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dykiwy0b4671f"
+path="res://.godot/imported/war_target_destroyed.ogg-45cb789648d6c6df0f990d5dcadaf9a5.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Voiceover Pack/Audio (Female)/war_target_destroyed.ogg"
+dest_files=["res://.godot/imported/war_target_destroyed.ogg-45cb789648d6c6df0f990d5dcadaf9a5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

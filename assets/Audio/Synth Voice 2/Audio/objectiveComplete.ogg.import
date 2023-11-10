@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dwm2pg5aexwam"
+path="res://.godot/imported/objectiveComplete.ogg-55e81c0b004fae402620a17ad5c5e95f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/objectiveComplete.ogg"
+dest_files=["res://.godot/imported/objectiveComplete.ogg-55e81c0b004fae402620a17ad5c5e95f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

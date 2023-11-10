@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://up8sr00eviai"
+path="res://.godot/imported/jingles-steel_03.ogg-55dfa31579ec3715d6d0c9715c389df9.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Music Jingles/Audio (Steeldrum)/jingles-steel_03.ogg"
+dest_files=["res://.godot/imported/jingles-steel_03.ogg-55dfa31579ec3715d6d0c9715c389df9.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

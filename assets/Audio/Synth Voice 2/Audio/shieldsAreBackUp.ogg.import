@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dtlstupv3ks8g"
+path="res://.godot/imported/shieldsAreBackUp.ogg-ae0df5e783b83a6e6dedc7a08c9ba366.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/shieldsAreBackUp.ogg"
+dest_files=["res://.godot/imported/shieldsAreBackUp.ogg-ae0df5e783b83a6e6dedc7a08c9ba366.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

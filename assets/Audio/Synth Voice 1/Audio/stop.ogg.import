@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://clbi35j0bmyys"
+path="res://.godot/imported/stop.ogg-03bf3c9011c2fcd6f65c6302b82b1d45.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 1/Audio/stop.ogg"
+dest_files=["res://.godot/imported/stop.ogg-03bf3c9011c2fcd6f65c6302b82b1d45.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

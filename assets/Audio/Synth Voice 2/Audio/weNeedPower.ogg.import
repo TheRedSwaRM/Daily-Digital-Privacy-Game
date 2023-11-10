@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dutpioh73v6i4"
+path="res://.godot/imported/weNeedPower.ogg-8b91982c72db350e99b2fe1648ce199b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/weNeedPower.ogg"
+dest_files=["res://.godot/imported/weNeedPower.ogg-8b91982c72db350e99b2fe1648ce199b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

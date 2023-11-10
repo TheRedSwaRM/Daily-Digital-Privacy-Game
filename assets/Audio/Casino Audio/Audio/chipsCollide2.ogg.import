@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://k0pfjhvxp54g"
+path="res://.godot/imported/chipsCollide2.ogg-fe8252c7310559973878eab63ba8a044.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Casino Audio/Audio/chipsCollide2.ogg"
+dest_files=["res://.godot/imported/chipsCollide2.ogg-fe8252c7310559973878eab63ba8a044.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

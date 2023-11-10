@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bdoseujw845jn"
+path="res://.godot/imported/yourScoreIs.ogg-ffcd0e44ca9344d40e3f354d8c057e31.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/yourScoreIs.ogg"
+dest_files=["res://.godot/imported/yourScoreIs.ogg-ffcd0e44ca9344d40e3f354d8c057e31.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

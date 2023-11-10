@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dv158x1t871kw"
+path="res://.godot/imported/kill_her.ogg-a9bbd7f3cd0caebf41aee4f0c4603336.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Voiceover Pack Fighter/Audio/kill_her.ogg"
+dest_files=["res://.godot/imported/kill_her.ogg-a9bbd7f3cd0caebf41aee4f0c4603336.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

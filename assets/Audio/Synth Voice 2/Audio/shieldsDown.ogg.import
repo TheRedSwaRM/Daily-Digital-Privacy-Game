@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cenggfypjf1l5"
+path="res://.godot/imported/shieldsDown.ogg-2d899465024caa23da69cab2de9d2563.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/shieldsDown.ogg"
+dest_files=["res://.godot/imported/shieldsDown.ogg-2d899465024caa23da69cab2de9d2563.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

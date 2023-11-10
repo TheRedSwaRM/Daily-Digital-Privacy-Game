@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cmb5j564r73kx"
+path="res://.godot/imported/weNeedStone.ogg-e2a3a847ebf18fce6970a88d3537582f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/weNeedStone.ogg"
+dest_files=["res://.godot/imported/weNeedStone.ogg-e2a3a847ebf18fce6970a88d3537582f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

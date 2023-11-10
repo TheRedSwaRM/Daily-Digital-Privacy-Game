@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://nxeh7w0nmwl8"
+path="res://.godot/imported/jingles-pizzicato_06.ogg-066cf4b6104280ca29704792125dba4f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Music Jingles/Audio (Pizzicato)/jingles-pizzicato_06.ogg"
+dest_files=["res://.godot/imported/jingles-pizzicato_06.ogg-066cf4b6104280ca29704792125dba4f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

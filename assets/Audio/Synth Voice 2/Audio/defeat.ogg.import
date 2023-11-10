@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dmu1oflx5ni41"
+path="res://.godot/imported/defeat.ogg-efbb6320c2f7df3310e703b160b602fe.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/defeat.ogg"
+dest_files=["res://.godot/imported/defeat.ogg-efbb6320c2f7df3310e703b160b602fe.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
