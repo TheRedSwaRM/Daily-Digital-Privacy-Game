@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://chcisjyqc0t83"
+path="res://.godot/imported/power_up.ogg-abaf31dff8fff758c23d7bf2fe0ff746.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Voiceover Pack/Audio (Male)/power_up.ogg"
+dest_files=["res://.godot/imported/power_up.ogg-abaf31dff8fff758c23d7bf2fe0ff746.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

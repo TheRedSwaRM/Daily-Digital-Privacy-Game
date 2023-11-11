@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b85t6m0600n57"
+path="res://.godot/imported/time.ogg-a61f07eea2ea7f2b2795a574aa21d0a3.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/time.ogg"
+dest_files=["res://.godot/imported/time.ogg-a61f07eea2ea7f2b2795a574aa21d0a3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

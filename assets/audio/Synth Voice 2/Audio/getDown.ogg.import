@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c84jorxu2yxl2"
+path="res://.godot/imported/getDown.ogg-9838d623f75a8d9e01ee00ad81708f5b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/getDown.ogg"
+dest_files=["res://.godot/imported/getDown.ogg-9838d623f75a8d9e01ee00ad81708f5b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

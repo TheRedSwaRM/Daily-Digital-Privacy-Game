@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://certpbxaac4pt"
+path="res://.godot/imported/Night at the Beach.ogg-352e5fa96ad6d4eb5950985cb330881d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Music Loops/Loops/Night at the Beach.ogg"
+dest_files=["res://.godot/imported/Night at the Beach.ogg-352e5fa96ad6d4eb5950985cb330881d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

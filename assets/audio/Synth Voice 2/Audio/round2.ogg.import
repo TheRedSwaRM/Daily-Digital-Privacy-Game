@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://eio0mkhyj0f7"
+path="res://.godot/imported/round2.ogg-0a4ae11677c5f24d473b58649e27ad52.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/round2.ogg"
+dest_files=["res://.godot/imported/round2.ogg-0a4ae11677c5f24d473b58649e27ad52.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

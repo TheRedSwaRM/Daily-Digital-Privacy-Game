@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ctd3x6k5pxvl1"
+path="res://.godot/imported/objectiveFailed.ogg-3be849ad01ec4368a29531225525681e.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/objectiveFailed.ogg"
+dest_files=["res://.godot/imported/objectiveFailed.ogg-3be849ad01ec4368a29531225525681e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

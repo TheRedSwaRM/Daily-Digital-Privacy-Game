@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://jqbio084wfum"
+path="res://.godot/imported/Polka ident.ogg-47a9b8515427794f566ea8f7b6060685.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Music Loops/Idents/Polka ident.ogg"
+dest_files=["res://.godot/imported/Polka ident.ogg-47a9b8515427794f566ea8f7b6060685.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

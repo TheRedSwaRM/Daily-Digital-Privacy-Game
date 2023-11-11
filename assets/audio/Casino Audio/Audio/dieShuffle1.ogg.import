@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://2hg2upo1tk68"
+path="res://.godot/imported/dieShuffle1.ogg-e4c33a049566fbec17732415d8f64b2d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Casino Audio/Audio/dieShuffle1.ogg"
+dest_files=["res://.godot/imported/dieShuffle1.ogg-e4c33a049566fbec17732415d8f64b2d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

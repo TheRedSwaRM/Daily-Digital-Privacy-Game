@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://qym5d0pjbvkm"
+path="res://.godot/imported/laserRetro_000.ogg-cb96d21c519545be70150b15fdeef204.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Sci-Fi Sounds/Audio/laserRetro_000.ogg"
+dest_files=["res://.godot/imported/laserRetro_000.ogg-cb96d21c519545be70150b15fdeef204.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

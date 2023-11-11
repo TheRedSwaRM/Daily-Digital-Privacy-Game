@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://br7e74aqvk588"
+path="res://.godot/imported/survival_mode.ogg-2147e2a8aed870284bfd718f0e390195.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Voiceover Pack Fighter/Audio/survival_mode.ogg"
+dest_files=["res://.godot/imported/survival_mode.ogg-2147e2a8aed870284bfd718f0e390195.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

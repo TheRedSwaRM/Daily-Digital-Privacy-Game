@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cnm03hro2r1oi"
+path="res://.godot/imported/round.ogg-cb7139811fc8ebee367125e42878f6f5.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Voiceover Pack/Audio (Female)/round.ogg"
+dest_files=["res://.godot/imported/round.ogg-cb7139811fc8ebee367125e42878f6f5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c3m333qq3ipmo"
+path="res://.godot/imported/killIt.ogg-87265768c919450a035122b991499f83.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/killIt.ogg"
+dest_files=["res://.godot/imported/killIt.ogg-87265768c919450a035122b991499f83.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

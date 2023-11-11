@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bnpro0t40epvt"
+path="res://.godot/imported/missionOver.ogg-ad72cccb93572b8c4a7b710cb4d3623c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/missionOver.ogg"
+dest_files=["res://.godot/imported/missionOver.ogg-ad72cccb93572b8c4a7b710cb4d3623c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ci2eb3hxy75bd"
+path="res://.godot/imported/venus.ogg-7b6cd7bc6e3d1dc5be69f71151ec483b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/venus.ogg"
+dest_files=["res://.godot/imported/venus.ogg-7b6cd7bc6e3d1dc5be69f71151ec483b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

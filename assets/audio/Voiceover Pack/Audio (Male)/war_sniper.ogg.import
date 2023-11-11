@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d0siyt5k43l5i"
+path="res://.godot/imported/war_sniper.ogg-82217092a21a20e4c901d8b13e438184.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Voiceover Pack/Audio (Male)/war_sniper.ogg"
+dest_files=["res://.godot/imported/war_sniper.ogg-82217092a21a20e4c901d8b13e438184.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

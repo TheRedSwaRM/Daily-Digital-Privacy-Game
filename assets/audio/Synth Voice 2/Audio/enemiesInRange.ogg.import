@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://7fuvwrum2rge"
+path="res://.godot/imported/enemiesInRange.ogg-6be6d75ccf156ca920cc2f1582ae26f2.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/enemiesInRange.ogg"
+dest_files=["res://.godot/imported/enemiesInRange.ogg-6be6d75ccf156ca920cc2f1582ae26f2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

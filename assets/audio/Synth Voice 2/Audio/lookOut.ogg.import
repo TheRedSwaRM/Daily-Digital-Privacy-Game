@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ymkfxdcuq3bk"
+path="res://.godot/imported/lookOut.ogg-7ebddb8673aef097ceef894a7256ee91.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/lookOut.ogg"
+dest_files=["res://.godot/imported/lookOut.ogg-7ebddb8673aef097ceef894a7256ee91.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

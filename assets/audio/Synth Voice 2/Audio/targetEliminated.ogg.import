@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dhaavw6hg2uqt"
+path="res://.godot/imported/targetEliminated.ogg-347e76d544aed0cf5b9b0cc2c4e9e565.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/targetEliminated.ogg"
+dest_files=["res://.godot/imported/targetEliminated.ogg-347e76d544aed0cf5b9b0cc2c4e9e565.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

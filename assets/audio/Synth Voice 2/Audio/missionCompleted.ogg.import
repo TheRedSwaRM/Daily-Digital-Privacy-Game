@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bpcfapmvhy5hb"
+path="res://.godot/imported/missionCompleted.ogg-72fc26d6b7ecfa21b600b1991a473d5e.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/missionCompleted.ogg"
+dest_files=["res://.godot/imported/missionCompleted.ogg-72fc26d6b7ecfa21b600b1991a473d5e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

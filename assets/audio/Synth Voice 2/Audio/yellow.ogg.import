@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c4ydfudkwq8nv"
+path="res://.godot/imported/yellow.ogg-0deab920cfec4efd981cb8338db6d583.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/yellow.ogg"
+dest_files=["res://.godot/imported/yellow.ogg-0deab920cfec4efd981cb8338db6d583.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

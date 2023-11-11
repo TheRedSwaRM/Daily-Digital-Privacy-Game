@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://2157xychtwhx"
+path="res://.godot/imported/sun.ogg-54ff1ab943f1823eb7e9ae9f9747ba82.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/sun.ogg"
+dest_files=["res://.godot/imported/sun.ogg-54ff1ab943f1823eb7e9ae9f9747ba82.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

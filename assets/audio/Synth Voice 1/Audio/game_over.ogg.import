@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cdjekkjxtepd"
+path="res://.godot/imported/game_over.ogg-9196e542d64c979925c9c83fc0fdc88f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 1/Audio/game_over.ogg"
+dest_files=["res://.godot/imported/game_over.ogg-9196e542d64c979925c9c83fc0fdc88f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

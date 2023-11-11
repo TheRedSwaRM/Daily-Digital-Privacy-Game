@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cgcor600k1nfa"
+path="res://.godot/imported/impactWood_light_003.ogg-a0155a70d5469372332da6cbce03858c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Impact Sounds/Audio/impactWood_light_003.ogg"
+dest_files=["res://.godot/imported/impactWood_light_003.ogg-a0155a70d5469372332da6cbce03858c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
