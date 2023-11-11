@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bt25tq7chv1j0"
+path="res://.godot/imported/new highscore.ogg-9be123fdcb1005a01138c877b9ff3b7f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 1/Audio/new highscore.ogg"
+dest_files=["res://.godot/imported/new highscore.ogg-9be123fdcb1005a01138c877b9ff3b7f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

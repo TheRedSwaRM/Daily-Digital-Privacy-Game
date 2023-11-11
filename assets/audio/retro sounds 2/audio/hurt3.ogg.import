@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://861p1sei4qor"
+path="res://.godot/imported/hurt3.ogg-ed631c41ed6026eb52c346b6c0b02f95.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Retro Sounds 2/Audio/hurt3.ogg"
+dest_files=["res://.godot/imported/hurt3.ogg-ed631c41ed6026eb52c346b6c0b02f95.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

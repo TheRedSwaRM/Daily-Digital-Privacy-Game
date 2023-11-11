@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cwtq3pnhebiep"
+path="res://.godot/imported/prepare_yourself.ogg-d6973b2a11abaca6bd965a7be20d4e82.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Voiceover Pack Fighter/Audio/prepare_yourself.ogg"
+dest_files=["res://.godot/imported/prepare_yourself.ogg-d6973b2a11abaca6bd965a7be20d4e82.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

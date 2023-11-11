@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cbp4gy7a6djpu"
+path="res://.godot/imported/pluto.ogg-d79d7c1d636db408bfd6599b726bb1fd.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Synth Voice 2/Audio/pluto.ogg"
+dest_files=["res://.godot/imported/pluto.ogg-d79d7c1d636db408bfd6599b726bb1fd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

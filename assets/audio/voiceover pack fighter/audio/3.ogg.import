@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://doamtpvhontyn"
+path="res://.godot/imported/3.ogg-3ee69f1b4dadf26589e46325bda4114a.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Voiceover Pack Fighter/Audio/3.ogg"
+dest_files=["res://.godot/imported/3.ogg-3ee69f1b4dadf26589e46325bda4114a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

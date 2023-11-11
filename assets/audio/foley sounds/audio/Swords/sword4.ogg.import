@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bek4k3tlfuy2v"
+path="res://.godot/imported/sword4.ogg-33c131793a0bbf0e24a863068a5e3511.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Foley Sounds/Audio/Swords/sword4.ogg"
+dest_files=["res://.godot/imported/sword4.ogg-33c131793a0bbf0e24a863068a5e3511.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
