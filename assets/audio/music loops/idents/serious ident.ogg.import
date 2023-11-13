@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b1yualivoew16"
-path="res://.godot/imported/Serious ident.ogg-65ba47bb563c0264c84002b0cf90e071.oggvorbisstr"
+path="res://.godot/imported/serious ident.ogg-cb652ef88d872b5957e02d8fbe0929e8.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Music Loops/Idents/Serious ident.ogg"
-dest_files=["res://.godot/imported/Serious ident.ogg-65ba47bb563c0264c84002b0cf90e071.oggvorbisstr"]
+source_file="res://assets/audio/music loops/idents/serious ident.ogg"
+dest_files=["res://.godot/imported/serious ident.ogg-cb652ef88d872b5957e02d8fbe0929e8.oggvorbisstr"]
 
 [params]
 

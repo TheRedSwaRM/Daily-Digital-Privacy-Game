@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bmq84ehpb2rox"
-path="res://.godot/imported/switch24.ogg-5ab0009b02c6ada6e772dc49a45d108c.oggvorbisstr"
+path="res://.godot/imported/switch24.ogg-b3c0dc38b80237b21ec8e54590d2e243.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/UI Audio/Audio/switch24.ogg"
-dest_files=["res://.godot/imported/switch24.ogg-5ab0009b02c6ada6e772dc49a45d108c.oggvorbisstr"]
+source_file="res://assets/audio/ui audio/audio/switch24.ogg"
+dest_files=["res://.godot/imported/switch24.ogg-b3c0dc38b80237b21ec8e54590d2e243.oggvorbisstr"]
 
 [params]
 

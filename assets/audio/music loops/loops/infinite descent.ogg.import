@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://buhn7owiyd1q7"
-path="res://.godot/imported/Infinite Descent.ogg-58de5da316df607b4a0a36299ee8d071.oggvorbisstr"
+path="res://.godot/imported/infinite descent.ogg-f83ae0e52fe0c918ff50a5219f6cc010.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Music Loops/Loops/Infinite Descent.ogg"
-dest_files=["res://.godot/imported/Infinite Descent.ogg-58de5da316df607b4a0a36299ee8d071.oggvorbisstr"]
+source_file="res://assets/audio/music loops/loops/infinite descent.ogg"
+dest_files=["res://.godot/imported/infinite descent.ogg-f83ae0e52fe0c918ff50a5219f6cc010.oggvorbisstr"]
 
 [params]
 

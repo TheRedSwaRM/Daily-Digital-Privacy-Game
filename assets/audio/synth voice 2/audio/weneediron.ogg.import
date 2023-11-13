@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://coj1dpy7jov0"
-path="res://.godot/imported/weNeedIron.ogg-12598b3507f033fbda46a71435abf8f2.oggvorbisstr"
+path="res://.godot/imported/weneediron.ogg-cca8af07b6553c1db96be5a1c4f795f6.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/weNeedIron.ogg"
-dest_files=["res://.godot/imported/weNeedIron.ogg-12598b3507f033fbda46a71435abf8f2.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/weneediron.ogg"
+dest_files=["res://.godot/imported/weneediron.ogg-cca8af07b6553c1db96be5a1c4f795f6.oggvorbisstr"]
 
 [params]
 

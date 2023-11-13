@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://c1ht76bla5t56"
-path="res://.godot/imported/war_supressing_fire.ogg-22b6fae261f073db41bd631d6e8d05b7.oggvorbisstr"
+path="res://.godot/imported/war_supressing_fire.ogg-79dd929affe290563d93878ff4d4fb79.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Voiceover Pack/Audio (Female)/war_supressing_fire.ogg"
-dest_files=["res://.godot/imported/war_supressing_fire.ogg-22b6fae261f073db41bd631d6e8d05b7.oggvorbisstr"]
+source_file="res://assets/audio/voiceover pack/audio female/war_supressing_fire.ogg"
+dest_files=["res://.godot/imported/war_supressing_fire.ogg-79dd929affe290563d93878ff4d4fb79.oggvorbisstr"]
 
 [params]
 

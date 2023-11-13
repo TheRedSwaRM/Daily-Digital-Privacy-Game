@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b7ul0t6mwkvk8"
-path="res://.godot/imported/wellDone.ogg-e3a8a5c589eacb7a25754daae0a216db.oggvorbisstr"
+path="res://.godot/imported/welldone.ogg-cc29663a523bf2d8574a998a79deebac.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/wellDone.ogg"
-dest_files=["res://.godot/imported/wellDone.ogg-e3a8a5c589eacb7a25754daae0a216db.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/welldone.ogg"
+dest_files=["res://.godot/imported/welldone.ogg-cc29663a523bf2d8574a998a79deebac.oggvorbisstr"]
 
 [params]
 

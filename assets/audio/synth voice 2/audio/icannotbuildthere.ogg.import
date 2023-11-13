@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dcol3ay3pt40s"
-path="res://.godot/imported/iCannotBuildThere.ogg-ed48c297aa686c2d2e10b649ed36ec5a.oggvorbisstr"
+path="res://.godot/imported/icannotbuildthere.ogg-46be9ad0b28797f0800d155bc292efee.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/iCannotBuildThere.ogg"
-dest_files=["res://.godot/imported/iCannotBuildThere.ogg-ed48c297aa686c2d2e10b649ed36ec5a.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/icannotbuildthere.ogg"
+dest_files=["res://.godot/imported/icannotbuildthere.ogg-46be9ad0b28797f0800d155bc292efee.oggvorbisstr"]
 
 [params]
 

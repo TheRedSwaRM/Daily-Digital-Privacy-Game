@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dconotti32316"
-path="res://.godot/imported/doorClose_001.ogg-e855fcfccc5575bf86a759630ad1f2ef.oggvorbisstr"
+path="res://.godot/imported/doorclose_001.ogg-e0498df1a1bcdc182ff719b5b3c5f20d.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Sci-Fi Sounds/Audio/doorClose_001.ogg"
-dest_files=["res://.godot/imported/doorClose_001.ogg-e855fcfccc5575bf86a759630ad1f2ef.oggvorbisstr"]
+source_file="res://assets/audio/sci-fi sounds/audio/doorclose_001.ogg"
+dest_files=["res://.godot/imported/doorclose_001.ogg-e0498df1a1bcdc182ff719b5b3c5f20d.oggvorbisstr"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bpibvr3ho8r74"
-path="res://.godot/imported/Cheerful Annoyance.ogg-5ad12787628e3e138b1a72e0c844ab3e.oggvorbisstr"
+path="res://.godot/imported/cheerful annoyance.ogg-d5b3c615e52d68fdd8086cb7ab30c5d1.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Music Loops/Loops/Cheerful Annoyance.ogg"
-dest_files=["res://.godot/imported/Cheerful Annoyance.ogg-5ad12787628e3e138b1a72e0c844ab3e.oggvorbisstr"]
+source_file="res://assets/audio/music loops/loops/cheerful annoyance.ogg"
+dest_files=["res://.godot/imported/cheerful annoyance.ogg-d5b3c615e52d68fdd8086cb7ab30c5d1.oggvorbisstr"]
 
 [params]
 

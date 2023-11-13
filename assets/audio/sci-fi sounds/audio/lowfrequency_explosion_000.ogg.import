@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cxsxymgk38l7c"
-path="res://.godot/imported/lowFrequency_explosion_000.ogg-2d7843bd3f71b276f371007f77370047.oggvorbisstr"
+path="res://.godot/imported/lowfrequency_explosion_000.ogg-4a4e3a903ec19d318baf6c9e8e13315f.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Sci-Fi Sounds/Audio/lowFrequency_explosion_000.ogg"
-dest_files=["res://.godot/imported/lowFrequency_explosion_000.ogg-2d7843bd3f71b276f371007f77370047.oggvorbisstr"]
+source_file="res://assets/audio/sci-fi sounds/audio/lowfrequency_explosion_000.ogg"
+dest_files=["res://.godot/imported/lowfrequency_explosion_000.ogg-4a4e3a903ec19d318baf6c9e8e13315f.oggvorbisstr"]
 
 [params]
 

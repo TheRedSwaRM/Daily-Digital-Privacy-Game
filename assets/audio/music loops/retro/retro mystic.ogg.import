@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dhetyulhsbxun"
-path="res://.godot/imported/Retro Mystic.ogg-5ebd4090c3c366a1bcc4ef81ae55f8ba.oggvorbisstr"
+path="res://.godot/imported/retro mystic.ogg-79b94e41d8cc0397126b313e6415ceca.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Music Loops/Retro/Retro Mystic.ogg"
-dest_files=["res://.godot/imported/Retro Mystic.ogg-5ebd4090c3c366a1bcc4ef81ae55f8ba.oggvorbisstr"]
+source_file="res://assets/audio/music loops/retro/retro mystic.ogg"
+dest_files=["res://.godot/imported/retro mystic.ogg-79b94e41d8cc0397126b313e6415ceca.oggvorbisstr"]
 
 [params]
 

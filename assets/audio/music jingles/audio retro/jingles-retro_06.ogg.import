@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://c7etibgopof8s"
-path="res://.godot/imported/jingles-retro_06.ogg-348cd1f93422e57a6ba68113d8301894.oggvorbisstr"
+path="res://.godot/imported/jingles-retro_06.ogg-ea999303e0d83da18631a74886395309.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Music Jingles/Audio (Retro)/jingles-retro_06.ogg"
-dest_files=["res://.godot/imported/jingles-retro_06.ogg-348cd1f93422e57a6ba68113d8301894.oggvorbisstr"]
+source_file="res://assets/audio/music jingles/audio retro/jingles-retro_06.ogg"
+dest_files=["res://.godot/imported/jingles-retro_06.ogg-ea999303e0d83da18631a74886395309.oggvorbisstr"]
 
 [params]
 

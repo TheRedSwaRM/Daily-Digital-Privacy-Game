@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cm12w80u30li3"
-path="res://.godot/imported/impactGlass_medium_000.ogg-b56e81078c2074044e20cc164c282d00.oggvorbisstr"
+path="res://.godot/imported/impactglass_medium_000.ogg-e09941c5a79e0b16557ffdc7b89ef55a.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Impact Sounds/Audio/impactGlass_medium_000.ogg"
-dest_files=["res://.godot/imported/impactGlass_medium_000.ogg-b56e81078c2074044e20cc164c282d00.oggvorbisstr"]
+source_file="res://assets/audio/impact sounds/audio/impactglass_medium_000.ogg"
+dest_files=["res://.godot/imported/impactglass_medium_000.ogg-e09941c5a79e0b16557ffdc7b89ef55a.oggvorbisstr"]
 
 [params]
 

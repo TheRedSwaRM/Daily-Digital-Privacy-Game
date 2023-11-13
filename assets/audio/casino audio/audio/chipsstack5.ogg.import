@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bfif83bqqfg2g"
-path="res://.godot/imported/chipsStack5.ogg-fb28509ba92023c8daedc93152b36ef2.oggvorbisstr"
+path="res://.godot/imported/chipsstack5.ogg-b1e3cdf61a3b4b2c6b73e70e8ec55055.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Casino Audio/Audio/chipsStack5.ogg"
-dest_files=["res://.godot/imported/chipsStack5.ogg-fb28509ba92023c8daedc93152b36ef2.oggvorbisstr"]
+source_file="res://assets/audio/casino audio/audio/chipsstack5.ogg"
+dest_files=["res://.godot/imported/chipsstack5.ogg-b1e3cdf61a3b4b2c6b73e70e8ec55055.oggvorbisstr"]
 
 [params]
 

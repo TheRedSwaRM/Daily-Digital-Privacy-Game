@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dtsgaf54d2iyb"
-path="res://.godot/imported/flawless.ogg-10feb127c826c4803850e358fe62a4bb.oggvorbisstr"
+path="res://.godot/imported/flawless.ogg-380285b84f8047efdf426943314c3421.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/flawless.ogg"
-dest_files=["res://.godot/imported/flawless.ogg-10feb127c826c4803850e358fe62a4bb.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/flawless.ogg"
+dest_files=["res://.godot/imported/flawless.ogg-380285b84f8047efdf426943314c3421.oggvorbisstr"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://c7bbuvbf2ju1"
-path="res://.godot/imported/weNeedWood.ogg-01f89f4f038593863b0dfa8d3c9a08d4.oggvorbisstr"
+path="res://.godot/imported/weneedwood.ogg-07d1231cf32ded7d7fa434f88e1973ee.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/weNeedWood.ogg"
-dest_files=["res://.godot/imported/weNeedWood.ogg-01f89f4f038593863b0dfa8d3c9a08d4.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/weneedwood.ogg"
+dest_files=["res://.godot/imported/weneedwood.ogg-07d1231cf32ded7d7fa434f88e1973ee.oggvorbisstr"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://jmvhuj1ga8my"
-path="res://.godot/imported/phaserUp7.ogg-882ea5357898873d59ec297de9ec973c.oggvorbisstr"
+path="res://.godot/imported/phaserup7.ogg-7416182d1c701bec3795f4345fb2e226.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Digital Audio/Audio/phaserUp7.ogg"
-dest_files=["res://.godot/imported/phaserUp7.ogg-882ea5357898873d59ec297de9ec973c.oggvorbisstr"]
+source_file="res://assets/audio/digital audio/audio/phaserup7.ogg"
+dest_files=["res://.godot/imported/phaserup7.ogg-7416182d1c701bec3795f4345fb2e226.oggvorbisstr"]
 
 [params]
 

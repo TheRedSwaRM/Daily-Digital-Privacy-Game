@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ct2b6aj22oj2v"
-path="res://.godot/imported/cardSlide4.ogg-a42b0b7bdd0890538db1d711dcefa503.oggvorbisstr"
+path="res://.godot/imported/cardslide4.ogg-433408aee74acaeb2f39a19646928d94.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Casino Audio/Audio/cardSlide4.ogg"
-dest_files=["res://.godot/imported/cardSlide4.ogg-a42b0b7bdd0890538db1d711dcefa503.oggvorbisstr"]
+source_file="res://assets/audio/casino audio/audio/cardslide4.ogg"
+dest_files=["res://.godot/imported/cardslide4.ogg-433408aee74acaeb2f39a19646928d94.oggvorbisstr"]
 
 [params]
 

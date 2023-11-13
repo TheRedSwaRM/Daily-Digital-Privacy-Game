@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://djoba6i73sl0j"
-path="res://.godot/imported/slime_000.ogg-98db426c72db71aa6fa9d3a04cff25f9.oggvorbisstr"
+path="res://.godot/imported/slime_000.ogg-84ad2aa1adeda13690b8163b7f1f4007.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Sci-Fi Sounds/Audio/slime_000.ogg"
-dest_files=["res://.godot/imported/slime_000.ogg-98db426c72db71aa6fa9d3a04cff25f9.oggvorbisstr"]
+source_file="res://assets/audio/sci-fi sounds/audio/slime_000.ogg"
+dest_files=["res://.godot/imported/slime_000.ogg-84ad2aa1adeda13690b8163b7f1f4007.oggvorbisstr"]
 
 [params]
 

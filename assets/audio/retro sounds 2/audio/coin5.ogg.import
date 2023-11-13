@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bakkki01j1mkd"
-path="res://.godot/imported/coin5.ogg-71b3c863d934a233300b5bf57903e907.oggvorbisstr"
+path="res://.godot/imported/coin5.ogg-8e4b04bf12080571de2644b434273b0e.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Retro Sounds 2/Audio/coin5.ogg"
-dest_files=["res://.godot/imported/coin5.ogg-71b3c863d934a233300b5bf57903e907.oggvorbisstr"]
+source_file="res://assets/audio/retro sounds 2/audio/coin5.ogg"
+dest_files=["res://.godot/imported/coin5.ogg-8e4b04bf12080571de2644b434273b0e.oggvorbisstr"]
 
 [params]
 

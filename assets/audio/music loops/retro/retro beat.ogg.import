@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cgtbwos3afgsy"
-path="res://.godot/imported/Retro Beat.ogg-8e583fcae964cb7cd4cc6a8675b9fb99.oggvorbisstr"
+path="res://.godot/imported/retro beat.ogg-98fa0e6315b6db29093c929e8a7665b9.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Music Loops/Retro/Retro Beat.ogg"
-dest_files=["res://.godot/imported/Retro Beat.ogg-8e583fcae964cb7cd4cc6a8675b9fb99.oggvorbisstr"]
+source_file="res://assets/audio/music loops/retro/retro beat.ogg"
+dest_files=["res://.godot/imported/retro beat.ogg-98fa0e6315b6db29093c929e8a7665b9.oggvorbisstr"]
 
 [params]
 

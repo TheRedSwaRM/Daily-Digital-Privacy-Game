@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cmnqyqxncyi4c"
-path="res://.godot/imported/southWest.ogg-a00847d2e58e743a30be1dc6a3bf2e0d.oggvorbisstr"
+path="res://.godot/imported/southwest.ogg-4e9703b6bd806ea6efca8ebd00784c91.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/southWest.ogg"
-dest_files=["res://.godot/imported/southWest.ogg-a00847d2e58e743a30be1dc6a3bf2e0d.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/southwest.ogg"
+dest_files=["res://.godot/imported/southwest.ogg-4e9703b6bd806ea6efca8ebd00784c91.oggvorbisstr"]
 
 [params]
 

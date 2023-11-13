@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://di1qri6ngr621"
-path="res://.godot/imported/dropYourWeapon.ogg-41dc15a587f22f069146d212e9852e16.oggvorbisstr"
+path="res://.godot/imported/dropyourweapon.ogg-7da82586506d405a2074b2480c2bdb4e.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/dropYourWeapon.ogg"
-dest_files=["res://.godot/imported/dropYourWeapon.ogg-41dc15a587f22f069146d212e9852e16.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/dropyourweapon.ogg"
+dest_files=["res://.godot/imported/dropyourweapon.ogg-7da82586506d405a2074b2480c2bdb4e.oggvorbisstr"]
 
 [params]
 

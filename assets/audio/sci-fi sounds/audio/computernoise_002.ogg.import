@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://sh63ono33ygx"
-path="res://.godot/imported/computerNoise_002.ogg-49d8b670841dc10e0df7de9b28156e07.oggvorbisstr"
+path="res://.godot/imported/computernoise_002.ogg-597b6511fe5ad5dfc1f97246d4c0fc61.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Sci-Fi Sounds/Audio/computerNoise_002.ogg"
-dest_files=["res://.godot/imported/computerNoise_002.ogg-49d8b670841dc10e0df7de9b28156e07.oggvorbisstr"]
+source_file="res://assets/audio/sci-fi sounds/audio/computernoise_002.ogg"
+dest_files=["res://.godot/imported/computernoise_002.ogg-597b6511fe5ad5dfc1f97246d4c0fc61.oggvorbisstr"]
 
 [params]
 

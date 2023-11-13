@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b6odiwxqj70ol"
-path="res://.godot/imported/handleSmallLeather2.ogg-ff759b97e891018d204316c061aa85e8.oggvorbisstr"
+path="res://.godot/imported/handlesmallleather2.ogg-2a1950e03294bf9cd5a42546f6cb4b95.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/RPG Audio/Audio/handleSmallLeather2.ogg"
-dest_files=["res://.godot/imported/handleSmallLeather2.ogg-ff759b97e891018d204316c061aa85e8.oggvorbisstr"]
+source_file="res://assets/audio/rpg audio/audio/handlesmallleather2.ogg"
+dest_files=["res://.godot/imported/handlesmallleather2.ogg-2a1950e03294bf9cd5a42546f6cb4b95.oggvorbisstr"]
 
 [params]
 

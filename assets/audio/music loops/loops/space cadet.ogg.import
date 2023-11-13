@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dpcpbt25dc7wv"
-path="res://.godot/imported/Space Cadet.ogg-5dace2b2b3d28242a86a45d0d1227dce.oggvorbisstr"
+path="res://.godot/imported/space cadet.ogg-df23f25d8e052210e6eb1edf2cd6972b.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Music Loops/Loops/Space Cadet.ogg"
-dest_files=["res://.godot/imported/Space Cadet.ogg-5dace2b2b3d28242a86a45d0d1227dce.oggvorbisstr"]
+source_file="res://assets/audio/music loops/loops/space cadet.ogg"
+dest_files=["res://.godot/imported/space cadet.ogg-df23f25d8e052210e6eb1edf2cd6972b.oggvorbisstr"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ctb5yrq4mc1rv"
-path="res://.godot/imported/metalPot3.ogg-efeeff7126982913c8592f692c0700b2.oggvorbisstr"
+path="res://.godot/imported/metalpot3.ogg-0cdf2f9ec535636e3d3d8e3930f89e73.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/RPG Audio/Audio/metalPot3.ogg"
-dest_files=["res://.godot/imported/metalPot3.ogg-efeeff7126982913c8592f692c0700b2.oggvorbisstr"]
+source_file="res://assets/audio/rpg audio/audio/metalpot3.ogg"
+dest_files=["res://.godot/imported/metalpot3.ogg-0cdf2f9ec535636e3d3d8e3930f89e73.oggvorbisstr"]
 
 [params]
 

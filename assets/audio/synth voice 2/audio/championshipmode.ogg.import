@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cd83o1wh5f6mv"
-path="res://.godot/imported/championshipMode.ogg-8535a702c0b808897b415f5934dc0b47.oggvorbisstr"
+path="res://.godot/imported/championshipmode.ogg-ca940ae892bb40ff60b8bef3b4e1f0bb.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/championshipMode.ogg"
-dest_files=["res://.godot/imported/championshipMode.ogg-8535a702c0b808897b415f5934dc0b47.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/championshipmode.ogg"
+dest_files=["res://.godot/imported/championshipmode.ogg-ca940ae892bb40ff60b8bef3b4e1f0bb.oggvorbisstr"]
 
 [params]
 

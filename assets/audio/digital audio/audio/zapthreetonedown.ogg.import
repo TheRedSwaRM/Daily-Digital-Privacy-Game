@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b4ro7abl1hhcr"
-path="res://.godot/imported/zapThreeToneDown.ogg-21b44627631b8cabfdb7ba2ed18adc6d.oggvorbisstr"
+path="res://.godot/imported/zapthreetonedown.ogg-29c0f751f19ffae233f6f4dde0017497.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Digital Audio/Audio/zapThreeToneDown.ogg"
-dest_files=["res://.godot/imported/zapThreeToneDown.ogg-21b44627631b8cabfdb7ba2ed18adc6d.oggvorbisstr"]
+source_file="res://assets/audio/digital audio/audio/zapthreetonedown.ogg"
+dest_files=["res://.godot/imported/zapthreetonedown.ogg-29c0f751f19ffae233f6f4dde0017497.oggvorbisstr"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ca6k8b0jpyt1m"
-path="res://.godot/imported/pickup3.ogg-fe1d3ce18408dc1215539a63f9a5b06f.oggvorbisstr"
+path="res://.godot/imported/pickup3.ogg-98790e3cacad05eaa1b307dc326638c1.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Retro Sounds 1/Audio/pickup3.ogg"
-dest_files=["res://.godot/imported/pickup3.ogg-fe1d3ce18408dc1215539a63f9a5b06f.oggvorbisstr"]
+source_file="res://assets/audio/retro sounds 1/audio/pickup3.ogg"
+dest_files=["res://.godot/imported/pickup3.ogg-98790e3cacad05eaa1b307dc326638c1.oggvorbisstr"]
 
 [params]
 

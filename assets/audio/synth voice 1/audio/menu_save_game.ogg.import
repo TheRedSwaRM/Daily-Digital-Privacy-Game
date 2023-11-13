@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://c3yuiikw30grq"
-path="res://.godot/imported/menu_save_game.ogg-cf2a4d7d8ed05729451ecafab486e81d.oggvorbisstr"
+path="res://.godot/imported/menu_save_game.ogg-d978d15a1e09e2070bc7f9ac0f14dfa5.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 1/Audio/menu_save_game.ogg"
-dest_files=["res://.godot/imported/menu_save_game.ogg-cf2a4d7d8ed05729451ecafab486e81d.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 1/audio/menu_save_game.ogg"
+dest_files=["res://.godot/imported/menu_save_game.ogg-d978d15a1e09e2070bc7f9ac0f14dfa5.oggvorbisstr"]
 
 [params]
 

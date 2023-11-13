@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b7j6kn2u7mr8u"
-path="res://.godot/imported/planet_moon.ogg-8f32b6387b10cbe3c27f3de2d5ac59aa.oggvorbisstr"
+path="res://.godot/imported/planet_moon.ogg-0e3c398f81359f849484e97efa361c5c.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 1/Audio/planet_moon.ogg"
-dest_files=["res://.godot/imported/planet_moon.ogg-8f32b6387b10cbe3c27f3de2d5ac59aa.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 1/audio/planet_moon.ogg"
+dest_files=["res://.godot/imported/planet_moon.ogg-0e3c398f81359f849484e97efa361c5c.oggvorbisstr"]
 
 [params]
 

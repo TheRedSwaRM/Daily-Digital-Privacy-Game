@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cqo8aipi323av"
-path="res://.godot/imported/dieThrow2.ogg-e5fb841ea10a59c96a0e74bd9216b286.oggvorbisstr"
+path="res://.godot/imported/diethrow2.ogg-d31c1e9e14a742e20bb69400d844e669.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Casino Audio/Audio/dieThrow2.ogg"
-dest_files=["res://.godot/imported/dieThrow2.ogg-e5fb841ea10a59c96a0e74bd9216b286.oggvorbisstr"]
+source_file="res://assets/audio/casino audio/audio/diethrow2.ogg"
+dest_files=["res://.godot/imported/diethrow2.ogg-d31c1e9e14a742e20bb69400d844e669.oggvorbisstr"]
 
 [params]
 

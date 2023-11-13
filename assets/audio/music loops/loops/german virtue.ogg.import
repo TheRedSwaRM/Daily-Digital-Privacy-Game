@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://3csv7b6iqae4"
-path="res://.godot/imported/German Virtue.ogg-9cbeecacf74425488540d0b15f31d7eb.oggvorbisstr"
+path="res://.godot/imported/german virtue.ogg-d1206eb7c653dd3fb38f3cac582da989.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Music Loops/Loops/German Virtue.ogg"
-dest_files=["res://.godot/imported/German Virtue.ogg-9cbeecacf74425488540d0b15f31d7eb.oggvorbisstr"]
+source_file="res://assets/audio/music loops/loops/german virtue.ogg"
+dest_files=["res://.godot/imported/german virtue.ogg-d1206eb7c653dd3fb38f3cac582da989.oggvorbisstr"]
 
 [params]
 

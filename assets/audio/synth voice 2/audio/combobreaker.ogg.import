@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bw4eqd4pwo1dd"
-path="res://.godot/imported/comboBreaker.ogg-fb62d614826c9211229586b81dd21b00.oggvorbisstr"
+path="res://.godot/imported/combobreaker.ogg-854bc9c637e9428e0da6d30fc140aba3.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/comboBreaker.ogg"
-dest_files=["res://.godot/imported/comboBreaker.ogg-fb62d614826c9211229586b81dd21b00.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/combobreaker.ogg"
+dest_files=["res://.godot/imported/combobreaker.ogg-854bc9c637e9428e0da6d30fc140aba3.oggvorbisstr"]
 
 [params]
 

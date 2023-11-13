@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cvdkimyw88do7"
-path="res://.godot/imported/engagingWithAgressiveTactics.ogg-8a9eba4cc59af2e20dea82d0efaef5c8.oggvorbisstr"
+path="res://.godot/imported/engagingwithagressivetactics.ogg-c6955bad3b0358bb486732b53bd39a43.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/engagingWithAgressiveTactics.ogg"
-dest_files=["res://.godot/imported/engagingWithAgressiveTactics.ogg-8a9eba4cc59af2e20dea82d0efaef5c8.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/engagingwithagressivetactics.ogg"
+dest_files=["res://.godot/imported/engagingwithagressivetactics.ogg-c6955bad3b0358bb486732b53bd39a43.oggvorbisstr"]
 
 [params]
 

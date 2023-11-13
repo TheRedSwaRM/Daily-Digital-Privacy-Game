@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ouu5klrvp13q"
-path="res://.godot/imported/you_lose.ogg-c11aac2831ff47fafb3bad42fd6087e1.oggvorbisstr"
+path="res://.godot/imported/you_lose.ogg-cb10fa510c23a0afbe3bff56d7ab25f4.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Voiceover Pack/Audio (Male)/you_lose.ogg"
-dest_files=["res://.godot/imported/you_lose.ogg-c11aac2831ff47fafb3bad42fd6087e1.oggvorbisstr"]
+source_file="res://assets/audio/voiceover pack/audio male/you_lose.ogg"
+dest_files=["res://.godot/imported/you_lose.ogg-cb10fa510c23a0afbe3bff56d7ab25f4.oggvorbisstr"]
 
 [params]
 

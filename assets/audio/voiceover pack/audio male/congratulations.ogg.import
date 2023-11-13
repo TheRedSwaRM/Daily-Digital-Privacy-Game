@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cc8optei4j1jy"
-path="res://.godot/imported/congratulations.ogg-68fc20165084086c6b6a8d9b334a8c21.oggvorbisstr"
+path="res://.godot/imported/congratulations.ogg-7927cb77a77e3169baafd762399e1381.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Voiceover Pack/Audio (Male)/congratulations.ogg"
-dest_files=["res://.godot/imported/congratulations.ogg-68fc20165084086c6b6a8d9b334a8c21.oggvorbisstr"]
+source_file="res://assets/audio/voiceover pack/audio male/congratulations.ogg"
+dest_files=["res://.godot/imported/congratulations.ogg-7927cb77a77e3169baafd762399e1381.oggvorbisstr"]
 
 [params]
 

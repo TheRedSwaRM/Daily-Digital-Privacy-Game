@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://brcboaldcf0hm"
-path="res://.godot/imported/planet_pluto.ogg-2f9c796fc2a7beb533f02d42a9464252.oggvorbisstr"
+path="res://.godot/imported/planet_pluto.ogg-006e0df61af62df293697442a2f16953.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 1/Audio/planet_pluto.ogg"
-dest_files=["res://.godot/imported/planet_pluto.ogg-2f9c796fc2a7beb533f02d42a9464252.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 1/audio/planet_pluto.ogg"
+dest_files=["res://.godot/imported/planet_pluto.ogg-006e0df61af62df293697442a2f16953.oggvorbisstr"]
 
 [params]
 

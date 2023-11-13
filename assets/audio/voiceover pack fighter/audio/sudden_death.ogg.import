@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cbswqwoqyh175"
-path="res://.godot/imported/sudden_death.ogg-bb603a1b43530120318c1313f0e551a5.oggvorbisstr"
+path="res://.godot/imported/sudden_death.ogg-fd56d3da89d38f605b795a0918861666.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Voiceover Pack Fighter/Audio/sudden_death.ogg"
-dest_files=["res://.godot/imported/sudden_death.ogg-bb603a1b43530120318c1313f0e551a5.oggvorbisstr"]
+source_file="res://assets/audio/voiceover pack fighter/audio/sudden_death.ogg"
+dest_files=["res://.godot/imported/sudden_death.ogg-fd56d3da89d38f605b795a0918861666.oggvorbisstr"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://brtf76fdjrva4"
-path="res://.godot/imported/explosionCrunch_000.ogg-8893eea5f425ba18bc53a8c3e50cf39c.oggvorbisstr"
+path="res://.godot/imported/explosioncrunch_000.ogg-144f281ee6be89c2332f2c297592df18.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Sci-Fi Sounds/Audio/explosionCrunch_000.ogg"
-dest_files=["res://.godot/imported/explosionCrunch_000.ogg-8893eea5f425ba18bc53a8c3e50cf39c.oggvorbisstr"]
+source_file="res://assets/audio/sci-fi sounds/audio/explosioncrunch_000.ogg"
+dest_files=["res://.godot/imported/explosioncrunch_000.ogg-144f281ee6be89c2332f2c297592df18.oggvorbisstr"]
 
 [params]
 

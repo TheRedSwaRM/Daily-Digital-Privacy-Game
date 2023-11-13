@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ch27bucy1pabj"
-path="res://.godot/imported/areYouReady.ogg-1f83ae3253b079069d2a36a8c4c0dd8e.oggvorbisstr"
+path="res://.godot/imported/areyouready.ogg-a1d275c52fc7762266e0e3c84d4a258d.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/areYouReady.ogg"
-dest_files=["res://.godot/imported/areYouReady.ogg-1f83ae3253b079069d2a36a8c4c0dd8e.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/areyouready.ogg"
+dest_files=["res://.godot/imported/areyouready.ogg-a1d275c52fc7762266e0e3c84d4a258d.oggvorbisstr"]
 
 [params]
 

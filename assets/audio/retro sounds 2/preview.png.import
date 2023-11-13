@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccd2v2tnuea4d"
-path="res://.godot/imported/Preview.png-a12a0491af0aa3526c675a1766e2bfe5.ctex"
+path="res://.godot/imported/preview.png-0b63da25a341a5b08a184bf705483744.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Audio/Retro Sounds 2/Preview.png"
-dest_files=["res://.godot/imported/Preview.png-a12a0491af0aa3526c675a1766e2bfe5.ctex"]
+source_file="res://assets/audio/retro sounds 2/preview.png"
+dest_files=["res://.godot/imported/preview.png-0b63da25a341a5b08a184bf705483744.ctex"]
 
 [params]
 

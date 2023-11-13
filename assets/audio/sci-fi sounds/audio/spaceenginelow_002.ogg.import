@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://chtyvrxhu6tl1"
-path="res://.godot/imported/spaceEngineLow_002.ogg-021c624ba44b3a3f540a615ccd4861dd.oggvorbisstr"
+path="res://.godot/imported/spaceenginelow_002.ogg-7cd42c8e7fe6d427c8e28a578f26e69c.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Sci-Fi Sounds/Audio/spaceEngineLow_002.ogg"
-dest_files=["res://.godot/imported/spaceEngineLow_002.ogg-021c624ba44b3a3f540a615ccd4861dd.oggvorbisstr"]
+source_file="res://assets/audio/sci-fi sounds/audio/spaceenginelow_002.ogg"
+dest_files=["res://.godot/imported/spaceenginelow_002.ogg-7cd42c8e7fe6d427c8e28a578f26e69c.oggvorbisstr"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bwwqmc7fr4qpv"
-path="res://.godot/imported/sinkWater1.ogg-d7e7e5606ebe52ea678cff182401eaec.oggvorbisstr"
+path="res://.godot/imported/sinkwater1.ogg-b5f56bc05db80bf4826da48c637d0701.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Foley Sounds/Audio/Water/sinkWater1.ogg"
-dest_files=["res://.godot/imported/sinkWater1.ogg-d7e7e5606ebe52ea678cff182401eaec.oggvorbisstr"]
+source_file="res://assets/audio/foley sounds/audio/Water/sinkwater1.ogg"
+dest_files=["res://.godot/imported/sinkwater1.ogg-b5f56bc05db80bf4826da48c637d0701.oggvorbisstr"]
 
 [params]
 

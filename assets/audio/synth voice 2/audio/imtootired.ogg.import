@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b3u26u0nnrubt"
-path="res://.godot/imported/imTooTired.ogg-cb429b19d2244fb59dc8934114cd7011.oggvorbisstr"
+path="res://.godot/imported/imtootired.ogg-9dab8501c307ecacf03e81cf035d9c69.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/imTooTired.ogg"
-dest_files=["res://.godot/imported/imTooTired.ogg-cb429b19d2244fb59dc8934114cd7011.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/imtootired.ogg"
+dest_files=["res://.godot/imported/imtootired.ogg-9dab8501c307ecacf03e81cf035d9c69.oggvorbisstr"]
 
 [params]
 

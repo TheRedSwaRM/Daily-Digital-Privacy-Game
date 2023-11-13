@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ctjkly3was2ct"
-path="res://.godot/imported/planet_jupiter.ogg-9b80fd3bff88d95f21017d6ded6ab9b1.oggvorbisstr"
+path="res://.godot/imported/planet_jupiter.ogg-f1031ab8ff201b70825c6bb398a64c01.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 1/Audio/planet_jupiter.ogg"
-dest_files=["res://.godot/imported/planet_jupiter.ogg-9b80fd3bff88d95f21017d6ded6ab9b1.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 1/audio/planet_jupiter.ogg"
+dest_files=["res://.godot/imported/planet_jupiter.ogg-f1031ab8ff201b70825c6bb398a64c01.oggvorbisstr"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://c1sf0jbn0lf6n"
-path="res://.godot/imported/goAway.ogg-50a5bc18faf7d1c1a1226f364b3fb305.oggvorbisstr"
+path="res://.godot/imported/goaway.ogg-b7a27c46e1542690dc2f16a8d69eed7b.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/goAway.ogg"
-dest_files=["res://.godot/imported/goAway.ogg-50a5bc18faf7d1c1a1226f364b3fb305.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/goaway.ogg"
+dest_files=["res://.godot/imported/goaway.ogg-b7a27c46e1542690dc2f16a8d69eed7b.oggvorbisstr"]
 
 [params]
 

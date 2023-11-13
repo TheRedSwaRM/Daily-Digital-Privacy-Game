@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://nsf2pqpli52j"
-path="res://.godot/imported/thrusterFire_001.ogg-9c15251be9df3042afbc288fdc0c1db1.oggvorbisstr"
+path="res://.godot/imported/thrusterfire_001.ogg-ddadb789069219a72e1663d232c6b79b.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Sci-Fi Sounds/Audio/thrusterFire_001.ogg"
-dest_files=["res://.godot/imported/thrusterFire_001.ogg-9c15251be9df3042afbc288fdc0c1db1.oggvorbisstr"]
+source_file="res://assets/audio/sci-fi sounds/audio/thrusterfire_001.ogg"
+dest_files=["res://.godot/imported/thrusterfire_001.ogg-ddadb789069219a72e1663d232c6b79b.oggvorbisstr"]
 
 [params]
 

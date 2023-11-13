@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bfo702w85a6tc"
-path="res://.godot/imported/footstep_snow_003.ogg-1482c510d752fe01ef6463eaa0444290.oggvorbisstr"
+path="res://.godot/imported/footstep_snow_003.ogg-0ae4c57ad07eb0e8a7c65311f89e2f2a.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Impact Sounds/Audio/footstep_snow_003.ogg"
-dest_files=["res://.godot/imported/footstep_snow_003.ogg-1482c510d752fe01ef6463eaa0444290.oggvorbisstr"]
+source_file="res://assets/audio/impact sounds/audio/footstep_snow_003.ogg"
+dest_files=["res://.godot/imported/footstep_snow_003.ogg-0ae4c57ad07eb0e8a7c65311f89e2f2a.oggvorbisstr"]
 
 [params]
 

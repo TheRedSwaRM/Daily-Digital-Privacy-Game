@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b788pio7kxov3"
-path="res://.godot/imported/deathmatch.ogg-c3977bbdf732d22461532398961c0138.oggvorbisstr"
+path="res://.godot/imported/deathmatch.ogg-431eea2ad71d9be635f454b263e875d3.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 1/Audio/deathmatch.ogg"
-dest_files=["res://.godot/imported/deathmatch.ogg-c3977bbdf732d22461532398961c0138.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 1/audio/deathmatch.ogg"
+dest_files=["res://.godot/imported/deathmatch.ogg-431eea2ad71d9be635f454b263e875d3.oggvorbisstr"]
 
 [params]
 

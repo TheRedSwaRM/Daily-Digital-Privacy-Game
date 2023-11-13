@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://da4yg2h44fhue"
-path="res://.godot/imported/Preview (Female).ogg-80587a860e59a3ad33989fc86e60584f.oggvorbisstr"
+path="res://.godot/imported/preview (female).ogg-18eedc0510ae53bf2fcf62edef52c73a.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Voiceover Pack/Preview (Female).ogg"
-dest_files=["res://.godot/imported/Preview (Female).ogg-80587a860e59a3ad33989fc86e60584f.oggvorbisstr"]
+source_file="res://assets/audio/voiceover pack/preview (female).ogg"
+dest_files=["res://.godot/imported/preview (female).ogg-18eedc0510ae53bf2fcf62edef52c73a.oggvorbisstr"]
 
 [params]
 

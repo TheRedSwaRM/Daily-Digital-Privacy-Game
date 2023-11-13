@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bpdm1162umsou"
-path="res://.godot/imported/woosh4.ogg-6648590fcbf39db2bc09bc9e48ab48f1.oggvorbisstr"
+path="res://.godot/imported/woosh4.ogg-55c93d350fc1621e205122681a244721.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Foley Sounds/Audio/Woosh/woosh4.ogg"
-dest_files=["res://.godot/imported/woosh4.ogg-6648590fcbf39db2bc09bc9e48ab48f1.oggvorbisstr"]
+source_file="res://assets/audio/foley sounds/audio/Woosh/woosh4.ogg"
+dest_files=["res://.godot/imported/woosh4.ogg-55c93d350fc1621e205122681a244721.oggvorbisstr"]
 
 [params]
 

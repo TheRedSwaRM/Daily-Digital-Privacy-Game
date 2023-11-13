@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://d4mjyrnfaj3a0"
-path="res://.godot/imported/untouchable.ogg-cae9bf8ed36b4ccc3e55be5c9898631c.oggvorbisstr"
+path="res://.godot/imported/untouchable.ogg-94ce29d71cc1a21ccaeb6b25f4212c89.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/untouchable.ogg"
-dest_files=["res://.godot/imported/untouchable.ogg-cae9bf8ed36b4ccc3e55be5c9898631c.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/untouchable.ogg"
+dest_files=["res://.godot/imported/untouchable.ogg-94ce29d71cc1a21ccaeb6b25f4212c89.oggvorbisstr"]
 
 [params]
 

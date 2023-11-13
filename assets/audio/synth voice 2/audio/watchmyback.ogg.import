@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bamire1ncd7fh"
-path="res://.godot/imported/watchMyBack.ogg-d333e99e3bbf28db8ea0aa44367df192.oggvorbisstr"
+path="res://.godot/imported/watchmyback.ogg-26ef6020e7a322e7c04479df35e4fa14.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/watchMyBack.ogg"
-dest_files=["res://.godot/imported/watchMyBack.ogg-d333e99e3bbf28db8ea0aa44367df192.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/watchmyback.ogg"
+dest_files=["res://.godot/imported/watchmyback.ogg-26ef6020e7a322e7c04479df35e4fa14.oggvorbisstr"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://0klynqi05b6c"
-path="res://.godot/imported/creature1.ogg-08cde4452ada1fd550a2a1b14634b31c.oggvorbisstr"
+path="res://.godot/imported/creature1.ogg-a4517a651ebad0cd5c9cfcd3e037058d.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Retro Sounds 1/Audio/creature1.ogg"
-dest_files=["res://.godot/imported/creature1.ogg-08cde4452ada1fd550a2a1b14634b31c.oggvorbisstr"]
+source_file="res://assets/audio/retro sounds 1/audio/creature1.ogg"
+dest_files=["res://.godot/imported/creature1.ogg-a4517a651ebad0cd5c9cfcd3e037058d.oggvorbisstr"]
 
 [params]
 

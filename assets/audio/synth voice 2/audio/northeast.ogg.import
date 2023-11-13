@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://3jlr0mvnnhdl"
-path="res://.godot/imported/northEast.ogg-a36a4940bfc6ff74623791e5b8629053.oggvorbisstr"
+path="res://.godot/imported/northeast.ogg-fa848db33abccf6f0e17310ad53e9c69.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/northEast.ogg"
-dest_files=["res://.godot/imported/northEast.ogg-a36a4940bfc6ff74623791e5b8629053.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/northeast.ogg"
+dest_files=["res://.godot/imported/northeast.ogg-fa848db33abccf6f0e17310ad53e9c69.oggvorbisstr"]
 
 [params]
 

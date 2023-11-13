@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b432vxr8dsc8c"
-path="res://.godot/imported/dropLeather.ogg-3c8908d0f8c19e6fbdd4a0c0f728541c.oggvorbisstr"
+path="res://.godot/imported/dropleather.ogg-05ba70798c47ca4241a7edfebf220f90.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/RPG Audio/Audio/dropLeather.ogg"
-dest_files=["res://.godot/imported/dropLeather.ogg-3c8908d0f8c19e6fbdd4a0c0f728541c.oggvorbisstr"]
+source_file="res://assets/audio/rpg audio/audio/dropleather.ogg"
+dest_files=["res://.godot/imported/dropleather.ogg-05ba70798c47ca4241a7edfebf220f90.oggvorbisstr"]
 
 [params]
 

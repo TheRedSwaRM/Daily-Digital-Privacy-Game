@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cffa8e2kh258m"
-path="res://.godot/imported/twoTone2.ogg-9d8225909aeab2486a21aa04ab6f1454.oggvorbisstr"
+path="res://.godot/imported/twotone2.ogg-724f7657b8a195ff4fd8599e2992d89c.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Digital Audio/Audio/twoTone2.ogg"
-dest_files=["res://.godot/imported/twoTone2.ogg-9d8225909aeab2486a21aa04ab6f1454.oggvorbisstr"]
+source_file="res://assets/audio/digital audio/audio/twotone2.ogg"
+dest_files=["res://.godot/imported/twotone2.ogg-724f7657b8a195ff4fd8599e2992d89c.oggvorbisstr"]
 
 [params]
 

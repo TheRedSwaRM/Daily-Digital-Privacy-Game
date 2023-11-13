@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bly8gxjfqhorc"
-path="res://.godot/imported/hitHelmet5.ogg-932974f33576a0017ca2fde83e774ee8.oggvorbisstr"
+path="res://.godot/imported/hithelmet5.ogg-e2c7154dea4910eeaa09474b701007b8.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Foley Sounds/Audio/Swords/hitHelmet5.ogg"
-dest_files=["res://.godot/imported/hitHelmet5.ogg-932974f33576a0017ca2fde83e774ee8.oggvorbisstr"]
+source_file="res://assets/audio/foley sounds/audio/Swords/hithelmet5.ogg"
+dest_files=["res://.godot/imported/hithelmet5.ogg-e2c7154dea4910eeaa09474b701007b8.oggvorbisstr"]
 
 [params]
 

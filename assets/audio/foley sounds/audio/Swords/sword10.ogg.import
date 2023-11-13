@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://0iypiskoax5m"
-path="res://.godot/imported/sword10.ogg-b9249fd614fa913080cc454ff76d860f.oggvorbisstr"
+path="res://.godot/imported/sword10.ogg-9f1d4bbf12623ee7be4dfd9c4373bed0.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Foley Sounds/Audio/Swords/sword10.ogg"
-dest_files=["res://.godot/imported/sword10.ogg-b9249fd614fa913080cc454ff76d860f.oggvorbisstr"]
+source_file="res://assets/audio/foley sounds/audio/Swords/sword10.ogg"
+dest_files=["res://.godot/imported/sword10.ogg-9f1d4bbf12623ee7be4dfd9c4373bed0.oggvorbisstr"]
 
 [params]
 

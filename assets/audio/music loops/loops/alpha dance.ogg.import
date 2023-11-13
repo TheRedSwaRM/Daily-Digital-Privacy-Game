@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://fyqwqegvg5qp"
-path="res://.godot/imported/Alpha Dance.ogg-890cea12e3dfbda183123b0873fc0686.oggvorbisstr"
+path="res://.godot/imported/alpha dance.ogg-366bb31707f02fb0bf0c441a323bf7ba.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Music Loops/Loops/Alpha Dance.ogg"
-dest_files=["res://.godot/imported/Alpha Dance.ogg-890cea12e3dfbda183123b0873fc0686.oggvorbisstr"]
+source_file="res://assets/audio/music loops/loops/alpha dance.ogg"
+dest_files=["res://.godot/imported/alpha dance.ogg-366bb31707f02fb0bf0c441a323bf7ba.oggvorbisstr"]
 
 [params]
 

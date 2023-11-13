@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bcad0c5q4mvi6"
-path="res://.godot/imported/stoneHit2.ogg-f0c988b52d89d6fefbcac481d277e45e.oggvorbisstr"
+path="res://.godot/imported/stonehit2.ogg-b8441811bdfa9ec4425153d56a5beba1.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Foley Sounds/Audio/Rocks/stoneHit2.ogg"
-dest_files=["res://.godot/imported/stoneHit2.ogg-f0c988b52d89d6fefbcac481d277e45e.oggvorbisstr"]
+source_file="res://assets/audio/foley sounds/audio/Rocks/stonehit2.ogg"
+dest_files=["res://.godot/imported/stonehit2.ogg-b8441811bdfa9ec4425153d56a5beba1.oggvorbisstr"]
 
 [params]
 

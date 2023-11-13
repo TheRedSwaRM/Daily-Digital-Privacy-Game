@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://frn8s2xphlfg"
-path="res://.godot/imported/eliminated.ogg-8d4096343af7991d986a8f77e173e74e.oggvorbisstr"
+path="res://.godot/imported/eliminated.ogg-aeb8daeb87cedd3ab056d05245c5f439.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/eliminated.ogg"
-dest_files=["res://.godot/imported/eliminated.ogg-8d4096343af7991d986a8f77e173e74e.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/eliminated.ogg"
+dest_files=["res://.godot/imported/eliminated.ogg-aeb8daeb87cedd3ab056d05245c5f439.oggvorbisstr"]
 
 [params]
 

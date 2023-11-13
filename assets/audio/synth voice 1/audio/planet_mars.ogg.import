@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://l1l10whjhg83"
-path="res://.godot/imported/planet_mars.ogg-7639ecb94a1e12da544f7b5a49509c47.oggvorbisstr"
+path="res://.godot/imported/planet_mars.ogg-4961e50ca8a25e5f286d061c436c90cb.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 1/Audio/planet_mars.ogg"
-dest_files=["res://.godot/imported/planet_mars.ogg-7639ecb94a1e12da544f7b5a49509c47.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 1/audio/planet_mars.ogg"
+dest_files=["res://.godot/imported/planet_mars.ogg-4961e50ca8a25e5f286d061c436c90cb.oggvorbisstr"]
 
 [params]
 

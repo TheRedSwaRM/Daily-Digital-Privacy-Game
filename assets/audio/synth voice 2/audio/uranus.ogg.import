@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://0j54p38j05a2"
-path="res://.godot/imported/uranus.ogg-3d5ceec46b285204b86efaf1ea86787f.oggvorbisstr"
+path="res://.godot/imported/uranus.ogg-c82534756b369d99a61fe279f5ab037d.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/uranus.ogg"
-dest_files=["res://.godot/imported/uranus.ogg-3d5ceec46b285204b86efaf1ea86787f.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/uranus.ogg"
+dest_files=["res://.godot/imported/uranus.ogg-c82534756b369d99a61fe279f5ab037d.oggvorbisstr"]
 
 [params]
 

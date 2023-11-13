@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bjccaprpiaqor"
-path="res://.godot/imported/radar1.ogg-d142e7f2bd61fc983f290d337834bf85.oggvorbisstr"
+path="res://.godot/imported/radar1.ogg-31d31757346d2290ee7a96013a2ca217.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Retro Sounds 1/Audio/radar1.ogg"
-dest_files=["res://.godot/imported/radar1.ogg-d142e7f2bd61fc983f290d337834bf85.oggvorbisstr"]
+source_file="res://assets/audio/retro sounds 1/audio/radar1.ogg"
+dest_files=["res://.godot/imported/radar1.ogg-31d31757346d2290ee7a96013a2ca217.oggvorbisstr"]
 
 [params]
 

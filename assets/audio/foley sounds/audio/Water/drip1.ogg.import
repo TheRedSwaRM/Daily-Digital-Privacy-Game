@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b3p3qsg0yjqbm"
-path="res://.godot/imported/drip1.ogg-1916f74383cb05c0139b991e9137beba.oggvorbisstr"
+path="res://.godot/imported/drip1.ogg-d07ddf91401de73534603a704a32c985.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Foley Sounds/Audio/Water/drip1.ogg"
-dest_files=["res://.godot/imported/drip1.ogg-1916f74383cb05c0139b991e9137beba.oggvorbisstr"]
+source_file="res://assets/audio/foley sounds/audio/Water/drip1.ogg"
+dest_files=["res://.godot/imported/drip1.ogg-d07ddf91401de73534603a704a32c985.oggvorbisstr"]
 
 [params]
 

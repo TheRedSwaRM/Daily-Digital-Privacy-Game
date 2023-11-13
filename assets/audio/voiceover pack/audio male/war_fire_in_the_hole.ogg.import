@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://db2ue40xhhnph"
-path="res://.godot/imported/war_fire_in_the_hole.ogg-4459b0d909a1a71c0e2716b2de53f001.oggvorbisstr"
+path="res://.godot/imported/war_fire_in_the_hole.ogg-8204e97d4d059518b6aee1047d75abbc.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Voiceover Pack/Audio (Male)/war_fire_in_the_hole.ogg"
-dest_files=["res://.godot/imported/war_fire_in_the_hole.ogg-4459b0d909a1a71c0e2716b2de53f001.oggvorbisstr"]
+source_file="res://assets/audio/voiceover pack/audio male/war_fire_in_the_hole.ogg"
+dest_files=["res://.godot/imported/war_fire_in_the_hole.ogg-8204e97d4d059518b6aee1047d75abbc.oggvorbisstr"]
 
 [params]
 

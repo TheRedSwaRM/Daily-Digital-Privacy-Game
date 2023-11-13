@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ddsaetyl6824l"
-path="res://.godot/imported/jingles-saxophone_09.ogg-26343933046b201c5a2781677030f2a7.oggvorbisstr"
+path="res://.godot/imported/jingles-saxophone_09.ogg-82b1567f4133f7e99b95a1765f93a600.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Music Jingles/Audio (Saxophone)/jingles-saxophone_09.ogg"
-dest_files=["res://.godot/imported/jingles-saxophone_09.ogg-26343933046b201c5a2781677030f2a7.oggvorbisstr"]
+source_file="res://assets/audio/music jingles/audio sax/jingles-saxophone_09.ogg"
+dest_files=["res://.godot/imported/jingles-saxophone_09.ogg-82b1567f4133f7e99b95a1765f93a600.oggvorbisstr"]
 
 [params]
 

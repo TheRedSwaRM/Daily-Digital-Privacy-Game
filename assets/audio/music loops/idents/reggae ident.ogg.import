@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bpm33mnoitlu4"
-path="res://.godot/imported/Reggae ident.ogg-84fdc0bd9440cb463892a9c392f07594.oggvorbisstr"
+path="res://.godot/imported/reggae ident.ogg-41770ea5de9d277997af42840f900a64.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Music Loops/Idents/Reggae ident.ogg"
-dest_files=["res://.godot/imported/Reggae ident.ogg-84fdc0bd9440cb463892a9c392f07594.oggvorbisstr"]
+source_file="res://assets/audio/music loops/idents/reggae ident.ogg"
+dest_files=["res://.godot/imported/reggae ident.ogg-41770ea5de9d277997af42840f900a64.oggvorbisstr"]
 
 [params]
 

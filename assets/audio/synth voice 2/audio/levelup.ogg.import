@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://di3p3wo23tspg"
-path="res://.godot/imported/levelUp.ogg-9e82a24091e8f0d71cc8f904c9d54edd.oggvorbisstr"
+path="res://.godot/imported/levelup.ogg-67d336e713beec56b90ea8701d295a3a.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/levelUp.ogg"
-dest_files=["res://.godot/imported/levelUp.ogg-9e82a24091e8f0d71cc8f904c9d54edd.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/levelup.ogg"
+dest_files=["res://.godot/imported/levelup.ogg-67d336e713beec56b90ea8701d295a3a.oggvorbisstr"]
 
 [params]
 

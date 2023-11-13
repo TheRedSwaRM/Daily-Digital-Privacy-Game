@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cx3jq5yie4kej"
-path="res://.godot/imported/zapThreeToneUp.ogg-46e7d44fa8bad281a4153c634a36cb6e.oggvorbisstr"
+path="res://.godot/imported/zapthreetoneup.ogg-a2cbf41f0bbc24144c8c96dba4af1658.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Digital Audio/Audio/zapThreeToneUp.ogg"
-dest_files=["res://.godot/imported/zapThreeToneUp.ogg-46e7d44fa8bad281a4153c634a36cb6e.oggvorbisstr"]
+source_file="res://assets/audio/digital audio/audio/zapthreetoneup.ogg"
+dest_files=["res://.godot/imported/zapthreetoneup.ogg-a2cbf41f0bbc24144c8c96dba4af1658.oggvorbisstr"]
 
 [params]
 

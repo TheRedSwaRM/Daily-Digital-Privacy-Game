@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bgmry023csjtx"
-path="res://.godot/imported/godlike.ogg-b3bfd7f6cd4dd94d7b11628b33e05446.oggvorbisstr"
+path="res://.godot/imported/godlike.ogg-5e849efdb4162ba87055d1c1cdeaebac.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/godlike.ogg"
-dest_files=["res://.godot/imported/godlike.ogg-b3bfd7f6cd4dd94d7b11628b33e05446.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/godlike.ogg"
+dest_files=["res://.godot/imported/godlike.ogg-5e849efdb4162ba87055d1c1cdeaebac.oggvorbisstr"]
 
 [params]
 

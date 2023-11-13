@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ctvby86f7ag07"
-path="res://.godot/imported/level_up.ogg-e30d7385e798fcf820eb246ae7a835f1.oggvorbisstr"
+path="res://.godot/imported/level_up.ogg-78a0429133862a6acfc4d2f46ce7cfce.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Voiceover Pack/Audio (Male)/level_up.ogg"
-dest_files=["res://.godot/imported/level_up.ogg-e30d7385e798fcf820eb246ae7a835f1.oggvorbisstr"]
+source_file="res://assets/audio/voiceover pack/audio male/level_up.ogg"
+dest_files=["res://.godot/imported/level_up.ogg-78a0429133862a6acfc4d2f46ce7cfce.oggvorbisstr"]
 
 [params]
 

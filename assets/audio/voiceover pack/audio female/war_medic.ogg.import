@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b8denr3t8kixn"
-path="res://.godot/imported/war_medic.ogg-bd4ebac8ed5f3376e6591f0c663a3206.oggvorbisstr"
+path="res://.godot/imported/war_medic.ogg-f71484fa09b870ebb839f6e67119530f.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Voiceover Pack/Audio (Female)/war_medic.ogg"
-dest_files=["res://.godot/imported/war_medic.ogg-bd4ebac8ed5f3376e6591f0c663a3206.oggvorbisstr"]
+source_file="res://assets/audio/voiceover pack/audio female/war_medic.ogg"
+dest_files=["res://.godot/imported/war_medic.ogg-f71484fa09b870ebb839f6e67119530f.oggvorbisstr"]
 
 [params]
 

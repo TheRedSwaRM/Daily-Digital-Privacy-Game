@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bhynrplkhhe7w"
-path="res://.godot/imported/planet_neptune.ogg-6d63c84e5a84dae97902771111f612b9.oggvorbisstr"
+path="res://.godot/imported/planet_neptune.ogg-e960152be8d23e4fc8ad2f7e2106d15f.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 1/Audio/planet_neptune.ogg"
-dest_files=["res://.godot/imported/planet_neptune.ogg-6d63c84e5a84dae97902771111f612b9.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 1/audio/planet_neptune.ogg"
+dest_files=["res://.godot/imported/planet_neptune.ogg-e960152be8d23e4fc8ad2f7e2106d15f.oggvorbisstr"]
 
 [params]
 

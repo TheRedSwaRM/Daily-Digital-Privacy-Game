@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cmid6dvtk5qmj"
-path="res://.godot/imported/pickup2.ogg-e89325c00a71a541bafc87b858cd0f95.oggvorbisstr"
+path="res://.godot/imported/pickup2.ogg-384be517b7299289d486a05c42415b94.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Foley Sounds/Audio/Helmet/pickup2.ogg"
-dest_files=["res://.godot/imported/pickup2.ogg-e89325c00a71a541bafc87b858cd0f95.oggvorbisstr"]
+source_file="res://assets/audio/foley sounds/audio/Helmet/pickup2.ogg"
+dest_files=["res://.godot/imported/pickup2.ogg-384be517b7299289d486a05c42415b94.oggvorbisstr"]
 
 [params]
 

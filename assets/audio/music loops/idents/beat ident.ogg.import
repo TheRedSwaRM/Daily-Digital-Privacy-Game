@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dkolfdbj1ps2j"
-path="res://.godot/imported/Beat ident.ogg-91ad30e894db12240b1ee6415145a531.oggvorbisstr"
+path="res://.godot/imported/beat ident.ogg-31119c8a1a7adbab91bd454f8316b5b0.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Music Loops/Idents/Beat ident.ogg"
-dest_files=["res://.godot/imported/Beat ident.ogg-91ad30e894db12240b1ee6415145a531.oggvorbisstr"]
+source_file="res://assets/audio/music loops/idents/beat ident.ogg"
+dest_files=["res://.godot/imported/beat ident.ogg-31119c8a1a7adbab91bd454f8316b5b0.oggvorbisstr"]
 
 [params]
 

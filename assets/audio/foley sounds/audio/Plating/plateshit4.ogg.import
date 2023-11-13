@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cy02umxd46qfd"
-path="res://.godot/imported/platesHit4.ogg-5b37293a7e262d62940bf71d13fa89e2.oggvorbisstr"
+path="res://.godot/imported/plateshit4.ogg-6157a5ff52fa4c3474aa9e65cdc790e4.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Foley Sounds/Audio/Plating/platesHit4.ogg"
-dest_files=["res://.godot/imported/platesHit4.ogg-5b37293a7e262d62940bf71d13fa89e2.oggvorbisstr"]
+source_file="res://assets/audio/foley sounds/audio/Plating/plateshit4.ogg"
+dest_files=["res://.godot/imported/plateshit4.ogg-6157a5ff52fa4c3474aa9e65cdc790e4.oggvorbisstr"]
 
 [params]
 

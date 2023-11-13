@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://70pxgg5m012r"
-path="res://.godot/imported/drawKnife1.ogg-fc7c22048ab7a3e89e35fb03baec18bc.oggvorbisstr"
+path="res://.godot/imported/drawknife1.ogg-21c1fd1a1c13ee54b54caac6668ea966.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/RPG Audio/Audio/drawKnife1.ogg"
-dest_files=["res://.godot/imported/drawKnife1.ogg-fc7c22048ab7a3e89e35fb03baec18bc.oggvorbisstr"]
+source_file="res://assets/audio/rpg audio/audio/drawknife1.ogg"
+dest_files=["res://.godot/imported/drawknife1.ogg-21c1fd1a1c13ee54b54caac6668ea966.oggvorbisstr"]
 
 [params]
 

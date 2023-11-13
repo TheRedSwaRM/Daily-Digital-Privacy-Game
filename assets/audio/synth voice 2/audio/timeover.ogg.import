@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b7bba5jxjfffn"
-path="res://.godot/imported/timeOver.ogg-1ee1d97d573c7a3c1a53b4dde93c290d.oggvorbisstr"
+path="res://.godot/imported/timeover.ogg-d436aea0f5ff21b5cc605dad360e07cd.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/timeOver.ogg"
-dest_files=["res://.godot/imported/timeOver.ogg-1ee1d97d573c7a3c1a53b4dde93c290d.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/timeover.ogg"
+dest_files=["res://.godot/imported/timeover.ogg-d436aea0f5ff21b5cc605dad360e07cd.oggvorbisstr"]
 
 [params]
 

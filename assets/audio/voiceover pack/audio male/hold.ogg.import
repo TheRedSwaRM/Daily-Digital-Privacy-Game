@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ggfwdqreb3cx"
-path="res://.godot/imported/hold.ogg-ed09f470ade198d99561b5cd675cca16.oggvorbisstr"
+path="res://.godot/imported/hold.ogg-35bcbc4f2efa257f7c7592b4bc58e53f.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Voiceover Pack/Audio (Male)/hold.ogg"
-dest_files=["res://.godot/imported/hold.ogg-ed09f470ade198d99561b5cd675cca16.oggvorbisstr"]
+source_file="res://assets/audio/voiceover pack/audio male/hold.ogg"
+dest_files=["res://.godot/imported/hold.ogg-35bcbc4f2efa257f7c7592b4bc58e53f.oggvorbisstr"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://buxcmrmhq5sia"
-path="res://.godot/imported/lowThreeTone.ogg-b7374ff872b31149c46352590b59ce8f.oggvorbisstr"
+path="res://.godot/imported/lowthreetone.ogg-fa62484ebbd2909130e0f1970b4d706e.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Digital Audio/Audio/lowThreeTone.ogg"
-dest_files=["res://.godot/imported/lowThreeTone.ogg-b7374ff872b31149c46352590b59ce8f.oggvorbisstr"]
+source_file="res://assets/audio/digital audio/audio/lowthreetone.ogg"
+dest_files=["res://.godot/imported/lowthreetone.ogg-fa62484ebbd2909130e0f1970b4d706e.oggvorbisstr"]
 
 [params]
 

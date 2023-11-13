@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cq40dxlvfpun8"
-path="res://.godot/imported/forceField_003.ogg-49fd1b7b676be9100b1cf76f9795946b.oggvorbisstr"
+path="res://.godot/imported/forcefield_003.ogg-6372d265aeb08d71fd0e412723d04653.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Sci-Fi Sounds/Audio/forceField_003.ogg"
-dest_files=["res://.godot/imported/forceField_003.ogg-49fd1b7b676be9100b1cf76f9795946b.oggvorbisstr"]
+source_file="res://assets/audio/sci-fi sounds/audio/forcefield_003.ogg"
+dest_files=["res://.godot/imported/forcefield_003.ogg-6372d265aeb08d71fd0e412723d04653.oggvorbisstr"]
 
 [params]
 

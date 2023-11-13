@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bi4evf4563lms"
-path="res://.godot/imported/giveUp.ogg-b6cb84a761aaa138b2f03af96218aafb.oggvorbisstr"
+path="res://.godot/imported/giveup.ogg-747f39d236a803da9c6a04d69c2156bf.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/giveUp.ogg"
-dest_files=["res://.godot/imported/giveUp.ogg-b6cb84a761aaa138b2f03af96218aafb.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/giveup.ogg"
+dest_files=["res://.godot/imported/giveup.ogg-747f39d236a803da9c6a04d69c2156bf.oggvorbisstr"]
 
 [params]
 

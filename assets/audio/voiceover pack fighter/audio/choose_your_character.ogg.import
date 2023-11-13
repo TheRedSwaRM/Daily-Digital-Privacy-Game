@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bjj5f3mc5bl8p"
-path="res://.godot/imported/choose_your_character.ogg-bafe6ba3c12b5d325c0a826a22e3b191.oggvorbisstr"
+path="res://.godot/imported/choose_your_character.ogg-2ae0eb1babfbabab14ccdeea72a117cd.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Voiceover Pack Fighter/Audio/choose_your_character.ogg"
-dest_files=["res://.godot/imported/choose_your_character.ogg-bafe6ba3c12b5d325c0a826a22e3b191.oggvorbisstr"]
+source_file="res://assets/audio/voiceover pack fighter/audio/choose_your_character.ogg"
+dest_files=["res://.godot/imported/choose_your_character.ogg-2ae0eb1babfbabab14ccdeea72a117cd.oggvorbisstr"]
 
 [params]
 

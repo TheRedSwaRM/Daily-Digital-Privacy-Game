@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ciw5ay3flejut"
-path="res://.godot/imported/war_sniper.ogg-228778a557257093eceb1e1e20f9ea19.oggvorbisstr"
+path="res://.godot/imported/war_sniper.ogg-1495507c1a57e7db2230173f0093d438.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Voiceover Pack/Audio (Female)/war_sniper.ogg"
-dest_files=["res://.godot/imported/war_sniper.ogg-228778a557257093eceb1e1e20f9ea19.oggvorbisstr"]
+source_file="res://assets/audio/voiceover pack/audio female/war_sniper.ogg"
+dest_files=["res://.godot/imported/war_sniper.ogg-1495507c1a57e7db2230173f0093d438.oggvorbisstr"]
 
 [params]
 

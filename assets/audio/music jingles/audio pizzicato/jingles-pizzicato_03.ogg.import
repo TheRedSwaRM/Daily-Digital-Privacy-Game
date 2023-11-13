@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cm38l6pbmap0u"
-path="res://.godot/imported/jingles-pizzicato_03.ogg-07392ff4a7b581001b68da3f5ba11d73.oggvorbisstr"
+path="res://.godot/imported/jingles-pizzicato_03.ogg-9888165dff47adef1a6e290a4171486b.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Music Jingles/Audio (Pizzicato)/jingles-pizzicato_03.ogg"
-dest_files=["res://.godot/imported/jingles-pizzicato_03.ogg-07392ff4a7b581001b68da3f5ba11d73.oggvorbisstr"]
+source_file="res://assets/audio/music jingles/audio pizzicato/jingles-pizzicato_03.ogg"
+dest_files=["res://.godot/imported/jingles-pizzicato_03.ogg-9888165dff47adef1a6e290a4171486b.oggvorbisstr"]
 
 [params]
 

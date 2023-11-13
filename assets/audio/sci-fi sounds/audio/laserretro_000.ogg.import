@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://qym5d0pjbvkm"
-path="res://.godot/imported/laserRetro_000.ogg-cb96d21c519545be70150b15fdeef204.oggvorbisstr"
+path="res://.godot/imported/laserretro_000.ogg-1b032ed9b1dbc7859e924b21ee3809be.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Sci-Fi Sounds/Audio/laserRetro_000.ogg"
-dest_files=["res://.godot/imported/laserRetro_000.ogg-cb96d21c519545be70150b15fdeef204.oggvorbisstr"]
+source_file="res://assets/audio/sci-fi sounds/audio/laserretro_000.ogg"
+dest_files=["res://.godot/imported/laserretro_000.ogg-1b032ed9b1dbc7859e924b21ee3809be.oggvorbisstr"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://clb2s6wimmpdw"
-path="res://.godot/imported/stunned.ogg-c071244152e1b8e4768372467680ef90.oggvorbisstr"
+path="res://.godot/imported/stunned.ogg-e14f6a20465265300f70c9ab47866001.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/stunned.ogg"
-dest_files=["res://.godot/imported/stunned.ogg-c071244152e1b8e4768372467680ef90.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/stunned.ogg"
+dest_files=["res://.godot/imported/stunned.ogg-e14f6a20465265300f70c9ab47866001.oggvorbisstr"]
 
 [params]
 

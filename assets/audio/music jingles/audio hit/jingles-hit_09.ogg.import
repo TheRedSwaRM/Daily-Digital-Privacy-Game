@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bxch7jie2ldl0"
-path="res://.godot/imported/jingles-hit_09.ogg-926613a9e3d44ec8645cb68956572094.oggvorbisstr"
+path="res://.godot/imported/jingles-hit_09.ogg-31fa64e931221f98121d0192658cd599.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Music Jingles/Audio (Hit)/jingles-hit_09.ogg"
-dest_files=["res://.godot/imported/jingles-hit_09.ogg-926613a9e3d44ec8645cb68956572094.oggvorbisstr"]
+source_file="res://assets/audio/music jingles/audio hit/jingles-hit_09.ogg"
+dest_files=["res://.godot/imported/jingles-hit_09.ogg-31fa64e931221f98121d0192658cd599.oggvorbisstr"]
 
 [params]
 

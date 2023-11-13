@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cds7shukb2a17"
-path="res://.godot/imported/hurryUp.ogg-587977bcf1ad6e4439f9ea0373337a3b.oggvorbisstr"
+path="res://.godot/imported/hurryup.ogg-0e41ee59219a9e11a2c61547c88e3fc1.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/hurryUp.ogg"
-dest_files=["res://.godot/imported/hurryUp.ogg-587977bcf1ad6e4439f9ea0373337a3b.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/hurryup.ogg"
+dest_files=["res://.godot/imported/hurryup.ogg-0e41ee59219a9e11a2c61547c88e3fc1.oggvorbisstr"]
 
 [params]
 

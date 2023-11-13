@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://qjdqy6col1g5"
-path="res://.godot/imported/it's_a_tie.ogg-267ea61db4e2e9886922c88180d0a980.oggvorbisstr"
+path="res://.godot/imported/it's_a_tie.ogg-2d41547182a4c907773bf8e0f59681de.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Voiceover Pack Fighter/Audio/it's_a_tie.ogg"
-dest_files=["res://.godot/imported/it's_a_tie.ogg-267ea61db4e2e9886922c88180d0a980.oggvorbisstr"]
+source_file="res://assets/audio/voiceover pack fighter/audio/it's_a_tie.ogg"
+dest_files=["res://.godot/imported/it's_a_tie.ogg-2d41547182a4c907773bf8e0f59681de.oggvorbisstr"]
 
 [params]
 

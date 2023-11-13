@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dwimjy42irdfb"
-path="res://.godot/imported/startGame.ogg-c4b597fbc7f318073263a166684de0c4.oggvorbisstr"
+path="res://.godot/imported/startgame.ogg-09058d6976df440955b892084315117f.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/startGame.ogg"
-dest_files=["res://.godot/imported/startGame.ogg-c4b597fbc7f318073263a166684de0c4.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/startgame.ogg"
+dest_files=["res://.godot/imported/startgame.ogg-09058d6976df440955b892084315117f.oggvorbisstr"]
 
 [params]
 

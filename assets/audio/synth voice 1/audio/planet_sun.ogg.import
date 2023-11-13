@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dmpynjn4xcf0k"
-path="res://.godot/imported/planet_sun.ogg-4ce8566708c0c146afd834c6013200fc.oggvorbisstr"
+path="res://.godot/imported/planet_sun.ogg-addd553f24b6abf27e97654ad90c7d03.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 1/Audio/planet_sun.ogg"
-dest_files=["res://.godot/imported/planet_sun.ogg-4ce8566708c0c146afd834c6013200fc.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 1/audio/planet_sun.ogg"
+dest_files=["res://.godot/imported/planet_sun.ogg-addd553f24b6abf27e97654ad90c7d03.oggvorbisstr"]
 
 [params]
 

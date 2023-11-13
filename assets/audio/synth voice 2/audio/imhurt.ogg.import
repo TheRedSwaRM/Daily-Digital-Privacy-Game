@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bsfh5ml2unud5"
-path="res://.godot/imported/imHurt.ogg-b8cec715bd534269800c3fcca7c949a8.oggvorbisstr"
+path="res://.godot/imported/imhurt.ogg-e5b408ca369e5f500918e3f224fb2103.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/imHurt.ogg"
-dest_files=["res://.godot/imported/imHurt.ogg-b8cec715bd534269800c3fcca7c949a8.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/imhurt.ogg"
+dest_files=["res://.godot/imported/imhurt.ogg-e5b408ca369e5f500918e3f224fb2103.oggvorbisstr"]
 
 [params]
 

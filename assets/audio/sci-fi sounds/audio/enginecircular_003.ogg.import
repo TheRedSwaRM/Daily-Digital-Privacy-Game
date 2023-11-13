@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ocllqatp1orf"
-path="res://.godot/imported/engineCircular_003.ogg-0d06745ce6fcbbabb0c005f901dd33a0.oggvorbisstr"
+path="res://.godot/imported/enginecircular_003.ogg-19cdc855be5ed0504294a332c2befabb.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Sci-Fi Sounds/Audio/engineCircular_003.ogg"
-dest_files=["res://.godot/imported/engineCircular_003.ogg-0d06745ce6fcbbabb0c005f901dd33a0.oggvorbisstr"]
+source_file="res://assets/audio/sci-fi sounds/audio/enginecircular_003.ogg"
+dest_files=["res://.godot/imported/enginecircular_003.ogg-19cdc855be5ed0504294a332c2befabb.oggvorbisstr"]
 
 [params]
 

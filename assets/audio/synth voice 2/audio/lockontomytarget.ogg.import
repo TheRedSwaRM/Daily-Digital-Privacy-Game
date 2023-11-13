@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ctf7gba6vwqow"
-path="res://.godot/imported/lockOnToMyTarget.ogg-d0fd05e7c9c7bdcd9aa73ca0c5ee8d2a.oggvorbisstr"
+path="res://.godot/imported/lockontomytarget.ogg-9daf6a294fc7d5598bb38503569e3f24.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/lockOnToMyTarget.ogg"
-dest_files=["res://.godot/imported/lockOnToMyTarget.ogg-d0fd05e7c9c7bdcd9aa73ca0c5ee8d2a.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/lockontomytarget.ogg"
+dest_files=["res://.godot/imported/lockontomytarget.ogg-9daf6a294fc7d5598bb38503569e3f24.oggvorbisstr"]
 
 [params]
 

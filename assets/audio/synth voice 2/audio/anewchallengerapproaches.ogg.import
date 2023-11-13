@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ejtop4xmn01r"
-path="res://.godot/imported/aNewChallengerApproaches.ogg-4185329e65d34577de0849bd5f4970f6.oggvorbisstr"
+path="res://.godot/imported/anewchallengerapproaches.ogg-ef614b3d57ed4570350a1506213e8ec6.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/aNewChallengerApproaches.ogg"
-dest_files=["res://.godot/imported/aNewChallengerApproaches.ogg-4185329e65d34577de0849bd5f4970f6.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/anewchallengerapproaches.ogg"
+dest_files=["res://.godot/imported/anewchallengerapproaches.ogg-ef614b3d57ed4570350a1506213e8ec6.oggvorbisstr"]
 
 [params]
 

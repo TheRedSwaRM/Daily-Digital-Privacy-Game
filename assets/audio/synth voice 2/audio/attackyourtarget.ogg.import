@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bopx673d0xv40"
-path="res://.godot/imported/attackYourTarget.ogg-76458f9b5f9ca1a69ebcbe3d28c422e7.oggvorbisstr"
+path="res://.godot/imported/attackyourtarget.ogg-e5504199c426a54e71d0bb8f757d62a8.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/attackYourTarget.ogg"
-dest_files=["res://.godot/imported/attackYourTarget.ogg-76458f9b5f9ca1a69ebcbe3d28c422e7.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/attackyourtarget.ogg"
+dest_files=["res://.godot/imported/attackyourtarget.ogg-e5504199c426a54e71d0bb8f757d62a8.oggvorbisstr"]
 
 [params]
 

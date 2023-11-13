@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dclcf6hwefd3v"
-path="res://.godot/imported/Italian Mom.ogg-6158683b32bb82f719ac81013d2cd358.oggvorbisstr"
+path="res://.godot/imported/italian mom.ogg-1b297ed485d80a4b41e88d345ade74ba.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Music Loops/Loops/Italian Mom.ogg"
-dest_files=["res://.godot/imported/Italian Mom.ogg-6158683b32bb82f719ac81013d2cd358.oggvorbisstr"]
+source_file="res://assets/audio/music loops/loops/italian mom.ogg"
+dest_files=["res://.godot/imported/italian mom.ogg-1b297ed485d80a4b41e88d345ade74ba.oggvorbisstr"]
 
 [params]
 

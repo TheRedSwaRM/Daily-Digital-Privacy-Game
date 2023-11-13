@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://c2sma25kiycl2"
-path="res://.godot/imported/war_go_go_go.ogg-e075c9f3da91e9560847cb051bd64ec2.oggvorbisstr"
+path="res://.godot/imported/war_go_go_go.ogg-e90e2f396f6522980fd2e937aabd85e2.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Voiceover Pack/Audio (Male)/war_go_go_go.ogg"
-dest_files=["res://.godot/imported/war_go_go_go.ogg-e075c9f3da91e9560847cb051bd64ec2.oggvorbisstr"]
+source_file="res://assets/audio/voiceover pack/audio male/war_go_go_go.ogg"
+dest_files=["res://.godot/imported/war_go_go_go.ogg-e90e2f396f6522980fd2e937aabd85e2.oggvorbisstr"]
 
 [params]
 

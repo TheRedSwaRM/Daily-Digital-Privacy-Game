@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bjsic04ms6g0c"
-path="res://.godot/imported/planet_venus.ogg-737833d6e31a4a730c4d24395c525379.oggvorbisstr"
+path="res://.godot/imported/planet_venus.ogg-fe9c053888fc6c3f6f42fe5b860fd347.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 1/Audio/planet_venus.ogg"
-dest_files=["res://.godot/imported/planet_venus.ogg-737833d6e31a4a730c4d24395c525379.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 1/audio/planet_venus.ogg"
+dest_files=["res://.godot/imported/planet_venus.ogg-fe9c053888fc6c3f6f42fe5b860fd347.oggvorbisstr"]
 
 [params]
 

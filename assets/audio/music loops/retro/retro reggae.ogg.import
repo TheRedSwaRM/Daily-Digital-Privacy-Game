@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://hpflkx8c4off"
-path="res://.godot/imported/Retro Reggae.ogg-7d4335a0a754d689873c1b9a6480efc2.oggvorbisstr"
+path="res://.godot/imported/retro reggae.ogg-ad2a46bf2058140a73adc06cc4d9454b.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Music Loops/Retro/Retro Reggae.ogg"
-dest_files=["res://.godot/imported/Retro Reggae.ogg-7d4335a0a754d689873c1b9a6480efc2.oggvorbisstr"]
+source_file="res://assets/audio/music loops/retro/retro reggae.ogg"
+dest_files=["res://.godot/imported/retro reggae.ogg-ad2a46bf2058140a73adc06cc4d9454b.oggvorbisstr"]
 
 [params]
 

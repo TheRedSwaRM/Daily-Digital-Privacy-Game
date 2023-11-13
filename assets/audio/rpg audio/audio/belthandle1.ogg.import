@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://br28xs2yippcf"
-path="res://.godot/imported/beltHandle1.ogg-b99f1690b6d42da173e5624f080e5ac8.oggvorbisstr"
+path="res://.godot/imported/belthandle1.ogg-0fe01634d43ea3d41a4bcdf03ef503dc.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/RPG Audio/Audio/beltHandle1.ogg"
-dest_files=["res://.godot/imported/beltHandle1.ogg-b99f1690b6d42da173e5624f080e5ac8.oggvorbisstr"]
+source_file="res://assets/audio/rpg audio/audio/belthandle1.ogg"
+dest_files=["res://.godot/imported/belthandle1.ogg-0fe01634d43ea3d41a4bcdf03ef503dc.oggvorbisstr"]
 
 [params]
 

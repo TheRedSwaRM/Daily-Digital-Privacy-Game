@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://kia1stvk5wts"
-path="res://.godot/imported/footstep_carpet_001.ogg-9ec2bdd9f2adedcd5f43d34d589a3f54.oggvorbisstr"
+path="res://.godot/imported/footstep_carpet_001.ogg-a455e814f9e52e8266bf98cdcf9688bc.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Impact Sounds/Audio/footstep_carpet_001.ogg"
-dest_files=["res://.godot/imported/footstep_carpet_001.ogg-9ec2bdd9f2adedcd5f43d34d589a3f54.oggvorbisstr"]
+source_file="res://assets/audio/impact sounds/audio/footstep_carpet_001.ogg"
+dest_files=["res://.godot/imported/footstep_carpet_001.ogg-a455e814f9e52e8266bf98cdcf9688bc.oggvorbisstr"]
 
 [params]
 

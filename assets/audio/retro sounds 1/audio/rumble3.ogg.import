@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dknsfqjfu2enk"
-path="res://.godot/imported/rumble3.ogg-577fa0388e870522f1cd1ac05e913f87.oggvorbisstr"
+path="res://.godot/imported/rumble3.ogg-b0d19d65e8e60f6fd084e83c8ad2e223.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Retro Sounds 1/Audio/rumble3.ogg"
-dest_files=["res://.godot/imported/rumble3.ogg-577fa0388e870522f1cd1ac05e913f87.oggvorbisstr"]
+source_file="res://assets/audio/retro sounds 1/audio/rumble3.ogg"
+dest_files=["res://.godot/imported/rumble3.ogg-b0d19d65e8e60f6fd084e83c8ad2e223.oggvorbisstr"]
 
 [params]
 

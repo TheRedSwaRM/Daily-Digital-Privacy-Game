@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://6ywjjo8mvsff"
-path="res://.godot/imported/Sad Descent.ogg-242162581360d39f6f0550c61cffe541.oggvorbisstr"
+path="res://.godot/imported/sad descent.ogg-86359eaa198b8e9efdc093eddc7585bf.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Music Loops/Loops/Sad Descent.ogg"
-dest_files=["res://.godot/imported/Sad Descent.ogg-242162581360d39f6f0550c61cffe541.oggvorbisstr"]
+source_file="res://assets/audio/music loops/loops/sad descent.ogg"
+dest_files=["res://.godot/imported/sad descent.ogg-86359eaa198b8e9efdc093eddc7585bf.oggvorbisstr"]
 
 [params]
 

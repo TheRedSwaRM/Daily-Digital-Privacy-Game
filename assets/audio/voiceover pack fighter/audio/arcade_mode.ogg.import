@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dl812ewv7nx4p"
-path="res://.godot/imported/arcade_mode.ogg-1a2eed5ae30d5ead3d2251fbb39965a0.oggvorbisstr"
+path="res://.godot/imported/arcade_mode.ogg-8be1e3b174704ab20f65487af524414b.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Voiceover Pack Fighter/Audio/arcade_mode.ogg"
-dest_files=["res://.godot/imported/arcade_mode.ogg-1a2eed5ae30d5ead3d2251fbb39965a0.oggvorbisstr"]
+source_file="res://assets/audio/voiceover pack fighter/audio/arcade_mode.ogg"
+dest_files=["res://.godot/imported/arcade_mode.ogg-8be1e3b174704ab20f65487af524414b.oggvorbisstr"]
 
 [params]
 

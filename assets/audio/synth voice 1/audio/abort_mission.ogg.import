@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ce8vt4mb3fn21"
-path="res://.godot/imported/abort_mission.ogg-e8d71e01dab4935559a958d039aec420.oggvorbisstr"
+path="res://.godot/imported/abort_mission.ogg-01d8995f0ac80b74ccae331fb4259e07.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 1/Audio/abort_mission.ogg"
-dest_files=["res://.godot/imported/abort_mission.ogg-e8d71e01dab4935559a958d039aec420.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 1/audio/abort_mission.ogg"
+dest_files=["res://.godot/imported/abort_mission.ogg-01d8995f0ac80b74ccae331fb4259e07.oggvorbisstr"]
 
 [params]
 

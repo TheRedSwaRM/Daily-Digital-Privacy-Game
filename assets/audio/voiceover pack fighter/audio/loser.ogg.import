@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://kj4yptsvkxlp"
-path="res://.godot/imported/loser.ogg-b287d504588055466987ceda944d7437.oggvorbisstr"
+path="res://.godot/imported/loser.ogg-894d0a9015abb2a8580ba45db71b851d.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Voiceover Pack Fighter/Audio/loser.ogg"
-dest_files=["res://.godot/imported/loser.ogg-b287d504588055466987ceda944d7437.oggvorbisstr"]
+source_file="res://assets/audio/voiceover pack fighter/audio/loser.ogg"
+dest_files=["res://.godot/imported/loser.ogg-894d0a9015abb2a8580ba45db71b851d.oggvorbisstr"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b2pj73c4kbm8l"
-path="res://.godot/imported/Drumming Sticks.ogg-53194b95cafaf042d2b36746833e121f.oggvorbisstr"
+path="res://.godot/imported/drumming sticks.ogg-da7ee217417982655a60298170ac5c3b.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Music Loops/Loops/Drumming Sticks.ogg"
-dest_files=["res://.godot/imported/Drumming Sticks.ogg-53194b95cafaf042d2b36746833e121f.oggvorbisstr"]
+source_file="res://assets/audio/music loops/loops/drumming sticks.ogg"
+dest_files=["res://.godot/imported/drumming sticks.ogg-da7ee217417982655a60298170ac5c3b.oggvorbisstr"]
 
 [params]
 

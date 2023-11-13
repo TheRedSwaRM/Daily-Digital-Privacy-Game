@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bqbdwaf8uy6em"
-path="res://.godot/imported/defendYourPosition.ogg-0c5410230bf0315107fb7dc9f8d8b1fa.oggvorbisstr"
+path="res://.godot/imported/defendyourposition.ogg-c0f8c9e294dcd04f0fddc1c55fcd45a3.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Synth Voice 2/Audio/defendYourPosition.ogg"
-dest_files=["res://.godot/imported/defendYourPosition.ogg-0c5410230bf0315107fb7dc9f8d8b1fa.oggvorbisstr"]
+source_file="res://assets/audio/synth voice 2/audio/defendyourposition.ogg"
+dest_files=["res://.godot/imported/defendyourposition.ogg-c0f8c9e294dcd04f0fddc1c55fcd45a3.oggvorbisstr"]
 
 [params]
 

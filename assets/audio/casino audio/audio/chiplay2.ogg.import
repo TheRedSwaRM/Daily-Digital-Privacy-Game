@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://djdh8hmle24mt"
-path="res://.godot/imported/chipLay2.ogg-b3b113ea8d0e6039483acf42c992c0b5.oggvorbisstr"
+path="res://.godot/imported/chiplay2.ogg-3be49dc9251aa43dfc75f50341286aed.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Casino Audio/Audio/chipLay2.ogg"
-dest_files=["res://.godot/imported/chipLay2.ogg-b3b113ea8d0e6039483acf42c992c0b5.oggvorbisstr"]
+source_file="res://assets/audio/casino audio/audio/chiplay2.ogg"
+dest_files=["res://.godot/imported/chiplay2.ogg-3be49dc9251aa43dfc75f50341286aed.oggvorbisstr"]
 
 [params]
 

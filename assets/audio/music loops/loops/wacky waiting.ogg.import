@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://d12ace7khtw7y"
-path="res://.godot/imported/Wacky Waiting.ogg-51bfe56c5b3cb4952c6186764b7c2ad7.oggvorbisstr"
+path="res://.godot/imported/wacky waiting.ogg-5ef41508a44460a1b042b8a451b8e07a.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Music Loops/Loops/Wacky Waiting.ogg"
-dest_files=["res://.godot/imported/Wacky Waiting.ogg-51bfe56c5b3cb4952c6186764b7c2ad7.oggvorbisstr"]
+source_file="res://assets/audio/music loops/loops/wacky waiting.ogg"
+dest_files=["res://.godot/imported/wacky waiting.ogg-5ef41508a44460a1b042b8a451b8e07a.oggvorbisstr"]
 
 [params]
 

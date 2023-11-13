@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dkhrnr5d7j4el"
-path="res://.godot/imported/powerUp11.ogg-a759dd8373835579ee04a366601b40d5.oggvorbisstr"
+path="res://.godot/imported/powerup11.ogg-0da88d61001c5c6e7882af9a3f37b594.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Digital Audio/Audio/powerUp11.ogg"
-dest_files=["res://.godot/imported/powerUp11.ogg-a759dd8373835579ee04a366601b40d5.oggvorbisstr"]
+source_file="res://assets/audio/digital audio/audio/powerup11.ogg"
+dest_files=["res://.godot/imported/powerup11.ogg-0da88d61001c5c6e7882af9a3f37b594.oggvorbisstr"]
 
 [params]
 

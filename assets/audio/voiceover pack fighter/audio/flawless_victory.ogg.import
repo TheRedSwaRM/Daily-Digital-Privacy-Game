@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://s660ju54nm7y"
-path="res://.godot/imported/flawless_victory.ogg-0f4f5df2abf8f983d94ed2204ad2118b.oggvorbisstr"
+path="res://.godot/imported/flawless_victory.ogg-2f4f5a0ebe7c98e57c1e09d8947b6039.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/Voiceover Pack Fighter/Audio/flawless_victory.ogg"
-dest_files=["res://.godot/imported/flawless_victory.ogg-0f4f5df2abf8f983d94ed2204ad2118b.oggvorbisstr"]
+source_file="res://assets/audio/voiceover pack fighter/audio/flawless_victory.ogg"
+dest_files=["res://.godot/imported/flawless_victory.ogg-2f4f5a0ebe7c98e57c1e09d8947b6039.oggvorbisstr"]
 
 [params]
 
