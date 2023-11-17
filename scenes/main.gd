@@ -2,4 +2,5 @@ extends Node2D
 
 
 func _on_sex_input_detected():
-	print("fuck it we balling")
+	DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/sample.dialogue"),"start")
+	
