@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgae2mp7bs7xe"]
+
+[ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="1_u7nd2"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ClickAreaComponent" parent="." instance=ExtResource("1_u7nd2")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClickAreaComponent"]
+polygon = PackedVector2Array(7, 14, 467, 277, 134, 222, 327, 61)

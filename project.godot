@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Project - Privacy"
-run/main_scene="res://main.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1024
 window/size/viewport_height=576
+
+[gui]
+
+theme/custom_font="res://assets/font/ark-pixel-10px-monospaced-latin.ttf"
 
 [rendering]
 
