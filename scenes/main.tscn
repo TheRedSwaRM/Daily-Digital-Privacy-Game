@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://sdp7xytwmcsi"]
+[gd_scene load_steps=3 format=3 uid="uid://sdp7xytwmcsi"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_favck"]
+[ext_resource type="PackedScene" uid="uid://dthhv0v6y65wl" path="res://scenes/menus/pause_menu.tscn" id="2_05v5l"]
 
 [node name="Main" type="Node" node_paths=PackedStringArray("current_scene")]
 script = ExtResource("1_favck")
 current_scene = NodePath("Area")
 
 [node name="Area" type="Node2D" parent="."]
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_05v5l")]
+visible = false

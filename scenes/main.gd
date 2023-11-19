@@ -17,5 +17,6 @@ func _deferred_change_area(path):
 	current_scene.free()
 	current_scene = new_scene.instantiate()
 	
-	get_tree().root.add_child(current_scene)
+	add_child(current_scene)
 	current_scene.name = "Area"
+	move_child(current_scene, 0)
