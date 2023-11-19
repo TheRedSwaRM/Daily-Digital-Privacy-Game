@@ -880,19 +880,15 @@ color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
 offset_left = 512.0
 offset_top = -320.0
-offset_right = 512.0
-offset_bottom = -320.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 1536.0
+offset_bottom = 256.0
 rotation = 1.5708
 texture = ExtResource("1_nk2he")
 expand_mode = 2
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="Blurry" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_6kn22")
