@@ -4,8 +4,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_leon5"]
 shader = ExtResource("1_280p3")
-shader_parameter/blur = 0.0
-shader_parameter/brightness = 1.0
+shader_parameter/blur = 4.0
+shader_parameter/brightness = 0.7
 
 [node name="Blur" type="ColorRect"]
 material = SubResource("ShaderMaterial_leon5")

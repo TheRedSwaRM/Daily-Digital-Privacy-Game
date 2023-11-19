@@ -1,9 +1,14 @@
-[gd_scene load_steps=109 format=3 uid="uid://cng212mq5ul3p"]
+[gd_scene load_steps=110 format=3 uid="uid://cng212mq5ul3p"]
 
 [ext_resource type="Script" path="res://scenes/intro.gd" id="1_574f2"]
 [ext_resource type="Texture2D" uid="uid://ckqpuj5s2ry8v" path="res://assets/bg/scene1.png" id="1_nk2he"]
 [ext_resource type="Texture2D" uid="uid://cebey825gvecg" path="res://assets/bg/intro_eyes_anim.png" id="2_284jk"]
-[ext_resource type="PackedScene" uid="uid://smav7ilugg5n" path="res://scenes/components/blur.tscn" id="3_0iy8x"]
+[ext_resource type="Shader" path="res://scenes/components/blur.gdshader" id="3_5g587"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6kn22"]
+shader = ExtResource("3_5g587")
+shader_parameter/blur = 4.0
+shader_parameter/brightness = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_csp3y"]
 atlas = ExtResource("2_284jk")
@@ -750,43 +755,43 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 2.4, 3.2, 4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(512, -380), Vector2(512, -380), Vector2(336, -256), Vector2(0, 0)]
+"values": [Vector2(512, -392), Vector2(512, -392), Vector2(336, -312), Vector2(0, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Blur:material:shader_parameter/blur")
+tracks/3/path = NodePath("TextureRect:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 4, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [4.0, 4.0, 0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Blur:material:shader_parameter/brightness")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 4, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.7, 0.7, 1.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("TextureRect:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(3.9, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1.15, 1.15), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Blurry:material:shader_parameter/blur")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.4, 2.8, 3.2, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [4.0, 2.0, 4.0, 4.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Blurry:material:shader_parameter/brightness")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.4, 2.8, 3.2, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.7, 1.0, 0.7, 0.7, 1.0]
 }
 
 [sub_resource type="Animation" id="Animation_78it3"]
@@ -818,38 +823,38 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Blur:material:shader_parameter/blur")
+tracks/2/path = NodePath("TextureRect:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [4.0]
+"values": [Vector2(1, 1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Blur:material:shader_parameter/brightness")
+tracks/3/path = NodePath("Blurry:material:shader_parameter/blur")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.7]
+"values": [4.0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("TextureRect:scale")
+tracks/4/path = NodePath("Blurry:material:shader_parameter/brightness")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_76hmj"]
@@ -880,7 +885,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 512.0
 offset_top = -320.0
-offset_right = 511.999
+offset_right = 512.0
 offset_bottom = -320.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -889,8 +894,14 @@ texture = ExtResource("1_nk2he")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Blur" parent="." instance=ExtResource("3_0iy8x")]
+[node name="Blurry" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_6kn22")
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="SideBar" type="ColorRect" parent="."]
 layout_mode = 1

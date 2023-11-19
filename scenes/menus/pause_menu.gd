@@ -1,5 +1,7 @@
 extends Control
 
+@onready var blur = $Blur
+
 func open_menu():
 	visible = true
 	mouse_filter = Control.MOUSE_FILTER_STOP
