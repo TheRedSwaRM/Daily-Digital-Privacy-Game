@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgae2mp7bs7xe"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_favck"]
+[ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="1_u7nd2"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_favck")
+
+[node name="Sex" parent="." instance=ExtResource("1_u7nd2")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sex"]
+polygon = PackedVector2Array(7, 14, 460, 42, 191, 189, -3, 257)
+
+[connection signal="input_detected" from="Sex" to="." method="_on_sex_input_detected"]
