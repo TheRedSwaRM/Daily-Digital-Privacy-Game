@@ -11,9 +11,20 @@ func close_menu():
 
 func _input(event):
 	if !get_tree().paused: return
-	accept_event()
 	if event is InputEventKey and event.pressed and !event.is_echo():
 		match event.keycode:
 			KEY_ESCAPE:
-				
+				accept_event()
 				close_menu()
+
+
+func _on_resume_button_pressed():
+	close_menu()
+
+
+func _on_settings_button_pressed():
+	pass # Replace with function body.
+
+
+func _on_quit_button_pressed():
+	get_tree().quit()
