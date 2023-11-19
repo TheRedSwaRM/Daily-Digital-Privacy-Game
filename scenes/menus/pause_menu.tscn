@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dthhv0v6y65wl"]
+[gd_scene load_steps=2 format=3 uid="uid://dthhv0v6y65wl"]
+
+[ext_resource type="Script" path="res://scenes/menus/pause_menu.gd" id="1_6pq4f"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
@@ -9,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_6pq4f")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
