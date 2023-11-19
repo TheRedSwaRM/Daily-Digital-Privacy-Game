@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://smav7ilugg5n"]
+
+[ext_resource type="Shader" path="res://scenes/components/blur.gdshader" id="1_280p3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_leon5"]
+shader = ExtResource("1_280p3")
+shader_parameter/blur = 4.0
+shader_parameter/brightness = 0.7
+
+[node name="Blur" type="ColorRect"]
+material = SubResource("ShaderMaterial_leon5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

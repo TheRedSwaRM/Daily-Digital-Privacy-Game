@@ -23,6 +23,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 window/size/viewport_width=1024
 window/size/viewport_height=576
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
@@ -33,6 +34,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 fonts/dynamic_fonts/use_oversampling=false
 theme/custom_font="res://assets/font/ark-pixel-10px-monospaced-latin.ttf"
+theme/default_font_antialiasing=0
 theme/default_font_subpixel_positioning=0
 
 [internationalization]
