@@ -4,9 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="1_u7nd2"]
 [ext_resource type="Texture2D" uid="uid://ckqpuj5s2ry8v" path="res://assets/bg/scene1.png" id="2_qg47k"]
 
-[node name="MainScene" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="MainScene" type="Node2D"]
 script = ExtResource("1_favck")
 
 [node name="Control" type="Control" parent="."]
@@ -14,6 +12,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1024.0
 offset_bottom = 576.0
+mouse_filter = 2
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 0
