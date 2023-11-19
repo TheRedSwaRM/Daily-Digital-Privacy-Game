@@ -1,14 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgae2mp7bs7xe"]
+[gd_scene load_steps=4 format=3 uid="uid://bgae2mp7bs7xe"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_favck"]
 [ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="1_u7nd2"]
+[ext_resource type="Texture2D" uid="uid://ckqpuj5s2ry8v" path="res://assets/bg/scene1.png" id="2_qg47k"]
 
-[node name="Node2D" type="Node2D"]
+[node name="MainScene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_favck")
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1024.0
+offset_bottom = 576.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 576.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 576.0
+texture = ExtResource("2_qg47k")
+stretch_mode = 5
+
 [node name="Sex" parent="." instance=ExtResource("1_u7nd2")]
+monitorable = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sex"]
-polygon = PackedVector2Array(7, 14, 460, 42, 191, 189, -3, 257)
+position = Vector2(508, 265)
+polygon = PackedVector2Array(160, 118, 127, 93, 124, 17, 7, 15, 7, 118)
 
 [connection signal="input_detected" from="Sex" to="." method="_on_sex_input_detected"]
