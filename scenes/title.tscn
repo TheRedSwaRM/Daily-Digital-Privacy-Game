@@ -49,7 +49,7 @@ offset_top = 126.0
 offset_right = 105.0
 offset_bottom = 149.0
 grow_horizontal = 2
-text = "Daily Digital Privacy"
+text = "Example Title"
 label_settings = SubResource("LabelSettings_cgrju")
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
