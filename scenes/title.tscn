@@ -5,7 +5,6 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_cgrju"]
 font_size = 50
-font_color = Color(0, 0, 0, 1)
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -38,6 +37,7 @@ offset_right = 320.0
 offset_bottom = 288.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
