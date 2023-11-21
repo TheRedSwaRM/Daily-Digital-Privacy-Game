@@ -40,7 +40,3 @@ func _deferred_change_area(path: String):
 	current_scene.name = "Area"
 	move_child(current_scene, 0)
 	
-#	# Finding room essentials to connect changing area
-#	var room_essentials = current_scene.get_node("AreaEssentials")
-#	room_essentials.room_change.connect(goto_area)
-#	print(room_essentials)
