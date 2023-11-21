@@ -1,6 +1,5 @@
 extends Node
 
-@export var current_scene: Node2D
 @onready var pause_menu = $PauseMenu
 @onready var mouse_position = %MousePos
 #
@@ -25,13 +24,13 @@ func _unhandled_input(event):
 		# print(get_viewport().get_visible_rect().size/2 - $Area.get_local_mouse_position())
 		# print($Area.get_local_mouse_position())
 
-## Goes to anotehr area.
-func goto_area(path):
+## Goes to another area.
+func goto_area(path: String):
 	call_deferred("_deferred_change_area", path)
 
 ## Changes scene. Deferred JUST IN CASE.
-func _deferred_change_area(path):
-	current_scene = get_node("Area")
+func _deferred_change_area(path: String):
+	var current_scene = get_node("Area")
 	var new_scene = ResourceLoader.load(path)
 	
 	current_scene.free()
@@ -40,3 +39,8 @@ func _deferred_change_area(path):
 	add_child(current_scene)
 	current_scene.name = "Area"
 	move_child(current_scene, 0)
+	
+#	# Finding room essentials to connect changing area
+#	var room_essentials = current_scene.get_node("AreaEssentials")
+#	room_essentials.room_change.connect(goto_area)
+#	print(room_essentials)
