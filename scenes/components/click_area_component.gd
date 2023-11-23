@@ -8,6 +8,8 @@ class_name ClickableArea
 ## Collision shape created after instantiation.
 @export var collision_shape: CollisionPolygon2D
 
+
+@export_category("Transfer Area")
 ## The PackedScene to switch to in the case of pressing this area.
 ## Note: Only have this WHEN you are sure that the following clickable area is 
 ## for transferring only. Otherwise, use input_detected.
