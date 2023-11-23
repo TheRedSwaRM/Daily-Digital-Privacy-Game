@@ -27,6 +27,5 @@ func _on_resume_button_pressed():
 func _on_settings_button_pressed():
 	pass # Replace with function body.
 
-
 func _on_quit_button_pressed():
 	get_tree().quit()

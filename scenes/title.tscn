@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtyhugn5lp8uw"]
+[gd_scene load_steps=5 format=3 uid="uid://dtyhugn5lp8uw"]
 
 [ext_resource type="Script" path="res://scenes/title.gd" id="1_jyqf0"]
 [ext_resource type="PackedScene" uid="uid://d26plswt5o2b7" path="res://scenes/components/title_button.tscn" id="2_lg53f"]
+[ext_resource type="PackedScene" uid="uid://crvbt6pqib5vv" path="res://scenes/menus/settings_menu.tscn" id="3_3qu47"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cgrju"]
 font_size = 50
@@ -75,10 +76,19 @@ text = "New Game"
 layout_mode = 2
 text = "Continue"
 
+[node name="Settings" parent="BoxContainer" instance=ExtResource("2_lg53f")]
+layout_mode = 2
+text = "Settings"
+
 [node name="Quit" parent="BoxContainer" instance=ExtResource("2_lg53f")]
 layout_mode = 2
 text = "Quit"
 
+[node name="SettingsMenu" parent="." instance=ExtResource("3_3qu47")]
+visible = false
+layout_mode = 1
+
 [connection signal="pressed" from="BoxContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="BoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="BoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="BoxContainer/Quit" to="." method="_on_quit_pressed"]

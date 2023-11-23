@@ -63,7 +63,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="Button" type="Button" parent="."]
+[node name="ReturnButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -82,3 +82,4 @@ text = "Return"
 
 [connection signal="toggled" from="GridContainer/FullScreenOption" to="." method="_on_full_screen_option_toggled"]
 [connection signal="value_changed" from="GridContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
