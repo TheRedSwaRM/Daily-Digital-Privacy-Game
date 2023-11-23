@@ -8,8 +8,9 @@ extends Node
 
 
 func _ready():
+	Events.change_map.connect(_goto_area)
 	var new_scene = starting_screen.resource_path
-	goto_area(new_scene)
+	Events.change_map.emit(new_scene)
 
 
 func _unhandled_input(event):
@@ -23,7 +24,7 @@ func _unhandled_input(event):
 		# print($Area.get_local_mouse_position())
 
 ## Goes to another area.
-func goto_area(path: String):
+func _goto_area(path: String):
 	call_deferred("_deferred_change_area", path)
 
 ## Changes scene. Deferred JUST IN CASE.
