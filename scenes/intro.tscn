@@ -868,7 +868,6 @@ custom_minimum_size = Vector2(1024, 576)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_574f2")
-skip_intro = true
 
 [node name="BlackBack" type="ColorRect" parent="."]
 layout_mode = 1

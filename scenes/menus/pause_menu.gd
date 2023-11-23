@@ -1,6 +1,7 @@
 extends Control
 
 @onready var blur = $Blur
+@onready var settings_menu = $SettingsMenu
 
 func open_menu():
 	visible = true
@@ -25,7 +26,7 @@ func _on_resume_button_pressed():
 
 
 func _on_settings_button_pressed():
-	pass # Replace with function body.
+	settings_menu.show()
 
 func _on_quit_button_pressed():
 	get_tree().quit()
