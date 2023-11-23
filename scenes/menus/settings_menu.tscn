@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://crvbt6pqib5vv"]
+[gd_scene load_steps=4 format=3 uid="uid://crvbt6pqib5vv"]
 
+[ext_resource type="Script" path="res://scenes/menus/settings_menu.gd" id="1_cdpil"]
 [ext_resource type="LabelSettings" uid="uid://bmxd075wxx0x5" path="res://scenes/menus/settings_menu_labels.tres" id="1_ft2k5"]
 [ext_resource type="FontFile" uid="uid://isjud3j2bjck" path="res://assets/font/ark-pixel-12px-monospaced-latin.ttf" id="1_kcy8h"]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_cdpil")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -42,21 +44,21 @@ grow_vertical = 2
 theme_override_constants/v_separation = 16
 columns = 2
 
-[node name="Label" type="Label" parent="GridContainer"]
+[node name="FullScreenLabel" type="Label" parent="GridContainer"]
 layout_mode = 2
 text = "Fullscreen"
 label_settings = ExtResource("1_ft2k5")
 
-[node name="CheckBox" type="CheckButton" parent="GridContainer"]
+[node name="FullScreenOption" type="CheckButton" parent="GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Label2" type="Label" parent="GridContainer"]
+[node name="VolumeLabel" type="Label" parent="GridContainer"]
 layout_mode = 2
 text = "Volume"
 label_settings = ExtResource("1_ft2k5")
 
-[node name="HSlider" type="HSlider" parent="GridContainer"]
+[node name="VolumeSlider" type="HSlider" parent="GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -77,3 +79,6 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_kcy8h")
 theme_override_font_sizes/font_size = 36
 text = "Return"
+
+[connection signal="toggled" from="GridContainer/FullScreenOption" to="." method="_on_full_screen_option_toggled"]
+[connection signal="value_changed" from="GridContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
