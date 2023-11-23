@@ -2,13 +2,14 @@ extends Node
 
 @onready var pause_menu = $PauseMenu
 @onready var mouse_position = %MousePos
+@export var starting_screen: PackedScene
 #
 #	if event is InputEventMouseMotion and event.button_mask > 0:
 #		cave.position.x = clampf(cave.position.x + event.relative.x, -CAVE_LIMIT, 0)
 
 
 func _ready():
-	var new_scene = "res://scenes/bedroom.tscn"
+	var new_scene = starting_screen.resource_path
 	goto_area(new_scene)
 
 
