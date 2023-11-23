@@ -27,8 +27,9 @@ offset_bottom = 576.0
 texture = ExtResource("2_kcxsm")
 stretch_mode = 5
 
-[node name="Sex" parent="." instance=ExtResource("3_tx558")]
+[node name="Sex" parent="." node_paths=PackedStringArray("collision_shape") instance=ExtResource("3_tx558")]
 monitorable = false
+collision_shape = NodePath("CollisionPolygon2D")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sex"]
 position = Vector2(508, 265)

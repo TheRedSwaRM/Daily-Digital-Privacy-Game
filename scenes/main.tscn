@@ -12,7 +12,3 @@ starting_screen = ExtResource("2_xtrnp")
 
 [node name="PauseMenu" parent="." instance=ExtResource("2_05v5l")]
 visible = false
-
-[node name="MousePos" type="RayCast2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(512, 288)

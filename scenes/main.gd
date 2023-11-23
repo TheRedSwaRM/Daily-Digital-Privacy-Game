@@ -1,7 +1,6 @@
 extends Node
 
 @onready var pause_menu = $PauseMenu
-@onready var mouse_position = %MousePos
 @export var starting_screen: PackedScene
 #
 #	if event is InputEventMouseMotion and event.button_mask > 0:
@@ -20,8 +19,6 @@ func _unhandled_input(event):
 			KEY_ESCAPE:
 				get_tree().paused = true
 				pause_menu.open_menu()
-	if event is InputEventMouseMotion:
-		mouse_position.target_position = $Area.get_local_mouse_position() - get_viewport().get_visible_rect().size/2
 		# print(get_viewport().get_visible_rect().size/2 - $Area.get_local_mouse_position())
 		# print($Area.get_local_mouse_position())
 
