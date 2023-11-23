@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgae2mp7bs7xe"]
+[gd_scene load_steps=5 format=3 uid="uid://bgae2mp7bs7xe"]
 
 [ext_resource type="Script" path="res://scenes/bedroom.gd" id="1_ojhje"]
 [ext_resource type="Texture2D" uid="uid://ckqpuj5s2ry8v" path="res://assets/bg/scene1.png" id="2_kcxsm"]
 [ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="3_tx558"]
+[ext_resource type="PackedScene" uid="uid://cng212mq5ul3p" path="res://scenes/intro.tscn" id="4_rcxoa"]
 
 [node name="Bedroom" type="Node2D"]
 script = ExtResource("1_ojhje")
@@ -27,11 +28,11 @@ offset_bottom = 576.0
 texture = ExtResource("2_kcxsm")
 stretch_mode = 5
 
-[node name="Sex" parent="." instance=ExtResource("3_tx558")]
+[node name="Sex" parent="." node_paths=PackedStringArray("collision_shape") instance=ExtResource("3_tx558")]
 monitorable = false
+collision_shape = NodePath("CollisionPolygon2D")
+transfer_area = ExtResource("4_rcxoa")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sex"]
 position = Vector2(508, 265)
 polygon = PackedVector2Array(160, 118, 127, 93, 124, 17, 7, 15, 7, 118)
-
-[connection signal="input_detected" from="Sex" to="." method="_on_sex_input_detected"]

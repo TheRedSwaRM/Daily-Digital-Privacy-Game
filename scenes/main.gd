@@ -1,11 +1,16 @@
 extends Node
 
-@export var current_scene: Node2D
 @onready var pause_menu = $PauseMenu
+@export var starting_screen: PackedScene
+#
+#	if event is InputEventMouseMotion and event.button_mask > 0:
+#		cave.position.x = clampf(cave.position.x + event.relative.x, -CAVE_LIMIT, 0)
+
 
 func _ready():
-	var new_scene = "res://scenes/bedroom.tscn"
-	goto_area(new_scene)
+	Events.change_map.connect(_goto_area)
+	var new_scene = starting_screen.resource_path
+	Events.change_map.emit(new_scene)
 
 
 func _unhandled_input(event):
@@ -15,14 +20,16 @@ func _unhandled_input(event):
 			KEY_ESCAPE:
 				get_tree().paused = true
 				pause_menu.open_menu()
+		# print(get_viewport().get_visible_rect().size/2 - $Area.get_local_mouse_position())
+		# print($Area.get_local_mouse_position())
 
-## Goes to anotehr area.
-func goto_area(path):
+## Goes to another area.
+func _goto_area(path: String):
 	call_deferred("_deferred_change_area", path)
 
 ## Changes scene. Deferred JUST IN CASE.
-func _deferred_change_area(path):
-	current_scene = get_node("Area")
+func _deferred_change_area(path: String):
+	var current_scene = get_node("Area")
 	var new_scene = ResourceLoader.load(path)
 	
 	current_scene.free()
@@ -31,3 +38,4 @@ func _deferred_change_area(path):
 	add_child(current_scene)
 	current_scene.name = "Area"
 	move_child(current_scene, 0)
+	
