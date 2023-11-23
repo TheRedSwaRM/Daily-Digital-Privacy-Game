@@ -12,7 +12,6 @@ shadow_size = 0
 
 [node name="ClickAreaComponent" type="Area2D"]
 script = ExtResource("1_leh72")
-label_name = "sdfsdf"
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -28,7 +27,6 @@ offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-text = "aaaaa"
 label_settings = SubResource("LabelSettings_wy764")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

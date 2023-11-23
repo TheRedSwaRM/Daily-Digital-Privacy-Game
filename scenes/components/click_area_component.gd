@@ -1,7 +1,16 @@
 extends Area2D
+class_name ClickableArea
 
+## Name for the label in the case that it would be hovered over by the mouse.
+## Default: NULL
 @export var label_name: String
+
+## Collision shape created after instantiation.
 @export var collision_shape: CollisionPolygon2D
+
+## The PackedScene to switch to in the case of pressing this area.
+@export var transfer_area: PackedScene
+
 @onready var label_node: Label = $Label
 
 signal input_detected
