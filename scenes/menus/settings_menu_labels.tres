@@ -1,7 +1,4 @@
-[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bmxd075wxx0x5"]
-
-[ext_resource type="FontFile" uid="uid://isjud3j2bjck" path="res://assets/font/ark-pixel-12px-monospaced-latin.ttf" id="1_vct2g"]
+[gd_resource type="LabelSettings" format=3 uid="uid://bmxd075wxx0x5"]
 
 [resource]
-font = ExtResource("1_vct2g")
-font_size = 36
+font_size = 10

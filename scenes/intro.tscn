@@ -818,7 +818,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 2.4, 3.2, 4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(512, -392), Vector2(512, -392), Vector2(336, -312), Vector2(0, 0)]
+"values": [Vector2(128, -104), Vector2(128, -104), Vector2(88, -80), Vector2(0, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -864,9 +864,10 @@ _data = {
 }
 
 [node name="Intro" type="Control"]
-custom_minimum_size = Vector2(1024, 576)
 layout_mode = 3
 anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 144.0
 script = ExtResource("1_574f2")
 
 [node name="BlackBack" type="ColorRect" parent="."]
@@ -874,16 +875,23 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -768.0
+offset_bottom = -432.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-offset_left = 512.0
-offset_top = -320.0
-offset_right = 1536.0
-offset_bottom = 256.0
+anchors_preset = -1
+anchor_left = -4.90625
+anchor_top = 7.54286
+anchor_right = -4.90625
+anchor_bottom = 7.54286
+offset_left = 1768.0
+offset_top = -1406.17
+offset_right = 2024.0
+offset_bottom = -1262.27
 rotation = 1.5708
 texture = ExtResource("1_nk2he")
 expand_mode = 2
@@ -896,17 +904,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SideBar" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -832.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 144.0
 color = Color(0, 0, 0, 1)
 
 [node name="SideBar2" type="ColorRect" parent="."]
@@ -914,14 +919,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 832.0
+offset_left = 208.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(512, 288)
-scale = Vector2(4, 4)
+position = Vector2(128, 72)
 sprite_frames = SubResource("SpriteFrames_vj8q6")
 frame = 99
 
