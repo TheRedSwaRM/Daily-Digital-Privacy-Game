@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/menus/settings_menu.gd" id="1_cdpil"]
 [ext_resource type="LabelSettings" uid="uid://bmxd075wxx0x5" path="res://scenes/menus/settings_menu_labels.tres" id="1_ft2k5"]
-[ext_resource type="FontFile" uid="uid://isjud3j2bjck" path="res://assets/font/ark-pixel-12px-monospaced-latin.ttf" id="1_kcy8h"]
+[ext_resource type="Theme" uid="uid://qlmicia5ewrp" path="res://scenes/components/title_button_theme.tres" id="3_uqyj0"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -20,10 +20,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -272.0
-offset_top = -144.0
-offset_right = 272.0
-offset_bottom = 144.0
+offset_left = -80.0
+offset_top = -72.0
+offset_right = 80.0
+offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
@@ -35,10 +35,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -160.0
-offset_top = -80.0
-offset_right = 160.0
-offset_bottom = 14.0
+offset_left = -72.0
+offset_top = -47.0
+offset_right = 72.0
+offset_bottom = 47.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/v_separation = 16
@@ -65,19 +65,19 @@ size_flags_vertical = 4
 
 [node name="ReturnButton" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 offset_left = -58.0
-offset_top = -228.0
+offset_top = 36.0
 offset_right = 58.0
-offset_bottom = -184.0
+offset_bottom = 48.0
 grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("1_kcy8h")
-theme_override_font_sizes/font_size = 36
+grow_vertical = 2
+theme = ExtResource("3_uqyj0")
+theme_override_font_sizes/font_size = 10
 text = "Return"
 
 [connection signal="toggled" from="GridContainer/FullScreenOption" to="." method="_on_full_screen_option_toggled"]

@@ -1,30 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://d26plswt5o2b7"]
+[gd_scene load_steps=2 format=3 uid="uid://d26plswt5o2b7"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lbljx"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6oknl"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2bdam"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jsmg7"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_itmqb"]
-
-[sub_resource type="Theme" id="Theme_b52xf"]
-Button/colors/font_color = Color(1, 1, 1, 1)
-Button/colors/font_focus_color = Color(0.94902, 0, 0, 1)
-Button/colors/font_hover_color = Color(1, 0, 0, 1)
-Button/colors/font_hover_pressed_color = Color(0.219608, 0, 0, 1)
-Button/colors/font_pressed_color = Color(1, 0, 0, 1)
-Button/font_sizes/font_size = 30
-Button/styles/disabled = SubResource("StyleBoxEmpty_lbljx")
-Button/styles/focus = SubResource("StyleBoxEmpty_6oknl")
-Button/styles/hover = SubResource("StyleBoxEmpty_2bdam")
-Button/styles/normal = SubResource("StyleBoxEmpty_jsmg7")
-Button/styles/pressed = SubResource("StyleBoxEmpty_itmqb")
+[ext_resource type="Theme" uid="uid://qlmicia5ewrp" path="res://scenes/components/title_button_theme.tres" id="1_i40xu"]
 
 [node name="TitleButton" type="Button"]
 offset_right = 40.0
 offset_bottom = 25.0
-theme = SubResource("Theme_b52xf")
+theme = ExtResource("1_i40xu")
 text = "Button"

@@ -11,20 +11,20 @@ script = ExtResource("1_ojhje")
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1024.0
-offset_bottom = 576.0
+offset_right = 256.0
+offset_bottom = 144.0
 mouse_filter = 2
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 0
-offset_right = 1024.0
-offset_bottom = 576.0
+offset_right = 256.0
+offset_bottom = 144.0
 color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
 layout_mode = 0
-offset_right = 1024.0
-offset_bottom = 576.0
+offset_right = 256.0
+offset_bottom = 144.0
 texture = ExtResource("2_kcxsm")
 stretch_mode = 5
 
@@ -34,5 +34,6 @@ collision_shape = NodePath("CollisionPolygon2D")
 transfer_area = ExtResource("4_rcxoa")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sex"]
-position = Vector2(508, 265)
-polygon = PackedVector2Array(160, 118, 127, 93, 124, 17, 7, 15, 7, 118)
+position = Vector2(128, 64)
+scale = Vector2(0.256944, 0.290655)
+polygon = PackedVector2Array(151.784, 106.656, 120.649, 89.453, 120.649, 20.643, 0, 20.643, 0, 110.096)
