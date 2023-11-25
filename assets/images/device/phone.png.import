@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cebey825gvecg"
-path="res://.godot/imported/intro_eyes_anim.png-151c7150f536ccead7f9ee4e2aba93eb.ctex"
+uid="uid://h2puqxkdjy5n"
+path="res://.godot/imported/phone.png-c09e2fbaf86b49e0acab81d4cf7080f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bg/intro_eyes_anim.png"
-dest_files=["res://.godot/imported/intro_eyes_anim.png-151c7150f536ccead7f9ee4e2aba93eb.ctex"]
+source_file="res://assets/images/device/phone.png"
+dest_files=["res://.godot/imported/phone.png-c09e2fbaf86b49e0acab81d4cf7080f5.ctex"]
 
 [params]
 
