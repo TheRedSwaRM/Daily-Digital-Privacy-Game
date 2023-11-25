@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgae2mp7bs7xe"]
 
-[ext_resource type="Script" path="res://scenes/bedroom.gd" id="1_ojhje"]
-[ext_resource type="Texture2D" uid="uid://bxwknkacjbvc2" path="res://assets/images/bg/scene1.png" id="2_ilml2"]
-[ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="3_tx558"]
-[ext_resource type="PackedScene" uid="uid://cng212mq5ul3p" path="res://scenes/intro.tscn" id="4_rcxoa"]
+[ext_resource type="Script" path="res://scenes/areas/bedroom.gd" id="1_2p8n8"]
+[ext_resource type="Texture2D" uid="uid://bxwknkacjbvc2" path="res://assets/images/bg/room1.png" id="2_agy0g"]
+[ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="3_vfxgg"]
+[ext_resource type="PackedScene" uid="uid://cng212mq5ul3p" path="res://scenes/intro.tscn" id="4_8uf2i"]
 
 [node name="Bedroom" type="Node2D"]
-script = ExtResource("1_ojhje")
+script = ExtResource("1_2p8n8")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -25,13 +25,13 @@ color = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 144.0
-texture = ExtResource("2_ilml2")
+texture = ExtResource("2_agy0g")
 stretch_mode = 5
 
-[node name="Sex" parent="." node_paths=PackedStringArray("collision_shape") instance=ExtResource("3_tx558")]
+[node name="Sex" parent="." node_paths=PackedStringArray("collision_shape") instance=ExtResource("3_vfxgg")]
 monitorable = false
 collision_shape = NodePath("CollisionPolygon2D")
-transfer_area = ExtResource("4_rcxoa")
+transfer_area = ExtResource("4_8uf2i")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sex"]
 position = Vector2(128, 64)

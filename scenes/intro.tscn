@@ -1,7 +1,7 @@
 [gd_scene load_steps=110 format=3 uid="uid://cng212mq5ul3p"]
 
 [ext_resource type="Script" path="res://scenes/intro.gd" id="1_574f2"]
-[ext_resource type="Texture2D" uid="uid://bxwknkacjbvc2" path="res://assets/images/bg/scene1.png" id="2_y3vql"]
+[ext_resource type="Texture2D" uid="uid://bxwknkacjbvc2" path="res://assets/images/bg/room1.png" id="2_701y8"]
 [ext_resource type="Shader" path="res://scenes/components/blur.gdshader" id="3_5g587"]
 [ext_resource type="Texture2D" uid="uid://cebey825gvecg" path="res://assets/images/bg/intro_eyes_anim.png" id="4_snlgd"]
 
@@ -888,12 +888,10 @@ anchor_left = -4.90625
 anchor_top = 7.54286
 anchor_right = -4.90625
 anchor_bottom = 7.54286
-offset_left = 1256.0
-offset_top = -1086.17
-offset_right = 1512.0
-offset_bottom = -942.274
+offset_right = 256.0
+offset_bottom = 143.896
 rotation = 1.5708
-texture = ExtResource("2_y3vql")
+texture = ExtResource("2_701y8")
 expand_mode = 2
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true

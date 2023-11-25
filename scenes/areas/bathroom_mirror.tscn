@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://b83b2guhkp4gh"]
+
+[ext_resource type="Texture2D" uid="uid://dti5whs8wtbxj" path="res://assets/images/bg/bathroom1.png" id="1_3vn62"]
+
+[node name="BathroomMirror" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 144.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 144.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 144.0
+texture = ExtResource("1_3vn62")
+stretch_mode = 5

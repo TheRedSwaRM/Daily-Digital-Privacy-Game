@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1cf725yxtx4a"]
+
+[ext_resource type="Texture2D" uid="uid://b4h4uol1nrski" path="res://assets/images/bg/room3.png" id="1_tlhk7"]
+
+[node name="RoomWindow" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 144.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 144.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 144.0
+texture = ExtResource("1_tlhk7")
+stretch_mode = 5
