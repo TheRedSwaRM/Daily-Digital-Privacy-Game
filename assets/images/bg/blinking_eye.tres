@@ -477,7 +477,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"blinking_transition",
-"speed": 60.0
+"speed": 120.0
 }, {
 "frames": [{
 "duration": 1.0,
