@@ -1,6 +1,7 @@
 extends Node
 
 @onready var pause_menu = $PauseMenu
+@onready var transition_sprite = $TransitionSprite
 @export var starting_screen: PackedScene
 #
 #	if event is InputEventMouseMotion and event.button_mask > 0:
@@ -25,8 +26,12 @@ func _unhandled_input(event):
 
 ## Goes to another area.
 func _goto_area(path: String):
+	transition_sprite.play("blinking_transition")
+	await transition_sprite.animation_finished
 	call_deferred("_deferred_change_area", path)
-
+	transition_sprite.play_backwards("blinking_transition")
+	await transition_sprite.animation_finished
+	
 ## Changes scene. Deferred JUST IN CASE.
 func _deferred_change_area(path: String):
 	var current_scene = get_node("Area")
@@ -38,4 +43,5 @@ func _deferred_change_area(path: String):
 	add_child(current_scene)
 	current_scene.name = "Area"
 	move_child(current_scene, 0)
+	
 	
