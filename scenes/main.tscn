@@ -18,5 +18,3 @@ visible = false
 position = Vector2(128, 72)
 sprite_frames = ExtResource("4_hkoyb")
 animation = &"blinking_transition"
-frame = 9
-frame_progress = 1.0

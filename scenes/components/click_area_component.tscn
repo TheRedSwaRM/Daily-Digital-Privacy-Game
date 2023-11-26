@@ -1,14 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://doa3baqaprvkj"]
+[gd_scene load_steps=3 format=3 uid="uid://doa3baqaprvkj"]
 
 [ext_resource type="Script" path="res://scenes/components/click_area_component.gd" id="1_leh72"]
-[ext_resource type="FontFile" uid="uid://isjud3j2bjck" path="res://assets/font/ark-pixel-12px-monospaced-latin.ttf" id="2_2ofen"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wy764"]
-font = ExtResource("2_2ofen")
-font_size = 24
-outline_size = 6
+font_size = 10
+outline_size = 4
 outline_color = Color(0, 0, 0, 1)
-shadow_size = 0
 
 [node name="ClickAreaComponent" type="Area2D"]
 script = ExtResource("1_leh72")

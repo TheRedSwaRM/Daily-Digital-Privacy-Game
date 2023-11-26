@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://baxqxgscldslf"]
+[gd_scene load_steps=3 format=3 uid="uid://baxqxgscldslf"]
 
 [ext_resource type="Texture2D" uid="uid://b4h4uol1nrski" path="res://assets/images/bg/room3.png" id="1_h5mag"]
+[ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="2_57hfl"]
 
 [node name="BedroomWindow" type="Node2D"]
 
@@ -23,3 +24,11 @@ offset_right = 256.0
 offset_bottom = 144.0
 texture = ExtResource("1_h5mag")
 stretch_mode = 5
+
+[node name="ClickAreaComponent" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_57hfl")]
+label_name = "Laptop"
+collision_polygon = NodePath("CollisionPolygon2D")
+transfer_area = "res://scenes/areas/bedroom_laptop.tscn"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClickAreaComponent"]
+polygon = PackedVector2Array(24, 0, 48, 0, 48, 144, 24, 144)
