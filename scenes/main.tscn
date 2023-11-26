@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_favck"]
 [ext_resource type="PackedScene" uid="uid://dthhv0v6y65wl" path="res://scenes/menus/pause_menu.tscn" id="2_05v5l"]
-[ext_resource type="PackedScene" uid="uid://bgae2mp7bs7xe" path="res://scenes/areas/room_desk.tscn" id="2_q1sru"]
+[ext_resource type="PackedScene" uid="uid://da0nxr2b0t2tm" path="res://scenes/areas/bedroom_laptop.tscn" id="2_ur4gu"]
 [ext_resource type="SpriteFrames" uid="uid://c5m6vqysaysk5" path="res://assets/images/bg/blinking_eye.tres" id="4_hkoyb"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_favck")
-starting_screen = ExtResource("2_q1sru")
+starting_screen = ExtResource("2_ur4gu")
 
 [node name="Area" type="Node2D" parent="."]
 

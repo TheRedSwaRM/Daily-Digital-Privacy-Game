@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1cf725yxtx4a"]
+[gd_scene load_steps=2 format=3 uid="uid://baxqxgscldslf"]
 
-[ext_resource type="Texture2D" uid="uid://b4h4uol1nrski" path="res://assets/images/bg/room3.png" id="1_tlhk7"]
+[ext_resource type="Texture2D" uid="uid://b4h4uol1nrski" path="res://assets/images/bg/room3.png" id="1_h5mag"]
 
-[node name="RoomWindow" type="Node2D"]
+[node name="BedroomWindow" type="Node2D"]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -21,5 +21,5 @@ color = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 144.0
-texture = ExtResource("1_tlhk7")
+texture = ExtResource("1_h5mag")
 stretch_mode = 5

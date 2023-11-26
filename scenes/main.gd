@@ -26,11 +26,14 @@ func _unhandled_input(event):
 
 ## Goes to another area.
 func _goto_area(path: String):
-	transition_sprite.play("blinking_transition")
-	await transition_sprite.animation_finished
-	call_deferred("_deferred_change_area", path)
-	transition_sprite.play_backwards("blinking_transition")
-	await transition_sprite.animation_finished
+	if ResourceLoader.exists(path):
+		transition_sprite.play("blinking_transition")
+		await transition_sprite.animation_finished
+		
+		call_deferred("_deferred_change_area", path)
+		
+		transition_sprite.play_backwards("blinking_transition")
+		await transition_sprite.animation_finished
 	
 ## Changes scene. Deferred JUST IN CASE.
 func _deferred_change_area(path: String):
