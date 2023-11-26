@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckqpuj5s2ry8v"
-path="res://.godot/imported/scene1.png-d28006e47c22f47956f7c996106818b1.ctex"
+uid="uid://dti5whs8wtbxj"
+path="res://.godot/imported/bathroom1.png-24acdf298e7ed60095ccde52e6258040.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bg/scene1.png"
-dest_files=["res://.godot/imported/scene1.png-d28006e47c22f47956f7c996106818b1.ctex"]
+source_file="res://assets/images/bg/bathroom1.png"
+dest_files=["res://.godot/imported/bathroom1.png-24acdf298e7ed60095ccde52e6258040.ctex"]
 
 [params]
 

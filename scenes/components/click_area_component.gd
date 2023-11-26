@@ -1,19 +1,17 @@
 extends Area2D
-class_name ClickableArea
 
 ## Name for the label in the case that it would be hovered over by the mouse.
 ## Default: NULL
-@export var label_name: String
+@export var label_name: String = ""
 
 ## Collision shape created after instantiation.
-@export var collision_shape: CollisionPolygon2D
-
+@export var collision_polygon: CollisionPolygon2D
 
 @export_category("Transfer Area")
 ## The PackedScene to switch to in the case of pressing this area.
 ## Note: Only have this WHEN you are sure that the following clickable area is 
 ## for transferring only. Otherwise, use input_detected.
-@export var transfer_area: PackedScene
+@export_file var transfer_area
 
 @onready var label_node: Label = $Label
 
@@ -23,7 +21,7 @@ signal input_detected
 
 func _ready():
 	label_node.text = label_name
-	label_node.position = collision_shape.position
+	label_node.position = collision_polygon.position
 	
 # You might think: isn't think a bit repetitive? Ask yourself: isn't it a bit
 # too repetitive to just bust over the same function with the same arguments
@@ -34,7 +32,7 @@ func _on_input_event(_viewport, event, _shape_idx):
 		input_detected.emit()
 
 		if transfer_area != null:
-			Events.change_map.emit(transfer_area.resource_path)
+			Events.change_map.emit(transfer_area)
 
 func _on_mouse_entered():
 	label_node.visible = true

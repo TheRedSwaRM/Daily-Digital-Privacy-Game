@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://bom430mddd0lm"]
+
+[ext_resource type="Texture2D" uid="uid://bd7sorescsxql" path="res://assets/images/bg/room2.png" id="1_var0o"]
+[ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="2_8n6js"]
+
+[node name="BedroomFront" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 144.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 144.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 144.0
+texture = ExtResource("1_var0o")
+stretch_mode = 5
+
+[node name="ToLaptop" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_8n6js")]
+label_name = "Laptop"
+collision_polygon = NodePath("CollisionPolygon2D")
+transfer_area = "res://scenes/areas/bedroom_laptop.tscn"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToLaptop"]
+position = Vector2(184, 0)
+polygon = PackedVector2Array(48, 0, 24, 0, 24, 144, 48, 144)
+
+[node name="ToBathroom" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_8n6js")]
+position = Vector2(-139, 12)
+label_name = "Bathroom"
+collision_polygon = NodePath("CollisionPolygon2D")
+transfer_area = "res://scenes/areas/bathroom_door.tscn"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToBathroom"]
+position = Vector2(184, 0)
+polygon = PackedVector2Array(52, 20, 28, 34, 29, 117, 53, 99)
