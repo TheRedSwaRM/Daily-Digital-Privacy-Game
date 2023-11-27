@@ -3,6 +3,9 @@ name: "Artifact Maker"
 #   pull_request:
 #     branches:
 #       - debug
+on: workflow_dispatch
+
+
 jobs:
   # job id, can be anything
   export_game:
