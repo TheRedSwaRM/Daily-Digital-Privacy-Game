@@ -1,0 +1,67 @@
+name: "Artifact Maker"
+# on:
+#   pull_request:
+#     branches:
+#       - debug
+jobs:
+  # job id, can be anything
+  export_game:
+    # Always use ubuntu-latest for this action
+    runs-on: ubuntu-latest
+    # Add permission for release creation. Can be made narrower according to your needs
+    permissions: write-all
+    # Job name, can be anything
+    name: Export Game
+    steps:
+      # Always include the checkout step so that 
+      # your project is available for Godot to export
+    - name: Checkout
+      uses: actions/checkout@v3.3.0
+  
+    - name: Exporting Game
+      id: export
+      # Use latest version (see releases for all versions)
+      uses: firebelley/godot-export@latest
+      with:
+        # Defining all the required inputs
+        godot_executable_download_url: https://github.com/godotengine/godot-builds/releases/download/4.1.1-stable/Godot_v4.1.1-stable_linux.x86_64.zip
+        godot_export_templates_download_url: https://github.com/godotengine/godot-builds/releases/download/4.1.1-stable/Godot_v4.1.1-stable_export_templates.tpz
+        relative_project_path: ./
+        archive_output: true
+
+      #===========================================
+      # THIS IS A CERTIFIED ARTIFACT CREATION ZONE
+      #===========================================
+
+    - name: Create THE ARTIFACTS
+      uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "bleeding_edge"
+        prerelease: true
+        title: "Development Build"
+        files: ${{ steps.export.outputs.archive_directory }}/*
+
+    # - name: Create Windows Artifact
+    #   uses: actions/upload-artifact@v3.1.3
+    #   with:
+    #     name: windows
+    #     path: ${{ steps.export.outputs.build_directory }}/Windows Desktop
+
+    # - name: Create Linux Artifact
+    #   uses: actions/upload-artifact@v3.1.3
+    #   with:
+    #     name: windows
+    #     path: ${{ steps.export.outputs.build_directory }}/LinuxX11
+
+      #===========================================
+      # THIS IS A CERTIFIED ARTIFACT CREATION ZONE
+      #===========================================
+
+
+    - name: Deploy to GitHub Pages 🚀
+      uses: JamesIves/github-pages-deploy-action@releases/v4
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: ${{ steps.export.outputs.build_directory }}/Web # The folder the action should deploy.
+        clean-exclude: netlify.toml
