@@ -34,13 +34,13 @@ transfer_area = "res://scenes/areas/bedroom_front.tscn"
 polygon = PackedVector2Array(65, 48, 111, 48, 111, 127, 65, 127)
 
 [node name="ToShower" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_3060b")]
-label_name = "Bedroom"
+label_name = "Shower"
 collision_polygon = NodePath("CollisionPolygon2D")
 transfer_area = "res://scenes/areas/bathroom_shower.tscn"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToShower"]
-position = Vector2(143, -48)
-polygon = PackedVector2Array(65, 48, 89, 48, 89, 192, 65, 192)
+position = Vector2(184, 0)
+polygon = PackedVector2Array(48, 0, 24, 0, 24, 144, 48, 144)
 
 [node name="ToMirror" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_3060b")]
 position = Vector2(-184, 0)
