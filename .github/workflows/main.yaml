@@ -24,7 +24,7 @@ jobs:
     - name: Exporting Game
       id: export
       # Use latest version (see releases for all versions)
-      uses: firebelley/godot-export@5.2.1
+      uses: firebelley/godot-export@5.2.0
       with:
         # Defining all the required inputs
         godot_executable_download_url: https://github.com/godotengine/godot-builds/releases/download/4.1.1-stable/Godot_v4.1.1-stable_linux.x86_64.zip
