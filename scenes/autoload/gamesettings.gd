@@ -22,11 +22,11 @@ func _ready():
 
 func _has_volume_changed(volume: float):
 	master_volume = volume
-	print(master_volume)
+	# print(master_volume)
 	
 func _has_fullscreen_changed(value: bool):
 	fullscreen_value = value
-	print(fullscreen_value)
+	# print(fullscreen_value)
 	if fullscreen_value:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:

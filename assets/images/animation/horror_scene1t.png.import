@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cebey825gvecg"
-path="res://.godot/imported/intro_eyes_anim.png-21d4be963b19e18728d6b1ca8837e7e0.ctex"
+uid="uid://4tfjf11h85up"
+path="res://.godot/imported/horror_scene1t.png-5bfe320a3b4ce0da23baa8bc5384cd34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/bg/intro_eyes_anim.png"
-dest_files=["res://.godot/imported/intro_eyes_anim.png-21d4be963b19e18728d6b1ca8837e7e0.ctex"]
+source_file="res://assets/images/animation/horror_scene1t.png"
+dest_files=["res://.godot/imported/horror_scene1t.png-5bfe320a3b4ce0da23baa8bc5384cd34.ctex"]
 
 [params]
 

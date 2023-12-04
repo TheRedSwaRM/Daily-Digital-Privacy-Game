@@ -1,15 +1,16 @@
 extends Node
 
 @onready var pause_menu = $PauseMenu
+@onready var phone = $Phone
 @onready var transition_sprite = $TransitionSprite
 @export_file var starting_screen
 #
 #	if event is InputEventMouseMotion and event.button_mask > 0:
 #		cave.position.x = clampf(cave.position.x + event.relative.x, -CAVE_LIMIT, 0)
 
-
 func _ready():
 	Events.change_map.connect(_goto_area)
+	phone.unflip_phone.connect(_on_phone_unflip)
 	print("is this even working?")
 	Events.change_map.emit(starting_screen)
 
@@ -47,4 +48,8 @@ func _deferred_change_area(path: String):
 	current_scene.name = "Area"
 	move_child(current_scene, 0)
 	
+func _on_phone_interact_mouse_entered():
+	phone.flip_phone("open")
 	
+func _on_phone_unflip():
+	phone.flip_phone("close")
