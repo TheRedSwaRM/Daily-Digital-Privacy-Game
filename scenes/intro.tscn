@@ -162,6 +162,7 @@ offset_right = 256.0
 offset_bottom = 144.0
 script = ExtResource("1_574f2")
 skip_intro = true
+path_to_nowhere = "res://scenes/areas/bedroom_laptop.tscn"
 
 [node name="BlackBack" type="ColorRect" parent="."]
 layout_mode = 1
@@ -182,7 +183,7 @@ anchor_top = 7.54286
 anchor_right = -4.90625
 anchor_bottom = 7.54286
 offset_right = 256.0
-offset_bottom = 143.896
+offset_bottom = 143.894
 rotation = 1.5708
 texture = ExtResource("2_701y8")
 expand_mode = 2
@@ -217,7 +218,6 @@ color = Color(0, 0, 0, 1)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(128, 72)
 sprite_frames = ExtResource("4_lbkev")
-frame = 7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

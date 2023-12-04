@@ -2,7 +2,7 @@ extends Node
 
 @onready var pause_menu = $PauseMenu
 @onready var transition_sprite = $TransitionSprite
-@export var starting_screen: PackedScene
+@export_file var starting_screen
 #
 #	if event is InputEventMouseMotion and event.button_mask > 0:
 #		cave.position.x = clampf(cave.position.x + event.relative.x, -CAVE_LIMIT, 0)
@@ -10,8 +10,8 @@ extends Node
 
 func _ready():
 	Events.change_map.connect(_goto_area)
-	var new_scene = starting_screen.resource_path
-	Events.change_map.emit(new_scene)
+	print("is this even working?")
+	Events.change_map.emit(starting_screen)
 
 
 func _unhandled_input(event):

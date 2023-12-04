@@ -3,7 +3,7 @@ extends Control
 @onready var settings_menu = $SettingsMenu
 
 func _on_new_game_pressed():
-	get_tree().change_scene_to_file("res://scenes/intro.tscn")
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 
 func _on_continue_pressed():
