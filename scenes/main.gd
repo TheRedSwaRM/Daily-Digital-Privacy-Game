@@ -2,6 +2,7 @@ extends Node
 
 @onready var pause_menu = $PauseMenu
 @onready var phone = $Phone
+@onready var phone_interaction_area = $PhoneInteract
 @onready var transition_sprite = $TransitionSprite
 @export_file var starting_screen
 #
@@ -49,7 +50,10 @@ func _deferred_change_area(path: String):
 	move_child(current_scene, 0)
 	
 func _on_phone_interact_mouse_entered():
+	print("open")
 	phone.flip_phone("open")
+	phone_interaction_area.set_process(false)
 	
 func _on_phone_unflip():
 	phone.flip_phone("close")
+	phone_interaction_area.set_process(true)

@@ -14,6 +14,7 @@ script = ExtResource("1_favck")
 starting_screen = "res://scenes/intro.tscn"
 
 [node name="Debugging only" type="TextureRect" parent="."]
+visible = false
 offset_left = 48.0
 offset_right = 208.0
 offset_bottom = 144.0
@@ -25,6 +26,7 @@ texture = ExtResource("2_6q1uy")
 visible = false
 
 [node name="Phone" parent="." instance=ExtResource("3_4ld74")]
+visible = false
 
 [node name="TransitionSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(128, 72)

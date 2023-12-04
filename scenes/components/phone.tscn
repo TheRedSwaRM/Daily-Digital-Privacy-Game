@@ -1,24 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://bijcfw81xkw7r"]
 
-[ext_resource type="Texture2D" uid="uid://bfkoqomnskgyn" path="res://assets/images/device/phone_socmed.png" id="1_44847"]
 [ext_resource type="Script" path="res://scenes/components/phone.gd" id="1_ldqut"]
+[ext_resource type="Texture2D" uid="uid://h2puqxkdjy5n" path="res://assets/images/device/phone.png" id="2_fd6mj"]
 [ext_resource type="Texture2D" uid="uid://d3lr2uas6ax8v" path="res://addons/dialogue_manager/assets/icon.svg" id="3_nav86"]
-
-[sub_resource type="Animation" id="Animation_unf1l"]
-resource_name = "flip"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ThePhone:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(48, 144), Vector2(48, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_2cvcs"]
 length = 0.001
@@ -35,6 +19,22 @@ tracks/0/keys = {
 "values": [Vector2(48, 144)]
 }
 
+[sub_resource type="Animation" id="Animation_unf1l"]
+resource_name = "flip"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ThePhone:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(56, 144), Vector2(56, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_ct4kx"]
 resource_name = "unflip"
 length = 0.1
@@ -48,7 +48,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(48, 0), Vector2(48, 144)]
+"values": [Vector2(56, 0), Vector2(56, 144)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6b7ab"]
@@ -71,9 +71,11 @@ script = ExtResource("1_ldqut")
 layout_mode = 0
 offset_left = 48.0
 offset_top = 144.0
-offset_right = 208.0
+offset_right = 192.0
 offset_bottom = 288.0
-texture = ExtResource("1_44847")
+texture = ExtResource("2_fd6mj")
+expand_mode = 2
+stretch_mode = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
