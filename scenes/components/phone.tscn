@@ -229,6 +229,16 @@ label_settings = ExtResource("6_430b8")
 [node name="LocationButton" type="CheckButton" parent="PhoneContainer/SettingsMenu/SettingsList/LocationHorz"]
 layout_mode = 2
 theme = ExtResource("3_t57h2")
+button_pressed = true
+
+[node name="PanelWarningHack" type="Control" parent="PhoneContainer/SettingsMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="LocationWarningPanel" type="Panel" parent="PhoneContainer/SettingsMenu"]
 visible = false

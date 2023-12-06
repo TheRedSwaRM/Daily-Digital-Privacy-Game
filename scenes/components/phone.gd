@@ -12,6 +12,7 @@ enum State{
 # Buttons and Stuff
 @onready var main_menu_buttons = $PhoneContainer/MainMenuButtons
 @onready var settings_menu = $PhoneContainer/SettingsMenu
+@onready var panel_hack = $PhoneContainer/SettingsMenu/PanelWarningHack
 
 # Settings Menu Button
 @onready var fullscreen_option = %FullScreenOption
@@ -84,12 +85,23 @@ func _on_return_button_pressed():
 
 func _on_location_button_toggled(toggled_on):
 	if !toggled_on:
+		_panel_hack_toggle(true)
 		location_warning.show()
 
 func _on_loc_yes_button_pressed():
 	location_button.button_pressed = false
+	_panel_hack_toggle(false)
 	location_warning.hide()
 
 func _on_loc_no_button_pressed():
 	location_button.button_pressed = true
+	_panel_hack_toggle(false)
 	location_warning.hide()
+
+## Activates panel hack for convenience, when a panel is brought up to stop
+## mouse events.
+func _panel_hack_toggle(value: bool):
+	if value:
+		panel_hack.mouse_filter = Control.MOUSE_FILTER_STOP
+	else:
+		panel_hack.mouse_filter = Control.MOUSE_FILTER_IGNORE
