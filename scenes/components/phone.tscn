@@ -146,6 +146,7 @@ text = "Settings"
 label_settings = ExtResource("6_430b8")
 
 [node name="FullScreenLabel" type="Label" parent="PhoneContainer/SettingsMenu"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 18.0
 offset_right = 41.0
@@ -155,6 +156,7 @@ text = "F.screen"
 label_settings = ExtResource("6_430b8")
 
 [node name="FullScreenOption" type="CheckButton" parent="PhoneContainer/SettingsMenu"]
+layout_mode = 0
 offset_left = 48.0
 offset_top = 17.0
 offset_right = 62.0
@@ -162,6 +164,7 @@ offset_bottom = 24.0
 theme = ExtResource("3_t57h2")
 
 [node name="VolumeLabel" type="Label" parent="PhoneContainer/SettingsMenu"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 30.0
 offset_right = 33.0
@@ -171,6 +174,7 @@ text = "Volume"
 label_settings = ExtResource("6_430b8")
 
 [node name="VolumeSlider" type="HSlider" parent="PhoneContainer/SettingsMenu"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 39.0
 offset_right = 62.0
