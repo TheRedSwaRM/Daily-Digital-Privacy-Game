@@ -62,7 +62,7 @@ func _on_flipping_button_pressed():
 func _on_settings_button_pressed():
 	main_menu_buttons.hide()
 	settings_menu.show()
-	phone_background.texture = settings_background
+	#phone_background.texture = settings_background
 
 #===============================================================================
 # SETTINGS FUNCTION
@@ -78,6 +78,6 @@ func _on_return_button_pressed():
 	GameSettings.save_settings.emit()
 	main_menu_buttons.show()
 	settings_menu.hide()
-	phone_background.texture = main_menu_background
+	#phone_background.texture = main_menu_background
 	
 	

@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bijcfw81xkw7r"]
+[gd_scene load_steps=13 format=3 uid="uid://bijcfw81xkw7r"]
 
 [ext_resource type="Script" path="res://scenes/components/phone.gd" id="1_ldqut"]
 [ext_resource type="Texture2D" uid="uid://h2puqxkdjy5n" path="res://assets/images/device/phone.png" id="2_fd6mj"]
 [ext_resource type="Texture2D" uid="uid://165h7gqi0cqi" path="res://assets/images/device/phone_settings.png" id="3_8iusa"]
 [ext_resource type="Theme" uid="uid://dinj8j20l57j3" path="res://scenes/components/phone_button.tres" id="3_t57h2"]
 [ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="5_3t44e"]
+[ext_resource type="Texture2D" uid="uid://w3nfv6j12y4n" path="res://assets/images/device/phone_settings_true_bg.png" id="5_dv2cq"]
 [ext_resource type="LabelSettings" uid="uid://nk5nj83e5ai4" path="res://scenes/components/settings_phone.tres" id="6_430b8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6r4og"]
@@ -82,9 +83,15 @@ offset_right = 200.0
 offset_bottom = 278.0
 
 [node name="ThePhone" type="TextureRect" parent="PhoneContainer"]
-layout_mode = 2
-offset_right = 144.0
-offset_bottom = 144.0
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_right = 72.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_fd6mj")
 expand_mode = 2
 stretch_mode = 5
@@ -101,8 +108,9 @@ stretch_mode = 5
 [node name="FlippingButton" type="Button" parent="PhoneContainer"]
 layout_mode = 0
 offset_left = 36.0
+offset_top = -1.0
 offset_right = 108.0
-offset_bottom = 11.0
+offset_bottom = 10.0
 theme = ExtResource("3_t57h2")
 
 [node name="MainMenuButtons" type="Control" parent="PhoneContainer"]
@@ -127,6 +135,15 @@ offset_left = 39.0
 offset_top = 10.0
 offset_right = 105.0
 offset_bottom = 133.0
+
+[node name="SettingsBackground" type="TextureRect" parent="PhoneContainer/SettingsMenu"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -10.0
+offset_right = 69.0
+offset_bottom = 134.0
+texture = ExtResource("5_dv2cq")
+expand_mode = 3
 
 [node name="ReturnButton" type="Button" parent="PhoneContainer/SettingsMenu"]
 layout_mode = 0
