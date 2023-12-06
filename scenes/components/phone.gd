@@ -6,7 +6,7 @@ enum State{
 }
 
 # WIFI Connection and Stuff
-@onready var current_connection = null
+@onready var current_connection: String = ""
 @onready var wifi_list = %WIFIList
 @onready var wifi_settings_button = %WIFIButton
 @onready var default_theme = preload("res://scenes/components/wifi_button.tres")
@@ -123,31 +123,35 @@ func _on_wifi_button_pressed():
 	_panel_hack_toggle(true)
 	wifi_panel.show()
 	
-func _on_home_wifi_pressed():
-	_wifi_list_change()
-	%HomeWIFI.set_theme(activated_theme)
-	_change_current_connection("home")
+func _on_home_wifi_toggled(toggled_on):
+	_wifi_list_change(%HomeWIFI, toggled_on)
 
+func _on_ram_wifi_toggled(toggled_on):
+	_wifi_list_change(%RamWIFI, toggled_on)
 
-func _on_ram_wifi_pressed():
-	_wifi_list_change()
-	%RamWIFI.set_theme(activated_theme)
-	_change_current_connection("ram")
-
-func _on_pldtwifi_pressed():
-	_wifi_list_change()
-	%PLDTWIFI.set_theme(activated_theme)
-	_change_current_connection("pldt")
+func _on_pldtwifi_toggled(toggled_on):
+	_wifi_list_change(%PLDTWIFI, toggled_on)
 
 func _change_current_connection(value: String):
 	current_connection = value
+	print("Current Connection: " + current_connection)
 
 # Automated function that reverts all buttons back to where they belong. Defaulted.
-func _wifi_list_change():
+func _wifi_list_change(wifi_picked: Button, toggled: bool):
 	for wifi_item in wifi_list.get_children():
 		wifi_item.set_theme(default_theme)
-	wifi_settings_button.set_theme(activated_theme)
-	wifi_settings_button.text = "CON"
+	
+	if toggled:
+		wifi_picked.set_theme(activated_theme)
+		wifi_settings_button.set_theme(activated_theme)
+		wifi_settings_button.text = "CON"
+		_change_current_connection(wifi_picked.text)
+	else:
+		wifi_picked.set_theme(default_theme)
+		wifi_settings_button.set_theme(default_theme)
+		wifi_settings_button.text = "None"
+		_change_current_connection("")
+		
 		
 
 ## Literally goofy. Please optimize.
@@ -160,3 +164,6 @@ func _on_panel_warning_hack_gui_input(event):
 			location_warning.hide()
 		if wifi_panel.visible:
 			wifi_panel.hide()
+
+
+

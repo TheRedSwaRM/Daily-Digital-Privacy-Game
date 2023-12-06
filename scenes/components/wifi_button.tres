@@ -1,7 +1,5 @@
-[gd_resource type="Theme" load_steps=14 format=3 uid="uid://s47xnf1e5hrf"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://s47xnf1e5hrf"]
 
-[ext_resource type="Texture2D" uid="uid://dacnq3r5awovq" path="res://assets/images/device/button_toggle_on.png" id="1_mwekk"]
-[ext_resource type="Texture2D" uid="uid://co80rwb6u4o0l" path="res://assets/images/device/button_toggle_off.png" id="2_702o0"]
 [ext_resource type="Texture2D" uid="uid://ch7vggc7yo1rw" path="res://assets/images/device/slider_grabber.png" id="3_d0sc8"]
 [ext_resource type="Texture2D" uid="uid://bq4puesg7pqek" path="res://assets/images/device/slider_grabber_highlight.png" id="4_f8nd5"]
 [ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="5_vl50y"]
@@ -33,8 +31,6 @@ Button/styles/focus = SubResource("StyleBoxEmpty_3i0i3")
 Button/styles/hover = SubResource("StyleBoxEmpty_y31wa")
 Button/styles/normal = SubResource("StyleBoxEmpty_q1pn0")
 Button/styles/pressed = SubResource("StyleBoxEmpty_nxd3p")
-CheckButton/icons/checked = ExtResource("1_mwekk")
-CheckButton/icons/unchecked = ExtResource("2_702o0")
 HSlider/icons/grabber = ExtResource("3_d0sc8")
 HSlider/icons/grabber_highlight = ExtResource("4_f8nd5")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_b6yej")

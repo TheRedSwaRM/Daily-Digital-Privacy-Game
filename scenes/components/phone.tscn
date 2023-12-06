@@ -333,29 +333,32 @@ offset_top = 18.0
 offset_right = 53.0
 offset_bottom = 58.0
 
-[node name="HomeWIFI" type="Button" parent="PhoneContainer/SettingsMenu/WIFIPanel/WIFIList"]
+[node name="HomeWIFI" type="Button" parent="PhoneContainer/SettingsMenu/WIFIPanel/WIFIList" groups=["wifi_items"]]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("4_ie8w4")
-text = "HOME"
+toggle_mode = true
+text = "home"
 icon = ExtResource("8_6dile")
 alignment = 0
 icon_alignment = 2
 
-[node name="RamWIFI" type="Button" parent="PhoneContainer/SettingsMenu/WIFIPanel/WIFIList"]
+[node name="RamWIFI" type="Button" parent="PhoneContainer/SettingsMenu/WIFIPanel/WIFIList" groups=["wifi_items"]]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("4_ie8w4")
-text = "Rammer"
+toggle_mode = true
+text = "rammers"
 icon = ExtResource("8_6dile")
 alignment = 0
 icon_alignment = 2
 
-[node name="PLDTWIFI" type="Button" parent="PhoneContainer/SettingsMenu/WIFIPanel/WIFIList"]
+[node name="PLDTWIFI" type="Button" parent="PhoneContainer/SettingsMenu/WIFIPanel/WIFIList" groups=["wifi_items"]]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("4_ie8w4")
-text = "PLDTWIFI"
+toggle_mode = true
+text = "pldtwifi"
 icon = ExtResource("8_6dile")
 alignment = 0
 icon_alignment = 2
@@ -375,6 +378,6 @@ libraries = {
 [connection signal="gui_input" from="PhoneContainer/SettingsMenu/PanelWarningHack" to="." method="_on_panel_warning_hack_gui_input"]
 [connection signal="pressed" from="PhoneContainer/SettingsMenu/LocationWarningPanel/ButtonOptions/LocYesButton" to="." method="_on_loc_yes_button_pressed"]
 [connection signal="pressed" from="PhoneContainer/SettingsMenu/LocationWarningPanel/ButtonOptions/LocNoButton" to="." method="_on_loc_no_button_pressed"]
-[connection signal="pressed" from="PhoneContainer/SettingsMenu/WIFIPanel/WIFIList/HomeWIFI" to="." method="_on_home_wifi_pressed"]
-[connection signal="pressed" from="PhoneContainer/SettingsMenu/WIFIPanel/WIFIList/RamWIFI" to="." method="_on_ram_wifi_pressed"]
-[connection signal="pressed" from="PhoneContainer/SettingsMenu/WIFIPanel/WIFIList/PLDTWIFI" to="." method="_on_pldtwifi_pressed"]
+[connection signal="toggled" from="PhoneContainer/SettingsMenu/WIFIPanel/WIFIList/HomeWIFI" to="." method="_on_home_wifi_toggled"]
+[connection signal="toggled" from="PhoneContainer/SettingsMenu/WIFIPanel/WIFIList/RamWIFI" to="." method="_on_ram_wifi_toggled"]
+[connection signal="toggled" from="PhoneContainer/SettingsMenu/WIFIPanel/WIFIList/PLDTWIFI" to="." method="_on_pldtwifi_toggled"]
