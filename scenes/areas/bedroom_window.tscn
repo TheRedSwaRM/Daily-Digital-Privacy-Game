@@ -110,3 +110,4 @@ texture_normal = ExtResource("3_bq7um")
 libraries = {
 "": SubResource("AnimationLibrary_ksbpd")
 }
+speed_scale = 0.5

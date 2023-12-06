@@ -14,8 +14,8 @@ enum State{
 @onready var settings_menu = $PhoneContainer/SettingsMenu
 
 # Settings Menu Button
-@onready var fullscreen_option = $PhoneContainer/SettingsMenu/FullScreenOption
-@onready var volume_slider = $PhoneContainer/SettingsMenu/VolumeSlider
+@onready var fullscreen_option = %FullScreenOption
+@onready var volume_slider = %VolumeSlider
 
 # Phone Background
 @onready var main_menu_background = preload("res://assets/images/device/phone.png")
