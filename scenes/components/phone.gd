@@ -21,7 +21,7 @@ enum State{
 @onready var main_menu_background = preload("res://assets/images/device/phone.png")
 @onready var settings_background = preload("res://assets/images/device/phone_settings.png")
 
-signal unflip_phone
+signal flipping_phone(value)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,10 +36,12 @@ func _process(delta):
 func _flip_phone(value: String):
 	match value:
 		"open":
+			flipping_phone.emit(true)
 			current_state = State.RUNNING
 			animation_player.play("flip")
 			await animation_player.animation_finished
 		"close":
+			flipping_phone.emit(false)
 			current_state = State.IDLE
 			animation_player.play("unflip")
 			await animation_player.animation_finished
