@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bijcfw81xkw7r"]
+[gd_scene load_steps=11 format=3 uid="uid://bijcfw81xkw7r"]
 
 [ext_resource type="Script" path="res://scenes/components/phone.gd" id="1_ldqut"]
 [ext_resource type="Texture2D" uid="uid://h2puqxkdjy5n" path="res://assets/images/device/phone.png" id="2_fd6mj"]
 [ext_resource type="Texture2D" uid="uid://165h7gqi0cqi" path="res://assets/images/device/phone_settings.png" id="3_8iusa"]
 [ext_resource type="Theme" uid="uid://dinj8j20l57j3" path="res://scenes/components/phone_button.tres" id="3_t57h2"]
+[ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="5_3t44e"]
+[ext_resource type="LabelSettings" uid="uid://nk5nj83e5ai4" path="res://scenes/components/settings_phone.tres" id="6_430b8"]
 
 [sub_resource type="Animation" id="Animation_2cvcs"]
 length = 0.001
@@ -115,6 +117,67 @@ offset_right = 59.0
 offset_bottom = 93.0
 theme = ExtResource("3_t57h2")
 
+[node name="SettingsMenu" type="Control" parent="PhoneContainer"]
+visible = false
+anchors_preset = 0
+offset_left = 39.0
+offset_top = 10.0
+offset_right = 105.0
+offset_bottom = 133.0
+
+[node name="ReturnButton" type="Button" parent="PhoneContainer/SettingsMenu"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 12.0
+offset_bottom = 12.0
+theme = ExtResource("3_t57h2")
+theme_override_fonts/font = ExtResource("5_3t44e")
+theme_override_font_sizes/font_size = 5
+text = "<"
+
+[node name="SettingsName" type="Label" parent="PhoneContainer/SettingsMenu"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 4.0
+offset_right = 49.0
+offset_bottom = 9.0
+text = "Settings"
+label_settings = ExtResource("6_430b8")
+
+[node name="FullScreenLabel" type="Label" parent="PhoneContainer/SettingsMenu"]
+offset_left = 4.0
+offset_top = 18.0
+offset_right = 41.0
+offset_bottom = 23.0
+size_flags_horizontal = 0
+text = "F.screen"
+label_settings = ExtResource("6_430b8")
+
+[node name="FullScreenOption" type="CheckButton" parent="PhoneContainer/SettingsMenu"]
+offset_left = 48.0
+offset_top = 17.0
+offset_right = 62.0
+offset_bottom = 24.0
+theme = ExtResource("3_t57h2")
+
+[node name="VolumeLabel" type="Label" parent="PhoneContainer/SettingsMenu"]
+offset_left = 4.0
+offset_top = 30.0
+offset_right = 33.0
+offset_bottom = 35.0
+size_flags_horizontal = 0
+text = "Volume"
+label_settings = ExtResource("6_430b8")
+
+[node name="VolumeSlider" type="HSlider" parent="PhoneContainer/SettingsMenu"]
+offset_left = 4.0
+offset_top = 39.0
+offset_right = 62.0
+offset_bottom = 46.0
+size_flags_vertical = 4
+theme = ExtResource("3_t57h2")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_6b7ab")
@@ -122,3 +185,6 @@ libraries = {
 
 [connection signal="pressed" from="PhoneContainer/FlippingButton" to="." method="_on_flipping_button_pressed"]
 [connection signal="pressed" from="PhoneContainer/MainMenuButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="PhoneContainer/SettingsMenu/ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="toggled" from="PhoneContainer/SettingsMenu/FullScreenOption" to="." method="_on_full_screen_option_toggled"]
+[connection signal="value_changed" from="PhoneContainer/SettingsMenu/VolumeSlider" to="." method="_on_volume_slider_value_changed"]

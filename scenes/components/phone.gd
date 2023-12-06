@@ -9,6 +9,14 @@ enum State{
 @onready var phone_background = $PhoneContainer/ThePhone
 @onready var current_state = State.IDLE
 
+# Buttons and Stuff
+@onready var main_menu_buttons = $PhoneContainer/MainMenuButtons
+@onready var settings_menu = $PhoneContainer/SettingsMenu
+
+# Settings Menu Button
+@onready var fullscreen_option = $PhoneContainer/SettingsMenu/FullScreenOption
+@onready var volume_slider = $PhoneContainer/SettingsMenu/VolumeSlider
+
 # Phone Background
 @onready var main_menu_background = preload("res://assets/images/device/phone.png")
 @onready var settings_background = preload("res://assets/images/device/phone_settings.png")
@@ -17,7 +25,8 @@ signal unflip_phone
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	fullscreen_option.button_pressed = GameSettings.fullscreen_value
+	volume_slider.value = GameSettings.master_volume
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -49,4 +58,24 @@ func _on_flipping_button_pressed():
 
 
 func _on_settings_button_pressed():
+	main_menu_buttons.hide()
+	settings_menu.show()
 	phone_background.texture = settings_background
+
+#===============================================================================
+# SETTINGS FUNCTION
+#===============================================================================
+
+func _on_full_screen_option_toggled(toggled_on):
+	GameSettings.fullscreen_changed.emit(toggled_on)
+
+func _on_volume_slider_value_changed(value):
+	GameSettings.volume_changed.emit(value)
+
+func _on_return_button_pressed():
+	GameSettings.save_settings.emit()
+	main_menu_buttons.show()
+	settings_menu.hide()
+	phone_background.texture = main_menu_background
+	
+	
