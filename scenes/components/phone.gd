@@ -16,6 +16,8 @@ enum State{
 # Settings Menu Button
 @onready var fullscreen_option = %FullScreenOption
 @onready var volume_slider = %VolumeSlider
+@onready var location_warning = $PhoneContainer/SettingsMenu/LocationWarningPanel
+@onready var location_button = $PhoneContainer/SettingsMenu/SettingsList/LocationHorz/LocationButton
 
 # Phone Background
 @onready var main_menu_background = preload("res://assets/images/device/phone.png")
@@ -79,5 +81,15 @@ func _on_return_button_pressed():
 	main_menu_buttons.show()
 	settings_menu.hide()
 	#phone_background.texture = main_menu_background
-	
-	
+
+func _on_location_button_toggled(toggled_on):
+	if !toggled_on:
+		location_warning.show()
+
+func _on_loc_yes_button_pressed():
+	location_button.button_pressed = false
+	location_warning.hide()
+
+func _on_loc_no_button_pressed():
+	location_button.button_pressed = true
+	location_warning.hide()
