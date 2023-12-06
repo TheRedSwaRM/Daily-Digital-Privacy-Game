@@ -1,22 +1,38 @@
-[gd_scene load_steps=8 format=3 uid="uid://bijcfw81xkw7r"]
+[gd_scene load_steps=13 format=3 uid="uid://bijcfw81xkw7r"]
 
 [ext_resource type="Script" path="res://scenes/components/phone.gd" id="1_ldqut"]
 [ext_resource type="Texture2D" uid="uid://h2puqxkdjy5n" path="res://assets/images/device/phone.png" id="2_fd6mj"]
-[ext_resource type="Texture2D" uid="uid://d3lr2uas6ax8v" path="res://addons/dialogue_manager/assets/icon.svg" id="3_nav86"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vwymm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3i0i3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y31wa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q1pn0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nxd3p"]
+
+[sub_resource type="Theme" id="Theme_npkow"]
+Button/styles/disabled = SubResource("StyleBoxEmpty_vwymm")
+Button/styles/focus = SubResource("StyleBoxEmpty_3i0i3")
+Button/styles/hover = SubResource("StyleBoxEmpty_y31wa")
+Button/styles/normal = SubResource("StyleBoxEmpty_q1pn0")
+Button/styles/pressed = SubResource("StyleBoxEmpty_nxd3p")
 
 [sub_resource type="Animation" id="Animation_2cvcs"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ThePhone:position")
+tracks/0/path = NodePath("PhoneContainer:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(48, 144)]
+"values": [Vector2(56, 134)]
 }
 
 [sub_resource type="Animation" id="Animation_unf1l"]
@@ -25,14 +41,14 @@ length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ThePhone:position")
+tracks/0/path = NodePath("PhoneContainer:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(56, 144), Vector2(56, 0)]
+"values": [Vector2(56, 134), Vector2(56, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ct4kx"]
@@ -41,14 +57,14 @@ length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ThePhone:position")
+tracks/0/path = NodePath("PhoneContainer:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(56, 0), Vector2(56, 144)]
+"values": [Vector2(56, 0), Vector2(56, 134)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6b7ab"]
@@ -67,25 +83,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ldqut")
 
-[node name="ThePhone" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 144.0
-offset_right = 192.0
-offset_bottom = 288.0
+[node name="PhoneContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 56.0
+offset_top = 134.0
+offset_right = 200.0
+offset_bottom = 278.0
+
+[node name="ThePhone" type="TextureRect" parent="PhoneContainer"]
+layout_mode = 2
+offset_right = 144.0
+offset_bottom = 144.0
 texture = ExtResource("2_fd6mj")
 expand_mode = 2
 stretch_mode = 5
+
+[node name="FlippingButton" type="Button" parent="PhoneContainer"]
+layout_mode = 0
+offset_left = 36.0
+offset_right = 108.0
+offset_bottom = 11.0
+theme = SubResource("Theme_npkow")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_6b7ab")
 }
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-icon = ExtResource("3_nav86")
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PhoneContainer/FlippingButton" to="." method="_on_flipping_button_pressed"]

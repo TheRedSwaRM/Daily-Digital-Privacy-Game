@@ -1,13 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://sdp7xytwmcsi"]
+[gd_scene load_steps=6 format=3 uid="uid://sdp7xytwmcsi"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_favck"]
 [ext_resource type="PackedScene" uid="uid://dthhv0v6y65wl" path="res://scenes/menus/pause_menu.tscn" id="2_05v5l"]
 [ext_resource type="Texture2D" uid="uid://b4h4uol1nrski" path="res://assets/images/bg/room3.png" id="2_6q1uy"]
 [ext_resource type="PackedScene" uid="uid://bijcfw81xkw7r" path="res://scenes/components/phone.tscn" id="3_4ld74"]
 [ext_resource type="SpriteFrames" uid="uid://c5m6vqysaysk5" path="res://assets/images/animation/blinking_eye.tres" id="4_hkoyb"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubtn8"]
-size = Vector2(160, 16)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_favck")
@@ -26,17 +23,8 @@ texture = ExtResource("2_6q1uy")
 visible = false
 
 [node name="Phone" parent="." instance=ExtResource("3_4ld74")]
-visible = false
 
-[node name="TransitionSprite" type="AnimatedSprite2D" parent="."]
+[node name="BlinkingEye" type="AnimatedSprite2D" parent="."]
 position = Vector2(128, 72)
 sprite_frames = ExtResource("4_hkoyb")
 animation = &"blinking_transition"
-
-[node name="PhoneInteract" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PhoneInteract"]
-position = Vector2(128, 136)
-shape = SubResource("RectangleShape2D_ubtn8")
-
-[connection signal="mouse_entered" from="PhoneInteract" to="." method="_on_phone_interact_mouse_entered"]

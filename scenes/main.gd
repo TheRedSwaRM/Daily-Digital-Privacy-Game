@@ -2,8 +2,7 @@ extends Node
 
 @onready var pause_menu = $PauseMenu
 @onready var phone = $Phone
-@onready var phone_interaction_area = $PhoneInteract
-@onready var transition_sprite = $TransitionSprite
+@onready var transition_sprite = $BlinkingEye
 @export_file var starting_screen
 #
 #	if event is InputEventMouseMotion and event.button_mask > 0:
@@ -11,18 +10,18 @@ extends Node
 
 func _ready():
 	Events.change_map.connect(_goto_area)
-	phone.unflip_phone.connect(_on_phone_unflip)
+	# phone.unflip_phone.connect(_on_phone_unflip)
 	print("is this even working?")
 	Events.change_map.emit(starting_screen)
 
 
 func _unhandled_input(event):
 	if get_tree().paused: return	# Safety measure :skull:
-	if event is InputEventKey and event.pressed and !event.is_echo():
-		match event.keycode:
-			KEY_ESCAPE:
-				get_tree().paused = true
-				pause_menu.open_menu()
+	#if event is InputEventKey and event.pressed and !event.is_echo():
+		#match event.keycode:
+			#KEY_ESCAPE:
+				#get_tree().paused = true
+				#pause_menu.open_menu()
 		# print(get_viewport().get_visible_rect().size/2 - $Area.get_local_mouse_position())
 		# print($Area.get_local_mouse_position())
 
@@ -49,11 +48,3 @@ func _deferred_change_area(path: String):
 	current_scene.name = "Area"
 	move_child(current_scene, 0)
 	
-func _on_phone_interact_mouse_entered():
-	print("open")
-	phone.flip_phone("open")
-	phone_interaction_area.set_process(false)
-	
-func _on_phone_unflip():
-	phone.flip_phone("close")
-	phone_interaction_area.set_process(true)
