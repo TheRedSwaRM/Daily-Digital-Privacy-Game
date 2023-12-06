@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://baxqxgscldslf"]
+[gd_scene load_steps=9 format=3 uid="uid://baxqxgscldslf"]
 
+[ext_resource type="Script" path="res://scenes/areas/bedroom_window.gd" id="1_caxxx"]
 [ext_resource type="Texture2D" uid="uid://b4h4uol1nrski" path="res://assets/images/bg/room3.png" id="1_h5mag"]
 [ext_resource type="Texture2D" uid="uid://57w0l58i6wn6" path="res://assets/images/bg/room3_clouds.png" id="1_jdgfa"]
 [ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="2_57hfl"]
@@ -44,6 +45,7 @@ _data = {
 }
 
 [node name="BedroomWindow" type="Node2D"]
+script = ExtResource("1_caxxx")
 
 [node name="Background" type="Control" parent="."]
 layout_mode = 3
@@ -65,7 +67,7 @@ metadata/_edit_lock_ = true
 layout_mode = 0
 offset_left = 48.0
 offset_right = 368.0
-offset_bottom = 144.0
+offset_bottom = 144.001
 texture = ExtResource("1_jdgfa")
 
 [node name="SideBar" type="ColorRect" parent="Background"]

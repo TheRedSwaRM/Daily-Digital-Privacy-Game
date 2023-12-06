@@ -1,6 +1,5 @@
 extends Node
 
-@onready var pause_menu = $PauseMenu
 @onready var phone = $Phone
 @onready var transition_sprite = $BlinkingEye
 @export_file var starting_screen
