@@ -1,19 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://sdp7xytwmcsi"]
+[gd_scene load_steps=5 format=3 uid="uid://sdp7xytwmcsi"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_favck"]
-[ext_resource type="PackedScene" uid="uid://dthhv0v6y65wl" path="res://scenes/menus/pause_menu.tscn" id="2_05v5l"]
-[ext_resource type="SpriteFrames" uid="uid://c5m6vqysaysk5" path="res://assets/images/bg/blinking_eye.tres" id="4_hkoyb"]
+[ext_resource type="Texture2D" uid="uid://b4h4uol1nrski" path="res://assets/images/bg/room3.png" id="2_6q1uy"]
+[ext_resource type="PackedScene" uid="uid://bijcfw81xkw7r" path="res://scenes/components/phone.tscn" id="3_4ld74"]
+[ext_resource type="SpriteFrames" uid="uid://c5m6vqysaysk5" path="res://assets/images/animation/blinking_eye.tres" id="4_hkoyb"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_favck")
 starting_screen = "res://scenes/intro.tscn"
 
+[node name="Debugging only" type="TextureRect" parent="."]
+visible = false
+offset_left = 48.0
+offset_right = 208.0
+offset_bottom = 144.0
+texture = ExtResource("2_6q1uy")
+
 [node name="Area" type="Node2D" parent="."]
 
-[node name="PauseMenu" parent="." instance=ExtResource("2_05v5l")]
-visible = false
+[node name="Phone" parent="." instance=ExtResource("3_4ld74")]
+mouse_filter = 1
 
-[node name="TransitionSprite" type="AnimatedSprite2D" parent="."]
+[node name="BlinkingEye" type="AnimatedSprite2D" parent="."]
 position = Vector2(128, 72)
 sprite_frames = ExtResource("4_hkoyb")
 animation = &"blinking_transition"

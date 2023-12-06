@@ -1,29 +1,95 @@
-[gd_scene load_steps=3 format=3 uid="uid://baxqxgscldslf"]
+[gd_scene load_steps=9 format=3 uid="uid://baxqxgscldslf"]
 
+[ext_resource type="Script" path="res://scenes/areas/bedroom_window.gd" id="1_caxxx"]
 [ext_resource type="Texture2D" uid="uid://b4h4uol1nrski" path="res://assets/images/bg/room3.png" id="1_h5mag"]
+[ext_resource type="Texture2D" uid="uid://57w0l58i6wn6" path="res://assets/images/bg/room3_clouds.png" id="1_jdgfa"]
 [ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="2_57hfl"]
+[ext_resource type="Texture2D" uid="uid://dor3ogk87krs3" path="res://assets/images/bg/clock_front.png" id="3_bq7um"]
+
+[sub_resource type="Animation" id="Animation_e5ffc"]
+resource_name = "clouds"
+length = 64.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background/Clouds:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 63.9, 64, 64.1, 64.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(128, 0), Vector2(-320, 0), Vector2(-320, 143), Vector2(128, 144), Vector2(128, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fu2fs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background/Clouds:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(48, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ksbpd"]
+_data = {
+"RESET": SubResource("Animation_fu2fs"),
+"clouds": SubResource("Animation_e5ffc")
+}
 
 [node name="BedroomWindow" type="Node2D"]
+script = ExtResource("1_caxxx")
 
-[node name="Control" type="Control" parent="."]
+[node name="Background" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 256.0
 offset_bottom = 144.0
 mouse_filter = 2
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
+[node name="Sky" type="ColorRect" parent="Background"]
 layout_mode = 0
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 128.0
+offset_bottom = 89.0
+color = Color(0.752941, 0.913725, 1, 1)
+metadata/_edit_lock_ = true
+
+[node name="Clouds" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_left = 48.0
+offset_right = 368.0
+offset_bottom = 144.001
+texture = ExtResource("1_jdgfa")
+
+[node name="SideBar" type="ColorRect" parent="Background"]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 144.0
+color = Color(0, 0, 0, 1)
+
+[node name="SideBar2" type="ColorRect" parent="Background"]
+layout_mode = 0
+offset_left = 208.0
 offset_right = 256.0
 offset_bottom = 144.0
 color = Color(0, 0, 0, 1)
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="RoomBackground" type="TextureRect" parent="Background"]
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 144.0
 texture = ExtResource("1_h5mag")
 stretch_mode = 5
+metadata/_edit_lock_ = true
 
 [node name="ClickAreaComponent" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_57hfl")]
 label_name = "Laptop"
@@ -32,3 +98,15 @@ transfer_area = "res://scenes/areas/bedroom_laptop.tscn"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClickAreaComponent"]
 polygon = PackedVector2Array(24, 0, 48, 0, 48, 144, 24, 144)
+
+[node name="Clock" type="TextureButton" parent="."]
+offset_left = 115.0
+offset_top = 88.0
+offset_right = 139.0
+offset_bottom = 112.0
+texture_normal = ExtResource("3_bq7um")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ksbpd")
+}

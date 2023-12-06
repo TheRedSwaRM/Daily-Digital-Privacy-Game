@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/intro.gd" id="1_574f2"]
 [ext_resource type="Texture2D" uid="uid://bxwknkacjbvc2" path="res://assets/images/bg/room1.png" id="2_701y8"]
 [ext_resource type="Shader" path="res://scenes/components/blur.gdshader" id="3_5g587"]
-[ext_resource type="SpriteFrames" uid="uid://c5m6vqysaysk5" path="res://assets/images/bg/blinking_eye.tres" id="4_lbkev"]
+[ext_resource type="SpriteFrames" uid="uid://c5m6vqysaysk5" path="res://assets/images/animation/blinking_eye.tres" id="4_lbkev"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6kn22"]
 shader = ExtResource("3_5g587")

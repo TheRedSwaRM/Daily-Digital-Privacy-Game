@@ -1,26 +1,29 @@
 extends Node
 
-@onready var pause_menu = $PauseMenu
-@onready var transition_sprite = $TransitionSprite
+@onready var phone = $Phone
+@onready var transition_sprite = $BlinkingEye
 @export_file var starting_screen
 #
 #	if event is InputEventMouseMotion and event.button_mask > 0:
 #		cave.position.x = clampf(cave.position.x + event.relative.x, -CAVE_LIMIT, 0)
 
-
 func _ready():
 	Events.change_map.connect(_goto_area)
-	print("is this even working?")
 	Events.change_map.emit(starting_screen)
+	
+	phone.flipping_phone.connect(_change_mouse_passing_for_phone)
+	# phone.unflip_phone.connect(_on_phone_unflip)
+	#print("is this even working?")
+	
 
 
 func _unhandled_input(event):
 	if get_tree().paused: return	# Safety measure :skull:
-	if event is InputEventKey and event.pressed and !event.is_echo():
-		match event.keycode:
-			KEY_ESCAPE:
-				get_tree().paused = true
-				pause_menu.open_menu()
+	#if event is InputEventKey and event.pressed and !event.is_echo():
+		#match event.keycode:
+			#KEY_ESCAPE:
+				#get_tree().paused = true
+				#pause_menu.open_menu()
 		# print(get_viewport().get_visible_rect().size/2 - $Area.get_local_mouse_position())
 		# print($Area.get_local_mouse_position())
 
@@ -47,4 +50,9 @@ func _deferred_change_area(path: String):
 	current_scene.name = "Area"
 	move_child(current_scene, 0)
 	
-	
+## If true, allow filter to pass through... else.
+func _change_mouse_passing_for_phone(value: bool):
+	if value:
+		phone.mouse_filter = Control.MOUSE_FILTER_STOP
+	else:
+		phone.mouse_filter = Control.MOUSE_FILTER_PASS
