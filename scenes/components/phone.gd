@@ -6,7 +6,12 @@ enum State{
 }
 
 @onready var animation_player = $AnimationPlayer
+@onready var phone_background = $PhoneContainer/ThePhone
 @onready var current_state = State.IDLE
+
+# Phone Background
+@onready var main_menu_background = preload("res://assets/images/device/phone.png")
+@onready var settings_background = preload("res://assets/images/device/phone_settings.png")
 
 signal unflip_phone
 
@@ -41,3 +46,7 @@ func _on_flipping_button_pressed():
 			_flip_phone("open")
 		State.RUNNING:
 			_flip_phone("close")
+
+
+func _on_settings_button_pressed():
+	phone_background.texture = settings_background
