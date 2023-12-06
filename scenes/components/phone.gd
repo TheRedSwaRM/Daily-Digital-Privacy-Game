@@ -5,8 +5,9 @@ enum State{
 	RUNNING			# If currently opened
 }
 
-# WIFI Connection and Stuff
+# WIFI Connection and Location
 @onready var current_connection: String = ""
+@onready var location_enabled: bool = false
 @onready var wifi_list = %WIFIList
 @onready var wifi_settings_button = %WIFIButton
 @onready var default_theme = preload("res://scenes/components/wifi_button.tres")
@@ -96,8 +97,11 @@ func _on_location_button_toggled(toggled_on):
 	if !toggled_on:
 		_panel_hack_toggle(true)
 		location_warning.show()
+	else:
+		location_enabled = true
 
 func _on_loc_yes_button_pressed():
+	location_enabled = false
 	location_button.button_pressed = false
 	_panel_hack_toggle(false)
 	location_warning.hide()

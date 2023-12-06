@@ -177,35 +177,6 @@ offset_top = 15.0
 offset_right = 60.0
 offset_bottom = 70.0
 
-[node name="FScreenHorz" type="HBoxContainer" parent="PhoneContainer/SettingsMenu/SettingsList"]
-layout_mode = 2
-
-[node name="FullScreenLabel" type="Label" parent="PhoneContainer/SettingsMenu/SettingsList/FScreenHorz"]
-layout_mode = 2
-size_flags_horizontal = 0
-text = "F.screen"
-label_settings = ExtResource("6_430b8")
-
-[node name="FullScreenOption" type="CheckButton" parent="PhoneContainer/SettingsMenu/SettingsList/FScreenHorz"]
-unique_name_in_owner = true
-layout_mode = 2
-theme = ExtResource("4_80elq")
-
-[node name="VolumeLabel" type="Label" parent="PhoneContainer/SettingsMenu/SettingsList"]
-layout_mode = 2
-size_flags_horizontal = 0
-text = "Volume"
-label_settings = ExtResource("6_430b8")
-
-[node name="VolumeSlider" type="HSlider" parent="PhoneContainer/SettingsMenu/SettingsList"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 4
-theme = ExtResource("4_80elq")
-
-[node name="GameSettingsDiv" type="HSeparator" parent="PhoneContainer/SettingsMenu/SettingsList"]
-layout_mode = 2
-
 [node name="WIFIHorz" type="HBoxContainer" parent="PhoneContainer/SettingsMenu/SettingsList"]
 layout_mode = 2
 
@@ -235,6 +206,35 @@ label_settings = ExtResource("6_430b8")
 layout_mode = 2
 theme = ExtResource("4_80elq")
 button_pressed = true
+
+[node name="GameSettingsDiv" type="HSeparator" parent="PhoneContainer/SettingsMenu/SettingsList"]
+layout_mode = 2
+
+[node name="FScreenHorz" type="HBoxContainer" parent="PhoneContainer/SettingsMenu/SettingsList"]
+layout_mode = 2
+
+[node name="FullScreenLabel" type="Label" parent="PhoneContainer/SettingsMenu/SettingsList/FScreenHorz"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "F.screen"
+label_settings = ExtResource("6_430b8")
+
+[node name="FullScreenOption" type="CheckButton" parent="PhoneContainer/SettingsMenu/SettingsList/FScreenHorz"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("4_80elq")
+
+[node name="VolumeLabel" type="Label" parent="PhoneContainer/SettingsMenu/SettingsList"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Volume"
+label_settings = ExtResource("6_430b8")
+
+[node name="VolumeSlider" type="HSlider" parent="PhoneContainer/SettingsMenu/SettingsList"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("4_80elq")
 
 [node name="PanelWarningHack" type="Control" parent="PhoneContainer/SettingsMenu"]
 layout_mode = 1
@@ -371,10 +371,10 @@ libraries = {
 [connection signal="pressed" from="PhoneContainer/FlippingButton" to="." method="_on_flipping_button_pressed"]
 [connection signal="pressed" from="PhoneContainer/MainMenuButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="PhoneContainer/SettingsMenu/ReturnButton" to="." method="_on_return_button_pressed"]
-[connection signal="toggled" from="PhoneContainer/SettingsMenu/SettingsList/FScreenHorz/FullScreenOption" to="." method="_on_full_screen_option_toggled"]
-[connection signal="value_changed" from="PhoneContainer/SettingsMenu/SettingsList/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="pressed" from="PhoneContainer/SettingsMenu/SettingsList/WIFIHorz/WIFIButton" to="." method="_on_wifi_button_pressed"]
 [connection signal="toggled" from="PhoneContainer/SettingsMenu/SettingsList/LocationHorz/LocationButton" to="." method="_on_location_button_toggled"]
+[connection signal="toggled" from="PhoneContainer/SettingsMenu/SettingsList/FScreenHorz/FullScreenOption" to="." method="_on_full_screen_option_toggled"]
+[connection signal="value_changed" from="PhoneContainer/SettingsMenu/SettingsList/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="gui_input" from="PhoneContainer/SettingsMenu/PanelWarningHack" to="." method="_on_panel_warning_hack_gui_input"]
 [connection signal="pressed" from="PhoneContainer/SettingsMenu/LocationWarningPanel/ButtonOptions/LocYesButton" to="." method="_on_loc_yes_button_pressed"]
 [connection signal="pressed" from="PhoneContainer/SettingsMenu/LocationWarningPanel/ButtonOptions/LocNoButton" to="." method="_on_loc_no_button_pressed"]
