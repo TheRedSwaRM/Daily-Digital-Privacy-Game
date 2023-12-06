@@ -19,6 +19,7 @@ enum State{
 @onready var volume_slider = %VolumeSlider
 @onready var location_warning = $PhoneContainer/SettingsMenu/LocationWarningPanel
 @onready var location_button = $PhoneContainer/SettingsMenu/SettingsList/LocationHorz/LocationButton
+@onready var wifi_panel = $PhoneContainer/SettingsMenu/WIFIPanel
 
 # Phone Background
 @onready var main_menu_background = preload("res://assets/images/device/phone.png")
@@ -105,3 +106,33 @@ func _panel_hack_toggle(value: bool):
 		panel_hack.mouse_filter = Control.MOUSE_FILTER_STOP
 	else:
 		panel_hack.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+#===============================================================================
+# WIFI FUNCTION
+#===============================================================================
+
+func _on_wifi_button_pressed():
+	_panel_hack_toggle(true)
+	wifi_panel.show()
+	
+func _on_home_wifi_pressed():
+	pass # Replace with function body.
+
+
+func _on_ram_wifi_pressed():
+	pass # Replace with function body.
+
+
+func _on_pldtwifi_pressed():
+	pass # Replace with function body.
+
+## Literally goofy. Please optimize.
+func _on_panel_warning_hack_gui_input(event):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and (panel_hack.mouse_filter == Control.MOUSE_FILTER_STOP):
+		print("Vibe check.")
+		_panel_hack_toggle(false)	# Expected, since this only happens when hack panel is on.
+		if location_warning.visible:
+			location_button.button_pressed = true
+			location_warning.hide()
+		if wifi_panel.visible:
+			wifi_panel.hide()
