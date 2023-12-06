@@ -334,6 +334,7 @@ offset_right = 53.0
 offset_bottom = 58.0
 
 [node name="HomeWIFI" type="Button" parent="PhoneContainer/SettingsMenu/WIFIPanel/WIFIList"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("4_ie8w4")
 text = "HOME"
@@ -342,6 +343,7 @@ alignment = 0
 icon_alignment = 2
 
 [node name="RamWIFI" type="Button" parent="PhoneContainer/SettingsMenu/WIFIPanel/WIFIList"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("4_ie8w4")
 text = "Rammer"
@@ -350,6 +352,7 @@ alignment = 0
 icon_alignment = 2
 
 [node name="PLDTWIFI" type="Button" parent="PhoneContainer/SettingsMenu/WIFIPanel/WIFIList"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("4_ie8w4")
 text = "PLDTWIFI"

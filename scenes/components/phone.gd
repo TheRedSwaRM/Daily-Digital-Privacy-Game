@@ -5,6 +5,14 @@ enum State{
 	RUNNING			# If currently opened
 }
 
+# WIFI Connection and Stuff
+@onready var current_connection = null
+@onready var wifi_list = %WIFIList
+@onready var wifi_settings_button = %WIFIButton
+@onready var default_theme = preload("res://scenes/components/wifi_button.tres")
+@onready var activated_theme = preload("res://scenes/components/wifi_button_activated.tres")
+
+# Other stuff (please arrange later)
 @onready var animation_player = $AnimationPlayer
 @onready var phone_background = $PhoneContainer/ThePhone
 @onready var current_state = State.IDLE
@@ -116,15 +124,31 @@ func _on_wifi_button_pressed():
 	wifi_panel.show()
 	
 func _on_home_wifi_pressed():
-	pass # Replace with function body.
+	_wifi_list_change()
+	%HomeWIFI.set_theme(activated_theme)
+	_change_current_connection("home")
 
 
 func _on_ram_wifi_pressed():
-	pass # Replace with function body.
-
+	_wifi_list_change()
+	%RamWIFI.set_theme(activated_theme)
+	_change_current_connection("ram")
 
 func _on_pldtwifi_pressed():
-	pass # Replace with function body.
+	_wifi_list_change()
+	%PLDTWIFI.set_theme(activated_theme)
+	_change_current_connection("pldt")
+
+func _change_current_connection(value: String):
+	current_connection = value
+
+# Automated function that reverts all buttons back to where they belong. Defaulted.
+func _wifi_list_change():
+	for wifi_item in wifi_list.get_children():
+		wifi_item.set_theme(default_theme)
+	wifi_settings_button.set_theme(activated_theme)
+	wifi_settings_button.text = "CON"
+		
 
 ## Literally goofy. Please optimize.
 func _on_panel_warning_hack_gui_input(event):
