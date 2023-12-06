@@ -138,7 +138,7 @@ func _on_pldtwifi_toggled(toggled_on):
 
 func _change_current_connection(value: String):
 	current_connection = value
-	print("Current Connection: " + current_connection)
+	#print("Current Connection: " + current_connection)
 
 # Automated function that reverts all buttons back to where they belong. Defaulted.
 func _wifi_list_change(wifi_picked: Button, toggled: bool):
@@ -161,7 +161,7 @@ func _wifi_list_change(wifi_picked: Button, toggled: bool):
 ## Literally goofy. Please optimize.
 func _on_panel_warning_hack_gui_input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and (panel_hack.mouse_filter == Control.MOUSE_FILTER_STOP):
-		print("Vibe check.")
+		#print("Vibe check.")
 		_panel_hack_toggle(false)	# Expected, since this only happens when hack panel is on.
 		if location_warning.visible:
 			location_button.button_pressed = true
