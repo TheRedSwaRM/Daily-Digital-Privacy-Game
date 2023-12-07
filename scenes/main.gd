@@ -8,10 +8,18 @@ extends Node
 #		cave.position.x = clampf(cave.position.x + event.relative.x, -CAVE_LIMIT, 0)
 
 func _ready():
+	# Adding events
 	Events.change_map.connect(_goto_area)
 	Events.change_map.emit(starting_screen)
 	
+	# For flipping
 	phone.flipping_phone.connect(_change_mouse_passing_for_phone)
+	
+	# For debugging
+	phone.debug_connection_change.connect(_change_connection_debug)
+	phone.debug_location_change.connect(_change_location_debug)
+	
+	# To Remove
 	# phone.unflip_phone.connect(_on_phone_unflip)
 	#print("is this even working?")
 	
@@ -56,3 +64,12 @@ func _change_mouse_passing_for_phone(value: bool):
 		phone.mouse_filter = Control.MOUSE_FILTER_STOP
 	else:
 		phone.mouse_filter = Control.MOUSE_FILTER_PASS
+
+#==============================================================================
+# Debugger function
+#==============================================================================
+func _change_connection_debug(connection: String):
+	%ConName.text = connection
+	
+func _change_location_debug(value: bool):
+	%LocYesNo.text = str(value)

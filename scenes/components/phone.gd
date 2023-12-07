@@ -5,6 +5,10 @@ enum State{
 	RUNNING			# If currently opened
 }
 
+# Debugger
+signal debug_connection_change(name: String)
+signal debug_location_change(value: bool)
+
 # WIFI Connection and Location
 @onready var current_connection: String = ""
 @onready var location_enabled: bool = false
@@ -99,15 +103,18 @@ func _on_location_button_toggled(toggled_on):
 		location_warning.show()
 	else:
 		location_enabled = true
+		debug_location_change.emit(true)		# For debugging
 
 func _on_loc_yes_button_pressed():
 	location_enabled = false
 	location_button.button_pressed = false
+	debug_location_change.emit(false)			# For debugging
 	_panel_hack_toggle(false)
 	location_warning.hide()
 
 func _on_loc_no_button_pressed():
 	location_button.button_pressed = true
+	debug_location_change.emit(true)			# For debugging
 	_panel_hack_toggle(false)
 	location_warning.hide()
 
@@ -155,7 +162,9 @@ func _wifi_list_change(wifi_picked: Button, toggled: bool):
 		wifi_settings_button.set_theme(default_theme)
 		wifi_settings_button.text = "None"
 		_change_current_connection("")
-		
+	
+	# For debugging only
+	debug_connection_change.emit(wifi_picked.text)
 		
 
 ## Literally goofy. Please optimize.
