@@ -34,6 +34,8 @@ signal debug_location_change(value: bool)
 # Settings Menu Button
 @onready var fullscreen_option = %FullScreenOption
 @onready var volume_slider = %VolumeSlider
+@onready var music_slider = %MusicSlider
+@onready var sfx_slider = %SFXSlider
 @onready var location_warning = $PhoneContainer/SettingsMenu/LocationWarningPanel
 @onready var location_button = $PhoneContainer/SettingsMenu/SettingsList/LocationHorz/LocationButton
 @onready var wifi_panel = $PhoneContainer/SettingsMenu/WIFIPanel
@@ -48,6 +50,8 @@ signal flipping_phone(value)
 func _ready():
 	fullscreen_option.button_pressed = GameSettings.fullscreen_value
 	volume_slider.value = GameSettings.master_volume
+	music_slider.value = GameSettings.music_volume
+	sfx_slider.value = GameSettings.sfx_volume
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -62,6 +66,8 @@ func _flip_phone(value: String):
 			animation_player.play("flip")
 			await animation_player.animation_finished
 		"close":
+			GameSettings.save_settings.emit() # Just in case
+			
 			flipping_phone.emit(false)
 			current_state = State.IDLE
 			animation_player.play("unflip")
@@ -95,8 +101,15 @@ func _on_full_screen_option_toggled(toggled_on):
 func _on_volume_slider_value_changed(value):
 	GameSettings.master_volume_changed.emit(value)
 
+func _on_music_slider_value_changed(value):
+	GameSettings.music_volume_changed.emit(value)
+
+func _on_sfx_slider_value_changed(value):
+	GameSettings.sfx_volume_changed.emit(value)
+
 func _on_return_button_pressed():
-	GameSettings.save_settings.emit()
+	GameSettings.save_settings.emit()				# Save stuff
+	
 	main_menu_buttons.show()
 	settings_menu.hide()
 	#phone_background.texture = main_menu_background
@@ -201,6 +214,9 @@ func _on_quit_no_pressed():
 	quit_panel.hide()
 	main_menu_buttons.show()
 	
+
+
+
 
 
 

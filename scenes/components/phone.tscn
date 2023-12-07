@@ -256,6 +256,36 @@ max_value = 1.0
 step = 0.01
 value = 1.0
 
+[node name="MusicLabel" type="Label" parent="PhoneContainer/SettingsMenu/SettingsList"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Music"
+label_settings = ExtResource("6_430b8")
+
+[node name="MusicSlider" type="HSlider" parent="PhoneContainer/SettingsMenu/SettingsList"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("4_80elq")
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="SFXLabel" type="Label" parent="PhoneContainer/SettingsMenu/SettingsList"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "SFX"
+label_settings = ExtResource("6_430b8")
+
+[node name="SFXSlider" type="HSlider" parent="PhoneContainer/SettingsMenu/SettingsList"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("4_80elq")
+max_value = 1.0
+step = 0.01
+value = 1.0
+
 [node name="PanelWarningHack" type="Control" parent="PhoneContainer/SettingsMenu"]
 layout_mode = 1
 anchors_preset = 15
@@ -452,6 +482,8 @@ libraries = {
 [connection signal="toggled" from="PhoneContainer/SettingsMenu/SettingsList/LocationHorz/LocationButton" to="." method="_on_location_button_toggled"]
 [connection signal="toggled" from="PhoneContainer/SettingsMenu/SettingsList/FScreenHorz/FullScreenOption" to="." method="_on_full_screen_option_toggled"]
 [connection signal="value_changed" from="PhoneContainer/SettingsMenu/SettingsList/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="value_changed" from="PhoneContainer/SettingsMenu/SettingsList/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="PhoneContainer/SettingsMenu/SettingsList/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="gui_input" from="PhoneContainer/SettingsMenu/PanelWarningHack" to="." method="_on_panel_warning_hack_gui_input"]
 [connection signal="pressed" from="PhoneContainer/SettingsMenu/LocationWarningPanel/ButtonOptions/LocYesButton" to="." method="_on_loc_yes_button_pressed"]
 [connection signal="pressed" from="PhoneContainer/SettingsMenu/LocationWarningPanel/ButtonOptions/LocNoButton" to="." method="_on_loc_no_button_pressed"]
