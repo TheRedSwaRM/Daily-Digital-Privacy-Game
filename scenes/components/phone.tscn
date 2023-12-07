@@ -387,6 +387,7 @@ offset_left = 39.0
 offset_top = 11.0
 offset_right = 105.0
 offset_bottom = 134.0
+metadata/_edit_lock_ = true
 
 [node name="QuitBackground" type="TextureRect" parent="PhoneContainer/QuitPanel"]
 layout_mode = 0
@@ -413,6 +414,7 @@ grow_vertical = 2
 text = "Quit?"
 label_settings = ExtResource("6_430b8")
 horizontal_alignment = 1
+metadata/_edit_lock_ = true
 
 [node name="QuitYes" type="TextureButton" parent="PhoneContainer/QuitPanel"]
 layout_mode = 0
@@ -421,6 +423,7 @@ offset_top = 68.0
 offset_right = 26.0
 offset_bottom = 78.0
 texture_normal = ExtResource("10_00k5p")
+metadata/_edit_lock_ = true
 
 [node name="QuitNo" type="TextureButton" parent="PhoneContainer/QuitPanel"]
 layout_mode = 0
@@ -429,11 +432,14 @@ offset_top = 68.0
 offset_right = 49.0
 offset_bottom = 78.0
 texture_normal = ExtResource("11_6im80")
+metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_6b7ab")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="pressed" from="PhoneContainer/FlippingButton" to="." method="_on_flipping_button_pressed"]
 [connection signal="pressed" from="PhoneContainer/MainMenuButtons/SettingsButton" to="." method="_on_settings_button_pressed"]

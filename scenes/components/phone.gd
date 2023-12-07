@@ -192,7 +192,9 @@ func _on_quit_button_pressed():
 	quit_panel.show()
 
 func _on_quit_yes_pressed():
-	get_tree().quit()
+	AudioManager.bgm_stop()
+	get_tree().change_scene_to_file("res://scenes/title.tscn")
+	#get_tree().quit()
 
 
 func _on_quit_no_pressed():

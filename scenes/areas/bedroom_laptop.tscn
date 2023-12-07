@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://da0nxr2b0t2tm"]
+[gd_scene load_steps=6 format=3 uid="uid://da0nxr2b0t2tm"]
 
+[ext_resource type="Script" path="res://scenes/areas/bedroom_laptop.gd" id="1_g8vdf"]
 [ext_resource type="Texture2D" uid="uid://bxwknkacjbvc2" path="res://assets/images/bg/room1.png" id="1_uxnjq"]
 [ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="2_l4qen"]
 [ext_resource type="Texture2D" uid="uid://dkrirc4vn7gwp" path="res://assets/images/bg/laptop.png" id="3_lsp7u"]
 [ext_resource type="Texture2D" uid="uid://bke8covyh2tpj" path="res://assets/images/bg/clock_side.png" id="4_8mfaf"]
 
 [node name="BedroomLaptop" type="Node2D"]
+script = ExtResource("1_g8vdf")
 
 [node name="Background" type="Control" parent="."]
 layout_mode = 3
