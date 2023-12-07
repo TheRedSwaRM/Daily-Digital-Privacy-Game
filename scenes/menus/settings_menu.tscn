@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://crvbt6pqib5vv"]
+[gd_scene load_steps=5 format=3 uid="uid://crvbt6pqib5vv"]
 
 [ext_resource type="Script" path="res://scenes/menus/settings_menu.gd" id="1_cdpil"]
 [ext_resource type="LabelSettings" uid="uid://bmxd075wxx0x5" path="res://scenes/menus/settings_menu_labels.tres" id="1_ft2k5"]
+[ext_resource type="Theme" uid="uid://dinj8j20l57j3" path="res://scenes/components/phone_button.tres" id="3_6if6j"]
 [ext_resource type="Theme" uid="uid://qlmicia5ewrp" path="res://scenes/components/title_button_theme.tres" id="3_uqyj0"]
 
 [node name="SettingsMenu" type="Control"]
@@ -52,16 +53,21 @@ label_settings = ExtResource("1_ft2k5")
 [node name="FullScreenOption" type="CheckButton" parent="GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("3_6if6j")
 
 [node name="VolumeLabel" type="Label" parent="GridContainer"]
 layout_mode = 2
-text = "Volume"
+text = "M. Volume"
 label_settings = ExtResource("1_ft2k5")
 
 [node name="VolumeSlider" type="HSlider" parent="GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+theme = ExtResource("3_6if6j")
+max_value = 1.0
+step = 0.1
+value = 1.0
 
 [node name="ReturnButton" type="Button" parent="."]
 layout_mode = 1

@@ -150,7 +150,6 @@ theme = ExtResource("5_u00af")
 metadata/_edit_lock_ = true
 
 [node name="SettingsMenu" type="Control" parent="PhoneContainer"]
-visible = false
 anchors_preset = 0
 offset_left = 39.0
 offset_top = 10.0
@@ -242,10 +241,10 @@ unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("4_80elq")
 
-[node name="VolumeLabel" type="Label" parent="PhoneContainer/SettingsMenu/SettingsList"]
+[node name="MasterVolumeLabel" type="Label" parent="PhoneContainer/SettingsMenu/SettingsList"]
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Volume"
+text = "M. Volume"
 label_settings = ExtResource("6_430b8")
 
 [node name="VolumeSlider" type="HSlider" parent="PhoneContainer/SettingsMenu/SettingsList"]
@@ -253,6 +252,9 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
 theme = ExtResource("4_80elq")
+max_value = 1.0
+step = 0.01
+value = 1.0
 
 [node name="PanelWarningHack" type="Control" parent="PhoneContainer/SettingsMenu"]
 layout_mode = 1

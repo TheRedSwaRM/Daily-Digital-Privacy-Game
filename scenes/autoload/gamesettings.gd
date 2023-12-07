@@ -1,7 +1,7 @@
 extends Node
 
 # Signals
-signal volume_changed(volume: float)
+signal master_volume_changed(volume: float)
 signal fullscreen_changed(value: bool)
 signal save_settings
 
@@ -12,17 +12,20 @@ signal save_settings
 func _ready():
 	_load_settings()
 	
-	volume_changed.connect(_has_volume_changed)
+	master_volume_changed.connect(_has_master_volume_changed)
 	fullscreen_changed.connect(_has_fullscreen_changed)
 	save_settings.connect(_save_settings)
 	
 	# Just in case
-	_has_volume_changed(master_volume)
+	_has_master_volume_changed(master_volume)
 	_has_fullscreen_changed(fullscreen_value)
 
-func _has_volume_changed(volume: float):
+func _has_master_volume_changed(volume: float):
 	master_volume = volume
 	# print(master_volume)
+	
+	AudioServer.set_bus_volume_db(0, linear_to_db(master_volume))
+	
 	
 func _has_fullscreen_changed(value: bool):
 	fullscreen_value = value

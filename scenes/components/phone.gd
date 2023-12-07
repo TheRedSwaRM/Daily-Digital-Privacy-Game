@@ -93,7 +93,7 @@ func _on_full_screen_option_toggled(toggled_on):
 	GameSettings.fullscreen_changed.emit(toggled_on)
 
 func _on_volume_slider_value_changed(value):
-	GameSettings.volume_changed.emit(value)
+	GameSettings.master_volume_changed.emit(value)
 
 func _on_return_button_pressed():
 	GameSettings.save_settings.emit()
