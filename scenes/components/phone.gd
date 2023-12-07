@@ -16,6 +16,9 @@ signal debug_location_change(value: bool)
 @onready var wifi_settings_button = %WIFIButton
 @onready var default_theme = preload("res://scenes/components/wifi_button.tres")
 @onready var activated_theme = preload("res://scenes/components/wifi_button_activated.tres")
+@onready var wifi_default_icon = preload("res://assets/images/device/wifi_icon.png")
+@onready var wifi_activated_icon = preload("res://assets/images/device/wifi_icon_connected.png")
+
 
 # Other stuff (please arrange later)
 @onready var animation_player = $AnimationPlayer
@@ -152,14 +155,17 @@ func _change_current_connection(value: String):
 func _wifi_list_change(wifi_picked: Button, toggled: bool):
 	for wifi_item in wifi_list.get_children():
 		wifi_item.set_theme(default_theme)
+		wifi_item.icon = wifi_default_icon
 	
 	if toggled:
 		wifi_picked.set_theme(activated_theme)
+		wifi_picked.icon = wifi_activated_icon
 		wifi_settings_button.set_theme(activated_theme)
 		wifi_settings_button.text = "CON"
 		_change_current_connection(wifi_picked.text)
 	else:
 		wifi_picked.set_theme(default_theme)
+		wifi_picked.icon = wifi_default_icon
 		wifi_settings_button.set_theme(default_theme)
 		wifi_settings_button.text = "None"
 		_change_current_connection("none")
