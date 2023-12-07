@@ -7,5 +7,6 @@ script = ExtResource("1_fowy0")
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
+bus = &"BGM"
 
 [node name="SFX" type="Node" parent="."]
