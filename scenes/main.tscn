@@ -9,6 +9,7 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_favck")
 starting_screen = "res://scenes/intro.tscn"
+debugger_on = true
 
 [node name="Debugging only" type="TextureRect" parent="."]
 offset_left = 48.0
@@ -22,6 +23,8 @@ texture = ExtResource("2_6q1uy")
 mouse_filter = 1
 
 [node name="Debugger" type="GridContainer" parent="."]
+unique_name_in_owner = true
+visible = false
 offset_right = 64.0
 offset_bottom = 40.0
 mouse_filter = 2

@@ -145,6 +145,7 @@ func _on_pldtwifi_toggled(toggled_on):
 
 func _change_current_connection(value: String):
 	current_connection = value
+	debug_connection_change.emit(value)
 	#print("Current Connection: " + current_connection)
 
 # Automated function that reverts all buttons back to where they belong. Defaulted.
@@ -161,10 +162,7 @@ func _wifi_list_change(wifi_picked: Button, toggled: bool):
 		wifi_picked.set_theme(default_theme)
 		wifi_settings_button.set_theme(default_theme)
 		wifi_settings_button.text = "None"
-		_change_current_connection("")
-	
-	# For debugging only
-	debug_connection_change.emit(wifi_picked.text)
+		_change_current_connection("none")
 		
 
 ## Literally goofy. Please optimize.

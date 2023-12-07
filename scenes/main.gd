@@ -3,6 +3,8 @@ extends Node
 @onready var phone = $Phone
 @onready var transition_sprite = $BlinkingEye
 @export_file var starting_screen
+@export var debugger_on: bool
+
 #
 #	if event is InputEventMouseMotion and event.button_mask > 0:
 #		cave.position.x = clampf(cave.position.x + event.relative.x, -CAVE_LIMIT, 0)
@@ -18,6 +20,9 @@ func _ready():
 	# For debugging
 	phone.debug_connection_change.connect(_change_connection_debug)
 	phone.debug_location_change.connect(_change_location_debug)
+	
+	if debugger_on:
+		%Debugger.show()
 	
 	# To Remove
 	# phone.unflip_phone.connect(_on_phone_unflip)
