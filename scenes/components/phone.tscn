@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bijcfw81xkw7r"]
+[gd_scene load_steps=19 format=3 uid="uid://bijcfw81xkw7r"]
 
 [ext_resource type="Script" path="res://scenes/components/phone.gd" id="1_ldqut"]
 [ext_resource type="Texture2D" uid="uid://h2puqxkdjy5n" path="res://assets/images/device/phone.png" id="2_fd6mj"]
@@ -7,8 +7,11 @@
 [ext_resource type="Theme" uid="uid://s47xnf1e5hrf" path="res://scenes/components/wifi_button.tres" id="4_ie8w4"]
 [ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="5_3t44e"]
 [ext_resource type="Texture2D" uid="uid://w3nfv6j12y4n" path="res://assets/images/device/phone_settings_true_bg.png" id="5_dv2cq"]
+[ext_resource type="Theme" uid="uid://dinj8j20l57j3" path="res://scenes/components/phone_button.tres" id="5_u00af"]
 [ext_resource type="LabelSettings" uid="uid://nk5nj83e5ai4" path="res://scenes/components/settings_phone.tres" id="6_430b8"]
 [ext_resource type="Texture2D" uid="uid://dtr61c0kwi83t" path="res://assets/images/device/wifi_icon.png" id="8_6dile"]
+[ext_resource type="Texture2D" uid="uid://crqr8uw0lxfkk" path="res://assets/images/device/phone_quit_yes.png" id="10_00k5p"]
+[ext_resource type="Texture2D" uid="uid://dohph2xo81a2j" path="res://assets/images/device/phone_quit_no.png" id="11_6im80"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6r4og"]
 bg_color = Color(0, 0, 0, 1)
@@ -100,6 +103,7 @@ grow_vertical = 2
 texture = ExtResource("2_fd6mj")
 expand_mode = 2
 stretch_mode = 5
+metadata/_edit_lock_ = true
 
 [node name="DebugOnly" type="TextureRect" parent="PhoneContainer"]
 visible = false
@@ -121,17 +125,28 @@ theme = ExtResource("4_80elq")
 [node name="MainMenuButtons" type="Control" parent="PhoneContainer"]
 anchors_preset = 0
 offset_left = 39.0
-offset_top = 10.0
+offset_top = 11.0
 offset_right = 105.0
-offset_bottom = 133.0
+offset_bottom = 134.0
+metadata/_edit_lock_ = true
 
 [node name="SettingsButton" type="Button" parent="PhoneContainer/MainMenuButtons"]
 layout_mode = 0
 offset_left = 46.0
-offset_top = 81.0
+offset_top = 80.0
 offset_right = 60.0
-offset_bottom = 95.0
+offset_bottom = 94.0
 theme = ExtResource("4_80elq")
+metadata/_edit_lock_ = true
+
+[node name="QuitButton" type="Button" parent="PhoneContainer/MainMenuButtons"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 101.0
+offset_right = 60.0
+offset_bottom = 115.0
+theme = ExtResource("5_u00af")
+metadata/_edit_lock_ = true
 
 [node name="SettingsMenu" type="Control" parent="PhoneContainer"]
 visible = false
@@ -140,6 +155,7 @@ offset_left = 39.0
 offset_top = 10.0
 offset_right = 105.0
 offset_bottom = 133.0
+metadata/_edit_lock_ = true
 
 [node name="SettingsBackground" type="TextureRect" parent="PhoneContainer/SettingsMenu"]
 layout_mode = 0
@@ -364,6 +380,56 @@ icon = ExtResource("8_6dile")
 alignment = 0
 icon_alignment = 2
 
+[node name="QuitPanel" type="Control" parent="PhoneContainer"]
+visible = false
+anchors_preset = 0
+offset_left = 39.0
+offset_top = 11.0
+offset_right = 105.0
+offset_bottom = 134.0
+
+[node name="QuitBackground" type="TextureRect" parent="PhoneContainer/QuitPanel"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -11.0
+offset_right = 69.0
+offset_bottom = 133.0
+texture = ExtResource("5_dv2cq")
+metadata/_edit_lock_ = true
+
+[node name="QuitLabel" type="Label" parent="PhoneContainer/QuitPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -8.5
+offset_right = 20.0
+offset_bottom = -3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit?"
+label_settings = ExtResource("6_430b8")
+horizontal_alignment = 1
+
+[node name="QuitYes" type="TextureButton" parent="PhoneContainer/QuitPanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 68.0
+offset_right = 26.0
+offset_bottom = 78.0
+texture_normal = ExtResource("10_00k5p")
+
+[node name="QuitNo" type="TextureButton" parent="PhoneContainer/QuitPanel"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 68.0
+offset_right = 49.0
+offset_bottom = 78.0
+texture_normal = ExtResource("11_6im80")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_6b7ab")
@@ -371,6 +437,7 @@ libraries = {
 
 [connection signal="pressed" from="PhoneContainer/FlippingButton" to="." method="_on_flipping_button_pressed"]
 [connection signal="pressed" from="PhoneContainer/MainMenuButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="PhoneContainer/MainMenuButtons/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="PhoneContainer/SettingsMenu/ReturnButton" to="." method="_on_return_button_pressed"]
 [connection signal="pressed" from="PhoneContainer/SettingsMenu/SettingsList/WIFIHorz/WIFIButton" to="." method="_on_wifi_button_pressed"]
 [connection signal="toggled" from="PhoneContainer/SettingsMenu/SettingsList/LocationHorz/LocationButton" to="." method="_on_location_button_toggled"]
@@ -382,3 +449,5 @@ libraries = {
 [connection signal="toggled" from="PhoneContainer/SettingsMenu/WIFIPanel/WIFIList/HomeWIFI" to="." method="_on_home_wifi_toggled"]
 [connection signal="toggled" from="PhoneContainer/SettingsMenu/WIFIPanel/WIFIList/RamWIFI" to="." method="_on_ram_wifi_toggled"]
 [connection signal="toggled" from="PhoneContainer/SettingsMenu/WIFIPanel/WIFIList/PLDTWIFI" to="." method="_on_pldtwifi_toggled"]
+[connection signal="pressed" from="PhoneContainer/QuitPanel/QuitYes" to="." method="_on_quit_yes_pressed"]
+[connection signal="pressed" from="PhoneContainer/QuitPanel/QuitNo" to="." method="_on_quit_no_pressed"]

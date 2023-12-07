@@ -29,6 +29,7 @@ signal debug_location_change(value: bool)
 @onready var main_menu_buttons = $PhoneContainer/MainMenuButtons
 @onready var settings_menu = $PhoneContainer/SettingsMenu
 @onready var panel_hack = $PhoneContainer/SettingsMenu/PanelWarningHack
+@onready var quit_panel = $PhoneContainer/QuitPanel
 
 # Settings Menu Button
 @onready var fullscreen_option = %FullScreenOption
@@ -181,6 +182,23 @@ func _on_panel_warning_hack_gui_input(event):
 			location_warning.hide()
 		if wifi_panel.visible:
 			wifi_panel.hide()
+
+#===============================================================================
+# QUIT FUNCTION
+#===============================================================================
+
+func _on_quit_button_pressed():
+	main_menu_buttons.hide()
+	quit_panel.show()
+
+func _on_quit_yes_pressed():
+	get_tree().quit()
+
+
+func _on_quit_no_pressed():
+	quit_panel.hide()
+	main_menu_buttons.show()
+	
 
 
 
