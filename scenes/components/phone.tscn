@@ -127,10 +127,10 @@ offset_bottom = 133.0
 
 [node name="SettingsButton" type="Button" parent="PhoneContainer/MainMenuButtons"]
 layout_mode = 0
-offset_left = 48.0
-offset_top = 82.0
-offset_right = 59.0
-offset_bottom = 93.0
+offset_left = 46.0
+offset_top = 81.0
+offset_right = 60.0
+offset_bottom = 95.0
 theme = ExtResource("4_80elq")
 
 [node name="SettingsMenu" type="Control" parent="PhoneContainer"]
