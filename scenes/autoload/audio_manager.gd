@@ -4,7 +4,7 @@
 extends Node
 
 @onready var background_music = %BGM
-
+@onready var sound_effect_queue = $SFX
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -34,3 +34,17 @@ func bgm_play(path: String):
 func bgm_stop():
 	background_music.stop()
 	background_music.stream = null
+
+func sfx_play(path: String):
+	var sfx = AudioStreamPlayer.new()
+	sound_effect_queue.add_child(sfx)
+	sfx.finished.connect(_sfx_free.bind(sfx))
+	sfx.bus = &"SFX"
+	
+	#print("Working")
+	
+	sfx.stream = load(path)
+	sfx.play()
+	
+func _sfx_free(sfx_node):
+	sfx_node.queue_free()

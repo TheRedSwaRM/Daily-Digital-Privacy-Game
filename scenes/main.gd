@@ -30,16 +30,6 @@ func _ready():
 	
 
 
-func _unhandled_input(event):
-	if get_tree().paused: return	# Safety measure :skull:
-	#if event is InputEventKey and event.pressed and !event.is_echo():
-		#match event.keycode:
-			#KEY_ESCAPE:
-				#get_tree().paused = true
-				#pause_menu.open_menu()
-		# print(get_viewport().get_visible_rect().size/2 - $Area.get_local_mouse_position())
-		# print($Area.get_local_mouse_position())
-
 ## Goes to another area.
 func _goto_area(path: String):
 	if ResourceLoader.exists(path):
@@ -68,7 +58,7 @@ func _change_mouse_passing_for_phone(value: bool):
 	if value:
 		phone.mouse_filter = Control.MOUSE_FILTER_STOP
 	else:
-		phone.mouse_filter = Control.MOUSE_FILTER_PASS
+		phone.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 #==============================================================================
 # Debugger function
