@@ -1,6 +1,7 @@
 extends Node
 
 @onready var phone = $Phone
+@onready var phone_settings = $Phone/PhoneContainer/Settings				# This is not a pretty solution.
 @onready var transition_sprite = $BlinkingEye
 @export_file var starting_screen
 @export var debugger_on: bool
@@ -18,8 +19,8 @@ func _ready():
 	phone.flipping_phone.connect(_change_mouse_passing_for_phone)
 	
 	# For debugging
-	phone.debug_connection_change.connect(_change_connection_debug)
-	phone.debug_location_change.connect(_change_location_debug)
+	phone_settings.debug_connection_change.connect(_change_connection_debug)
+	phone_settings.debug_location_change.connect(_change_location_debug)
 	
 	if debugger_on:
 		%Debugger.show()
