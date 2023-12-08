@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://crvbt6pqib5vv"]
+[gd_scene load_steps=5 format=3 uid="uid://crvbt6pqib5vv"]
 
 [ext_resource type="Script" path="res://scenes/menus/settings_menu.gd" id="1_cdpil"]
 [ext_resource type="LabelSettings" uid="uid://bmxd075wxx0x5" path="res://scenes/menus/settings_menu_labels.tres" id="1_ft2k5"]
+[ext_resource type="Theme" uid="uid://dinj8j20l57j3" path="res://scenes/components/phone_button.tres" id="3_6if6j"]
 [ext_resource type="Theme" uid="uid://qlmicia5ewrp" path="res://scenes/components/title_button_theme.tres" id="3_uqyj0"]
 
 [node name="SettingsMenu" type="Control"]
@@ -52,16 +53,49 @@ label_settings = ExtResource("1_ft2k5")
 [node name="FullScreenOption" type="CheckButton" parent="GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("3_6if6j")
 
 [node name="VolumeLabel" type="Label" parent="GridContainer"]
 layout_mode = 2
-text = "Volume"
+text = "M. Volume"
 label_settings = ExtResource("1_ft2k5")
 
 [node name="VolumeSlider" type="HSlider" parent="GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+theme = ExtResource("3_6if6j")
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="MusicLabel" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Music"
+label_settings = ExtResource("1_ft2k5")
+
+[node name="MusicSlider" type="HSlider" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("3_6if6j")
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="SFXLabel" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "SFX"
+label_settings = ExtResource("1_ft2k5")
+
+[node name="SFXSlider" type="HSlider" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("3_6if6j")
+max_value = 1.0
+step = 0.01
+value = 1.0
 
 [node name="ReturnButton" type="Button" parent="."]
 layout_mode = 1
@@ -71,9 +105,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -58.0
-offset_top = 36.0
+offset_top = 49.0
 offset_right = 58.0
-offset_bottom = 48.0
+offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_uqyj0")
@@ -82,4 +116,6 @@ text = "Return"
 
 [connection signal="toggled" from="GridContainer/FullScreenOption" to="." method="_on_full_screen_option_toggled"]
 [connection signal="value_changed" from="GridContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="value_changed" from="GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="GridContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

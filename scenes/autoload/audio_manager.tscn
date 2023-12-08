@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c28c444k0fmwr"]
+
+[ext_resource type="Script" path="res://scenes/autoload/audio_manager.gd" id="1_fowy0"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_fowy0")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+bus = &"BGM"
+
+[node name="SFX" type="Node" parent="."]

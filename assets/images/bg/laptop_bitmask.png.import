@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://crkrt2gmajq2i"
+path="res://.godot/imported/laptop_bitmask.png-491f4c6b415cef9addc1dc3930e327ff.res"
+
+[deps]
+
+source_file="res://assets/images/bg/laptop_bitmask.png"
+dest_files=["res://.godot/imported/laptop_bitmask.png-491f4c6b415cef9addc1dc3930e327ff.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

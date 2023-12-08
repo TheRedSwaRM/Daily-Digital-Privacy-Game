@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Events="*res://scenes/autoload/events.gd"
 GameSettings="*res://scenes/autoload/gamesettings.gd"
+AudioManager="*res://scenes/autoload/audio_manager.tscn"
 
 [display]
 
