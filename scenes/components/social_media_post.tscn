@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://dphuneonyspf2"]
+
+[ext_resource type="Theme" uid="uid://dinj8j20l57j3" path="res://scenes/components/phone_button.tres" id="1_1nnnb"]
+[ext_resource type="Texture2D" uid="uid://ba6k4rffpt7hm" path="res://assets/images/device/social_media_post_icon.png" id="2_jqldv"]
+[ext_resource type="LabelSettings" uid="uid://diwe4t6j60tts" path="res://scenes/components/social_media.tres" id="3_jnvt7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r81tw"]
+bg_color = Color(0.211765, 0.807843, 0.337255, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+anti_aliasing = false
+
+[node name="SocialMediaPost" type="PanelContainer"]
+offset_right = 60.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r81tw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_1nnnb")
+
+[node name="PsedoMargin2" type="ReferenceRect" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Profile" type="Button" parent="VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(54, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("1_1nnnb")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Name"
+icon = ExtResource("2_jqldv")
+alignment = 0
+
+[node name="Location" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "LOC: YES"
+label_settings = ExtResource("3_jnvt7")
+
+[node name="PostContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="PostImage" type="TextureRect" parent="VBoxContainer/PostContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/PostContainer"]
+layout_mode = 2
+theme = ExtResource("1_1nnnb")
+text = "Lorem IPSUM
+LOrem IPSUM
+LOREM IPSUM
+ad
+asd
+asd
+asd
+asd
+"
+fit_content = true
+
+[node name="PsedoMargin" type="ReferenceRect" parent="VBoxContainer"]
+layout_mode = 2

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://sdp7xytwmcsi"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_favck"]
+[ext_resource type="LabelSettings" uid="uid://diwe4t6j60tts" path="res://scenes/components/social_media.tres" id="3_0g5tf"]
 [ext_resource type="PackedScene" uid="uid://bijcfw81xkw7r" path="res://scenes/components/phone.tscn" id="3_4ld74"]
 [ext_resource type="SpriteFrames" uid="uid://c5m6vqysaysk5" path="res://assets/images/animation/blinking_eye.tres" id="4_hkoyb"]
-[ext_resource type="LabelSettings" uid="uid://nk5nj83e5ai4" path="res://scenes/components/settings_phone.tres" id="4_m3ig5"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_favck")
@@ -26,24 +26,24 @@ columns = 2
 [node name="ConLabel" type="Label" parent="Debugger"]
 layout_mode = 2
 text = "CON:"
-label_settings = ExtResource("4_m3ig5")
+label_settings = ExtResource("3_0g5tf")
 
 [node name="ConName" type="Label" parent="Debugger"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "NONE"
-label_settings = ExtResource("4_m3ig5")
+label_settings = ExtResource("3_0g5tf")
 
 [node name="LocLabel" type="Label" parent="Debugger"]
 layout_mode = 2
 text = "LOC:"
-label_settings = ExtResource("4_m3ig5")
+label_settings = ExtResource("3_0g5tf")
 
 [node name="LocYesNo" type="Label" parent="Debugger"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "YES"
-label_settings = ExtResource("4_m3ig5")
+label_settings = ExtResource("3_0g5tf")
 
 [node name="BlinkingEye" type="AnimatedSprite2D" parent="."]
 position = Vector2(128, 72)
