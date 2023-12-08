@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b2encyf73hip4"]
+[gd_scene load_steps=17 format=3 uid="uid://b2encyf73hip4"]
 
 [ext_resource type="Script" path="res://scenes/device/social_media.gd" id="1_6rg46"]
 [ext_resource type="Texture2D" uid="uid://bu8k43hl1ehm8" path="res://assets/images/device/phone_social_media.png" id="1_xk37a"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://g3paflh4a60q" path="res://assets/images/device/social_media_mes.png" id="5_ftokl"]
 [ext_resource type="Texture2D" uid="uid://b2snt3d8ls41m" path="res://assets/images/device/social_media_bell.png" id="6_m0a4i"]
 [ext_resource type="PackedScene" uid="uid://dphuneonyspf2" path="res://scenes/device/social_media_post.tscn" id="9_b1ayw"]
+[ext_resource type="Texture2D" uid="uid://igi48d65ml7" path="res://assets/images/social_media/default_image.png" id="10_wh3i3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bi26w"]
 
@@ -120,6 +121,7 @@ offset_bottom = 124.0
 theme = SubResource("Theme_v1liv")
 horizontal_scroll_mode = 0
 scroll_deadzone = 6
+metadata/_edit_lock_ = true
 
 [node name="HomePosts" type="VBoxContainer" parent="HomeFeed"]
 layout_mode = 2
@@ -128,3 +130,8 @@ alignment = 1
 
 [node name="SocialMediaPost" parent="HomeFeed/HomePosts" instance=ExtResource("9_b1ayw")]
 layout_mode = 2
+user_name = "gaysex"
+post_image = ExtResource("10_wh3i3")
+show_location_post = false
+location = "asdasdasd"
+post_text = "asdasdasdsadasdasdasdasdasdasdasd"
