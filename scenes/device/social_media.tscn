@@ -115,7 +115,7 @@ metadata/_edit_lock_ = true
 
 [node name="HomeFeed" type="ScrollContainer" parent="."]
 layout_mode = 0
-offset_top = 24.0
+offset_top = 22.0
 offset_right = 66.0
 offset_bottom = 124.0
 theme = SubResource("Theme_v1liv")
@@ -128,9 +128,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
+[node name="StartMarginRect" type="ReferenceRect" parent="HomeFeed/HomePosts"]
+layout_mode = 2
+
 [node name="SocialMediaPost" parent="HomeFeed/HomePosts" instance=ExtResource("9_b1ayw")]
 layout_mode = 2
-user_name = "asd"
+user_name = "asdsad"
 post_image = ExtResource("10_wh3i3")
 show_location_post = true
 location = "asdasdasa..."
@@ -143,3 +146,16 @@ post_image = ExtResource("10_wh3i3")
 show_location_post = true
 location = "asdasdasa..."
 post_text = "asdasdas"
+
+[node name="SocialMediaPost3" parent="HomeFeed/HomePosts" instance=ExtResource("9_b1ayw")]
+layout_mode = 2
+user_name = "asd"
+post_image = ExtResource("10_wh3i3")
+show_location_post = true
+location = "asdasdasa..."
+post_text = "asdasdas"
+
+[node name="EndMarginRect" type="ReferenceRect" parent="HomeFeed/HomePosts"]
+layout_mode = 2
+
+[connection signal="gui_input" from="HomeFeed" to="." method="_on_home_feed_gui_input"]

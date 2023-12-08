@@ -16,6 +16,7 @@ anti_aliasing = false
 offset_right = 60.0
 offset_bottom = 40.0
 size_flags_horizontal = 4
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_r81tw")
 script = ExtResource("1_v3lyl")
 
@@ -27,9 +28,10 @@ theme = ExtResource("2_uvcw3")
 
 [node name="PsedoMargin2" type="ReferenceRect" parent="VBoxContainer"]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="Profile" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(54, 0)
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("2_uvcw3")
@@ -42,6 +44,7 @@ clip_text = true
 [node name="Location" type="RichTextLabel" parent="VBoxContainer"]
 custom_minimum_size = Vector2(54, 0)
 layout_mode = 2
+mouse_filter = 1
 theme_override_colors/default_color = Color(0.266667, 0.266667, 0.266667, 1)
 fit_content = true
 
@@ -54,8 +57,10 @@ layout_mode = 2
 
 [node name="PostText" type="RichTextLabel" parent="VBoxContainer/PostContainer"]
 layout_mode = 2
+mouse_filter = 1
 theme = ExtResource("2_uvcw3")
 fit_content = true
 
 [node name="PsedoMargin" type="ReferenceRect" parent="VBoxContainer"]
 layout_mode = 2
+mouse_filter = 1
