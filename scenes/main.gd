@@ -19,8 +19,8 @@ func _ready():
 	phone.flipping_phone.connect(_change_mouse_passing_for_phone)
 	
 	# For debugging
-	phone_settings.debug_connection_change.connect(_change_connection_debug)
-	phone_settings.debug_location_change.connect(_change_location_debug)
+	Events.debug_connection_change.connect(_change_connection_debug)
+	Events.debug_location_change.connect(_change_location_debug)
 	
 	if debugger_on:
 		%Debugger.show()

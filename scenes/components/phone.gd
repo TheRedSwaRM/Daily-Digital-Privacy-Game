@@ -49,8 +49,6 @@ func _flip_phone(value: String):
 		_:
 			print("Uh, hello? You forgot to state flipping?")
 
-
-
 func _on_flipping_button_pressed():
 	print("It's working.")
 	match current_state:
@@ -77,7 +75,7 @@ func _on_return_button_pressed():
 #===============================================================================
 
 func _on_quit_button_pressed():
-	main_menu_buttons.hide()
+	#main_menu_buttons.hide()
 	quit_panel.show()
 
 func _on_quit_yes_pressed():
@@ -87,6 +85,6 @@ func _on_quit_yes_pressed():
 
 func _on_quit_no_pressed():
 	quit_panel.hide()
-	main_menu_buttons.show()
+	#main_menu_buttons.show()
 
 

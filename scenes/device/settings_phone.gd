@@ -1,7 +1,7 @@
 extends Control
 
 # WI-FI Vars
-@onready var wifi_list = %PLDTWIFI
+@onready var wifi_list = %WIFIList
 @onready var wifi_settings_button = %WIFIButton
 @onready var default_theme = preload("res://scenes/components/wifi_button.tres")
 @onready var activated_theme = preload("res://scenes/components/wifi_button_activated.tres")
@@ -23,9 +23,9 @@ extends Control
 @onready var music_slider = %MusicSlider
 @onready var sfx_slider = %SFXSlider
 
-# Debugger
-signal debug_connection_change(name: String)
-signal debug_location_change(value: bool)
+# %WIFIListger
+#signal debug_connection_change(name: String)
+#signal debug_location_change(value: bool)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -63,22 +63,26 @@ func _on_location_button_toggled(toggled_on):
 		_panel_hack_toggle(true)
 		location_warning.show()
 	else:
-		location_enabled = true
-		debug_location_change.emit(true)		# For debugging
+		_change_location_value(true)
+		#debug_location_change.emit(true)		# For debugging
 
 func _on_loc_yes_button_pressed():
-	location_enabled = false
+	_change_location_value(false)
 	location_button.button_pressed = false
-	debug_location_change.emit(false)			# For debugging
+	#debug_location_change.emit(false)			# For debugging
 	_panel_hack_toggle(false)
 	location_warning.hide()
 
 
 func _on_loc_no_button_pressed():
 	location_button.button_pressed = true
-	debug_location_change.emit(true)			# For debugging
+	#debug_location_change.emit(true)			# For debugging
 	_panel_hack_toggle(false)
 	location_warning.hide()
+
+func _change_location_value(value: bool):
+	location_enabled = value
+	Events.location = location_enabled
 
 #===============================================================================
 # END: LOCATION
@@ -132,7 +136,8 @@ func _wifi_list_change(wifi_picked: Button, toggled: bool):
 
 func _change_current_connection(value: String):
 	current_connection = value
-	debug_connection_change.emit(value)
+	Events.wifi_connection = current_connection
+	#debug_connection_change.emit(value)
 
 func _on_return_button_pressed():
 	GameSettings.save_settings.emit()
