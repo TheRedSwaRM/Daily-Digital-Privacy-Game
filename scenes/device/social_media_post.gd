@@ -27,7 +27,7 @@ func _ready():
 	post_text_node.text = post_text
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Engine.is_editor_hint():
 		user_name_button.text = user_name
 		image_node.texture = post_image
