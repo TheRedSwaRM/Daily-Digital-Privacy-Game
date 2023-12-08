@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2encyf73hip4"]
+[gd_scene load_steps=15 format=3 uid="uid://b2encyf73hip4"]
 
 [ext_resource type="Script" path="res://scenes/device/social_media.gd" id="1_6rg46"]
 [ext_resource type="Texture2D" uid="uid://bu8k43hl1ehm8" path="res://assets/images/device/phone_social_media.png" id="1_xk37a"]
@@ -8,6 +8,23 @@
 [ext_resource type="Texture2D" uid="uid://cmb3a637ce63t" path="res://assets/images/device/social_media_friends.png" id="5_flght"]
 [ext_resource type="Texture2D" uid="uid://g3paflh4a60q" path="res://assets/images/device/social_media_mes.png" id="5_ftokl"]
 [ext_resource type="Texture2D" uid="uid://b2snt3d8ls41m" path="res://assets/images/device/social_media_bell.png" id="6_m0a4i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bi26w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pporc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ss1s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mnmpm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eqnj7"]
+
+[sub_resource type="Theme" id="Theme_v1liv"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_bi26w")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_pporc")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_5ss1s")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_mnmpm")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_eqnj7")
 
 [node name="SocialMedia" type="Control"]
 layout_mode = 3
@@ -93,3 +110,17 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 icon = ExtResource("6_m0a4i")
 icon_alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="HomeFeed" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 66.0
+offset_bottom = 124.0
+theme = SubResource("Theme_v1liv")
+horizontal_scroll_mode = 0
+scroll_deadzone = 6
+
+[node name="HomePosts" type="VBoxContainer" parent="HomeFeed"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
