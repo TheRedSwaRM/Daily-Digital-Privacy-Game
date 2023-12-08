@@ -16,8 +16,9 @@ extends PanelContainer
 func _ready():
 	user_name_button.text = user_name
 	image_node.texture = post_image
-	if Events.location:
-		location_label.text = location
+	if not Engine.is_editor_hint():
+		if Events.location:
+			location_label.text = location
 	post_text_node.text = post_text
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
