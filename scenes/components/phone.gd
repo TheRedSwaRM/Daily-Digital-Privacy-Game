@@ -80,6 +80,7 @@ func _on_quit_button_pressed():
 
 func _on_quit_yes_pressed():
 	AudioManager.bgm_stop()
+	Events.reset_all()
 	get_tree().change_scene_to_file("res://scenes/title.tscn")
 	#get_tree().quit()
 
