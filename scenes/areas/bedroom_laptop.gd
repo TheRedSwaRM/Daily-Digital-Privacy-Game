@@ -13,4 +13,4 @@ func _process(_delta):
 
 func _on_laptop_pressed():
 	#print("presesd")
-	AudioManager.sfx_play("res://assets/audio/sfx/knock.ogg")
+	DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/intro.dialogue"))
