@@ -5,6 +5,13 @@ enum State{
 	RUNNING			# If currently opened
 }
 
+enum NavigationState {
+	HOME,
+	SOCIAL_MEDIA,
+	SETTINGS,
+	QUIT
+}
+
 # Other stuff (please arrange later)
 @onready var animation_player = $AnimationPlayer
 @onready var phone_background = $PhoneContainer/ThePhone
@@ -23,6 +30,22 @@ enum State{
 
 # Social Media
 @onready var social_media = $PhoneContainer/SocialMedia
+
+# Current State
+@onready var current_phone_location = NavigationState.HOME :
+	get:
+		return current_phone_location
+	set(value):
+		current_phone_location = value
+		match current_phone_location:					# Debugging
+			NavigationState.HOME:
+				print("Home")
+			NavigationState.SOCIAL_MEDIA:
+				print("Social Media")
+			NavigationState.SETTINGS:
+				print("Settings")
+			NavigationState.QUIT:
+				print("Quit")
 
 signal flipping_phone(value)
 
@@ -53,7 +76,6 @@ func _flip_phone(value: String):
 			print("Uh, hello? You forgot to state flipping?")
 
 func _on_flipping_button_pressed():
-	print("It's working.")
 	match current_state:
 		State.IDLE:
 			_flip_phone("open")
@@ -67,29 +89,63 @@ func _on_flipping_button_pressed():
 #===============================================================================
 
 func _on_settings_button_pressed():
+	current_phone_location = NavigationState.SETTINGS
 	settings_instance.show()
 
 func _on_return_button_pressed():
 	GameSettings.save_settings.emit()			# Save stuff
-	#phone_background.texture = main_menu_background
 
 #===============================================================================
 # QUIT FUNCTION
 #===============================================================================
 
 func _on_quit_button_pressed():
-	#main_menu_buttons.hide()
+	current_phone_location = NavigationState.QUIT
 	quit_panel.show()
 
 func _on_quit_yes_pressed():
 	AudioManager.bgm_stop()
 	Events.reset_all()
 	get_tree().change_scene_to_file("res://scenes/title.tscn")
-	#get_tree().quit()
 
 func _on_quit_no_pressed():
+	current_phone_location = NavigationState.HOME
 	quit_panel.hide()
-	#main_menu_buttons.show()
 
 func _on_social_media_button_pressed():
+	current_phone_location = NavigationState.SOCIAL_MEDIA
 	social_media.show()
+
+#===============================================================================
+# NAVIGATION FUNCTION
+#===============================================================================
+
+func _on_home_button_pressed():
+	match current_phone_location:
+		NavigationState.HOME:
+			return
+		NavigationState.SOCIAL_MEDIA:
+			social_media.hide()
+		NavigationState.SETTINGS:
+			settings_instance.hide()
+		NavigationState.QUIT:
+			quit_panel.hide()
+	
+	# Given... like, literally.
+	current_phone_location = NavigationState.HOME
+
+# TODO: This is not the final state of this thing. This thing is going to be...
+# MUCH, MUCH WORSE.
+func _on_back_button_pressed():
+	match current_phone_location:
+		NavigationState.HOME:
+			return
+		NavigationState.SOCIAL_MEDIA:
+			social_media.hide()
+		NavigationState.SETTINGS:
+			settings_instance.hide()
+		NavigationState.QUIT:
+			quit_panel.hide()
+	
+	# Given... like, literally.
+	current_phone_location = NavigationState.HOME

@@ -156,8 +156,8 @@ visible = false
 layout_mode = 1
 offset_left = 39.0
 offset_top = 10.0
-offset_right = 39.0
-offset_bottom = 10.0
+offset_right = -39.0
+offset_bottom = -10.0
 metadata/_edit_lock_ = true
 
 [node name="QuitPanel" type="Control" parent="PhoneContainer"]
@@ -218,8 +218,26 @@ visible = false
 layout_mode = 1
 offset_left = 39.0
 offset_top = 10.0
-offset_right = 39.0
-offset_bottom = 10.0
+offset_right = -39.0
+offset_bottom = -10.0
+metadata/_edit_lock_ = true
+
+[node name="HomeButton" type="Button" parent="PhoneContainer"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 134.0
+offset_right = 76.0
+offset_bottom = 141.0
+theme = ExtResource("5_u00af")
+metadata/_edit_lock_ = true
+
+[node name="BackButton" type="Button" parent="PhoneContainer"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 134.0
+offset_right = 56.0
+offset_bottom = 141.0
+theme = ExtResource("5_u00af")
 metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -235,3 +253,5 @@ libraries = {
 [connection signal="pressed" from="PhoneContainer/MainMenuButtons/SocialMediaButton" to="." method="_on_social_media_button_pressed"]
 [connection signal="pressed" from="PhoneContainer/QuitPanel/QuitYes" to="." method="_on_quit_yes_pressed"]
 [connection signal="pressed" from="PhoneContainer/QuitPanel/QuitNo" to="." method="_on_quit_no_pressed"]
+[connection signal="pressed" from="PhoneContainer/HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="PhoneContainer/BackButton" to="." method="_on_back_button_pressed"]
