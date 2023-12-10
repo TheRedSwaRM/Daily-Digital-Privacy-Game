@@ -5,6 +5,7 @@ signal debug_connection_change(name: String)
 signal debug_location_change(value: bool)
 
 @onready var game_switches = {
+	"intro": false,
 	"posted_with_location": false
 }
 
