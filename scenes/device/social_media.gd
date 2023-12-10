@@ -62,7 +62,7 @@ func sns_add(username: String, sns_text: String, loc: String = "", sns_image: Te
 
 func _on_add_post_button_pressed():
 	if Events.location:
-		Events.sns_add_post.emit("gay sex", "gaygay", "haha", preload("res://assets/images/social_media/default_image.png"))
+		Events.sns_add_post.emit("gay sex", "gaygay", "haha", load("res://assets/images/social_media/default_image.png"))
 		Events.change_game_switch("posted_with_location", true)
 	else:
-		Events.sns_add_post.emit("gay sex", "gaygay", "", preload("res://assets/images/social_media/default_image.png"))
+		Events.sns_add_post.emit("gay sex", "gaygay", "", load("res://assets/images/social_media/default_image.png"))

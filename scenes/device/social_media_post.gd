@@ -19,6 +19,7 @@ func _ready():
 	if post_image == null:
 		image_node.hide()
 	else:
+		image_node.show()
 		image_node.texture = post_image
 	
 	if not location == "":
