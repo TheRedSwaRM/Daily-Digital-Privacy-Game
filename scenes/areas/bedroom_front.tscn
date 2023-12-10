@@ -46,4 +46,11 @@ transfer_area = ""
 position = Vector2(184, 0)
 polygon = PackedVector2Array(52, 20, 28, 34, 29, 117, 53, 99)
 
+[node name="ClickAreaComponent" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_8n6js")]
+collision_polygon = NodePath("CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClickAreaComponent"]
+polygon = PackedVector2Array(175, 32, 175, 111, 202, 111, 202, 50, 208, 50, 208, 32)
+
 [connection signal="input_detected" from="ToBathroom" to="." method="_on_to_bathroom_input_detected"]
+[connection signal="input_detected" from="ClickAreaComponent" to="." method="_on_click_area_component_input_detected"]

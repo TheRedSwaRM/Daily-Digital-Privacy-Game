@@ -21,3 +21,15 @@ Cheryl: ...Why can't I turn it off?
 Cheryl: Gotta check who's at the door first.
 
 => END
+
+~ morning
+
+Cheryl: I don't have a reason to go outside.
+
+=> END
+
+~ evening
+
+Cheryl: ...Who's there?
+
+=> END

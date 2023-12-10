@@ -10,6 +10,7 @@ signal flip_phone()
 signal activate_phone()
 signal deactivate_phone()
 signal open_blinking_eye()
+signal do_full_blink()
 
 # Game Switch Change
 signal game_switch_changed(key: String, value: bool)
