@@ -30,6 +30,8 @@ func _ready():
 	Events.activate_phone.connect(_show_phone)
 	Events.deactivate_phone.connect(_hide_phone)
 	
+	Events.open_blinking_eye.connect(_open_blinking_eye)
+	
 	if debugger_on:
 		%Debugger.show()
 	
@@ -40,15 +42,16 @@ func _ready():
 	
 	
 ## Goes to another area.
-func _goto_area(path: String):
+func _goto_area(path: String, special: bool = false):
 	if ResourceLoader.exists(path):
 		transition_sprite.play("blinking_transition")
 		await transition_sprite.animation_finished
 		
 		call_deferred("_deferred_change_area", path)
 		
-		transition_sprite.play_backwards("blinking_transition")
-		await transition_sprite.animation_finished
+		if not special:
+			transition_sprite.play_backwards("blinking_transition")
+			await transition_sprite.animation_finished
 	
 ## Changes scene. Deferred JUST IN CASE.
 func _deferred_change_area(path: String):
@@ -74,6 +77,10 @@ func _show_phone():
 
 func _hide_phone():
 	phone.hide()
+
+func _open_blinking_eye():
+	transition_sprite.play_backwards("blinking_transition")
+	await transition_sprite.animation_finished
 
 #==============================================================================
 # Debugger function

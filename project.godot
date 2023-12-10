@@ -24,7 +24,7 @@ AudioManager="*res://scenes/autoload/audio_manager.tscn"
 
 [dialogue_manager]
 
-general/states=["Events"]
+general/states=["Events", "AudioManager"]
 
 [display]
 

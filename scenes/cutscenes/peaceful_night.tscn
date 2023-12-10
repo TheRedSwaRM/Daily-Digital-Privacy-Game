@@ -1,12 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfagpxhxphhvl"]
+[gd_scene load_steps=11 format=3 uid="uid://b8vyfbty7kmsn"]
 
-[ext_resource type="Script" path="res://scenes/cutscenes/fricked_up.gd" id="1_qruae"]
-[ext_resource type="Texture2D" uid="uid://md0j0h5b0dye" path="res://assets/images/bg/room1_night.png" id="2_cfwn6"]
-[ext_resource type="SpriteFrames" uid="uid://dknba0wlge80i" path="res://scenes/cutscenes/horror_scene_1.tres" id="3_cmhxh"]
-[ext_resource type="Texture2D" uid="uid://b43kg1568otan" path="res://assets/images/bg/laptop_night.png" id="3_j31c4"]
-[ext_resource type="Texture2D" uid="uid://drqj1evi6sd6w" path="res://assets/images/bg/clock_side_night.png" id="4_ti4gf"]
-[ext_resource type="Texture2D" uid="uid://ctq7le01jdp4k" path="res://assets/images/bg/room3_night2.png" id="5_hpb53"]
-[ext_resource type="Texture2D" uid="uid://b24n5lu24dtlr" path="res://assets/images/bg/laptop_horror_night.png" id="7_3woxm"]
+[ext_resource type="Script" path="res://scenes/cutscenes/fricked_up.gd" id="1_agjye"]
+[ext_resource type="Texture2D" uid="uid://md0j0h5b0dye" path="res://assets/images/bg/room1_night.png" id="2_wb471"]
+[ext_resource type="Texture2D" uid="uid://b43kg1568otan" path="res://assets/images/bg/laptop_night.png" id="3_3ys2l"]
+[ext_resource type="Texture2D" uid="uid://drqj1evi6sd6w" path="res://assets/images/bg/clock_side_night.png" id="4_0htiw"]
+[ext_resource type="Texture2D" uid="uid://ctq7le01jdp4k" path="res://assets/images/bg/room3_night2.png" id="5_4jhun"]
+[ext_resource type="SpriteFrames" uid="uid://dknba0wlge80i" path="res://scenes/cutscenes/horror_scene_1.tres" id="6_vevsy"]
+[ext_resource type="Texture2D" uid="uid://b24n5lu24dtlr" path="res://assets/images/bg/laptop_horror_night.png" id="7_7b1hr"]
 
 [sub_resource type="Animation" id="Animation_wta55"]
 resource_name = "fricked"
@@ -33,7 +33,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("3_j31c4"), ExtResource("7_3woxm")]
+"values": [ExtResource("3_3ys2l"), ExtResource("7_7b1hr")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -110,7 +110,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_j31c4")]
+"values": [ExtResource("3_3ys2l")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -162,7 +162,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_qruae")
+script = ExtResource("1_agjye")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -182,7 +182,7 @@ mouse_filter = 1
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 144.0
-texture = ExtResource("2_cfwn6")
+texture = ExtResource("2_wb471")
 stretch_mode = 5
 
 [node name="Laptop" type="TextureRect" parent="Bedroom"]
@@ -192,7 +192,7 @@ offset_top = 70.0
 offset_right = 167.0
 offset_bottom = 96.0
 mouse_default_cursor_shape = 3
-texture = ExtResource("3_j31c4")
+texture = ExtResource("3_3ys2l")
 metadata/_edit_lock_ = true
 
 [node name="Clock" type="TextureRect" parent="Bedroom"]
@@ -201,7 +201,7 @@ offset_left = 188.0
 offset_top = 80.0
 offset_right = 208.0
 offset_bottom = 105.0
-texture = ExtResource("4_ti4gf")
+texture = ExtResource("4_0htiw")
 
 [node name="Night" type="Control" parent="."]
 layout_mode = 1
@@ -214,13 +214,13 @@ grow_vertical = 2
 [node name="TextureRect" type="TextureRect" parent="Night"]
 offset_right = 256.0
 offset_bottom = 144.0
-texture = ExtResource("5_hpb53")
+texture = ExtResource("5_4jhun")
 stretch_mode = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(128, 72)
-sprite_frames = ExtResource("3_cmhxh")
+sprite_frames = ExtResource("6_vevsy")
 metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -2,8 +2,13 @@
 
 Should I sleep now?
 - Yes
+	do AudioManager.bgm_stop()
 	do Events.deactivate_phone.emit()
-	do Events.change_map.emit()
+	
+	if Events.check_game_switch("posted_with_location")
+		do Events.change_map.emit("res://scenes/cutscenes/fricked_up.tscn", true)
+	else
+		do Events.change_map.emit("res://scenes/cutscenes/peaceful_night.tscn", true)
 - No => END
 
 => END
