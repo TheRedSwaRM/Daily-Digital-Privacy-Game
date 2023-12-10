@@ -1,8 +1,11 @@
 extends Node
 
 signal change_map(path: String)
-signal debug_connection_change(name: String)
-signal debug_location_change(value: bool)
+signal connection_change(name: String)
+signal location_change(value: bool)
+
+# For social media posts :skull:
+signal sns_add_post(username: String, sns_text: String, loc: String, sns_image: Texture2D)
 
 @onready var game_switches = {
 	"intro": false,
@@ -14,7 +17,7 @@ signal debug_location_change(value: bool)
 		return wifi_connection
 	set(value):
 		wifi_connection = value
-		debug_connection_change.emit(value)
+		connection_change.emit(value)
 		#print("New value: " + value)
 	
 @onready var location: bool = true :
@@ -22,7 +25,7 @@ signal debug_location_change(value: bool)
 		return location
 	set(value):
 		location = value
-		debug_location_change.emit(value)
+		location_change.emit(value)
 
 ## What it says in the tin, especially in the event that we're going back to the main menu.
 func reset_all():

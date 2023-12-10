@@ -176,7 +176,6 @@ offset_top = -11.0
 offset_right = 69.0
 offset_bottom = 133.0
 texture = ExtResource("5_dv2cq")
-metadata/_edit_lock_ = true
 
 [node name="QuitLabel" type="Label" parent="PhoneContainer/QuitPanel"]
 layout_mode = 1

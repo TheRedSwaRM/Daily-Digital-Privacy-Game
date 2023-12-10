@@ -56,6 +56,7 @@ layout_mode = 2
 size_flags_vertical = 4
 
 [node name="PostImage" type="TextureRect" parent="VBoxContainer/PostContainer"]
+visible = false
 layout_mode = 2
 
 [node name="PostText" type="RichTextLabel" parent="VBoxContainer/PostContainer"]

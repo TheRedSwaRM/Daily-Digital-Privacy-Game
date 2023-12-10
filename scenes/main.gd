@@ -17,17 +17,12 @@ func _ready():
 	phone.flipping_phone.connect(_change_mouse_passing_for_phone)
 	
 	# For debugging
-	Events.debug_connection_change.connect(_change_connection_debug)
-	Events.debug_location_change.connect(_change_location_debug)
+	Events.connection_change.connect(_change_connection_debug)
+	Events.location_change.connect(_change_location_debug)
 	
 	if debugger_on:
 		%Debugger.show()
 	
-	phone.social_media.sns_add("gay", "yeahyeah")
-	
-	# To Remove
-	# phone.unflip_phone.connect(_on_phone_unflip)
-	#print("is this even working?")
 	
 
 
