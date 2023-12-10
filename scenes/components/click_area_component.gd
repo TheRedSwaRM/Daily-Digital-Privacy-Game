@@ -36,9 +36,9 @@ func _on_input_event(_viewport, event, _shape_idx):
 
 func _on_mouse_entered():
 	#label_node.visible = true
-	Input.set_default_cursor_shape(Input.CURSOR_CROSS)
+	pass
 
 
 func _on_mouse_exited():
 	#label_node.visible = false
-	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+	pass
