@@ -1,0 +1,9 @@
+~ this_is_a_node_title
+
+Should I sleep now?
+- Yes
+	do Events.deactivate_phone.emit()
+	do Events.change_map.emit()
+- No => END
+
+=> END

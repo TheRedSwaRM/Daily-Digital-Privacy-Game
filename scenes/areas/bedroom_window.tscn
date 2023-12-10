@@ -111,3 +111,11 @@ libraries = {
 "": SubResource("AnimationLibrary_ksbpd")
 }
 speed_scale = 0.5
+
+[node name="Pillow" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_57hfl")]
+collision_polygon = NodePath("CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pillow"]
+polygon = PackedVector2Array(175, 111, 208, 112, 208, 144, 155, 144, 155, 114)
+
+[connection signal="input_detected" from="Pillow" to="." method="_on_pillow_input_detected"]

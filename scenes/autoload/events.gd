@@ -8,9 +8,13 @@ signal location_change(value: bool)
 signal sns_add_post(username: String, sns_text: String, loc: String, sns_image: Texture2D)
 signal flip_phone()
 signal activate_phone()
+signal deactivate_phone()
 
 # Game Switch Change
 signal game_switch_changed(key: String, value: bool)
+
+# Dialogue selection
+signal response_taken()
 
 @onready var _game_switches = {
 	"intro": false,
@@ -47,5 +51,10 @@ func reset_all():
 	
 	wifi_connection = "None"
 	location = true
-	
+
+func quit_game():
+	AudioManager.bgm_stop()
+	Events.reset_all()
+	get_tree().change_scene_to_file("res://scenes/title.tscn")
+
 	#print(game_switches)

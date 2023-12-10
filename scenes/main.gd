@@ -27,7 +27,8 @@ func _ready():
 	Events.connection_change.connect(_change_connection_debug)
 	Events.location_change.connect(_change_location_debug)
 	
-	Events.activate_phone.connect(_show_phone_after_intro)
+	Events.activate_phone.connect(_show_phone)
+	Events.deactivate_phone.connect(_hide_phone)
 	
 	if debugger_on:
 		%Debugger.show()
@@ -68,8 +69,11 @@ func _change_mouse_passing_for_phone(value: bool):
 	else:
 		phone.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
-func _show_phone_after_intro():
+func _show_phone():
 	phone.show()
+
+func _hide_phone():
+	phone.hide()
 
 #==============================================================================
 # Debugger function

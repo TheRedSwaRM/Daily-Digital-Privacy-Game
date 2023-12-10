@@ -104,9 +104,10 @@ func _on_quit_button_pressed():
 	quit_panel.show()
 
 func _on_quit_yes_pressed():
-	AudioManager.bgm_stop()
-	Events.reset_all()
-	get_tree().change_scene_to_file("res://scenes/title.tscn")
+	Events.quit_game()
+	#AudioManager.bgm_stop()
+	#Events.reset_all()
+	#get_tree().change_scene_to_file("res://scenes/title.tscn")
 
 func _on_quit_no_pressed():
 	current_phone_location = NavigationState.HOME
