@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://baxqxgscldslf"]
+[gd_scene load_steps=10 format=3 uid="uid://baxqxgscldslf"]
 
 [ext_resource type="Script" path="res://scenes/areas/bedroom_window.gd" id="1_caxxx"]
 [ext_resource type="Texture2D" uid="uid://b4h4uol1nrski" path="res://assets/images/bg/room3.png" id="1_h5mag"]
 [ext_resource type="Texture2D" uid="uid://57w0l58i6wn6" path="res://assets/images/bg/room3_clouds.png" id="1_jdgfa"]
 [ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="2_57hfl"]
 [ext_resource type="Texture2D" uid="uid://dor3ogk87krs3" path="res://assets/images/bg/clock_front.png" id="3_bq7um"]
+[ext_resource type="BitMap" uid="uid://g3parxam13nv" path="res://assets/images/bg/clock_front_bitmask.png" id="6_aqdk4"]
 
 [sub_resource type="Animation" id="Animation_fu2fs"]
 length = 0.001
@@ -105,6 +106,7 @@ offset_top = 88.0
 offset_right = 139.0
 offset_bottom = 112.0
 texture_normal = ExtResource("3_bq7um")
+texture_click_mask = ExtResource("6_aqdk4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -118,4 +120,5 @@ collision_polygon = NodePath("CollisionPolygon2D")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pillow"]
 polygon = PackedVector2Array(175, 111, 208, 112, 208, 144, 155, 144, 155, 114)
 
+[connection signal="pressed" from="Clock" to="." method="_on_clock_pressed"]
 [connection signal="input_detected" from="Pillow" to="." method="_on_pillow_input_detected"]

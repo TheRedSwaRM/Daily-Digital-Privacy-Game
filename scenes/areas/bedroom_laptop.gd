@@ -44,3 +44,5 @@ func _on_laptop_pressed():
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "laptop")
 
 
+func _on_clock_pressed():
+	DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/room.dialogue"), "clock")

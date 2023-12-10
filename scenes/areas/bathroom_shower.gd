@@ -7,13 +7,13 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(delta):
 	pass
-
-
-func _on_to_front_input_detected():
-	AudioManager.sfx_play("res://assets/audio/sfx/door_open.mp3")
 
 
 func _on_shower_input_detected():
 	DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/bathroom.dialogue"), "shower")
+
+
+func _on_toilet_input_detected():
+	DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/bathroom.dialogue"), "toilet")

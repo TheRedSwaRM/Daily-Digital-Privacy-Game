@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://ksibhf4hswwi"
+path="res://.godot/imported/room.dialogue-24762dd4e2098cf35ea2d3fbe7f2519c.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/room.dialogue"
+dest_files=["res://.godot/imported/room.dialogue-24762dd4e2098cf35ea2d3fbe7f2519c.tres"]
+
+[params]
+
+defaults=true

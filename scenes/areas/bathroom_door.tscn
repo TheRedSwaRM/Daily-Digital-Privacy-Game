@@ -54,4 +54,11 @@ transfer_area = "res://scenes/areas/bathroom_mirror.tscn"
 position = Vector2(143, -48)
 polygon = PackedVector2Array(65, 48, 89, 48, 89, 192, 65, 192)
 
+[node name="Shower" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_3060b")]
+collision_polygon = NodePath("CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shower"]
+polygon = PackedVector2Array(189, 30, 183, 43, 183, 144, 205, 144, 205, 41, 200, 30)
+
 [connection signal="input_detected" from="ToFront" to="." method="_on_to_front_input_detected"]
+[connection signal="input_detected" from="Shower" to="." method="_on_shower_input_detected"]

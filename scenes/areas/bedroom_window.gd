@@ -22,3 +22,7 @@ func _on_pillow_input_detected():
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/knocking.dialogue"), "pillow_check")
 	else:
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/sleeping_time.dialogue"))
+
+
+func _on_clock_pressed():
+	DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/room.dialogue"), "clock")

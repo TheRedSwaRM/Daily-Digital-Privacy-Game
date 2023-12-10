@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://d35lcrm7htm1k"
+path="res://.godot/imported/clock_bitmask.png-31f3ea98d0ad52131d062051354feae5.res"
+
+[deps]
+
+source_file="res://assets/images/bg/clock_bitmask.png"
+dest_files=["res://.godot/imported/clock_bitmask.png-31f3ea98d0ad52131d062051354feae5.res"]
+
+[params]
+
+create_from=0
+threshold=0.5
