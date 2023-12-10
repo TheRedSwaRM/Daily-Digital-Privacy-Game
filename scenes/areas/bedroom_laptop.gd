@@ -39,5 +39,7 @@ func _on_laptop_pressed():
 			laptop.texture_normal = load("res://assets/images/bg/laptop_horror_night.png")
 		else:
 			DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/knocking.dialogue"), "laptop_scare")
+	else:
+		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "laptop")
 
 

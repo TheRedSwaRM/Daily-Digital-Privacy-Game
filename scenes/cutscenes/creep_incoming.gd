@@ -4,6 +4,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	AudioManager.bgm_play("res://assets/audio/bgm/horror_droning.mp3")
+	AudioManager.sfx_play("res://assets/audio/sfx/door_open.mp3")
 	await get_tree().create_timer(2).timeout
 	_do_blink()
 	anim_player.play("creep_death")
@@ -16,3 +17,7 @@ func _process(delta):
 
 func _do_blink():
 	Events.do_full_blink.emit()
+
+func _play_monster_sfx():
+	AudioManager.sfx_play("res://assets/audio/sfx/monster.mp3")
+
