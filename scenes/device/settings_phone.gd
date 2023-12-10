@@ -39,7 +39,7 @@ func _ready():
 	Events.location = location_enabled
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 ## Activates panel hack for convenience, when a panel is brought up to stop
@@ -51,6 +51,7 @@ func _panel_hack_toggle(value: bool):
 		panel_hack.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func _on_wifi_button_pressed():
+	_play_accept()
 	_panel_hack_toggle(true)
 	wifi_panel.show()
 
@@ -60,13 +61,16 @@ func _on_wifi_button_pressed():
 
 func _on_location_button_toggled(toggled_on):
 	if !toggled_on:
+		_play_accept()
 		_panel_hack_toggle(true)
 		location_warning.show()
 	else:
+		_play_accept()
 		_change_location_value(true)
 		#debug_location_change.emit(true)		# For debugging
 
 func _on_loc_yes_button_pressed():
+	_play_accept()
 	_change_location_value(false)
 	location_button.button_pressed = false
 	#debug_location_change.emit(false)			# For debugging
@@ -75,6 +79,7 @@ func _on_loc_yes_button_pressed():
 
 
 func _on_loc_no_button_pressed():
+	_play_back()
 	location_button.button_pressed = true
 	#debug_location_change.emit(true)			# For debugging
 	_panel_hack_toggle(false)
@@ -89,6 +94,7 @@ func _change_location_value(value: bool):
 #===============================================================================
 
 func _on_full_screen_option_toggled(toggled_on):
+	_play_accept()
 	GameSettings.fullscreen_changed.emit(toggled_on)
 
 
@@ -105,14 +111,17 @@ func _on_sfx_slider_value_changed(value):
 
 
 func _on_home_wifi_toggled(toggled_on):
+	_play_accept()
 	_wifi_list_change(%HomeWIFI, toggled_on)
 
 
 func _on_ram_wifi_toggled(toggled_on):
+	_play_accept()
 	_wifi_list_change(%RamWIFI, toggled_on)
 
 
 func _on_pldtwifi_toggled(toggled_on):
+	_play_accept()
 	_wifi_list_change(%PLDTWIFI, toggled_on)
 
 # Automated function that reverts all buttons back to where they belong. Defaulted.
@@ -140,6 +149,7 @@ func _change_current_connection(value: String):
 	#debug_connection_change.emit(value)
 
 func _on_return_button_pressed():
+	_play_back()
 	GameSettings.save_settings.emit()
 	hide()
 
@@ -147,9 +157,19 @@ func _on_return_button_pressed():
 func _on_panel_warning_hack_gui_input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and (panel_hack.mouse_filter == Control.MOUSE_FILTER_STOP):
 		#print("Vibe check.")
+		_play_back()
 		_panel_hack_toggle(false)	# Expected, since this only happens when hack panel is on.
 		if location_warning.visible:
 			location_button.button_pressed = true
 			location_warning.hide()
 		if wifi_panel.visible:
 			wifi_panel.hide()
+
+#===============================================================================
+# Audios
+#===============================================================================
+func _play_accept():
+	AudioManager.sfx_play(AudioManager.phone_accept_sfx)
+
+func _play_back():
+	AudioManager.sfx_play(AudioManager.phone_back_sfx)

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://x713rj0uqeox"
+path="res://.godot/imported/sleeping_time.dialogue-a604d4da48ab072026087557a96a7d4d.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/sleeping_time.dialogue"
+dest_files=["res://.godot/imported/sleeping_time.dialogue-a604d4da48ab072026087557a96a7d4d.tres"]
+
+[params]
+
+defaults=true

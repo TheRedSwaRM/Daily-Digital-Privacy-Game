@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b83b2guhkp4gh"]
+[gd_scene load_steps=4 format=3 uid="uid://b83b2guhkp4gh"]
 
 [ext_resource type="Texture2D" uid="uid://dti5whs8wtbxj" path="res://assets/images/bg/bathroom1.png" id="1_3vn62"]
+[ext_resource type="Script" path="res://scenes/areas/bathroom_mirror.gd" id="1_4ui3y"]
 [ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="2_jxeng"]
 
 [node name="BathroomMirror" type="Node2D"]
+script = ExtResource("1_4ui3y")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -42,3 +44,25 @@ transfer_area = "res://scenes/areas/bathroom_door.tscn"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToDoor"]
 position = Vector2(143, -48)
 polygon = PackedVector2Array(65, 48, 89, 48, 89, 192, 65, 192)
+
+[node name="Mirror" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_jxeng")]
+collision_polygon = NodePath("CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mirror"]
+polygon = PackedVector2Array(144, 24, 144, 88, 192, 88, 192, 24)
+
+[node name="Faucet" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_jxeng")]
+collision_polygon = NodePath("CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Faucet"]
+polygon = PackedVector2Array(144, 96, 165, 96, 167, 90, 170, 90, 172, 96, 192, 96, 199, 106, 199, 117, 193, 128, 143, 128, 137, 116, 137, 106)
+
+[node name="Toilet" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_jxeng")]
+collision_polygon = NodePath("CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Toilet"]
+polygon = PackedVector2Array(61, 105, 73, 105, 82, 100, 91, 100, 99, 105, 111, 105, 115, 109, 114, 144, 59, 144, 58, 115, 55, 114, 58, 109)
+
+[connection signal="input_detected" from="Mirror" to="." method="_on_mirror_input_detected"]
+[connection signal="input_detected" from="Faucet" to="." method="_on_faucet_input_detected"]
+[connection signal="input_detected" from="Toilet" to="." method="_on_toilet_input_detected"]

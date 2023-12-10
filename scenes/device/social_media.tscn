@@ -1,0 +1,223 @@
+[gd_scene load_steps=22 format=3 uid="uid://b2encyf73hip4"]
+
+[ext_resource type="Script" path="res://scenes/device/social_media.gd" id="1_6rg46"]
+[ext_resource type="Texture2D" uid="uid://bu8k43hl1ehm8" path="res://assets/images/device/phone_social_media.png" id="1_xk37a"]
+[ext_resource type="LabelSettings" uid="uid://diwe4t6j60tts" path="res://scenes/components/social_media.tres" id="2_0woov"]
+[ext_resource type="Theme" uid="uid://dinj8j20l57j3" path="res://scenes/components/phone_button.tres" id="3_wwfvl"]
+[ext_resource type="Texture2D" uid="uid://osk3d4jon0sc" path="res://assets/images/device/social_media_prof.png" id="4_el5v2"]
+[ext_resource type="Texture2D" uid="uid://cmb3a637ce63t" path="res://assets/images/device/social_media_friends.png" id="5_flght"]
+[ext_resource type="Texture2D" uid="uid://g3paflh4a60q" path="res://assets/images/device/social_media_mes.png" id="5_ftokl"]
+[ext_resource type="Texture2D" uid="uid://b2snt3d8ls41m" path="res://assets/images/device/social_media_bell.png" id="6_m0a4i"]
+[ext_resource type="Texture2D" uid="uid://d0svocs860006" path="res://assets/images/social_media/social_media_add_post.png" id="9_6ch0j"]
+[ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="10_eofds"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_re34t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w61fl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c1pra"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gdw51"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31ea1"]
+
+[sub_resource type="Theme" id="Theme_v1liv"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_re34t")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_w61fl")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_c1pra")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_gdw51")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_31ea1")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c7uk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ngwqi"]
+font = ExtResource("10_eofds")
+font_size = 5
+
+[sub_resource type="Animation" id="Animation_6c5kd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NoConnectionPanel/Label:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rcat1"]
+resource_name = "no_connection"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NoConnectionPanel/Label:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.9, 1, 1.4, 1.5, 1.9, 2, 2.4, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_31vag"]
+_data = {
+"RESET": SubResource("Animation_6c5kd"),
+"no_connection": SubResource("Animation_rcat1")
+}
+
+[node name="SocialMedia" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6rg46")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -10.0
+offset_right = 69.0
+offset_bottom = 134.0
+mouse_filter = 2
+texture = ExtResource("1_xk37a")
+metadata/_edit_lock_ = true
+
+[node name="SearchBar" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 2.0
+offset_right = 64.0
+offset_bottom = 13.0
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 4.0
+offset_right = 62.0
+offset_bottom = 11.0
+text = "Search..."
+label_settings = ExtResource("2_0woov")
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="ProfileButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 13.0
+offset_right = 11.0
+offset_bottom = 22.0
+theme = ExtResource("3_wwfvl")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+icon = ExtResource("4_el5v2")
+icon_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="FriendsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 13.0
+offset_right = 31.0
+offset_bottom = 22.0
+theme = ExtResource("3_wwfvl")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+icon = ExtResource("5_flght")
+icon_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="MessageButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 13.0
+offset_right = 48.0
+offset_bottom = 22.0
+theme = ExtResource("3_wwfvl")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+icon = ExtResource("5_ftokl")
+icon_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="NotificationButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 13.0
+offset_right = 64.0
+offset_bottom = 22.0
+theme = ExtResource("3_wwfvl")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+icon = ExtResource("6_m0a4i")
+icon_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="HomeFeed" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_top = 22.0
+offset_right = 66.0
+offset_bottom = 124.0
+theme = SubResource("Theme_v1liv")
+horizontal_scroll_mode = 0
+scroll_deadzone = 6
+
+[node name="HomePosts" type="VBoxContainer" parent="HomeFeed"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+alignment = 1
+
+[node name="StartMarginRect" type="ReferenceRect" parent="HomeFeed/HomePosts"]
+layout_mode = 2
+
+[node name="TheActualPost" type="VBoxContainer" parent="HomeFeed/HomePosts"]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="EndMarginRect" type="ReferenceRect" parent="HomeFeed/HomePosts"]
+layout_mode = 2
+
+[node name="AddPostButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 107.0
+offset_right = 60.0
+offset_bottom = 116.0
+theme = ExtResource("3_wwfvl")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+icon = ExtResource("9_6ch0j")
+icon_alignment = 1
+
+[node name="NoConnectionPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 22.0
+offset_right = 66.0
+offset_bottom = 30.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8c7uk")
+
+[node name="Label" type="Label" parent="NoConnectionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "No Connection."
+label_settings = SubResource("LabelSettings_ngwqi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_31vag")
+}
+speed_scale = 2.0
+
+[connection signal="gui_input" from="HomeFeed" to="." method="_on_home_feed_gui_input"]
+[connection signal="pressed" from="AddPostButton" to="." method="_on_add_post_button_pressed"]

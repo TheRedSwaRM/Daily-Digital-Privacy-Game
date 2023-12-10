@@ -35,8 +35,10 @@ func _on_input_event(_viewport, event, _shape_idx):
 			Events.change_map.emit(transfer_area)
 
 func _on_mouse_entered():
-	label_node.visible = true
+	#label_node.visible = true
+	Input.set_default_cursor_shape(Input.CURSOR_CROSS)
 
 
 func _on_mouse_exited():
-	label_node.visible = false
+	#label_node.visible = false
+	Input.set_default_cursor_shape(Input.CURSOR_ARROW)

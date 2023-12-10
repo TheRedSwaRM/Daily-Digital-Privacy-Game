@@ -5,6 +5,10 @@ extends Node
 
 @onready var background_music = %BGM
 @onready var sound_effect_queue = $SFX
+
+@onready var phone_accept_sfx = "res://assets/audio/sfx/phone_accept.mp3"
+@onready var phone_back_sfx = "res://assets/audio/sfx/phone_back.mp3"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -28,6 +32,7 @@ func bgm_play(path: String):
 		bgm_stop()
 	
 	background_music.stream = load(path)
+	background_music.stream.loop = true
 	background_music.play()
 
 ## Stops BGM, as expected.

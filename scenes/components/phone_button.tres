@@ -40,3 +40,4 @@ HSlider/icons/grabber_highlight = ExtResource("4_dc0kx")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_b6yej")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_a6no0")
 HSlider/styles/slider = SubResource("StyleBoxFlat_0ej1p")
+RichTextLabel/constants/line_separation = 1

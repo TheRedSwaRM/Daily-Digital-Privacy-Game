@@ -1,0 +1,230 @@
+[gd_scene load_steps=11 format=3 uid="uid://bfagpxhxphhvl"]
+
+[ext_resource type="Script" path="res://scenes/cutscenes/fricked_up.gd" id="1_qruae"]
+[ext_resource type="Texture2D" uid="uid://md0j0h5b0dye" path="res://assets/images/bg/room1_night.png" id="2_cfwn6"]
+[ext_resource type="SpriteFrames" uid="uid://dknba0wlge80i" path="res://scenes/cutscenes/horror_scene_1.tres" id="3_cmhxh"]
+[ext_resource type="Texture2D" uid="uid://b43kg1568otan" path="res://assets/images/bg/laptop_night.png" id="3_j31c4"]
+[ext_resource type="Texture2D" uid="uid://drqj1evi6sd6w" path="res://assets/images/bg/clock_side_night.png" id="4_ti4gf"]
+[ext_resource type="Texture2D" uid="uid://ctq7le01jdp4k" path="res://assets/images/bg/room3_night2.png" id="5_hpb53"]
+[ext_resource type="Texture2D" uid="uid://b24n5lu24dtlr" path="res://assets/images/bg/laptop_horror_night.png" id="7_3woxm"]
+
+[sub_resource type="Animation" id="Animation_7rjok"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Night:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bedroom/Laptop:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_j31c4")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bedroom:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_wta55"]
+resource_name = "fricked"
+length = 16.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Night:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bedroom/Laptop:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_j31c4"), ExtResource("7_3woxm")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bedroom:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 8, 13.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_bgm"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimatedSprite2D:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(8, 13.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 123]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yjedp"]
+_data = {
+"RESET": SubResource("Animation_7rjok"),
+"fricked": SubResource("Animation_wta55")
+}
+
+[node name="FrickedUp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qruae")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 144.0
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="Bedroom" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 144.0
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="Bedroom"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 144.0
+texture = ExtResource("2_cfwn6")
+stretch_mode = 5
+
+[node name="Laptop" type="TextureRect" parent="Bedroom"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 70.0
+offset_right = 167.0
+offset_bottom = 96.0
+mouse_default_cursor_shape = 3
+texture = ExtResource("3_j31c4")
+metadata/_edit_lock_ = true
+
+[node name="Clock" type="TextureRect" parent="Bedroom"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 80.0
+offset_right = 208.0
+offset_bottom = 105.0
+texture = ExtResource("4_ti4gf")
+
+[node name="Night" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Night"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 144.0
+texture = ExtResource("5_hpb53")
+stretch_mode = 5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(128, 72)
+sprite_frames = ExtResource("3_cmhxh")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yjedp")
+}

@@ -1,0 +1,15 @@
+~ this_is_a_node_title
+
+Should I sleep now?
+- Yes
+	do AudioManager.bgm_stop()
+	do Events.deactivate_phone.emit()
+	
+	if Events.check_game_switch("posted_with_location")
+		do Events.change_game_switch("night", true)
+		do Events.change_map.emit("res://scenes/cutscenes/knocking.tscn", true)
+	else
+		do Events.change_map.emit("res://scenes/cutscenes/peaceful_night.tscn", true)
+- No => END
+
+=> END

@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b53r68bej27hr"]
+[gd_scene load_steps=4 format=3 uid="uid://b53r68bej27hr"]
 
 [ext_resource type="Texture2D" uid="uid://d0hbdwjx0tkh7" path="res://assets/images/bg/bathroom2.png" id="1_efvrq"]
+[ext_resource type="Script" path="res://scenes/areas/bathroom_shower.gd" id="1_toqdg"]
 [ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="2_sym85"]
 
 [node name="BathroomShower" type="Node2D"]
+script = ExtResource("1_toqdg")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -42,3 +44,18 @@ transfer_area = "res://scenes/areas/bathroom_mirror.tscn"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToToilet"]
 position = Vector2(143, -48)
 polygon = PackedVector2Array(65, 48, 89, 48, 89, 192, 65, 192)
+
+[node name="Shower" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_sym85")]
+collision_polygon = NodePath("CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shower"]
+polygon = PackedVector2Array(48, 22, 48, 144, 77, 144, 77, 24, 69, 17, 63, 17, 58, 22)
+
+[node name="Toilet" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_sym85")]
+collision_polygon = NodePath("CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Toilet"]
+polygon = PackedVector2Array(208, 96, 208, 144, 135, 144, 142, 136, 166, 133, 170, 106, 177, 99, 182, 96)
+
+[connection signal="input_detected" from="Shower" to="." method="_on_shower_input_detected"]
+[connection signal="input_detected" from="Toilet" to="." method="_on_toilet_input_detected"]

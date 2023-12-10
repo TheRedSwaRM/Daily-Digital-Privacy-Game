@@ -6,11 +6,16 @@ extends Node
 @export_file var starting_screen
 @export var debugger_on: bool
 
-#
-#	if event is InputEventMouseMotion and event.button_mask > 0:
-#		cave.position.x = clampf(cave.position.x + event.relative.x, -CAVE_LIMIT, 0)
+# Reserved for events... wait do I need it?
+@onready var event_done_1: bool = false
+
+# Woops.
+
 
 func _ready():
+	#===========================================================================
+	# Mandatory Stuff
+	#===========================================================================
 	# Adding events
 	Events.change_map.connect(_goto_area)
 	Events.change_map.emit(starting_screen)
@@ -19,28 +24,35 @@ func _ready():
 	phone.flipping_phone.connect(_change_mouse_passing_for_phone)
 	
 	# For debugging
-	Events.debug_connection_change.connect(_change_connection_debug)
-	Events.debug_location_change.connect(_change_location_debug)
+	Events.connection_change.connect(_change_connection_debug)
+	Events.location_change.connect(_change_location_debug)
+	
+	Events.activate_phone.connect(_show_phone)
+	Events.deactivate_phone.connect(_hide_phone)
+	
+	Events.open_blinking_eye.connect(_open_blinking_eye)
+	Events.do_full_blink.connect(_do_blink)
 	
 	if debugger_on:
 		%Debugger.show()
 	
-	# To Remove
-	# phone.unflip_phone.connect(_on_phone_unflip)
-	#print("is this even working?")
+	#===========================================================================
+	# Cutscenes
+	#===========================================================================
+	Events.game_switch_changed.connect(_cutscene_social_post)
 	
-
-
+	
 ## Goes to another area.
-func _goto_area(path: String):
+func _goto_area(path: String, special: bool = false):
 	if ResourceLoader.exists(path):
 		transition_sprite.play("blinking_transition")
 		await transition_sprite.animation_finished
 		
 		call_deferred("_deferred_change_area", path)
 		
-		transition_sprite.play_backwards("blinking_transition")
-		await transition_sprite.animation_finished
+		if not special:
+			transition_sprite.play_backwards("blinking_transition")
+			await transition_sprite.animation_finished
 	
 ## Changes scene. Deferred JUST IN CASE.
 func _deferred_change_area(path: String):
@@ -61,6 +73,23 @@ func _change_mouse_passing_for_phone(value: bool):
 	else:
 		phone.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
+func _show_phone():
+	phone.show()
+
+func _hide_phone():
+	phone.hide()
+
+func _open_blinking_eye():
+	transition_sprite.play_backwards("blinking_transition")
+	await transition_sprite.animation_finished
+
+func _do_blink():
+	transition_sprite.play("blinking_transition")
+	await transition_sprite.animation_finished
+		
+	transition_sprite.play_backwards("blinking_transition")
+	await transition_sprite.animation_finished
+
 #==============================================================================
 # Debugger function
 #==============================================================================
@@ -69,3 +98,14 @@ func _change_connection_debug(connection: String):
 	
 func _change_location_debug(value: bool):
 	%LocYesNo.text = str(value)
+
+#==============================================================================
+# Events
+#==============================================================================
+func _cutscene_social_post(key: String, _value: bool):
+	if Events.check_game_switch(key) && key == "posted_with_location":
+		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/intro.dialogue"))
+		await DialogueManager.dialogue_ended
+		Events.game_switch_changed.disconnect(_cutscene_social_post)
+
+

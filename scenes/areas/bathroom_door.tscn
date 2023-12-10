@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bm20xghrnhc0e"]
+[gd_scene load_steps=4 format=3 uid="uid://bm20xghrnhc0e"]
 
 [ext_resource type="Texture2D" uid="uid://cwj3ldxpcb353" path="res://assets/images/bg/bathroom3.png" id="1_t06mt"]
+[ext_resource type="Script" path="res://scenes/areas/bathroom_door.gd" id="1_xda1w"]
 [ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="2_3060b"]
 
 [node name="BathroomShower" type="Node2D"]
+script = ExtResource("1_xda1w")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -51,3 +53,12 @@ transfer_area = "res://scenes/areas/bathroom_mirror.tscn"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToMirror"]
 position = Vector2(143, -48)
 polygon = PackedVector2Array(65, 48, 89, 48, 89, 192, 65, 192)
+
+[node name="Shower" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_3060b")]
+collision_polygon = NodePath("CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shower"]
+polygon = PackedVector2Array(189, 30, 183, 43, 183, 144, 205, 144, 205, 41, 200, 30)
+
+[connection signal="input_detected" from="ToFront" to="." method="_on_to_front_input_detected"]
+[connection signal="input_detected" from="Shower" to="." method="_on_shower_input_detected"]

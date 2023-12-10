@@ -1,12 +1,14 @@
 extends Control
 
-@onready var anim_player: AnimationPlayer = $AnimationPlayer
 @export var skip_intro: bool
-@export_file var path_to_nowhere
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
 
-func _ready():
-	if !skip_intro:
+func _ready():	
+	if not skip_intro:
+		AudioManager.sfx_play("res://assets/audio/sfx/phone_alarm.mp3")
 		anim_player.play("intro")
 		await anim_player.animation_finished
-	print("scenes")
-	Events.change_map.emit(path_to_nowhere)
+	
+	#print("scenes")
+	Events.activate_phone.emit()
+	Events.change_map.emit("res://scenes/areas/bedroom_laptop.tscn")

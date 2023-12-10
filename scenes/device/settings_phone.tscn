@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://f4ikflxbqnmx"]
+[gd_scene load_steps=11 format=3 uid="uid://f4ikflxbqnmx"]
 
 [ext_resource type="Script" path="res://scenes/device/settings_phone.gd" id="1_ced6i"]
 [ext_resource type="Texture2D" uid="uid://w3nfv6j12y4n" path="res://assets/images/device/phone_settings_true_bg.png" id="2_d3c8c"]
 [ext_resource type="Theme" uid="uid://s47xnf1e5hrf" path="res://scenes/components/wifi_button.tres" id="3_mjkfs"]
 [ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="4_d0m2f"]
+[ext_resource type="LabelSettings" uid="uid://diwe4t6j60tts" path="res://scenes/components/social_media.tres" id="5_0b1pm"]
 [ext_resource type="LabelSettings" uid="uid://nk5nj83e5ai4" path="res://scenes/components/settings_phone.tres" id="5_y3mvf"]
 [ext_resource type="Theme" uid="uid://dh4qbclv1q7fq" path="res://scenes/components/wifi_button_activated.tres" id="6_gn40x"]
 [ext_resource type="Texture2D" uid="uid://dtr61c0kwi83t" path="res://assets/images/device/wifi_icon.png" id="7_j0hlb"]
@@ -180,7 +181,7 @@ offset_right = 55.0
 offset_bottom = 20.0
 text = "Do you want
 to disable?"
-label_settings = ExtResource("5_y3mvf")
+label_settings = ExtResource("5_0b1pm")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
@@ -226,7 +227,7 @@ offset_top = 4.0
 offset_right = 18.0
 offset_bottom = 9.0
 text = "WIFI"
-label_settings = ExtResource("5_y3mvf")
+label_settings = ExtResource("5_0b1pm")
 
 [node name="HSeparator" type="HSeparator" parent="WIFIPanel"]
 layout_mode = 0

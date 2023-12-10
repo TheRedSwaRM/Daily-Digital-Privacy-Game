@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://pcvjwhoo560e"
+path="res://.godot/imported/knocking.dialogue-ce137f3434db0843d687d9c1eca7a1ff.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/knocking.dialogue"
+dest_files=["res://.godot/imported/knocking.dialogue-ce137f3434db0843d687d9c1eca7a1ff.tres"]
+
+[params]
+
+defaults=true

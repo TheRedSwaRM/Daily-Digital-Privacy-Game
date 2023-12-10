@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bom430mddd0lm"]
+[gd_scene load_steps=4 format=3 uid="uid://bom430mddd0lm"]
 
+[ext_resource type="Script" path="res://scenes/areas/bedroom_front.gd" id="1_26754"]
 [ext_resource type="Texture2D" uid="uid://bd7sorescsxql" path="res://assets/images/bg/room2.png" id="1_var0o"]
 [ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="2_8n6js"]
 
 [node name="BedroomFront" type="Node2D"]
+script = ExtResource("1_26754")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -38,8 +40,17 @@ polygon = PackedVector2Array(48, 0, 24, 0, 24, 144, 48, 144)
 position = Vector2(-139, 12)
 label_name = "Bathroom"
 collision_polygon = NodePath("CollisionPolygon2D")
-transfer_area = "res://scenes/areas/bathroom_door.tscn"
+transfer_area = ""
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToBathroom"]
 position = Vector2(184, 0)
 polygon = PackedVector2Array(52, 20, 28, 34, 29, 117, 53, 99)
+
+[node name="ClickAreaComponent" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_8n6js")]
+collision_polygon = NodePath("CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClickAreaComponent"]
+polygon = PackedVector2Array(175, 32, 175, 111, 202, 111, 202, 50, 208, 50, 208, 32)
+
+[connection signal="input_detected" from="ToBathroom" to="." method="_on_to_bathroom_input_detected"]
+[connection signal="input_detected" from="ClickAreaComponent" to="." method="_on_click_area_component_input_detected"]
