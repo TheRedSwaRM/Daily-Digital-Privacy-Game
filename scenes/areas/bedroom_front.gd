@@ -8,7 +8,7 @@ func _ready():
 		background.texture = load("res://assets/images/bg/room2_night.png")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func _on_to_bathroom_input_detected():

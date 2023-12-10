@@ -102,7 +102,7 @@ func _change_location_debug(value: bool):
 #==============================================================================
 # Events
 #==============================================================================
-func _cutscene_social_post(key: String, value: bool):
+func _cutscene_social_post(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "posted_with_location":
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/intro.dialogue"))
 		await DialogueManager.dialogue_ended

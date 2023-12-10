@@ -39,7 +39,7 @@ func _ready():
 	Events.location = location_enabled
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 ## Activates panel hack for convenience, when a panel is brought up to stop

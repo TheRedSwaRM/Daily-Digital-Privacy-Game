@@ -26,7 +26,7 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(2.6, 7.2, 8.2),
+"times": PackedFloat32Array(3.2, 7.2, 8.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [],
