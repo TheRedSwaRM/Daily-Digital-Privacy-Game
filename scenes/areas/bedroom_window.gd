@@ -18,4 +18,7 @@ func _process(delta):
 	pass
 
 func _on_pillow_input_detected():
-	DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/sleeping_time.dialogue"))
+	if Events.check_game_switch("night"):
+		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/knocking.dialogue"), "pillow_check")
+	else:
+		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/sleeping_time.dialogue"))

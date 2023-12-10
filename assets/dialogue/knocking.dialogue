@@ -9,3 +9,15 @@ Cheryl: Who's knocking this late?
 Cheryl: I don't think I need to take the bathroom right now.
 
 => END
+
+~ laptop_scare
+
+Cheryl: ...Why can't I turn it off?
+
+=> END
+
+~ pillow_check
+
+Cheryl: Gotta check who's at the door first.
+
+=> END

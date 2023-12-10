@@ -28,6 +28,7 @@ func bgm_play(path: String):
 		bgm_stop()
 	
 	background_music.stream = load(path)
+	background_music.stream.loop = true
 	background_music.play()
 
 ## Stops BGM, as expected.

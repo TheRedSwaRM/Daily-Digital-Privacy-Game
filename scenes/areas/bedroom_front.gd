@@ -15,4 +15,4 @@ func _on_to_bathroom_input_detected():
 	if Events.check_game_switch("night"):
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/knocking.dialogue"), "bathroom_check")
 	else:
-		Events.change_map.emit("res://scenes/areas/bedroom_laptop.tscn")
+		Events.change_map.emit("res://scenes/areas/bathroom_door.tscn")

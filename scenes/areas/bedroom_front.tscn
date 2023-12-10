@@ -30,7 +30,7 @@ stretch_mode = 5
 [node name="ToLaptop" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_8n6js")]
 label_name = "Laptop"
 collision_polygon = NodePath("CollisionPolygon2D")
-transfer_area = ""
+transfer_area = "res://scenes/areas/bedroom_laptop.tscn"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToLaptop"]
 position = Vector2(184, 0)
@@ -40,7 +40,7 @@ polygon = PackedVector2Array(48, 0, 24, 0, 24, 144, 48, 144)
 position = Vector2(-139, 12)
 label_name = "Bathroom"
 collision_polygon = NodePath("CollisionPolygon2D")
-transfer_area = "res://scenes/areas/bathroom_door.tscn"
+transfer_area = ""
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToBathroom"]
 position = Vector2(184, 0)

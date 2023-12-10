@@ -20,7 +20,9 @@ signal response_taken()
 @onready var _game_switches = {
 	"intro": false,
 	"posted_with_location": false,
-	"night": false
+	"night": false,
+	"laptop_checked": false,
+	"night_intro": false
 }
 
 @onready var wifi_connection: String = "None" :
