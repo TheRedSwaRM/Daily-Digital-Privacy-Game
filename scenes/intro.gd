@@ -8,5 +8,5 @@ func _ready():
 	if !skip_intro:
 		anim_player.play("intro")
 		await anim_player.animation_finished
-	print("scenes")
+	#print("scenes")
 	Events.change_map.emit(path_to_nowhere)

@@ -21,6 +21,9 @@ enum State{
 @onready var main_menu_background = preload("res://assets/images/device/phone.png")
 @onready var settings_background = preload("res://assets/images/device/phone_settings.png")
 
+# Social Media
+@onready var social_media = $PhoneContainer/SocialMedia
+
 signal flipping_phone(value)
 
 # Called when the node enters the scene tree for the first time.
@@ -88,4 +91,5 @@ func _on_quit_no_pressed():
 	quit_panel.hide()
 	#main_menu_buttons.show()
 
-
+func _on_social_media_button_pressed():
+	social_media.show()

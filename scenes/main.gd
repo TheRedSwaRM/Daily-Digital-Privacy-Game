@@ -6,9 +6,7 @@ extends Node
 @export_file var starting_screen
 @export var debugger_on: bool
 
-#
-#	if event is InputEventMouseMotion and event.button_mask > 0:
-#		cave.position.x = clampf(cave.position.x + event.relative.x, -CAVE_LIMIT, 0)
+# username: String, sns_image: Texture2D, sns_text: String, show_loc: bool, loc: String
 
 func _ready():
 	# Adding events
@@ -24,6 +22,8 @@ func _ready():
 	
 	if debugger_on:
 		%Debugger.show()
+	
+	phone.social_media.sns_add("gay", "yeahyeah")
 	
 	# To Remove
 	# phone.unflip_phone.connect(_on_phone_unflip)

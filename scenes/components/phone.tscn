@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bijcfw81xkw7r"]
+[gd_scene load_steps=16 format=3 uid="uid://bijcfw81xkw7r"]
 
 [ext_resource type="Script" path="res://scenes/components/phone.gd" id="1_ldqut"]
 [ext_resource type="Texture2D" uid="uid://h2puqxkdjy5n" path="res://assets/images/device/phone.png" id="2_fd6mj"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://f4ikflxbqnmx" path="res://scenes/device/settings_phone.tscn" id="6_ppbmc"]
 [ext_resource type="Texture2D" uid="uid://crqr8uw0lxfkk" path="res://assets/images/device/phone_quit_yes.png" id="10_00k5p"]
 [ext_resource type="Texture2D" uid="uid://dohph2xo81a2j" path="res://assets/images/device/phone_quit_no.png" id="11_6im80"]
+[ext_resource type="PackedScene" uid="uid://b2encyf73hip4" path="res://scenes/device/social_media.tscn" id="11_6o5jl"]
 
 [sub_resource type="Animation" id="Animation_2cvcs"]
 length = 0.001
@@ -141,6 +142,15 @@ offset_bottom = 115.0
 theme = ExtResource("5_u00af")
 metadata/_edit_lock_ = true
 
+[node name="SocialMediaButton" type="Button" parent="PhoneContainer/MainMenuButtons"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 80.0
+offset_right = 20.0
+offset_bottom = 94.0
+theme = ExtResource("5_u00af")
+metadata/_edit_lock_ = true
+
 [node name="Settings" parent="PhoneContainer" instance=ExtResource("6_ppbmc")]
 visible = false
 layout_mode = 1
@@ -204,6 +214,15 @@ offset_bottom = 78.0
 texture_normal = ExtResource("11_6im80")
 metadata/_edit_lock_ = true
 
+[node name="SocialMedia" parent="PhoneContainer" instance=ExtResource("11_6o5jl")]
+visible = false
+layout_mode = 1
+offset_left = 39.0
+offset_top = 10.0
+offset_right = 39.0
+offset_bottom = 10.0
+metadata/_edit_lock_ = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_6b7ab")
@@ -214,5 +233,6 @@ libraries = {
 [connection signal="pressed" from="PhoneContainer/FlippingButton" to="." method="_on_flipping_button_pressed"]
 [connection signal="pressed" from="PhoneContainer/MainMenuButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="PhoneContainer/MainMenuButtons/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="PhoneContainer/MainMenuButtons/SocialMediaButton" to="." method="_on_social_media_button_pressed"]
 [connection signal="pressed" from="PhoneContainer/QuitPanel/QuitYes" to="." method="_on_quit_yes_pressed"]
 [connection signal="pressed" from="PhoneContainer/QuitPanel/QuitNo" to="." method="_on_quit_no_pressed"]

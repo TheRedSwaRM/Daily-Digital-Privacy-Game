@@ -18,11 +18,18 @@ extends PanelContainer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	user_name_button.text = user_name
-	image_node.texture = post_image
+	
+	if post_image == null:
+		image_node.hide()
+	else:
+		image_node.texture = post_image
+	
 	if not Engine.is_editor_hint():
 		if show_location_post:
+			location_label.show()
 			location_label.text = location
 		else:
+			location_label.hide()
 			location_label.text = ""
 	post_text_node.text = post_text
 
