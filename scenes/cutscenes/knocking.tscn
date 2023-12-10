@@ -1,15 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://cng212mq5ul3p"]
+[gd_scene load_steps=12 format=3 uid="uid://canvy1b0yy4j1"]
 
-[ext_resource type="Script" path="res://scenes/intro.gd" id="1_574f2"]
-[ext_resource type="Texture2D" uid="uid://bxwknkacjbvc2" path="res://assets/images/bg/room1.png" id="2_701y8"]
-[ext_resource type="Shader" path="res://scenes/components/blur.gdshader" id="3_5g587"]
-[ext_resource type="Texture2D" uid="uid://dkrirc4vn7gwp" path="res://assets/images/bg/laptop.png" id="3_vg0gl"]
-[ext_resource type="BitMap" uid="uid://crkrt2gmajq2i" path="res://assets/images/bg/laptop_bitmask.png" id="4_1nu82"]
-[ext_resource type="SpriteFrames" uid="uid://c5m6vqysaysk5" path="res://assets/images/animation/blinking_eye.tres" id="4_lbkev"]
-[ext_resource type="Texture2D" uid="uid://bke8covyh2tpj" path="res://assets/images/bg/clock_side.png" id="5_4megp"]
+[ext_resource type="Script" path="res://scenes/cutscenes/knocking.gd" id="1_otfls"]
+[ext_resource type="Texture2D" uid="uid://md0j0h5b0dye" path="res://assets/images/bg/room1_night.png" id="2_t1c6g"]
+[ext_resource type="Texture2D" uid="uid://b43kg1568otan" path="res://assets/images/bg/laptop_night.png" id="3_ct4q6"]
+[ext_resource type="Shader" path="res://scenes/components/blur.gdshader" id="3_tjgvr"]
+[ext_resource type="SpriteFrames" uid="uid://c5m6vqysaysk5" path="res://assets/images/animation/blinking_eye.tres" id="4_xcgq3"]
+[ext_resource type="BitMap" uid="uid://crkrt2gmajq2i" path="res://assets/images/bg/laptop_bitmask.png" id="4_xcio8"]
+[ext_resource type="Texture2D" uid="uid://drqj1evi6sd6w" path="res://assets/images/bg/clock_side_night.png" id="5_ihhr2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6kn22"]
-shader = ExtResource("3_5g587")
+shader = ExtResource("3_tjgvr")
 shader_parameter/blur = 4.0
 shader_parameter/brightness = 1.0
 
@@ -155,15 +155,15 @@ tracks/5/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_76hmj"]
 _data = {
 "RESET": SubResource("Animation_78it3"),
-"intro": SubResource("Animation_jec20")
+"knocking": SubResource("Animation_jec20")
 }
 
-[node name="Intro" type="Control"]
+[node name="Knocking" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 256.0
 offset_bottom = 144.0
-script = ExtResource("1_574f2")
+script = ExtResource("1_otfls")
 
 [node name="BlackBack" type="ColorRect" parent="."]
 layout_mode = 1
@@ -183,15 +183,14 @@ anchor_left = -4.90625
 anchor_top = 7.54286
 anchor_right = -4.90625
 anchor_bottom = 7.54286
-offset_left = 1256.0
-offset_top = -1086.17
-offset_right = 1512.0
-offset_bottom = -942.278
+offset_right = 256.0
+offset_bottom = 143.894
 rotation = 1.5708
-texture = ExtResource("2_701y8")
+texture = ExtResource("2_t1c6g")
 expand_mode = 2
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="Laptop" type="TextureButton" parent="TextureRect"]
 offset_left = 128.0
@@ -199,15 +198,16 @@ offset_top = 70.0
 offset_right = 167.0
 offset_bottom = 96.0
 mouse_default_cursor_shape = 3
-texture_normal = ExtResource("3_vg0gl")
-texture_click_mask = ExtResource("4_1nu82")
+texture_normal = ExtResource("3_ct4q6")
+texture_click_mask = ExtResource("4_xcio8")
+metadata/_edit_lock_ = true
 
 [node name="Clock" type="TextureButton" parent="TextureRect"]
 offset_left = 188.0
 offset_top = 80.0
 offset_right = 208.0
 offset_bottom = 105.0
-texture_normal = ExtResource("5_4megp")
+texture_normal = ExtResource("5_ihhr2")
 metadata/_edit_lock_ = true
 
 [node name="Blurry" type="ColorRect" parent="."]
@@ -237,7 +237,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(128, 72)
-sprite_frames = ExtResource("4_lbkev")
+sprite_frames = ExtResource("4_xcgq3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

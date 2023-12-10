@@ -69,8 +69,8 @@ texture_click_mask = ExtResource("5_2ab84")
 layout_mode = 0
 offset_left = 188.0
 offset_top = 80.0
-offset_right = 228.0
-offset_bottom = 120.0
+offset_right = 208.0
+offset_bottom = 105.0
 texture_normal = ExtResource("4_8mfaf")
 metadata/_edit_lock_ = true
 
