@@ -21,10 +21,10 @@ func _ready():
 	else:
 		image_node.texture = post_image
 	
-	if not Engine.is_editor_hint():
-		if not location_label.text == "":
-			location_label.show()
-			location_label.text = location
+	if not location == "":
+		location_label.show()
+		location_label.text = location
+		
 	post_text_node.text = post_text
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

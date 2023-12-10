@@ -6,9 +6,14 @@ extends Node
 @export_file var starting_screen
 @export var debugger_on: bool
 
-# username: String, sns_image: Texture2D, sns_text: String, show_loc: bool, loc: String
+# Reserved for events... wait do I need it?
+@onready var event_done_1: bool = false
+
 
 func _ready():
+	#===========================================================================
+	# Mandatory Stuff
+	#===========================================================================
 	# Adding events
 	Events.change_map.connect(_goto_area)
 	Events.change_map.emit(starting_screen)
@@ -22,6 +27,12 @@ func _ready():
 	
 	if debugger_on:
 		%Debugger.show()
+	
+	#===========================================================================
+	# Cutscenes
+	#===========================================================================
+	Events.game_switch_changed.connect(_cutscene_social_post)
+	
 	
 ## Goes to another area.
 func _goto_area(path: String):
@@ -61,3 +72,12 @@ func _change_connection_debug(connection: String):
 	
 func _change_location_debug(value: bool):
 	%LocYesNo.text = str(value)
+
+#==============================================================================
+# Events
+#==============================================================================
+func _cutscene_social_post(key: String, value: bool):
+	if Events.check_game_switch(key) && key == "posted_with_location":
+		print("idiot")
+		Events.game_switch_changed.disconnect(_cutscene_social_post)
+
