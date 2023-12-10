@@ -5,6 +5,7 @@ extends Control
 
 func _ready():	
 	if not skip_intro:
+		AudioManager.sfx_play("res://assets/audio/sfx/phone_alarm.mp3")
 		anim_player.play("intro")
 		await anim_player.animation_finished
 	

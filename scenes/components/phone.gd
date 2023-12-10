@@ -92,31 +92,38 @@ func _on_flipping_button_pressed():
 #===============================================================================
 
 func _on_settings_button_pressed():
+	_play_accept()
 	current_phone_location = NavigationState.SETTINGS
 	settings_instance.show()
 
 func _on_return_button_pressed():
+	_play_back()
 	GameSettings.save_settings.emit()			# Save stuff
+	current_phone_location = NavigationState.HOME
 
 #===============================================================================
 # QUIT FUNCTION
 #===============================================================================
 
 func _on_quit_button_pressed():
+	_play_accept()
 	current_phone_location = NavigationState.QUIT
 	quit_panel.show()
 
 func _on_quit_yes_pressed():
+	_play_accept()
 	Events.quit_game()
 	#AudioManager.bgm_stop()
 	#Events.reset_all()
 	#get_tree().change_scene_to_file("res://scenes/title.tscn")
 
 func _on_quit_no_pressed():
+	_play_back()
 	current_phone_location = NavigationState.HOME
 	quit_panel.hide()
 
 func _on_social_media_button_pressed():
+	_play_accept()
 	current_phone_location = NavigationState.SOCIAL_MEDIA
 	social_media.show()
 
@@ -125,6 +132,7 @@ func _on_social_media_button_pressed():
 #===============================================================================
 
 func _on_home_button_pressed():
+	_play_back()
 	match current_phone_location:
 		NavigationState.HOME:
 			return
@@ -141,6 +149,7 @@ func _on_home_button_pressed():
 # TODO: This is not the final state of this thing. This thing is going to be...
 # MUCH, MUCH WORSE.
 func _on_back_button_pressed():
+	_play_back()
 	match current_phone_location:
 		NavigationState.HOME:
 			return
@@ -153,3 +162,12 @@ func _on_back_button_pressed():
 	
 	# Given... like, literally.
 	current_phone_location = NavigationState.HOME
+
+#===============================================================================
+# Audios
+#===============================================================================
+func _play_accept():
+	AudioManager.sfx_play(AudioManager.phone_accept_sfx)
+
+func _play_back():
+	AudioManager.sfx_play(AudioManager.phone_back_sfx)
