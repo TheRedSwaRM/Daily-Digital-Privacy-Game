@@ -40,11 +40,6 @@ func _on_home_feed_gui_input(event):
 		home_feed.scroll_vertical = home_feed.scroll_vertical - event.relative.y
 
 func sns_add(username: String, sns_text: String, loc: String = "", sns_image: Texture2D = null):
-	if not online:
-		anim_player.play("no_connection")
-		AudioManager.sfx_play("res://assets/audio/sfx/error_social_media.mp3")
-		return
-	
 	var new_post = preload("res://scenes/device/social_media_post.tscn")
 	var adding_post = new_post.instantiate()
 	
@@ -61,8 +56,14 @@ func sns_add(username: String, sns_text: String, loc: String = "", sns_image: Te
 
 
 func _on_add_post_button_pressed():
+	if not online:
+		anim_player.play("no_connection")
+		AudioManager.sfx_play("res://assets/audio/sfx/error_social_media.mp3")
+		return
+	
+	AudioManager.sfx_play("res://assets/audio/sfx/sns_notif.mp3")
 	if Events.location:
-		Events.sns_add_post.emit("gay sex", "gaygay", "haha", load("res://assets/images/social_media/default_image.png"))
+		Events.sns_add_post.emit("Cheryl", "Kinda bored ngl.", "Yakal St.", load("res://assets/images/social_media/default_image.png"))
 		Events.change_game_switch("posted_with_location", true)
 	else:
-		Events.sns_add_post.emit("gay sex", "gaygay", "", load("res://assets/images/social_media/default_image.png"))
+		Events.sns_add_post.emit("Cheryl", "Kinda bored ngl.", "", null)
