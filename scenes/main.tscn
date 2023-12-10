@@ -13,6 +13,7 @@ debugger_on = true
 [node name="Area" type="Node2D" parent="."]
 
 [node name="Phone" parent="." instance=ExtResource("3_4ld74")]
+visible = false
 mouse_filter = 2
 
 [node name="Debugger" type="GridContainer" parent="."]

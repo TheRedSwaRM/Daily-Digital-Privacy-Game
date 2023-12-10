@@ -111,7 +111,9 @@ scroll_active = false
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/line_separation = 2
 text = "Dialogue..."
+autowrap_mode = 2
 
 [node name="Responses" type="MarginContainer" parent="Balloon"]
 layout_mode = 1

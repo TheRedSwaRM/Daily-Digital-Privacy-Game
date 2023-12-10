@@ -9,6 +9,8 @@ extends Node
 # Reserved for events... wait do I need it?
 @onready var event_done_1: bool = false
 
+# Woops.
+
 
 func _ready():
 	#===========================================================================
@@ -24,6 +26,8 @@ func _ready():
 	# For debugging
 	Events.connection_change.connect(_change_connection_debug)
 	Events.location_change.connect(_change_location_debug)
+	
+	Events.activate_phone.connect(_show_phone_after_intro)
 	
 	if debugger_on:
 		%Debugger.show()
@@ -64,6 +68,9 @@ func _change_mouse_passing_for_phone(value: bool):
 	else:
 		phone.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
+func _show_phone_after_intro():
+	phone.show()
+
 #==============================================================================
 # Debugger function
 #==============================================================================
@@ -78,6 +85,8 @@ func _change_location_debug(value: bool):
 #==============================================================================
 func _cutscene_social_post(key: String, value: bool):
 	if Events.check_game_switch(key) && key == "posted_with_location":
-		print("idiot")
+		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/intro.dialogue"))
+		await DialogueManager.dialogue_ended
 		Events.game_switch_changed.disconnect(_cutscene_social_post)
+
 

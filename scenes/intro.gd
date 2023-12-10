@@ -9,4 +9,5 @@ func _ready():
 		anim_player.play("intro")
 		await anim_player.animation_finished
 	#print("scenes")
+	Events.activate_phone.emit()
 	Events.change_map.emit(path_to_nowhere)

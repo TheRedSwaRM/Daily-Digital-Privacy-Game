@@ -7,6 +7,7 @@ signal location_change(value: bool)
 # For social media posts :skull:
 signal sns_add_post(username: String, sns_text: String, loc: String, sns_image: Texture2D)
 signal flip_phone()
+signal activate_phone()
 
 # Game Switch Change
 signal game_switch_changed(key: String, value: bool)
