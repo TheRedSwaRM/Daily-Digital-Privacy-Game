@@ -6,8 +6,12 @@ signal location_change(value: bool)
 
 # For social media posts :skull:
 signal sns_add_post(username: String, sns_text: String, loc: String, sns_image: Texture2D)
+signal flip_phone()
 
-@onready var game_switches = {
+# Game Switch Change
+signal game_switch_changed(key: String, value: bool)
+
+@onready var _game_switches = {
 	"intro": false,
 	"posted_with_location": false
 }
@@ -27,10 +31,18 @@ signal sns_add_post(username: String, sns_text: String, loc: String, sns_image: 
 		location = value
 		location_change.emit(value)
 
+func change_game_switch(key: String, value: bool):
+	_game_switches[key] = value
+	print(key + " is now " + str(value))
+	game_switch_changed.emit(key, value)
+
+func check_game_switch(key: String):
+	return _game_switches[key]
+
 ## What it says in the tin, especially in the event that we're going back to the main menu.
 func reset_all():
-	for key in game_switches:
-		game_switches[key] = false
+	for key in _game_switches:
+		_game_switches[key] = false
 	
 	wifi_connection = "None"
 	location = true

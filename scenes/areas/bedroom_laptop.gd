@@ -2,14 +2,13 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
-	if not Events.game_switches["intro"]:
+	if Events.check_game_switch("intro"):
+		AudioManager.bgm_play("res://assets/audio/bgm/room_ambience.ogg")
+	else:
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/intro.dialogue"))
 		await DialogueManager.dialogue_ended
-		Events.game_switches["intro"] = true
-		
-	if Events.game_switches["intro"]:
-		AudioManager.bgm_play("res://assets/audio/bgm/gnossienne_1.mp3")
+		Events.change_game_switch("intro", true)		
+		AudioManager.bgm_play("res://assets/audio/bgm/room_ambience.ogg")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

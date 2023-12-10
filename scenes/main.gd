@@ -23,9 +23,6 @@ func _ready():
 	if debugger_on:
 		%Debugger.show()
 	
-	
-
-
 ## Goes to another area.
 func _goto_area(path: String):
 	if ResourceLoader.exists(path):
