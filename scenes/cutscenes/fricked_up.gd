@@ -11,9 +11,6 @@ func _ready():
 	await anim_player.animation_finished
 	Events.quit_game()
 
-func play_bgm():
-	AudioManager.bgm_play("res://assets/audio/bgm/horror_droning.mp3")
-	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

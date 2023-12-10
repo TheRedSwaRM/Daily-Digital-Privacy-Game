@@ -1,12 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8vyfbty7kmsn"]
+[gd_scene load_steps=10 format=3 uid="uid://b8vyfbty7kmsn"]
 
 [ext_resource type="Script" path="res://scenes/cutscenes/fricked_up.gd" id="1_agjye"]
+[ext_resource type="Texture2D" uid="uid://dmc1qxhg7spsg" path="res://assets/images/bg/room2_night.png" id="2_t1ei7"]
 [ext_resource type="Texture2D" uid="uid://md0j0h5b0dye" path="res://assets/images/bg/room1_night.png" id="2_wb471"]
 [ext_resource type="Texture2D" uid="uid://b43kg1568otan" path="res://assets/images/bg/laptop_night.png" id="3_3ys2l"]
 [ext_resource type="Texture2D" uid="uid://drqj1evi6sd6w" path="res://assets/images/bg/clock_side_night.png" id="4_0htiw"]
-[ext_resource type="Texture2D" uid="uid://ctq7le01jdp4k" path="res://assets/images/bg/room3_night2.png" id="5_4jhun"]
-[ext_resource type="SpriteFrames" uid="uid://dknba0wlge80i" path="res://scenes/cutscenes/horror_scene_1.tres" id="6_vevsy"]
-[ext_resource type="Texture2D" uid="uid://b24n5lu24dtlr" path="res://assets/images/bg/laptop_horror_night.png" id="7_7b1hr"]
+[ext_resource type="Texture2D" uid="uid://chnd8a05p208q" path="res://assets/images/bg/room3_night.png" id="6_2hkb5"]
 
 [sub_resource type="Animation" id="Animation_wta55"]
 resource_name = "fricked"
@@ -18,72 +17,34 @@ tracks/0/path = NodePath("Night:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Bedroom/Laptop:texture")
+tracks/1/path = NodePath("Bedroom:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("3_3ys2l"), ExtResource("7_7b1hr")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Bedroom:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 8),
+"times": PackedFloat32Array(0, 10),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimatedSprite2D:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 8, 13.2),
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Front:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 11, 14),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"play_bgm"
-}]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("AnimatedSprite2D:frame")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(8, 13.2),
-"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0, 123]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_7rjok"]
@@ -103,50 +64,26 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Bedroom/Laptop:texture")
+tracks/1/path = NodePath("Bedroom:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_3ys2l")]
+"values": [true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Bedroom:visible")
+tracks/2/path = NodePath("Front:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimatedSprite2D:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AnimatedSprite2D:frame")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yjedp"]
@@ -155,7 +92,7 @@ _data = {
 "fricked": SubResource("Animation_wta55")
 }
 
-[node name="FrickedUp" type="Control"]
+[node name="Peace" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -170,6 +107,20 @@ offset_right = 256.0
 offset_bottom = 144.0
 mouse_filter = 1
 color = Color(0, 0, 0, 1)
+
+[node name="Front" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Front"]
+offset_right = 256.0
+offset_bottom = 144.0
+texture = ExtResource("2_t1ei7")
+stretch_mode = 5
 
 [node name="Bedroom" type="Control" parent="."]
 layout_mode = 3
@@ -214,14 +165,8 @@ grow_vertical = 2
 [node name="TextureRect" type="TextureRect" parent="Night"]
 offset_right = 256.0
 offset_bottom = 144.0
-texture = ExtResource("5_4jhun")
+texture = ExtResource("6_2hkb5")
 stretch_mode = 5
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
-position = Vector2(128, 72)
-sprite_frames = ExtResource("6_vevsy")
-metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
