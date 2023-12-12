@@ -1,9 +1,10 @@
 name: "Artifact Maker"
-# on:
-#   pull_request:
-#     branches:
-#       - debug
-on: workflow_dispatch
+on:
+  push:
+    tags:
+      - "v*"
+
+# on: workflow_dispatch
 
 
 jobs:
