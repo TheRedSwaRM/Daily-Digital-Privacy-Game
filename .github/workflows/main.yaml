@@ -28,8 +28,8 @@ jobs:
       uses: firebelley/godot-export@v5.2.1
       with:
         # Defining all the required inputs
-        godot_executable_download_url: https://github.com/godotengine/godot-builds/releases/download/4.1.1-stable/Godot_v4.1.1-stable_linux.x86_64.zip
-        godot_export_templates_download_url: https://github.com/godotengine/godot-builds/releases/download/4.1.1-stable/Godot_v4.1.1-stable_export_templates.tpz
+        godot_executable_download_url: http://downloads.tuxfamily.org/godotengine/4.2.1/Godot_v4.2.1-stable_linux.x86_64.zip
+        godot_export_templates_download_url: http://downloads.tuxfamily.org/godotengine/4.2.1/Godot_v4.2.1-stable_export_templates.tpz
         relative_project_path: ./
         archive_output: true
 
@@ -37,14 +37,23 @@ jobs:
       # THIS IS A CERTIFIED ARTIFACT CREATION ZONE
       #===========================================
 
-    - name: Create THE ARTIFACTS
-      uses: "marvinpinto/action-automatic-releases@latest"
+    # - name: Create THE ARTIFACTS
+    #   uses: "marvinpinto/action-automatic-releases@latest"
+    #   with:
+    #     repo_token: "${{ secrets.GITHUB_TOKEN }}"
+    #     automatic_release_tag: "bleeding_edge"
+    #     prerelease: false
+    #     title: "Development Build"
+    #     files: ${{ steps.export.outputs.archive_directory }}/*
+
+    - name: create release
+      uses: ncipollo/release-action@v1.13.0
       with:
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: "bleeding_edge"
-        prerelease: true
-        title: "Development Build"
-        files: ${{ steps.export.outputs.archive_directory }}/*
+        token: ${{ secrets.GITHUB_TOKEN }}
+        generateReleaseNotes: true
+        tag: ${{ github.ref_name }}
+        artifacts: ${{ steps.export.outputs.archive_directory }}/*
+
 
     # - name: Create Windows Artifact
     #   uses: actions/upload-artifact@v3.1.3
