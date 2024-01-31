@@ -18,7 +18,9 @@ func _ready():
 	#===========================================================================
 	# Adding events
 	Events.change_map.connect(_goto_area)
-	Events.change_map.emit(starting_screen)
+	
+	# Fix that doesn't fuck up the system. I mean, literally.
+	Events.change_map.emit(starting_screen, false)
 	
 	# For flipping
 	phone.flipping_phone.connect(_change_mouse_passing_for_phone)
@@ -42,15 +44,16 @@ func _ready():
 	Events.game_switch_changed.connect(_cutscene_social_post)
 	
 	
-## Goes to another area.
-func _goto_area(path: String, special: bool = false):
+## First is path. Second if you want to blink. Third is special.
+func _goto_area(path: String, can_blink: bool = true, special: bool = false):
 	if ResourceLoader.exists(path):
-		transition_sprite.play("blinking_transition")
-		await transition_sprite.animation_finished
+		if can_blink:
+			transition_sprite.play("blinking_transition")
+			await transition_sprite.animation_finished
 		
 		call_deferred("_deferred_change_area", path)
 		
-		if not special:
+		if not special and can_blink:
 			transition_sprite.play_backwards("blinking_transition")
 			await transition_sprite.animation_finished
 	

@@ -1,6 +1,8 @@
 extends Node
 
-signal change_map(path: String)
+## First is path. Second if you want to blink. Third is special.
+signal change_map(path: String, can_blink: bool, special: bool)
+
 signal connection_change(name: String)
 signal location_change(value: bool)
 
