@@ -18,6 +18,7 @@ grow_vertical = 2
 script = ExtResource("1_run1s")
 
 [node name="SettingsBackground" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = -3.0
 offset_top = -10.0
 offset_right = 69.0
@@ -42,5 +43,12 @@ offset_top = 10.0
 offset_right = 66.0
 offset_bottom = 124.0
 
-[node name="MessagesList" type="VBoxContainer" parent="MessageLayouts"]
+[node name="ContactList" type="VBoxContainer" parent="MessageLayouts"]
 layout_mode = 2
+
+[node name="Debug" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="Debug" to="." method="_on_debug_pressed"]

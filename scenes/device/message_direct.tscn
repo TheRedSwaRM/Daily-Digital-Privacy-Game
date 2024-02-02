@@ -6,15 +6,13 @@
 [ext_resource type="Theme" uid="uid://b4a3rif2mhppr" path="res://scenes/components/no_scroll.tres" id="4_ib2jr"]
 
 [node name="MessageDirect" type="Control"]
-custom_minimum_size = Vector2(0, 24)
+custom_minimum_size = Vector2(66, 10)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 66.0
-offset_bottom = 24.0
+offset_bottom = 10.0
 script = ExtResource("1_lwo5a")
 
 [node name="MessageHeader" type="HBoxContainer" parent="."]
-visible = false
 layout_mode = 0
 offset_right = 66.0
 offset_bottom = 7.0
@@ -37,6 +35,7 @@ theme_override_font_sizes/font_size = 5
 text = "(!)"
 
 [node name="MessageScroller" type="ScrollContainer" parent="."]
+visible = false
 custom_minimum_size = Vector2(66, 114)
 layout_mode = 0
 offset_right = 40.0
@@ -50,6 +49,8 @@ layout_mode = 2
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
+theme_override_font_sizes/font_size = 5
 text = "deb"
 
+[connection signal="gui_input" from="MessageHeader" to="." method="_on_message_header_gui_input"]
 [connection signal="pressed" from="DebugButton" to="." method="_on_debug_button_pressed"]
