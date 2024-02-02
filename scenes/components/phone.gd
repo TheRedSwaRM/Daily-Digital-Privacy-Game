@@ -8,6 +8,7 @@ enum State{
 enum NavigationState {
 	HOME,
 	SOCIAL_MEDIA,
+	MESSAGES,
 	SETTINGS,
 	QUIT
 }
@@ -30,6 +31,9 @@ enum NavigationState {
 
 # Social Media
 @onready var social_media = $PhoneContainer/SocialMedia
+
+# Messaging App
+@onready var messaging_app = $PhoneContainer/MessagingApp
 
 # Current State
 @onready var current_phone_location = NavigationState.HOME :
@@ -128,6 +132,16 @@ func _on_social_media_button_pressed():
 	social_media.show()
 
 #===============================================================================
+# MESSAGING FUNCTION
+#===============================================================================
+
+func _on_messaging_button_pressed():
+	_play_accept()
+	current_phone_location = NavigationState.MESSAGES
+	messaging_app.show()
+
+
+#===============================================================================
 # NAVIGATION FUNCTION
 #===============================================================================
 
@@ -140,6 +154,8 @@ func _on_home_button_pressed():
 			social_media.hide()
 		NavigationState.SETTINGS:
 			settings_instance.hide()
+		NavigationState.MESSAGES:
+			messaging_app.hide()
 		NavigationState.QUIT:
 			quit_panel.hide()
 	
@@ -157,11 +173,14 @@ func _on_back_button_pressed():
 			social_media.hide()
 		NavigationState.SETTINGS:
 			settings_instance.hide()
+		NavigationState.MESSAGES:
+			messaging_app.hide()
 		NavigationState.QUIT:
 			quit_panel.hide()
 	
 	# Given... like, literally.
 	current_phone_location = NavigationState.HOME
+
 
 #===============================================================================
 # Audios
@@ -171,3 +190,5 @@ func _play_accept():
 
 func _play_back():
 	AudioManager.sfx_play(AudioManager.phone_back_sfx)
+
+

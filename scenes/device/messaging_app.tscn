@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://7aeuu7qbe1ju"]
+
+[ext_resource type="Script" path="res://scenes/device/messaging_app.gd" id="1_run1s"]
+[ext_resource type="Texture2D" uid="uid://bbb7m40xm3cqh" path="res://assets/images/device/phone_messaging.png" id="2_quiko"]
+[ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="3_ukj62"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_62rmy"]
+font = ExtResource("3_ukj62")
+font_size = 5
+
+[node name="MessagingApp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_run1s")
+
+[node name="SettingsBackground" type="TextureRect" parent="."]
+offset_left = -3.0
+offset_top = -10.0
+offset_right = 69.0
+offset_bottom = 134.0
+mouse_filter = 2
+texture = ExtResource("2_quiko")
+expand_mode = 3
+
+[node name="UIHeader" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 65.0
+offset_bottom = 10.0
+text = "Messaging"
+label_settings = SubResource("LabelSettings_62rmy")
+vertical_alignment = 1
+
+[node name="MessageLayouts" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 66.0
+offset_bottom = 124.0
+
+[node name="MessagesList" type="VBoxContainer" parent="MessageLayouts"]
+layout_mode = 2
