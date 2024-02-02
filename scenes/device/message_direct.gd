@@ -2,9 +2,11 @@ extends Control
 
 signal contact_pressed(user_name: String)
 
+
 @export var sender: String
 
 @onready var user_name = $MessageHeader/MessageUser
+@onready var recent_message_sum = $MessageRecentSum
 
 @onready var message_header = $MessageHeader
 @onready var unread_indicator = $MessageHeader/MessageNew
@@ -25,5 +27,6 @@ func _on_message_header_gui_input(event):
 		contact_pressed.emit(sender)
 
 ## Makes unread_indicator visible again to alert user.
-func new_text_unread():
+func new_text_unread(recent_message: String):
 	unread_indicator.show()
+	recent_message_sum.text = recent_message

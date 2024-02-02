@@ -63,6 +63,7 @@ offset_bottom = 124.0
 
 [node name="ContactList" type="VBoxContainer" parent="MessageContacts"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="MessageLists" type="Control" parent="."]
 anchors_preset = 0
