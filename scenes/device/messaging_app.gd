@@ -13,12 +13,17 @@ extends Control
 # Needed to parse through for sideways signali(si)ng.
 @onready var message_lists = $MessageLists
 
+@onready var back_button = $Header/BackButton
+@onready var ui_header = $Header/UIHeader
+
+var current_message_list: ScrollContainer
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	_on_debug_pressed()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 ## Self-explanatory nightmare. Dear Lord, help us ALL.
@@ -47,13 +52,28 @@ func add_new_contact(user_name: String, starting_text: String):
 	# NOTE: Again, not fucking safe! We know the function but holy shit!
 	new_list.add_new_text(starting_text)
 
-
-
 func _on_debug_pressed():
 	add_new_contact("ambaturam", "hello")
 	add_new_contact("ambatudie", "hi")
 	add_new_contact("ambastin", "ambatublow")
 
 ## Guess why we're doing this because the last time we did, it was NOT pretty!
+## NOTE: Don't forget possible errors! Even though we're not expecting THAT!
 func _contact_press_detected(user_name: String):
-	print(user_name)
+	# Iterate
+	for user_message_list in message_lists.get_children():
+		# Then do and break
+		if user_message_list.name == user_name:
+			print("Found " + user_name)
+			current_message_list = user_message_list
+			back_button.show()
+			current_message_list.show()
+			contact_list.hide()
+			break
+
+
+func _on_back_button_pressed():
+	assert(current_message_list != null, "Woops! Non-existent! Too bad!")
+	back_button.hide()
+	current_message_list.hide()
+	contact_list.show()

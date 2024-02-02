@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://7aeuu7qbe1ju"]
+[gd_scene load_steps=7 format=3 uid="uid://7aeuu7qbe1ju"]
 
 [ext_resource type="Script" path="res://scenes/device/messaging_app.gd" id="1_run1s"]
 [ext_resource type="Texture2D" uid="uid://bbb7m40xm3cqh" path="res://assets/images/device/phone_messaging.png" id="2_quiko"]
 [ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="3_ukj62"]
+[ext_resource type="Theme" uid="uid://s47xnf1e5hrf" path="res://scenes/components/wifi_button.tres" id="3_w62yh"]
+
+[sub_resource type="Theme" id="Theme_yv111"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_62rmy"]
 font = ExtResource("3_ukj62")
@@ -26,16 +29,31 @@ offset_bottom = 134.0
 mouse_filter = 2
 texture = ExtResource("2_quiko")
 expand_mode = 3
+metadata/_edit_lock_ = true
 
-[node name="UIHeader" type="Label" parent="."]
+[node name="Header" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 4.0
 offset_top = 1.0
-offset_right = 65.0
+offset_right = 66.0
 offset_bottom = 10.0
+theme = SubResource("Theme_yv111")
+
+[node name="BackButton" type="Button" parent="Header"]
+visible = false
+layout_mode = 2
+theme = ExtResource("3_w62yh")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = " < "
+
+[node name="UIHeader" type="Label" parent="Header"]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Messaging"
 label_settings = SubResource("LabelSettings_62rmy")
+horizontal_alignment = 1
 vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
 
 [node name="MessageContacts" type="ScrollContainer" parent="."]
 layout_mode = 0
@@ -47,15 +65,17 @@ offset_bottom = 124.0
 layout_mode = 2
 
 [node name="MessageLists" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_top = 10.0
 offset_right = 66.0
 offset_bottom = 124.0
+mouse_filter = 2
 
 [node name="Debug" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 
+[connection signal="pressed" from="Header/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Debug" to="." method="_on_debug_pressed"]

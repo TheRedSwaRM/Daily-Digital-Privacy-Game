@@ -12,7 +12,7 @@ func _ready():
 	user_name.text = sender
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Engine.is_editor_hint():
 		user_name.text = sender
 		

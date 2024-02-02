@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://scenes/device/message_user_texts.gd" id="2_a4ygr"]
 
 [node name="MessageUserTexts" type="ScrollContainer"]
+visible = false
 custom_minimum_size = Vector2(66, 114)
 offset_right = 40.0
 offset_bottom = 40.0
