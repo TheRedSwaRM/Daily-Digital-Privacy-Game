@@ -20,6 +20,9 @@ signal game_switch_changed(key: String, value: bool)
 # Dialogue selection
 signal response_taken()
 
+# For adding new messages to the phone :skull:
+signal new_phone_message(user_name: String, message: String)
+
 @onready var _game_switches = {
 	"intro": false,
 	"posted_with_location": false,

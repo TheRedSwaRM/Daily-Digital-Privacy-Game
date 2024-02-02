@@ -1,5 +1,7 @@
 extends ScrollContainer
 
+signal new_text_added()
+
 @onready var message_text_lists = $MessageTextList
 
 # Called when the node enters the scene tree for the first time.
@@ -21,3 +23,4 @@ func add_new_text(text_message: String):
 	
 	# And then add it to the parent Contact List.
 	message_text_lists.add_child(new_text)
+	new_text_added.emit()
