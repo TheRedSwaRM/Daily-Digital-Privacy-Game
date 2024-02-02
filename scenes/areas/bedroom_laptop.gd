@@ -33,8 +33,6 @@ func _process(_delta):
 	pass
 
 func _on_laptop_pressed():
-	# DEBUG ONLY, REMOVE AFTER
-	Events.new_phone_message.emit("ambastin", "gay seggs")
 	
 	if Events.check_game_switch("night"):
 		if Events.check_game_switch("laptop_checked") == false:

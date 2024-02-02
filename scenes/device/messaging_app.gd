@@ -21,7 +21,7 @@ var current_message_list: ScrollContainer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Events.new_phone_message.connect(new_text_message)
-	_on_debug_pressed()
+	_starting_messages()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -31,7 +31,7 @@ func _process(_delta):
 ## INITIAL MESSAGE IS VITAL. REALLY, REALLY VITAL!
 ## I MEAN, WE CAN HAVE BLANK BUT IT'S WEIRD.
 func new_text_message(user_name: String, starting_text: String):
-	var checked_contact = _if_in_message(user_name)
+	var checked_contact = _if_in_message_lists(user_name)
 	
 	# If null, creates a new message and contact list
 	if checked_contact == null:
@@ -56,6 +56,9 @@ func new_text_message(user_name: String, starting_text: String):
 		contact_list.add_child(new_contact)
 		message_lists.add_child(new_list)
 
+		# Also move newest contact above.
+		contact_list.move_child(new_contact, 0)
+		
 		# Adding first text via function.
 		# NOTE: Again, not fucking safe! We know the function but holy shit!
 		new_list.add_new_text(starting_text)
@@ -65,10 +68,13 @@ func new_text_message(user_name: String, starting_text: String):
 	else:
 		checked_contact.add_new_text(starting_text)
 		
-func _on_debug_pressed():
-	new_text_message("ambaturam", "hello")
-	new_text_message("ambatudie", "hi")
-	new_text_message("ambastin", "ambatublow")
+		# Move newest contact to above.
+		contact_list.move_child(_find_in_contacts(user_name), 0)
+		
+func _starting_messages():
+	new_text_message("Amelie", "Yo, girl. You should def try this new app I found.")
+	new_text_message("Sean", "You free today?")
+	new_text_message("Baster", "Rust time?")
 
 ## Guess why we're doing this because the last time we did, it was NOT pretty!
 ## NOTE: Don't forget possible errors! Even though we're not expecting THAT!
@@ -87,8 +93,13 @@ func _contact_press_detected(user_name: String):
 
 ## Checks if the following is in contacts. Checks on MessageLists instead so
 ## that it would be an immediately addition to the text.
-func _if_in_message(user_name: String):
+func _if_in_message_lists(user_name: String):
 	for user_contacts in message_lists.get_children():
+		if user_contacts.name == user_name: return user_contacts
+	return null
+
+func _find_in_contacts(user_name: String):
+	for user_contacts in contact_list.get_children():
 		if user_contacts.name == user_name: return user_contacts
 	return null
 
