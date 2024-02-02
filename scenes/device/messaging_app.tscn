@@ -37,14 +37,20 @@ text = "Messaging"
 label_settings = SubResource("LabelSettings_62rmy")
 vertical_alignment = 1
 
-[node name="MessageLayouts" type="ScrollContainer" parent="."]
+[node name="MessageContacts" type="ScrollContainer" parent="."]
 layout_mode = 0
 offset_top = 10.0
 offset_right = 66.0
 offset_bottom = 124.0
 
-[node name="ContactList" type="VBoxContainer" parent="MessageLayouts"]
+[node name="ContactList" type="VBoxContainer" parent="MessageContacts"]
 layout_mode = 2
+
+[node name="MessageLists" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 10.0
+offset_right = 66.0
+offset_bottom = 124.0
 
 [node name="Debug" type="Button" parent="."]
 layout_mode = 0
