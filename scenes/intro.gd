@@ -11,4 +11,5 @@ func _ready():
 	
 	#print("scenes")
 	Events.activate_phone.emit()
+	Events.phones_sounds = true
 	Events.change_map.emit("res://scenes/areas/bedroom_laptop.tscn", false)

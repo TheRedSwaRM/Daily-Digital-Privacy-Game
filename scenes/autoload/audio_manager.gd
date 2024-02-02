@@ -8,6 +8,7 @@ extends Node
 
 @onready var phone_accept_sfx = "res://assets/audio/sfx/phone_accept.mp3"
 @onready var phone_back_sfx = "res://assets/audio/sfx/phone_back.mp3"
+@onready var phone_new_message_sfx = "res://assets/audio/sfx/phone_new_message.mp3"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,6 +42,14 @@ func bgm_stop():
 	background_music.stream = null
 
 func sfx_play(path: String):
+	# Check first if it's allowed to play the phone sounds. Better to stop it
+	# here than ANYWHERE ELSE.
+	if not Events.phones_sounds:
+		match path:
+			phone_accept_sfx: return
+			phone_back_sfx: return
+			phone_new_message_sfx: return
+	
 	var sfx = AudioStreamPlayer.new()
 	sound_effect_queue.add_child(sfx)
 	sfx.finished.connect(_sfx_free.bind(sfx))

@@ -23,6 +23,9 @@ signal response_taken()
 # For adding new messages to the phone :skull:
 signal new_phone_message(user_name: String, message: String)
 
+# Hamstrung solution to disallow any sounds for the phone.
+var phones_sounds: bool = false
+
 @onready var _game_switches = {
 	"intro": false,
 	"posted_with_location": false,
