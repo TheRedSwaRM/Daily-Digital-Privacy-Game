@@ -47,6 +47,7 @@ offset_bottom = 124.0
 layout_mode = 2
 
 [node name="MessageLists" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_top = 10.0
 offset_right = 66.0

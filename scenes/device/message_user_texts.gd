@@ -4,9 +4,6 @@ extends ScrollContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Debugs
-	add_new_text("sloptop")
-	add_new_text("gayseggs")
 	pass # Replace with function body.
 
 
