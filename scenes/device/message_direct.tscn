@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://fysl1pydoba0"]
+[gd_scene load_steps=5 format=3 uid="uid://fysl1pydoba0"]
 
-[ext_resource type="LabelSettings" uid="uid://b5ugeles5dpul" path="res://scenes/components/messaging_header.tres" id="1_6w7qv"]
-[ext_resource type="Script" path="res://scenes/device/message_direct.gd" id="1_hwr5h"]
-[ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="2_6x0ut"]
+[ext_resource type="Script" path="res://scenes/device/message_direct.gd" id="1_lwo5a"]
+[ext_resource type="LabelSettings" uid="uid://b5ugeles5dpul" path="res://scenes/components/messaging_header.tres" id="2_kprul"]
+[ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="3_bswqr"]
+[ext_resource type="Theme" uid="uid://b4a3rif2mhppr" path="res://scenes/components/no_scroll.tres" id="4_ib2jr"]
 
 [node name="MessageDirect" type="Control"]
 custom_minimum_size = Vector2(0, 24)
@@ -10,7 +11,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 66.0
 offset_bottom = 24.0
-script = ExtResource("1_hwr5h")
+script = ExtResource("1_lwo5a")
 
 [node name="MessageHeader" type="HBoxContainer" parent="."]
 visible = false
@@ -23,7 +24,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 8.0
 text = "areyouasd"
-label_settings = ExtResource("1_6w7qv")
+label_settings = ExtResource("2_kprul")
 clip_text = true
 text_overrun_behavior = 3
 
@@ -31,15 +32,24 @@ text_overrun_behavior = 3
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_6x0ut")
+theme_override_fonts/font = ExtResource("3_bswqr")
 theme_override_font_sizes/font_size = 5
 text = "(!)"
 
 [node name="MessageScroller" type="ScrollContainer" parent="."]
-custom_minimum_size = Vector2(66, 0)
+custom_minimum_size = Vector2(66, 114)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("4_ib2jr")
 
 [node name="MessageList" type="VBoxContainer" parent="MessageScroller"]
 layout_mode = 2
+
+[node name="DebugButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "deb"
+
+[connection signal="pressed" from="DebugButton" to="." method="_on_debug_button_pressed"]

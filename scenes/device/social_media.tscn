@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b2encyf73hip4"]
+[gd_scene load_steps=17 format=3 uid="uid://b2encyf73hip4"]
 
 [ext_resource type="Script" path="res://scenes/device/social_media.gd" id="1_6rg46"]
 [ext_resource type="Texture2D" uid="uid://bu8k43hl1ehm8" path="res://assets/images/device/phone_social_media.png" id="1_xk37a"]
@@ -9,24 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://g3paflh4a60q" path="res://assets/images/device/social_media_mes.png" id="5_ftokl"]
 [ext_resource type="Texture2D" uid="uid://b2snt3d8ls41m" path="res://assets/images/device/social_media_bell.png" id="6_m0a4i"]
 [ext_resource type="Texture2D" uid="uid://d0svocs860006" path="res://assets/images/social_media/social_media_add_post.png" id="9_6ch0j"]
+[ext_resource type="Theme" uid="uid://b4a3rif2mhppr" path="res://scenes/components/no_scroll.tres" id="9_nmfo4"]
 [ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="10_eofds"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_re34t"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w61fl"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c1pra"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gdw51"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31ea1"]
-
-[sub_resource type="Theme" id="Theme_v1liv"]
-VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_re34t")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_w61fl")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_c1pra")
-VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_gdw51")
-VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_31ea1")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c7uk"]
 
@@ -162,7 +146,7 @@ layout_mode = 0
 offset_top = 22.0
 offset_right = 66.0
 offset_bottom = 124.0
-theme = SubResource("Theme_v1liv")
+theme = ExtResource("9_nmfo4")
 horizontal_scroll_mode = 0
 scroll_deadzone = 6
 
