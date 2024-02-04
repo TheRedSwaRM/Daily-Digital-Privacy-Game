@@ -8,7 +8,7 @@ extends Area2D
 @export var collision_polygon: CollisionPolygon2D
 
 ## Waht cursor icon to change to when hovering over.
-@export_file var cursor_look
+@export var cursor_look: GameSettings.CursorLook
 
 @export_category("Transfer Area")
 ## The PackedScene to switch to in the case of pressing this area.
@@ -37,13 +37,13 @@ func _on_input_event(_viewport, event, _shape_idx):
 		if transfer_area != null:
 			Events.change_map.emit(transfer_area)
 			
-		Input.set_custom_mouse_cursor(load(GameSettings.default_cursor))
+		GameSettings.change_cursor_look()
 
 func _on_mouse_entered():
 	if cursor_look != null:
-		Input.set_custom_mouse_cursor(load(cursor_look))
+		GameSettings.change_cursor_look(cursor_look)
 
 
 func _on_mouse_exited():
 	if cursor_look != null:
-		Input.set_custom_mouse_cursor(load(GameSettings.default_cursor))
+		GameSettings.change_cursor_look()

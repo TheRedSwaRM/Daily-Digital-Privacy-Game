@@ -40,7 +40,6 @@ polygon = PackedVector2Array(48, 0, 24, 0, 24, 144, 48, 144)
 position = Vector2(-139, 12)
 label_name = "Bathroom"
 collision_polygon = NodePath("CollisionPolygon2D")
-cursor_look = "res://assets/images/cursor/cursor_left.png"
 transfer_area = ""
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToBathroom"]

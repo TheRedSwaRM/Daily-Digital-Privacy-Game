@@ -13,8 +13,21 @@ signal save_settings
 @onready var music_volume: float
 @onready var sfx_volume: float
 
-var default_cursor = ProjectSettings.get_setting("display/mouse_cursor/custom_image")
+var default_cursor = load(ProjectSettings.get_setting("display/mouse_cursor/custom_image"))
+var cursor_left = preload("res://assets/images/cursor/cursor_left.png")
+var cursor_right = preload("res://assets/images/cursor/cursor_right.png")
+var cursor_up = preload("res://assets/images/cursor/cursor_up.png")
+var cursor_down = preload("res://assets/images/cursor/cursor_down.png")
+var cursor_phone = preload("res://assets/images/cursor/cursor_up2.png")
 
+enum CursorLook {
+	DEFAULT,
+	LEFT,
+	RIGHT,
+	UP,
+	DOWN,
+	PHONE
+}
 
 func _ready():
 	_load_settings()
@@ -54,6 +67,28 @@ func _has_fullscreen_changed(value: bool):
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 
+#DEFAULT,
+#LEFT,
+#RIGHT,
+#UP,
+#DOWN,
+#PHONE
+
+func change_cursor_look(value: int = CursorLook.DEFAULT):
+	match value:
+		CursorLook.DEFAULT:
+			Input.set_custom_mouse_cursor(default_cursor)
+		CursorLook.LEFT:
+			Input.set_custom_mouse_cursor(cursor_left)
+		CursorLook.RIGHT:
+			Input.set_custom_mouse_cursor(cursor_right)
+		CursorLook.UP:
+			Input.set_custom_mouse_cursor(cursor_up)
+		CursorLook.DOWN:
+			Input.set_custom_mouse_cursor(cursor_down)
+		CursorLook.PHONE:
+			Input.set_custom_mouse_cursor(cursor_phone)
+			
 func _default_settings():
 	master_volume = 1.0
 	music_volume = 1.0

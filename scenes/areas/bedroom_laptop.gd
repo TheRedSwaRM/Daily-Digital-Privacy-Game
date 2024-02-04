@@ -47,3 +47,11 @@ func _on_laptop_pressed():
 
 func _on_clock_pressed():
 	DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/room.dialogue"), "clock")
+
+
+func _on_laptop_mouse_entered():
+	pass # Replace with function body.
+
+
+func _on_laptop_mouse_exited():
+	pass # Replace with function body.
