@@ -168,6 +168,7 @@ func _on_home_button_pressed():
 func _on_back_button_pressed():
 	_play_back()
 	Events.back_button_pressed.emit()
+	
 	#match current_phone_location:
 		#NavigationState.HOME:
 			#return

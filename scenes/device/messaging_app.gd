@@ -21,6 +21,7 @@ var current_message_list: ScrollContainer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Events.new_phone_message.connect(new_text_message)
+	Events.back_button_pressed.connect(_on_back_button_pressed)
 	_starting_messages()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -103,9 +104,17 @@ func _find_in_contacts(user_name: String):
 		if user_contacts.name == user_name: return user_contacts
 	return null
 
+## Unlike settings, might be volatile. But ya know, we're kinda gunning it here.
 func _on_back_button_pressed():
-	assert(current_message_list != null, "Woops! Non-existent! Too bad!")
-	ui_header.text = "Messaging"
-	back_button.hide()
-	current_message_list.hide()
-	contact_list.show()
+	if current_message_list != null:
+		ui_header.text = "Messaging"
+		back_button.hide()
+		current_message_list.hide()
+		contact_list.show()
+		
+		current_message_list = null
+		return
+	
+	# If no other stuff are open.
+	hide()
+	
