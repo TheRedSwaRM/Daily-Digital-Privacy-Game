@@ -13,6 +13,9 @@ signal save_settings
 @onready var music_volume: float
 @onready var sfx_volume: float
 
+var default_cursor = ProjectSettings.get_setting("display/mouse_cursor/custom_image")
+
+
 func _ready():
 	_load_settings()
 	

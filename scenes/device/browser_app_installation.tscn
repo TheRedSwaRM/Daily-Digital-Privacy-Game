@@ -42,6 +42,7 @@ grow_vertical = 2
 metadata/_edit_lock_ = true
 
 [node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = -3.0
 offset_top = -10.0
 offset_right = 69.0

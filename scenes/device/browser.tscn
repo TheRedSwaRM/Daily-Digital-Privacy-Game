@@ -25,6 +25,7 @@ script = ExtResource("1_ulbgk")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = -3.0
 offset_top = -10.0
 offset_right = 69.0
@@ -35,6 +36,7 @@ expand_mode = 3
 metadata/_edit_lock_ = true
 
 [node name="LinkLabel" type="Label" parent="."]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 3.0
 offset_right = 54.0
