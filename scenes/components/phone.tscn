@@ -106,8 +106,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 512.0
-offset_bottom = 288.0
+offset_right = 1024.0
+offset_bottom = 576.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -183,6 +183,7 @@ icon = ExtResource("7_uh2ou")
 metadata/_edit_lock_ = true
 
 [node name="SocialMediaButton" type="Button" parent="PhoneContainer/MainMenuButtons"]
+visible = false
 layout_mode = 0
 offset_left = 6.0
 offset_top = 101.0
@@ -190,6 +191,7 @@ offset_right = 20.0
 offset_bottom = 115.0
 theme = ExtResource("5_u00af")
 icon = ExtResource("8_nbang")
+metadata/_edit_lock_ = true
 
 [node name="MessagingButton" type="Button" parent="PhoneContainer/MainMenuButtons"]
 layout_mode = 0
@@ -199,6 +201,7 @@ offset_right = 20.0
 offset_bottom = 94.0
 theme = ExtResource("5_u00af")
 icon = ExtResource("9_a4gyf")
+metadata/_edit_lock_ = true
 
 [node name="Settings" parent="PhoneContainer" instance=ExtResource("6_ppbmc")]
 visible = false

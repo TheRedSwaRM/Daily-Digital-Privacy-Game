@@ -74,7 +74,10 @@ func new_text_message(user_name: String, starting_text: String):
 		
 func _starting_messages():
 	new_text_message("DormMngr", "The password for the month is the following:")
-	new_text_message("DormMngr", "hellodorm")
+	#new_text_message("DormMngr", "hellodorm")
+	new_text_message("Amelie", "Yo, bro. Just wanna do a quick heads up.")
+	new_text_message("Amelie", "There's like this new social media app. Check it out.")
+	new_text_message("Amelie", "The handle's @aMelee. See ya!")
 	#new_text_message("Amelie", "Yo, girl. You should def try this new app I found.")
 	#new_text_message("Sean", "You free today?")
 	#new_text_message("Baster", "Rust time?")
