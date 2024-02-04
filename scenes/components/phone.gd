@@ -181,21 +181,6 @@ func _on_back_button_pressed():
 	# At this rate, we have become bored.
 	if quit_panel.visible:
 		quit_panel.hide()
-	
-	#match current_phone_location:
-		#NavigationState.HOME:
-			#return
-		#NavigationState.SOCIAL_MEDIA:
-			#social_media.hide()
-		#NavigationState.SETTINGS:
-			#settings_instance.hide()
-		#NavigationState.MESSAGES:
-			#messaging_app.hide()
-		#NavigationState.QUIT:
-			#quit_panel.hide()
-	#
-	## Given... like, literally.
-	#current_phone_location = NavigationState.HOME
 
 #===============================================================================
 # BROWSER FUNCTION
