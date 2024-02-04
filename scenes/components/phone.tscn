@@ -144,7 +144,6 @@ offset_left = 36.0
 offset_top = -1.0
 offset_right = 108.0
 offset_bottom = 10.0
-mouse_default_cursor_shape = 2
 theme = ExtResource("4_80elq")
 
 [node name="MainMenuButtons" type="Control" parent="PhoneContainer"]
@@ -318,6 +317,8 @@ libraries = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+[connection signal="mouse_entered" from="PhoneContainer/FlippingButton" to="." method="_on_flipping_button_mouse_entered"]
+[connection signal="mouse_exited" from="PhoneContainer/FlippingButton" to="." method="_on_flipping_button_mouse_exited"]
 [connection signal="pressed" from="PhoneContainer/FlippingButton" to="." method="_on_flipping_button_pressed"]
 [connection signal="pressed" from="PhoneContainer/MainMenuButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="PhoneContainer/MainMenuButtons/QuitButton" to="." method="_on_quit_button_pressed"]

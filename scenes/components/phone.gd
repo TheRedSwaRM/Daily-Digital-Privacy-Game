@@ -214,7 +214,14 @@ func _play_accept():
 func _play_back():
 	AudioManager.sfx_play(AudioManager.phone_back_sfx)
 
+#===============================================================================
+# Phone interaction
+#===============================================================================
+func _on_flipping_button_mouse_entered():
+	if current_state == State.RUNNING:
+		GameSettings.change_cursor_look(GameSettings.CursorLook.PHONE_DOWN)
+	if current_state == State.IDLE:
+		GameSettings.change_cursor_look(GameSettings.CursorLook.PHONE_UP)
 
-
-
-
+func _on_flipping_button_mouse_exited():
+	GameSettings.change_cursor_look()

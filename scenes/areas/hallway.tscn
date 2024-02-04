@@ -30,6 +30,7 @@ stretch_mode = 5
 [node name="ToRoom" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("3_6nv3q")]
 label_name = "Room"
 collision_polygon = NodePath("CollisionPolygon2D")
+cursor_look = 3
 transfer_area = "res://scenes/areas/bedroom_front.tscn"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToRoom"]
@@ -38,6 +39,7 @@ polygon = PackedVector2Array(178, 32, 208, 18, 208, 144, 177, 144)
 [node name="DoorLeftInteract" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("3_6nv3q")]
 label_name = "Door"
 collision_polygon = NodePath("CollisionPolygon2D")
+cursor_look = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DoorLeftInteract"]
 polygon = PackedVector2Array(62, 40, 70, 43, 70, 112, 62, 120)
@@ -46,6 +48,7 @@ polygon = PackedVector2Array(62, 40, 70, 43, 70, 112, 62, 120)
 position = Vector2(58, 5)
 label_name = "Door"
 collision_polygon = NodePath("CollisionPolygon2D")
+cursor_look = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DoorRightInteract"]
 polygon = PackedVector2Array(70, 41, 75, 36, 75, 116, 70, 104)
@@ -54,6 +57,7 @@ polygon = PackedVector2Array(70, 41, 75, 36, 75, 116, 70, 104)
 position = Vector2(58, 5)
 label_name = "Hall"
 collision_polygon = NodePath("CollisionPolygon2D")
+cursor_look = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DoorHallway"]
 position = Vector2(-17, 12)

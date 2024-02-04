@@ -26,3 +26,11 @@ func _on_pillow_input_detected():
 
 func _on_clock_pressed():
 	DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/room.dialogue"), "clock")
+
+
+func _on_clock_mouse_entered():
+	GameSettings.change_cursor_look(GameSettings.CursorLook.INTERACT)
+
+
+func _on_clock_mouse_exited():
+	GameSettings.change_cursor_look()

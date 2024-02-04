@@ -14,19 +14,24 @@ signal save_settings
 @onready var sfx_volume: float
 
 var default_cursor = load(ProjectSettings.get_setting("display/mouse_cursor/custom_image"))
+var cursor_interact = preload("res://assets/images/cursor/cursor_interact.png")
 var cursor_left = preload("res://assets/images/cursor/cursor_left.png")
 var cursor_right = preload("res://assets/images/cursor/cursor_right.png")
 var cursor_up = preload("res://assets/images/cursor/cursor_up.png")
 var cursor_down = preload("res://assets/images/cursor/cursor_down.png")
-var cursor_phone = preload("res://assets/images/cursor/cursor_up2.png")
+var cursor_phone_up = preload("res://assets/images/cursor/cursor_up2.png")
+var cursor_phone_down = preload("res://assets/images/cursor/cursor_down2.png")
+
 
 enum CursorLook {
 	DEFAULT,
+	INTERACT,
 	LEFT,
 	RIGHT,
 	UP,
 	DOWN,
-	PHONE
+	PHONE_UP,
+	PHONE_DOWN
 }
 
 func _ready():
@@ -78,6 +83,8 @@ func change_cursor_look(value: int = CursorLook.DEFAULT):
 	match value:
 		CursorLook.DEFAULT:
 			Input.set_custom_mouse_cursor(default_cursor)
+		CursorLook.INTERACT:
+			Input.set_custom_mouse_cursor(cursor_interact)
 		CursorLook.LEFT:
 			Input.set_custom_mouse_cursor(cursor_left)
 		CursorLook.RIGHT:
@@ -86,8 +93,11 @@ func change_cursor_look(value: int = CursorLook.DEFAULT):
 			Input.set_custom_mouse_cursor(cursor_up)
 		CursorLook.DOWN:
 			Input.set_custom_mouse_cursor(cursor_down)
-		CursorLook.PHONE:
-			Input.set_custom_mouse_cursor(cursor_phone)
+		CursorLook.PHONE_UP:
+			Input.set_custom_mouse_cursor(cursor_phone_up)
+		CursorLook.PHONE_DOWN:
+			Input.set_custom_mouse_cursor(cursor_phone_down)
+		
 			
 func _default_settings():
 	master_volume = 1.0

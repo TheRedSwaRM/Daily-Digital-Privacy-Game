@@ -30,6 +30,7 @@ stretch_mode = 5
 [node name="ToDoor" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_sym85")]
 label_name = "Door"
 collision_polygon = NodePath("CollisionPolygon2D")
+cursor_look = 2
 transfer_area = "res://scenes/areas/bathroom_door.tscn"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToDoor"]
@@ -39,6 +40,7 @@ polygon = PackedVector2Array(65, 48, 89, 48, 89, 192, 65, 192)
 [node name="ToToilet" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_sym85")]
 label_name = "Mirror"
 collision_polygon = NodePath("CollisionPolygon2D")
+cursor_look = 3
 transfer_area = "res://scenes/areas/bathroom_mirror.tscn"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToToilet"]
@@ -47,12 +49,14 @@ polygon = PackedVector2Array(65, 48, 89, 48, 89, 192, 65, 192)
 
 [node name="Shower" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_sym85")]
 collision_polygon = NodePath("CollisionPolygon2D")
+cursor_look = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shower"]
 polygon = PackedVector2Array(48, 22, 48, 144, 77, 144, 77, 24, 69, 17, 63, 17, 58, 22)
 
 [node name="Toilet" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_sym85")]
 collision_polygon = NodePath("CollisionPolygon2D")
+cursor_look = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Toilet"]
 polygon = PackedVector2Array(208, 96, 208, 144, 135, 144, 142, 136, 166, 133, 170, 106, 177, 99, 182, 96)
