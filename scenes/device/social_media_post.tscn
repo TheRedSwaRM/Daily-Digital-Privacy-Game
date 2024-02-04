@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/device/social_media_post.gd" id="1_v3lyl"]
 [ext_resource type="Theme" uid="uid://dinj8j20l57j3" path="res://scenes/components/phone_button.tres" id="2_uvcw3"]
-[ext_resource type="Texture2D" uid="uid://ba6k4rffpt7hm" path="res://assets/images/device/social_media_post_icon.png" id="3_6ovd0"]
+[ext_resource type="Texture2D" uid="uid://ba6k4rffpt7hm" path="res://assets/images/social_media/social_media_post_icon.png" id="3_6ovd0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r81tw"]
 bg_color = Color(0.211765, 0.807843, 0.337255, 1)

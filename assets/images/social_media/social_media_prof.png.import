@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2snt3d8ls41m"
-path="res://.godot/imported/social_media_bell.png-893bf9bf6cd28fd5dab950646276fb5b.ctex"
+uid="uid://osk3d4jon0sc"
+path="res://.godot/imported/social_media_prof.png-8fa7ad346df3efe3e69810434cfeeb36.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/device/social_media_bell.png"
-dest_files=["res://.godot/imported/social_media_bell.png-893bf9bf6cd28fd5dab950646276fb5b.ctex"]
+source_file="res://assets/images/social_media/social_media_prof.png"
+dest_files=["res://.godot/imported/social_media_prof.png-8fa7ad346df3efe3e69810434cfeeb36.ctex"]
 
 [params]
 

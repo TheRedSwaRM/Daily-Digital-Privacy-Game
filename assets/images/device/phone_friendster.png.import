@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://osk3d4jon0sc"
-path="res://.godot/imported/social_media_prof.png-cc2bbda27615afab1d2a672b2644d2e4.ctex"
+uid="uid://cub07q0yn4foq"
+path="res://.godot/imported/phone_friendster.png-54513e1f4f59b6f808d3960082f7d069.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/device/social_media_prof.png"
-dest_files=["res://.godot/imported/social_media_prof.png-cc2bbda27615afab1d2a672b2644d2e4.ctex"]
+source_file="res://assets/images/device/phone_friendster.png"
+dest_files=["res://.godot/imported/phone_friendster.png-54513e1f4f59b6f808d3960082f7d069.ctex"]
 
 [params]
 
