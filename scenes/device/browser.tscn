@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://dywh83w6ca1li"]
+
+[ext_resource type="Texture2D" uid="uid://8h22dp266j4s" path="res://assets/images/device/phone_browser.png" id="1_87qls"]
+[ext_resource type="Script" path="res://scenes/device/browser.gd" id="1_ulbgk"]
+[ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="2_1fldl"]
+[ext_resource type="FontFile" uid="uid://dci41xnxl6f7a" path="res://assets/font/resolution-3x4.ttf" id="3_rpi0c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdtuo"]
+content_margin_left = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_gh57j"]
+font = ExtResource("2_1fldl")
+font_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xotq"]
+
+[node name="Browser" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ulbgk")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = -3.0
+offset_top = -10.0
+offset_right = 69.0
+offset_bottom = 134.0
+mouse_filter = 2
+texture = ExtResource("1_87qls")
+expand_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="LinkLabel" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 54.0
+offset_bottom = 10.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fdtuo")
+text = "home"
+label_settings = SubResource("LabelSettings_gh57j")
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="TabsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 3.0
+offset_right = 64.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_rpi0c")
+theme_override_font_sizes/font_size = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_8xotq")
+text = "0"

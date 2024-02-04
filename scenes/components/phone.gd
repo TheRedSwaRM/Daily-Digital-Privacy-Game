@@ -35,6 +35,9 @@ enum NavigationState {
 # Messaging App
 @onready var messaging_app = $PhoneContainer/MessagingApp
 
+# Browser App
+@onready var browser_app = $PhoneContainer/Browser
+
 # Current State
 @onready var current_phone_location = NavigationState.HOME :
 	get:
@@ -194,6 +197,13 @@ func _on_back_button_pressed():
 	## Given... like, literally.
 	#current_phone_location = NavigationState.HOME
 
+#===============================================================================
+# BROWSER FUNCTION
+#===============================================================================
+
+func _on_browser_button_pressed():
+	_play_accept()
+	browser_app.show()
 
 #===============================================================================
 # Audios
@@ -203,5 +213,8 @@ func _play_accept():
 
 func _play_back():
 	AudioManager.sfx_play(AudioManager.phone_back_sfx)
+
+
+
 
 

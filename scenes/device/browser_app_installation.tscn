@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://kcbjm4mxt1o6"]
 
-[ext_resource type="Texture2D" uid="uid://8h22dp266j4s" path="res://assets/images/device/phone_browser.png" id="1_fcvdl"]
+[ext_resource type="Texture2D" uid="uid://dgq8ga8jtytrk" path="res://assets/images/device/phone_browser_panels_default.png" id="1_fyyhk"]
 [ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="2_nn6ra"]
 [ext_resource type="Texture2D" uid="uid://vnqltacrbcxm" path="res://assets/images/browser/browser_googol_play_icon.png" id="3_k7cwr"]
 [ext_resource type="Texture2D" uid="uid://d2r7g8lcdffje" path="res://assets/images/browser/browser_friendster_header.png" id="4_l58lj"]
@@ -47,15 +47,16 @@ offset_top = -10.0
 offset_right = 69.0
 offset_bottom = 134.0
 mouse_filter = 2
-texture = ExtResource("1_fcvdl")
+texture = ExtResource("1_fyyhk")
 expand_mode = 3
 metadata/_edit_lock_ = true
 
 [node name="LinkLabel" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 2.0
 offset_top = 3.0
-offset_right = 64.0
+offset_right = 54.0
 offset_bottom = 10.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_sdvy2")
 text = "https://play.googol.com"
