@@ -9,6 +9,7 @@
 [ext_resource type="Theme" uid="uid://dh4qbclv1q7fq" path="res://scenes/components/wifi_button_activated.tres" id="6_gn40x"]
 [ext_resource type="Texture2D" uid="uid://dtr61c0kwi83t" path="res://assets/images/device/wifi_icon.png" id="7_j0hlb"]
 [ext_resource type="Texture2D" uid="uid://ds1qvwl7vloao" path="res://assets/images/device/wifi_haspass_icon.png" id="8_3qpag"]
+[ext_resource type="StyleBox" uid="uid://cf0dwxbaffuvq" path="res://scenes/components/wifi_pass_panel.tres" id="10_cev7i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_naxbi"]
 bg_color = Color(0, 0, 0, 1)
@@ -23,14 +24,6 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bx56o"]
-bg_color = Color(0.121569, 0.121569, 0.121569, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.329412, 0.329412, 0.329412, 1)
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -230,6 +223,7 @@ theme = ExtResource("6_gn40x")
 text = "No"
 
 [node name="WIFIPanel" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 5.0
 offset_top = 12.0
@@ -320,8 +314,10 @@ offset_right = 43.0
 offset_bottom = 27.0
 theme_override_fonts/font = ExtResource("4_d0m2f")
 theme_override_font_sizes/font_size = 5
-theme_override_styles/normal = SubResource("StyleBoxFlat_bx56o")
+theme_override_styles/normal = ExtResource("10_cev7i")
+theme_override_styles/focus = ExtResource("10_cev7i")
 secret = true
+secret_character = "*"
 
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
 [connection signal="pressed" from="SettingsList/WIFIHorz/WIFIButton" to="." method="_on_wifi_button_pressed"]
