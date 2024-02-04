@@ -16,18 +16,18 @@ func _ready():
 		
 		if not Events.check_game_switch("night_intro"):
 			DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/knocking.dialogue"), "intro")
+			await DialogueManager.dialogue_ended
 			Events.change_game_switch("night_intro", true)
 
 		return
 
-	if Events.check_game_switch("intro"):
-		AudioManager.bgm_play("res://assets/audio/bgm/room_ambience.ogg")
-	else:
+	if not Events.check_game_switch("intro"):
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/intro.dialogue"))
 		await DialogueManager.dialogue_ended
 		Events.change_game_switch("intro", true)
 		Events.new_phone_message.emit("Amelie", "The handle's @aMelee. See ya!")
-		AudioManager.bgm_play("res://assets/audio/bgm/room_ambience.ogg")
+	
+	AudioManager.bgm_play("res://assets/audio/bgm/gnossienne_1.mp3")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

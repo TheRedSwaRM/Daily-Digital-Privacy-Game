@@ -1,0 +1,17 @@
+~ left_door
+
+Cheryl: Not in the mood to talk with them.
+
+=> END
+
+~ right_door
+
+Cheryl: I don't have to bother my neighbour right now.
+
+=> END
+
+~ end_hall
+
+Cheryl: Don't want to touch grass right now.
+
+=> END

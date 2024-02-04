@@ -34,5 +34,7 @@ func _on_click_area_component_input_detected():
 		
 		Events.change_map.emit("res://scenes/cutscenes/creep_incoming.tscn")
 	else:
-		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/knocking.dialogue"), "morning")
+		AudioManager.sfx_play("res://assets/audio/sfx/door_open.mp3")
+		Events.change_map.emit("res://scenes/areas/hallway.tscn")
+		#DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/knocking.dialogue"), "morning")
 		

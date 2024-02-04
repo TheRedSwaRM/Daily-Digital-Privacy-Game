@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bfpjh5o6mplwh"
+path="res://.godot/imported/hallway.dialogue-65cdeb60e8be7369d4b3d994e4b00312.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/hallway.dialogue"
+dest_files=["res://.godot/imported/hallway.dialogue-65cdeb60e8be7369d4b3d994e4b00312.tres"]
+
+[params]
+
+defaults=true
