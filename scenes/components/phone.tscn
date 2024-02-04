@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bijcfw81xkw7r"]
+[gd_scene load_steps=22 format=3 uid="uid://bijcfw81xkw7r"]
 
 [ext_resource type="Script" path="res://scenes/components/phone.gd" id="1_ldqut"]
 [ext_resource type="Texture2D" uid="uid://h2puqxkdjy5n" path="res://assets/images/device/phone.png" id="2_fd6mj"]
@@ -7,7 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://w3nfv6j12y4n" path="res://assets/images/device/phone_settings_true_bg.png" id="5_dv2cq"]
 [ext_resource type="Theme" uid="uid://dinj8j20l57j3" path="res://scenes/components/phone_button.tres" id="5_u00af"]
 [ext_resource type="LabelSettings" uid="uid://nk5nj83e5ai4" path="res://scenes/components/settings_phone.tres" id="6_430b8"]
+[ext_resource type="Texture2D" uid="uid://2llk0pgfi78j" path="res://assets/images/device/phone_icon_settings.png" id="6_fbg00"]
 [ext_resource type="PackedScene" uid="uid://f4ikflxbqnmx" path="res://scenes/device/settings_phone.tscn" id="6_ppbmc"]
+[ext_resource type="Texture2D" uid="uid://gldrpwrchl53" path="res://assets/images/device/phone_icon_quit.png" id="7_uh2ou"]
+[ext_resource type="Texture2D" uid="uid://b6ckvnayk1yri" path="res://assets/images/device/phone_icon_friendster.png" id="8_nbang"]
+[ext_resource type="Texture2D" uid="uid://b7a85e7u7yg21" path="res://assets/images/device/phone_icon_message.png" id="9_a4gyf"]
 [ext_resource type="Texture2D" uid="uid://crqr8uw0lxfkk" path="res://assets/images/device/phone_quit_yes.png" id="10_00k5p"]
 [ext_resource type="Texture2D" uid="uid://dohph2xo81a2j" path="res://assets/images/device/phone_quit_no.png" id="11_6im80"]
 [ext_resource type="PackedScene" uid="uid://b2encyf73hip4" path="res://scenes/device/social_media.tscn" id="11_6o5jl"]
@@ -165,6 +169,7 @@ offset_top = 80.0
 offset_right = 60.0
 offset_bottom = 94.0
 theme = ExtResource("5_u00af")
+icon = ExtResource("6_fbg00")
 metadata/_edit_lock_ = true
 
 [node name="QuitButton" type="Button" parent="PhoneContainer/MainMenuButtons"]
@@ -174,24 +179,26 @@ offset_top = 101.0
 offset_right = 60.0
 offset_bottom = 115.0
 theme = ExtResource("5_u00af")
+icon = ExtResource("7_uh2ou")
 metadata/_edit_lock_ = true
 
 [node name="SocialMediaButton" type="Button" parent="PhoneContainer/MainMenuButtons"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 101.0
+offset_right = 20.0
+offset_bottom = 115.0
+theme = ExtResource("5_u00af")
+icon = ExtResource("8_nbang")
+
+[node name="MessagingButton" type="Button" parent="PhoneContainer/MainMenuButtons"]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 80.0
 offset_right = 20.0
 offset_bottom = 94.0
 theme = ExtResource("5_u00af")
-metadata/_edit_lock_ = true
-
-[node name="MessagingButton" type="Button" parent="PhoneContainer/MainMenuButtons"]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 80.0
-offset_right = 40.0
-offset_bottom = 94.0
-theme = ExtResource("5_u00af")
+icon = ExtResource("9_a4gyf")
 
 [node name="Settings" parent="PhoneContainer" instance=ExtResource("6_ppbmc")]
 visible = false

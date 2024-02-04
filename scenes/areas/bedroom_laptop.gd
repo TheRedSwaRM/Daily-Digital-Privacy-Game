@@ -27,7 +27,7 @@ func _ready():
 		Events.change_game_switch("intro", true)
 		Events.new_phone_message.emit("Amelie", "The handle's @aMelee. See ya!")
 	
-	AudioManager.bgm_play("res://assets/audio/bgm/gnossienne_1.mp3")
+	AudioManager.bgm_play("res://assets/audio/bgm/room_ambience.ogg")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
