@@ -56,6 +56,7 @@ signal flipping_phone(value)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Events.flip_phone.connect(_on_flipping_button_pressed)
+	Events.ring_phone.connect(_phone_ringing)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -90,6 +91,11 @@ func _on_flipping_button_pressed():
 			_flip_phone("close")
 
 	#phone_background.texture = settings_background
+
+# Phone is ringing
+func _phone_ringing():
+	animation_player.play("ringing")
+	await animation_player.animation_finished
 
 #===============================================================================
 # SETTINGS FUNCTION

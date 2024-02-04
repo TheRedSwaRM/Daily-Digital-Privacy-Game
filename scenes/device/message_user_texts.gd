@@ -24,6 +24,8 @@ func add_new_text(text_message: String):
 	# And then add it to the parent Contact List.
 	message_text_lists.add_child(new_text)
 	new_text_added.emit(text_message)
+	
 
-	# Also play audio too while you're at it.
+	# Also play audio too while you're at it. And ring phone.
+	Events.ring_phone.emit()
 	AudioManager.sfx_play(AudioManager.phone_new_message_sfx)

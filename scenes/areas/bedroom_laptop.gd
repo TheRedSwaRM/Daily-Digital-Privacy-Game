@@ -25,7 +25,8 @@ func _ready():
 	else:
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/intro.dialogue"))
 		await DialogueManager.dialogue_ended
-		Events.change_game_switch("intro", true)		
+		Events.change_game_switch("intro", true)
+		Events.new_phone_message.emit("Amelie", "The handle's @aMelee. See ya!")
 		AudioManager.bgm_play("res://assets/audio/bgm/room_ambience.ogg")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,8 +34,6 @@ func _process(_delta):
 	pass
 
 func _on_laptop_pressed():
-	Events.new_phone_message.emit("Julia", "Lethal Time?")
-	
 	if Events.check_game_switch("night"):
 		if Events.check_game_switch("laptop_checked") == false:
 			AudioManager.sfx_play("res://assets/audio/sfx/laptop_startup_distorted.mp3")

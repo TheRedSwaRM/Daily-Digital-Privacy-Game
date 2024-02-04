@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bijcfw81xkw7r"]
+[gd_scene load_steps=18 format=3 uid="uid://bijcfw81xkw7r"]
 
 [ext_resource type="Script" path="res://scenes/components/phone.gd" id="1_ldqut"]
 [ext_resource type="Texture2D" uid="uid://h2puqxkdjy5n" path="res://assets/images/device/phone.png" id="2_fd6mj"]
@@ -26,6 +26,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(56, 134)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_unf1l"]
@@ -60,10 +72,28 @@ tracks/0/keys = {
 "values": [Vector2(56, 0), Vector2(56, 134)]
 }
 
+[sub_resource type="Animation" id="Animation_p4ki5"]
+resource_name = "ringing"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(5, 0), Vector2(-5, 0), Vector2(5, 0), Vector2(-5, 0), Vector2(5, 0), Vector2(-5, 0), Vector2(5, 0), Vector2(-5, 0), Vector2(5, 0), Vector2(0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6b7ab"]
 _data = {
 "RESET": SubResource("Animation_2cvcs"),
 "flip": SubResource("Animation_unf1l"),
+"ringing": SubResource("Animation_p4ki5"),
 "unflip": SubResource("Animation_ct4kx")
 }
 
@@ -72,6 +102,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 512.0
+offset_bottom = 288.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1

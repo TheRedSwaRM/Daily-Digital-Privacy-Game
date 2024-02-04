@@ -11,5 +11,7 @@ func _ready():
 	
 	#print("scenes")
 	Events.activate_phone.emit()
+	Events.new_phone_message.emit("Amelie", "Yo, bro. Just wanna do a quick heads up.")
+	Events.new_phone_message.emit("Amelie", "There's like this new social media app. Check it out.")
 	Events.phones_sounds = true
 	Events.change_map.emit("res://scenes/areas/bedroom_laptop.tscn", false)
