@@ -1,8 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://bijcfw81xkw7r"]
+[gd_scene load_steps=21 format=3 uid="uid://bijcfw81xkw7r"]
 
 [ext_resource type="Script" path="res://scenes/components/phone.gd" id="1_ldqut"]
 [ext_resource type="Texture2D" uid="uid://h2puqxkdjy5n" path="res://assets/images/device/phone.png" id="2_fd6mj"]
-[ext_resource type="Texture2D" uid="uid://165h7gqi0cqi" path="res://assets/images/device/phone_settings.png" id="3_8iusa"]
 [ext_resource type="Theme" uid="uid://dh4qbclv1q7fq" path="res://scenes/components/wifi_button_activated.tres" id="4_80elq"]
 [ext_resource type="Texture2D" uid="uid://w3nfv6j12y4n" path="res://assets/images/device/phone_settings_true_bg.png" id="5_dv2cq"]
 [ext_resource type="Theme" uid="uid://dinj8j20l57j3" path="res://scenes/components/phone_button.tres" id="5_u00af"]
@@ -106,8 +105,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1024.0
-offset_bottom = 576.0
+offset_right = 1280.0
+offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -136,15 +135,6 @@ texture = ExtResource("2_fd6mj")
 expand_mode = 2
 stretch_mode = 5
 metadata/_edit_lock_ = true
-
-[node name="DebugOnly" type="TextureRect" parent="PhoneContainer"]
-visible = false
-layout_mode = 2
-offset_right = 144.0
-offset_bottom = 144.0
-texture = ExtResource("3_8iusa")
-expand_mode = 2
-stretch_mode = 5
 
 [node name="FlippingButton" type="Button" parent="PhoneContainer"]
 layout_mode = 0
@@ -203,7 +193,7 @@ theme = ExtResource("5_u00af")
 icon = ExtResource("9_a4gyf")
 metadata/_edit_lock_ = true
 
-[node name="Settings" parent="PhoneContainer" instance=ExtResource("6_ppbmc")]
+[node name="SettingsPanel" parent="PhoneContainer" instance=ExtResource("6_ppbmc")]
 visible = false
 layout_mode = 1
 offset_left = 39.0

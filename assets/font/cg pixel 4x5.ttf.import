@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/cg pixel 4x5.ttf-78d29305e258950edeafba7c7023
 [params]
 
 Rendering=null
-antialiasing=1
+antialiasing=0
 generate_mipmaps=false
 multichannel_signed_distance_field=false
 msdf_pixel_range=8

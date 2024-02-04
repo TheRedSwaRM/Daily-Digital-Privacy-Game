@@ -14,4 +14,4 @@ func _process(_delta):
 	pass
 
 func _on_text_message_meta_clicked(meta):
-	print(meta)
+	Events.link_pressed.emit(meta)

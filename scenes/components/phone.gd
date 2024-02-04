@@ -23,7 +23,7 @@ enum NavigationState {
 @onready var main_menu_buttons = $PhoneContainer/MainMenuButtons
 
 # Settings
-@onready var settings_instance = $PhoneContainer/Settings
+@onready var settings_instance = $PhoneContainer/SettingsPanel
 
 # Phone Background
 @onready var main_menu_background = preload("res://assets/images/device/phone.png")

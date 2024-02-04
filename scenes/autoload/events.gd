@@ -27,6 +27,7 @@ signal new_phone_message(user_name: String, message: String)
 # Back button activated. An all-around signal passer for everything.
 # Very intuitive design.
 signal back_button_pressed
+signal link_pressed(link_data: String)
 
 # Hamstrung solution to disallow any sounds for the phone.
 var phones_sounds: bool = false
