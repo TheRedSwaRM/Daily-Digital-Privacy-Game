@@ -3,6 +3,7 @@ extends Control
 # WI-FI Vars
 @onready var wifi_list = %WIFIList
 @onready var wifi_settings_button = %WIFIButton
+@onready var wifi_pass_panel = %WIFIPassPanel
 @onready var default_theme = preload("res://scenes/components/wifi_button.tres")
 @onready var activated_theme = preload("res://scenes/components/wifi_button_activated.tres")
 @onready var wifi_default_icon = preload("res://assets/images/device/wifi_icon.png")
@@ -41,6 +42,7 @@ func _ready():
 	# Settings to track.
 	Events.wifi_connection = current_connection
 	Events.location = location_enabled
+	Events.back_button_pressed.connect(_is_back_button_pressed)
 
 	# And then finally, for the WI-FU Panel.
 	# For WI-FIs with passwords ONLY.
@@ -130,7 +132,7 @@ func _on_home_wifi_toggled(toggled_on):
 	if not wifi_access[%HomeWIFI.name]:
 		pass_connecting_wifi = %HomeWIFI
 		needed_password = "homealone"
-		%WIFIPassPanel.show()
+		wifi_pass_panel.show()
 	else:
 		_wifi_list_change(%HomeWIFI, toggled_on)
 
@@ -143,7 +145,7 @@ func _on_pldtwifi_toggled(toggled_on):
 	if not wifi_access[%PLDTWIFI.name]:
 		pass_connecting_wifi = %PLDTWIFI
 		needed_password = "howdidyouknow"
-		%WIFIPassPanel.show()
+		wifi_pass_panel.show()
 	else:
 		_wifi_list_change(%PLDTWIFI, toggled_on)
 
@@ -188,11 +190,14 @@ func _on_password_key_text_submitted(new_text):
 	else:
 		_play_back()
 	# Clean after attempt.
+	_wifi_pass_panel_handling()
+	wifi_pass_panel.hide()
+	
+# Helper function so that... well, no copy-pasting.
+func _wifi_pass_panel_handling():
 	needed_password = ""
 	pass_connecting_wifi = null
 	%PasswordKey.text = ""
-	%WIFIPassPanel.hide()
-	
 
 #===============================================================================
 # END: WI-FI
@@ -214,6 +219,27 @@ func _on_panel_warning_hack_gui_input(event):
 		if wifi_panel.visible:
 			wifi_panel.hide()
 
+# Special function that no other function WILL INTERACT WITH.
+# Purposefully connected with the Event.back_button_pressed only.
+# Checks top to bottom to see which panel is active. Really intuitive.
+func _is_back_button_pressed():
+	# for possible cases that it is open... HANDLE THIS SOON
+	if wifi_pass_panel.visible:
+		_wifi_pass_panel_handling()
+		wifi_pass_panel.hide()
+		return
+	_panel_hack_toggle(false)
+	if wifi_panel.visible:
+		wifi_panel.hide()
+		return
+	if location_warning.visible:
+		location_button.button_pressed = true
+		location_warning.hide()
+		return
+	
+	# If there are no available windows to begin with.
+	hide()
+	
 #===============================================================================
 # Audios
 #===============================================================================

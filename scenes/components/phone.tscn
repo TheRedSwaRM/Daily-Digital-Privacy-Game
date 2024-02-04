@@ -168,7 +168,6 @@ offset_left = 39.0
 offset_top = 10.0
 offset_right = -39.0
 offset_bottom = -10.0
-metadata/_edit_lock_ = true
 
 [node name="QuitPanel" type="Control" parent="PhoneContainer"]
 visible = false

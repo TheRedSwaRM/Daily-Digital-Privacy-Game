@@ -164,22 +164,24 @@ func _on_home_button_pressed():
 
 # TODO: This is not the final state of this thing. This thing is going to be...
 # MUCH, MUCH WORSE.
+# NOTE: Nevermind, it's actually easy. Signals ftw!
 func _on_back_button_pressed():
 	_play_back()
-	match current_phone_location:
-		NavigationState.HOME:
-			return
-		NavigationState.SOCIAL_MEDIA:
-			social_media.hide()
-		NavigationState.SETTINGS:
-			settings_instance.hide()
-		NavigationState.MESSAGES:
-			messaging_app.hide()
-		NavigationState.QUIT:
-			quit_panel.hide()
-	
-	# Given... like, literally.
-	current_phone_location = NavigationState.HOME
+	Events.back_button_pressed.emit()
+	#match current_phone_location:
+		#NavigationState.HOME:
+			#return
+		#NavigationState.SOCIAL_MEDIA:
+			#social_media.hide()
+		#NavigationState.SETTINGS:
+			#settings_instance.hide()
+		#NavigationState.MESSAGES:
+			#messaging_app.hide()
+		#NavigationState.QUIT:
+			#quit_panel.hide()
+	#
+	## Given... like, literally.
+	#current_phone_location = NavigationState.HOME
 
 
 #===============================================================================

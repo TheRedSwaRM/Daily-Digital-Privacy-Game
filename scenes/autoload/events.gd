@@ -8,20 +8,24 @@ signal location_change(value: bool)
 
 # For social media posts :skull:
 signal sns_add_post(username: String, sns_text: String, loc: String, sns_image: Texture2D)
-signal flip_phone()
-signal activate_phone()
-signal deactivate_phone()
-signal open_blinking_eye()
-signal do_full_blink()
+signal flip_phone
+signal activate_phone
+signal deactivate_phone
+signal open_blinking_eye
+signal do_full_blink
 
 # Game Switch Change
 signal game_switch_changed(key: String, value: bool)
 
 # Dialogue selection
-signal response_taken()
+signal response_taken
 
 # For adding new messages to the phone :skull:
 signal new_phone_message(user_name: String, message: String)
+
+# Back button activated. An all-around signal passer for everything.
+# Very intuitive design.
+signal back_button_pressed
 
 # Hamstrung solution to disallow any sounds for the phone.
 var phones_sounds: bool = false
