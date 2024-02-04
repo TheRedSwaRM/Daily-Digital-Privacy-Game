@@ -169,6 +169,10 @@ func _on_back_button_pressed():
 	_play_back()
 	Events.back_button_pressed.emit()
 	
+	# At this rate, we have become bored.
+	if quit_panel.visible:
+		quit_panel.hide()
+	
 	#match current_phone_location:
 		#NavigationState.HOME:
 			#return
