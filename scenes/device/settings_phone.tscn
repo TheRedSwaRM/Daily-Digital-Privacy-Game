@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://f4ikflxbqnmx"]
+[gd_scene load_steps=14 format=3 uid="uid://f4ikflxbqnmx"]
 
 [ext_resource type="Script" path="res://scenes/device/settings_phone.gd" id="1_ced6i"]
 [ext_resource type="Texture2D" uid="uid://w3nfv6j12y4n" path="res://assets/images/device/phone_settings_true_bg.png" id="2_d3c8c"]
@@ -8,12 +8,29 @@
 [ext_resource type="LabelSettings" uid="uid://nk5nj83e5ai4" path="res://scenes/components/settings_phone.tres" id="5_y3mvf"]
 [ext_resource type="Theme" uid="uid://dh4qbclv1q7fq" path="res://scenes/components/wifi_button_activated.tres" id="6_gn40x"]
 [ext_resource type="Texture2D" uid="uid://dtr61c0kwi83t" path="res://assets/images/device/wifi_icon.png" id="7_j0hlb"]
+[ext_resource type="Texture2D" uid="uid://ds1qvwl7vloao" path="res://assets/images/device/wifi_haspass_icon.png" id="8_3qpag"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_naxbi"]
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlmo0"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_saxvn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bx56o"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.329412, 0.329412, 0.329412, 1)
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -23,6 +40,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ced6i")
+metadata/_edit_lock_ = true
 
 [node name="SettingsBackground" type="TextureRect" parent="."]
 layout_mode = 0
@@ -212,7 +230,6 @@ theme = ExtResource("6_gn40x")
 text = "No"
 
 [node name="WIFIPanel" type="Panel" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 5.0
 offset_top = 12.0
@@ -250,7 +267,7 @@ layout_mode = 2
 theme = ExtResource("3_mjkfs")
 toggle_mode = true
 text = "home"
-icon = ExtResource("7_j0hlb")
+icon = ExtResource("8_3qpag")
 alignment = 0
 icon_alignment = 2
 
@@ -270,9 +287,41 @@ layout_mode = 2
 theme = ExtResource("3_mjkfs")
 toggle_mode = true
 text = "pldtwifi"
-icon = ExtResource("7_j0hlb")
+icon = ExtResource("8_3qpag")
 alignment = 0
 icon_alignment = 2
+
+[node name="WIFIPassPanel" type="Panel" parent="WIFIPanel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 6.0
+offset_top = 26.0
+offset_right = 51.0
+offset_bottom = 66.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_saxvn")
+
+[node name="PassLabel" type="Label" parent="WIFIPanel/WIFIPassPanel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 8.0
+offset_right = 45.0
+offset_bottom = 13.0
+text = "PASS?"
+label_settings = ExtResource("5_0b1pm")
+horizontal_alignment = 1
+
+[node name="PasswordKey" type="LineEdit" parent="WIFIPanel/WIFIPassPanel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 2.0
+offset_top = 18.0
+offset_right = 43.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("4_d0m2f")
+theme_override_font_sizes/font_size = 5
+theme_override_styles/normal = SubResource("StyleBoxFlat_bx56o")
+secret = true
 
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
 [connection signal="pressed" from="SettingsList/WIFIHorz/WIFIButton" to="." method="_on_wifi_button_pressed"]
@@ -287,3 +336,4 @@ icon_alignment = 2
 [connection signal="toggled" from="WIFIPanel/WIFIList/HomeWIFI" to="." method="_on_home_wifi_toggled"]
 [connection signal="toggled" from="WIFIPanel/WIFIList/RamWIFI" to="." method="_on_ram_wifi_toggled"]
 [connection signal="toggled" from="WIFIPanel/WIFIList/PLDTWIFI" to="." method="_on_pldtwifi_toggled"]
+[connection signal="text_submitted" from="WIFIPanel/WIFIPassPanel/PasswordKey" to="." method="_on_password_key_text_submitted"]

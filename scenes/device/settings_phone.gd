@@ -7,6 +7,7 @@ extends Control
 @onready var activated_theme = preload("res://scenes/components/wifi_button_activated.tres")
 @onready var wifi_default_icon = preload("res://assets/images/device/wifi_icon.png")
 @onready var wifi_activated_icon = preload("res://assets/images/device/wifi_icon_connected.png")
+@onready var wifi_haspass_icon = preload("res://assets/images/device/wifi_haspass_icon.png")
 
 @onready var panel_hack = $PanelWarningHack
 @onready var wifi_panel = $WIFIPanel
@@ -23,12 +24,15 @@ extends Control
 @onready var music_slider = %MusicSlider
 @onready var sfx_slider = %SFXSlider
 
-# %WIFIListger
-#signal debug_connection_change(name: String)
-#signal debug_location_change(value: bool)
+# Initially empty because that's first assumption.
+# Also to avoid future issues of adding stuff. Genius.
+var wifi_access: Dictionary
+var needed_password: String
+var pass_connecting_wifi: Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	fullscreen_option.button_pressed = GameSettings.fullscreen_value
 	volume_slider.value = GameSettings.master_volume
 	music_slider.value = GameSettings.music_volume
@@ -37,6 +41,14 @@ func _ready():
 	# Settings to track.
 	Events.wifi_connection = current_connection
 	Events.location = location_enabled
+
+	# And then finally, for the WI-FU Panel.
+	# For WI-FIs with passwords ONLY.
+	for children in %WIFIList.get_children():
+		# Hack time. Only passwords with the following HAVE that icon!
+		if children.icon.resource_path == wifi_haspass_icon.resource_path:
+			wifi_access[children.name] = false
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -109,16 +121,22 @@ func _on_music_slider_value_changed(value):
 func _on_sfx_slider_value_changed(value):
 	GameSettings.sfx_volume_changed.emit(value)
 
+#===============================================================================
+# START: WI-FI
+#===============================================================================
 
 func _on_home_wifi_toggled(toggled_on):
 	_play_accept()
-	_wifi_list_change(%HomeWIFI, toggled_on)
-
+	if not wifi_access[%HomeWIFI.name]:
+		pass_connecting_wifi = %HomeWIFI
+		needed_password = "homealone"
+		%WIFIPassPanel.show()
+	else:
+		_wifi_list_change(%HomeWIFI, toggled_on)
 
 func _on_ram_wifi_toggled(toggled_on):
 	_play_accept()
 	_wifi_list_change(%RamWIFI, toggled_on)
-
 
 func _on_pldtwifi_toggled(toggled_on):
 	_play_accept()
@@ -128,7 +146,10 @@ func _on_pldtwifi_toggled(toggled_on):
 func _wifi_list_change(wifi_picked: Button, toggled: bool):
 	for wifi_item in wifi_list.get_children():
 		wifi_item.set_theme(default_theme)
-		wifi_item.icon = wifi_default_icon
+		if wifi_access.has(wifi_item.name):
+			wifi_item.icon = wifi_haspass_icon
+		else:
+			wifi_item.icon = wifi_default_icon
 	
 	if toggled:
 		wifi_picked.set_theme(activated_theme)
@@ -138,7 +159,11 @@ func _wifi_list_change(wifi_picked: Button, toggled: bool):
 		_change_current_connection(wifi_picked.text)
 	else:
 		wifi_picked.set_theme(default_theme)
-		wifi_picked.icon = wifi_default_icon
+		if wifi_access.has(wifi_picked.name):
+			wifi_picked.icon = wifi_haspass_icon
+		else:
+			wifi_picked.icon = wifi_default_icon
+		#wifi_picked.icon = wifi_default_icon
 		wifi_settings_button.set_theme(default_theme)
 		wifi_settings_button.text = "None"
 		_change_current_connection("none")
@@ -148,11 +173,30 @@ func _change_current_connection(value: String):
 	Events.wifi_connection = current_connection
 	#debug_connection_change.emit(value)
 
+## When the password is given.
+func _on_password_key_text_submitted(new_text):
+	# Under the assumption that the password is set.
+	if needed_password == new_text:
+		_wifi_list_change(pass_connecting_wifi, true)
+		wifi_access[pass_connecting_wifi.name] = true
+		_play_accept()
+	else:
+		_play_back()
+	# Clean after attempt.
+	needed_password = ""
+	pass_connecting_wifi = null
+	%PasswordKey.text = ""
+	%WIFIPassPanel.hide()
+	
+
+#===============================================================================
+# END: WI-FI
+#===============================================================================
+
 func _on_return_button_pressed():
 	_play_back()
 	GameSettings.save_settings.emit()
 	hide()
-
 
 func _on_panel_warning_hack_gui_input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and (panel_hack.mouse_filter == Control.MOUSE_FILTER_STOP):
@@ -173,3 +217,6 @@ func _play_accept():
 
 func _play_back():
 	AudioManager.sfx_play(AudioManager.phone_back_sfx)
+
+
+
