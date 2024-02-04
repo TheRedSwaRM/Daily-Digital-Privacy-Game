@@ -1,7 +1,7 @@
 extends Node
 
 @onready var phone = $Phone
-@onready var phone_settings = $Phone/PhoneContainer/Settings				# This is not a pretty solution.
+@onready var phone_settings = $Phone/PhoneContainer/SettingsPanel		# This is not a pretty solution.
 @onready var transition_sprite = $BlinkingEye
 @export_file var starting_screen
 @export var debugger_on: bool
