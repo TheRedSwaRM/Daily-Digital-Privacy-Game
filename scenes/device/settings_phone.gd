@@ -140,7 +140,12 @@ func _on_ram_wifi_toggled(toggled_on):
 
 func _on_pldtwifi_toggled(toggled_on):
 	_play_accept()
-	_wifi_list_change(%PLDTWIFI, toggled_on)
+	if not wifi_access[%PLDTWIFI.name]:
+		pass_connecting_wifi = %PLDTWIFI
+		needed_password = "howdidyouknow"
+		%WIFIPassPanel.show()
+	else:
+		_wifi_list_change(%PLDTWIFI, toggled_on)
 
 # Automated function that reverts all buttons back to where they belong. Defaulted.
 func _wifi_list_change(wifi_picked: Button, toggled: bool):
