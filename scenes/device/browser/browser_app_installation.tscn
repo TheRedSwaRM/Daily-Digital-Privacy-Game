@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://kcbjm4mxt1o6"]
+[gd_scene load_steps=13 format=3 uid="uid://kcbjm4mxt1o6"]
 
-[ext_resource type="Texture2D" uid="uid://dgq8ga8jtytrk" path="res://assets/images/device/phone_browser_panels_default.png" id="1_rw6ox"]
+[ext_resource type="Script" path="res://scenes/device/browser/browser_app_installation.gd" id="1_m2aqq"]
 [ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="2_kdd7a"]
 [ext_resource type="Texture2D" uid="uid://vnqltacrbcxm" path="res://assets/images/browser/browser_googol_play_icon.png" id="3_dfmro"]
 [ext_resource type="Texture2D" uid="uid://d2r7g8lcdffje" path="res://assets/images/browser/browser_friendster_header.png" id="4_c5v18"]
@@ -9,13 +9,6 @@
 [ext_resource type="LabelSettings" uid="uid://bccbyxn7vo5so" path="res://scenes/components/browser_googol_play_flavortext.tres" id="7_avyd4"]
 [ext_resource type="FontFile" uid="uid://dci41xnxl6f7a" path="res://assets/font/resolution-3x4.ttf" id="8_ujk0k"]
 [ext_resource type="StyleBox" uid="uid://mj4ajsm6gs0q" path="res://scenes/components/browser_googol_install_button.tres" id="9_w3vr5"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdvy2"]
-content_margin_left = 1.0
-
-[sub_resource type="LabelSettings" id="LabelSettings_meakj"]
-font = ExtResource("2_kdd7a")
-font_size = 5
 
 [sub_resource type="LabelSettings" id="LabelSettings_lq2h1"]
 font = ExtResource("2_kdd7a")
@@ -37,49 +30,33 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -190.0
+offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_lock_ = true
+script = ExtResource("1_m2aqq")
+link_name = "https://gglplay.com"
+tab_name = "Frndster | Googol"
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = -3.0
-offset_top = -10.0
-offset_right = 69.0
-offset_bottom = 134.0
-mouse_filter = 2
-texture = ExtResource("1_rw6ox")
-expand_mode = 3
-metadata/_edit_lock_ = true
-
-[node name="LinkLabel" type="Label" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 2.0
-offset_top = 3.0
-offset_right = 54.0
-offset_bottom = 10.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_sdvy2")
-text = "https://play.googol.com"
-label_settings = SubResource("LabelSettings_meakj")
-vertical_alignment = 1
-clip_text = true
-text_overrun_behavior = 3
+offset_right = 66.0
+offset_bottom = 112.0
 
 [node name="GoogolPlayIcon" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 2.0
-offset_top = 14.0
+offset_top = 2.0
 offset_right = 9.0
-offset_bottom = 21.0
+offset_bottom = 9.0
 texture = ExtResource("3_dfmro")
 
 [node name="GoogolPlayHeader" type="Label" parent="."]
 layout_mode = 0
 offset_left = 11.0
-offset_top = 14.0
+offset_top = 2.0
 offset_right = 48.0
-offset_bottom = 21.0
+offset_bottom = 9.0
 text = "GGL Play"
 label_settings = SubResource("LabelSettings_lq2h1")
 vertical_alignment = 1
@@ -88,59 +65,59 @@ text_overrun_behavior = 3
 
 [node name="FriendsterHeader" type="TextureRect" parent="."]
 layout_mode = 0
-offset_top = 23.0
+offset_top = 11.0
 offset_right = 66.0
-offset_bottom = 63.0
+offset_bottom = 51.0
 texture = ExtResource("4_c5v18")
 
 [node name="HeaderBottomBackground" type="ColorRect" parent="."]
 layout_mode = 0
-offset_top = 63.0
+offset_top = 51.0
 offset_right = 66.0
-offset_bottom = 124.0
+offset_bottom = 112.0
 color = Color(0.25098, 0.25098, 0.25098, 1)
 
 [node name="FriendsterIcon" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 4.0
-offset_top = 59.0
+offset_top = 47.0
 offset_right = 18.0
-offset_bottom = 73.0
+offset_bottom = 61.0
 texture = ExtResource("5_6vvi3")
 
 [node name="FriendsterLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 23.0
-offset_top = 60.0
+offset_top = 48.0
 offset_right = 62.0
-offset_bottom = 65.0
+offset_bottom = 53.0
 text = "FRNDSTER"
 label_settings = SubResource("LabelSettings_reep5")
 
 [node name="CompanyLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 23.0
-offset_top = 66.0
+offset_top = 54.0
 offset_right = 63.0
-offset_bottom = 72.0
+offset_bottom = 60.0
 text = "SO  CAL  ENT."
 label_settings = SubResource("LabelSettings_o7vc0")
 
 [node name="ReviewRating" type="Label" parent="."]
 layout_mode = 0
 offset_left = 13.0
-offset_top = 80.0
+offset_top = 68.0
 offset_right = 27.0
-offset_bottom = 86.0
+offset_bottom = 74.0
 text = "4.4✦"
 label_settings = ExtResource("7_avyd4")
 
 [node name="ReviewCount" type="Label" parent="."]
 layout_mode = 0
 offset_left = 6.0
-offset_top = 86.0
-offset_right = 32.0
-offset_bottom = 92.0
+offset_top = 74.0
+offset_right = 33.0
+offset_bottom = 80.0
 text = "1M  RVWS"
 label_settings = ExtResource("7_avyd4")
 horizontal_alignment = 1
@@ -148,9 +125,9 @@ horizontal_alignment = 1
 [node name="DLText" type="Label" parent="."]
 layout_mode = 0
 offset_left = 41.0
-offset_top = 86.0
+offset_top = 74.0
 offset_right = 59.0
-offset_bottom = 92.0
+offset_bottom = 80.0
 text = "DL"
 label_settings = ExtResource("7_avyd4")
 horizontal_alignment = 1
@@ -158,25 +135,25 @@ horizontal_alignment = 1
 [node name="DownloadCount" type="Label" parent="."]
 layout_mode = 0
 offset_left = 41.0
-offset_top = 80.0
-offset_right = 60.0
-offset_bottom = 86.0
+offset_top = 68.0
+offset_right = 61.0
+offset_bottom = 74.0
 text = "100M+"
 label_settings = ExtResource("7_avyd4")
 
 [node name="VSeparator" type="VSeparator" parent="."]
 layout_mode = 0
 offset_left = 34.0
-offset_top = 81.0
+offset_top = 69.0
 offset_right = 38.0
-offset_bottom = 91.0
+offset_bottom = 79.0
 
 [node name="InstallButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 7.0
-offset_top = 99.0
+offset_top = 87.0
 offset_right = 59.0
-offset_bottom = 108.0
+offset_bottom = 96.0
 theme_override_fonts/font = ExtResource("8_ujk0k")
 theme_override_font_sizes/font_size = 4
 theme_override_styles/normal = ExtResource("9_w3vr5")

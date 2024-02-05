@@ -14,7 +14,7 @@ extends Area2D
 ## The PackedScene to switch to in the case of pressing this area.
 ## Note: Only have this WHEN you are sure that the following clickable area is 
 ## for transferring only. Otherwise, use input_detected.
-@export_file var transfer_area
+@export_file("*.tscn") var transfer_area
 
 @onready var label_node: Label = $Label
 
