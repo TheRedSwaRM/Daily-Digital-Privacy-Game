@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://scenes/device/browser.gd" id="1_ulbgk"]
 [ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="2_1fldl"]
 [ext_resource type="FontFile" uid="uid://dci41xnxl6f7a" path="res://assets/font/resolution-3x4.ttf" id="3_rpi0c"]
+[ext_resource type="StyleBox" uid="uid://b8llqm4tyqu6q" path="res://scenes/components/browser_button.tres" id="5_7r6q2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdtuo"]
 content_margin_left = 1.0
@@ -11,8 +12,6 @@ content_margin_left = 1.0
 [sub_resource type="LabelSettings" id="LabelSettings_gh57j"]
 font = ExtResource("2_1fldl")
 font_size = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xotq"]
 
 [node name="Browser" type="Control"]
 layout_mode = 3
@@ -58,5 +57,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_rpi0c")
 theme_override_font_sizes/font_size = 4
-theme_override_styles/normal = SubResource("StyleBoxFlat_8xotq")
+theme_override_styles/normal = ExtResource("5_7r6q2")
+theme_override_styles/pressed = ExtResource("5_7r6q2")
+theme_override_styles/focus = ExtResource("5_7r6q2")
 text = "0"
