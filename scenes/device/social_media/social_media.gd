@@ -40,7 +40,7 @@ func _on_home_feed_gui_input(event):
 		home_feed.scroll_vertical = home_feed.scroll_vertical - event.relative.y
 
 func sns_add(username: String, sns_text: String, loc: String = "", sns_image: Texture2D = null):
-	var new_post = preload("res://scenes/device/social_media_post.tscn")
+	var new_post = preload("res://scenes/device/social_media/social_media_post.tscn")
 	var adding_post = new_post.instantiate()
 	
 	adding_post.user_name = username

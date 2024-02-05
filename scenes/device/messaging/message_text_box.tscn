@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqtrxqpmv87oi"]
 
 [ext_resource type="Theme" uid="uid://b7p6lqexphw8o" path="res://scenes/components/messaging_text_box.tres" id="1_46fn0"]
-[ext_resource type="Script" path="res://scenes/device/message_text_box.gd" id="2_w4gid"]
+[ext_resource type="Script" path="res://scenes/device/messaging/message_text_box.gd" id="2_w4gid"]
 
 [node name="MessageTextBox" type="PanelContainer"]
 custom_minimum_size = Vector2(50, 8)

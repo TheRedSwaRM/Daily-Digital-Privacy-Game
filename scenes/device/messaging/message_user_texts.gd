@@ -16,7 +16,7 @@ func _process(_delta):
 ## Adding text. No need for upwards signals... considering this is a downward
 ## slope to this function.
 func add_new_text(text_message: String):
-	var pre_text = preload("res://scenes/device/message_text_box.tscn")
+	var pre_text = preload("res://scenes/device/messaging/message_text_box.tscn")
 	var new_text = pre_text.instantiate()
 	
 	new_text.post_text = text_message

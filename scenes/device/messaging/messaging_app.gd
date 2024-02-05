@@ -36,8 +36,8 @@ func new_text_message(user_name: String, starting_text: String):
 	
 	# If null, creates a new message and contact list
 	if checked_contact == null:
-		var pre_contact = preload("res://scenes/device/message_direct.tscn")
-		var pre_list = preload("res://scenes/device/message_user_texts.tscn")
+		var pre_contact = preload("res://scenes/device/messaging/message_direct.tscn")
+		var pre_list = preload("res://scenes/device/messaging/message_user_texts.tscn")
 		var new_contact = pre_contact.instantiate()
 		var new_list = pre_list.instantiate()
 		

@@ -12,3 +12,7 @@ func _process(delta):
 # Special function
 func _phone_back_button_pressed():
 	hide()
+
+# Opens tabs
+func _on_tabs_button_pressed():
+	pass # Replace with function body.

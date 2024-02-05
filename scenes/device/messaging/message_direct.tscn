@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://fysl1pydoba0"]
 
-[ext_resource type="Script" path="res://scenes/device/message_direct.gd" id="1_lwo5a"]
+[ext_resource type="Script" path="res://scenes/device/messaging/message_direct.gd" id="1_lwo5a"]
 [ext_resource type="LabelSettings" uid="uid://b5ugeles5dpul" path="res://scenes/components/messaging_header.tres" id="2_kprul"]
 [ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="3_bswqr"]
 

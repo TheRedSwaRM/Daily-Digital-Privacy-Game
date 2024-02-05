@@ -14,9 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://keybcjlqmmsg" path="res://assets/images/device/phone_icon_browser.png" id="9_pu4py"]
 [ext_resource type="Texture2D" uid="uid://crqr8uw0lxfkk" path="res://assets/images/device/phone_quit_yes.png" id="10_00k5p"]
 [ext_resource type="Texture2D" uid="uid://dohph2xo81a2j" path="res://assets/images/device/phone_quit_no.png" id="11_6im80"]
-[ext_resource type="PackedScene" uid="uid://b2encyf73hip4" path="res://scenes/device/social_media.tscn" id="11_6o5jl"]
-[ext_resource type="PackedScene" uid="uid://7aeuu7qbe1ju" path="res://scenes/device/messaging_app.tscn" id="12_mrxmr"]
-[ext_resource type="PackedScene" uid="uid://dywh83w6ca1li" path="res://scenes/device/browser.tscn" id="17_wscuv"]
+[ext_resource type="PackedScene" uid="uid://b2encyf73hip4" path="res://scenes/device/social_media/social_media.tscn" id="11_6o5jl"]
+[ext_resource type="PackedScene" uid="uid://7aeuu7qbe1ju" path="res://scenes/device/messaging/messaging_app.tscn" id="12_mrxmr"]
+[ext_resource type="PackedScene" uid="uid://dywh83w6ca1li" path="res://scenes/device/browser/browser.tscn" id="17_wscuv"]
 
 [sub_resource type="Animation" id="Animation_2cvcs"]
 length = 0.001

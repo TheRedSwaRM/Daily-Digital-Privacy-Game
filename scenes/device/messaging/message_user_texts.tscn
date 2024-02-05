@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://qr1au35xdmmf"]
 
 [ext_resource type="Theme" uid="uid://b4a3rif2mhppr" path="res://scenes/components/no_scroll.tres" id="1_y7mxj"]
-[ext_resource type="Script" path="res://scenes/device/message_user_texts.gd" id="2_a4ygr"]
+[ext_resource type="Script" path="res://scenes/device/messaging/message_user_texts.gd" id="2_a4ygr"]
 
 [node name="MessageUserTexts" type="ScrollContainer"]
 visible = false

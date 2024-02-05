@@ -1,33 +1,33 @@
 [gd_scene load_steps=15 format=3 uid="uid://kcbjm4mxt1o6"]
 
-[ext_resource type="Texture2D" uid="uid://dgq8ga8jtytrk" path="res://assets/images/device/phone_browser_panels_default.png" id="1_fyyhk"]
-[ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="2_nn6ra"]
-[ext_resource type="Texture2D" uid="uid://vnqltacrbcxm" path="res://assets/images/browser/browser_googol_play_icon.png" id="3_k7cwr"]
-[ext_resource type="Texture2D" uid="uid://d2r7g8lcdffje" path="res://assets/images/browser/browser_friendster_header.png" id="4_l58lj"]
-[ext_resource type="Texture2D" uid="uid://b6ckvnayk1yri" path="res://assets/images/device/phone_icon_friendster.png" id="5_1s6np"]
-[ext_resource type="FontFile" uid="uid://dawe5cx0oxmsy" path="res://assets/font/pixel 3x4.ttf" id="6_hdek3"]
-[ext_resource type="FontFile" uid="uid://dci41xnxl6f7a" path="res://assets/font/resolution-3x4.ttf" id="6_tm45d"]
-[ext_resource type="LabelSettings" uid="uid://bccbyxn7vo5so" path="res://scenes/components/browser_googol_play_flavortext.tres" id="7_m6ae7"]
-[ext_resource type="StyleBox" uid="uid://mj4ajsm6gs0q" path="res://scenes/components/browser_googol_install_button.tres" id="9_k22ew"]
+[ext_resource type="Texture2D" uid="uid://dgq8ga8jtytrk" path="res://assets/images/device/phone_browser_panels_default.png" id="1_rw6ox"]
+[ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="2_kdd7a"]
+[ext_resource type="Texture2D" uid="uid://vnqltacrbcxm" path="res://assets/images/browser/browser_googol_play_icon.png" id="3_dfmro"]
+[ext_resource type="Texture2D" uid="uid://d2r7g8lcdffje" path="res://assets/images/browser/browser_friendster_header.png" id="4_c5v18"]
+[ext_resource type="Texture2D" uid="uid://b6ckvnayk1yri" path="res://assets/images/device/phone_icon_friendster.png" id="5_6vvi3"]
+[ext_resource type="FontFile" uid="uid://dawe5cx0oxmsy" path="res://assets/font/pixel 3x4.ttf" id="6_rq1k1"]
+[ext_resource type="LabelSettings" uid="uid://bccbyxn7vo5so" path="res://scenes/components/browser_googol_play_flavortext.tres" id="7_avyd4"]
+[ext_resource type="FontFile" uid="uid://dci41xnxl6f7a" path="res://assets/font/resolution-3x4.ttf" id="8_ujk0k"]
+[ext_resource type="StyleBox" uid="uid://mj4ajsm6gs0q" path="res://scenes/components/browser_googol_install_button.tres" id="9_w3vr5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdvy2"]
 content_margin_left = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_meakj"]
-font = ExtResource("2_nn6ra")
+font = ExtResource("2_kdd7a")
 font_size = 5
 
 [sub_resource type="LabelSettings" id="LabelSettings_lq2h1"]
-font = ExtResource("2_nn6ra")
+font = ExtResource("2_kdd7a")
 font_size = 5
 font_color = Color(0.266667, 0.266667, 0.266667, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_reep5"]
-font = ExtResource("2_nn6ra")
+font = ExtResource("2_kdd7a")
 font_size = 5
 
 [sub_resource type="LabelSettings" id="LabelSettings_o7vc0"]
-font = ExtResource("6_hdek3")
+font = ExtResource("6_rq1k1")
 font_size = 4
 font_color = Color(0, 0.631373, 0.45098, 1)
 shadow_size = 0
@@ -48,7 +48,7 @@ offset_top = -10.0
 offset_right = 69.0
 offset_bottom = 134.0
 mouse_filter = 2
-texture = ExtResource("1_fyyhk")
+texture = ExtResource("1_rw6ox")
 expand_mode = 3
 metadata/_edit_lock_ = true
 
@@ -72,7 +72,7 @@ offset_left = 2.0
 offset_top = 14.0
 offset_right = 9.0
 offset_bottom = 21.0
-texture = ExtResource("3_k7cwr")
+texture = ExtResource("3_dfmro")
 
 [node name="GoogolPlayHeader" type="Label" parent="."]
 layout_mode = 0
@@ -91,7 +91,7 @@ layout_mode = 0
 offset_top = 23.0
 offset_right = 66.0
 offset_bottom = 63.0
-texture = ExtResource("4_l58lj")
+texture = ExtResource("4_c5v18")
 
 [node name="HeaderBottomBackground" type="ColorRect" parent="."]
 layout_mode = 0
@@ -106,7 +106,7 @@ offset_left = 4.0
 offset_top = 59.0
 offset_right = 18.0
 offset_bottom = 73.0
-texture = ExtResource("5_1s6np")
+texture = ExtResource("5_6vvi3")
 
 [node name="FriendsterLabel" type="Label" parent="."]
 layout_mode = 0
@@ -133,7 +133,7 @@ offset_top = 80.0
 offset_right = 27.0
 offset_bottom = 86.0
 text = "4.4✦"
-label_settings = ExtResource("7_m6ae7")
+label_settings = ExtResource("7_avyd4")
 
 [node name="ReviewCount" type="Label" parent="."]
 layout_mode = 0
@@ -142,7 +142,7 @@ offset_top = 86.0
 offset_right = 32.0
 offset_bottom = 92.0
 text = "1M  RVWS"
-label_settings = ExtResource("7_m6ae7")
+label_settings = ExtResource("7_avyd4")
 horizontal_alignment = 1
 
 [node name="DLText" type="Label" parent="."]
@@ -152,7 +152,7 @@ offset_top = 86.0
 offset_right = 59.0
 offset_bottom = 92.0
 text = "DL"
-label_settings = ExtResource("7_m6ae7")
+label_settings = ExtResource("7_avyd4")
 horizontal_alignment = 1
 
 [node name="DownloadCount" type="Label" parent="."]
@@ -162,7 +162,7 @@ offset_top = 80.0
 offset_right = 60.0
 offset_bottom = 86.0
 text = "100M+"
-label_settings = ExtResource("7_m6ae7")
+label_settings = ExtResource("7_avyd4")
 
 [node name="VSeparator" type="VSeparator" parent="."]
 layout_mode = 0
@@ -177,7 +177,7 @@ offset_left = 7.0
 offset_top = 99.0
 offset_right = 59.0
 offset_bottom = 108.0
-theme_override_fonts/font = ExtResource("6_tm45d")
+theme_override_fonts/font = ExtResource("8_ujk0k")
 theme_override_font_sizes/font_size = 4
-theme_override_styles/normal = ExtResource("9_k22ew")
+theme_override_styles/normal = ExtResource("9_w3vr5")
 text = "  Install  "
