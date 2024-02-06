@@ -47,6 +47,7 @@ func _thumbnail_touched(node_name: String):
 	for child in available_tabs.get_children():
 		if child.name == node_name:
 			child.show()							# Show child needed.
+			
 		else:
 			child.hide()	
 	

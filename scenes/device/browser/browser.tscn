@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://dywh83w6ca1li"]
+[gd_scene load_steps=19 format=3 uid="uid://dywh83w6ca1li"]
 
 [ext_resource type="Texture2D" uid="uid://8h22dp266j4s" path="res://assets/images/device/phone_browser.png" id="1_87qls"]
 [ext_resource type="Script" path="res://scenes/device/browser/browser.gd" id="1_ulbgk"]
 [ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="2_1fldl"]
 [ext_resource type="FontFile" uid="uid://dci41xnxl6f7a" path="res://assets/font/resolution-3x4.ttf" id="3_rpi0c"]
 [ext_resource type="StyleBox" uid="uid://b8llqm4tyqu6q" path="res://scenes/components/browser_button.tres" id="5_7r6q2"]
+[ext_resource type="PackedScene" uid="uid://d30d684o4s1k7" path="res://scenes/device/browser/browser_home.tscn" id="6_14cp5"]
 [ext_resource type="PackedScene" uid="uid://kcbjm4mxt1o6" path="res://scenes/device/browser/browser_app_installation.tscn" id="6_vbwcq"]
 [ext_resource type="Texture2D" uid="uid://cxhwlr12ftaka" path="res://assets/images/browser/browser_tab_control_bg.png" id="7_yoggs"]
 [ext_resource type="FontFile" uid="uid://dawe5cx0oxmsy" path="res://assets/font/pixel 3x4.ttf" id="8_isgdk"]
@@ -91,7 +92,10 @@ offset_top = 12.0
 offset_right = 66.0
 offset_bottom = 124.0
 
+[node name="Home" parent="Tabs" instance=ExtResource("6_14cp5")]
+
 [node name="AppInstallation" parent="Tabs" instance=ExtResource("6_vbwcq")]
+visible = false
 layout_mode = 1
 offset_right = 0.0
 offset_bottom = -12.0

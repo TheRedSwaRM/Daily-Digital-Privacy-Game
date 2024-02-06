@@ -1,12 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://d30d684o4s1k7"]
+[gd_scene load_steps=3 format=3 uid="uid://d30d684o4s1k7"]
 
 [ext_resource type="Script" path="res://scenes/device/browser/browser_home.gd" id="1_i1stv"]
+[ext_resource type="Texture2D" uid="uid://cgnwufps4o6fy" path="res://assets/images/browser/browser_home_bg.png" id="2_hlhwo"]
 
 [node name="Home" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 66.0
+offset_bottom = 112.0
 script = ExtResource("1_i1stv")
+link_name = "Home"
+tab_name = "Home"
+thumbnail = "res://assets/images/browser/thumbnails/home.png"
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 66.0
+offset_bottom = 112.0
+texture = ExtResource("2_hlhwo")
