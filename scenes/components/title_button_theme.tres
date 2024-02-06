@@ -1,4 +1,6 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://qlmicia5ewrp"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://qlmicia5ewrp"]
+
+[ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="1_5oxvw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lbljx"]
 
@@ -17,6 +19,7 @@ Button/colors/font_hover_color = Color(1, 0, 0, 1)
 Button/colors/font_hover_pressed_color = Color(0.219608, 0, 0, 1)
 Button/colors/font_pressed_color = Color(1, 0, 0, 1)
 Button/font_sizes/font_size = 5
+Button/fonts/font = ExtResource("1_5oxvw")
 Button/styles/disabled = SubResource("StyleBoxEmpty_lbljx")
 Button/styles/focus = SubResource("StyleBoxEmpty_6oknl")
 Button/styles/hover = SubResource("StyleBoxEmpty_2bdam")
