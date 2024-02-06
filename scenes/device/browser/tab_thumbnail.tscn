@@ -18,6 +18,7 @@ script = ExtResource("1_2tps7")
 layout_mode = 0
 offset_right = 44.0
 offset_bottom = 68.0
+mouse_filter = 2
 color = Color(0.266667, 0.266667, 0.266667, 1)
 
 [node name="InitialBackground" type="ColorRect" parent="."]
@@ -26,6 +27,7 @@ offset_left = 1.0
 offset_top = 1.0
 offset_right = 43.0
 offset_bottom = 67.0
+mouse_filter = 2
 color = Color(0.133333, 0.133333, 0.133333, 1)
 
 [node name="TabThumbnail" type="TextureRect" parent="."]
@@ -34,6 +36,7 @@ offset_left = 6.0
 offset_top = 11.0
 offset_right = 38.0
 offset_bottom = 65.0
+mouse_filter = 2
 texture = ExtResource("1_x2m40")
 expand_mode = 3
 

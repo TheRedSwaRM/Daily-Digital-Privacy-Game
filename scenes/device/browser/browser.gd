@@ -23,6 +23,7 @@ func _create_tab_thumbnails():
 		new_tab_section.tab_image = child.thumbnail 
 		
 		tab_section.add_child(new_tab_section)
+		new_tab_section.thumbnail_touched.connect(_thumbnail_touched)
 		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,6 +38,16 @@ func _phone_back_button_pressed():
 func _on_tabs_button_pressed():
 	tab_section_panel.show()
 
-
+# Closes tabs
 func _on_tab_exit_pressed():
 	tab_section_panel.hide()
+
+func _thumbnail_touched(node_name: String):
+	# var target_node = available_tabs.get_node(node_name)	
+	for child in available_tabs.get_children():
+		if child.name == node_name:
+			child.show()							# Show child needed.
+		else:
+			child.hide()	
+	
+	_on_tab_exit_pressed()
