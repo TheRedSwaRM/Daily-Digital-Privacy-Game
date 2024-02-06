@@ -77,7 +77,6 @@ size_flags_horizontal = 4
 text = "Quit"
 
 [node name="SettingsMenu" parent="." instance=ExtResource("3_3qu47")]
-visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="BoxContainer/NewGame" to="." method="_on_new_game_pressed"]
