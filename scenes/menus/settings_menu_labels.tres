@@ -1,4 +1,7 @@
-[gd_resource type="LabelSettings" format=3 uid="uid://bmxd075wxx0x5"]
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bmxd075wxx0x5"]
+
+[ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="1_73lej"]
 
 [resource]
+font = ExtResource("1_73lej")
 font_size = 10
