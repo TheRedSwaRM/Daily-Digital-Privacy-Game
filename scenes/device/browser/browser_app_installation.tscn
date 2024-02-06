@@ -36,7 +36,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m2aqq")
 link_name = "https://gglplay.com"
-tab_name = "Frndster | Googol"
+tab_name = "Friender | Googol"
+thumbnail = "res://assets/images/browser/thumbnails/frndster.png"
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
@@ -91,7 +92,7 @@ offset_left = 23.0
 offset_top = 48.0
 offset_right = 62.0
 offset_bottom = 53.0
-text = "FRNDSTER"
+text = "Friender"
 label_settings = SubResource("LabelSettings_reep5")
 
 [node name="CompanyLabel" type="Label" parent="."]

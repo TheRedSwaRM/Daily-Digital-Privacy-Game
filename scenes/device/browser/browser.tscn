@@ -95,7 +95,6 @@ offset_bottom = 124.0
 layout_mode = 1
 offset_right = 0.0
 offset_bottom = -12.0
-thumbnail = "res://assets/images/browser/thumbnails/frndster.png"
 
 [node name="TabSection" type="Control" parent="."]
 visible = false
