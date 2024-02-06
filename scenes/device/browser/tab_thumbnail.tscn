@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://6phw6ygrsenk"]
+
+[ext_resource type="Script" path="res://scenes/device/browser/tab_thumbnail.gd" id="1_2tps7"]
+[ext_resource type="Texture2D" uid="uid://djyldj3llnxj4" path="res://assets/images/browser/thumbnails/frndster.png" id="1_x2m40"]
+[ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="2_vrgrb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0rxcs"]
+font = ExtResource("2_vrgrb")
+font_size = 5
+
+[node name="TabThumbnail" type="Control"]
+custom_minimum_size = Vector2(44, 68)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_2tps7")
+
+[node name="WhiteBorder" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 44.0
+offset_bottom = 68.0
+color = Color(0.266667, 0.266667, 0.266667, 1)
+
+[node name="InitialBackground" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 43.0
+offset_bottom = 67.0
+color = Color(0.133333, 0.133333, 0.133333, 1)
+
+[node name="TabThumbnail" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 11.0
+offset_right = 38.0
+offset_bottom = 65.0
+texture = ExtResource("1_x2m40")
+expand_mode = 3
+
+[node name="TabName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 41.0
+offset_bottom = 8.0
+text = "Google Play"
+label_settings = SubResource("LabelSettings_0rxcs")
+clip_text = true
+text_overrun_behavior = 3
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

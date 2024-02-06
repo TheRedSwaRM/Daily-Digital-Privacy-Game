@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dywh83w6ca1li"]
+[gd_scene load_steps=18 format=3 uid="uid://dywh83w6ca1li"]
 
 [ext_resource type="Texture2D" uid="uid://8h22dp266j4s" path="res://assets/images/device/phone_browser.png" id="1_87qls"]
 [ext_resource type="Script" path="res://scenes/device/browser/browser.gd" id="1_ulbgk"]
@@ -7,6 +7,8 @@
 [ext_resource type="StyleBox" uid="uid://b8llqm4tyqu6q" path="res://scenes/components/browser_button.tres" id="5_7r6q2"]
 [ext_resource type="PackedScene" uid="uid://kcbjm4mxt1o6" path="res://scenes/device/browser/browser_app_installation.tscn" id="6_vbwcq"]
 [ext_resource type="Texture2D" uid="uid://cxhwlr12ftaka" path="res://assets/images/browser/browser_tab_control_bg.png" id="7_yoggs"]
+[ext_resource type="FontFile" uid="uid://dawe5cx0oxmsy" path="res://assets/font/pixel 3x4.ttf" id="8_isgdk"]
+[ext_resource type="StyleBox" uid="uid://cni2mx04bkjec" path="res://scenes/components/tab_thumbnail_button.tres" id="9_e58oh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdtuo"]
 content_margin_left = 1.0
@@ -14,6 +16,23 @@ content_margin_left = 1.0
 [sub_resource type="LabelSettings" id="LabelSettings_gh57j"]
 font = ExtResource("2_1fldl")
 font_size = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bfd1a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7npa8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8a785"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cjiq5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ixju3"]
+
+[sub_resource type="Theme" id="Theme_1a4ew"]
+HScrollBar/styles/grabber = SubResource("StyleBoxEmpty_bfd1a")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_7npa8")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_8a785")
+HScrollBar/styles/scroll = SubResource("StyleBoxEmpty_cjiq5")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_ixju3")
 
 [node name="Browser" type="Control"]
 layout_mode = 3
@@ -60,28 +79,31 @@ theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_rpi0c")
 theme_override_font_sizes/font_size = 4
 theme_override_styles/normal = ExtResource("5_7r6q2")
+theme_override_styles/hover = ExtResource("5_7r6q2")
 theme_override_styles/pressed = ExtResource("5_7r6q2")
+theme_override_styles/disabled = ExtResource("5_7r6q2")
 theme_override_styles/focus = ExtResource("5_7r6q2")
 text = "1"
 
 [node name="Tabs" type="Control" parent="."]
 anchors_preset = 0
+offset_top = 12.0
 offset_right = 66.0
 offset_bottom = 124.0
 
 [node name="AppInstallation" parent="Tabs" instance=ExtResource("6_vbwcq")]
 layout_mode = 1
-offset_top = 12.0
 offset_right = 0.0
-offset_bottom = 0.0
+offset_bottom = -12.0
+thumbnail = "res://assets/images/browser/thumbnails/frndster.png"
 
-[node name="TabThumbnail" type="Control" parent="."]
+[node name="TabSection" type="Control" parent="."]
 visible = false
 anchors_preset = 0
 offset_right = 66.0
 offset_bottom = 124.0
 
-[node name="TabThumbnailBG" type="TextureRect" parent="TabThumbnail"]
+[node name="TabSectionBG" type="TextureRect" parent="TabSection"]
 layout_mode = 0
 offset_left = -3.0
 offset_top = -10.0
@@ -89,4 +111,33 @@ offset_right = 69.0
 offset_bottom = 134.0
 texture = ExtResource("7_yoggs")
 
+[node name="TabExit" type="Button" parent="TabSection"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 3.0
+offset_right = 63.0
+offset_bottom = 11.0
+theme_override_fonts/font = ExtResource("8_isgdk")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("9_e58oh")
+theme_override_styles/hover = ExtResource("9_e58oh")
+theme_override_styles/pressed = ExtResource("9_e58oh")
+theme_override_styles/focus = ExtResource("9_e58oh")
+text = "x"
+
+[node name="Scroller" type="ScrollContainer" parent="TabSection"]
+layout_mode = 0
+offset_top = 12.0
+offset_right = 66.0
+offset_bottom = 124.0
+theme = SubResource("Theme_1a4ew")
+vertical_scroll_mode = 0
+
+[node name="ScrollerHorizon" type="HBoxContainer" parent="TabSection/Scroller"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+alignment = 1
+
 [connection signal="pressed" from="TabsButton" to="." method="_on_tabs_button_pressed"]
+[connection signal="pressed" from="TabSection/TabExit" to="." method="_on_tab_exit_pressed"]
