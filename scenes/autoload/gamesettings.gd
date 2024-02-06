@@ -70,7 +70,7 @@ func _has_fullscreen_changed(value: bool):
 	if fullscreen_value:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 
 #DEFAULT,
 #LEFT,

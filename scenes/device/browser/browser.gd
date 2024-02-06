@@ -10,6 +10,7 @@ extends Control
 func _ready():
 	Events.back_button_pressed.connect(_phone_back_button_pressed)
 	_create_tab_thumbnails()
+	_change_tab_number()
 
 ## Crazy helper function that will help us create the tab thumbnails which
 ## will also trigger specific signals when needed.
@@ -24,6 +25,9 @@ func _create_tab_thumbnails():
 		
 		tab_section.add_child(new_tab_section)
 		new_tab_section.thumbnail_touched.connect(_thumbnail_touched)
+		
+		if not child.visible:
+			new_tab_section.visible = false
 		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,12 +46,22 @@ func _on_tabs_button_pressed():
 func _on_tab_exit_pressed():
 	tab_section_panel.hide()
 
+# Only is called when a tab is opened.
+# Checks how many tabs are currently open.
+func _change_tab_number():
+	var current_num: int = 0
+	for child in available_tabs.get_children():
+		if child.visible:
+			current_num += 1
+	
+	tabs_button.text = str(current_num)
+
 func _thumbnail_touched(node_name: String):
 	# var target_node = available_tabs.get_node(node_name)	
 	for child in available_tabs.get_children():
 		if child.name == node_name:
 			child.show()							# Show child needed.
-			
+			link_label.text = child.link_name
 		else:
 			child.hide()	
 	
