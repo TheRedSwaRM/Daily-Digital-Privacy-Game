@@ -165,4 +165,7 @@ theme_override_styles/focus = ExtResource("9_w3vr5")
 text = "  Install  "
 
 [node name="NoWifi" parent="." instance=ExtResource("10_aep8m")]
+visible = false
 layout_mode = 0
+
+[connection signal="pressed" from="InstallButton" to="." method="_on_install_button_pressed"]

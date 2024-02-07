@@ -24,12 +24,15 @@ signal response_taken
 # For adding new messages to the phone :skull:
 signal new_phone_message(user_name: String, message: String)
 
+
 # Back button activated. An all-around signal passer for everything.
 # Very intuitive design.
 signal back_button_pressed
 signal link_pressed(link_data: String)
 
 signal force_phone_go_to(module: String)
+
+
 
 # Hamstrung solution to disallow any sounds for the phone.
 var phones_sounds: bool = false
@@ -39,7 +42,8 @@ var phones_sounds: bool = false
 	"posted_with_location": false,
 	"night": false,
 	"laptop_checked": false,
-	"night_intro": false
+	"night_intro": false,
+	"app_installed": false
 }
 
 @onready var wifi_connection: String = "None" :

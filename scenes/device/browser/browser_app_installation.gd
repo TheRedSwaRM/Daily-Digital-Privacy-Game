@@ -21,3 +21,6 @@ func no_wifi_page(value: bool):
 		no_wifi.hide()
 	else:
 		no_wifi.show()
+
+func _on_install_button_pressed():
+	Events.force_phone_go_to.emit("Installer")

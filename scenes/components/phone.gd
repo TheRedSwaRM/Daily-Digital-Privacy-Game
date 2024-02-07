@@ -32,10 +32,13 @@ enum NavigationState {
 @onready var settings_instance = $PhoneContainer/SettingsPanel
 # Social Media
 @onready var social_media = $PhoneContainer/SocialMedia
+@onready var social_media_button = $PhoneContainer/MainMenuButtons/SocialMediaButton
 # Messaging App
 @onready var messaging_app = $PhoneContainer/MessagingApp
 # Browser App
 @onready var browser_app = $PhoneContainer/Browser
+# Installer
+@onready var installer_app = $PhoneContainer/Installer
 
 # Current State
 @onready var current_phone_location = NavigationState.HOME :
@@ -60,6 +63,7 @@ func _ready():
 	Events.flip_phone.connect(_on_flipping_button_pressed)
 	Events.ring_phone.connect(_phone_ringing)
 	Events.force_phone_go_to.connect(_force_phone_goto)
+	Events.game_switch_changed.connect(_should_app_be_installed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -190,6 +194,13 @@ func _on_browser_button_pressed():
 	_play_accept()
 	browser_app.show()
 
+# Detects if app should be installed.
+func _should_app_be_installed(key: String, value: bool):
+	if Events.check_game_switch(key) && key == "app_installed":
+		_play_accept()
+		social_media_button.show()
+		Events.game_switch_changed.disconnect(_should_app_be_installed)
+		
 #===============================================================================
 # Audios
 #===============================================================================
@@ -216,6 +227,7 @@ func _force_phone_goto(module: String):
 	messaging_app.hide()
 	social_media.hide()
 	browser_app.hide()
+	installer_app.hide()
 	
 	match module:
 		"Settings":
@@ -224,7 +236,9 @@ func _force_phone_goto(module: String):
 			pass
 		"Social":
 			pass
-		
+			
 		# No need to open anything for this... for now.
 		"Browser":
 			browser_app.show()
+		"Installer":
+			installer_app.show()

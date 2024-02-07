@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bijcfw81xkw7r"]
+[gd_scene load_steps=24 format=3 uid="uid://bijcfw81xkw7r"]
 
 [ext_resource type="Script" path="res://scenes/components/phone.gd" id="1_ldqut"]
 [ext_resource type="Texture2D" uid="uid://h2puqxkdjy5n" path="res://assets/images/device/phone.png" id="2_fd6mj"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://b2encyf73hip4" path="res://scenes/device/social_media/social_media.tscn" id="11_6o5jl"]
 [ext_resource type="PackedScene" uid="uid://7aeuu7qbe1ju" path="res://scenes/device/messaging/messaging_app.tscn" id="12_mrxmr"]
 [ext_resource type="PackedScene" uid="uid://dywh83w6ca1li" path="res://scenes/device/browser/browser.tscn" id="17_wscuv"]
+[ext_resource type="PackedScene" uid="uid://dxvgj5lduuvfn" path="res://scenes/device/installer/installer.tscn" id="18_6aphd"]
 
 [sub_resource type="Animation" id="Animation_2cvcs"]
 length = 0.001
@@ -107,8 +108,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 2816.0
-offset_bottom = 1584.0
+offset_right = 3072.0
+offset_bottom = 1728.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -291,6 +292,14 @@ offset_left = 39.0
 offset_top = 10.0
 offset_right = -39.0
 offset_bottom = -10.0
+
+[node name="Installer" parent="PhoneContainer" instance=ExtResource("18_6aphd")]
+visible = false
+offset_left = 39.0
+offset_top = 10.0
+offset_right = 105.0
+offset_bottom = 134.0
+metadata/_edit_lock_ = true
 
 [node name="HomeButton" type="Button" parent="PhoneContainer"]
 layout_mode = 0
