@@ -36,10 +36,6 @@ func _create_tab_thumbnails():
 func _process(_delta):
 	pass
 
-# Special function
-func _phone_back_button_pressed():
-	hide()
-
 # Opens tabs
 func _on_tabs_button_pressed():
 	tab_section_panel.show()
@@ -80,3 +76,16 @@ func _show_tab(link: String):
 	
 	_change_tab_number()
 	Events.force_phone_go_to.emit("Browser")
+
+
+func _phone_back_button_pressed():
+	if not visible:
+		print("Browser already not visible.")
+		return
+	
+	if tab_section_panel.visible:
+		tab_section_panel.hide()
+		return
+		
+	hide()
+	
