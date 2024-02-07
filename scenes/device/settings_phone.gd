@@ -27,9 +27,7 @@ extends Control
 
 # Initially empty because that's first assumption.
 # Also to avoid future issues of adding stuff. Genius.
-var wifi_access: Dictionary
-var needed_password: String
-var pass_connecting_wifi: Button
+var connecting_wifi_button: Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,10 +44,11 @@ func _ready():
 
 	# And then finally, for the WI-FU Panel.
 	# For WI-FIs with passwords ONLY.
+	
 	for children in %WIFIList.get_children():
 		# Hack time. Only passwords with the following HAVE that icon!
-		if children.icon.resource_path == wifi_haspass_icon.resource_path:
-			wifi_access[children.name] = false
+		children.wifi_button_pressed.connect(_wifi_button_pressed)
+		print(children.button_group)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -111,14 +110,11 @@ func _on_full_screen_option_toggled(toggled_on):
 	_play_accept()
 	GameSettings.fullscreen_changed.emit(toggled_on)
 
-
 func _on_volume_slider_value_changed(value):
 	GameSettings.master_volume_changed.emit(value)
 
-
 func _on_music_slider_value_changed(value):
 	GameSettings.music_volume_changed.emit(value)
-
 
 func _on_sfx_slider_value_changed(value):
 	GameSettings.sfx_volume_changed.emit(value)
@@ -127,53 +123,28 @@ func _on_sfx_slider_value_changed(value):
 # START: WI-FI
 #===============================================================================
 
-func _on_home_wifi_toggled(toggled_on):
+func _wifi_button_pressed(ref_node: Button, toggled: bool):
 	_play_accept()
-	if not wifi_access[%HomeWIFI.name]:
-		pass_connecting_wifi = %HomeWIFI
-		needed_password = "homealone"
+	
+	if ref_node.has_access:
+		_wifi_list_change(ref_node, toggled)
+	elif ref_node.wifi_password != "":
+		connecting_wifi_button = ref_node
 		wifi_pass_panel.show()
 	else:
-		_wifi_list_change(%HomeWIFI, toggled_on)
-
-func _on_ram_wifi_toggled(toggled_on):
-	_play_accept()
-	_wifi_list_change(%RamWIFI, toggled_on)
-
-func _on_pldtwifi_toggled(toggled_on):
-	_play_accept()
-	if not wifi_access[%PLDTWIFI.name]:
-		pass_connecting_wifi = %PLDTWIFI
-		needed_password = "howdidyouknow"
-		wifi_pass_panel.show()
-	else:
-		_wifi_list_change(%PLDTWIFI, toggled_on)
+		_wifi_list_change(ref_node, toggled)
 
 # Automated function that reverts all buttons back to where they belong. Defaulted.
 func _wifi_list_change(wifi_picked: Button, toggled: bool):
-	for wifi_item in wifi_list.get_children():
-		wifi_item.set_theme(default_theme)
-		if wifi_access.has(wifi_item.name):
-			wifi_item.icon = wifi_haspass_icon
-		else:
-			wifi_item.icon = wifi_default_icon
-	
 	if toggled:
-		wifi_picked.set_theme(activated_theme)
-		wifi_picked.icon = wifi_activated_icon
 		wifi_settings_button.set_theme(activated_theme)
 		wifi_settings_button.text = "CON"
-		_change_current_connection(wifi_picked.text)
+		_change_current_connection(wifi_picked.name)
 	else:
-		wifi_picked.set_theme(default_theme)
-		if wifi_access.has(wifi_picked.name):
-			wifi_picked.icon = wifi_haspass_icon
-		else:
-			wifi_picked.icon = wifi_default_icon
-		#wifi_picked.icon = wifi_default_icon
-		wifi_settings_button.set_theme(default_theme)
-		wifi_settings_button.text = "None"
+		wifi_settings_button.set_theme(activated_theme)
+		wifi_settings_button.text = "NONE"
 		_change_current_connection("none")
+		
 
 func _change_current_connection(value: String):
 	current_connection = value
@@ -183,9 +154,8 @@ func _change_current_connection(value: String):
 ## When the password is given.
 func _on_password_key_text_submitted(new_text):
 	# Under the assumption that the password is set.
-	if needed_password == new_text:
-		_wifi_list_change(pass_connecting_wifi, true)
-		wifi_access[pass_connecting_wifi.name] = true
+	if connecting_wifi_button.wifi_password == new_text:
+		_wifi_list_change(connecting_wifi_button, true)
 		_play_accept()
 	else:
 		_play_back()
@@ -195,8 +165,7 @@ func _on_password_key_text_submitted(new_text):
 	
 # Helper function so that... well, no copy-pasting.
 func _wifi_pass_panel_handling():
-	needed_password = ""
-	pass_connecting_wifi = null
+	connecting_wifi_button = null
 	%PasswordKey.text = ""
 
 #===============================================================================
