@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://jbuwr2kunte7"]
+
+[ext_resource type="Texture2D" uid="uid://bxhgmx3w4o3qo" path="res://assets/images/browser/browser_no_internet_bg.png" id="1_cosg2"]
+
+[node name="NoWifi" type="TextureRect"]
+offset_right = 66.0
+offset_bottom = 112.0
+texture = ExtResource("1_cosg2")

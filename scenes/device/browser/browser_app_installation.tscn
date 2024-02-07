@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://kcbjm4mxt1o6"]
+[gd_scene load_steps=14 format=3 uid="uid://kcbjm4mxt1o6"]
 
 [ext_resource type="Script" path="res://scenes/device/browser/browser_app_installation.gd" id="1_m2aqq"]
 [ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="2_kdd7a"]
@@ -9,6 +9,7 @@
 [ext_resource type="LabelSettings" uid="uid://bccbyxn7vo5so" path="res://scenes/components/browser_googol_play_flavortext.tres" id="7_avyd4"]
 [ext_resource type="FontFile" uid="uid://dci41xnxl6f7a" path="res://assets/font/resolution-3x4.ttf" id="8_ujk0k"]
 [ext_resource type="StyleBox" uid="uid://mj4ajsm6gs0q" path="res://scenes/components/browser_googol_install_button.tres" id="9_w3vr5"]
+[ext_resource type="PackedScene" uid="uid://jbuwr2kunte7" path="res://scenes/device/browser/no_wifi.tscn" id="10_aep8m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lq2h1"]
 font = ExtResource("2_kdd7a")
@@ -162,3 +163,6 @@ theme_override_styles/pressed = ExtResource("9_w3vr5")
 theme_override_styles/disabled = ExtResource("9_w3vr5")
 theme_override_styles/focus = ExtResource("9_w3vr5")
 text = "  Install  "
+
+[node name="NoWifi" parent="." instance=ExtResource("10_aep8m")]
+layout_mode = 0

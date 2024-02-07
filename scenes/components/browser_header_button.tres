@@ -1,0 +1,24 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://blsiycyx3681a"]
+
+[ext_resource type="StyleBox" uid="uid://b8llqm4tyqu6q" path="res://scenes/components/browser_button.tres" id="1_jcjg6"]
+[ext_resource type="FontFile" uid="uid://dci41xnxl6f7a" path="res://assets/font/resolution-3x4.ttf" id="2_57d23"]
+
+[resource]
+default_font = ExtResource("2_57d23")
+default_font_size = 4
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/styles/disabled = ExtResource("1_jcjg6")
+Button/styles/focus = ExtResource("1_jcjg6")
+Button/styles/hover = ExtResource("1_jcjg6")
+Button/styles/normal = ExtResource("1_jcjg6")
+Button/styles/pressed = ExtResource("1_jcjg6")

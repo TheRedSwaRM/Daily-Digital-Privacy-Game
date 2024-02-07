@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://scenes/device/browser/browser.gd" id="1_ulbgk"]
 [ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="2_1fldl"]
 [ext_resource type="Texture2D" uid="uid://h2puqxkdjy5n" path="res://assets/images/device/phone.png" id="2_06mur"]
-[ext_resource type="FontFile" uid="uid://dci41xnxl6f7a" path="res://assets/font/resolution-3x4.ttf" id="3_rpi0c"]
-[ext_resource type="StyleBox" uid="uid://b8llqm4tyqu6q" path="res://scenes/components/browser_button.tres" id="5_7r6q2"]
+[ext_resource type="Theme" uid="uid://blsiycyx3681a" path="res://scenes/components/browser_header_button.tres" id="5_f6r0r"]
 [ext_resource type="PackedScene" uid="uid://d30d684o4s1k7" path="res://scenes/device/browser/browser_home.tscn" id="6_14cp5"]
+[ext_resource type="Texture2D" uid="uid://dv3iykwa53okg" path="res://assets/images/browser/browser_refresh_icon.png" id="6_d3ae1"]
 [ext_resource type="PackedScene" uid="uid://kcbjm4mxt1o6" path="res://scenes/device/browser/browser_app_installation.tscn" id="6_vbwcq"]
 [ext_resource type="Texture2D" uid="uid://cxhwlr12ftaka" path="res://assets/images/browser/browser_tab_control_bg.png" id="7_yoggs"]
 [ext_resource type="FontFile" uid="uid://dawe5cx0oxmsy" path="res://assets/font/pixel 3x4.ttf" id="8_isgdk"]
@@ -78,7 +78,7 @@ expand_mode = 3
 layout_mode = 0
 offset_left = 2.0
 offset_top = 3.0
-offset_right = 54.0
+offset_right = 44.0
 offset_bottom = 10.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_fdtuo")
 text = "home"
@@ -87,21 +87,22 @@ vertical_alignment = 1
 clip_text = true
 text_overrun_behavior = 3
 
+[node name="RefreshButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 3.0
+offset_right = 54.0
+offset_bottom = 10.0
+theme = ExtResource("5_f6r0r")
+icon = ExtResource("6_d3ae1")
+
 [node name="TabsButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 56.0
 offset_top = 3.0
 offset_right = 64.0
 offset_bottom = 10.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_rpi0c")
-theme_override_font_sizes/font_size = 4
-theme_override_styles/normal = ExtResource("5_7r6q2")
-theme_override_styles/hover = ExtResource("5_7r6q2")
-theme_override_styles/pressed = ExtResource("5_7r6q2")
-theme_override_styles/disabled = ExtResource("5_7r6q2")
-theme_override_styles/focus = ExtResource("5_7r6q2")
+theme = ExtResource("5_f6r0r")
 text = "1"
 
 [node name="Tabs" type="Control" parent="."]
@@ -161,5 +162,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 6
 alignment = 1
 
+[connection signal="pressed" from="RefreshButton" to="." method="_on_refresh_button_pressed"]
 [connection signal="pressed" from="TabsButton" to="." method="_on_tabs_button_pressed"]
 [connection signal="pressed" from="TabSection/TabExit" to="." method="_on_tab_exit_pressed"]
