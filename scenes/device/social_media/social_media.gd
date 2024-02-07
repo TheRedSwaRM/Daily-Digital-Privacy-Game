@@ -14,6 +14,7 @@ extends Control
 func _ready():
 	Events.sns_add_post.connect(sns_add)
 	Events.connection_change.connect(_check_for_wifi_connection)
+	Events.back_button_pressed.connect(_phone_back_button_pressed)
 	#Events.location_change.connect(_change_location_debug)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -67,3 +68,6 @@ func _on_add_post_button_pressed():
 		Events.change_game_switch("posted_with_location", true)
 	else:
 		Events.sns_add_post.emit("Cheryl", "Kinda bored ngl.", "", null)
+
+func _phone_back_button_pressed():
+	hide()
