@@ -52,7 +52,7 @@ func _on_tab_exit_pressed():
 # Checks how many tabs are currently open.
 func _change_tab_number():
 	var current_num: int = 0
-	for child in available_tabs.get_children():
+	for child in tab_section.get_children():
 		if child.visible:
 			current_num += 1
 	
@@ -78,4 +78,5 @@ func _show_tab(link: String):
 			_thumbnail_touched(child.node_name)
 			break
 	
+	_change_tab_number()
 	Events.force_phone_go_to.emit("Browser")

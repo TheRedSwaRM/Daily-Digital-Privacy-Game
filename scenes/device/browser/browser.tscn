@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://dywh83w6ca1li"]
+[gd_scene load_steps=20 format=3 uid="uid://dywh83w6ca1li"]
 
 [ext_resource type="Texture2D" uid="uid://8h22dp266j4s" path="res://assets/images/device/phone_browser.png" id="1_87qls"]
 [ext_resource type="Script" path="res://scenes/device/browser/browser.gd" id="1_ulbgk"]
 [ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="2_1fldl"]
+[ext_resource type="Texture2D" uid="uid://h2puqxkdjy5n" path="res://assets/images/device/phone.png" id="2_06mur"]
 [ext_resource type="FontFile" uid="uid://dci41xnxl6f7a" path="res://assets/font/resolution-3x4.ttf" id="3_rpi0c"]
 [ext_resource type="StyleBox" uid="uid://b8llqm4tyqu6q" path="res://scenes/components/browser_button.tres" id="5_7r6q2"]
 [ext_resource type="PackedScene" uid="uid://d30d684o4s1k7" path="res://scenes/device/browser/browser_home.tscn" id="6_14cp5"]
@@ -45,6 +46,24 @@ grow_vertical = 2
 script = ExtResource("1_ulbgk")
 metadata/_edit_lock_ = true
 
+[node name="Debug" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -167.0
+offset_top = -10.0
+offset_right = -23.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_06mur")
+expand_mode = 2
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = -3.0
@@ -54,7 +73,6 @@ offset_bottom = 134.0
 mouse_filter = 2
 texture = ExtResource("1_87qls")
 expand_mode = 3
-metadata/_edit_lock_ = true
 
 [node name="LinkLabel" type="Label" parent="."]
 layout_mode = 0
@@ -112,6 +130,7 @@ offset_left = -3.0
 offset_top = -10.0
 offset_right = 69.0
 offset_bottom = 134.0
+mouse_filter = 2
 texture = ExtResource("7_yoggs")
 
 [node name="TabExit" type="Button" parent="TabSection"]
