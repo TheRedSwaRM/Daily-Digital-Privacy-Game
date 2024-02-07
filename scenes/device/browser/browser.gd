@@ -78,6 +78,4 @@ func _show_tab(link: String):
 			_thumbnail_touched(child.node_name)
 			break
 	
-	
-	
-	
+	Events.force_phone_go_to.emit("Browser")

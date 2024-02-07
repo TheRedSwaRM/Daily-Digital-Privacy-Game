@@ -29,6 +29,8 @@ signal new_phone_message(user_name: String, message: String)
 signal back_button_pressed
 signal link_pressed(link_data: String)
 
+signal force_phone_go_to(module: String)
+
 # Hamstrung solution to disallow any sounds for the phone.
 var phones_sounds: bool = false
 

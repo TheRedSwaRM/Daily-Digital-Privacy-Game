@@ -22,19 +22,18 @@ enum NavigationState {
 @onready var quit_panel = $PhoneContainer/QuitPanel
 @onready var main_menu_buttons = $PhoneContainer/MainMenuButtons
 
-# Settings
-@onready var settings_instance = $PhoneContainer/SettingsPanel
+
 
 # Phone Background
 @onready var main_menu_background = preload("res://assets/images/device/phone.png")
 @onready var settings_background = preload("res://assets/images/device/phone_settings.png")
 
+# Settings
+@onready var settings_instance = $PhoneContainer/SettingsPanel
 # Social Media
 @onready var social_media = $PhoneContainer/SocialMedia
-
 # Messaging App
 @onready var messaging_app = $PhoneContainer/MessagingApp
-
 # Browser App
 @onready var browser_app = $PhoneContainer/Browser
 
@@ -60,6 +59,7 @@ signal flipping_phone(value)
 func _ready():
 	Events.flip_phone.connect(_on_flipping_button_pressed)
 	Events.ring_phone.connect(_phone_ringing)
+	Events.force_phone_go_to.connect(_force_phone_goto)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -210,3 +210,21 @@ func _on_flipping_button_mouse_entered():
 
 func _on_flipping_button_mouse_exited():
 	GameSettings.change_cursor_look()
+
+func _force_phone_goto(module: String):
+	settings_instance.hide()
+	messaging_app.hide()
+	social_media.hide()
+	browser_app.hide()
+	
+	match module:
+		"Settings":
+			pass
+		"Messaging":
+			pass
+		"Social":
+			pass
+		
+		# No need to open anything for this... for now.
+		"Browser":
+			browser_app.show()

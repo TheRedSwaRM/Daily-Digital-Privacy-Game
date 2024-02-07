@@ -223,6 +223,9 @@ func _on_panel_warning_hack_gui_input(event):
 # Purposefully connected with the Event.back_button_pressed only.
 # Checks top to bottom to see which panel is active. Really intuitive.
 func _is_back_button_pressed():
+	if not visible: 
+		print("Settings already not visible.")
+		return
 	# for possible cases that it is open... HANDLE THIS SOON
 	if wifi_pass_panel.visible:
 		_wifi_pass_panel_handling()

@@ -111,6 +111,10 @@ func _find_in_contacts(user_name: String):
 
 ## Unlike settings, might be volatile. But ya know, we're kinda gunning it here.
 func _on_back_button_pressed():
+	if not visible:
+		print("Messaging already not visible.")
+		return
+	
 	if current_message_list != null:
 		ui_header.text = "Messaging"
 		back_button.hide()
