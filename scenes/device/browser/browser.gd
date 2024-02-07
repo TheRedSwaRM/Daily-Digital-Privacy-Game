@@ -9,6 +9,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Events.back_button_pressed.connect(_phone_back_button_pressed)
+	Events.link_pressed.connect(_show_tab)
 	_create_tab_thumbnails()
 	_change_tab_number()
 
@@ -20,6 +21,7 @@ func _create_tab_thumbnails():
 		var new_tab_section = pre_tab_sections.instantiate()
 		
 		new_tab_section.node_name = child.name
+		new_tab_section.link_data = child.link_name
 		new_tab_section.tab_name = child.tab_name
 		new_tab_section.tab_image = child.thumbnail 
 		
@@ -66,3 +68,16 @@ func _thumbnail_touched(node_name: String):
 			child.hide()	
 	
 	_on_tab_exit_pressed()
+
+
+# Finally show the tab.
+func _show_tab(link: String):
+	for child in tab_section.get_children():
+		if child.link_data == link:
+			child.show()
+			_thumbnail_touched(child.node_name)
+			break
+	
+	
+	
+	

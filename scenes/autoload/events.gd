@@ -55,6 +55,9 @@ var phones_sounds: bool = false
 		location = value
 		location_change.emit(value)
 
+func _ready():
+	pass
+
 func change_game_switch(key: String, value: bool):
 	_game_switches[key] = value
 	print(key + " is now " + str(value))
@@ -76,4 +79,6 @@ func quit_game():
 	Events.reset_all()
 	get_tree().change_scene_to_file("res://scenes/title.tscn")
 
-	#print(game_switches)
+### Force opens the phone and goes to wherever you want it to.
+#func phone_goto(function: String):
+

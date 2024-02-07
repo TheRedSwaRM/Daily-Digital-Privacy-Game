@@ -25,7 +25,9 @@ func _ready():
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/intro.dialogue"))
 		await DialogueManager.dialogue_ended
 		Events.change_game_switch("intro", true)
-		Events.new_phone_message.emit("Amelie", "[url='sex']hi[/url]")
+		
+		# We need this for really stupid reasons. It just works. ;-;
+		Events.new_phone_message.emit("Amelie", "[url='https://gglplay.com']hi[/url]")
 	
 	AudioManager.bgm_play("res://assets/audio/bgm/room_ambience.ogg")
 	

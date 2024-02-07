@@ -4,6 +4,7 @@ signal thumbnail_touched(tab_name: String)
 
 @onready var tab_thumb_name = $TabName
 @onready var tab_thumb_image = $TabThumbnail
+@export var link_data: String
 @export var node_name: String
 @export var tab_name: String
 @export var tab_image: String
