@@ -125,17 +125,19 @@ func _on_sfx_slider_value_changed(value):
 
 func _wifi_button_pressed(ref_node: Button, toggled: bool):
 	_play_accept()
-	
-	if ref_node.has_access:
-		_wifi_list_change(ref_node, toggled)
-	elif ref_node.wifi_password != "":
-		connecting_wifi_button = ref_node
-		wifi_pass_panel.show()
+	# For wifis with passwords
+	if ref_node.wifi_password != "":
+		if ref_node.has_access:
+			_wifi_list_change(ref_node, toggled)
+		else:
+			connecting_wifi_button = ref_node
+			wifi_pass_panel.show()
 	else:
 		_wifi_list_change(ref_node, toggled)
 
 # Automated function that reverts all buttons back to where they belong. Defaulted.
 func _wifi_list_change(wifi_picked: Button, toggled: bool):
+	wifi_picked.set_default_icon()
 	if toggled:
 		wifi_settings_button.set_theme(activated_theme)
 		wifi_settings_button.text = "CON"
@@ -149,21 +151,23 @@ func _wifi_list_change(wifi_picked: Button, toggled: bool):
 func _change_current_connection(value: String):
 	current_connection = value
 	Events.wifi_connection = current_connection
-	#debug_connection_change.emit(value)
 
 ## When the password is given.
 func _on_password_key_text_submitted(new_text):
 	# Under the assumption that the password is set.
 	if connecting_wifi_button.wifi_password == new_text:
+		print("Access granted")
+		connecting_wifi_button.has_access = true
 		_wifi_list_change(connecting_wifi_button, true)
 		_play_accept()
 	else:
+		connecting_wifi_button.button_pressed = false
+		#connecting_wifi_button.set_default_icon()
 		_play_back()
-	# Clean after attempt.
+	
 	_wifi_pass_panel_handling()
 	wifi_pass_panel.hide()
-	
-# Helper function so that... well, no copy-pasting.
+
 func _wifi_pass_panel_handling():
 	connecting_wifi_button = null
 	%PasswordKey.text = ""

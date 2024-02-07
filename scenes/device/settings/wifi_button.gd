@@ -38,6 +38,6 @@ func set_default_icon():
 			icon = wifi_default_icon
 
 func _on_toggled(toggled_on):
-	set_default_icon()
+	#set_default_icon()
 	wifi_button_pressed.emit(self, toggled_on)
 	

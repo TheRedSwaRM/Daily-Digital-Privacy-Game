@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://f4ikflxbqnmx"]
+[gd_scene load_steps=15 format=3 uid="uid://f4ikflxbqnmx"]
 
 [ext_resource type="Script" path="res://scenes/device/settings_phone.gd" id="1_ced6i"]
 [ext_resource type="Texture2D" uid="uid://w3nfv6j12y4n" path="res://assets/images/device/phone_settings_true_bg.png" id="2_d3c8c"]
@@ -8,6 +8,7 @@
 [ext_resource type="LabelSettings" uid="uid://nk5nj83e5ai4" path="res://scenes/components/settings_phone.tres" id="5_y3mvf"]
 [ext_resource type="Theme" uid="uid://dh4qbclv1q7fq" path="res://scenes/components/wifi_button_activated.tres" id="6_gn40x"]
 [ext_resource type="Texture2D" uid="uid://dtr61c0kwi83t" path="res://assets/images/device/wifi_icon.png" id="7_j0hlb"]
+[ext_resource type="Texture2D" uid="uid://ds1qvwl7vloao" path="res://assets/images/device/wifi_haspass_icon.png" id="8_3qpag"]
 [ext_resource type="PackedScene" uid="uid://vkarcqx1hknc" path="res://scenes/device/settings/wifi_button.tscn" id="8_ce46u"]
 [ext_resource type="StyleBox" uid="uid://cf0dwxbaffuvq" path="res://scenes/components/wifi_pass_panel.tres" id="10_cev7i"]
 
@@ -257,8 +258,9 @@ offset_bottom = 58.0
 [node name="Sex" parent="WIFIPanel/WIFIList" instance=ExtResource("8_ce46u")]
 layout_mode = 2
 text = "Sex"
-icon = ExtResource("7_j0hlb")
+icon = ExtResource("8_3qpag")
 wifi_name = "Sex"
+wifi_password = "sex"
 
 [node name="gay" parent="WIFIPanel/WIFIList" instance=ExtResource("8_ce46u")]
 layout_mode = 2
