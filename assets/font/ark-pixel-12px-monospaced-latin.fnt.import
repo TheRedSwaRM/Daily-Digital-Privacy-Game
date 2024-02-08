@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://bmvpqkkl1evc"
+path="res://.godot/imported/ark-pixel-12px-monospaced-latin.fnt-22bd5e8c84511a69e98f374b0f9b6bc1.fontdata"
+
+[deps]
+
+source_file="res://assets/font/ark-pixel-12px-monospaced-latin.fnt"
+dest_files=["res://.godot/imported/ark-pixel-12px-monospaced-latin.fnt-22bd5e8c84511a69e98f374b0f9b6bc1.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

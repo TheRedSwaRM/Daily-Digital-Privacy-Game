@@ -1,10 +1,10 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://blsiycyx3681a"]
 
 [ext_resource type="StyleBox" uid="uid://b8llqm4tyqu6q" path="res://scenes/components/browser_button.tres" id="1_jcjg6"]
-[ext_resource type="FontFile" uid="uid://dci41xnxl6f7a" path="res://assets/font/resolution-3x4.ttf" id="2_57d23"]
+[ext_resource type="FontFile" uid="uid://bsevdm8dbo1qi" path="res://assets/font/res3x4.fnt" id="2_tyd7i"]
 
 [resource]
-default_font = ExtResource("2_57d23")
+default_font = ExtResource("2_tyd7i")
 default_font_size = 4
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)

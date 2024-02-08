@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scenes/device/browser/tab_thumbnail.gd" id="1_2tps7"]
 [ext_resource type="Texture2D" uid="uid://djyldj3llnxj4" path="res://assets/images/browser/thumbnails/frndster.png" id="1_x2m40"]
-[ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="2_vrgrb"]
+[ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="3_v2jv0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0rxcs"]
-font = ExtResource("2_vrgrb")
+font = ExtResource("3_v2jv0")
 font_size = 5
 
 [node name="TabThumbnail" type="Control"]

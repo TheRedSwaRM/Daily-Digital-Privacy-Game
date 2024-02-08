@@ -45,7 +45,7 @@ import/blender/enabled=false
 [gui]
 
 fonts/dynamic_fonts/use_oversampling=false
-theme/custom_font="res://assets/font/cg pixel 4x5.ttf"
+theme/custom_font="res://assets/font/cg pixel 4x5 mono.fnt"
 theme/default_font_antialiasing=0
 
 [internationalization]

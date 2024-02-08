@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://b83i4xqfog0lc"
+path="res://.godot/imported/cg pixel 4x5 mono.fnt-b3528501b120a38cb7dc4d98710423e9.fontdata"
+
+[deps]
+
+source_file="res://assets/font/cg pixel 4x5 mono.fnt"
+dest_files=["res://.godot/imported/cg pixel 4x5 mono.fnt-b3528501b120a38cb7dc4d98710423e9.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

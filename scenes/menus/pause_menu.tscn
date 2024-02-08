@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/menus/pause_menu.gd" id="1_6pq4f"]
 [ext_resource type="PackedScene" uid="uid://smav7ilugg5n" path="res://scenes/components/blur.tscn" id="2_uxsu2"]
 [ext_resource type="PackedScene" uid="uid://crvbt6pqib5vv" path="res://scenes/menus/settings_menu.tscn" id="3_el7e2"]
-[ext_resource type="FontFile" uid="uid://isjud3j2bjck" path="res://assets/font/ark-pixel-12px-monospaced-latin.ttf" id="3_kp5df"]
+[ext_resource type="FontFile" uid="uid://bmvpqkkl1evc" path="res://assets/font/ark-pixel-12px-monospaced-latin.fnt" id="3_fwo3x"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
@@ -48,21 +48,21 @@ alignment = 1
 [node name="ResumeButton" type="Button" parent="ButtonContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("3_kp5df")
+theme_override_fonts/font = ExtResource("3_fwo3x")
 theme_override_font_sizes/font_size = 12
 text = "Resume"
 
 [node name="SettingsButton" type="Button" parent="ButtonContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("3_kp5df")
+theme_override_fonts/font = ExtResource("3_fwo3x")
 theme_override_font_sizes/font_size = 12
 text = "Settings"
 
 [node name="QuitButton" type="Button" parent="ButtonContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("3_kp5df")
+theme_override_fonts/font = ExtResource("3_fwo3x")
 theme_override_font_sizes/font_size = 12
 text = "Quit"
 

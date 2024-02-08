@@ -1,27 +1,27 @@
 [gd_scene load_steps=14 format=3 uid="uid://kcbjm4mxt1o6"]
 
 [ext_resource type="Script" path="res://scenes/device/browser/browser_app_installation.gd" id="1_m2aqq"]
-[ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="2_kdd7a"]
 [ext_resource type="Texture2D" uid="uid://vnqltacrbcxm" path="res://assets/images/browser/browser_googol_play_icon.png" id="3_dfmro"]
+[ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="3_eirsd"]
 [ext_resource type="Texture2D" uid="uid://d2r7g8lcdffje" path="res://assets/images/browser/browser_friendster_header.png" id="4_c5v18"]
 [ext_resource type="Texture2D" uid="uid://b6ckvnayk1yri" path="res://assets/images/device/phone_icon_friendster.png" id="5_6vvi3"]
-[ext_resource type="FontFile" uid="uid://dawe5cx0oxmsy" path="res://assets/font/pixel 3x4.ttf" id="6_rq1k1"]
+[ext_resource type="FontFile" uid="uid://cm2b7lnoxw4xj" path="res://assets/font/pixel 3x4.fnt" id="6_vmi1g"]
 [ext_resource type="LabelSettings" uid="uid://bccbyxn7vo5so" path="res://scenes/components/browser_googol_play_flavortext.tres" id="7_avyd4"]
-[ext_resource type="FontFile" uid="uid://dci41xnxl6f7a" path="res://assets/font/resolution-3x4.ttf" id="8_ujk0k"]
+[ext_resource type="FontFile" uid="uid://bsevdm8dbo1qi" path="res://assets/font/res3x4.fnt" id="8_3k7sf"]
 [ext_resource type="StyleBox" uid="uid://mj4ajsm6gs0q" path="res://scenes/components/browser_googol_install_button.tres" id="9_w3vr5"]
 [ext_resource type="PackedScene" uid="uid://jbuwr2kunte7" path="res://scenes/device/browser/no_wifi.tscn" id="10_aep8m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lq2h1"]
-font = ExtResource("2_kdd7a")
+font = ExtResource("3_eirsd")
 font_size = 5
 font_color = Color(0.266667, 0.266667, 0.266667, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_reep5"]
-font = ExtResource("2_kdd7a")
+font = ExtResource("3_eirsd")
 font_size = 5
 
 [sub_resource type="LabelSettings" id="LabelSettings_o7vc0"]
-font = ExtResource("6_rq1k1")
+font = ExtResource("6_vmi1g")
 font_size = 4
 font_color = Color(0, 0.631373, 0.45098, 1)
 shadow_size = 0
@@ -102,16 +102,16 @@ offset_left = 23.0
 offset_top = 54.0
 offset_right = 63.0
 offset_bottom = 60.0
-text = "SO  CAL  ENT."
+text = "SO CAL ENT."
 label_settings = SubResource("LabelSettings_o7vc0")
 
 [node name="ReviewRating" type="Label" parent="."]
 layout_mode = 0
-offset_left = 13.0
+offset_left = 10.0
 offset_top = 68.0
-offset_right = 27.0
+offset_right = 28.0
 offset_bottom = 74.0
-text = "4.4✦"
+text = "4.4/5"
 label_settings = ExtResource("7_avyd4")
 
 [node name="ReviewCount" type="Label" parent="."]
@@ -120,7 +120,7 @@ offset_left = 6.0
 offset_top = 74.0
 offset_right = 33.0
 offset_bottom = 80.0
-text = "1M  RVWS"
+text = "1M RVWS"
 label_settings = ExtResource("7_avyd4")
 horizontal_alignment = 1
 
@@ -156,7 +156,7 @@ offset_left = 7.0
 offset_top = 87.0
 offset_right = 59.0
 offset_bottom = 96.0
-theme_override_fonts/font = ExtResource("8_ujk0k")
+theme_override_fonts/font = ExtResource("8_3k7sf")
 theme_override_font_sizes/font_size = 4
 theme_override_styles/normal = ExtResource("9_w3vr5")
 theme_override_styles/pressed = ExtResource("9_w3vr5")

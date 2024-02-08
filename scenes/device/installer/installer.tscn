@@ -16,6 +16,7 @@ offset_bottom = 124.0
 script = ExtResource("1_5svah")
 
 [node name="InstallerBackground" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = -3.0
 offset_top = -10.0
 offset_right = 69.0

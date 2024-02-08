@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bq40fqryaca5b"]
+[gd_scene load_steps=18 format=3 uid="uid://bq40fqryaca5b"]
 
 [ext_resource type="Script" path="res://scenes/components/phone.gd" id="1_o1hot"]
 [ext_resource type="Texture2D" uid="uid://h2puqxkdjy5n" path="res://assets/images/device/phone.png" id="2_1xlib"]
@@ -7,7 +7,6 @@
 [ext_resource type="Theme" uid="uid://dinj8j20l57j3" path="res://scenes/components/phone_button.tres" id="5_c5e6j"]
 [ext_resource type="Texture2D" uid="uid://w3nfv6j12y4n" path="res://assets/images/device/phone_settings_true_bg.png" id="6_wkluq"]
 [ext_resource type="Theme" uid="uid://s47xnf1e5hrf" path="res://scenes/components/wifi_button.tres" id="7_uto28"]
-[ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="8_ngnld"]
 [ext_resource type="LabelSettings" uid="uid://nk5nj83e5ai4" path="res://scenes/components/settings_phone.tres" id="9_pbtrw"]
 [ext_resource type="Texture2D" uid="uid://dtr61c0kwi83t" path="res://assets/images/device/wifi_icon.png" id="10_dmgyw"]
 [ext_resource type="Texture2D" uid="uid://crqr8uw0lxfkk" path="res://assets/images/device/phone_quit_yes.png" id="11_q6l20"]
@@ -150,7 +149,6 @@ theme = ExtResource("5_c5e6j")
 metadata/_edit_lock_ = true
 
 [node name="SettingsMenu" type="Control" parent="PhoneContainer"]
-visible = false
 anchors_preset = 0
 offset_left = 39.0
 offset_top = 10.0
@@ -175,8 +173,6 @@ offset_top = 2.0
 offset_right = 12.0
 offset_bottom = 12.0
 theme = ExtResource("7_uto28")
-theme_override_fonts/font = ExtResource("8_ngnld")
-theme_override_font_sizes/font_size = 5
 text = "<"
 
 [node name="SettingsName" type="Label" parent="PhoneContainer/SettingsMenu"]

@@ -10,13 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://b2snt3d8ls41m" path="res://assets/images/social_media/social_media_bell.png" id="6_m0a4i"]
 [ext_resource type="Texture2D" uid="uid://d0svocs860006" path="res://assets/images/social_media/social_media_add_post.png" id="9_6ch0j"]
 [ext_resource type="Theme" uid="uid://b4a3rif2mhppr" path="res://scenes/components/no_scroll.tres" id="9_nmfo4"]
-[ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="10_eofds"]
 [ext_resource type="PackedScene" uid="uid://bn6kc48yw0681" path="res://scenes/device/social_media/new_post_panel.tscn" id="11_f6lsx"]
+[ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="12_dn408"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c7uk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ngwqi"]
-font = ExtResource("10_eofds")
+font = ExtResource("12_dn408")
 font_size = 5
 
 [sub_resource type="Animation" id="Animation_6c5kd"]

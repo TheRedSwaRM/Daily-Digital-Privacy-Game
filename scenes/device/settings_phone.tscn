@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/device/settings_phone.gd" id="1_ced6i"]
 [ext_resource type="Texture2D" uid="uid://w3nfv6j12y4n" path="res://assets/images/device/phone_settings_true_bg.png" id="2_d3c8c"]
 [ext_resource type="Theme" uid="uid://s47xnf1e5hrf" path="res://scenes/components/wifi_button.tres" id="3_mjkfs"]
-[ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="4_d0m2f"]
+[ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="4_rfiyv"]
 [ext_resource type="LabelSettings" uid="uid://diwe4t6j60tts" path="res://scenes/components/social_media.tres" id="5_0b1pm"]
 [ext_resource type="LabelSettings" uid="uid://nk5nj83e5ai4" path="res://scenes/components/settings_phone.tres" id="5_y3mvf"]
 [ext_resource type="Theme" uid="uid://dh4qbclv1q7fq" path="res://scenes/components/wifi_button_activated.tres" id="6_gn40x"]
@@ -53,7 +53,7 @@ offset_top = 2.0
 offset_right = 12.0
 offset_bottom = 12.0
 theme = ExtResource("3_mjkfs")
-theme_override_fonts/font = ExtResource("4_d0m2f")
+theme_override_fonts/font = ExtResource("4_rfiyv")
 theme_override_font_sizes/font_size = 5
 text = "<"
 
@@ -224,6 +224,7 @@ theme = ExtResource("6_gn40x")
 text = "No"
 
 [node name="WIFIPanel" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 5.0
 offset_top = 12.0
@@ -295,7 +296,7 @@ offset_left = 2.0
 offset_top = 18.0
 offset_right = 43.0
 offset_bottom = 27.0
-theme_override_fonts/font = ExtResource("4_d0m2f")
+theme_override_fonts/font = ExtResource("4_rfiyv")
 theme_override_font_sizes/font_size = 5
 theme_override_styles/normal = ExtResource("10_cev7i")
 theme_override_styles/focus = ExtResource("10_cev7i")

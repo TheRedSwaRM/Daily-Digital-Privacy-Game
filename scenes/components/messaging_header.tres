@@ -1,8 +1,8 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://b5ugeles5dpul"]
 
-[ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="1_71ad2"]
+[ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="1_6n0v7"]
 
 [resource]
-font = ExtResource("1_71ad2")
+font = ExtResource("1_6n0v7")
 font_size = 5
 font_color = Color(0, 0, 0, 1)
