@@ -1,0 +1,119 @@
+[gd_scene load_steps=19 format=3 uid="uid://bn6kc48yw0681"]
+
+[ext_resource type="StyleBox" uid="uid://be6blfljk3ftt" path="res://scenes/components/social_media_post_panel.tres" id="1_1f72s"]
+[ext_resource type="Theme" uid="uid://dinj8j20l57j3" path="res://scenes/components/phone_button.tres" id="1_rlinc"]
+[ext_resource type="Texture2D" uid="uid://ba6k4rffpt7hm" path="res://assets/images/social_media/social_media_post_icon.png" id="2_vnbgy"]
+[ext_resource type="FontFile" uid="uid://bsevdm8dbo1qi" path="res://assets/font/res3x4.fnt" id="4_buwo0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mk28d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2yk7l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tkoa3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hn8ma"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s7djx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ys12t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5pwb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhf4q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1xxcs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_twy5i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eubkl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_73hj1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5icc"]
+
+[sub_resource type="Theme" id="Theme_nugt2"]
+HScrollBar/styles/grabber = SubResource("StyleBoxEmpty_mk28d")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_2yk7l")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_tkoa3")
+HScrollBar/styles/scroll = SubResource("StyleBoxEmpty_hn8ma")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_s7djx")
+TextEdit/font_sizes/font_size = 3
+TextEdit/fonts/font = ExtResource("4_buwo0")
+TextEdit/styles/focus = SubResource("StyleBoxFlat_ys12t")
+TextEdit/styles/normal = SubResource("StyleBoxFlat_o5pwb")
+TextEdit/styles/read_only = SubResource("StyleBoxFlat_xhf4q")
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_1xxcs")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_twy5i")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_eubkl")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_73hj1")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_y5icc")
+
+[node name="NewPostPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 22.0
+offset_right = 66.0
+offset_bottom = 124.0
+
+[node name="NewPostBG" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 66.0
+offset_bottom = 102.0
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 66.0
+offset_bottom = 31.0
+theme_override_styles/panel = ExtResource("1_1f72s")
+
+[node name="PostContainer" type="VBoxContainer" parent="Panel"]
+custom_minimum_size = Vector2(54, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_rlinc")
+
+[node name="PsedoMargin2" type="ReferenceRect" parent="Panel/PostContainer"]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Profile" type="Button" parent="Panel/PostContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("1_rlinc")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+icon = ExtResource("2_vnbgy")
+alignment = 0
+text_overrun_behavior = 3
+clip_text = true
+
+[node name="Location" type="RichTextLabel" parent="Panel/PostContainer"]
+visible = false
+custom_minimum_size = Vector2(54, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.266667, 0.266667, 0.266667, 1)
+fit_content = true
+
+[node name="PostContainer" type="VBoxContainer" parent="Panel/PostContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="PostImage" type="TextureRect" parent="Panel/PostContainer/PostContainer"]
+visible = false
+layout_mode = 2
+
+[node name="PostText" type="TextEdit" parent="Panel/PostContainer/PostContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_nugt2")
+text = "How can you have sex with the speak and spell then?"
+placeholder_text = "asd"
+wrap_mode = 1
+autowrap_mode = 2
+scroll_fit_content_height = true
+
+[node name="PsedoMargin" type="ReferenceRect" parent="Panel/PostContainer"]
+layout_mode = 2
+mouse_filter = 1

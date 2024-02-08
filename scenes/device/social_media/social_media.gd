@@ -15,6 +15,7 @@ func _ready():
 	Events.sns_add_post.connect(sns_add)
 	Events.connection_change.connect(_check_for_wifi_connection)
 	Events.back_button_pressed.connect(_phone_back_button_pressed)
+	_check_for_wifi_connection("none")
 	#Events.location_change.connect(_change_location_debug)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -71,3 +72,19 @@ func _on_add_post_button_pressed():
 
 func _phone_back_button_pressed():
 	hide()
+
+
+func _on_profile_button_pressed():
+	pass # Replace with function body.
+
+
+func _on_friends_button_pressed():
+	pass # Replace with function body.
+
+
+func _on_message_button_pressed():
+	pass # Replace with function body.
+
+
+func _on_notification_button_pressed():
+	pass # Replace with function body.

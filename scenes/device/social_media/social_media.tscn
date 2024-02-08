@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b2encyf73hip4"]
+[gd_scene load_steps=18 format=3 uid="uid://b2encyf73hip4"]
 
 [ext_resource type="Script" path="res://scenes/device/social_media/social_media.gd" id="1_6rg46"]
 [ext_resource type="Texture2D" uid="uid://bu8k43hl1ehm8" path="res://assets/images/device/phone_social_media.png" id="1_xk37a"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d0svocs860006" path="res://assets/images/social_media/social_media_add_post.png" id="9_6ch0j"]
 [ext_resource type="Theme" uid="uid://b4a3rif2mhppr" path="res://scenes/components/no_scroll.tres" id="9_nmfo4"]
 [ext_resource type="FontFile" uid="uid://br4ejhtxrx0vc" path="res://assets/font/cg pixel 4x5.ttf" id="10_eofds"]
+[ext_resource type="PackedScene" uid="uid://bn6kc48yw0681" path="res://scenes/device/social_media/new_post_panel.tscn" id="11_f6lsx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c7uk"]
 
@@ -178,7 +179,12 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 icon = ExtResource("9_6ch0j")
 icon_alignment = 1
 
+[node name="NewPostPanel" parent="." instance=ExtResource("11_f6lsx")]
+offset_top = 28.0
+offset_bottom = 130.0
+
 [node name="NoConnectionPanel" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_top = 22.0
 offset_right = 66.0
@@ -203,5 +209,9 @@ libraries = {
 }
 speed_scale = 2.0
 
+[connection signal="pressed" from="ProfileButton" to="." method="_on_profile_button_pressed"]
+[connection signal="pressed" from="FriendsButton" to="." method="_on_friends_button_pressed"]
+[connection signal="pressed" from="MessageButton" to="." method="_on_message_button_pressed"]
+[connection signal="pressed" from="NotificationButton" to="." method="_on_notification_button_pressed"]
 [connection signal="gui_input" from="HomeFeed" to="." method="_on_home_feed_gui_input"]
 [connection signal="pressed" from="AddPostButton" to="." method="_on_add_post_button_pressed"]
