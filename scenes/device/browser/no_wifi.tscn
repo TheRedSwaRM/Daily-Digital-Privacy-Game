@@ -5,4 +5,5 @@
 [node name="NoWifi" type="TextureRect"]
 offset_right = 66.0
 offset_bottom = 112.0
+mouse_filter = 2
 texture = ExtResource("1_cosg2")

@@ -160,17 +160,11 @@ func _on_messaging_button_pressed():
 
 func _on_home_button_pressed():
 	_play_back()
-	match current_phone_location:
-		NavigationState.HOME:
-			return
-		NavigationState.SOCIAL_MEDIA:
-			social_media.hide()
-		NavigationState.SETTINGS:
-			settings_instance.hide()
-		NavigationState.MESSAGES:
-			messaging_app.hide()
-		NavigationState.QUIT:
-			quit_panel.hide()
+	social_media.hide()
+	settings_instance.hide()
+	messaging_app.hide()
+	quit_panel.hide()
+	browser_app.hide()
 	
 	# Given... like, literally.
 	current_phone_location = NavigationState.HOME
