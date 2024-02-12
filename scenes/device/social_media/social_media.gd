@@ -151,7 +151,7 @@ func _phone_back_button_pressed():
 	
 	# After registration.
 	if new_post_screen.visible:
-		new_post_screen.hide()
+		_on_new_post_panel_return_button_pressed()
 		return
 	
 	# If everything is not visible.
