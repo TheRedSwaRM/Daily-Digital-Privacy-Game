@@ -10,3 +10,17 @@ Cheryl: Hope I can get ideas.
 Cheryl: I don't think I need to use this right now.
 
 => END
+
+~ installation
+
+Cheryl: Alright, that's good enough for today. I'm getting tired anyway.
+
+=> END 
+
+~ checking_app_before_day_2
+
+% Cheryl: I'm going to open this app tomorrow.
+% Cheryl: I'll do this tomorrow.
+% Cheryl: I'm tired. I'll open it tomorrow.
+
+=> END

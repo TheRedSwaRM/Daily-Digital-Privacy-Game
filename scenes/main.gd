@@ -108,7 +108,9 @@ func _change_location_debug(value: bool):
 #==============================================================================
 func _phone_installed(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "app_installed":
-		pass
+		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "installation")
+		await DialogueManager.dialogue_ended
+		Events.game_switch_changed.disconnect(_phone_installed)
 	
 func _cutscene_social_post(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "posted_with_location":

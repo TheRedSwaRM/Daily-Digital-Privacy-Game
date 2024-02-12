@@ -9,7 +9,9 @@ func _ready():
 	
 	anim_player.play("fricked")
 	await anim_player.animation_finished
-	Events.quit_game()
+	
+	# Increase day counter.
+	Events.day_counter += 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

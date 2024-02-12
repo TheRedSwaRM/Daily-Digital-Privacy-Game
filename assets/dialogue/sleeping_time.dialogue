@@ -13,3 +13,26 @@ Should I sleep now?
 - No => END
 
 => END
+
+~ still_active
+
+% Cheryl: I'm still not tired enough.
+% Cheryl: I'm not going back to bed that easily.
+% Cheryl: This thing's like a magnet sometimes...
+% Cheryl: Sun's still up. I'll just get my eyes burned.
+
+=> END
+
+~ day_1_sleep
+
+Should I sleep now?
+
+- Yes
+	do AudioManager.bgm_stop()
+	do Events.deactivate_phone.emit()
+	
+	do Events.change_map.emit("res://scenes/cutscenes/peaceful_night.tscn", false, true)
+- No
+	=> END
+
+=> END

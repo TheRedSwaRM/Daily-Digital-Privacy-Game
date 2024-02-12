@@ -144,9 +144,13 @@ func _on_quit_no_pressed():
 	quit_panel.hide()
 
 func _on_social_media_button_pressed():
-	_play_accept()
-	current_phone_location = NavigationState.SOCIAL_MEDIA
-	social_media.show()
+	if Events.day_counter != 2:
+		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "checking_app_before_day_2")
+		await DialogueManager.dialogue_ended
+	else:
+		_play_accept()
+		current_phone_location = NavigationState.SOCIAL_MEDIA
+		social_media.show()
 
 #===============================================================================
 # MESSAGING FUNCTION

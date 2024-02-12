@@ -12,6 +12,7 @@ Cheryl: I don't have to bother my neighbour right now.
 
 ~ end_hall
 
-Cheryl: Don't want to touch grass right now.
+% Cheryl: Don't want to touch grass right now.
+% Cheryl: I'm not hungry right now.
 
 => END
