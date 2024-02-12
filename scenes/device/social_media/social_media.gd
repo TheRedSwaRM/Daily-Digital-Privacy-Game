@@ -20,6 +20,7 @@ func _ready():
 	Events.connection_change.connect(_check_for_wifi_connection)
 	Events.back_button_pressed.connect(_phone_back_button_pressed)
 	signup_screen.signup_complete.connect(login_screen.registration_successful)
+	visibility_changed.connect(_day_2_chatter_event)
 	_check_for_wifi_connection("none")
 	#Events.location_change.connect(_change_location_debug)
 
@@ -153,3 +154,10 @@ func _on_new_post_panel_send_button_pressed():
 
 func _on_new_post_panel_send_attempt_on_no_wifi():
 	anim_player.play("no_connection")
+
+func _day_2_chatter_event():
+	if visible and Events.day_counter == 2:
+		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "checking_app")
+		visibility_changed.disconnect(_day_2_chatter_event)
+	else:
+		print("Not yet Day 2")
