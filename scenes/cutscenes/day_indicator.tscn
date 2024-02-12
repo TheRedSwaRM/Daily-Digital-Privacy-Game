@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5kfk80hgj6qd"]
+
+[ext_resource type="Script" path="res://scenes/cutscenes/day_indicator.gd" id="1_kniv4"]
+[ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="1_uyogv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yhqcr"]
+font = ExtResource("1_uyogv")
+font_size = 15
+
+[node name="DayIndicator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kniv4")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -7.5
+offset_right = 33.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Day X"
+label_settings = SubResource("LabelSettings_yhqcr")
