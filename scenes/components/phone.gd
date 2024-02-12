@@ -68,8 +68,6 @@ func _ready():
 	
 	if install_app_immediately and OS.is_debug_build():
 		Events.change_game_switch("app_installed", true)
-	
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
