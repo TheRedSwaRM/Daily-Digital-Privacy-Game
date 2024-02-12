@@ -24,3 +24,10 @@ Cheryl: Alright, that's good enough for today. I'm getting tired anyway.
 % Cheryl: I'm tired. I'll open it tomorrow.
 
 => END
+
+~ initial_login_attempt
+
+% Cheryl: I don't have credentials yet.
+% Cheryl: I have to sign up first.
+
+=> END

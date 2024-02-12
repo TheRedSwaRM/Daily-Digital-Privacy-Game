@@ -156,7 +156,7 @@ func _on_social_media_button_pressed():
 # MESSAGING FUNCTION
 #===============================================================================
 
-func _on_messaging_button_pressed():
+func _on_messaging_button_presWsed():
 	_play_accept()
 	current_phone_location = NavigationState.MESSAGES
 	messaging_app.show()

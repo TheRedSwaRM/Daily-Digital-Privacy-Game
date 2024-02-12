@@ -91,6 +91,12 @@ func quit_game():
 	Events.reset_all()
 	get_tree().change_scene_to_file("res://scenes/title.tscn")
 
+func mouse_left_click(event):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		return true
+	else:
+		return false
+
 ### Force opens the phone and goes to wherever you want it to.
 #func phone_goto(function: String):
 

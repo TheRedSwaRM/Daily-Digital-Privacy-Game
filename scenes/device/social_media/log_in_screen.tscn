@@ -1,0 +1,114 @@
+[gd_scene load_steps=11 format=3 uid="uid://bhvnhn0d1k8xa"]
+
+[ext_resource type="Script" path="res://scenes/device/social_media/log_in_screen.gd" id="1_dai0e"]
+[ext_resource type="Texture2D" uid="uid://dwatwmev1y31r" path="res://assets/images/device/phone_social_media_signup.png" id="1_uuejw"]
+[ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="2_qac5e"]
+[ext_resource type="Theme" uid="uid://dm83s14cp3x27" path="res://scenes/components/social_media_login_edittext.tres" id="3_ygacl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xogta"]
+font = ExtResource("2_qac5e")
+font_size = 7
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kstui"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4yhi0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6locu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vrt2p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7kr4q"]
+font_size = 4
+
+[node name="LogIn" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 66.0
+offset_bottom = 124.0
+script = ExtResource("1_dai0e")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_uuejw")
+
+[node name="Title" type="Label" parent="."]
+offset_top = 21.0
+offset_right = 66.0
+offset_bottom = 28.0
+text = "Friender"
+label_settings = SubResource("LabelSettings_xogta")
+horizontal_alignment = 1
+
+[node name="LogInName" type="LineEdit" parent="."]
+offset_left = 3.0
+offset_top = 44.0
+offset_right = 62.0
+offset_bottom = 50.0
+theme = ExtResource("3_ygacl")
+placeholder_text = "User Name"
+max_length = 8
+editable = false
+
+[node name="LogInPassword" type="LineEdit" parent="."]
+offset_left = 3.0
+offset_top = 51.0
+offset_right = 62.0
+offset_bottom = 57.0
+theme = ExtResource("3_ygacl")
+placeholder_text = "Password"
+max_length = 13
+editable = false
+draw_control_chars = true
+secret = true
+secret_character = "*"
+
+[node name="LogInButton" type="Button" parent="."]
+offset_left = 17.0
+offset_top = 69.0
+offset_right = 47.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_fonts/font = ExtResource("2_qac5e")
+theme_override_font_sizes/font_size = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kstui")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4yhi0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6locu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vrt2p")
+text = "Log In"
+
+[node name="Title2" type="Label" parent="."]
+offset_top = 79.0
+offset_right = 66.0
+offset_bottom = 83.0
+text = "- or -"
+label_settings = SubResource("LabelSettings_7kr4q")
+horizontal_alignment = 1
+
+[node name="SignUpButton" type="Button" parent="."]
+offset_left = 17.0
+offset_top = 85.0
+offset_right = 47.0
+offset_bottom = 93.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_fonts/font = ExtResource("2_qac5e")
+theme_override_font_sizes/font_size = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kstui")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4yhi0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6locu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vrt2p")
+text = "Sign Up"
+
+[connection signal="gui_input" from="LogInName" to="." method="_on_log_in_name_gui_input"]
+[connection signal="gui_input" from="LogInPassword" to="." method="_on_log_in_password_gui_input"]
+[connection signal="pressed" from="LogInButton" to="." method="_on_log_in_button_pressed"]
+[connection signal="pressed" from="SignUpButton" to="." method="_on_sign_up_button_pressed"]

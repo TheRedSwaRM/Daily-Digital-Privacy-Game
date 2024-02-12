@@ -13,5 +13,5 @@ func _phone_back_button_pressed():
 	hide()
 
 func _on_install_button_pressed():
-	Events.change_game_switch("app_installed", true)
+	#Events.change_game_switch("app_installed", true)
 	hide()
