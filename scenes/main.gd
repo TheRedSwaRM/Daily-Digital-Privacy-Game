@@ -35,7 +35,7 @@ func _ready():
 	Events.open_blinking_eye.connect(_open_blinking_eye)
 	Events.do_full_blink.connect(_do_blink)
 	
-	if debugger_on:
+	if debugger_on and OS.is_debug_build():
 		%Debugger.show()
 	
 	#===========================================================================

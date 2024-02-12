@@ -78,7 +78,7 @@ layout_mode = 2
 
 [node name="WIFILabel" type="Label" parent="SettingsList/WIFIHorz"]
 layout_mode = 2
-text = "WI-FI "
+text = "WiFI"
 label_settings = ExtResource("5_y3mvf")
 
 [node name="WIFIButton" type="Button" parent="SettingsList/WIFIHorz"]
