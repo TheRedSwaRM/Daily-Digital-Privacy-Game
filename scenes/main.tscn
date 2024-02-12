@@ -14,8 +14,8 @@ debugger_on = true
 
 [node name="Phone" parent="." instance=ExtResource("3_4ld74")]
 visible = false
-offset_right = 1792.0
-offset_bottom = 1008.0
+offset_right = 2048.0
+offset_bottom = 1152.0
 mouse_filter = 2
 install_app_immediately = true
 

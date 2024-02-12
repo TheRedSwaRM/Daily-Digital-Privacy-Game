@@ -2,6 +2,7 @@ extends Control
 
 @onready var home_feed = $HomeFeed
 @onready var home_post_list = $HomeFeed/HomePosts/TheActualPost
+@onready var signup_screen = $SignupScreen
 
 @onready var sns_post_num: int = 0
 
@@ -15,6 +16,7 @@ func _ready():
 	Events.sns_add_post.connect(sns_add)
 	Events.connection_change.connect(_check_for_wifi_connection)
 	Events.back_button_pressed.connect(_phone_back_button_pressed)
+	signup_screen.signup_complete.connect(_signup_completed)
 	_check_for_wifi_connection("none")
 	#Events.location_change.connect(_change_location_debug)
 
@@ -24,6 +26,10 @@ func _process(_delta):
 #
 #signal connection_change(name: String)
 #signal location_change(value: bool)
+
+func _signup_completed():
+	Events.new_phone_message.emit("Friender", "Welcome to Friender!")
+	signup_screen.hide()
 
 func _check_for_wifi_connection(connection_name: String):
 	match connection_name:

@@ -1,0 +1,112 @@
+[gd_scene load_steps=10 format=3 uid="uid://dc3xdga8escv0"]
+
+[ext_resource type="Texture2D" uid="uid://dwatwmev1y31r" path="res://assets/images/device/phone_social_media_signup.png" id="1_4ow0f"]
+[ext_resource type="Script" path="res://scenes/device/social_media/signup_screen.gd" id="1_7csh5"]
+[ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="2_t765l"]
+[ext_resource type="Theme" uid="uid://dm83s14cp3x27" path="res://scenes/components/social_media_login_edittext.tres" id="3_7nppt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q45vt"]
+font = ExtResource("2_t765l")
+font_size = 7
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r53x0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o7r8y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_shy45"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_st111"]
+
+[node name="SignupScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 66.0
+offset_bottom = 124.0
+script = ExtResource("1_7csh5")
+
+[node name="SignupScreenBG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 66.0
+offset_bottom = 124.0
+texture = ExtResource("1_4ow0f")
+expand_mode = 3
+stretch_mode = 2
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_top = 21.0
+offset_right = 66.0
+offset_bottom = 28.0
+text = "Friender"
+label_settings = SubResource("LabelSettings_q45vt")
+horizontal_alignment = 1
+
+[node name="SignUpName" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 44.0
+offset_right = 62.0
+offset_bottom = 50.0
+theme = ExtResource("3_7nppt")
+placeholder_text = "Name"
+max_length = 8
+
+[node name="SignUpNumber" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 52.0
+offset_right = 62.0
+offset_bottom = 58.0
+theme = ExtResource("3_7nppt")
+text = "+639*********"
+placeholder_text = "Number"
+max_length = 14
+editable = false
+secret_character = "*"
+
+[node name="SignUpPassword" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 60.0
+offset_right = 62.0
+offset_bottom = 66.0
+theme = ExtResource("3_7nppt")
+placeholder_text = "Password"
+max_length = 13
+draw_control_chars = true
+secret = true
+secret_character = "*"
+
+[node name="SignUpButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 69.0
+offset_right = 47.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_fonts/font = ExtResource("2_t765l")
+theme_override_font_sizes/font_size = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r53x0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_o7r8y")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_shy45")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_st111")
+text = "Sign up"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 106.0
+offset_right = 64.0
+offset_bottom = 122.0
+theme_override_colors/default_color = Color(0.866667, 0.866667, 0.866667, 1)
+theme_override_constants/line_separation = 1
+theme_override_fonts/normal_font = ExtResource("2_t765l")
+theme_override_font_sizes/normal_font_size = 2
+bbcode_enabled = true
+text = "By clicking sign up, you agree to our [color=green]Terms[/color], [color=green]Privacy Policy[/color] and [color=green]cookies policy[/color]. You may receive SMS notifactions from us and can opt out at any time."
+
+[connection signal="pressed" from="SignUpButton" to="." method="_on_sign_up_button_pressed"]

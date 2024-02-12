@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dm83s14cp3x27"]
+
+[ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="1_rwgve"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0b8h"]
+content_margin_left = 2.0
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awajq"]
+content_margin_left = 2.0
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gl4e"]
+content_margin_left = 2.0
+bg_color = Color(1, 1, 1, 1)
+
+[resource]
+default_font = ExtResource("1_rwgve")
+default_font_size = 4
+LineEdit/colors/caret_color = Color(0, 0, 0, 1)
+LineEdit/colors/clear_button_color = Color(0.898039, 0.917647, 0, 1)
+LineEdit/colors/font_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_selected_color = Color(1, 1, 1, 1)
+LineEdit/colors/font_uneditable_color = Color(0, 0, 0, 0.501961)
+LineEdit/styles/focus = SubResource("StyleBoxFlat_x0b8h")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_awajq")
+LineEdit/styles/read_only = SubResource("StyleBoxFlat_2gl4e")
