@@ -36,6 +36,7 @@ signal force_phone_go_to(module: String)
 
 # Hamstrung solution to disallow any sounds for the phone.
 var phones_sounds: bool = false
+var day_counter: int = 1
 
 @onready var _game_switches = {
 	"intro": false,

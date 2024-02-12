@@ -3,7 +3,7 @@ extends Control
 
 
 const DialogueConstants = preload("../constants.gd")
-const DialogueSettings = preload("../components/settings.gd")
+const DialogueSettings = preload("../settings.gd")
 
 const OPEN_OPEN = 100
 const OPEN_CLEAR = 101
@@ -167,11 +167,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.is_pressed():
 		match event.as_text():
 			"Ctrl+Alt+S", "Command+Alt+S":
+				get_viewport().set_input_as_handled()
 				save_file(current_file_path)
 			"Ctrl+W", "Command+W":
 				get_viewport().set_input_as_handled()
 				close_file(current_file_path)
 			"Ctrl+F5", "Command+F5":
+				get_viewport().set_input_as_handled()
 				_on_test_button_pressed()
 
 
@@ -255,26 +257,29 @@ func open_file(path: String) -> void:
 
 
 func show_file_in_filesystem(path: String) -> void:
-	var file_system = editor_plugin.get_editor_interface().get_file_system_dock()
-	file_system.navigate_to_path(path)
+	var file_system_dock: FileSystemDock = Engine.get_meta("DialogueManagerPlugin") \
+		.get_editor_interface() \
+		.get_file_system_dock()
+
+	file_system_dock.navigate_to_path(path)
 
 
 # Save any open files
 func save_files() -> void:
+	save_all_button.disabled = true
+
 	var saved_files: PackedStringArray = []
 	for path in open_buffers:
 		if open_buffers[path].text != open_buffers[path].pristine_text:
 			saved_files.append(path)
-		save_file(path)
+		save_file(path, false)
 
-	# Make sure we reimport/recompile the changes
 	if saved_files.size() > 0:
-		editor_plugin.get_editor_interface().get_resource_filesystem().reimport_files(saved_files)
-	save_all_button.disabled = true
+		Engine.get_meta("DialogueCache").reimport_files(saved_files)
 
 
 # Save a file
-func save_file(path: String) -> void:
+func save_file(path: String, rescan_file_system: bool = true) -> void:
 	var buffer = open_buffers[path]
 
 	files_list.mark_file_as_unsaved(path, false)
@@ -290,6 +295,12 @@ func save_file(path: String) -> void:
 	var file: FileAccess = FileAccess.open(path, FileAccess.WRITE)
 	file.store_string(buffer.text)
 	file.close()
+
+	if rescan_file_system:
+		Engine.get_meta("DialogueManagerPlugin") \
+			.get_editor_interface() \
+			.get_resource_filesystem()\
+			.scan()
 
 
 func close_file(file: String) -> void:
@@ -538,11 +549,16 @@ func add_path_to_project_translations(path: String) -> void:
 
 # Export dialogue and responses to CSV
 func export_translations_to_csv(path: String) -> void:
+	var default_locale: String = DialogueSettings.get_setting("default_csv_locale", "en")
+
 	var file: FileAccess
 
 	# If the file exists, open it first and work out which keys are already in it
-	var existing_csv = {}
-	var commas = []
+	var existing_csv: Dictionary = {}
+	var column_count: int = 2
+	var default_locale_column: int = 1
+	var character_column: int = -1
+	var notes_column: int = -1
 	if FileAccess.file_exists(path):
 		file = FileAccess.open(path, FileAccess.READ)
 		var is_first_line = true
@@ -551,17 +567,43 @@ func export_translations_to_csv(path: String) -> void:
 			line = file.get_csv_line()
 			if is_first_line:
 				is_first_line = false
-				for i in range(2, line.size()):
-					commas.append("")
+				column_count = line.size()
+				for i in range(1, line.size()):
+					if line[i] == default_locale:
+						default_locale_column = i
+					elif line[i] == "_character":
+						character_column = i
+					elif line[i] == "_notes":
+						notes_column = i
+
 			# Make sure the line isn't empty before adding it
 			if line.size() > 0 and line[0].strip_edges() != "":
 				existing_csv[line[0]] = line
 
+		# The character column wasn't found in the existing file but the setting is turned on
+		if character_column == -1 and DialogueSettings.get_setting("include_character_in_translation_exports", false):
+			character_column = column_count
+			column_count += 1
+			existing_csv["keys"].append("_character")
+
+		# The notes column wasn't found in the existing file but the setting is turned on
+		if notes_column == -1 and DialogueSettings.get_setting("include_notes_in_translation_exports", false):
+			notes_column = column_count
+			column_count += 1
+			existing_csv["keys"].append("_notes")
+
 	# Start a new file
 	file = FileAccess.open(path, FileAccess.WRITE)
 
-	if not file.file_exists(path):
-		file.store_csv_line(["keys", DialogueSettings.get_setting("default_csv_locale", "en")])
+	if not FileAccess.file_exists(path):
+		var headings: PackedStringArray = ["keys", default_locale]
+		if DialogueSettings.get_setting("include_character_in_translation_exports", false):
+			character_column = headings.size()
+			headings.append("_character")
+		if DialogueSettings.get_setting("include_notes_in_translation_exports", false):
+			notes_column = headings.size()
+			headings.append("_notes")
+		file.store_csv_line(headings)
 
 	# Write our translations to file
 	var known_keys: PackedStringArray = []
@@ -578,13 +620,22 @@ func export_translations_to_csv(path: String) -> void:
 
 		known_keys.append(line.translation_key)
 
+		var line_to_save: PackedStringArray = []
 		if existing_csv.has(line.translation_key):
-			var existing_line = existing_csv.get(line.translation_key)
-			existing_line[1] = line.text
-			lines_to_save.append(existing_line)
+			line_to_save = existing_csv.get(line.translation_key)
+			line_to_save.resize(column_count)
 			existing_csv.erase(line.translation_key)
 		else:
-			lines_to_save.append(PackedStringArray([line.translation_key, line.text] + commas))
+			line_to_save.resize(column_count)
+			line_to_save[0] = line.translation_key
+
+		line_to_save[default_locale_column] = line.text
+		if character_column > -1:
+			line_to_save[character_column] = "(response)" if line.type == DialogueConstants.TYPE_RESPONSE else line.character
+		if notes_column > -1:
+			line_to_save[notes_column] = line.notes
+
+		lines_to_save.append(line_to_save)
 
 	# Store lines in the file, starting with anything that already exists that hasn't been touched
 	for line in existing_csv.values():
@@ -598,8 +649,7 @@ func export_translations_to_csv(path: String) -> void:
 	editor_plugin.get_editor_interface().get_file_system_dock().call_deferred("navigate_to_path", path)
 
 	# Add it to the project l10n settings if it's not already there
-	var locale: String = DialogueSettings.get_setting("default_csv_locale", "en")
-	var language_code: RegExMatch = RegEx.create_from_string("^[a-z]{2,3}").search(locale)
+	var language_code: RegExMatch = RegEx.create_from_string("^[a-z]{2,3}").search(default_locale)
 	var translation_path: String = path.replace(".csv", ".%s.translation" % language_code.get_string())
 	call_deferred("add_path_to_project_translations", translation_path)
 
@@ -912,6 +962,7 @@ func _on_search_and_replace_close_requested() -> void:
 
 
 func _on_settings_button_pressed() -> void:
+	settings_view.prepare()
 	settings_dialog.popup_centered()
 
 
@@ -921,7 +972,7 @@ func _on_settings_view_script_button_pressed(path: String) -> void:
 
 
 func _on_test_button_pressed() -> void:
-	apply_changes()
+	save_file(current_file_path)
 
 	if errors_panel.errors.size() > 0:
 		errors_dialog.popup_centered()
@@ -934,6 +985,7 @@ func _on_test_button_pressed() -> void:
 
 
 func _on_settings_dialog_confirmed() -> void:
+	settings_view.apply_settings_changes()
 	parse()
 	code_edit.wrap_mode = TextEdit.LINE_WRAPPING_BOUNDARY if DialogueSettings.get_setting("wrap_lines", false) else TextEdit.LINE_WRAPPING_NONE
 	code_edit.grab_focus()
@@ -950,6 +1002,10 @@ func _on_docs_button_pressed() -> void:
 func _on_files_list_file_popup_menu_requested(at_position: Vector2) -> void:
 	files_popup_menu.position = Vector2(get_viewport().position) + files_list.global_position + at_position
 	files_popup_menu.popup()
+
+
+func _on_files_list_file_middle_clicked(path: String):
+	close_file(path)
 
 
 func _on_files_popup_menu_about_to_popup() -> void:

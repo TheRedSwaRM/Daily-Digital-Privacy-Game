@@ -41,6 +41,7 @@ func _ready():
 	#===========================================================================
 	# Cutscenes
 	#===========================================================================
+	Events.game_switch_changed.connect(_phone_installed)
 	Events.game_switch_changed.connect(_cutscene_social_post)
 	
 	
@@ -105,10 +106,16 @@ func _change_location_debug(value: bool):
 #==============================================================================
 # Events
 #==============================================================================
+func _phone_installed(key: String, _value: bool):
+	if Events.check_game_switch(key) && key == "app_installed":
+		pass
+	
 func _cutscene_social_post(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "posted_with_location":
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/intro.dialogue"))
 		await DialogueManager.dialogue_ended
 		Events.game_switch_changed.disconnect(_cutscene_social_post)
 
+
+	
 

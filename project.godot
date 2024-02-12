@@ -17,10 +17,10 @@ config/icon="res://assets/images/bg/laptop.png"
 
 [autoload]
 
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Events="*res://scenes/autoload/events.gd"
 GameSettings="*res://scenes/autoload/gamesettings.gd"
 AudioManager="*res://scenes/autoload/audio_manager.tscn"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [dialogue_manager]
 
@@ -55,6 +55,6 @@ locale/translations_pot_files=PackedStringArray("res://assets/dialogue/sample.di
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
+renderer/rendering_method="mobile"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/main_scene="res://scenes/main.tscn"
