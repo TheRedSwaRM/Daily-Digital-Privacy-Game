@@ -1,0 +1,123 @@
+[gd_scene load_steps=11 format=3 uid="uid://d00gwn0gxvdse"]
+
+[ext_resource type="Script" path="res://scenes/device/social_media/permissions_screen.gd" id="1_1jrlj"]
+[ext_resource type="Texture2D" uid="uid://dwatwmev1y31r" path="res://assets/images/device/phone_social_media_signup.png" id="1_6qgw3"]
+[ext_resource type="FontFile" uid="uid://bmvpqkkl1evc" path="res://assets/font/ark-pixel-12px-monospaced-latin.fnt" id="3_jyqs1"]
+[ext_resource type="Theme" uid="uid://cms308t78a7rj" path="res://scenes/components/social_media_permissions_buttons.tres" id="4_cuvsx"]
+[ext_resource type="Theme" uid="uid://s47xnf1e5hrf" path="res://scenes/components/wifi_button.tres" id="5_3jyk7"]
+[ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="6_uutwp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_geaje"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wkshv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hd4de"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e3a52"]
+
+[node name="PermissionsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 66.0
+offset_bottom = 124.0
+script = ExtResource("1_1jrlj")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_6qgw3")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 12.0
+offset_right = 63.0
+offset_bottom = 24.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("3_jyqs1")
+theme_override_font_sizes/font_size = 4
+text = "To use Friender to its fullest, allow permissions for the following:"
+horizontal_alignment = 3
+autowrap_mode = 3
+
+[node name="PermList" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 30.0
+offset_right = 63.0
+offset_bottom = 103.0
+
+[node name="StoragePerm" type="CheckButton" parent="PermList"]
+layout_mode = 2
+theme = ExtResource("4_cuvsx")
+text = "Storage"
+
+[node name="CalendarPerm" type="CheckButton" parent="PermList"]
+layout_mode = 2
+theme = ExtResource("4_cuvsx")
+text = "Calendar"
+
+[node name="CallLogPerm" type="CheckButton" parent="PermList"]
+layout_mode = 2
+theme = ExtResource("4_cuvsx")
+text = "CAll Logs"
+
+[node name="CameraPerm" type="CheckButton" parent="PermList"]
+layout_mode = 2
+theme = ExtResource("4_cuvsx")
+text = "Camera"
+
+[node name="ContactPerm" type="CheckButton" parent="PermList"]
+layout_mode = 2
+theme = ExtResource("4_cuvsx")
+text = "Contacts"
+
+[node name="MicrophonePerm" type="CheckButton" parent="PermList"]
+layout_mode = 2
+theme = ExtResource("4_cuvsx")
+text = "Microphone"
+
+[node name="PhonePerm" type="CheckButton" parent="PermList"]
+layout_mode = 2
+theme = ExtResource("4_cuvsx")
+text = "Phone"
+
+[node name="ReturnButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 10.0
+offset_bottom = 10.0
+theme = ExtResource("5_3jyk7")
+text = "<"
+
+[node name="ContinueButton" type="Button" parent="."]
+visible = false
+offset_left = 17.0
+offset_top = 110.0
+offset_right = 47.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_fonts/font = ExtResource("6_uutwp")
+theme_override_font_sizes/font_size = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_geaje")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wkshv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hd4de")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e3a52")
+text = "Continue"
+
+[connection signal="pressed" from="PermList/StoragePerm" to="." method="_permission_button_pressed"]
+[connection signal="pressed" from="PermList/CalendarPerm" to="." method="_permission_button_pressed"]
+[connection signal="pressed" from="PermList/CallLogPerm" to="." method="_permission_button_pressed"]
+[connection signal="pressed" from="PermList/CameraPerm" to="." method="_permission_button_pressed"]
+[connection signal="pressed" from="PermList/ContactPerm" to="." method="_permission_button_pressed"]
+[connection signal="pressed" from="PermList/MicrophonePerm" to="." method="_permission_button_pressed"]
+[connection signal="pressed" from="PermList/PhonePerm" to="." method="_permission_button_pressed"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b2encyf73hip4"]
+[gd_scene load_steps=21 format=3 uid="uid://b2encyf73hip4"]
 
 [ext_resource type="Script" path="res://scenes/device/social_media/social_media.gd" id="1_6rg46"]
 [ext_resource type="Texture2D" uid="uid://bu8k43hl1ehm8" path="res://assets/images/device/phone_social_media.png" id="1_xk37a"]
@@ -14,6 +14,7 @@
 [ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="12_dn408"]
 [ext_resource type="PackedScene" uid="uid://dc3xdga8escv0" path="res://scenes/device/social_media/signup_screen.tscn" id="13_sy5mm"]
 [ext_resource type="PackedScene" uid="uid://bhvnhn0d1k8xa" path="res://scenes/device/social_media/log_in_screen.tscn" id="14_a6p00"]
+[ext_resource type="PackedScene" uid="uid://d00gwn0gxvdse" path="res://scenes/device/social_media/permissions_screen.tscn" id="14_a51wq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c7uk"]
 
@@ -204,6 +205,9 @@ label_settings = SubResource("LabelSettings_ngwqi")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="PermissionsScreen" parent="." instance=ExtResource("14_a51wq")]
+visible = false
+
 [node name="SignupScreen" parent="." instance=ExtResource("13_sy5mm")]
 visible = false
 
@@ -221,3 +225,8 @@ speed_scale = 2.0
 [connection signal="pressed" from="NotificationButton" to="." method="_on_notification_button_pressed"]
 [connection signal="gui_input" from="HomeFeed" to="." method="_on_home_feed_gui_input"]
 [connection signal="pressed" from="AddPostButton" to="." method="_on_add_post_button_pressed"]
+[connection signal="continue_button_pressed" from="PermissionsScreen" to="." method="_on_permissions_screen_continue_button_pressed"]
+[connection signal="return_button_pressed" from="PermissionsScreen" to="." method="_on_permissions_screen_return_button_pressed"]
+[connection signal="signup_return_button" from="SignupScreen" to="." method="_on_signup_screen_signup_return_button"]
+[connection signal="login_button_pressed" from="LogIn" to="." method="_on_log_in_login_button_pressed"]
+[connection signal="signup_button_pressed" from="LogIn" to="." method="_on_log_in_signup_button_pressed"]

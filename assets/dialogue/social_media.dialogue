@@ -31,3 +31,11 @@ Cheryl: Alright, that's good enough for today. I'm getting tired anyway.
 % Cheryl: I have to sign up first.
 
 => END
+
+~ signed_up
+
+% Cheryl: I already signed up.
+% Cheryl: I don't think I need to do that again.
+% Cheryl: Not changing my mind.
+
+=> END

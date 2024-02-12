@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/components/phone.gd" id="1_ldqut"]
 [ext_resource type="Texture2D" uid="uid://h2puqxkdjy5n" path="res://assets/images/device/phone.png" id="2_fd6mj"]
-[ext_resource type="Theme" uid="uid://dh4qbclv1q7fq" path="res://scenes/components/wifi_button_activated.tres" id="4_80elq"]
+[ext_resource type="Theme" uid="uid://cms308t78a7rj" path="res://scenes/components/social_media_permissions_buttons.tres" id="3_5n6g7"]
 [ext_resource type="Texture2D" uid="uid://w3nfv6j12y4n" path="res://assets/images/device/phone_settings_true_bg.png" id="5_dv2cq"]
 [ext_resource type="Theme" uid="uid://dinj8j20l57j3" path="res://scenes/components/phone_button.tres" id="5_u00af"]
 [ext_resource type="LabelSettings" uid="uid://nk5nj83e5ai4" path="res://scenes/components/settings_phone.tres" id="6_430b8"]
@@ -108,8 +108,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 5632.0
-offset_bottom = 3168.0
+offset_right = 6656.0
+offset_bottom = 3744.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -145,7 +145,7 @@ offset_left = 36.0
 offset_top = -1.0
 offset_right = 108.0
 offset_bottom = 10.0
-theme = ExtResource("4_80elq")
+theme = ExtResource("3_5n6g7")
 
 [node name="MainMenuButtons" type="Control" parent="PhoneContainer"]
 anchors_preset = 0

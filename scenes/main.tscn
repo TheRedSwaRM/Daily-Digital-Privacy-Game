@@ -14,8 +14,8 @@ debugger_on = true
 
 [node name="Phone" parent="." instance=ExtResource("3_4ld74")]
 visible = false
-offset_right = 4864.0
-offset_bottom = 2736.0
+offset_right = 5632.0
+offset_bottom = 3168.0
 mouse_filter = 2
 
 [node name="Debugger" type="GridContainer" parent="."]

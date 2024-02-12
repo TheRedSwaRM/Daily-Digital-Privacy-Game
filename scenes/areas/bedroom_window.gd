@@ -18,7 +18,7 @@ func _process(_delta):
 	pass
 
 func _on_pillow_input_detected():
-	if Events.check_game_switch("app_installed") and Events.day_counter == 1:
+	if Events.check_game_switch("WARNING_permissions_set") and Events.day_counter == 1:
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/sleeping_time.dialogue"), "day_1_sleep")
 	else:
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/sleeping_time.dialogue"), "still_active")

@@ -49,7 +49,8 @@ var day_counter: int = 1 :
 	"night": false,
 	"laptop_checked": false,
 	"night_intro": false,
-	"app_installed": false
+	"app_installed": false,
+	"WARNING_permissions_set": false
 }
 
 @onready var wifi_connection: String = "None" :

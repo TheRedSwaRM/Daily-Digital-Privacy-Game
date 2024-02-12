@@ -3,6 +3,8 @@ extends Control
 @onready var home_feed = $HomeFeed
 @onready var home_post_list = $HomeFeed/HomePosts/TheActualPost
 @onready var signup_screen = $SignupScreen
+@onready var login_screen = $LogIn
+@onready var permission_screen = $PermissionsScreen
 
 @onready var sns_post_num: int = 0
 
@@ -16,7 +18,7 @@ func _ready():
 	Events.sns_add_post.connect(sns_add)
 	Events.connection_change.connect(_check_for_wifi_connection)
 	Events.back_button_pressed.connect(_phone_back_button_pressed)
-	signup_screen.signup_complete.connect(_signup_completed)
+	signup_screen.signup_complete.connect(login_screen.registration_successful)
 	_check_for_wifi_connection("none")
 	#Events.location_change.connect(_change_location_debug)
 
@@ -27,10 +29,10 @@ func _process(_delta):
 #signal connection_change(name: String)
 #signal location_change(value: bool)
 
-func _signup_completed():
-	Events.new_phone_message.emit("Friender", "Welcome to Friender!")
-	Events.new_phone_message.emit("Friender", "Welcome to Friender!")
-	signup_screen.hide()
+#func _signup_completed():
+	#Events.new_phone_message.emit("Friender", "Welcome to Friender!")
+	#Events.new_phone_message.emit("Friender", "Welcome to Friender!")
+	#signup_screen.hide()
 
 func _check_for_wifi_connection(connection_name: String):
 	match connection_name:
@@ -63,7 +65,6 @@ func sns_add(username: String, sns_text: String, loc: String = "", sns_image: Te
 	
 	home_post_list.add_child(adding_post)
 
-
 func _on_add_post_button_pressed():
 	if not online:
 		anim_player.play("no_connection")
@@ -76,9 +77,6 @@ func _on_add_post_button_pressed():
 		Events.change_game_switch("posted_with_location", true)
 	else:
 		Events.sns_add_post.emit("Cheryl", "Kinda bored ngl.", "", null)
-
-func _phone_back_button_pressed():
-	hide()
 
 
 func _on_profile_button_pressed():
@@ -95,3 +93,48 @@ func _on_message_button_pressed():
 
 func _on_notification_button_pressed():
 	pass # Replace with function body.
+
+#===============================================================================
+# LOGIN SCREEN FUNCTIONS
+#===============================================================================
+
+## Only works if there is data in log-in.
+func _on_log_in_login_button_pressed():
+	permission_screen.show()
+	login_screen.hide()
+
+func _on_log_in_signup_button_pressed():
+	login_screen.hide()
+	signup_screen.show()
+
+#===============================================================================
+# SIGNUP SCREEN FUNCTIONS
+#===============================================================================
+
+func _on_signup_screen_signup_return_button():
+	login_screen.show()
+	signup_screen.hide()
+
+#===============================================================================
+# PERMISSIONS SCREEN FUNCTIONS
+#===============================================================================
+
+func _on_permissions_screen_return_button_pressed():
+	permission_screen.hide()
+	login_screen.show()
+
+
+func _on_permissions_screen_continue_button_pressed():
+	Events.change_game_switch("WARNING_permissions_set", true)
+	permission_screen.hide()
+	login_screen.hide()
+	
+	# Forcing it back to the start.
+	_phone_back_button_pressed()
+
+#===============================================================================
+# BACK PHONE FUNCTIONS
+#===============================================================================
+
+func _phone_back_button_pressed():
+	hide()

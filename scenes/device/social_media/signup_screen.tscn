@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dc3xdga8escv0"]
+[gd_scene load_steps=11 format=3 uid="uid://dc3xdga8escv0"]
 
 [ext_resource type="Texture2D" uid="uid://dwatwmev1y31r" path="res://assets/images/device/phone_social_media_signup.png" id="1_4ow0f"]
 [ext_resource type="Script" path="res://scenes/device/social_media/signup_screen.gd" id="1_7csh5"]
 [ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="2_t765l"]
 [ext_resource type="Theme" uid="uid://dm83s14cp3x27" path="res://scenes/components/social_media_login_edittext.tres" id="3_7nppt"]
+[ext_resource type="Theme" uid="uid://dinj8j20l57j3" path="res://scenes/components/phone_button.tres" id="5_yjefs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_q45vt"]
 font = ExtResource("2_t765l")
@@ -109,4 +110,15 @@ theme_override_font_sizes/normal_font_size = 2
 bbcode_enabled = true
 text = "By clicking sign up, you agree to our [color=green]Terms[/color], [color=green]Privacy Policy[/color] and [color=green]cookies policy[/color]. You may receive SMS notifactions from us and can opt out at any time."
 
+[node name="ReturnButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 10.0
+offset_bottom = 11.0
+theme = ExtResource("5_yjefs")
+theme_override_font_sizes/font_size = 6
+text = "<"
+
 [connection signal="pressed" from="SignUpButton" to="." method="_on_sign_up_button_pressed"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

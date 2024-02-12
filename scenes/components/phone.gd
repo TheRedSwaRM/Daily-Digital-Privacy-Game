@@ -144,19 +144,24 @@ func _on_quit_no_pressed():
 	quit_panel.hide()
 
 func _on_social_media_button_pressed():
-	if Events.day_counter != 2:
+	#if Events.day_counter != 2:
+		#DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "checking_app_before_day_2")
+		#await DialogueManager.dialogue_ended
+	#else:
+	if Events.check_game_switch("WARNING_permissions_set") and Events.day_counter == 1:
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "checking_app_before_day_2")
 		await DialogueManager.dialogue_ended
-	else:
-		_play_accept()
-		current_phone_location = NavigationState.SOCIAL_MEDIA
-		social_media.show()
+		return
+	
+	_play_accept()
+	current_phone_location = NavigationState.SOCIAL_MEDIA
+	social_media.show()
 
 #===============================================================================
 # MESSAGING FUNCTION
 #===============================================================================
 
-func _on_messaging_button_presWsed():
+func _on_messaging_button_pressed():
 	_play_accept()
 	current_phone_location = NavigationState.MESSAGES
 	messaging_app.show()
@@ -197,8 +202,7 @@ func _on_browser_button_pressed():
 	browser_app.show()
 
 # Detects if app should be installed.
-func _should_app_be_installed(key: String, value: bool):
-	print("called")
+func _should_app_be_installed(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "app_installed":
 		_play_accept()
 		social_media_button.show()

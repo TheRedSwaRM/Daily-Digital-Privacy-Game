@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="4_rfiyv"]
 [ext_resource type="LabelSettings" uid="uid://diwe4t6j60tts" path="res://scenes/components/social_media.tres" id="5_0b1pm"]
 [ext_resource type="LabelSettings" uid="uid://nk5nj83e5ai4" path="res://scenes/components/settings_phone.tres" id="5_y3mvf"]
-[ext_resource type="Theme" uid="uid://dh4qbclv1q7fq" path="res://scenes/components/wifi_button_activated.tres" id="6_gn40x"]
+[ext_resource type="Theme" uid="uid://cms308t78a7rj" path="res://scenes/components/social_media_permissions_buttons.tres" id="6_ktjui"]
 [ext_resource type="Texture2D" uid="uid://dtr61c0kwi83t" path="res://assets/images/device/wifi_icon.png" id="7_j0hlb"]
 [ext_resource type="Texture2D" uid="uid://ds1qvwl7vloao" path="res://assets/images/device/wifi_haspass_icon.png" id="8_3qpag"]
 [ext_resource type="PackedScene" uid="uid://vkarcqx1hknc" path="res://scenes/device/settings/wifi_button.tscn" id="8_ce46u"]
@@ -100,7 +100,7 @@ label_settings = ExtResource("5_y3mvf")
 
 [node name="LocationButton" type="CheckButton" parent="SettingsList/LocationHorz"]
 layout_mode = 2
-theme = ExtResource("6_gn40x")
+theme = ExtResource("6_ktjui")
 
 [node name="GameSettingsDiv" type="HSeparator" parent="SettingsList"]
 layout_mode = 2
@@ -117,7 +117,7 @@ label_settings = ExtResource("5_y3mvf")
 [node name="FullScreenOption" type="CheckButton" parent="SettingsList/FScreenHorz"]
 unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("6_gn40x")
+theme = ExtResource("6_ktjui")
 
 [node name="MasterVolumeLabel" type="Label" parent="SettingsList"]
 layout_mode = 2
@@ -129,7 +129,7 @@ label_settings = ExtResource("5_y3mvf")
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
-theme = ExtResource("6_gn40x")
+theme = ExtResource("6_ktjui")
 max_value = 1.0
 step = 0.01
 value = 1.0
@@ -144,7 +144,7 @@ label_settings = ExtResource("5_y3mvf")
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
-theme = ExtResource("6_gn40x")
+theme = ExtResource("6_ktjui")
 max_value = 1.0
 step = 0.01
 value = 1.0
@@ -159,7 +159,7 @@ label_settings = ExtResource("5_y3mvf")
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
-theme = ExtResource("6_gn40x")
+theme = ExtResource("6_ktjui")
 max_value = 1.0
 step = 0.01
 value = 1.0
@@ -211,7 +211,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 0
-theme = ExtResource("6_gn40x")
+theme = ExtResource("6_ktjui")
 text = "Yes"
 
 [node name="LocNoButton" type="Button" parent="LocationWarningPanel/ButtonOptions"]
@@ -219,7 +219,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 0
-theme = ExtResource("6_gn40x")
+theme = ExtResource("6_ktjui")
 text = "No"
 
 [node name="WIFIPanel" type="Panel" parent="."]

@@ -41,7 +41,7 @@ func _ready():
 	#===========================================================================
 	# Cutscenes
 	#===========================================================================
-	Events.game_switch_changed.connect(_phone_installed)
+	Events.game_switch_changed.connect(_permissions_set)
 	Events.game_switch_changed.connect(_cutscene_social_post)
 	
 	
@@ -106,11 +106,11 @@ func _change_location_debug(value: bool):
 #==============================================================================
 # Events
 #==============================================================================
-func _phone_installed(key: String, _value: bool):
-	if Events.check_game_switch(key) && key == "app_installed":
+func _permissions_set(key: String, _value: bool):
+	if Events.check_game_switch(key) && key == "WARNING_permissions_set":
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "installation")
 		await DialogueManager.dialogue_ended
-		Events.game_switch_changed.disconnect(_phone_installed)
+		Events.game_switch_changed.disconnect(_permissions_set)
 	
 func _cutscene_social_post(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "posted_with_location":

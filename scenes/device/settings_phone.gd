@@ -214,6 +214,7 @@ func _is_back_button_pressed():
 		return
 	
 	# If there are no available windows to begin with.
+	GameSettings.save_settings.emit()
 	hide()
 	
 #===============================================================================

@@ -34,6 +34,7 @@ offset_bottom = 40.0
 texture = ExtResource("1_uuejw")
 
 [node name="Title" type="Label" parent="."]
+layout_mode = 0
 offset_top = 21.0
 offset_right = 66.0
 offset_bottom = 28.0
@@ -42,6 +43,7 @@ label_settings = SubResource("LabelSettings_xogta")
 horizontal_alignment = 1
 
 [node name="LogInName" type="LineEdit" parent="."]
+layout_mode = 0
 offset_left = 3.0
 offset_top = 44.0
 offset_right = 62.0
@@ -52,6 +54,7 @@ max_length = 8
 editable = false
 
 [node name="LogInPassword" type="LineEdit" parent="."]
+layout_mode = 0
 offset_left = 3.0
 offset_top = 51.0
 offset_right = 62.0
@@ -65,6 +68,7 @@ secret = true
 secret_character = "*"
 
 [node name="LogInButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 17.0
 offset_top = 69.0
 offset_right = 47.0
@@ -83,6 +87,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_vrt2p")
 text = "Log In"
 
 [node name="Title2" type="Label" parent="."]
+layout_mode = 0
 offset_top = 79.0
 offset_right = 66.0
 offset_bottom = 83.0
@@ -91,6 +96,7 @@ label_settings = SubResource("LabelSettings_7kr4q")
 horizontal_alignment = 1
 
 [node name="SignUpButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 17.0
 offset_top = 85.0
 offset_right = 47.0
