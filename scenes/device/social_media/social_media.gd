@@ -140,6 +140,21 @@ func _on_permissions_screen_continue_button_pressed():
 #===============================================================================
 
 func _phone_back_button_pressed():
+	# First because they'll be the first ones the player will see.
+	# Login screen cannot be hidden because it is... special.
+	if signup_screen.visible:
+		_on_signup_screen_signup_return_button()
+		return
+	elif permission_screen.visible:
+		_on_permissions_screen_return_button_pressed()
+		return
+	
+	# After registration.
+	if new_post_screen.visible:
+		new_post_screen.hide()
+		return
+	
+	# If everything is not visible.
 	hide()
 
 #===============================================================================
