@@ -45,12 +45,13 @@ var day_counter: int = 1 :
 
 @onready var _game_switches = {
 	"intro": false,
-	"posted_with_location": false,
 	"night": false,
 	"laptop_checked": false,
 	"night_intro": false,
 	"app_installed": false,
-	"WARNING_permissions_set": false
+	"posted_in_sns": false,
+	"WARNING_permissions_set": false,
+	"WARNING_posted_with_location": false,
 }
 
 @onready var wifi_connection: String = "None" :

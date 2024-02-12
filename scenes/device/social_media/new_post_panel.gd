@@ -32,11 +32,12 @@ func _on_send_button_pressed():
 		# If not, continue
 		if location_button.button_pressed: # Location on.
 			Events.sns_add_post.emit(Events.social_media_username, post_text.text, Events.social_media_location, post_image.texture)
-			Events.change_game_switch("posted_with_location", true)
+			Events.change_game_switch("WARNING_posted_with_location", true)
 		else:
 			Events.sns_add_post.emit(Events.social_media_username, post_text.text, "", post_image.texture)
 		
 		# Clean up and exit.
+		Events.change_game_switch("posted_in_sns", true)
 		post_text.text = ""
 		return_button_pressed.emit()
 		return
