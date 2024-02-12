@@ -101,6 +101,7 @@ label_settings = ExtResource("5_y3mvf")
 [node name="LocationButton" type="CheckButton" parent="SettingsList/LocationHorz"]
 layout_mode = 2
 theme = ExtResource("6_ktjui")
+button_pressed = true
 
 [node name="GameSettingsDiv" type="HSeparator" parent="SettingsList"]
 layout_mode = 2

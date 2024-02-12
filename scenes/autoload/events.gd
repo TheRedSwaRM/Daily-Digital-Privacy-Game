@@ -61,12 +61,20 @@ var day_counter: int = 1 :
 		connection_change.emit(value)
 		#print("New value: " + value)
 	
-@onready var location: bool = true :
+@onready var location: bool = false :
 	get:
 		return location
 	set(value):
+		print("Current Loc Value set to " + str(value))
 		location = value
 		location_change.emit(value)
+
+#===============================================================================
+# Social Media Variables
+#===============================================================================
+
+var social_media_username: String
+var social_media_location: String = "Yakal St."
 
 func _ready():
 	pass

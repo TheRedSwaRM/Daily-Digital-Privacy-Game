@@ -1,9 +1,16 @@
-[gd_scene load_steps=19 format=3 uid="uid://bn6kc48yw0681"]
+[gd_scene load_steps=23 format=3 uid="uid://bn6kc48yw0681"]
 
 [ext_resource type="StyleBox" uid="uid://be6blfljk3ftt" path="res://scenes/components/social_media_post_panel.tres" id="1_1f72s"]
+[ext_resource type="Script" path="res://scenes/device/social_media/new_post_panel.gd" id="1_id3xn"]
 [ext_resource type="Theme" uid="uid://dinj8j20l57j3" path="res://scenes/components/phone_button.tres" id="1_rlinc"]
+[ext_resource type="Texture2D" uid="uid://dmx3vj3q0m65q" path="res://assets/images/social_media/new_post_bg.png" id="2_bf502"]
+[ext_resource type="Theme" uid="uid://b4a3rif2mhppr" path="res://scenes/components/no_scroll.tres" id="2_j64dy"]
 [ext_resource type="Texture2D" uid="uid://ba6k4rffpt7hm" path="res://assets/images/social_media/social_media_post_icon.png" id="2_vnbgy"]
-[ext_resource type="FontFile" uid="uid://bsevdm8dbo1qi" path="res://assets/font/res3x4.fnt" id="4_buwo0"]
+[ext_resource type="FontFile" uid="uid://c3d3h6meu0smj" path="res://assets/font/ark-pixel-10px-monospaced-latin.fnt" id="4_un2yn"]
+[ext_resource type="StyleBox" uid="uid://dlxatr0aeyy0e" path="res://scenes/components/new_post_panel_text_background.tres" id="5_flnwj"]
+[ext_resource type="Theme" uid="uid://s47xnf1e5hrf" path="res://scenes/components/wifi_button.tres" id="9_6k5wm"]
+[ext_resource type="Texture2D" uid="uid://cymtqqc72bn7y" path="res://assets/images/social_media/social_media_location_icon.png" id="10_wk76m"]
+[ext_resource type="Texture2D" uid="uid://cn0mvkg2wevca" path="res://assets/images/social_media/social_media_send_icon.png" id="11_dsxhp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mk28d"]
 
@@ -14,12 +21,6 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hn8ma"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s7djx"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ys12t"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5pwb"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhf4q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1xxcs"]
 
@@ -37,11 +38,14 @@ HScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_2yk7l")
 HScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_tkoa3")
 HScrollBar/styles/scroll = SubResource("StyleBoxEmpty_hn8ma")
 HScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_s7djx")
+TextEdit/colors/font_color = Color(0, 0, 0, 1)
+TextEdit/colors/font_placeholder_color = Color(0.466667, 0.466667, 0.466667, 1)
+TextEdit/constants/line_spacing = 2
 TextEdit/font_sizes/font_size = 3
-TextEdit/fonts/font = ExtResource("4_buwo0")
-TextEdit/styles/focus = SubResource("StyleBoxFlat_ys12t")
-TextEdit/styles/normal = SubResource("StyleBoxFlat_o5pwb")
-TextEdit/styles/read_only = SubResource("StyleBoxFlat_xhf4q")
+TextEdit/fonts/font = ExtResource("4_un2yn")
+TextEdit/styles/focus = ExtResource("5_flnwj")
+TextEdit/styles/normal = ExtResource("5_flnwj")
+TextEdit/styles/read_only = ExtResource("5_flnwj")
 VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_1xxcs")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_twy5i")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_eubkl")
@@ -51,33 +55,42 @@ VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_y5icc")
 [node name="NewPostPanel" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 22.0
 offset_right = 66.0
-offset_bottom = 124.0
+offset_bottom = 102.0
+script = ExtResource("1_id3xn")
 
-[node name="NewPostBG" type="ColorRect" parent="."]
+[node name="NewPostBG" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 66.0
 offset_bottom = 102.0
+texture = ExtResource("2_bf502")
 
-[node name="Panel" type="PanelContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
+offset_top = 12.0
 offset_right = 66.0
-offset_bottom = 31.0
+offset_bottom = 124.0
+theme = ExtResource("2_j64dy")
+horizontal_scroll_mode = 0
+scroll_deadzone = 6
+
+[node name="PostPanel" type="PanelContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_styles/panel = ExtResource("1_1f72s")
 
-[node name="PostContainer" type="VBoxContainer" parent="Panel"]
+[node name="PostContainer" type="VBoxContainer" parent="ScrollContainer/PostPanel"]
 custom_minimum_size = Vector2(54, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_rlinc")
 
-[node name="PsedoMargin2" type="ReferenceRect" parent="Panel/PostContainer"]
+[node name="PsedoMargin2" type="ReferenceRect" parent="ScrollContainer/PostPanel/PostContainer"]
 layout_mode = 2
 mouse_filter = 1
 
-[node name="Profile" type="Button" parent="Panel/PostContainer"]
+[node name="Profile" type="Button" parent="ScrollContainer/PostPanel/PostContainer"]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 size_flags_vertical = 0
@@ -88,7 +101,7 @@ alignment = 0
 text_overrun_behavior = 3
 clip_text = true
 
-[node name="Location" type="RichTextLabel" parent="Panel/PostContainer"]
+[node name="Location" type="RichTextLabel" parent="ScrollContainer/PostPanel/PostContainer"]
 visible = false
 custom_minimum_size = Vector2(54, 0)
 layout_mode = 2
@@ -96,24 +109,60 @@ mouse_filter = 1
 theme_override_colors/default_color = Color(0.266667, 0.266667, 0.266667, 1)
 fit_content = true
 
-[node name="PostContainer" type="VBoxContainer" parent="Panel/PostContainer"]
+[node name="PostContent" type="VBoxContainer" parent="ScrollContainer/PostPanel/PostContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="PostImage" type="TextureRect" parent="Panel/PostContainer/PostContainer"]
+[node name="PostImage" type="TextureRect" parent="ScrollContainer/PostPanel/PostContainer/PostContent"]
 visible = false
 layout_mode = 2
 
-[node name="PostText" type="TextEdit" parent="Panel/PostContainer/PostContainer"]
+[node name="PostText" type="TextEdit" parent="ScrollContainer/PostPanel/PostContainer/PostContent"]
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 mouse_filter = 1
 theme = SubResource("Theme_nugt2")
-text = "How can you have sex with the speak and spell then?"
-placeholder_text = "asd"
+placeholder_text = "What's on your mind today?"
+context_menu_enabled = false
 wrap_mode = 1
-autowrap_mode = 2
 scroll_fit_content_height = true
+caret_blink = true
 
-[node name="PsedoMargin" type="ReferenceRect" parent="Panel/PostContainer"]
+[node name="OtherButtons" type="HBoxContainer" parent="ScrollContainer/PostPanel/PostContainer"]
+layout_mode = 2
+
+[node name="LocationButton" type="Button" parent="ScrollContainer/PostPanel/PostContainer/OtherButtons"]
+layout_mode = 2
+theme = ExtResource("9_6k5wm")
+theme_override_colors/font_color = Color(0.211765, 0.807843, 0.337255, 1)
+theme_override_font_sizes/font_size = 6
+toggle_mode = true
+button_pressed = true
+icon = ExtResource("10_wk76m")
+
+[node name="SendButton" type="Button" parent="ScrollContainer/PostPanel/PostContainer/OtherButtons"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("9_6k5wm")
+theme_override_colors/font_color = Color(0.211765, 0.807843, 0.337255, 1)
+theme_override_font_sizes/font_size = 6
+icon = ExtResource("11_dsxhp")
+
+[node name="PsedoMargin" type="ReferenceRect" parent="ScrollContainer/PostPanel/PostContainer"]
 layout_mode = 2
 mouse_filter = 1
+
+[node name="ReturnButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 10.0
+offset_bottom = 10.0
+theme = ExtResource("9_6k5wm")
+theme_override_colors/font_color = Color(0.211765, 0.807843, 0.337255, 1)
+theme_override_font_sizes/font_size = 6
+text = "X"
+
+[connection signal="toggled" from="ScrollContainer/PostPanel/PostContainer/OtherButtons/LocationButton" to="." method="_on_location_button_toggled"]
+[connection signal="pressed" from="ScrollContainer/PostPanel/PostContainer/OtherButtons/SendButton" to="." method="_on_send_button_pressed"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

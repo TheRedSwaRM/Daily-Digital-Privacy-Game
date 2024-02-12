@@ -5,6 +5,7 @@ extends Control
 @onready var signup_screen = $SignupScreen
 @onready var login_screen = $LogIn
 @onready var permission_screen = $PermissionsScreen
+@onready var new_post_screen = $NewPostPanel
 
 @onready var sns_post_num: int = 0
 
@@ -66,17 +67,18 @@ func sns_add(username: String, sns_text: String, loc: String = "", sns_image: Te
 	home_post_list.add_child(adding_post)
 
 func _on_add_post_button_pressed():
-	if not online:
-		anim_player.play("no_connection")
-		AudioManager.sfx_play("res://assets/audio/sfx/error_social_media.mp3")
-		return
-	
-	AudioManager.sfx_play("res://assets/audio/sfx/sns_notif.mp3")
-	if Events.location:
-		Events.sns_add_post.emit("Cheryl", "Kinda bored ngl.", "Yakal St.", load("res://assets/images/social_media/default_image.png"))
-		Events.change_game_switch("posted_with_location", true)
-	else:
-		Events.sns_add_post.emit("Cheryl", "Kinda bored ngl.", "", null)
+	new_post_screen.show()
+	#if not online:
+		#anim_player.play("no_connection")
+		#AudioManager.sfx_play("res://assets/audio/sfx/error_social_media.mp3")
+		#return
+	#
+	#AudioManager.sfx_play("res://assets/audio/sfx/sns_notif.mp3")
+	#if Events.location:
+		#Events.sns_add_post.emit("Cheryl", "Kinda bored ngl.", "Yakal St.", load("res://assets/images/social_media/default_image.png"))
+		#Events.change_game_switch("posted_with_location", true)
+	#else:
+		#Events.sns_add_post.emit("Cheryl", "Kinda bored ngl.", "", null)
 
 
 func _on_profile_button_pressed():
@@ -138,3 +140,16 @@ func _on_permissions_screen_continue_button_pressed():
 
 func _phone_back_button_pressed():
 	hide()
+
+#===============================================================================
+# NEW POST FUNCTIONS
+#===============================================================================
+
+func _on_new_post_panel_return_button_pressed():
+	new_post_screen.hide()
+
+func _on_new_post_panel_send_button_pressed():
+	new_post_screen.hide()
+
+func _on_new_post_panel_send_attempt_on_no_wifi():
+	anim_player.play("no_connection")

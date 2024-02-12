@@ -14,8 +14,8 @@ debugger_on = true
 
 [node name="Phone" parent="." instance=ExtResource("3_4ld74")]
 visible = false
-offset_right = 5632.0
-offset_bottom = 3168.0
+offset_right = 6144.0
+offset_bottom = 3456.0
 mouse_filter = 2
 
 [node name="Debugger" type="GridContainer" parent="."]
@@ -45,7 +45,7 @@ label_settings = ExtResource("3_0g5tf")
 [node name="LocYesNo" type="Label" parent="Debugger"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "False"
+text = "True"
 label_settings = ExtResource("3_0g5tf")
 
 [node name="BlinkingEye" type="AnimatedSprite2D" parent="."]
