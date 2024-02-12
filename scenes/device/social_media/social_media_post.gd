@@ -19,8 +19,9 @@ func _ready():
 	if post_image == null:
 		image_node.hide()
 	else:
-		image_node.show()
 		image_node.texture = post_image
+		image_node.show()
+		
 	
 	if not location == "":
 		location_label.show()
@@ -32,8 +33,16 @@ func _ready():
 func _process(_delta):
 	if Engine.is_editor_hint():
 		user_name_button.text = user_name
-		image_node.texture = post_image
-		if not location_label.text == "":
+		if post_image == null:
+			image_node.texture = null
+			image_node.hide()
+		else:
+			image_node.texture = post_image
+			image_node.show()
+			
+		if location == "":
+			location_label.hide()
+		else:
 			location_label.show()
 			location_label.text = location
 		post_text_node.text = post_text

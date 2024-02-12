@@ -13,7 +13,6 @@ corner_radius_bottom_left = 4
 anti_aliasing = false
 
 [node name="SocialMediaPost" type="PanelContainer"]
-custom_minimum_size = Vector2(60, 30)
 offset_right = 60.0
 offset_bottom = 30.0
 size_flags_horizontal = 4
@@ -43,14 +42,6 @@ alignment = 0
 text_overrun_behavior = 3
 clip_text = true
 
-[node name="Location" type="RichTextLabel" parent="VBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(54, 0)
-layout_mode = 2
-mouse_filter = 1
-theme_override_colors/default_color = Color(0.266667, 0.266667, 0.266667, 1)
-fit_content = true
-
 [node name="PostContainer" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
@@ -58,11 +49,22 @@ size_flags_vertical = 4
 [node name="PostImage" type="TextureRect" parent="VBoxContainer/PostContainer"]
 visible = false
 layout_mode = 2
+expand_mode = 4
 
 [node name="PostText" type="RichTextLabel" parent="VBoxContainer/PostContainer"]
 layout_mode = 2
 mouse_filter = 1
-theme = ExtResource("2_uvcw3")
+theme_override_font_sizes/normal_font_size = 5
+fit_content = true
+
+[node name="Location" type="RichTextLabel" parent="VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(54, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.266667, 0.266667, 0.266667, 1)
+theme_override_font_sizes/normal_font_size = 3
+text = "Posted at"
 fit_content = true
 
 [node name="PsedoMargin" type="ReferenceRect" parent="VBoxContainer"]
