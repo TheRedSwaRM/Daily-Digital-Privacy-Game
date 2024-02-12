@@ -62,6 +62,7 @@ size_flags_horizontal = 4
 text = "New Game"
 
 [node name="Continue" parent="BoxContainer" instance=ExtResource("2_lg53f")]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Continue"
