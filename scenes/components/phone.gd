@@ -22,8 +22,6 @@ enum NavigationState {
 @onready var quit_panel = $PhoneContainer/QuitPanel
 @onready var main_menu_buttons = $PhoneContainer/MainMenuButtons
 
-
-
 # Phone Background
 @onready var main_menu_background = preload("res://assets/images/device/phone.png")
 @onready var settings_background = preload("res://assets/images/device/phone_settings.png")
@@ -56,6 +54,9 @@ enum NavigationState {
 			NavigationState.QUIT:
 				print("Quit")
 
+## Immediately installs the app to allow quicker debugging than usual.
+@export var install_app_immediately: bool
+
 signal flipping_phone(value)
 
 # Called when the node enters the scene tree for the first time.
@@ -64,6 +65,11 @@ func _ready():
 	Events.ring_phone.connect(_phone_ringing)
 	Events.force_phone_go_to.connect(_force_phone_goto)
 	Events.game_switch_changed.connect(_should_app_be_installed)
+	
+	if install_app_immediately and OS.is_debug_build():
+		Events.change_game_switch("app_installed", true)
+	
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -190,6 +196,7 @@ func _on_browser_button_pressed():
 
 # Detects if app should be installed.
 func _should_app_be_installed(key: String, value: bool):
+	print("called")
 	if Events.check_game_switch(key) && key == "app_installed":
 		_play_accept()
 		social_media_button.show()
