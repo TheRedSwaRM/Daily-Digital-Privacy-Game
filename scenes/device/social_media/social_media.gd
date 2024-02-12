@@ -29,6 +29,7 @@ func _process(_delta):
 
 func _signup_completed():
 	Events.new_phone_message.emit("Friender", "Welcome to Friender!")
+	Events.new_phone_message.emit("Friender", "Welcome to Friender!")
 	signup_screen.hide()
 
 func _check_for_wifi_connection(connection_name: String):
