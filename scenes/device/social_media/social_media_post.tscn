@@ -1,23 +1,16 @@
 [gd_scene load_steps=5 format=3 uid="uid://dphuneonyspf2"]
 
+[ext_resource type="StyleBox" uid="uid://do4bmqqyq8ocb" path="res://scenes/components/social_media_post.tres" id="1_n1goa"]
 [ext_resource type="Script" path="res://scenes/device/social_media/social_media_post.gd" id="1_v3lyl"]
 [ext_resource type="Theme" uid="uid://dinj8j20l57j3" path="res://scenes/components/phone_button.tres" id="2_uvcw3"]
 [ext_resource type="Texture2D" uid="uid://ba6k4rffpt7hm" path="res://assets/images/social_media/social_media_post_icon.png" id="3_6ovd0"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r81tw"]
-bg_color = Color(0.211765, 0.807843, 0.337255, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-anti_aliasing = false
 
 [node name="SocialMediaPost" type="PanelContainer"]
 offset_right = 60.0
 offset_bottom = 30.0
 size_flags_horizontal = 4
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_r81tw")
+theme_override_styles/panel = ExtResource("1_n1goa")
 script = ExtResource("1_v3lyl")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -25,7 +18,6 @@ custom_minimum_size = Vector2(54, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource("2_uvcw3")
 
 [node name="PsedoMargin2" type="ReferenceRect" parent="VBoxContainer"]
 layout_mode = 2
@@ -37,6 +29,7 @@ layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("2_uvcw3")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
 icon = ExtResource("3_6ovd0")
 alignment = 0
 text_overrun_behavior = 3
@@ -54,7 +47,8 @@ expand_mode = 4
 [node name="PostText" type="RichTextLabel" parent="VBoxContainer/PostContainer"]
 layout_mode = 2
 mouse_filter = 1
-theme_override_font_sizes/normal_font_size = 5
+theme_override_constants/line_separation = 1
+theme_override_font_sizes/normal_font_size = 4
 fit_content = true
 
 [node name="Location" type="RichTextLabel" parent="VBoxContainer"]
@@ -64,7 +58,7 @@ layout_mode = 2
 mouse_filter = 1
 theme_override_colors/default_color = Color(0.266667, 0.266667, 0.266667, 1)
 theme_override_font_sizes/normal_font_size = 3
-text = "asd"
+text = "asdasd"
 fit_content = true
 
 [node name="PsedoMargin" type="ReferenceRect" parent="VBoxContainer"]

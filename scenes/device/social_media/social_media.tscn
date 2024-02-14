@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b2encyf73hip4"]
+[gd_scene load_steps=22 format=3 uid="uid://b2encyf73hip4"]
 
 [ext_resource type="Script" path="res://scenes/device/social_media/social_media.gd" id="1_6rg46"]
 [ext_resource type="Texture2D" uid="uid://bu8k43hl1ehm8" path="res://assets/images/device/phone_social_media.png" id="1_xk37a"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b2snt3d8ls41m" path="res://assets/images/social_media/social_media_bell.png" id="6_m0a4i"]
 [ext_resource type="Texture2D" uid="uid://d0svocs860006" path="res://assets/images/social_media/social_media_add_post.png" id="9_6ch0j"]
 [ext_resource type="Theme" uid="uid://b4a3rif2mhppr" path="res://scenes/components/no_scroll.tres" id="9_nmfo4"]
+[ext_resource type="PackedScene" uid="uid://dphuneonyspf2" path="res://scenes/device/social_media/social_media_post.tscn" id="10_6e4rr"]
 [ext_resource type="PackedScene" uid="uid://bn6kc48yw0681" path="res://scenes/device/social_media/new_post_panel.tscn" id="11_f6lsx"]
 [ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="12_dn408"]
 [ext_resource type="PackedScene" uid="uid://dc3xdga8escv0" path="res://scenes/device/social_media/signup_screen.tscn" id="13_sy5mm"]
@@ -166,6 +167,10 @@ layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
 
+[node name="SocialMediaPost" parent="HomeFeed/HomePosts/TheActualPost" instance=ExtResource("10_6e4rr")]
+layout_mode = 2
+post_text = "aasdasdasd"
+
 [node name="EndMarginRect" type="ReferenceRect" parent="HomeFeed/HomePosts"]
 layout_mode = 2
 
@@ -211,6 +216,7 @@ visible = false
 visible = false
 
 [node name="LogIn" parent="." instance=ExtResource("14_a6p00")]
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
