@@ -223,6 +223,7 @@ theme = ExtResource("6_ktjui")
 text = "No"
 
 [node name="WIFIPanel" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 5.0
 offset_top = 12.0
