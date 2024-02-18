@@ -29,6 +29,8 @@ func _ready():
 		# We need this for really stupid reasons. It just works. ;-;
 		Events.new_phone_message.emit("Amelie", "[url='https://gglplay.com']Download Link[/url]")
 	
+	# Events.sns_new_notif.emit(Events.NotifType.LIKE, "gay seggs")
+	
 	AudioManager.bgm_play("res://assets/audio/bgm/room_ambience.ogg")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

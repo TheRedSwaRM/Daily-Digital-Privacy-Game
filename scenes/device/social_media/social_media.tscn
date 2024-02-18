@@ -144,6 +144,7 @@ icon_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="HomeFeed" type="ScrollContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_top = 22.0
 offset_right = 66.0
@@ -178,21 +179,21 @@ theme = ExtResource("9_nmfo4")
 horizontal_scroll_mode = 0
 scroll_deadzone = 6
 
-[node name="NotifList" type="VBoxContainer" parent="NotificationFeed"]
+[node name="NotifPosts" type="VBoxContainer" parent="NotificationFeed"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 alignment = 1
 
-[node name="StartMarginRect" type="ReferenceRect" parent="NotificationFeed/NotifList"]
+[node name="StartMarginRect" type="ReferenceRect" parent="NotificationFeed/NotifPosts"]
 layout_mode = 2
 
-[node name="Notifications" type="VBoxContainer" parent="NotificationFeed/NotifList"]
+[node name="NotifList" type="VBoxContainer" parent="NotificationFeed/NotifPosts"]
 layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
 
-[node name="EndMarginRect" type="ReferenceRect" parent="NotificationFeed/NotifList"]
+[node name="EndMarginRect" type="ReferenceRect" parent="NotificationFeed/NotifPosts"]
 layout_mode = 2
 
 [node name="AddPostButton" type="Button" parent="."]
@@ -237,7 +238,6 @@ visible = false
 visible = false
 
 [node name="LogIn" parent="." instance=ExtResource("14_a6p00")]
-visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

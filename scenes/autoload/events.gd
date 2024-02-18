@@ -1,5 +1,11 @@
 extends Node
 
+enum NotifType {
+	FOLLOW,
+	LIKE,
+	SHARE
+}
+
 ## First is path. Second if you want to blink. Third is special.
 signal change_map(path: String, can_blink: bool, special: bool)
 
@@ -7,7 +13,10 @@ signal connection_change(name: String)
 signal location_change(value: bool)
 
 # For social media posts :skull:
+
 signal sns_add_post(username: String, sns_text: String, loc: String, sns_image: Texture2D)
+## FOLLOW, LIKE, SHARE
+signal sns_new_notif(post_type: NotifType, username: String)
 signal flip_phone
 signal activate_phone
 signal deactivate_phone

@@ -4,6 +4,8 @@ extends Control
 @onready var notif_feed = $NotificationFeed
 
 @onready var home_post_list = $HomeFeed/HomePosts/TheActualPost
+@onready var notif_post_list = $NotificationFeed/NotifPosts/NotifList
+
 @onready var signup_screen = $SignupScreen
 @onready var login_screen = $LogIn
 @onready var permission_screen = $PermissionsScreen
@@ -19,6 +21,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Events.sns_add_post.connect(sns_add)
+	Events.sns_new_notif.connect(_new_notification_item)
 	Events.connection_change.connect(_check_for_wifi_connection)
 	Events.back_button_pressed.connect(_phone_back_button_pressed)
 	signup_screen.signup_complete.connect(login_screen.registration_successful)
@@ -184,4 +187,25 @@ func _day_2_chatter_event():
 	else:
 		print("Not yet Day 2")
 
+func _new_notification_item(post_type: Events.NotifType, content_string: String):
+	var new_notif_item = preload("res://scenes/device/social_media/notification_item.tscn")
+	var adding_notif_item = new_notif_item.instantiate()
+	var notif_string: String = ""
+	
+	match post_type:
+		Events.NotifType.FOLLOW:
+			notif_string = content_string + " followed you."
+		Events.NotifType.LIKE:
+			notif_string = content_string + " liked your post."
+		Events.NotifType.SHARE:
+			notif_string = content_string + " shared your post."
+	
+	adding_notif_item.notif_type = post_type
+	adding_notif_item.notif_text = notif_string
+	
+	notif_post_list.add_child(adding_notif_item)
+	
+	#match post_type:
+		#Events.NotifType.FOLLOW:
+			#
 
