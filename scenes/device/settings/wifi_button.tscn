@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://vkarcqx1hknc"]
+[gd_scene load_steps=5 format=3 uid="uid://vkarcqx1hknc"]
 
 [ext_resource type="Theme" uid="uid://s47xnf1e5hrf" path="res://scenes/components/wifi_button.tres" id="1_jntvv"]
 [ext_resource type="ButtonGroup" uid="uid://ihkh14dxgr8k" path="res://scenes/components/wifi_button_group.tres" id="2_4gem0"]
 [ext_resource type="Script" path="res://scenes/device/settings/wifi_button.gd" id="2_ry5r7"]
+[ext_resource type="Texture2D" uid="uid://dtr61c0kwi83t" path="res://assets/images/device/wifi_icon.png" id="3_uvxbe"]
 
 [node name="WiFiButton" type="Button"]
 theme = ExtResource("1_jntvv")
 toggle_mode = true
 button_group = ExtResource("2_4gem0")
+icon = ExtResource("3_uvxbe")
 alignment = 0
 icon_alignment = 2
 script = ExtResource("2_ry5r7")

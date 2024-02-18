@@ -27,7 +27,7 @@ func _ready():
 		Events.change_game_switch("intro", true)
 		
 		# We need this for really stupid reasons. It just works. ;-;
-		Events.new_phone_message.emit("Amelie", "[url='https://gglplay.com']hi[/url]")
+		Events.new_phone_message.emit("Amelie", "[url='https://gglplay.com']Download Link[/url]")
 	
 	AudioManager.bgm_play("res://assets/audio/bgm/room_ambience.ogg")
 	

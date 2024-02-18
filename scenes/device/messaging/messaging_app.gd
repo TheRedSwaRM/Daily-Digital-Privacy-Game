@@ -73,7 +73,6 @@ func new_text_message(user_name: String, starting_text: String):
 		contact_list.move_child(_find_in_contacts(user_name), 0)
 		
 func _starting_messages():
-	new_text_message("DormMngr", "The password for the month is the following:")
 	#new_text_message("DormMngr", "hellodorm")
 	new_text_message("Amelie", "Yo, bro. Just wanna do a quick heads up.")
 	new_text_message("Amelie", "There's like this new social media app. Check it out.")

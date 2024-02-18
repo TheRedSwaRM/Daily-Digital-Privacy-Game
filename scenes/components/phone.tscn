@@ -108,8 +108,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 6656.0
-offset_bottom = 3744.0
+offset_right = 6912.0
+offset_bottom = 3888.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -206,6 +206,15 @@ theme = ExtResource("5_u00af")
 icon = ExtResource("9_pu4py")
 metadata/_edit_lock_ = true
 
+[node name="MessagingApp" parent="PhoneContainer" instance=ExtResource("12_mrxmr")]
+visible = false
+layout_mode = 1
+offset_left = 39.0
+offset_top = 10.0
+offset_right = -39.0
+offset_bottom = -10.0
+metadata/_edit_lock_ = true
+
 [node name="SettingsPanel" parent="PhoneContainer" instance=ExtResource("6_ppbmc")]
 visible = false
 layout_mode = 1
@@ -268,15 +277,6 @@ texture_normal = ExtResource("11_6im80")
 metadata/_edit_lock_ = true
 
 [node name="SocialMedia" parent="PhoneContainer" instance=ExtResource("11_6o5jl")]
-visible = false
-layout_mode = 1
-offset_left = 39.0
-offset_top = 10.0
-offset_right = -39.0
-offset_bottom = -10.0
-metadata/_edit_lock_ = true
-
-[node name="MessagingApp" parent="PhoneContainer" instance=ExtResource("12_mrxmr")]
 visible = false
 layout_mode = 1
 offset_left = 39.0

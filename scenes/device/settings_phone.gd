@@ -46,9 +46,12 @@ func _ready():
 	# For WI-FIs with passwords ONLY.
 	
 	for children in %WIFIList.get_children():
+		if children.name == "DormWifi":
+			Events.new_phone_message.emit("DormMngr", children.wifi_password)
+			Events.new_phone_message.emit("DormMngr", "The password for the month is the following:")
+			
 		# Hack time. Only passwords with the following HAVE that icon!
 		children.wifi_button_pressed.connect(_wifi_button_pressed)
-		print(children.button_group)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
