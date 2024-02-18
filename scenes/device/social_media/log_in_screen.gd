@@ -32,11 +32,11 @@ func _on_sign_up_button_pressed():
 		signup_button_pressed.emit()
 
 func _on_log_in_name_gui_input(event):
-	if Events.mouse_left_click(event):
+	if Events.mouse_left_click(event) and login_name.text == "":
 		_login_deny()
 	
 func _on_log_in_password_gui_input(event):
-	if Events.mouse_left_click(event):
+	if Events.mouse_left_click(event) and login_password.text == "":
 		_login_deny()
 	
 func _login_deny():
