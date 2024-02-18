@@ -1,6 +1,8 @@
 extends Control
 
 @onready var home_feed = $HomeFeed
+@onready var notif_feed = $NotificationFeed
+
 @onready var home_post_list = $HomeFeed/HomePosts/TheActualPost
 @onready var signup_screen = $SignupScreen
 @onready var login_screen = $LogIn
@@ -51,6 +53,11 @@ func _on_home_feed_gui_input(event):
 	# For scrolling purposes.
 	if event is InputEventMouseMotion and event.button_mask > 0:
 		home_feed.scroll_vertical = home_feed.scroll_vertical - event.relative.y
+
+func _on_notification_feed_gui_input(event):
+	# For scrolling purposes.
+	if event is InputEventMouseMotion and event.button_mask > 0:
+		notif_feed.scroll_vertical = notif_feed.scroll_vertical - event.relative.y
 
 func sns_add(username: String, sns_text: String, loc: String = "", sns_image: Texture2D = null):
 	var new_post = preload("res://scenes/device/social_media/social_media_post.tscn")
@@ -176,3 +183,5 @@ func _day_2_chatter_event():
 		visibility_changed.disconnect(_day_2_chatter_event)
 	else:
 		print("Not yet Day 2")
+
+

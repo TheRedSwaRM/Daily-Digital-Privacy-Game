@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://piwng1670lgd"]
+
+[ext_resource type="StyleBox" uid="uid://c8ms74mj1q4gf" path="res://scenes/components/notification_item.tres" id="1_cudr1"]
+[ext_resource type="Script" path="res://scenes/device/social_media/notification_item.gd" id="2_o5lis"]
+[ext_resource type="Texture2D" uid="uid://nuljllgssijf" path="res://assets/images/social_media/notification_share.png" id="3_yujqe"]
+[ext_resource type="FontFile" uid="uid://c3d3h6meu0smj" path="res://assets/font/ark-pixel-10px-monospaced-latin.fnt" id="4_hrc6j"]
+
+[node name="NotificationItem" type="PanelContainer"]
+custom_minimum_size = Vector2(62, 20)
+offset_right = 62.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("1_cudr1")
+script = ExtResource("2_o5lis")
+notif_type = 2
+
+[node name="NotifItems" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="NotifIcon" type="TextureRect" parent="NotifItems"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_yujqe")
+
+[node name="NotifText" type="RichTextLabel" parent="NotifItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("4_hrc6j")
+theme_override_fonts/bold_font = ExtResource("4_hrc6j")
+theme_override_font_sizes/normal_font_size = 5
+theme_override_font_sizes/bold_font_size = 5
+fit_content = true

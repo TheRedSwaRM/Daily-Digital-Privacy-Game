@@ -107,6 +107,6 @@ func mouse_left_click(event):
 	else:
 		return false
 
-### Force opens the phone and goes to wherever you want it to.
-#func phone_goto(function: String):
-
+#===============================================================================
+# DEBUG FUNCTIONS
+#===============================================================================
