@@ -24,10 +24,11 @@ func _change_color_signal(curr_time: float):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Events.game_time = initial_hour
 	time = game_to_irl_min * min_per_hour * initial_hour
-	Events.game_time = time
 	_change_color(time)
 	Events.change_time.connect(_change_color_signal)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

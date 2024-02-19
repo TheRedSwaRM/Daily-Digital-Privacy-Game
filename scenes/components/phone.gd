@@ -25,6 +25,7 @@ enum NavigationState {
 # Phone Background
 @onready var main_menu_background = preload("res://assets/images/device/phone.png")
 @onready var settings_background = preload("res://assets/images/device/phone_settings.png")
+@onready var current_time_label = $PhoneContainer/CurrentTime
 
 # Settings
 @onready var settings_instance = $PhoneContainer/SettingsPanel
@@ -65,6 +66,9 @@ func _ready():
 	Events.ring_phone.connect(_phone_ringing)
 	Events.force_phone_go_to.connect(_force_phone_goto)
 	Events.game_switch_changed.connect(_should_app_be_installed)
+	Events.change_time.connect(_change_time)
+	
+	_change_time(Events.game_time)
 	
 	if install_app_immediately and OS.is_debug_build():
 		Events.change_game_switch("app_installed", true)
@@ -107,6 +111,24 @@ func _on_flipping_button_pressed():
 func _phone_ringing():
 	animation_player.play("ringing")
 	await animation_player.animation_finished
+
+func _change_time(current_time: float):
+	var text_hour: String = ""
+	var text_min: String = ""
+	var hour: float = floor(current_time)
+	var minutes: float = floor((current_time - hour) * 60)
+	
+	if hour < 10:
+		text_hour = "0" + str(hour)
+	else:
+		text_hour = str(hour)
+	
+	if minutes < 10:
+		text_min = "0" + str(minutes)
+	else:
+		text_min = str(minutes)
+	
+	current_time_label.text = text_hour + ":" + text_min
 
 #===============================================================================
 # SETTINGS FUNCTION

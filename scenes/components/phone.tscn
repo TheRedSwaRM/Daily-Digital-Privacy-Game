@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bijcfw81xkw7r"]
+[gd_scene load_steps=25 format=3 uid="uid://bijcfw81xkw7r"]
 
 [ext_resource type="Script" path="res://scenes/components/phone.gd" id="1_ldqut"]
 [ext_resource type="Texture2D" uid="uid://h2puqxkdjy5n" path="res://assets/images/device/phone.png" id="2_fd6mj"]
@@ -18,6 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://7aeuu7qbe1ju" path="res://scenes/device/messaging/messaging_app.tscn" id="12_mrxmr"]
 [ext_resource type="PackedScene" uid="uid://dywh83w6ca1li" path="res://scenes/device/browser/browser.tscn" id="17_wscuv"]
 [ext_resource type="PackedScene" uid="uid://dxvgj5lduuvfn" path="res://scenes/device/installer/installer.tscn" id="18_6aphd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_twhqg"]
+font_size = 10
 
 [sub_resource type="Animation" id="Animation_2cvcs"]
 length = 0.001
@@ -108,8 +111,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 6912.0
-offset_bottom = 3888.0
+offset_right = 7424.0
+offset_bottom = 4176.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -205,6 +208,17 @@ offset_bottom = 94.0
 theme = ExtResource("5_u00af")
 icon = ExtResource("9_pu4py")
 metadata/_edit_lock_ = true
+
+[node name="CurrentTime" type="Label" parent="PhoneContainer"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 25.0
+offset_right = 99.0
+offset_bottom = 41.0
+text = "12:00"
+label_settings = SubResource("LabelSettings_twhqg")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MessagingApp" parent="PhoneContainer" instance=ExtResource("12_mrxmr")]
 visible = false
