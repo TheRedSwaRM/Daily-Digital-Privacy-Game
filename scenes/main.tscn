@@ -25,7 +25,7 @@ texture = ExtResource("2_pyg8y")
 color = Color(0.90186, 0.426673, 0.663065, 1)
 script = ExtResource("2_eoguy")
 gradient_texture = ExtResource("3_mnctc")
-initial_hour = 6
+time_passes_allowed = false
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
