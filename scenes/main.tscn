@@ -1,24 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://sdp7xytwmcsi"]
+[gd_scene load_steps=8 format=3 uid="uid://sdp7xytwmcsi"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_favck"]
+[ext_resource type="Script" path="res://scenes/screen_tint.gd" id="2_eoguy"]
+[ext_resource type="Texture2D" uid="uid://dphefy5h6qh4n" path="res://assets/images/bg/hallway.png" id="2_pyg8y"]
 [ext_resource type="LabelSettings" uid="uid://diwe4t6j60tts" path="res://scenes/components/social_media.tres" id="3_0g5tf"]
 [ext_resource type="PackedScene" uid="uid://bijcfw81xkw7r" path="res://scenes/components/phone.tscn" id="3_4ld74"]
+[ext_resource type="Texture2D" uid="uid://c2o2evch7qpwb" path="res://scenes/components/daynightcycle-gradient-texture.tres" id="3_mnctc"]
 [ext_resource type="SpriteFrames" uid="uid://c5m6vqysaysk5" path="res://assets/images/animation/blinking_eye.tres" id="4_hkoyb"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_favck")
-starting_screen = "res://scenes/intro.tscn"
 debugger_on = true
+starting_screen = "res://scenes/intro.tscn"
 
 [node name="Area" type="Node2D" parent="."]
 
-[node name="Phone" parent="." instance=ExtResource("3_4ld74")]
-visible = false
-offset_right = 7168.0
-offset_bottom = 4032.0
-mouse_filter = 2
+[node name="TextureRect" type="TextureRect" parent="Area"]
+offset_left = 48.0
+offset_right = 208.0
+offset_bottom = 144.0
+texture = ExtResource("2_pyg8y")
 
-[node name="Debugger" type="GridContainer" parent="."]
+[node name="ScreenTint" type="CanvasModulate" parent="."]
+color = Color(0.90186, 0.426673, 0.663065, 1)
+script = ExtResource("2_eoguy")
+gradient_texture = ExtResource("3_mnctc")
+initial_hour = 6
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="Debugger" type="GridContainer" parent="UILayer"]
 unique_name_in_owner = true
 visible = false
 offset_right = 64.0
@@ -26,27 +37,34 @@ offset_bottom = 40.0
 mouse_filter = 2
 columns = 2
 
-[node name="ConLabel" type="Label" parent="Debugger"]
+[node name="ConLabel" type="Label" parent="UILayer/Debugger"]
 layout_mode = 2
 text = "CON:"
 label_settings = ExtResource("3_0g5tf")
 
-[node name="ConName" type="Label" parent="Debugger"]
+[node name="ConName" type="Label" parent="UILayer/Debugger"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "NONE"
 label_settings = ExtResource("3_0g5tf")
 
-[node name="LocLabel" type="Label" parent="Debugger"]
+[node name="LocLabel" type="Label" parent="UILayer/Debugger"]
 layout_mode = 2
 text = "LOC:"
 label_settings = ExtResource("3_0g5tf")
 
-[node name="LocYesNo" type="Label" parent="Debugger"]
+[node name="LocYesNo" type="Label" parent="UILayer/Debugger"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "True"
 label_settings = ExtResource("3_0g5tf")
+
+[node name="Phone" parent="UILayer" instance=ExtResource("3_4ld74")]
+unique_name_in_owner = true
+visible = false
+offset_right = 7680.0
+offset_bottom = 4320.0
+mouse_filter = 2
 
 [node name="BlinkingEye" type="AnimatedSprite2D" parent="."]
 position = Vector2(128, 72)

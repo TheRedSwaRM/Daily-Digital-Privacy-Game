@@ -41,8 +41,17 @@ signal link_pressed(link_data: String)
 
 signal force_phone_go_to(module: String)
 
+#===============================================================================
+# For Time Control
+#===============================================================================
 
-
+## Changes the time currently in float.
+signal change_time(time: float)
+var game_time: float:
+	set(value):
+		game_time = value
+		change_time.emit(game_time)
+		
 # Hamstrung solution to disallow any sounds for the phone.
 var phones_sounds: bool = false
 var day_counter: int = 1 :

@@ -1,10 +1,10 @@
 extends Node
 
-@onready var phone = $Phone
-@onready var phone_settings = $Phone/PhoneContainer/SettingsPanel		# This is not a pretty solution.
+@onready var phone = %Phone
+@onready var phone_settings = %Phone/PhoneContainer/SettingsPanel		# This is not a pretty solution.
 @onready var transition_sprite = $BlinkingEye
-@export_file var starting_screen
 @export var debugger_on: bool
+@export_file var starting_screen
 
 # Reserved for events... wait do I need it?
 @onready var event_done_1: bool = false
@@ -43,8 +43,7 @@ func _ready():
 	#===========================================================================
 	Events.game_switch_changed.connect(_permissions_set)
 	Events.game_switch_changed.connect(_cutscene_social_post)
-	
-	
+
 ## First is path. Second if you want to blink. Third is special.
 func _goto_area(path: String, can_blink: bool = true, special: bool = false):
 	if ResourceLoader.exists(path):
