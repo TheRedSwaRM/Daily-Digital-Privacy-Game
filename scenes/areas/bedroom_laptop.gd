@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 @onready var background = $Background/TextureRect
 @onready var laptop = $Laptop

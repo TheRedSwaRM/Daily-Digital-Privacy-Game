@@ -8,14 +8,7 @@
 [ext_resource type="BitMap" uid="uid://crkrt2gmajq2i" path="res://assets/images/bg/laptop_bitmask.png" id="5_2ab84"]
 [ext_resource type="BitMap" uid="uid://d35lcrm7htm1k" path="res://assets/images/bg/clock_bitmask.png" id="7_pu7o1"]
 
-[node name="BedroomLaptop" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
+[node name="BedroomLaptop" type="Node2D"]
 script = ExtResource("1_g8vdf")
 
 [node name="Background" type="Control" parent="."]
@@ -59,7 +52,6 @@ transfer_area = "res://scenes/areas/bedroom_window.tscn"
 polygon = PackedVector2Array(24, 0, 48, 0, 48, 144, 24, 144)
 
 [node name="Laptop" type="TextureButton" parent="."]
-layout_mode = 0
 offset_left = 128.0
 offset_top = 70.0
 offset_right = 167.0
@@ -68,7 +60,6 @@ texture_normal = ExtResource("3_lsp7u")
 texture_click_mask = ExtResource("5_2ab84")
 
 [node name="Clock" type="TextureButton" parent="."]
-layout_mode = 0
 offset_left = 188.0
 offset_top = 80.0
 offset_right = 208.0
