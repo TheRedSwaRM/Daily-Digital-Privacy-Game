@@ -30,7 +30,9 @@ func _process(delta):
 		_change_color(initial_hour)
 	else:
 		if time_passes_allowed: 
-			if Events.game_time > 18.0:
+			if Events.game_time > 24.0:
+				Events.game_time = 0
+			if Events.game_time < 18.0:
 				Events.game_time += delta * game_to_irl_min * game_speed
 	
 func _change_color(curr_time: float):
