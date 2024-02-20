@@ -33,6 +33,7 @@ func _ready():
 	Events.deactivate_phone.connect(_hide_phone)
 	
 	Events.open_blinking_eye.connect(_open_blinking_eye)
+	Events.close_blinking_eye.connect(_close_blinking_eye)
 	Events.do_full_blink.connect(_do_blink)
 	
 	if debugger_on and OS.is_debug_build():
@@ -84,6 +85,10 @@ func _hide_phone():
 
 func _open_blinking_eye():
 	transition_sprite.play_backwards("blinking_transition")
+	await transition_sprite.animation_finished
+
+func _close_blinking_eye():
+	transition_sprite.play("blinking_transition")
 	await transition_sprite.animation_finished
 
 func _do_blink():

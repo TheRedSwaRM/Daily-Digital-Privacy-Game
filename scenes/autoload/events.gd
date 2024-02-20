@@ -22,6 +22,7 @@ signal activate_phone
 signal deactivate_phone
 signal ring_phone
 signal open_blinking_eye
+signal close_blinking_eye
 signal do_full_blink
 
 # Game Switch Change
@@ -47,6 +48,7 @@ signal force_phone_go_to(module: String)
 
 ## Changes the time currently in float.
 signal change_time(time: float)
+signal change_time_speed(game_speed: int)
 var game_time: float:
 	set(value):
 		game_time = value
@@ -70,6 +72,7 @@ var day_counter: int = 1 :
 	"posted_in_sns": false,
 	"WARNING_permissions_set": false,
 	"WARNING_posted_with_location": false,
+	"shower_taken": false,
 }
 
 @onready var wifi_connection: String = "None" :

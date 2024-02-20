@@ -1,6 +1,16 @@
 ~ shower
 
-Cheryl: It's Saturday. I'll shower later.
+if Events.check_game_switch("shower_taken")
+	Cheryl: I've already taken a shower.
+else:
+	Take a shower?
+	- Yes
+		do Events.close_blinking_eye.emit()
+		do wait(1)
+		do Events.game_time += 2
+		do Events.change_game_switch("shower_taken", true)
+		do Events.open_blinking_eye.emit()
+	- No
 
 => END
 

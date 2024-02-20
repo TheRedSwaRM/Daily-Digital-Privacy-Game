@@ -14,6 +14,7 @@ func _ready():
 		day_label.hide()
 		await get_tree().create_timer(1).timeout
 	
+	Events.change_game_switch("shower_taken", false)
 	Events.change_map.emit("res://scenes/intro.tscn", false)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

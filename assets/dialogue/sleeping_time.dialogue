@@ -21,3 +21,16 @@ Should I sleep now?
 	=> END
 
 => END
+
+~ nap_time
+
+Take a nap?
+
+- Yes
+	do Events.close_blinking_eye.emit()
+	do wait(1)
+	do Events.game_time += 5
+	do Events.open_blinking_eye.emit()
+- No
+
+=> END
