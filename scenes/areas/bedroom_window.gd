@@ -20,6 +20,8 @@ func _process(_delta):
 func _on_pillow_input_detected():
 	if Events.game_time > 18.0:
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/sleeping_time.dialogue"), "sleepy_time")
+	elif Events.game_time < 10.0:
+		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/sleeping_time.dialogue"), "just_woke_up")
 	else:
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/sleeping_time.dialogue"), "nap_time")
 	

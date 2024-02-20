@@ -44,6 +44,11 @@ func _ready():
 	#===========================================================================
 	Events.game_switch_changed.connect(_permissions_set)
 	Events.game_switch_changed.connect(_cutscene_social_post)
+	
+	#===========================================================================
+	# Time Events
+	#===========================================================================
+	Events.time_check.connect(_cutscene_friend_message)
 
 ## First is path. Second if you want to blink. Third is special.
 func _goto_area(path: String, can_blink: bool = true, special: bool = false):
@@ -112,16 +117,32 @@ func _change_location_debug(value: bool):
 #==============================================================================
 func _permissions_set(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "WARNING_permissions_set":
+		Events.game_switch_changed.disconnect(_permissions_set)
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "installation")
 		await DialogueManager.dialogue_ended
-		Events.game_switch_changed.disconnect(_permissions_set)
+		
 	
 func _cutscene_social_post(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "posted_in_sns":
+		Events.game_switch_changed.disconnect(_cutscene_social_post)
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/intro.dialogue"))
 		await DialogueManager.dialogue_ended
-		Events.game_switch_changed.disconnect(_cutscene_social_post)
+		
 
+#==============================================================================
+# Timed Events
+#==============================================================================
 
-	
+func _cutscene_friend_message(time: float):
+	if Events.day_counter == 1 and time >= 10.0:
+		Events.time_check.disconnect(_cutscene_friend_message)
+		Events.new_phone_message.emit("Amelie", "Yo, bro. Just wanna do a quick heads up.")
+		await get_tree().create_timer(5).timeout
+		Events.new_phone_message.emit("Amelie", "There's like this new social media app. Check it out.")
+		await get_tree().create_timer(5).timeout
+		Events.new_phone_message.emit("Amelie", "The handle's @aMelee. See ya!")
+		await get_tree().create_timer(5).timeout
+		Events.new_phone_message.emit("Amelie", "[url='https://gglplay.com']Download Link[/url]")
+		
+		
 

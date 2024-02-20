@@ -2,6 +2,8 @@
 
 if Events.check_game_switch("shower_taken")
 	Cheryl: I've already taken a shower.
+elif Events.game_time > 18.0:
+	Cheryl: Not gonna take a shower this late in the night.
 else:
 	Take a shower?
 	- Yes

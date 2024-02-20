@@ -6,8 +6,6 @@ extends Control
 #--secondary: #dedcff;
 #--accent: #433bff;
 
-
-
 @onready var contact_list = $MessageContacts/ContactList
 
 # Needed to parse through for sideways signali(si)ng.
@@ -73,10 +71,8 @@ func new_text_message(user_name: String, starting_text: String):
 		contact_list.move_child(_find_in_contacts(user_name), 0)
 		
 func _starting_messages():
+	pass
 	#new_text_message("DormMngr", "hellodorm")
-	new_text_message("Amelie", "Yo, bro. Just wanna do a quick heads up.")
-	new_text_message("Amelie", "There's like this new social media app. Check it out.")
-	new_text_message("Amelie", "The handle's @aMelee. See ya!")
 	#new_text_message("Amelie", "Yo, girl. You should def try this new app I found.")
 	#new_text_message("Sean", "You free today?")
 	#new_text_message("Baster", "Rust time?")

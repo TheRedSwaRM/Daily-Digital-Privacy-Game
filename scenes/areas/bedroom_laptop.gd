@@ -26,8 +26,6 @@ func _ready():
 		await DialogueManager.dialogue_ended
 		Events.change_game_switch("intro", true)
 		
-		# We need this for really stupid reasons. It just works. ;-;
-		Events.new_phone_message.emit("Amelie", "[url='https://gglplay.com']Download Link[/url]")
 	
 	# Events.sns_new_notif.emit(Events.NotifType.LIKE, "gay seggs")
 	
@@ -55,15 +53,15 @@ func _on_laptop_pressed():
 
 
 func _on_clock_pressed():
-	match randi() % 3:
-		0:
-			Events.game_time = 5.5
-		1:
-			Events.game_time = 12
-		2:
-			Events.game_time = 17
-	print(Events.game_time)
-	#DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/room.dialogue"), "clock")
+	#match randi() % 3:
+		#0:
+			#Events.game_time = 5.5
+		#1:
+			#Events.game_time = 12
+		#2:
+			#Events.game_time = 17
+	#print(Events.game_time)
+	DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/room.dialogue"), "clock")
 
 
 
