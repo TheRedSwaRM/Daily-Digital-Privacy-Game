@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://qr1au35xdmmf"]
+[gd_scene load_steps=4 format=3 uid="uid://qr1au35xdmmf"]
 
 [ext_resource type="Theme" uid="uid://b4a3rif2mhppr" path="res://scenes/components/no_scroll.tres" id="1_y7mxj"]
 [ext_resource type="Script" path="res://scenes/device/messaging/message_user_texts.gd" id="2_a4ygr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xhav7"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
 
 [node name="MessageUserTexts" type="ScrollContainer"]
 visible = false
@@ -9,6 +15,7 @@ custom_minimum_size = Vector2(66, 114)
 offset_right = 40.0
 offset_bottom = 40.0
 theme = ExtResource("1_y7mxj")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xhav7")
 script = ExtResource("2_a4ygr")
 
 [node name="MessageTextList" type="VBoxContainer" parent="."]
