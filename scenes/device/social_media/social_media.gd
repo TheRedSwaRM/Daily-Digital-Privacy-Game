@@ -28,6 +28,9 @@ func _ready():
 	visibility_changed.connect(_day_2_chatter_event)
 	_check_for_wifi_connection("none")
 	#Events.location_change.connect(_change_location_debug)
+	
+	# initialization
+	login_screen.show()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -91,21 +94,26 @@ func _on_add_post_button_pressed():
 	#else:
 		#Events.sns_add_post.emit("Cheryl", "Kinda bored ngl.", "", null)
 
+func _hide_feeds():
+	home_feed.hide()
+	notif_feed.hide()
 
 func _on_profile_button_pressed():
-	pass # Replace with function body.
-
+	_hide_feeds()
 
 func _on_friends_button_pressed():
-	pass # Replace with function body.
-
+	_hide_feeds()
 
 func _on_message_button_pressed():
-	pass # Replace with function body.
-
+	_hide_feeds()
 
 func _on_notification_button_pressed():
-	pass # Replace with function body.
+	_hide_feeds()
+	notif_feed.show()
+
+func _on_home_button_pressed():
+	_hide_feeds()
+	home_feed.show()
 
 #===============================================================================
 # LOGIN SCREEN FUNCTIONS
@@ -208,4 +216,7 @@ func _new_notification_item(post_type: Events.NotifType, content_string: String)
 	#match post_type:
 		#Events.NotifType.FOLLOW:
 			#
+
+
+
 
