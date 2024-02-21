@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dpt17htlvkvkp"]
+
+[ext_resource type="FontFile" uid="uid://c3d3h6meu0smj" path="res://assets/font/ark-pixel-10px-monospaced-latin.fnt" id="1_hb3m4"]
+
+[resource]
+font = ExtResource("1_hb3m4")
+font_size = 5

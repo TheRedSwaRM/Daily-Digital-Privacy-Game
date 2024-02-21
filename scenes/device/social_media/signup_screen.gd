@@ -31,6 +31,7 @@ func _on_sign_up_button_pressed():
 		return
 	else:
 		Events.social_media_username = signup_name.text
+		Events.get_social_media_name.emit(signup_name.text)
 		signup_complete.emit(signup_name.text, signup_password.text)
 		signup_return_button.emit()
 	

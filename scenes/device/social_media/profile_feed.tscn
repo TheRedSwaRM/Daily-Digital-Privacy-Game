@@ -1,0 +1,116 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2jeqygg3v1kt"]
+
+[ext_resource type="Theme" uid="uid://b4a3rif2mhppr" path="res://scenes/components/no_scroll.tres" id="1_3j7fp"]
+[ext_resource type="Script" path="res://scenes/device/social_media/profile_feed.gd" id="1_pwdfu"]
+[ext_resource type="LabelSettings" uid="uid://dpt17htlvkvkp" path="res://scenes/components/social_media_label_standard.tres" id="2_eo8cd"]
+[ext_resource type="FontFile" uid="uid://c3d3h6meu0smj" path="res://assets/font/ark-pixel-10px-monospaced-latin.fnt" id="3_v7gp3"]
+[ext_resource type="Theme" uid="uid://bmm6iuawskgc5" path="res://scenes/components/social_media_button_standard.tres" id="4_lgodo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_md1n6"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.211765, 0.807843, 0.337255, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_8cxa6"]
+color = Color(1, 1, 1, 1)
+grow_begin = 0.0
+grow_end = 0.0
+
+[node name="ProfileFeed" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 66.0
+offset_bottom = 124.0
+script = ExtResource("1_pwdfu")
+
+[node name="BGColor" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 9.0
+offset_right = 66.0
+offset_bottom = 124.0
+
+[node name="ProfileScroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+offset_top = 9.0
+offset_right = 66.0
+offset_bottom = 124.0
+theme = ExtResource("1_3j7fp")
+
+[node name="ProfileContainer" type="VBoxContainer" parent="ProfileScroll"]
+custom_minimum_size = Vector2(66, 0)
+layout_mode = 2
+
+[node name="HeaderPart" type="PanelContainer" parent="ProfileScroll/ProfileContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_md1n6")
+
+[node name="HeaderContainer" type="VBoxContainer" parent="ProfileScroll/ProfileContainer/HeaderPart"]
+layout_mode = 2
+
+[node name="UserName" type="Label" parent="ProfileScroll/ProfileContainer/HeaderPart/HeaderContainer"]
+layout_mode = 2
+text = "UserName"
+label_settings = ExtResource("2_eo8cd")
+
+[node name="JoinDate" type="Label" parent="ProfileScroll/ProfileContainer/HeaderPart/HeaderContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_v7gp3")
+theme_override_font_sizes/font_size = 3
+text = "Joined Date"
+
+[node name="FollowerContainer" type="HBoxContainer" parent="ProfileScroll/ProfileContainer/HeaderPart/HeaderContainer"]
+layout_mode = 2
+
+[node name="FriendCount" type="Button" parent="ProfileScroll/ProfileContainer/HeaderPart/HeaderContainer/FollowerContainer"]
+layout_mode = 2
+theme = ExtResource("4_lgodo")
+text = "0 Friends"
+
+[node name="ProfilePosts" type="VBoxContainer" parent="ProfileScroll/ProfileContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+alignment = 1
+
+[node name="StartMarginRect" type="ReferenceRect" parent="ProfileScroll/ProfileContainer/ProfilePosts"]
+layout_mode = 2
+
+[node name="ProfilePostList" type="VBoxContainer" parent="ProfileScroll/ProfileContainer/ProfilePosts"]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="EndMarginRect" type="ReferenceRect" parent="ProfileScroll/ProfileContainer/ProfilePosts"]
+layout_mode = 2
+
+[node name="HeaderColor" type="ColorRect" parent="."]
+offset_right = 66.0
+offset_bottom = 9.0
+color = Color(0.211765, 0.807843, 0.337255, 1)
+
+[node name="UpperLayer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 62.0
+offset_bottom = 9.0
+
+[node name="ReturnButton" type="Button" parent="UpperLayer"]
+layout_mode = 2
+theme = ExtResource("4_lgodo")
+theme_override_font_sizes/font_size = 9
+text = "<"
+
+[node name="UserName" type="Label" parent="UpperLayer"]
+layout_mode = 2
+text = "UserName"
+label_settings = ExtResource("2_eo8cd")
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 66.0
+offset_bottom = 12.0
+theme_override_styles/separator = SubResource("StyleBoxLine_8cxa6")
+
+[connection signal="pressed" from="UpperLayer/ReturnButton" to="." method="_on_return_button_pressed"]

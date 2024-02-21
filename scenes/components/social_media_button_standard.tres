@@ -1,0 +1,22 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bmm6iuawskgc5"]
+
+[ext_resource type="FontFile" uid="uid://c3d3h6meu0smj" path="res://assets/font/ark-pixel-10px-monospaced-latin.fnt" id="1_ix6jw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_stoyq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xxqpe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aaj4y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4b18i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fitwe"]
+
+[resource]
+default_font = ExtResource("1_ix6jw")
+default_font_size = 3
+Button/styles/disabled = SubResource("StyleBoxEmpty_stoyq")
+Button/styles/focus = SubResource("StyleBoxEmpty_xxqpe")
+Button/styles/hover = SubResource("StyleBoxEmpty_aaj4y")
+Button/styles/normal = SubResource("StyleBoxEmpty_4b18i")
+Button/styles/pressed = SubResource("StyleBoxEmpty_fitwe")

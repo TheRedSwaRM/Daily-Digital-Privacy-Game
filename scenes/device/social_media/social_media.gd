@@ -2,6 +2,7 @@ extends Control
 
 @onready var home_feed = $HomeFeed
 @onready var notif_feed = $NotificationFeed
+@onready var profile_feed = $ProfileFeed
 
 @onready var home_post_list = $HomeFeed/HomePosts/TheActualPost
 @onready var notif_post_list = $NotificationFeed/NotifPosts/NotifList
@@ -97,9 +98,11 @@ func _on_add_post_button_pressed():
 func _hide_feeds():
 	home_feed.hide()
 	notif_feed.hide()
+	profile_feed.hide()
 
 func _on_profile_button_pressed():
 	_hide_feeds()
+	profile_feed.show()
 
 func _on_friends_button_pressed():
 	_hide_feeds()
@@ -173,6 +176,9 @@ func _phone_back_button_pressed():
 	# After registration.
 	if new_post_screen.visible:
 		new_post_screen._on_return_button_pressed()
+		return
+	if profile_feed.visible:
+		profile_feed.hide()
 		return
 	
 	# If everything is not visible.

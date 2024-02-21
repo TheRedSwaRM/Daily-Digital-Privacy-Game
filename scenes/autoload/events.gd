@@ -97,6 +97,7 @@ var day_counter: int = 1 :
 # Social Media Variables
 #===============================================================================
 
+signal get_social_media_name(user_name: String)
 var social_media_username: String
 var social_media_location: String = "Yakal St."
 

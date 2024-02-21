@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b2encyf73hip4"]
+[gd_scene load_steps=22 format=3 uid="uid://b2encyf73hip4"]
 
 [ext_resource type="Script" path="res://scenes/device/social_media/social_media.gd" id="1_6rg46"]
 [ext_resource type="Texture2D" uid="uid://bu8k43hl1ehm8" path="res://assets/images/device/phone_social_media.png" id="1_xk37a"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dc3xdga8escv0" path="res://scenes/device/social_media/signup_screen.tscn" id="13_sy5mm"]
 [ext_resource type="PackedScene" uid="uid://bhvnhn0d1k8xa" path="res://scenes/device/social_media/log_in_screen.tscn" id="14_a6p00"]
 [ext_resource type="PackedScene" uid="uid://d00gwn0gxvdse" path="res://scenes/device/social_media/permissions_screen.tscn" id="14_a51wq"]
+[ext_resource type="PackedScene" uid="uid://c2jeqygg3v1kt" path="res://scenes/device/social_media/profile_feed.tscn" id="16_4k71l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c7uk"]
 
@@ -198,6 +199,11 @@ alignment = 1
 
 [node name="EndMarginRect" type="ReferenceRect" parent="NotificationFeed/NotifPosts"]
 layout_mode = 2
+
+[node name="ProfileFeed" parent="." instance=ExtResource("16_4k71l")]
+visible = false
+layout_mode = 1
+is_user = true
 
 [node name="AddPostButton" type="Button" parent="."]
 layout_mode = 0
