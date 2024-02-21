@@ -72,6 +72,7 @@ var day_counter: int = 1 :
 	"night_intro": false,
 	"app_installed": false,
 	"posted_in_sns": false,
+	"signup_complete": false,
 	"WARNING_permissions_set": false,
 	"WARNING_posted_with_location": false,
 	"shower_taken": false,

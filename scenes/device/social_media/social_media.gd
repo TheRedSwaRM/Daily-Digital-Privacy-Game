@@ -146,8 +146,10 @@ func _on_permissions_screen_return_button_pressed():
 	login_screen.show()
 
 
-func _on_permissions_screen_continue_button_pressed():
-	Events.change_game_switch("WARNING_permissions_set", true)
+func _on_permissions_screen_continue_button_pressed(value: bool):
+	if value:
+		Events.change_game_switch("WARNING_permissions_set", true)
+	Events.change_game_switch("signup_complete", true)
 	permission_screen.hide()
 	login_screen.hide()
 	

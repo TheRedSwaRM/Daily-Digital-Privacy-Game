@@ -106,6 +106,14 @@ func _do_blink():
 #==============================================================================
 # Debugger function
 #==============================================================================
+
+func _unhandled_input(_event):
+	# Prints the game switches
+	if Input.is_action_just_pressed("debug_key"):
+		print(Events._game_switches)
+		print("Connection: " + %ConName.text)
+		print("Loccation: " + %LocYesNo.text)
+
 func _change_connection_debug(connection: String):
 	%ConName.text = connection
 	
@@ -116,7 +124,7 @@ func _change_location_debug(value: bool):
 # Events
 #==============================================================================
 func _permissions_set(key: String, _value: bool):
-	if Events.check_game_switch(key) && key == "WARNING_permissions_set":
+	if Events.check_game_switch(key) && key == "signup_complete":
 		Events.game_switch_changed.disconnect(_permissions_set)
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "installation")
 		await DialogueManager.dialogue_ended

@@ -10,7 +10,6 @@
 
 [node name="Main" type="Node"]
 script = ExtResource("1_favck")
-debugger_on = true
 starting_screen = "res://scenes/intro.tscn"
 
 [node name="Area" type="Node2D" parent="."]
@@ -62,8 +61,8 @@ label_settings = ExtResource("3_0g5tf")
 [node name="Phone" parent="UILayer" instance=ExtResource("3_4ld74")]
 unique_name_in_owner = true
 visible = false
-offset_right = 9216.0
-offset_bottom = 5184.0
+offset_right = 9472.0
+offset_bottom = 5328.0
 mouse_filter = 2
 
 [node name="BlinkingEye" type="AnimatedSprite2D" parent="."]

@@ -95,6 +95,7 @@ text = "<"
 
 [node name="ContinueButton" type="Button" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 17.0
 offset_top = 110.0
 offset_right = 47.0
@@ -112,12 +113,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_hd4de")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_e3a52")
 text = "Continue"
 
-[connection signal="pressed" from="PermList/StoragePerm" to="." method="_permission_button_pressed"]
-[connection signal="pressed" from="PermList/CalendarPerm" to="." method="_permission_button_pressed"]
-[connection signal="pressed" from="PermList/CallLogPerm" to="." method="_permission_button_pressed"]
-[connection signal="pressed" from="PermList/CameraPerm" to="." method="_permission_button_pressed"]
-[connection signal="pressed" from="PermList/ContactPerm" to="." method="_permission_button_pressed"]
-[connection signal="pressed" from="PermList/MicrophonePerm" to="." method="_permission_button_pressed"]
-[connection signal="pressed" from="PermList/PhonePerm" to="." method="_permission_button_pressed"]
+[connection signal="toggled" from="PermList/PhonePerm" to="." method="_permission_button_pressed"]
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
 [connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]
