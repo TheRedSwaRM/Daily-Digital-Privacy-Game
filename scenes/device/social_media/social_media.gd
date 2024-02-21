@@ -122,8 +122,19 @@ func _on_home_button_pressed():
 
 ## Only works if there is data in log-in.
 func _on_log_in_login_button_pressed():
-	permission_screen.show()
+	# Originally there was a permission screen... but we're trying to make it
+	# like it's nothing IMPORTANT.
+	# permission_screen.show()
+	
+	# The act of even doing the app is already a problem. Will add an option
+	# that the player can actually read whatever the hell the privacy stuff are
+	# that is set by the app.
+	Events.change_game_switch("WARNING_permissions_set", true)
+	Events.change_game_switch("signup_complete", true)
 	login_screen.hide()
+	
+	# Forcing phone back.
+	_phone_back_button_pressed()
 
 func _on_log_in_signup_button_pressed():
 	login_screen.hide()
@@ -138,7 +149,7 @@ func _on_signup_screen_signup_return_button():
 	signup_screen.hide()
 
 #===============================================================================
-# PERMISSIONS SCREEN FUNCTIONS
+# PERMISSIONS SCREEN FUNCTIONS !OBSOLETE
 #===============================================================================
 
 func _on_permissions_screen_return_button_pressed():

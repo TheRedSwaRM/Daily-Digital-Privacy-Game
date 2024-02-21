@@ -73,9 +73,11 @@ var day_counter: int = 1 :
 	"app_installed": false,
 	"posted_in_sns": false,
 	"signup_complete": false,
+	"shower_taken": false,
+	
+	# Data Privacy Violations
 	"WARNING_permissions_set": false,
 	"WARNING_posted_with_location": false,
-	"shower_taken": false,
 }
 
 @onready var wifi_connection: String = "None" :
