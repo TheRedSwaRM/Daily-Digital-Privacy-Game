@@ -1,5 +1,7 @@
 extends Control
 
+signal back_button_pressed
+
 @onready var header_user_name_label = $UpperLayer/UserName
 @onready var user_name_label = $ProfileScroll/ProfileContainer/HeaderPart/HeaderContainer/UserName
 @onready var join_date_label = $ProfileScroll/ProfileContainer/HeaderPart/HeaderContainer/JoinDate
@@ -43,4 +45,4 @@ func _change_player_username(username: String):
 	join_date_label.text = "Joined " + Time.get_date_string_from_system()
 
 func _on_return_button_pressed():
-	hide()
+	back_button_pressed.emit()

@@ -98,17 +98,15 @@ func _on_add_post_button_pressed():
 func _hide_feeds():
 	home_feed.hide()
 	notif_feed.hide()
-	profile_feed.hide()
 
 func _on_profile_button_pressed():
-	_hide_feeds()
 	profile_feed.show()
 
 func _on_friends_button_pressed():
-	_hide_feeds()
+	pass
 
 func _on_message_button_pressed():
-	_hide_feeds()
+	pass
 
 func _on_notification_button_pressed():
 	_hide_feeds()
@@ -178,15 +176,21 @@ func _phone_back_button_pressed():
 		new_post_screen._on_return_button_pressed()
 		return
 	if profile_feed.visible:
-		profile_feed.hide()
+		_on_profile_feed_back_button_pressed()
 		return
 	
 	# If everything is not visible.
 	hide()
 
+func _on_profile_feed_back_button_pressed():
+	profile_feed.hide()
+
 #===============================================================================
 # NEW POST FUNCTIONS
 #===============================================================================
+
+func _on_new_post_panel_return_button_pressed():
+	_on_home_button_pressed()
 
 func _on_new_post_panel_send_button_pressed():
 	new_post_screen.hide()
@@ -222,7 +226,5 @@ func _new_notification_item(post_type: Events.NotifType, content_string: String)
 	#match post_type:
 		#Events.NotifType.FOLLOW:
 			#
-
-
 
 

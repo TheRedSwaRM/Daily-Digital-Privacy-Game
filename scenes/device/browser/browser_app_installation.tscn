@@ -36,7 +36,7 @@ offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m2aqq")
-link_name = "https://gglplay.com"
+link_name = "www.gglplay.com"
 tab_name = "Friender | Googol"
 thumbnail = "res://assets/images/browser/thumbnails/frndster.png"
 

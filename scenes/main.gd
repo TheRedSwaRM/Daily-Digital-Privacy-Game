@@ -137,12 +137,12 @@ func _cutscene_friend_message(time: float):
 	if Events.day_counter == 1 and time >= 10.0:
 		Events.time_check.disconnect(_cutscene_friend_message)
 		Events.new_phone_message.emit("Amelie", "Yo, bro. Just wanna do a quick heads up.")
-		await get_tree().create_timer(5).timeout
+		await get_tree().create_timer(2).timeout
 		Events.new_phone_message.emit("Amelie", "There's like this new social media app. Check it out.")
-		await get_tree().create_timer(5).timeout
+		await get_tree().create_timer(2).timeout
 		Events.new_phone_message.emit("Amelie", "The handle's @aMelee. See ya!")
-		await get_tree().create_timer(5).timeout
-		Events.new_phone_message.emit("Amelie", "[url='https://gglplay.com']Download Link[/url]")
+		await get_tree().create_timer(2).timeout
+		Events.new_phone_message.emit("Amelie", "[url='www.gglplay.com']Download Link[/url]")
 		
 		
 
