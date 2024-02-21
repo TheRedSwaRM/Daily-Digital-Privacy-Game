@@ -168,5 +168,6 @@ text = "  Install  "
 [node name="NoWifi" parent="." instance=ExtResource("10_aep8m")]
 visible = false
 layout_mode = 0
+mouse_filter = 0
 
 [connection signal="pressed" from="InstallButton" to="." method="_on_install_button_pressed"]
