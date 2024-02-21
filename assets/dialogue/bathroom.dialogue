@@ -9,7 +9,7 @@ else:
 	- Yes
 		do Events.close_blinking_eye.emit()
 		do wait(1)
-		do Events.game_time += 2
+		do Events.game_time += 4
 		do Events.change_game_switch("shower_taken", true)
 		do Events.open_blinking_eye.emit()
 	- No

@@ -1,15 +1,15 @@
-[gd_scene load_steps=23 format=3 uid="uid://bn6kc48yw0681"]
+[gd_scene load_steps=25 format=3 uid="uid://bn6kc48yw0681"]
 
 [ext_resource type="StyleBox" uid="uid://be6blfljk3ftt" path="res://scenes/components/social_media_post_panel.tres" id="1_1f72s"]
 [ext_resource type="Script" path="res://scenes/device/social_media/new_post_panel.gd" id="1_id3xn"]
 [ext_resource type="Theme" uid="uid://dinj8j20l57j3" path="res://scenes/components/phone_button.tres" id="1_rlinc"]
 [ext_resource type="Texture2D" uid="uid://dmx3vj3q0m65q" path="res://assets/images/social_media/new_post_bg.png" id="2_bf502"]
 [ext_resource type="Theme" uid="uid://b4a3rif2mhppr" path="res://scenes/components/no_scroll.tres" id="2_j64dy"]
-[ext_resource type="Texture2D" uid="uid://ba6k4rffpt7hm" path="res://assets/images/social_media/social_media_post_icon.png" id="2_vnbgy"]
 [ext_resource type="FontFile" uid="uid://c3d3h6meu0smj" path="res://assets/font/ark-pixel-10px-monospaced-latin.fnt" id="4_un2yn"]
 [ext_resource type="StyleBox" uid="uid://dlxatr0aeyy0e" path="res://scenes/components/new_post_panel_text_background.tres" id="5_flnwj"]
 [ext_resource type="Theme" uid="uid://s47xnf1e5hrf" path="res://scenes/components/wifi_button.tres" id="9_6k5wm"]
 [ext_resource type="Texture2D" uid="uid://cymtqqc72bn7y" path="res://assets/images/social_media/social_media_location_icon.png" id="10_wk76m"]
+[ext_resource type="Theme" uid="uid://cknogwwilrw44" path="res://scenes/components/new_post_button.tres" id="11_bvy2u"]
 [ext_resource type="Texture2D" uid="uid://cn0mvkg2wevca" path="res://assets/images/social_media/social_media_send_icon.png" id="11_dsxhp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mk28d"]
@@ -52,6 +52,13 @@ VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_eubkl")
 VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_73hj1")
 VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_y5icc")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xyajd"]
+content_margin_left = 3.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ob0uv"]
+font = ExtResource("4_un2yn")
+font_size = 5
+
 [node name="NewPostPanel" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -65,43 +72,46 @@ offset_right = 66.0
 offset_bottom = 102.0
 texture = ExtResource("2_bf502")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="PostScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
+offset_left = 2.0
 offset_top = 12.0
-offset_right = 66.0
+offset_right = 64.0
 offset_bottom = 124.0
 theme = ExtResource("2_j64dy")
 horizontal_scroll_mode = 0
 scroll_deadzone = 6
 
-[node name="PostPanel" type="PanelContainer" parent="ScrollContainer"]
+[node name="PostPanel" type="PanelContainer" parent="PostScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = ExtResource("1_1f72s")
 
-[node name="PostContainer" type="VBoxContainer" parent="ScrollContainer/PostPanel"]
+[node name="PostContainer" type="VBoxContainer" parent="PostScrollContainer/PostPanel"]
 custom_minimum_size = Vector2(54, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_rlinc")
 
-[node name="PsedoMargin2" type="ReferenceRect" parent="ScrollContainer/PostPanel/PostContainer"]
+[node name="PsedoMargin2" type="ReferenceRect" parent="PostScrollContainer/PostPanel/PostContainer"]
+visible = false
 layout_mode = 2
 mouse_filter = 1
 
-[node name="Profile" type="Button" parent="ScrollContainer/PostPanel/PostContainer"]
-custom_minimum_size = Vector2(30, 0)
+[node name="DraftsButton" type="Button" parent="PostScrollContainer/PostPanel/PostContainer"]
+custom_minimum_size = Vector2(14, 0)
 layout_mode = 2
+size_flags_horizontal = 8
 size_flags_vertical = 0
-theme = ExtResource("1_rlinc")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-icon = ExtResource("2_vnbgy")
-alignment = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 4
+text = "Drafts"
+alignment = 2
 text_overrun_behavior = 3
 clip_text = true
 
-[node name="Location" type="RichTextLabel" parent="ScrollContainer/PostPanel/PostContainer"]
+[node name="Location" type="RichTextLabel" parent="PostScrollContainer/PostPanel/PostContainer"]
 visible = false
 custom_minimum_size = Vector2(54, 0)
 layout_mode = 2
@@ -109,15 +119,15 @@ mouse_filter = 1
 theme_override_colors/default_color = Color(0.266667, 0.266667, 0.266667, 1)
 fit_content = true
 
-[node name="PostContent" type="VBoxContainer" parent="ScrollContainer/PostPanel/PostContainer"]
+[node name="PostContent" type="VBoxContainer" parent="PostScrollContainer/PostPanel/PostContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="PostImage" type="TextureRect" parent="ScrollContainer/PostPanel/PostContainer/PostContent"]
+[node name="PostImage" type="TextureRect" parent="PostScrollContainer/PostPanel/PostContainer/PostContent"]
 visible = false
 layout_mode = 2
 
-[node name="PostText" type="TextEdit" parent="ScrollContainer/PostPanel/PostContainer/PostContent"]
+[node name="PostText" type="TextEdit" parent="PostScrollContainer/PostPanel/PostContainer/PostContent"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 mouse_filter = 1
@@ -128,10 +138,10 @@ wrap_mode = 1
 scroll_fit_content_height = true
 caret_blink = true
 
-[node name="OtherButtons" type="HBoxContainer" parent="ScrollContainer/PostPanel/PostContainer"]
+[node name="OtherButtons" type="HBoxContainer" parent="PostScrollContainer/PostPanel/PostContainer"]
 layout_mode = 2
 
-[node name="LocationButton" type="Button" parent="ScrollContainer/PostPanel/PostContainer/OtherButtons"]
+[node name="LocationButton" type="Button" parent="PostScrollContainer/PostPanel/PostContainer/OtherButtons"]
 layout_mode = 2
 theme = ExtResource("9_6k5wm")
 theme_override_colors/font_color = Color(0.211765, 0.807843, 0.337255, 1)
@@ -140,7 +150,7 @@ toggle_mode = true
 button_pressed = true
 icon = ExtResource("10_wk76m")
 
-[node name="SendButton" type="Button" parent="ScrollContainer/PostPanel/PostContainer/OtherButtons"]
+[node name="SendButton" type="Button" parent="PostScrollContainer/PostPanel/PostContainer/OtherButtons"]
 layout_mode = 2
 size_flags_horizontal = 10
 theme = ExtResource("9_6k5wm")
@@ -148,9 +158,65 @@ theme_override_colors/font_color = Color(0.211765, 0.807843, 0.337255, 1)
 theme_override_font_sizes/font_size = 6
 icon = ExtResource("11_dsxhp")
 
-[node name="PsedoMargin" type="ReferenceRect" parent="ScrollContainer/PostPanel/PostContainer"]
+[node name="PsedoMargin" type="ReferenceRect" parent="PostScrollContainer/PostPanel/PostContainer"]
+visible = false
 layout_mode = 2
 mouse_filter = 1
+
+[node name="DraftsScrollContainer" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 12.0
+offset_right = 64.0
+offset_bottom = 124.0
+theme = ExtResource("2_j64dy")
+horizontal_scroll_mode = 0
+
+[node name="DraftsPanel" type="PanelContainer" parent="DraftsScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("1_1f72s")
+
+[node name="DraftsList" type="VBoxContainer" parent="DraftsScrollContainer/DraftsPanel"]
+layout_mode = 2
+theme = ExtResource("11_bvy2u")
+
+[node name="DraftsLabel" type="Label" parent="DraftsScrollContainer/DraftsPanel/DraftsList"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xyajd")
+text = "Drafts"
+label_settings = SubResource("LabelSettings_ob0uv")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DraftsScrollContainer/DraftsPanel/DraftsList"]
+layout_mode = 2
+text = "Hello, Friender!! {Insert username} is here!!!!"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="DraftsScrollContainer/DraftsPanel/DraftsList"]
+layout_mode = 2
+text = "Kinda bored, ngl, anyone know what to do around my area?"
+fit_content = true
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="DraftsScrollContainer/DraftsPanel/DraftsList"]
+layout_mode = 2
+text = "Just dipped my toes into the digital abyss. Let's see where this rabbit hole leads. #NewbieAlert"
+fit_content = true
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="DraftsScrollContainer/DraftsPanel/DraftsList"]
+layout_mode = 2
+text = "Vacation time! Got nothing to do in my dorm for two weeks! Can't wait to relax and unwind."
+fit_content = true
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="DraftsScrollContainer/DraftsPanel/DraftsList"]
+layout_mode = 2
+text = "Just downloaded this new app and it asked for access to my contacts, location, and camera... Should I be worried? #PrivacyConcerns"
+fit_content = true
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="DraftsScrollContainer/DraftsPanel/DraftsList"]
+layout_mode = 2
+text = "Sharing my current location on this app because why not? Who doesn't want to know where I am at all times?"
+fit_content = true
 
 [node name="ReturnButton" type="Button" parent="."]
 layout_mode = 0
@@ -164,6 +230,13 @@ theme_override_colors/font_hover_color = Color(0.211765, 0.807843, 0.337255, 1)
 theme_override_font_sizes/font_size = 6
 text = "X"
 
-[connection signal="toggled" from="ScrollContainer/PostPanel/PostContainer/OtherButtons/LocationButton" to="." method="_on_location_button_toggled"]
-[connection signal="pressed" from="ScrollContainer/PostPanel/PostContainer/OtherButtons/SendButton" to="." method="_on_send_button_pressed"]
+[connection signal="pressed" from="PostScrollContainer/PostPanel/PostContainer/DraftsButton" to="." method="_on_drafts_button_pressed"]
+[connection signal="toggled" from="PostScrollContainer/PostPanel/PostContainer/OtherButtons/LocationButton" to="." method="_on_location_button_toggled"]
+[connection signal="pressed" from="PostScrollContainer/PostPanel/PostContainer/OtherButtons/SendButton" to="." method="_on_send_button_pressed"]
+[connection signal="gui_input" from="DraftsScrollContainer/DraftsPanel/DraftsList/RichTextLabel" to="." method="_on_rich_text_label_gui_input"]
+[connection signal="gui_input" from="DraftsScrollContainer/DraftsPanel/DraftsList/RichTextLabel2" to="." method="_on_rich_text_label_2_gui_input"]
+[connection signal="gui_input" from="DraftsScrollContainer/DraftsPanel/DraftsList/RichTextLabel3" to="." method="_on_rich_text_label_3_gui_input"]
+[connection signal="gui_input" from="DraftsScrollContainer/DraftsPanel/DraftsList/RichTextLabel4" to="." method="_on_rich_text_label_4_gui_input"]
+[connection signal="gui_input" from="DraftsScrollContainer/DraftsPanel/DraftsList/RichTextLabel5" to="." method="_on_rich_text_label_5_gui_input"]
+[connection signal="gui_input" from="DraftsScrollContainer/DraftsPanel/DraftsList/RichTextLabel6" to="." method="_on_rich_text_label_6_gui_input"]
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

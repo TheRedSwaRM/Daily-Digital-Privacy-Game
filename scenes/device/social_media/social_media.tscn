@@ -252,7 +252,6 @@ speed_scale = 2.0
 [connection signal="gui_input" from="HomeFeed" to="." method="_on_home_feed_gui_input"]
 [connection signal="gui_input" from="NotificationFeed" to="." method="_on_notification_feed_gui_input"]
 [connection signal="pressed" from="AddPostButton" to="." method="_on_add_post_button_pressed"]
-[connection signal="return_button_pressed" from="NewPostPanel" to="." method="_on_new_post_panel_return_button_pressed"]
 [connection signal="send_attempt_on_no_wifi" from="NewPostPanel" to="." method="_on_new_post_panel_send_attempt_on_no_wifi"]
 [connection signal="send_button_pressed" from="NewPostPanel" to="." method="_on_new_post_panel_send_button_pressed"]
 [connection signal="continue_button_pressed" from="PermissionsScreen" to="." method="_on_permissions_screen_continue_button_pressed"]

@@ -150,6 +150,9 @@ func _on_permissions_screen_continue_button_pressed():
 #===============================================================================
 
 func _phone_back_button_pressed():
+	if not visible:
+		print("Social Media already not visible.")
+		return
 	# First because they'll be the first ones the player will see.
 	# Login screen cannot be hidden because it is... special.
 	if signup_screen.visible:
@@ -161,7 +164,7 @@ func _phone_back_button_pressed():
 	
 	# After registration.
 	if new_post_screen.visible:
-		_on_new_post_panel_return_button_pressed()
+		new_post_screen._on_return_button_pressed()
 		return
 	
 	# If everything is not visible.
@@ -170,9 +173,6 @@ func _phone_back_button_pressed():
 #===============================================================================
 # NEW POST FUNCTIONS
 #===============================================================================
-
-func _on_new_post_panel_return_button_pressed():
-	new_post_screen.hide()
 
 func _on_new_post_panel_send_button_pressed():
 	new_post_screen.hide()
