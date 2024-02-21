@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://b8vyfbty7kmsn"]
 
-[ext_resource type="Script" path="res://scenes/cutscenes/fricked_up.gd" id="1_agjye"]
+[ext_resource type="Script" path="res://scenes/cutscenes/peaceful_night.gd" id="1_njrja"]
 [ext_resource type="Texture2D" uid="uid://dmc1qxhg7spsg" path="res://assets/images/bg/room2_night.png" id="2_t1ei7"]
 [ext_resource type="Texture2D" uid="uid://md0j0h5b0dye" path="res://assets/images/bg/room1_night.png" id="2_wb471"]
 [ext_resource type="Texture2D" uid="uid://b43kg1568otan" path="res://assets/images/bg/laptop_night.png" id="3_3ys2l"]
@@ -99,7 +99,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_agjye")
+script = ExtResource("1_njrja")
 skip_animation = true
 
 [node name="ColorRect" type="ColorRect" parent="."]

@@ -42,7 +42,7 @@ collision_polygon = NodePath("CollisionPolygon2D")
 cursor_look = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DoorLeftInteract"]
-polygon = PackedVector2Array(62, 40, 70, 43, 70, 112, 62, 120)
+polygon = PackedVector2Array(57, 41, 69, 46, 70, 112, 57, 124)
 
 [node name="DoorRightInteract" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("3_6nv3q")]
 position = Vector2(58, 5)

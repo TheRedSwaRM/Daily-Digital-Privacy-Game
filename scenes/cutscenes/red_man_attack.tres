@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://dsuu7b3qp8vv1"]
+
+[ext_resource type="Texture2D" uid="uid://btt7ljjm0lu4v" path="res://assets/images/animation/hallway/hallway_night.png" id="1_ndttn"]
+[ext_resource type="Texture2D" uid="uid://b3ntyvv38puce" path="res://assets/images/animation/hallway/hallway_night_horror1.png" id="2_oenrh"]
+[ext_resource type="Texture2D" uid="uid://bnbyodghkscoi" path="res://assets/images/animation/hallway/hallway_night_horror4.png" id="3_i677e"]
+[ext_resource type="Texture2D" uid="uid://dacv1twki5j7t" path="res://assets/images/animation/hallway/hallway_night_horror2.png" id="4_6ux6u"]
+[ext_resource type="Texture2D" uid="uid://b2f86mm7en8sh" path="res://assets/images/animation/hallway/hallway_night_horror3.png" id="5_jlhj5"]
+[ext_resource type="Texture2D" uid="uid://cg2jpgxnu4ydf" path="res://assets/images/animation/hallway/hallway_night_horror6.png" id="6_p2oyg"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ndttn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_oenrh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_i677e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6ux6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jlhj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p2oyg")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]

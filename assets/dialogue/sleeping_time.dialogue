@@ -16,7 +16,7 @@ Should I sleep now?
 	do Events.deactivate_phone.emit()
 	do Events.day_counter += 1
 	
-	do Events.change_map.emit("res://scenes/cutscenes/peaceful_night.tscn", true, true)
+	do Events.change_map.emit("res://scenes/cutscenes/night_decider.tscn", true, true)
 - No
 	=> END
 
