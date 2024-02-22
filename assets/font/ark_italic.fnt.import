@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://c32dm0nkv6tx0"
+path="res://.godot/imported/ark_italic.fnt-8081064631a8f400ed839e41e3a7a779.fontdata"
+
+[deps]
+
+source_file="res://assets/font/ark_italic.fnt"
+dest_files=["res://.godot/imported/ark_italic.fnt-8081064631a8f400ed839e41e3a7a779.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

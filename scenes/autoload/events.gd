@@ -32,7 +32,7 @@ signal game_switch_changed(key: String, value: bool)
 signal response_taken
 
 # For adding new messages to the phone :skull:
-signal new_phone_message(user_name: String, message: String, is_player: bool)
+signal new_phone_message(user_name: String, message: String, is_player: bool, is_option: bool)
 
 
 # Back button activated. An all-around signal passer for everything.
