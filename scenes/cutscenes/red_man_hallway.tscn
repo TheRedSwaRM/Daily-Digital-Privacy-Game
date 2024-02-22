@@ -93,10 +93,8 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(128, 72)
 sprite_frames = ExtResource("2_ov1c4")
-frame = 5
 
 [node name="HallwayCut" type="TextureRect" parent="."]
 visible = false

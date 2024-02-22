@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsb7n1gyjnrgs"]
+
+[ext_resource type="Theme" uid="uid://ca6hk1fxjf3k0" path="res://scenes/components/messaging_text_box_from_player.tres" id="1_2oqnn"]
+[ext_resource type="Script" path="res://scenes/device/messaging/message_text_box.gd" id="2_na1jp"]
+
+[node name="MessageTextBoxFromPlayer" type="PanelContainer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -256.0
+offset_right = -251.0
+offset_bottom = 5.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 3
+theme = ExtResource("1_2oqnn")
+script = ExtResource("2_na1jp")
+
+[node name="TextMessage" type="RichTextLabel" parent="."]
+clip_contents = false
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[connection signal="meta_clicked" from="TextMessage" to="." method="_on_text_message_meta_clicked"]

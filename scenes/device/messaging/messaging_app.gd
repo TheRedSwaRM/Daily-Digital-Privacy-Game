@@ -29,7 +29,7 @@ func _process(_delta):
 ## Self-explanatory nightmare. Dear Lord, help us ALL.
 ## INITIAL MESSAGE IS VITAL. REALLY, REALLY VITAL!
 ## I MEAN, WE CAN HAVE BLANK BUT IT'S WEIRD.
-func new_text_message(user_name: String, starting_text: String):
+func new_text_message(user_name: String, starting_text: String, is_player: bool = false):
 	var checked_contact = _if_in_message_lists(user_name)
 	
 	# If null, creates a new message and contact list
@@ -60,22 +60,21 @@ func new_text_message(user_name: String, starting_text: String):
 		
 		# Adding first text via function.
 		# NOTE: Again, not fucking safe! We know the function but holy shit!
-		new_list.add_new_text(starting_text)
+		new_list.add_new_text(starting_text, is_player)
 	
 	# If meron pala...
 	# Sideways calling, so signal will handle the unread call. Easy.
 	else:
-		checked_contact.add_new_text(starting_text)
+		checked_contact.add_new_text(starting_text, is_player)
 		
 		# Move newest contact to above.
 		contact_list.move_child(_find_in_contacts(user_name), 0)
 		
 func _starting_messages():
-	pass
-	#new_text_message("DormMngr", "hellodorm")
-	#new_text_message("Amelie", "Yo, girl. You should def try this new app I found.")
-	#new_text_message("Sean", "You free today?")
-	#new_text_message("Baster", "Rust time?")
+	new_text_message("Baster", "Rust time?")
+	new_text_message("Baster", "Hell yeah!", true)
+	new_text_message("Omier", "Noi!")
+	new_text_message("Omier", "Yuh", true)
 
 ## Guess why we're doing this because the last time we did, it was NOT pretty!
 ## NOTE: Don't forget possible errors! Even though we're not expecting THAT!

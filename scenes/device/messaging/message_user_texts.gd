@@ -15,11 +15,19 @@ func _process(_delta):
 
 ## Adding text. No need for upwards signals... considering this is a downward
 ## slope to this function.
-func add_new_text(text_message: String):
+func add_new_text(text_message: String, is_player: bool):
 	var pre_text = preload("res://scenes/device/messaging/message_text_box.tscn")
+	if is_player:
+		pre_text = preload("res://scenes/device/messaging/message_text_box_from_player.tscn")
+		
 	var new_text = pre_text.instantiate()
 	
+	
 	new_text.post_text = text_message
+	if is_player:
+		new_text.post_text = "[right]" + new_text.post_text + "[/right]"
+	
+	
 	
 	# And then add it to the parent Contact List.
 	message_text_lists.add_child(new_text)

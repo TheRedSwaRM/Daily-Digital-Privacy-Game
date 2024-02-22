@@ -4,17 +4,18 @@
 [ext_resource type="Script" path="res://scenes/device/messaging/message_text_box.gd" id="2_w4gid"]
 
 [node name="MessageTextBox" type="PanelContainer"]
-custom_minimum_size = Vector2(50, 8)
-offset_right = 50.0
-offset_bottom = 8.0
-size_flags_horizontal = 6
+offset_right = 5.0
+offset_bottom = 5.0
+size_flags_horizontal = 2
 size_flags_vertical = 3
 theme = ExtResource("1_46fn0")
 script = ExtResource("2_w4gid")
 
 [node name="TextMessage" type="RichTextLabel" parent="."]
+clip_contents = false
 layout_mode = 2
 bbcode_enabled = true
 fit_content = true
+scroll_active = false
 
 [connection signal="meta_clicked" from="TextMessage" to="." method="_on_text_message_meta_clicked"]
