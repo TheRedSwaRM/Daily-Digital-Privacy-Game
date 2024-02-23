@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://blsiycyx3681a"]
 
 [ext_resource type="StyleBox" uid="uid://b8llqm4tyqu6q" path="res://scenes/components/browser_button.tres" id="1_jcjg6"]
-[ext_resource type="FontFile" uid="uid://bsevdm8dbo1qi" path="res://assets/font/res3x4.fnt" id="2_tyd7i"]
+[ext_resource type="FontFile" uid="uid://bdrivqpjnmmw6" path="res://assets/font/resolution-3x4.ttf" id="2_tyd7i"]
 
 [resource]
 default_font = ExtResource("2_tyd7i")

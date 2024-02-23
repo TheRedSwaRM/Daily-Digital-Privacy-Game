@@ -8,7 +8,6 @@ signal new_text_added(message: String)
 func _ready():
 	hide()
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
@@ -26,7 +25,7 @@ func add_new_text(text_message: String, is_player: bool, is_choice: bool):
 	new_text.post_text = text_message
 	if is_player:
 		new_text.is_choice = is_choice
-		new_text.post_text = "[right]" + new_text.post_text + "[/right]"
+		#new_text.post_text = "[right]" + new_text.post_text + "[/right]"
 	
 	# And then add it to the parent Contact List.
 	message_text_lists.add_child(new_text)

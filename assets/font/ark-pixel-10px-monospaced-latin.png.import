@@ -1,34 +1,22 @@
 [remap]
 
-importer="texture"
-type="CompressedTexture2D"
+importer="font_data_image"
+type="FontFile"
 uid="uid://jndpu5f5wj47"
-path="res://.godot/imported/ark-pixel-10px-monospaced-latin.png-e7e4c2cb052c69acc5c6cff6817fcd9f.ctex"
-metadata={
-"vram_texture": false
-}
+path="res://.godot/imported/ark-pixel-10px-monospaced-latin.png-e7e4c2cb052c69acc5c6cff6817fcd9f.fontdata"
 
 [deps]
 
 source_file="res://assets/font/ark-pixel-10px-monospaced-latin.png"
-dest_files=["res://.godot/imported/ark-pixel-10px-monospaced-latin.png-e7e4c2cb052c69acc5c6cff6817fcd9f.ctex"]
+dest_files=["res://.godot/imported/ark-pixel-10px-monospaced-latin.png-e7e4c2cb052c69acc5c6cff6817fcd9f.fontdata"]
 
 [params]
 
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+character_ranges=PackedStringArray()
+columns=16
+rows=168
+image_margin=Rect2i(0, 0, 0, 0)
+character_margin=Rect2i(0, 0, 0, 0)
+fallbacks=[]
+compress=true
+scaling_mode=2

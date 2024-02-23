@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/device/messaging/message_direct.gd" id="1_lwo5a"]
 [ext_resource type="LabelSettings" uid="uid://b5ugeles5dpul" path="res://scenes/components/messaging_header.tres" id="2_kprul"]
-[ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="3_2cux6"]
+[ext_resource type="FontFile" uid="uid://c833un1l5hy3i" path="res://assets/font/CG pixel 4x5.ttf" id="3_2cux6"]
 
 [node name="MessageDirect" type="Control"]
 custom_minimum_size = Vector2(66, 18)

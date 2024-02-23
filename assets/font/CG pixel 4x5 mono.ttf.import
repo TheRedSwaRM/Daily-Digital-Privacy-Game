@@ -1,0 +1,33 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://c27rixyooiql4"
+path="res://.godot/imported/CG pixel 4x5 mono.ttf-082a6c2064c4e6a49cf354a2a1615b7f.fontdata"
+
+[deps]
+
+source_file="res://assets/font/CG pixel 4x5 mono.ttf"
+dest_files=["res://.godot/imported/CG pixel 4x5 mono.ttf-082a6c2064c4e6a49cf354a2a1615b7f.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=0
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=2
+subpixel_positioning=3
+oversampling=10.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

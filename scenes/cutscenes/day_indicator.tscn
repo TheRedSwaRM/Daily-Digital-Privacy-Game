@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5kfk80hgj6qd"]
 
 [ext_resource type="Script" path="res://scenes/cutscenes/day_indicator.gd" id="1_kniv4"]
-[ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="1_uyogv"]
+[ext_resource type="FontFile" uid="uid://c833un1l5hy3i" path="res://assets/font/CG pixel 4x5.ttf" id="1_uyogv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yhqcr"]
 font = ExtResource("1_uyogv")

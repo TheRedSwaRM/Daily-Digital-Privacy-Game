@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scenes/device/social_media/permissions_screen.gd" id="1_1jrlj"]
 [ext_resource type="Texture2D" uid="uid://dwatwmev1y31r" path="res://assets/images/device/phone_social_media_signup.png" id="1_6qgw3"]
-[ext_resource type="FontFile" uid="uid://bmvpqkkl1evc" path="res://assets/font/ark-pixel-12px-monospaced-latin.fnt" id="3_jyqs1"]
+[ext_resource type="FontFile" uid="uid://bod6xenwo2la3" path="res://assets/font/ark_pixel_finale.ttf" id="3_jyqs1"]
 [ext_resource type="Theme" uid="uid://cms308t78a7rj" path="res://scenes/components/social_media_permissions_buttons.tres" id="4_cuvsx"]
 [ext_resource type="Theme" uid="uid://s47xnf1e5hrf" path="res://scenes/components/wifi_button.tres" id="5_3jyk7"]
-[ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="6_uutwp"]
+[ext_resource type="FontFile" uid="uid://c833un1l5hy3i" path="res://assets/font/CG pixel 4x5.ttf" id="6_uutwp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_geaje"]
 

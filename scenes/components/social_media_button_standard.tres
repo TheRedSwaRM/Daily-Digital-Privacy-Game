@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=7 format=3 uid="uid://bmm6iuawskgc5"]
 
-[ext_resource type="FontFile" uid="uid://c3d3h6meu0smj" path="res://assets/font/ark-pixel-10px-monospaced-latin.fnt" id="1_ix6jw"]
+[ext_resource type="FontFile" uid="uid://bod6xenwo2la3" path="res://assets/font/ark_pixel_finale.ttf" id="1_ix6jw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_stoyq"]
 

@@ -10,8 +10,13 @@ extends PanelContainer
 func _ready():
 	if is_choice:
 		theme = choice_theme
+		add_to_group("player_choices")
+		text_messsage.text = "[i]" + post_text + "[/i]"
+	else:
+		text_messsage.gui_input.disconnect(_on_text_message_gui_input)
+		text_messsage.text = post_text
+		
 	
-	text_messsage.text = post_text
 	
 	var parse_text = text_messsage.get_parsed_text()
 	print(len(parse_text))
@@ -20,7 +25,7 @@ func _ready():
 		set_custom_minimum_size(Vector2(16*2.75+4,6))
 	else:
 		set_custom_minimum_size(Vector2(len(parse_text)*2.75+4,6))
-		#set_size(Vector2(parse_text*4,6))
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -29,3 +34,7 @@ func _process(_delta):
 func _on_text_message_meta_clicked(meta):
 	Events.back_button_pressed.emit()
 	Events.link_pressed.emit(meta)
+
+func _on_text_message_gui_input(event):
+	if Events.mouse_left_click(event):
+		print("Yo.")

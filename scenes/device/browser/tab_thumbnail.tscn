@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/device/browser/tab_thumbnail.gd" id="1_2tps7"]
 [ext_resource type="Texture2D" uid="uid://djyldj3llnxj4" path="res://assets/images/browser/thumbnails/frndster.png" id="1_x2m40"]
-[ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="3_v2jv0"]
+[ext_resource type="FontFile" uid="uid://c833un1l5hy3i" path="res://assets/font/CG pixel 4x5.ttf" id="3_v2jv0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0rxcs"]
 font = ExtResource("3_v2jv0")

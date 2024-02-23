@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=7 format=3 uid="uid://qlmicia5ewrp"]
 
-[ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="1_i8fbl"]
+[ext_resource type="FontFile" uid="uid://c833un1l5hy3i" path="res://assets/font/CG pixel 4x5.ttf" id="1_i8fbl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lbljx"]
 

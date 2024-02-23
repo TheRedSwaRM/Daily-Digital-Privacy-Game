@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://dinj8j20l57j3" path="res://scenes/components/phone_button.tres" id="1_rlinc"]
 [ext_resource type="Texture2D" uid="uid://dmx3vj3q0m65q" path="res://assets/images/social_media/new_post_bg.png" id="2_bf502"]
 [ext_resource type="Theme" uid="uid://b4a3rif2mhppr" path="res://scenes/components/no_scroll.tres" id="2_j64dy"]
-[ext_resource type="FontFile" uid="uid://c3d3h6meu0smj" path="res://assets/font/ark-pixel-10px-monospaced-latin.fnt" id="4_un2yn"]
+[ext_resource type="FontFile" uid="uid://bod6xenwo2la3" path="res://assets/font/ark_pixel_finale.ttf" id="4_un2yn"]
 [ext_resource type="StyleBox" uid="uid://dlxatr0aeyy0e" path="res://scenes/components/new_post_panel_text_background.tres" id="5_flnwj"]
 [ext_resource type="Theme" uid="uid://s47xnf1e5hrf" path="res://scenes/components/wifi_button.tres" id="9_6k5wm"]
 [ext_resource type="Texture2D" uid="uid://cymtqqc72bn7y" path="res://assets/images/social_media/social_media_location_icon.png" id="10_wk76m"]

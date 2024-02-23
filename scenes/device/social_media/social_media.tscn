@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d0svocs860006" path="res://assets/images/social_media/social_media_add_post.png" id="9_6ch0j"]
 [ext_resource type="Theme" uid="uid://b4a3rif2mhppr" path="res://scenes/components/no_scroll.tres" id="9_nmfo4"]
 [ext_resource type="PackedScene" uid="uid://bn6kc48yw0681" path="res://scenes/device/social_media/new_post_panel.tscn" id="11_f6lsx"]
-[ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="12_dn408"]
+[ext_resource type="FontFile" uid="uid://c833un1l5hy3i" path="res://assets/font/CG pixel 4x5.ttf" id="12_dn408"]
 [ext_resource type="PackedScene" uid="uid://dc3xdga8escv0" path="res://scenes/device/social_media/signup_screen.tscn" id="13_sy5mm"]
 [ext_resource type="PackedScene" uid="uid://bhvnhn0d1k8xa" path="res://scenes/device/social_media/log_in_screen.tscn" id="14_a6p00"]
 [ext_resource type="PackedScene" uid="uid://d00gwn0gxvdse" path="res://scenes/device/social_media/permissions_screen.tscn" id="14_a51wq"]

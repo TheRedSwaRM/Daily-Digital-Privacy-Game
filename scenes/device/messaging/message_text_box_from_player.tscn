@@ -19,9 +19,9 @@ script = ExtResource("2_5eu4p")
 [node name="TextMessage" type="RichTextLabel" parent="."]
 clip_contents = false
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 0
 bbcode_enabled = true
 fit_content = true
 scroll_active = false
 
+[connection signal="gui_input" from="TextMessage" to="." method="_on_text_message_gui_input"]
 [connection signal="meta_clicked" from="TextMessage" to="." method="_on_text_message_meta_clicked"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/menus/pause_menu.gd" id="1_6pq4f"]
 [ext_resource type="PackedScene" uid="uid://smav7ilugg5n" path="res://scenes/components/blur.tscn" id="2_uxsu2"]
 [ext_resource type="PackedScene" uid="uid://crvbt6pqib5vv" path="res://scenes/menus/settings_menu.tscn" id="3_el7e2"]
-[ext_resource type="FontFile" uid="uid://bmvpqkkl1evc" path="res://assets/font/ark-pixel-12px-monospaced-latin.fnt" id="3_fwo3x"]
+[ext_resource type="FontFile" uid="uid://bod6xenwo2la3" path="res://assets/font/ark_pixel_finale.ttf" id="3_fwo3x"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2

@@ -31,6 +31,7 @@ general/states=["Events", "AudioManager"]
 window/size/viewport_width=256
 window/size/viewport_height=144
 window/size/initial_position_type=2
+window/size/initial_screen=1
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="res://assets/images/cursor/cursor_main.png"
 

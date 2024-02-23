@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dwatwmev1y31r" path="res://assets/images/device/phone_social_media_signup.png" id="1_4ow0f"]
 [ext_resource type="Script" path="res://scenes/device/social_media/signup_screen.gd" id="1_7csh5"]
-[ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="2_t765l"]
+[ext_resource type="FontFile" uid="uid://c833un1l5hy3i" path="res://assets/font/CG pixel 4x5.ttf" id="2_t765l"]
 [ext_resource type="Theme" uid="uid://dm83s14cp3x27" path="res://scenes/components/social_media_login_edittext.tres" id="3_7nppt"]
 [ext_resource type="Theme" uid="uid://dinj8j20l57j3" path="res://scenes/components/phone_button.tres" id="5_yjefs"]
 

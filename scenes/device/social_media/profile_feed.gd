@@ -20,7 +20,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 		
 func _add_new_post(username: String, sns_text: String, loc: String = "", sns_image: Texture2D = null):

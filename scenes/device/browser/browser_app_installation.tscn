@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://scenes/device/browser/browser_app_installation.gd" id="1_m2aqq"]
 [ext_resource type="Texture2D" uid="uid://vnqltacrbcxm" path="res://assets/images/browser/browser_googol_play_icon.png" id="3_dfmro"]
-[ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="3_eirsd"]
+[ext_resource type="FontFile" uid="uid://c833un1l5hy3i" path="res://assets/font/CG pixel 4x5.ttf" id="3_eirsd"]
 [ext_resource type="Texture2D" uid="uid://d2r7g8lcdffje" path="res://assets/images/browser/browser_friendster_header.png" id="4_c5v18"]
 [ext_resource type="Texture2D" uid="uid://b6ckvnayk1yri" path="res://assets/images/device/phone_icon_friendster.png" id="5_6vvi3"]
-[ext_resource type="FontFile" uid="uid://cm2b7lnoxw4xj" path="res://assets/font/pixel 3x4.fnt" id="6_vmi1g"]
+[ext_resource type="FontFile" uid="uid://gpclpdmdi4ka" path="res://assets/font/pixel 3x4.ttf" id="6_vmi1g"]
 [ext_resource type="LabelSettings" uid="uid://bccbyxn7vo5so" path="res://scenes/components/browser_googol_play_flavortext.tres" id="7_avyd4"]
-[ext_resource type="FontFile" uid="uid://bsevdm8dbo1qi" path="res://assets/font/res3x4.fnt" id="8_3k7sf"]
+[ext_resource type="FontFile" uid="uid://bdrivqpjnmmw6" path="res://assets/font/resolution-3x4.ttf" id="8_3k7sf"]
 [ext_resource type="StyleBox" uid="uid://mj4ajsm6gs0q" path="res://scenes/components/browser_googol_install_button.tres" id="9_w3vr5"]
 [ext_resource type="PackedScene" uid="uid://jbuwr2kunte7" path="res://scenes/device/browser/no_wifi.tscn" id="10_aep8m"]
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/device/settings_phone.gd" id="1_ced6i"]
 [ext_resource type="Texture2D" uid="uid://w3nfv6j12y4n" path="res://assets/images/device/phone_settings_true_bg.png" id="2_d3c8c"]
 [ext_resource type="Theme" uid="uid://s47xnf1e5hrf" path="res://scenes/components/wifi_button.tres" id="3_mjkfs"]
-[ext_resource type="FontFile" uid="uid://ciy0sgm7tekc3" path="res://assets/font/cg pixel 4x5.fnt" id="4_rfiyv"]
+[ext_resource type="FontFile" uid="uid://c833un1l5hy3i" path="res://assets/font/CG pixel 4x5.ttf" id="4_rfiyv"]
 [ext_resource type="LabelSettings" uid="uid://diwe4t6j60tts" path="res://scenes/components/social_media.tres" id="5_0b1pm"]
 [ext_resource type="LabelSettings" uid="uid://nk5nj83e5ai4" path="res://scenes/components/settings_phone.tres" id="5_y3mvf"]
 [ext_resource type="Theme" uid="uid://cms308t78a7rj" path="res://scenes/components/social_media_permissions_buttons.tres" id="6_ktjui"]
