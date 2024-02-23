@@ -17,5 +17,6 @@ layout_mode = 2
 bbcode_enabled = true
 fit_content = true
 scroll_active = false
+scroll_following = true
 
 [connection signal="meta_clicked" from="TextMessage" to="." method="_on_text_message_meta_clicked"]
