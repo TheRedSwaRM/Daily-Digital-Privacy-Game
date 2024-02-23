@@ -78,6 +78,49 @@ func _starting_messages():
 	new_text_message("Omier", "Yeah, I get it.", true, true)
 	new_text_message("Omier", "I don't get it.", true, true)
 	new_text_message("Omier", "Fuck off.", true, true)
+	
+	###### MOM ######
+	new_text_message("Mom", "Hi honey, how are you doing?")
+	new_text_message("Mom", "Hi mom, I'm doing fine, just letting time pass by while relaxing in my room.", true)
+	new_text_message("Mom", "It's actually my sem break right now, so I think I can relax for some time before the next sem.", true)
+	new_text_message("Mom", "That's good, are you eating often?")
+	new_text_message("Mom", "Do you still have enough money?")
+	new_text_message("Mom", "Yes mom, you don't have to worry about me too much, I can take care of myself here", true)
+	new_text_message("Mom", "I know, you're just so far away and I can't see you often")
+	new_text_message("Mom", "Just be careful around strangers, there are so many bad people out there")
+	new_text_message("Mom", "Yes, I will", true)
+	new_text_message("Mom", "I have friends here so I'm not lonely", true)
+	new_text_message("Mom", "Friends are good, but still be careful.")
+	new_text_message("Mom", "Don't trust anyone too easily.")
+	new_text_message("Mom", "And don't stay out too late you need to get enough sleep")
+	new_text_message("Mom", "Mom, you're kind of embarrassing me.", true)
+	new_text_message("Mom", "I'm fine, really.", true)
+	new_text_message("Mom", "At least I embarrassingly love you so much")
+	new_text_message("Mom", "hahaha fine", true, true)
+	new_text_message("Mom", "I love you too, Mom.", true)
+	new_text_message("Mom", "Hahaha okay, okay, that's good")
+	new_text_message("Mom", "I won't bother you anymore, just promise me you'll be safe and happy")
+	new_text_message("Mom", "I promise, Mom, no need to worry too much about me", true)
+	new_text_message("Mom", "Alright, I'll talk to you later")
+	new_text_message("Mom", "Take care, honey")
+	new_text_message("Mom", "👍")
+	new_text_message("Mom", "Yes mom, I will", true)
+	
+	#################
+	
+	###### DAD ######
+
+	new_text_message("Dad", "Nak, how's it going?")
+	new_text_message("Dad", "It's doing good, dad", true)
+	new_text_message("Dad", "It's actually my sem break right now", true)
+	new_text_message("Dad", "So I have a lot of time to relax", true)
+	new_text_message("Dad", "Okay good")
+	new_text_message("Dad", "Mag-ingat ha")
+	new_text_message("Dad", "Yes, dad", true)
+	new_text_message("Dad", "👍")
+	
+
+	#################	
 
 ## Guess why we're doing this because the last time we did, it was NOT pretty!
 ## NOTE: Don't forget possible errors! Even though we're not expecting THAT!
