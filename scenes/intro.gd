@@ -9,4 +9,7 @@ func _ready():
 		anim_player.play("intro")
 		await anim_player.animation_finished
 	
+	Events.activate_phone.emit()
+	Events.phones_sounds = true
+	
 	Events.change_map.emit("res://scenes/areas/bedroom_laptop.tscn", false)

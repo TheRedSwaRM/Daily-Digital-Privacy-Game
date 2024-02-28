@@ -71,13 +71,13 @@ func new_text_message(user_name: String, starting_text: String, is_player: bool 
 		contact_list.move_child(_find_in_contacts(user_name), 0)
 		
 func _starting_messages():
-	new_text_message("Baster", "Rust time?")
-	new_text_message("Baster", "Hell yeah!", true)
-	new_text_message("Omier", "Noi!")
-	new_text_message("Omier", "Yuh", true)
-	new_text_message("Omier", "Yeah, I get it.", true, true)
-	new_text_message("Omier", "I don't get it.", true, true)
-	new_text_message("Omier", "Fuck off.", true, true)
+	#new_text_message("Baster", "Rust time?")
+	#new_text_message("Baster", "Hell yeah!", true)
+	#new_text_message("Omier", "Noi!")
+	#new_text_message("Omier", "Yuh", true)
+	#new_text_message("Omier", "Yeah, I get it.", true, true)
+	#new_text_message("Omier", "I don't get it.", true, true)
+	#new_text_message("Omier", "Fuck off.", true, true)
 	
 	###### MOM ######
 	new_text_message("Mom", "Hi honey, how are you doing?")

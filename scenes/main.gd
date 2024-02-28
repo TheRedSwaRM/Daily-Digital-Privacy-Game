@@ -18,6 +18,7 @@ func _ready():
 	#===========================================================================
 	# Adding events
 	Events.change_map.connect(_goto_area)
+	Events.message_response.connect(_message_received)
 	
 	# Fix that doesn't fuck up the system. I mean, literally.
 	Events.change_map.emit(starting_screen, false)
@@ -26,7 +27,7 @@ func _ready():
 	phone.flipping_phone.connect(_change_mouse_passing_for_phone)
 	
 	# For debugging
-	Events.message_response.connect(_message_received_debug)
+	
 	Events.connection_change.connect(_change_connection_debug)
 	Events.location_change.connect(_change_location_debug)
 	
@@ -145,20 +146,61 @@ func _cutscene_social_post(key: String, _value: bool):
 func _cutscene_friend_message(time: float):
 	if Events.day_counter == 1 and time >= 10.0:
 		Events.time_check.disconnect(_cutscene_friend_message)
-		Events.new_phone_message.emit("Amelie", "Yo, bro. Just wanna do a quick heads up.")
-		await get_tree().create_timer(2).timeout
-		Events.new_phone_message.emit("Amelie", "There's like this new social media app. Check it out.")
-		await get_tree().create_timer(2).timeout
-		Events.new_phone_message.emit("Amelie", "The handle's @aMelee. See ya!")
-		await get_tree().create_timer(2).timeout
-		Events.new_phone_message.emit("Amelie", "[url='www.gglplay.com']Download Link[/url]")
-		
-		
+		Events.new_phone_message.emit("Amelie", "Yo, yo, yo!")
+		await get_tree().create_timer(1).timeout
+		Events.new_phone_message.emit("Amelie", "How's it going, dude? Having a good break there?")
+		await get_tree().create_timer(1).timeout
+		Events.new_phone_message.emit("Amelie", "Yeah, it's fine.", true, true)
+		Events.new_phone_message.emit("Amelie", "No need to text me, girl.", true, true)
+
+func _cutscene_friend_message_2():
+	await get_tree().create_timer(1).timeout
+	Events.new_phone_message.emit("Amelie", "And because of that, I got something just for you.")
+	await get_tree().create_timer(1).timeout
+	Events.new_phone_message.emit("Amelie", "There's this new social media app I wanna try, and it's called Friendster!")
+	await get_tree().create_timer(1).timeout
+	Events.new_phone_message.emit("Amelie", "And everyone's getting on it, girl! You have to hop in!")
+	await get_tree().create_timer(1).timeout
+	Events.new_phone_message.emit("Amelie", "Alright, alright. I'll try.", true, true)
+	Events.new_phone_message.emit("Amelie", "And what if I don't?", true, true)
+
+func _cutscene_friend_message_3():
+	await get_tree().create_timer(1).timeout
+	Events.new_phone_message.emit("Amelie", "The handle's @aMelee. See ya!")
+	await get_tree().create_timer(1).timeout
+	Events.new_phone_message.emit("Amelie", "[url='www.gglplay.com']Download Link[/url]")
+	
+	#await get_tree().create_timer(2).timeout
+	#Events.new_phone_message.emit("Amelie", "[url='www.gglplay.com']Download Link[/url]")
+
 #==============================================================================
 # Message Events
 #==============================================================================
 
-func _message_received_debug(respondent: String, text: String):
+func _message_received(respondent: String, text: String):
 	Events.new_phone_message.emit(respondent, text, true)
-	print(respondent)
-	print(text)
+	var text_message = [respondent, text]
+	
+	match text_message:
+		["Amelie", "Yeah, it's fine."]:
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Amelie", "Good, good. Was wondering you'd be bored to hell.")
+			_cutscene_friend_message_2()
+			
+		["Amelie", "No need to text me, girl."]:
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Amelie", "You don't miss me? :(")
+			_cutscene_friend_message_2()
+			
+		["Amelie", "Alright, alright. I'll try."]:
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Amelie", "Yay! Thanks dude! Anyway...")
+			_cutscene_friend_message_3()
+			
+		["Amelie", "And what if I don't?"]:
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Amelie", "Oh, you know that shit ain't gonna fly, baby.")
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Amelie", "Besides. Sooner or later, you're gonna cave.")
+			_cutscene_friend_message_3()
+		

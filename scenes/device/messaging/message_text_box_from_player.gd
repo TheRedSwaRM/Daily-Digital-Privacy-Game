@@ -17,8 +17,6 @@ func _ready():
 	else:
 		text_messsage.gui_input.disconnect(_on_text_message_gui_input)
 		text_messsage.text = post_text
-		
-	
 	
 	var parse_text = text_messsage.get_parsed_text()
 	
@@ -26,6 +24,7 @@ func _ready():
 		set_custom_minimum_size(Vector2(16*2.75+4,6))
 	else:
 		set_custom_minimum_size(Vector2(len(parse_text)*2.75+4,6))
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

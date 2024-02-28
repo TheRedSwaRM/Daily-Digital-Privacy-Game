@@ -36,8 +36,7 @@ func _process(_delta):
 	pass
 
 func _on_laptop_pressed():
-	Events.activate_phone.emit()
-	Events.phones_sounds = true
+	pass
 	#if Events.check_game_switch("night"):
 		#if Events.check_game_switch("laptop_checked") == false:
 			#AudioManager.sfx_play("res://assets/audio/sfx/laptop_startup_distorted.mp3")
