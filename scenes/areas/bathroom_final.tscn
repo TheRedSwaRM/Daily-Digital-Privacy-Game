@@ -29,11 +29,40 @@ stretch_mode = 5
 
 [node name="ToFront" parent="." instance=ExtResource("2_1vtcr")]
 label_name = "Bedroom"
-cursor_look = 4
+cursor_look = 3
 transfer_area = "res://scenes/areas/bedroom_front.tscn"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToFront"]
 position = Vector2(97, -32)
 polygon = PackedVector2Array(97, 56, 111, 48, 111, 173, 97, 163)
 
+[node name="Shower" parent="." instance=ExtResource("2_1vtcr")]
+cursor_look = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shower"]
+polygon = PackedVector2Array(48, 38, 48, 144, 65, 144, 65, 38, 65, 32, 57, 20, 48, 32)
+
+[node name="Toilet" parent="." instance=ExtResource("2_1vtcr")]
+cursor_look = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Toilet"]
+position = Vector2(48, -16)
+polygon = PackedVector2Array(44, 94, 82, 94, 83, 132, 78, 160, 49, 160, 44, 133)
+
+[node name="Mirror" parent="." instance=ExtResource("2_1vtcr")]
+cursor_look = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mirror"]
+polygon = PackedVector2Array(144, 35, 144, 77, 176, 77, 175, 35)
+
+[node name="Faucet" parent="." instance=ExtResource("2_1vtcr")]
+cursor_look = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Faucet"]
+polygon = PackedVector2Array(144, 82, 157, 82, 158, 79, 162, 79, 163, 82, 175, 82, 180, 88, 180, 96, 176, 103, 143, 103, 139, 96, 139, 88)
+
 [connection signal="input_detected" from="ToFront" to="." method="_on_to_front_input_detected"]
+[connection signal="input_detected" from="Shower" to="." method="_on_shower_input_detected"]
+[connection signal="input_detected" from="Toilet" to="." method="_on_toilet_input_detected"]
+[connection signal="input_detected" from="Mirror" to="." method="_on_mirror_input_detected"]
+[connection signal="input_detected" from="Faucet" to="." method="_on_faucet_input_detected"]

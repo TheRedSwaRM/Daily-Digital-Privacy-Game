@@ -27,9 +27,8 @@ offset_bottom = 144.0
 texture = ExtResource("1_3vn62")
 stretch_mode = 5
 
-[node name="ToToilet" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_jxeng")]
+[node name="ToToilet" parent="." instance=ExtResource("2_jxeng")]
 label_name = "Shower"
-collision_polygon = NodePath("CollisionPolygon2D")
 cursor_look = 2
 transfer_area = "res://scenes/areas/bathroom_shower.tscn"
 
@@ -37,9 +36,8 @@ transfer_area = "res://scenes/areas/bathroom_shower.tscn"
 position = Vector2(-41, -48)
 polygon = PackedVector2Array(65, 48, 89, 48, 89, 192, 65, 192)
 
-[node name="ToDoor" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_jxeng")]
+[node name="ToDoor" parent="." instance=ExtResource("2_jxeng")]
 label_name = "Door"
-collision_polygon = NodePath("CollisionPolygon2D")
 cursor_look = 3
 transfer_area = "res://scenes/areas/bathroom_door.tscn"
 
@@ -47,22 +45,19 @@ transfer_area = "res://scenes/areas/bathroom_door.tscn"
 position = Vector2(143, -48)
 polygon = PackedVector2Array(65, 48, 89, 48, 89, 192, 65, 192)
 
-[node name="Mirror" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_jxeng")]
-collision_polygon = NodePath("CollisionPolygon2D")
+[node name="Mirror" parent="." instance=ExtResource("2_jxeng")]
 cursor_look = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mirror"]
 polygon = PackedVector2Array(144, 24, 144, 88, 192, 88, 192, 24)
 
-[node name="Faucet" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_jxeng")]
-collision_polygon = NodePath("CollisionPolygon2D")
+[node name="Faucet" parent="." instance=ExtResource("2_jxeng")]
 cursor_look = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Faucet"]
 polygon = PackedVector2Array(144, 96, 165, 96, 167, 90, 170, 90, 172, 96, 192, 96, 199, 106, 199, 117, 193, 128, 143, 128, 137, 116, 137, 106)
 
-[node name="Toilet" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_jxeng")]
-collision_polygon = NodePath("CollisionPolygon2D")
+[node name="Toilet" parent="." instance=ExtResource("2_jxeng")]
 cursor_look = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Toilet"]
