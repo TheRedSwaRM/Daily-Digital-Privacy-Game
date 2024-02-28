@@ -109,8 +109,9 @@ func _on_flipping_button_pressed():
 
 # Phone is ringing
 func _phone_ringing():
-	animation_player.play("ringing")
-	await animation_player.animation_finished
+	if current_state == State.IDLE:
+		animation_player.play("ringing")
+		await animation_player.animation_finished
 
 func _change_time(current_time: float):
 	var text_hour: String = ""
