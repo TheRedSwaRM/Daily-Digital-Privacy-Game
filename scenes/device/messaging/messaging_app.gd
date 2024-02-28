@@ -96,7 +96,7 @@ func _starting_messages():
 	new_text_message("Mom", "Mom, you're kind of embarrassing me.", true)
 	new_text_message("Mom", "I'm fine, really.", true)
 	new_text_message("Mom", "At least I embarrassingly love you so much")
-	new_text_message("Mom", "hahaha fine", true, true)
+	new_text_message("Mom", "hahaha fine", true)
 	new_text_message("Mom", "I love you too, Mom.", true)
 	new_text_message("Mom", "Hahaha okay, okay, that's good")
 	new_text_message("Mom", "I won't bother you anymore, just promise me you'll be safe and happy")

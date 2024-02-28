@@ -26,6 +26,7 @@ func _ready():
 	phone.flipping_phone.connect(_change_mouse_passing_for_phone)
 	
 	# For debugging
+	Events.message_response.connect(_message_received_debug)
 	Events.connection_change.connect(_change_connection_debug)
 	Events.location_change.connect(_change_location_debug)
 	
@@ -35,6 +36,8 @@ func _ready():
 	Events.open_blinking_eye.connect(_open_blinking_eye)
 	Events.close_blinking_eye.connect(_close_blinking_eye)
 	Events.do_full_blink.connect(_do_blink)
+	
+	
 	
 	if debugger_on and OS.is_debug_build():
 		%Debugger.show()
@@ -129,14 +132,12 @@ func _permissions_set(key: String, _value: bool):
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "installation")
 		await DialogueManager.dialogue_ended
 		
-	
 func _cutscene_social_post(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "posted_in_sns":
 		Events.game_switch_changed.disconnect(_cutscene_social_post)
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/intro.dialogue"))
 		await DialogueManager.dialogue_ended
 		
-
 #==============================================================================
 # Timed Events
 #==============================================================================
@@ -153,4 +154,11 @@ func _cutscene_friend_message(time: float):
 		Events.new_phone_message.emit("Amelie", "[url='www.gglplay.com']Download Link[/url]")
 		
 		
+#==============================================================================
+# Message Events
+#==============================================================================
 
+func _message_received_debug(respondent: String, text: String):
+	Events.new_phone_message.emit(respondent, text, true)
+	print(respondent)
+	print(text)

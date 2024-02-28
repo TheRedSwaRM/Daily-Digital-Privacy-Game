@@ -33,7 +33,7 @@ signal response_taken
 
 # For adding new messages to the phone :skull:
 signal new_phone_message(user_name: String, message: String, is_player: bool, is_option: bool)
-
+signal message_response(respondent: String, text: String)
 
 # Back button activated. An all-around signal passer for everything.
 # Very intuitive design.

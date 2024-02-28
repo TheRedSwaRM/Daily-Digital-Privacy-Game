@@ -18,7 +18,10 @@ func add_new_text(text_message: String, is_player: bool, is_choice: bool):
 	var pre_text = preload("res://scenes/device/messaging/message_text_box.tscn")
 	if is_player:
 		pre_text = preload("res://scenes/device/messaging/message_text_box_from_player.tscn")
-		
+	else:
+		# Also play audio too while you're at it. And ring phone.
+		Events.ring_phone.emit()
+		AudioManager.sfx_play(AudioManager.phone_new_message_sfx)
 	var new_text = pre_text.instantiate()
 	
 	
@@ -31,6 +34,4 @@ func add_new_text(text_message: String, is_player: bool, is_choice: bool):
 	message_text_lists.add_child(new_text)
 	new_text_added.emit(text_message)
 	
-	# Also play audio too while you're at it. And ring phone.
-	Events.ring_phone.emit()
-	AudioManager.sfx_play(AudioManager.phone_new_message_sfx)
+	
