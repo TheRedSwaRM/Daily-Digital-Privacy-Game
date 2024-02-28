@@ -27,18 +27,16 @@ offset_bottom = 144.0
 texture = ExtResource("1_t06mt")
 stretch_mode = 5
 
-[node name="ToFront" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_3060b")]
+[node name="ToFront" parent="." instance=ExtResource("2_3060b")]
 label_name = "Bedroom"
-collision_polygon = NodePath("CollisionPolygon2D")
 cursor_look = 4
 transfer_area = "res://scenes/areas/bedroom_front.tscn"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToFront"]
 polygon = PackedVector2Array(65, 48, 111, 48, 111, 127, 65, 127)
 
-[node name="ToShower" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_3060b")]
+[node name="ToShower" parent="." instance=ExtResource("2_3060b")]
 label_name = "Shower"
-collision_polygon = NodePath("CollisionPolygon2D")
 cursor_look = 3
 transfer_area = "res://scenes/areas/bathroom_shower.tscn"
 
@@ -46,10 +44,9 @@ transfer_area = "res://scenes/areas/bathroom_shower.tscn"
 position = Vector2(184, 0)
 polygon = PackedVector2Array(48, 0, 24, 0, 24, 144, 48, 144)
 
-[node name="ToMirror" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_3060b")]
+[node name="ToMirror" parent="." instance=ExtResource("2_3060b")]
 position = Vector2(-184, 0)
 label_name = "Mirror"
-collision_polygon = NodePath("CollisionPolygon2D")
 cursor_look = 2
 transfer_area = "res://scenes/areas/bathroom_mirror.tscn"
 
@@ -57,8 +54,7 @@ transfer_area = "res://scenes/areas/bathroom_mirror.tscn"
 position = Vector2(143, -48)
 polygon = PackedVector2Array(65, 48, 89, 48, 89, 192, 65, 192)
 
-[node name="Shower" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_3060b")]
-collision_polygon = NodePath("CollisionPolygon2D")
+[node name="Shower" parent="." instance=ExtResource("2_3060b")]
 cursor_look = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shower"]

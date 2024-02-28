@@ -4,8 +4,7 @@ extends Area2D
 ## Default: NULL
 @export var label_name: String = ""
 
-## Collision shape created after instantiation.
-@export var collision_polygon: CollisionPolygon2D
+
 
 ## Waht cursor icon to change to when hovering over.
 @export var cursor_look: GameSettings.CursorLook
@@ -17,6 +16,8 @@ extends Area2D
 @export_file("*.tscn") var transfer_area
 
 @onready var label_node: Label = $Label
+## Collision shape created after instantiation.
+@onready var collision_polygon: CollisionPolygon2D = find_child("CollisionPolygon2D")
 
 ## Use in place of in place of `input_event` connection in order to lessen
 ## overhead on certain things. Like `input_event` args.
