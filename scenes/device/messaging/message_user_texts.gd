@@ -45,7 +45,10 @@ func add_new_text(text_message: String, is_player: bool, is_choice: bool):
 	message_text_lists.add_child(new_text)
 	message_count_name += 1
 	new_text.name = str(message_count_name)
-	new_text_added.emit(text_message)
+	
+	# Changes only if not the player.
+	if not is_player:
+		new_text_added.emit(text_message)
 	
 	#_change_message_text_list_position()
 

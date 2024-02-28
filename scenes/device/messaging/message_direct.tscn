@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://fysl1pydoba0"]
+[gd_scene load_steps=5 format=3 uid="uid://fysl1pydoba0"]
 
 [ext_resource type="Script" path="res://scenes/device/messaging/message_direct.gd" id="1_lwo5a"]
 [ext_resource type="LabelSettings" uid="uid://b5ugeles5dpul" path="res://scenes/components/messaging_header.tres" id="2_kprul"]
 [ext_resource type="FontFile" uid="uid://c833un1l5hy3i" path="res://assets/font/CG pixel 4x5.ttf" id="3_2cux6"]
+[ext_resource type="FontFile" uid="uid://bod6xenwo2la3" path="res://assets/font/ark_pixel_finale.ttf" id="4_2v3ar"]
 
 [node name="MessageDirect" type="Control"]
 custom_minimum_size = Vector2(66, 18)
@@ -41,12 +42,12 @@ text = "(!)"
 [node name="MessageRecentSum" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 2.0
-offset_top = 10.0
-offset_right = 58.0
-offset_bottom = 15.0
+offset_top = 9.0
+offset_right = 64.0
+offset_bottom = 16.0
 mouse_filter = 1
 theme_override_colors/default_color = Color(0.133333, 0.133333, 0.133333, 1)
-theme_override_fonts/normal_font = ExtResource("3_2cux6")
+theme_override_fonts/normal_font = ExtResource("4_2v3ar")
 theme_override_font_sizes/normal_font_size = 5
 theme_override_font_sizes/bold_font_size = 5
 theme_override_font_sizes/italics_font_size = 5
