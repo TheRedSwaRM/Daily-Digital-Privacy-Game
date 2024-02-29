@@ -121,6 +121,8 @@ func reset_all():
 		_game_switches[key] = false
 	
 	wifi_connection = "None"
+	social_media_username = ""
+	day_counter = 1
 	location = true
 
 func quit_game():
