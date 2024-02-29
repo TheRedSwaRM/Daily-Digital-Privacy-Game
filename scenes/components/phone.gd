@@ -66,7 +66,7 @@ func _ready():
 	Events.ring_phone.connect(_phone_ringing)
 	Events.force_phone_go_to.connect(_force_phone_goto)
 	Events.game_switch_changed.connect(_should_app_be_installed)
-	Events.change_time.connect(_change_time)
+	#Events.change_time.connect(_change_time)
 	
 	_change_time(Events.game_time)
 	
@@ -112,6 +112,9 @@ func _phone_ringing():
 	if current_state == State.IDLE:
 		animation_player.play("ringing")
 		await animation_player.animation_finished
+
+func _on_phone_timer_frame_update_timeout():
+	_change_time(Events.game_time)
 
 func _change_time(current_time: float):
 	var text_hour: String = ""
@@ -276,3 +279,6 @@ func _force_phone_goto(module: String, subcomponent: String = ""):
 			
 		"Installer":
 			installer_app.show()
+
+
+

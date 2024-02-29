@@ -342,6 +342,9 @@ libraries = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+[node name="PhoneTimerFrameUpdate" type="Timer" parent="."]
+autostart = true
+
 [connection signal="mouse_entered" from="PhoneContainer/FlippingButton" to="." method="_on_flipping_button_mouse_entered"]
 [connection signal="mouse_exited" from="PhoneContainer/FlippingButton" to="." method="_on_flipping_button_mouse_exited"]
 [connection signal="pressed" from="PhoneContainer/FlippingButton" to="." method="_on_flipping_button_pressed"]
@@ -354,3 +357,4 @@ libraries = {
 [connection signal="pressed" from="PhoneContainer/QuitPanel/QuitNo" to="." method="_on_quit_no_pressed"]
 [connection signal="pressed" from="PhoneContainer/HomeButton" to="." method="_on_home_button_pressed"]
 [connection signal="pressed" from="PhoneContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="timeout" from="PhoneTimerFrameUpdate" to="." method="_on_phone_timer_frame_update_timeout"]
