@@ -24,7 +24,7 @@ texture = ExtResource("2_pyg8y")
 color = Color(0.90186, 0.426673, 0.663065, 1)
 script = ExtResource("2_eoguy")
 gradient_texture = ExtResource("3_mnctc")
-game_speed = 10
+game_speed = 10.0
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 

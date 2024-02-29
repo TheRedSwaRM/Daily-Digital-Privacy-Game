@@ -8,7 +8,7 @@ const game_to_irl_min = (2 * PI) / 1440
 @export_category("Time")
 @export var time_passes_allowed: bool = true
 @export var initial_hour: int = 6
-@export var game_speed: int = 20.0
+@export var game_speed: int = 20
 
 
 
