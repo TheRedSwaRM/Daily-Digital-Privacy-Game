@@ -46,7 +46,7 @@ func new_text_message(user_name: String, starting_text: String, is_player: bool 
 		
 		# Adding signal before anything else. 
 		# NOTE: Not safe! Like, legit. We are expecting a signal!
-		new_contact.contact_pressed.connect(_contact_press_detected)
+		new_contact.contact_pressed.connect(contact_press_detected)
 		# NOTE: Don't forget the unread signal to for sideways between contact
 		# 		and list!
 		new_list.new_text_added.connect(new_contact.new_text_unread)
@@ -124,7 +124,7 @@ func _starting_messages():
 
 ## Guess why we're doing this because the last time we did, it was NOT pretty!
 ## NOTE: Don't forget possible errors! Even though we're not expecting THAT!
-func _contact_press_detected(user_name: String):
+func contact_press_detected(user_name: String):
 	# Iterate
 	for user_message_list in message_lists.get_children():
 		# Then do and break

@@ -48,6 +48,7 @@ func _ready():
 	#===========================================================================
 	Events.game_switch_changed.connect(_permissions_set)
 	Events.game_switch_changed.connect(_cutscene_social_post)
+	Events.game_switch_changed.connect(_cutscene_complete_signup)
 	
 	#===========================================================================
 	# Time Events
@@ -173,6 +174,28 @@ func _cutscene_friend_message_3():
 	#await get_tree().create_timer(2).timeout
 	#Events.new_phone_message.emit("Amelie", "[url='www.gglplay.com']Download Link[/url]")
 
+func _cutscene_complete_signup(key: String, _value: bool):
+	if Events.check_game_switch(key) && key == "contacting_friend":
+		Events.game_switch_changed.disconnect(_cutscene_complete_signup)
+		Events.force_phone_go_to.emit("Messaging", "Amelie")
+		Events.new_phone_message.emit("Amelie", "I signed up na.", true)
+		await get_tree().create_timer(1).timeout
+		Events.new_phone_message.emit("Amelie", "I knew I could count on you, beb!")
+		await get_tree().create_timer(1).timeout
+		Events.new_phone_message.emit("Amelie", "Ano yung account name?")
+		await get_tree().create_timer(1).timeout
+		Events.new_phone_message.emit("Amelie", Events.social_media_username, true)
+		await get_tree().create_timer(1).timeout
+		Events.new_phone_message.emit("Amelie", "Nice one!")
+		await get_tree().create_timer(1).timeout
+		Events.new_phone_message.emit("Amelie", "Oh... you're not logged in pa?")
+		await get_tree().create_timer(1).timeout
+		Events.new_phone_message.emit("Amelie", "I'll try the app tom.", true)
+		await get_tree().create_timer(1).timeout
+		Events.new_phone_message.emit("Amelie", "Booooooo.")
+		await get_tree().create_timer(1).timeout
+		Events.new_phone_message.emit("Amelie", "Okay, beb. See you soon! Mwa, mwa. 😘")
+		
 #==============================================================================
 # Message Events
 #==============================================================================

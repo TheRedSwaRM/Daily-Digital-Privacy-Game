@@ -13,7 +13,8 @@ Cheryl: I don't think I need to use this right now.
 
 ~ installation
 
-Cheryl: Alright, that's good enough for today. I'm getting tired anyway.
+Cheryl: There. Now to text Amelie back...
+do Events.change_game_switch("contacting_friend", true)
 
 => END 
 

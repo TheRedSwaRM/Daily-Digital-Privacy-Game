@@ -40,7 +40,7 @@ signal message_response(respondent: String, text: String)
 signal back_button_pressed
 signal link_pressed(link_data: String)
 
-signal force_phone_go_to(module: String)
+signal force_phone_go_to(module: String, subcomponent: String)
 
 #===============================================================================
 # For Time Control
@@ -73,6 +73,7 @@ var day_counter: int = 1 :
 	"app_installed": false,
 	"posted_in_sns": false,
 	"signup_complete": false,
+	"contacting_friend": true,
 	"shower_taken": false,
 	
 	# Data Privacy Violations

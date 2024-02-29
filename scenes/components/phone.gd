@@ -252,7 +252,7 @@ func _on_flipping_button_mouse_entered():
 func _on_flipping_button_mouse_exited():
 	GameSettings.change_cursor_look()
 
-func _force_phone_goto(module: String):
+func _force_phone_goto(module: String, subcomponent: String = ""):
 	settings_instance.hide()
 	messaging_app.hide()
 	social_media.hide()
@@ -262,13 +262,17 @@ func _force_phone_goto(module: String):
 	match module:
 		"Settings":
 			pass
+			
 		"Messaging":
-			pass
+			messaging_app.show()
+			messaging_app.contact_press_detected(subcomponent)
+			
 		"Social":
 			pass
 			
 		# No need to open anything for this... for now.
 		"Browser":
 			browser_app.show()
+			
 		"Installer":
 			installer_app.show()
