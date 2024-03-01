@@ -174,10 +174,10 @@ func _on_social_media_button_pressed():
 		#DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "checking_app_before_day_2")
 		#await DialogueManager.dialogue_ended
 	#else:
-	if Events.check_game_switch("WARNING_permissions_set") and Events.day_counter == 1:
-		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "checking_app_before_day_2")
-		await DialogueManager.dialogue_ended
-		return
+	#if Events.check_game_switch("WARNING_permissions_set") and Events.day_counter == 1:
+	#	DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "checking_app_before_day_2")
+	#	await DialogueManager.dialogue_ended
+	#	return
 	
 	_play_accept()
 	current_phone_location = NavigationState.SOCIAL_MEDIA

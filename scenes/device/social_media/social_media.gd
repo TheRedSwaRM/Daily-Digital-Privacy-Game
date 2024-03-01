@@ -26,7 +26,6 @@ func _ready():
 	Events.connection_change.connect(_check_for_wifi_connection)
 	Events.back_button_pressed.connect(_phone_back_button_pressed)
 	signup_screen.signup_complete.connect(login_screen.registration_successful)
-	visibility_changed.connect(_day_2_chatter_event)
 	_check_for_wifi_connection("none")
 	#Events.location_change.connect(_change_location_debug)
 	
@@ -129,12 +128,13 @@ func _on_log_in_login_button_pressed():
 	# The act of even doing the app is already a problem. Will add an option
 	# that the player can actually read whatever the hell the privacy stuff are
 	# that is set by the app.
-	Events.change_game_switch("WARNING_permissions_set", true)
-	Events.change_game_switch("signup_complete", true)
+	#Events.change_game_switch("WARNING_permissions_set", true)
+	#Events.change_game_switch("signup_complete", true)
+	_day_2_chatter_event()
 	login_screen.hide()
 	
 	# Forcing phone back.
-	_phone_back_button_pressed()
+	#_phone_back_button_pressed()
 
 func _on_log_in_signup_button_pressed():
 	login_screen.hide()
@@ -212,9 +212,8 @@ func _on_new_post_panel_send_attempt_on_no_wifi():
 	anim_player.play("no_connection")
 
 func _day_2_chatter_event():
-	if visible and Events.day_counter == 2:
+	if Events.day_counter == 2:
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "checking_app")
-		visibility_changed.disconnect(_day_2_chatter_event)
 	else:
 		print("Not yet Day 2")
 

@@ -33,6 +33,8 @@ func _on_sign_up_button_pressed():
 		Events.social_media_username = signup_name.text
 		Events.get_social_media_name.emit(signup_name.text)
 		signup_complete.emit(signup_name.text, signup_password.text)
+		Events.change_game_switch("WARNING_permissions_set", true)
+		Events.change_game_switch("signup_complete", true)
 		signup_return_button.emit()
 	
 func _on_return_button_pressed():

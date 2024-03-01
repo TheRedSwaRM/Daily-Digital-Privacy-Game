@@ -23,6 +23,11 @@ func _on_log_in_button_pressed():
 		_login_deny()
 		return
 	else:
+		if Events.check_game_switch("WARNING_permissions_set") and Events.day_counter == 1:
+			DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "checking_app_before_day_2")
+			await DialogueManager.dialogue_ended
+			return
+		
 		login_button_pressed.emit()
 
 func _on_sign_up_button_pressed():
