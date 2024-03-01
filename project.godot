@@ -52,13 +52,13 @@ theme/default_font_antialiasing=0
 
 debug_key={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194343,"key_label":0,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":112,"echo":false,"script":null)
 ]
 }
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://assets/dialogue/sample.dialogue", "res://assets/dialogue/intro.dialogue", "res://assets/dialogue/bedroom.dialogue", "res://assets/dialogue/social_media.dialogue", "res://assets/dialogue/sleeping_time.dialogue", "res://assets/dialogue/knocking.dialogue", "res://assets/dialogue/bathroom.dialogue", "res://assets/dialogue/room.dialogue", "res://assets/dialogue/hallway.dialogue")
+locale/translations_pot_files=PackedStringArray("res://assets/dialogue/sample.dialogue", "res://assets/dialogue/intro.dialogue", "res://assets/dialogue/bedroom.dialogue", "res://assets/dialogue/social_media.dialogue", "res://assets/dialogue/sleeping_time.dialogue", "res://assets/dialogue/knocking.dialogue", "res://assets/dialogue/bathroom.dialogue", "res://assets/dialogue/room.dialogue", "res://assets/dialogue/hallway.dialogue", "res://assets/dialogue/day_1_person.dialogue")
 
 [rendering]
 

@@ -116,6 +116,7 @@ func _unhandled_input(_event):
 	# Prints the game switches
 	if Input.is_action_just_pressed("debug_key"):
 		print(Events._game_switches)
+		print(Events.day_counter)
 		print("Connection: " + %ConName.text)
 		print("Loccation: " + %LocYesNo.text)
 
