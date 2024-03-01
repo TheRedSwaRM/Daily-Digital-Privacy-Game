@@ -23,6 +23,7 @@ func _ready():
 	_change_color(initial_hour)
 	Events.change_time.connect(_change_color_signal)
 	Events.change_time_speed.connect(_change_game_speed)
+	Events.pause_game_time.connect(_pause_game)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -48,3 +49,6 @@ func _change_color_signal(curr_time: float):
 
 func _change_game_speed(new_speed: int):
 	game_speed = new_speed
+
+func _pause_game(value: bool):
+	time_passes_allowed = !value

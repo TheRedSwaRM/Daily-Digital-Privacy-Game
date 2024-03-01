@@ -50,6 +50,7 @@ signal force_phone_go_to(module: String, subcomponent: String)
 signal change_time(time: float)
 signal change_time_speed(game_speed: int)
 signal time_check(time: float)
+signal pause_game_time(value: bool)
 var game_time: float:
 	set(value):
 		game_time = value
