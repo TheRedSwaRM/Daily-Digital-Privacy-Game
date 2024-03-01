@@ -4,6 +4,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Events.day_counter += 1
+	
 	if not OS.is_debug_build():
 		day_label.text = "Day " + str(Events.day_counter)
 		await get_tree().create_timer(3).timeout

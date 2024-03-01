@@ -14,7 +14,6 @@ Should I sleep now?
 - Yes
 	do AudioManager.bgm_stop()
 	do Events.deactivate_phone.emit()
-	do Events.day_counter += 1
 	
 	do Events.change_map.emit("res://scenes/cutscenes/night_decider.tscn", true, true)
 - No
