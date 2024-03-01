@@ -160,9 +160,6 @@ func _on_quit_button_pressed():
 func _on_quit_yes_pressed():
 	_play_accept()
 	Events.quit_game()
-	#AudioManager.bgm_stop()
-	#Events.reset_all()
-	#get_tree().change_scene_to_file("res://scenes/title.tscn")
 
 func _on_quit_no_pressed():
 	_play_back()
@@ -170,15 +167,6 @@ func _on_quit_no_pressed():
 	quit_panel.hide()
 
 func _on_social_media_button_pressed():
-	#if Events.day_counter != 2:
-		#DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "checking_app_before_day_2")
-		#await DialogueManager.dialogue_ended
-	#else:
-	#if Events.check_game_switch("WARNING_permissions_set") and Events.day_counter == 1:
-	#	DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "checking_app_before_day_2")
-	#	await DialogueManager.dialogue_ended
-	#	return
-	
 	_play_accept()
 	current_phone_location = NavigationState.SOCIAL_MEDIA
 	social_media.show()

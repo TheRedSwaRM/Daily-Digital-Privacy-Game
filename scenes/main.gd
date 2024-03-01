@@ -27,7 +27,6 @@ func _ready():
 	phone.flipping_phone.connect(_change_mouse_passing_for_phone)
 	
 	# For debugging
-	
 	Events.connection_change.connect(_change_connection_debug)
 	Events.location_change.connect(_change_location_debug)
 	
@@ -37,8 +36,6 @@ func _ready():
 	Events.open_blinking_eye.connect(_open_blinking_eye)
 	Events.close_blinking_eye.connect(_close_blinking_eye)
 	Events.do_full_blink.connect(_do_blink)
-	
-	
 	
 	if debugger_on and OS.is_debug_build():
 		%Debugger.show()
@@ -55,6 +52,7 @@ func _ready():
 	#===========================================================================
 	Events.time_check.connect(_cutscene_friend_message)
 
+	
 ## First is path. Second if you want to blink. Third is special.
 func _goto_area(path: String, can_blink: bool = true, special: bool = false):
 	if ResourceLoader.exists(path):
