@@ -5,16 +5,16 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Events.day_counter += 1
+	Events.do_full_blink.emit()
 	
-	if not OS.is_debug_build():
-		day_label.text = "Day " + str(Events.day_counter)
-		await get_tree().create_timer(3).timeout
+	day_label.text = "Day " + str(Events.day_counter)
+	await get_tree().create_timer(3).timeout
 		
-		day_label.show()
-		await get_tree().create_timer(5).timeout
+	day_label.show()
+	await get_tree().create_timer(5).timeout
 		
-		day_label.hide()
-		await get_tree().create_timer(1).timeout
+	day_label.hide()
+	await get_tree().create_timer(1).timeout
 	
 	Events.game_time = 6.0
 	Events.pause_game_time.emit(false)
