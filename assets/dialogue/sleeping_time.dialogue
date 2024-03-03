@@ -26,9 +26,13 @@ Should I sleep now?
 Take a nap?
 
 - Yes
+	do AudioManager.bgm_stop()
 	do Events.close_blinking_eye.emit()
+	do Events.deactivate_phone.emit()
 	do wait(1)
 	do Events.game_time += 5
+	do Events.activate_phone.emit()
+	do Events.background_audio_check()
 	do Events.open_blinking_eye.emit()
 - No
 

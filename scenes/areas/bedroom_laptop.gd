@@ -26,10 +26,9 @@ func _ready():
 		await DialogueManager.dialogue_ended
 		Events.change_game_switch("intro", true)
 		
-	
 	# Events.sns_new_notif.emit(Events.NotifType.LIKE, "gay seggs")
 	
-	AudioManager.bgm_play("res://assets/audio/bgm/room_ambience.ogg")
+	Events.background_audio_check()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

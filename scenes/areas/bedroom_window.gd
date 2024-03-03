@@ -12,6 +12,8 @@ func _ready():
 		background.texture = load("res://assets/images/bg/room3_night2.png")
 	else:
 		cloud_animation.play("clouds")
+	
+	Events.background_audio_check()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

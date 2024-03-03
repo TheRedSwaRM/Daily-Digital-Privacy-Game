@@ -6,7 +6,9 @@ extends Node2D
 func _ready():
 	if Events.check_game_switch("night"):
 		background.texture = load("res://assets/images/bg/room2_night.png")
-
+	
+	Events.background_audio_check()
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass

@@ -138,6 +138,13 @@ func mouse_left_click(event):
 	else:
 		return false
 
+## In case for morning/night ambience.
+func background_audio_check():
+	if game_time < 18.00:
+		AudioManager.bgm_play("res://assets/audio/bgm/room_ambience.ogg")
+	else:
+		AudioManager.bgm_play("res://assets/audio/bgm/night_ambience.mp3")
+
 #===============================================================================
 # DEBUG FUNCTIONS
 #===============================================================================

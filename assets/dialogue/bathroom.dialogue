@@ -7,9 +7,11 @@ elif Events.game_time > 18.0:
 else:
 	Take a shower?
 	- Yes
+		do Events.deactivate_phone.emit()
 		do Events.close_blinking_eye.emit()
 		do wait(1)
 		do Events.game_time += 4
+		do Events.activate_phone.emit()
 		do Events.change_game_switch("shower_taken", true)
 		do Events.open_blinking_eye.emit()
 	- No
