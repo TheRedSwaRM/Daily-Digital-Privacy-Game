@@ -10,4 +10,5 @@ func _ready():
 	Events.activate_phone.emit()
 	Events.phones_sounds = true
 	
+	Events.pause_game_time(false)
 	Events.change_map.emit("res://scenes/areas/bedroom_laptop.tscn", false)

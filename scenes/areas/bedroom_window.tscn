@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://baxqxgscldslf"]
+[gd_scene load_steps=11 format=3 uid="uid://baxqxgscldslf"]
 
 [ext_resource type="Script" path="res://scenes/areas/bedroom_window.gd" id="1_caxxx"]
 [ext_resource type="Texture2D" uid="uid://b4h4uol1nrski" path="res://assets/images/bg/room3.png" id="1_h5mag"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="2_57hfl"]
 [ext_resource type="Texture2D" uid="uid://dor3ogk87krs3" path="res://assets/images/bg/clock_front.png" id="3_bq7um"]
 [ext_resource type="BitMap" uid="uid://g3parxam13nv" path="res://assets/images/bg/clock_front_bitmask.png" id="6_aqdk4"]
+[ext_resource type="PackedScene" uid="uid://bmjgtpycm4gd1" path="res://scenes/components/screen_tint.tscn" id="7_1gegh"]
 
 [sub_resource type="Animation" id="Animation_fu2fs"]
 length = 0.001
@@ -92,9 +93,8 @@ texture = ExtResource("1_h5mag")
 stretch_mode = 5
 metadata/_edit_lock_ = true
 
-[node name="ClickAreaComponent" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_57hfl")]
+[node name="ClickAreaComponent" parent="." instance=ExtResource("2_57hfl")]
 label_name = "Laptop"
-collision_polygon = NodePath("CollisionPolygon2D")
 cursor_look = 2
 transfer_area = "res://scenes/areas/bedroom_laptop.tscn"
 
@@ -115,12 +115,13 @@ libraries = {
 }
 speed_scale = 0.5
 
-[node name="Pillow" parent="." node_paths=PackedStringArray("collision_polygon") instance=ExtResource("2_57hfl")]
-collision_polygon = NodePath("CollisionPolygon2D")
+[node name="Pillow" parent="." instance=ExtResource("2_57hfl")]
 cursor_look = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pillow"]
 polygon = PackedVector2Array(175, 111, 208, 112, 208, 144, 155, 144, 155, 114)
+
+[node name="ScreenTint" parent="." instance=ExtResource("7_1gegh")]
 
 [connection signal="mouse_entered" from="Clock" to="." method="_on_clock_mouse_entered"]
 [connection signal="mouse_exited" from="Clock" to="." method="_on_clock_mouse_exited"]

@@ -2,7 +2,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Events.pause_game_time.emit(true)
+	Events.pause_game_time(true)
 	Events.game_time = 12.0
 	
 	if Events.check_game_switch("WARNING_permissions_set") and Events.day_counter == 1:

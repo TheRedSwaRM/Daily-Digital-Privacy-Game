@@ -48,10 +48,13 @@ signal force_phone_go_to(module: String, subcomponent: String)
 
 ## Changes the time currently in float.
 signal change_time(time: float)
-signal change_time_speed(game_speed: int)
 signal time_check(time: float)
-signal pause_game_time(value: bool)
-var game_time: float:
+
+const min_per_hour = 60
+const game_to_irl_min = (2 * PI) / 1440
+var time_passes_allowed: bool = false
+var game_speed: int = 20
+var game_time: float = 6:
 	set(value):
 		game_time = value
 		change_time.emit(game_time)
@@ -109,6 +112,16 @@ var social_media_location: String = "Yakal St."
 func _ready():
 	pass
 
+func _process(delta):
+	if time_passes_allowed: 
+		if Events.game_time > 24.0:
+			Events.game_time = 0
+		if Events.game_time < 18.0:
+			Events.game_time += delta * game_to_irl_min * game_speed
+			
+func pause_game_time(value: bool):
+	time_passes_allowed = !value
+	
 func change_game_switch(key: String, value: bool):
 	_game_switches[key] = value
 	print(key + " is now " + str(value))

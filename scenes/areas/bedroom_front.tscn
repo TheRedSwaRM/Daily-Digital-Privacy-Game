@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bom430mddd0lm"]
+[gd_scene load_steps=5 format=3 uid="uid://bom430mddd0lm"]
 
 [ext_resource type="Script" path="res://scenes/areas/bedroom_front.gd" id="1_26754"]
 [ext_resource type="Texture2D" uid="uid://bd7sorescsxql" path="res://assets/images/bg/room2.png" id="1_var0o"]
 [ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="2_8n6js"]
+[ext_resource type="PackedScene" uid="uid://bmjgtpycm4gd1" path="res://scenes/components/screen_tint.tscn" id="4_j5sxh"]
 
 [node name="BedroomFront" type="Node2D"]
 script = ExtResource("1_26754")
@@ -53,6 +54,8 @@ transfer_area = "res://scenes/areas/hallway.tscn"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToFrontDoor"]
 polygon = PackedVector2Array(175, 32, 175, 111, 202, 111, 202, 50, 208, 50, 208, 32)
+
+[node name="ScreenTint" parent="." instance=ExtResource("4_j5sxh")]
 
 [connection signal="input_detected" from="ToBathroom" to="." method="_on_to_bathroom_input_detected"]
 [connection signal="input_detected" from="ToFrontDoor" to="." method="_on_click_area_component_input_detected"]

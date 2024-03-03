@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmjgtpycm4gd1"]
+
+[ext_resource type="Script" path="res://scenes/screen_tint.gd" id="1_cmjw7"]
+[ext_resource type="Texture2D" uid="uid://c2o2evch7qpwb" path="res://scenes/components/daynightcycle-gradient-texture.tres" id="2_n5bky"]
+
+[node name="ScreenTint" type="CanvasModulate"]
+color = Color(0.169088, 0.18037, 0.333017, 1)
+script = ExtResource("1_cmjw7")
+gradient_texture = ExtResource("2_n5bky")
+initial_hour = 0
+game_speed = 10

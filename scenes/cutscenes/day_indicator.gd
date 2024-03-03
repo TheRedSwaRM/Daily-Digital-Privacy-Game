@@ -17,7 +17,7 @@ func _ready():
 	await get_tree().create_timer(1).timeout
 	
 	Events.game_time = 6.0
-	Events.pause_game_time.emit(false)
+	
 	Events.change_game_switch("shower_taken", false)
 	Events.change_map.emit("res://scenes/intro.tscn", false)
 	

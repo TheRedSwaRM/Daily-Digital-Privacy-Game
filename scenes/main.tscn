@@ -1,11 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://sdp7xytwmcsi"]
+[gd_scene load_steps=6 format=3 uid="uid://sdp7xytwmcsi"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_favck"]
-[ext_resource type="Script" path="res://scenes/screen_tint.gd" id="2_eoguy"]
 [ext_resource type="Texture2D" uid="uid://dphefy5h6qh4n" path="res://assets/images/bg/hallway.png" id="2_pyg8y"]
 [ext_resource type="LabelSettings" uid="uid://diwe4t6j60tts" path="res://scenes/components/social_media.tres" id="3_0g5tf"]
 [ext_resource type="PackedScene" uid="uid://bijcfw81xkw7r" path="res://scenes/components/phone.tscn" id="3_4ld74"]
-[ext_resource type="Texture2D" uid="uid://c2o2evch7qpwb" path="res://scenes/components/daynightcycle-gradient-texture.tres" id="3_mnctc"]
 [ext_resource type="SpriteFrames" uid="uid://c5m6vqysaysk5" path="res://assets/images/animation/blinking_eye.tres" id="4_hkoyb"]
 
 [node name="Main" type="Node"]
@@ -19,12 +17,6 @@ offset_left = 48.0
 offset_right = 208.0
 offset_bottom = 144.0
 texture = ExtResource("2_pyg8y")
-
-[node name="ScreenTint" type="CanvasModulate" parent="."]
-color = Color(0.90186, 0.426673, 0.663065, 1)
-script = ExtResource("2_eoguy")
-gradient_texture = ExtResource("3_mnctc")
-game_speed = 10
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
@@ -61,8 +53,8 @@ label_settings = ExtResource("3_0g5tf")
 [node name="Phone" parent="UILayer" instance=ExtResource("3_4ld74")]
 unique_name_in_owner = true
 visible = false
-offset_right = 11264.0
-offset_bottom = 6336.0
+offset_right = 11520.0
+offset_bottom = 6480.0
 mouse_filter = 2
 
 [node name="BlinkingEye" type="AnimatedSprite2D" parent="."]

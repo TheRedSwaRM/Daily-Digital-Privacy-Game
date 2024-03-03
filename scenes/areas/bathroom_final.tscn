@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbpnya3djpfsa"]
+[gd_scene load_steps=5 format=3 uid="uid://cbpnya3djpfsa"]
 
 [ext_resource type="Script" path="res://scenes/areas/bathroom_final.gd" id="1_hh462"]
 [ext_resource type="Texture2D" uid="uid://brhmqmen4w3p7" path="res://assets/images/bg/bathroom.png" id="1_ilxtv"]
 [ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="2_1vtcr"]
+[ext_resource type="PackedScene" uid="uid://bmjgtpycm4gd1" path="res://scenes/components/screen_tint.tscn" id="4_wry02"]
 
 [node name="BathroomFinal" type="Node2D"]
 script = ExtResource("1_hh462")
@@ -60,6 +61,8 @@ cursor_look = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Faucet"]
 polygon = PackedVector2Array(144, 82, 157, 82, 158, 79, 162, 79, 163, 82, 175, 82, 180, 88, 180, 96, 176, 103, 143, 103, 139, 96, 139, 88)
+
+[node name="ScreenTint" parent="." instance=ExtResource("4_wry02")]
 
 [connection signal="input_detected" from="ToFront" to="." method="_on_to_front_input_detected"]
 [connection signal="input_detected" from="Shower" to="." method="_on_shower_input_detected"]
