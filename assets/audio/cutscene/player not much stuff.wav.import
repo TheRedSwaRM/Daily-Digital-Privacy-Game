@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bl5v7qv7s60ny"
+path="res://.godot/imported/player not much stuff.wav-0f51a6af4ab5e9c3a601d17b27e08e34.sample"
+
+[deps]
+
+source_file="res://assets/audio/cutscene/player not much stuff.wav"
+dest_files=["res://.godot/imported/player not much stuff.wav-0f51a6af4ab5e9c3a601d17b27e08e34.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
