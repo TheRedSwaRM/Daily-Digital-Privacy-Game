@@ -208,6 +208,7 @@ func _on_phone_call_call_accepted():
 		Events.change_game_switch("ALISON_call_accepted", true)
 	if phone_call_instance.current_caller() == "Alison":
 		Events.change_game_switch("ATTACKER_call_accepted", true)
+	animation_player.stop()
 
 func _on_phone_call_call_rejected():
 	if phone_call_instance.current_caller() == "Unknown":
