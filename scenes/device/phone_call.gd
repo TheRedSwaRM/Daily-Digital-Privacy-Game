@@ -57,6 +57,7 @@ func _on_phone_accept_pressed():
 
 func _on_phone_reject_pressed():
 	call_rejected.emit()
+	reset_state()
 
 func _phone_call_end():
 	timer_tick.stop()

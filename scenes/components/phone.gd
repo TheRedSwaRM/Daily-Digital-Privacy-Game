@@ -214,7 +214,8 @@ func _on_phone_call_call_rejected():
 		Events.change_game_switch("ALISON_call_rejected", true)
 	if phone_call_instance.current_caller() == "Alison":
 		Events.change_game_switch("ATTACKER_call_rejected", true)
-	hide()
+	animation_player.stop()
+	phone_call_instance.hide()
 
 #===============================================================================
 # NAVIGATION FUNCTION
