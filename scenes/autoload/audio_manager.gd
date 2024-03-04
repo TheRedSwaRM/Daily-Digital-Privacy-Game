@@ -3,6 +3,8 @@
 #===============================================================================
 extends Node
 
+signal is_call_finished
+
 @onready var background_music = %BGM
 @onready var call_stream = %PhoneCall
 @onready var sound_effect_queue = $SFX
@@ -68,3 +70,6 @@ func sfx_play(path: String):
 	
 func _sfx_free(sfx_node):
 	sfx_node.queue_free()
+
+func _on_phone_call_finished():
+	is_call_finished.emit()

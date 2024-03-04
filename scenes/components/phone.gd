@@ -38,6 +38,8 @@ enum NavigationState {
 @onready var browser_app = $PhoneContainer/Browser
 # Installer
 @onready var installer_app = $PhoneContainer/Installer
+## Phone call instance, important
+@onready var phone_call_instance = $PhoneContainer/PhoneCall
 
 # Current State
 @onready var current_phone_location = NavigationState.HOME :
@@ -57,6 +59,7 @@ enum NavigationState {
 
 ## Immediately installs the app to allow quicker debugging than usual.
 @export var install_app_immediately: bool
+
 
 signal flipping_phone(value)
 
@@ -268,5 +271,24 @@ func _force_phone_goto(module: String, subcomponent: String = ""):
 		"Installer":
 			installer_app.show()
 
-func phone_call():
-	pass
+## if 0, good. if 1, hacker.
+func phone_call(value: int):
+	match value:
+		0:
+			phone_call_instance.change_caller_name("Unknown")
+		1:
+			phone_call_instance.change_caller_name("Alison")
+	animation_player.play("phone_call")
+
+func _on_phone_call_call_accepted():
+	if phone_call_instance.current_caller() == "Unknown":
+		Events.change_game_switch("ALISON_call_accepted", true)
+	if phone_call_instance.current_caller() == "Alison":
+		Events.change_game_switch("ATTACKER_call_accepted", true)
+
+func _on_phone_call_call_rejected():
+	if phone_call_instance.current_caller() == "Unknown":
+		Events.change_game_switch("ALISON_call_rejected", true)
+	if phone_call_instance.current_caller() == "Alison":
+		Events.change_game_switch("ATTACKER_call_rejected", true)
+	hide()

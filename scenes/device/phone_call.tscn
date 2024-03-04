@@ -40,8 +40,8 @@ horizontal_alignment = 1
 
 [node name="IncomingCall" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 66.0
+offset_bottom = 131.0
 
 [node name="PhoneAccept" type="TextureButton" parent="IncomingCall"]
 layout_mode = 0
@@ -69,5 +69,23 @@ text = "Incoming Call"
 label_settings = SubResource("LabelSettings_yifiy")
 horizontal_alignment = 1
 
+[node name="OngoingCall" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 66.0
+offset_bottom = 131.0
+
+[node name="CallTime" type="Label" parent="OngoingCall"]
+offset_left = 8.0
+offset_top = 34.0
+offset_right = 56.0
+offset_bottom = 40.0
+text = "00:00"
+label_settings = SubResource("LabelSettings_yifiy")
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="pressed" from="IncomingCall/PhoneAccept" to="." method="_on_phone_accept_pressed"]
 [connection signal="pressed" from="IncomingCall/PhoneReject" to="." method="_on_phone_reject_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
