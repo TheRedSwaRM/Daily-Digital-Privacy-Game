@@ -15,6 +15,7 @@ enum NavigationState {
 
 # Other stuff (please arrange later)
 @onready var animation_player = $AnimationPlayer
+@onready var the_phone_container = $PhoneContainer
 @onready var phone_background = $PhoneContainer/ThePhone
 @onready var current_state = State.IDLE
 
@@ -70,6 +71,7 @@ func _ready():
 	Events.force_phone_go_to.connect(_force_phone_goto)
 	Events.game_switch_changed.connect(_should_app_be_installed)
 	#Events.change_time.connect(_change_time)
+	Events.incoming_call.connect(_phone_call)
 	
 	_change_time(Events.game_time)
 	
@@ -82,13 +84,16 @@ func _process(_delta):
 
 # Flip or unflip
 func _flip_phone(value: String):
+	var tween = get_tree().create_tween()
 	match value:
 		"open":
 			AudioManager.sfx_play("res://assets/audio/sfx/phone_open.mp3")
 			flipping_phone.emit(true)
 			current_state = State.RUNNING
-			animation_player.play("flip")
-			await animation_player.animation_finished
+			tween.tween_property(the_phone_container, "position", Vector2(56, 0), 0.1)
+			await tween.finished
+			#animation_player.play("flip")
+			#await animation_player.animation_finished
 		"close":
 			AudioManager.sfx_play("res://assets/audio/sfx/phone_close.mp3")
 			
@@ -96,8 +101,10 @@ func _flip_phone(value: String):
 			
 			flipping_phone.emit(false)
 			current_state = State.IDLE
-			animation_player.play("unflip")
-			await animation_player.animation_finished
+			tween.tween_property(the_phone_container, "position", Vector2(56, 134), 0.1)
+			await tween.finished
+			#animation_player.play("unflip")
+			#await animation_player.animation_finished
 		_:
 			print("Uh, hello? You forgot to state flipping?")
 
@@ -183,6 +190,31 @@ func _on_messaging_button_pressed():
 	current_phone_location = NavigationState.MESSAGES
 	messaging_app.show()
 
+#===============================================================================
+# Phone Call Moment
+#===============================================================================
+
+## if 0, good. if 1, hacker.
+func _phone_call(value: int):
+	match value:
+		0:
+			phone_call_instance.change_caller_name("Unknown")
+		1:
+			phone_call_instance.change_caller_name("Alison")
+	animation_player.play("phone_call")
+
+func _on_phone_call_call_accepted():
+	if phone_call_instance.current_caller() == "Unknown":
+		Events.change_game_switch("ALISON_call_accepted", true)
+	if phone_call_instance.current_caller() == "Alison":
+		Events.change_game_switch("ATTACKER_call_accepted", true)
+
+func _on_phone_call_call_rejected():
+	if phone_call_instance.current_caller() == "Unknown":
+		Events.change_game_switch("ALISON_call_rejected", true)
+	if phone_call_instance.current_caller() == "Alison":
+		Events.change_game_switch("ATTACKER_call_rejected", true)
+	hide()
 
 #===============================================================================
 # NAVIGATION FUNCTION
@@ -271,24 +303,3 @@ func _force_phone_goto(module: String, subcomponent: String = ""):
 		"Installer":
 			installer_app.show()
 
-## if 0, good. if 1, hacker.
-func phone_call(value: int):
-	match value:
-		0:
-			phone_call_instance.change_caller_name("Unknown")
-		1:
-			phone_call_instance.change_caller_name("Alison")
-	animation_player.play("phone_call")
-
-func _on_phone_call_call_accepted():
-	if phone_call_instance.current_caller() == "Unknown":
-		Events.change_game_switch("ALISON_call_accepted", true)
-	if phone_call_instance.current_caller() == "Alison":
-		Events.change_game_switch("ATTACKER_call_accepted", true)
-
-func _on_phone_call_call_rejected():
-	if phone_call_instance.current_caller() == "Unknown":
-		Events.change_game_switch("ALISON_call_rejected", true)
-	if phone_call_instance.current_caller() == "Alison":
-		Events.change_game_switch("ATTACKER_call_rejected", true)
-	hide()

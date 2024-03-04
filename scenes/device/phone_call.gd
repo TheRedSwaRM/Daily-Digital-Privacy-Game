@@ -10,6 +10,11 @@ signal call_rejected
 @onready var incoming_layer = $IncomingCall
 @onready var outgoing_layer = $OngoingCall
 
+@onready var good_call = "res://assets/audio/cutscene/not_much_bitcrushed.wav"
+@onready var bad_call = "res://assets/audio/cutscene/violated_bitcrushed.wav"
+@onready var end_call_button = $OngoingCall/EndCall
+
+
 var internal_time = 0
 # Called when the node enters the scene tree for the first time.
 
@@ -27,11 +32,26 @@ func current_caller():
 	return caller_name.text
 
 func reset_state():
-	pass
+	caller_name.text = "Unknown"
+	call_time.text = "00:00"
+	timer_tick.stop()
+	incoming_layer.show()
+	outgoing_layer.hide()
+	internal_time = 0
 
 func _on_phone_accept_pressed():
 	call_accepted.emit()
 	timer_tick.start()
+	
+	match caller_name.text:
+		"Unknown":
+			AudioManager.phone_call(good_call)
+		# TODO: Still has to be implemented
+		"Alison":
+			pass
+		_:
+			AudioManager.phone_call(good_call)
+			
 	incoming_layer.hide()
 	outgoing_layer.show()
 
@@ -40,6 +60,7 @@ func _on_phone_reject_pressed():
 
 func _phone_call_end():
 	timer_tick.stop()
+	end_call_button.show()
 
 func _on_timer_timeout():
 	internal_time += 1
@@ -48,3 +69,5 @@ func _on_timer_timeout():
 	
 	call_time.text = "%02d:%02d" % [minutes, seconds]
 	
+func _on_end_call_pressed():
+	pass # Replace with function body.

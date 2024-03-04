@@ -84,8 +84,17 @@ text = "00:00"
 label_settings = SubResource("LabelSettings_yifiy")
 horizontal_alignment = 1
 
+[node name="EndCall" type="TextureButton" parent="OngoingCall"]
+visible = false
+offset_left = 43.0
+offset_top = 83.0
+offset_right = 57.0
+offset_bottom = 97.0
+texture_normal = ExtResource("3_pul6b")
+
 [node name="Timer" type="Timer" parent="."]
 
 [connection signal="pressed" from="IncomingCall/PhoneAccept" to="." method="_on_phone_accept_pressed"]
 [connection signal="pressed" from="IncomingCall/PhoneReject" to="." method="_on_phone_reject_pressed"]
+[connection signal="pressed" from="OngoingCall/EndCall" to="." method="_on_end_call_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

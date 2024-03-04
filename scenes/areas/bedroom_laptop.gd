@@ -35,18 +35,7 @@ func _process(_delta):
 	pass
 
 func _on_laptop_pressed():
-	pass
-	#if Events.check_game_switch("night"):
-		#if Events.check_game_switch("laptop_checked") == false:
-			#AudioManager.sfx_play("res://assets/audio/sfx/laptop_startup_distorted.mp3")
-			#Events.change_game_switch("laptop_checked", true)
-			#laptop.texture_normal = load("res://assets/images/bg/laptop_horror_night.png")
-		#else:
-			#DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/knocking.dialogue"), "laptop_scare")
-	#else:
-		#DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "laptop")
-	
-	
+	Events.incoming_call.emit(0)
 	
 
 
