@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://bawosuv7ajtbn"]
+
+[ext_resource type="Texture2D" uid="uid://nktrob8pqgif" path="res://assets/images/device/phone_call_background.png" id="1_p1656"]
+[ext_resource type="Script" path="res://scenes/device/phone_call.gd" id="1_t7f2u"]
+[ext_resource type="Texture2D" uid="uid://iejaltkr46gk" path="res://assets/images/device/phone_call_accept.png" id="2_3y8bm"]
+[ext_resource type="FontFile" uid="uid://bod6xenwo2la3" path="res://assets/font/ark_pixel_finale.ttf" id="2_tkliq"]
+[ext_resource type="Texture2D" uid="uid://dlae6uu2h3sjm" path="res://assets/images/device/phone_call_reject.png" id="3_pul6b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dynnt"]
+font = ExtResource("2_tkliq")
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_yifiy"]
+font = ExtResource("2_tkliq")
+font_size = 5
+font_color = Color(0.596078, 0.596078, 0.596078, 1)
+
+[node name="PhoneCall" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 66.0
+offset_bottom = 131.0
+script = ExtResource("1_t7f2u")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 66.0
+offset_bottom = 124.0
+texture = ExtResource("1_p1656")
+
+[node name="CallerName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 24.0
+offset_right = 56.0
+offset_bottom = 34.0
+text = "Unknown"
+label_settings = SubResource("LabelSettings_dynnt")
+horizontal_alignment = 1
+
+[node name="IncomingCall" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PhoneAccept" type="TextureButton" parent="IncomingCall"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 83.0
+offset_right = 24.0
+offset_bottom = 97.0
+texture_normal = ExtResource("2_3y8bm")
+
+[node name="PhoneReject" type="TextureButton" parent="IncomingCall"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 83.0
+offset_right = 57.0
+offset_bottom = 97.0
+texture_normal = ExtResource("3_pul6b")
+
+[node name="CallLabel" type="Label" parent="IncomingCall"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 34.0
+offset_right = 56.0
+offset_bottom = 40.0
+text = "Incoming Call"
+label_settings = SubResource("LabelSettings_yifiy")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="IncomingCall/PhoneAccept" to="." method="_on_phone_accept_pressed"]
+[connection signal="pressed" from="IncomingCall/PhoneReject" to="." method="_on_phone_reject_pressed"]

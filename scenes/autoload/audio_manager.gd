@@ -4,6 +4,7 @@
 extends Node
 
 @onready var background_music = %BGM
+@onready var call_stream = %PhoneCall
 @onready var sound_effect_queue = $SFX
 
 @onready var phone_accept_sfx = "res://assets/audio/sfx/phone_accept.mp3"
@@ -35,6 +36,11 @@ func bgm_play(path: String):
 	background_music.stream = load(path)
 	background_music.stream.loop = true
 	background_music.play()
+
+## Makes phone call
+func phone_call(path: String):
+	call_stream.stream = load(path)
+	call_stream.play()
 
 ## Stops BGM, as expected.
 func bgm_stop():

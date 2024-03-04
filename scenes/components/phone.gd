@@ -268,5 +268,5 @@ func _force_phone_goto(module: String, subcomponent: String = ""):
 		"Installer":
 			installer_app.show()
 
-
-
+func phone_call():
+	pass

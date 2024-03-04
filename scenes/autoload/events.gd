@@ -83,6 +83,14 @@ var day_counter: int = 1 :
 	# Data Privacy Violations
 	"WARNING_permissions_set": false,
 	"WARNING_posted_with_location": false,
+	
+	# Alison call
+	"ALISON_call_accepted": false,
+	"ALISON_call_rejected": false,
+	
+	# Attacker call
+	"ATTACKER_call_accepted": false,
+	"ATTACKER_call_rejected": false,
 }
 
 @onready var wifi_connection: String = "None" :
