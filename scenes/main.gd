@@ -51,6 +51,7 @@ func _ready():
 	# Time Events
 	#===========================================================================
 	Events.time_check.connect(_cutscene_friend_message)
+	Events.time_check.connect(_cutscene_call)
 
 	
 ## First is path. Second if you want to blink. Third is special.
@@ -152,6 +153,11 @@ func _cutscene_friend_message(time: float):
 		await get_tree().create_timer(1).timeout
 		Events.new_phone_message.emit("Amelie", "Yeah, it's fine.", true, true)
 		Events.new_phone_message.emit("Amelie", "No need to text me, girl.", true, true)
+
+func _cutscene_call(time: float):
+	if Events.day_counter == 3 and time >= 12.0:
+		Events.time_check.disconnect(_cutscene_call)
+		print("begin event.")
 
 func _cutscene_friend_message_2():
 	await get_tree().create_timer(1).timeout
