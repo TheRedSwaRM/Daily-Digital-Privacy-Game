@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cng212mq5ul3p"]
+[gd_scene load_steps=13 format=3 uid="uid://cng212mq5ul3p"]
 
 [ext_resource type="Script" path="res://scenes/intro.gd" id="1_574f2"]
 [ext_resource type="Texture2D" uid="uid://bxwknkacjbvc2" path="res://assets/images/bg/room1.png" id="2_701y8"]
@@ -7,6 +7,7 @@
 [ext_resource type="BitMap" uid="uid://crkrt2gmajq2i" path="res://assets/images/bg/laptop_bitmask.png" id="4_1nu82"]
 [ext_resource type="SpriteFrames" uid="uid://c5m6vqysaysk5" path="res://assets/images/animation/blinking_eye.tres" id="4_lbkev"]
 [ext_resource type="Texture2D" uid="uid://bke8covyh2tpj" path="res://assets/images/bg/clock_side.png" id="5_4megp"]
+[ext_resource type="PackedScene" uid="uid://bmjgtpycm4gd1" path="res://scenes/components/screen_tint.tscn" id="8_5qhhu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6kn22"]
 shader = ExtResource("3_5g587")
@@ -184,7 +185,7 @@ anchor_top = 7.54286
 anchor_right = -4.90625
 anchor_bottom = 7.54286
 offset_right = 256.0
-offset_bottom = 143.893
+offset_bottom = 143.891
 rotation = 1.5708
 texture = ExtResource("2_701y8")
 expand_mode = 2
@@ -243,3 +244,5 @@ sprite_frames = ExtResource("4_lbkev")
 libraries = {
 "": SubResource("AnimationLibrary_76hmj")
 }
+
+[node name="ScreenTint" parent="." instance=ExtResource("8_5qhhu")]
