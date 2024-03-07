@@ -12,6 +12,7 @@ signal call_rejected
 
 @onready var good_call = "res://assets/audio/cutscene/not_much_bitcrushed.wav"
 @onready var bad_call = "res://assets/audio/cutscene/violated_new_bitcrushed.wav"
+@onready var horror_droning = "res://assets/audio/cutscene/horror_droning_heartbeat.wav"
 @onready var end_call_button = $OngoingCall/EndCall
 
 
@@ -54,6 +55,7 @@ func _on_phone_accept_pressed():
 			if hack_check:
 				print("Walahi, we're finished.")
 				AudioManager.phone_call(bad_call)
+				AudioManager.horror_play(horror_droning)
 				Events.change_game_switch("PLAYER_is_aware", true)
 			else: 
 				print("Good call fr.")
@@ -80,6 +82,15 @@ func _on_timer_timeout():
 	var minutes = (internal_time / 60) % 60
 	
 	call_time.text = "%02d:%02d" % [minutes, seconds]
+	
+	## Additional effects. This is a quick hack btw, there should be a better fix.
+	if seconds > 30 and seconds < 55\
+	and caller_name.text == "Unknown" \
+	and Events.hack_checker():
+		AudioManager.dizzy_changer(true)
+	else:
+		AudioManager.dizzy_changer(false)
+	
 	
 func _on_end_call_pressed():
 	pass # Replace with function body.

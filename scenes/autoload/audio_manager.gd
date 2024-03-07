@@ -8,6 +8,7 @@ signal is_call_finished
 @onready var background_music = %BGM
 @onready var call_stream = %PhoneCall
 @onready var sound_effect_queue = $SFX
+@onready var horror_stream = %Horror
 
 @onready var phone_accept_sfx = "res://assets/audio/sfx/phone_accept.mp3"
 @onready var phone_back_sfx = "res://assets/audio/sfx/phone_back.mp3"
@@ -43,6 +44,11 @@ func bgm_play(path: String):
 func phone_call(path: String):
 	call_stream.stream = load(path)
 	call_stream.play()
+
+## Makes phone call
+func horror_play(path: String):
+	horror_stream.stream = load(path)
+	horror_stream.play()
 
 ## Stops BGM, as expected.
 func bgm_stop():
