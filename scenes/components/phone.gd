@@ -194,7 +194,9 @@ func _on_messaging_button_pressed():
 # Phone Call Moment
 #===============================================================================
 
-## if 0, good. if 1, hacker.
+## If 0, then an Alison call. phone_call.gd checks for hacks instead.
+## If 1, then it's the hacker calling. Same checks on phone_call
+
 func _phone_call(value: int):
 	match value:
 		0:

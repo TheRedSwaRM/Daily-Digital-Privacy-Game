@@ -45,8 +45,14 @@ func _on_phone_accept_pressed():
 	
 	match caller_name.text:
 		"Unknown":
-			AudioManager.phone_call(good_call)
-		# TODO: Still has to be implemented
+			## Checks for hacks.
+			var hack_check: bool = false
+			
+			if Events.check_game_switch("WARNING_permissions_set"): hack_check = true
+			if Events.check_game_switch("WARNING_posted_with_location"): hack_check = true
+			
+			if hack_check: AudioManager.phone_call(bad_call)
+			else: AudioManager.phone_call(good_call)
 		"Alison":
 			pass
 		_:

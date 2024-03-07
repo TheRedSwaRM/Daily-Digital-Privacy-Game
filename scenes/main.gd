@@ -157,7 +157,8 @@ func _cutscene_friend_message(time: float):
 func _cutscene_call(time: float):
 	if Events.day_counter == 3 and time >= 12.0:
 		Events.time_check.disconnect(_cutscene_call)
-		print("begin event.")
+		Events.incoming_call.emit(0)
+		
 
 func _cutscene_friend_message_2():
 	await get_tree().create_timer(1).timeout

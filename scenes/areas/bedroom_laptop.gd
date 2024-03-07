@@ -35,7 +35,8 @@ func _process(_delta):
 	pass
 
 func _on_laptop_pressed():
-	Events.incoming_call.emit(0)
+	#Events.incoming_call.emit(0)
+	pass
 	
 func _on_clock_pressed():
 	#match randi() % 3:
