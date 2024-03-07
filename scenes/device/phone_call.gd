@@ -11,7 +11,7 @@ signal call_rejected
 @onready var outgoing_layer = $OngoingCall
 
 @onready var good_call = "res://assets/audio/cutscene/not_much_bitcrushed.wav"
-@onready var bad_call = "res://assets/audio/cutscene/violated_bitcrushed.wav"
+@onready var bad_call = "res://assets/audio/cutscene/violated_new_bitcrushed.wav"
 @onready var end_call_button = $OngoingCall/EndCall
 
 
