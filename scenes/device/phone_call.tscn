@@ -76,6 +76,7 @@ offset_right = 66.0
 offset_bottom = 131.0
 
 [node name="CallTime" type="Label" parent="OngoingCall"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 34.0
 offset_right = 56.0
@@ -86,6 +87,7 @@ horizontal_alignment = 1
 
 [node name="EndCall" type="TextureButton" parent="OngoingCall"]
 visible = false
+layout_mode = 0
 offset_left = 43.0
 offset_top = 83.0
 offset_right = 57.0

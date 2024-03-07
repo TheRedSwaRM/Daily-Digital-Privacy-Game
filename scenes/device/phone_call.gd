@@ -48,11 +48,15 @@ func _on_phone_accept_pressed():
 			## Checks for hacks.
 			var hack_check: bool = false
 			
-			if Events.check_game_switch("WARNING_permissions_set"): hack_check = true
-			if Events.check_game_switch("WARNING_posted_with_location"): hack_check = true
+			## Kept this way so taht 
+			hack_check = Events.hack_checker()
 			
-			if hack_check: AudioManager.phone_call(bad_call)
-			else: AudioManager.phone_call(good_call)
+			if hack_check:
+				print("Walahi, we're finished.")
+				AudioManager.phone_call(bad_call)
+			else: 
+				print("Good call fr.")
+				AudioManager.phone_call(good_call)
 		"Alison":
 			pass
 		_:
