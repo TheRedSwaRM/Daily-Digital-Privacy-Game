@@ -222,6 +222,8 @@ func _on_phone_call_call_rejected():
 
 func _on_phone_call_call_ended():
 	phone_call_instance.hide()
+	
+	
 
 #===============================================================================
 # NAVIGATION FUNCTION

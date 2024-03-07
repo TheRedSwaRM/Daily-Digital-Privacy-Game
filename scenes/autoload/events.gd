@@ -180,6 +180,11 @@ func hack_checker() -> int:
 
 	return hacking_check
 
+## Exactly what it says in the tin.
+## Doesn't work.
+#func wait(seconds: float) -> void:
+	#await get_tree().create_timer(seconds).timeout
+
 #===============================================================================
 # DEBUG FUNCTIONS
 #===============================================================================

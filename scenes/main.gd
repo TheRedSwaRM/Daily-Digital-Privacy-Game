@@ -46,6 +46,7 @@ func _ready():
 	Events.game_switch_changed.connect(_permissions_set)
 	Events.game_switch_changed.connect(_cutscene_social_post)
 	Events.game_switch_changed.connect(_cutscene_complete_signup)
+	Events.game_switch_changed.connect(_hacker_attack_message)
 	
 	#===========================================================================
 	# Time Events
@@ -139,7 +140,14 @@ func _cutscene_social_post(key: String, _value: bool):
 		Events.game_switch_changed.disconnect(_cutscene_social_post)
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/intro.dialogue"))
 		await DialogueManager.dialogue_ended
-		
+
+# Day 3 Events
+func _hacker_attack_message(key: String, _value: bool):
+	if Events.check_game_switch(key) && key == "PLAYER_is_aware":
+		Events.game_switch_changed.disconnect(_hacker_attack_message)
+		await get_tree().create_timer(90).timeout
+		Events.new_phone_message.emit("Alison", "😀")
+
 #==============================================================================
 # Timed Events
 #==============================================================================
@@ -147,60 +155,59 @@ func _cutscene_social_post(key: String, _value: bool):
 func _cutscene_friend_message(time: float):
 	if Events.day_counter == 1 and time >= 10.0:
 		Events.time_check.disconnect(_cutscene_friend_message)
-		Events.new_phone_message.emit("Amelie", "Yo, yo, yo!")
+		Events.new_phone_message.emit("Alison", "Yo, yo, yo!")
 		await get_tree().create_timer(1).timeout
-		Events.new_phone_message.emit("Amelie", "How's it going, dude? Having a good break there?")
+		Events.new_phone_message.emit("Alison", "How's it going, dude? Having a good break there?")
 		await get_tree().create_timer(1).timeout
-		Events.new_phone_message.emit("Amelie", "Yeah, it's fine.", true, true)
-		Events.new_phone_message.emit("Amelie", "No need to text me, girl.", true, true)
+		Events.new_phone_message.emit("Alison", "Yeah, it's fine.", true, true)
+		Events.new_phone_message.emit("Alison", "No need to text me, girl.", true, true)
 
 func _cutscene_call(time: float):
 	if Events.day_counter == 3 and time >= 12.0:
 		Events.time_check.disconnect(_cutscene_call)
 		Events.incoming_call.emit(0)
 		
-
 func _cutscene_friend_message_2():
 	await get_tree().create_timer(1).timeout
-	Events.new_phone_message.emit("Amelie", "And because of that, I got something just for you.")
+	Events.new_phone_message.emit("Alison", "And because of that, I got something just for you.")
 	await get_tree().create_timer(1).timeout
-	Events.new_phone_message.emit("Amelie", "There's this new social media app I wanna try, and it's called Friendster!")
+	Events.new_phone_message.emit("Alison", "There's this new social media app I wanna try, and it's called Friendster!")
 	await get_tree().create_timer(1).timeout
-	Events.new_phone_message.emit("Amelie", "And everyone's getting on it, girl! You have to hop in!")
+	Events.new_phone_message.emit("Alison", "And everyone's getting on it, girl! You have to hop in!")
 	await get_tree().create_timer(1).timeout
-	Events.new_phone_message.emit("Amelie", "Alright, alright. I'll try.", true, true)
-	Events.new_phone_message.emit("Amelie", "And what if I don't?", true, true)
+	Events.new_phone_message.emit("Alison", "Alright, alright. I'll try.", true, true)
+	Events.new_phone_message.emit("Alison", "And what if I don't?", true, true)
 
 func _cutscene_friend_message_3():
 	await get_tree().create_timer(1).timeout
-	Events.new_phone_message.emit("Amelie", "The handle's @aMelee. See ya!")
+	Events.new_phone_message.emit("Alison", "The handle's @aMelee. See ya!")
 	await get_tree().create_timer(1).timeout
-	Events.new_phone_message.emit("Amelie", "[url='www.gglplay.com']Download Link[/url]")
+	Events.new_phone_message.emit("Alison", "[url='www.gglplay.com']Download Link[/url]")
 	
 	#await get_tree().create_timer(2).timeout
-	#Events.new_phone_message.emit("Amelie", "[url='www.gglplay.com']Download Link[/url]")
+	#Events.new_phone_message.emit("Alison", "[url='www.gglplay.com']Download Link[/url]")
 
 func _cutscene_complete_signup(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "contacting_friend":
 		Events.game_switch_changed.disconnect(_cutscene_complete_signup)
-		Events.force_phone_go_to.emit("Messaging", "Amelie")
-		Events.new_phone_message.emit("Amelie", "I signed up na.", true)
+		Events.force_phone_go_to.emit("Messaging", "Alison")
+		Events.new_phone_message.emit("Alison", "I signed up na.", true)
 		await get_tree().create_timer(1).timeout
-		Events.new_phone_message.emit("Amelie", "I knew I could count on you, beb!")
+		Events.new_phone_message.emit("Alison", "I knew I could count on you, beb!")
 		await get_tree().create_timer(1).timeout
-		Events.new_phone_message.emit("Amelie", "Ano yung account name?")
+		Events.new_phone_message.emit("Alison", "Ano yung account name?")
 		await get_tree().create_timer(1).timeout
-		Events.new_phone_message.emit("Amelie", Events.social_media_username, true)
+		Events.new_phone_message.emit("Alison", Events.social_media_username, true)
 		await get_tree().create_timer(1).timeout
-		Events.new_phone_message.emit("Amelie", "Nice one!")
+		Events.new_phone_message.emit("Alison", "Nice one!")
 		await get_tree().create_timer(1).timeout
-		Events.new_phone_message.emit("Amelie", "Oh... you're not logged in pa?")
+		Events.new_phone_message.emit("Alison", "Oh... you're not logged in pa?")
 		await get_tree().create_timer(1).timeout
-		Events.new_phone_message.emit("Amelie", "I'll try the app tom.", true)
+		Events.new_phone_message.emit("Alison", "I'll try the app tom.", true)
 		await get_tree().create_timer(1).timeout
-		Events.new_phone_message.emit("Amelie", "Booooooo.")
+		Events.new_phone_message.emit("Alison", "Booooooo.")
 		await get_tree().create_timer(1).timeout
-		Events.new_phone_message.emit("Amelie", "Okay, beb. See you soon! Mwa, mwa. 😘")
+		Events.new_phone_message.emit("Alison", "Okay, beb. See you soon! Mwa, mwa. 😘")
 		
 #==============================================================================
 # Message Events
@@ -211,25 +218,25 @@ func _message_received(respondent: String, text: String):
 	var text_message = [respondent, text]
 	
 	match text_message:
-		["Amelie", "Yeah, it's fine."]:
+		["Alison", "Yeah, it's fine."]:
 			await get_tree().create_timer(1).timeout
-			Events.new_phone_message.emit("Amelie", "Good, good. Was wondering you'd be bored to hell.")
+			Events.new_phone_message.emit("Alison", "Good, good. Was wondering you'd be bored to hell.")
 			_cutscene_friend_message_2()
 			
-		["Amelie", "No need to text me, girl."]:
+		["Alison", "No need to text me, girl."]:
 			await get_tree().create_timer(1).timeout
-			Events.new_phone_message.emit("Amelie", "You don't miss me? :(")
+			Events.new_phone_message.emit("Alison", "You don't miss me? :(")
 			_cutscene_friend_message_2()
 			
-		["Amelie", "Alright, alright. I'll try."]:
+		["Alison", "Alright, alright. I'll try."]:
 			await get_tree().create_timer(1).timeout
-			Events.new_phone_message.emit("Amelie", "Yay! Thanks dude! Anyway...")
+			Events.new_phone_message.emit("Alison", "Yay! Thanks dude! Anyway...")
 			_cutscene_friend_message_3()
 			
-		["Amelie", "And what if I don't?"]:
+		["Alison", "And what if I don't?"]:
 			await get_tree().create_timer(1).timeout
-			Events.new_phone_message.emit("Amelie", "Oh, you know that shit ain't gonna fly, baby.")
+			Events.new_phone_message.emit("Alison", "Oh, you know that shit ain't gonna fly, baby.")
 			await get_tree().create_timer(1).timeout
-			Events.new_phone_message.emit("Amelie", "Besides. Sooner or later, you're gonna cave.")
+			Events.new_phone_message.emit("Alison", "Besides. Sooner or later, you're gonna cave.")
 			_cutscene_friend_message_3()
 		

@@ -13,7 +13,7 @@ Cheryl: I don't think I need to use this right now.
 
 ~ installation
 
-Cheryl: There. Now to text Amelie back...
+Cheryl: There. Now to text Alison back...
 do Events.change_game_switch("contacting_friend", true)
 
 => END 
