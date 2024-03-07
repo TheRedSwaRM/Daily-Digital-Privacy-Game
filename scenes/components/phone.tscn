@@ -463,5 +463,6 @@ autostart = true
 [connection signal="pressed" from="PhoneContainer/HomeButton" to="." method="_on_home_button_pressed"]
 [connection signal="pressed" from="PhoneContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="call_accepted" from="PhoneContainer/PhoneCall" to="." method="_on_phone_call_call_accepted"]
+[connection signal="call_ended" from="PhoneContainer/PhoneCall" to="." method="_on_phone_call_call_ended"]
 [connection signal="call_rejected" from="PhoneContainer/PhoneCall" to="." method="_on_phone_call_call_rejected"]
 [connection signal="timeout" from="PhoneTimerFrameUpdate" to="." method="_on_phone_timer_frame_update_timeout"]

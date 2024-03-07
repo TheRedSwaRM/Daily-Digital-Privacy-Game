@@ -2,6 +2,7 @@ extends Control
 
 signal call_accepted
 signal call_rejected
+signal call_ended
 
 @onready var caller_name = $CallerName
 @onready var timer_tick = $Timer
@@ -75,6 +76,7 @@ func _on_phone_reject_pressed():
 func _phone_call_end():
 	timer_tick.stop()
 	end_call_button.show()
+	call_ended.emit()
 
 func _on_timer_timeout():
 	internal_time += 1

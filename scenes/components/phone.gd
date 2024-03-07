@@ -220,6 +220,9 @@ func _on_phone_call_call_rejected():
 	animation_player.stop()
 	phone_call_instance.hide()
 
+func _on_phone_call_call_ended():
+	phone_call_instance.hide()
+
 #===============================================================================
 # NAVIGATION FUNCTION
 #===============================================================================
@@ -306,4 +309,7 @@ func _force_phone_goto(module: String, subcomponent: String = ""):
 			
 		"Installer":
 			installer_app.show()
+
+
+
 
