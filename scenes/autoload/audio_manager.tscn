@@ -13,6 +13,10 @@ bus = &"BGM"
 unique_name_in_owner = true
 bus = &"PhoneCall"
 
+[node name="Horror" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+bus = &"Horror"
+
 [node name="SFX" type="Node" parent="."]
 
 [connection signal="finished" from="PhoneCall" to="." method="_on_phone_call_finished"]

@@ -36,6 +36,7 @@ func _process(_delta):
 
 func _on_laptop_pressed():
 	#Events.incoming_call.emit(0)
+	AudioManager.dizzy_changer(true)
 	pass
 	
 func _on_clock_pressed():

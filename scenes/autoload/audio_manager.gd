@@ -73,3 +73,9 @@ func _sfx_free(sfx_node):
 
 func _on_phone_call_finished():
 	is_call_finished.emit()
+
+func dizzy_changer(value: bool):
+	AudioServer.set_bus_effect_enabled (AudioServer.get_bus_index("SFX"), 0, value)
+	AudioServer.set_bus_effect_enabled (AudioServer.get_bus_index("BGM"), 0, value)
+	
+	
