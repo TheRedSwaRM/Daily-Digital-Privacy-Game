@@ -54,6 +54,7 @@ func _on_phone_accept_pressed():
 			if hack_check:
 				print("Walahi, we're finished.")
 				AudioManager.phone_call(bad_call)
+				Events.change_game_switch("PLAYER_is_aware", true)
 			else: 
 				print("Good call fr.")
 				AudioManager.phone_call(good_call)

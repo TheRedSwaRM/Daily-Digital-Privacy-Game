@@ -93,6 +93,9 @@ var day_counter: int = 1 :
 	# Attacker call
 	"ATTACKER_call_accepted": false,
 	"ATTACKER_call_rejected": false,
+	
+	# Player knows about attacker
+	"PLAYER_is_aware": false,
 }
 
 @onready var wifi_connection: String = "None" :
