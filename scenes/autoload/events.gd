@@ -96,6 +96,9 @@ var day_counter: int = 1 :
 	
 	# Player knows about attacker
 	"PLAYER_is_aware": false,
+	"BLOCK_alison_new_num": false,
+	"BLOCK_alison_prank": false,
+	"BLOCK_attacker_num": false,
 }
 
 @onready var wifi_connection: String = "None" :

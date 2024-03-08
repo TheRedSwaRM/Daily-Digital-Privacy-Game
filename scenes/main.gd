@@ -47,6 +47,7 @@ func _ready():
 	Events.game_switch_changed.connect(_cutscene_social_post)
 	Events.game_switch_changed.connect(_cutscene_complete_signup)
 	Events.game_switch_changed.connect(_hacker_attack_message)
+	Events.game_switch_changed.connect(_alison_texts_back_1)
 	
 	#===========================================================================
 	# Time Events
@@ -148,6 +149,14 @@ func _hacker_attack_message(key: String, _value: bool):
 		await get_tree().create_timer(90).timeout
 		Events.new_phone_message.emit("Alison", "😀")
 
+func _alison_texts_back_1(key: String, _value: bool):
+	if Events.check_game_switch(key) && key == "ALISON_call_rejected":
+		Events.game_switch_changed.disconnect(_alison_texts_back_1)
+		await get_tree().create_timer(10).timeout
+		Events.new_phone_message.emit("Unknown", "girl, you there?")
+		Events.new_phone_message.emit("Unknown", "Who's this?", true, true)
+		Events.new_phone_message.emit("Unknown", "[Block phone number]", true, true)
+
 #==============================================================================
 # Timed Events
 #==============================================================================
@@ -163,7 +172,7 @@ func _cutscene_friend_message(time: float):
 		Events.new_phone_message.emit("Alison", "No need to text me, girl.", true, true)
 
 func _cutscene_call(time: float):
-	if Events.day_counter == 3 and time >= 12.0:
+	if Events.day_counter == 3 and time >= 10.0:
 		Events.time_check.disconnect(_cutscene_call)
 		Events.incoming_call.emit(0)
 		
@@ -240,3 +249,39 @@ func _message_received(respondent: String, text: String):
 			Events.new_phone_message.emit("Alison", "Besides. Sooner or later, you're gonna cave.")
 			_cutscene_friend_message_3()
 		
+		["Unknown", "Who's this?"]:
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Unknown", "it's me, alison. im using a new number right now.")
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Unknown", "i'm kinda pissed you didn't accept my call.")
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Unknown", "Well, how am i supposed to know it was you?", true, true)
+			Events.new_phone_message.emit("Unknown", "[Block phone number]", true, true)
+		
+		["Unknown", "Well, how am i supposed to know it was you?"]:
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Unknown", "okay, remember the time you vomitted on my bed when we got back after that one party?")
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Unknown", "Okay, maybe it's you.", true, true)
+			Events.new_phone_message.emit("Unknown", "[Block her out of annoyance]", true, true)
+		
+		["Unknown", "[Block phone number]"]:
+			Events.change_game_switch("BLOCK_alison_new_num", true)
+		
+		["Unknown", "Okay, maybe it's you."]:
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Unknown", "alright, alright. just letting you know that my phone got stolen.")
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Unknown", "someone contacted you, right?")
+			
+			## TODO: Add branching route here.
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Unknown", "Yeah, someone did. I thought it was you.", true)
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Unknown", "aight, good to know. stay safe, okay?")
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Unknown", "Alright, alright.", true)
+
+		["Unknown", "[Block her out of annoyance]"]:
+			Events.change_game_switch("BLOCK_alison_prank", true)
+			
