@@ -95,6 +95,7 @@ var day_counter: int = 1 :
 	"ATTACKER_call_rejected": false,
 	
 	## Attack phase
+	"deactivate_social_media": false,
 	"ATTACKER_begin": false,
 	
 	# Player knows about attacker

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b2encyf73hip4"]
+[gd_scene load_steps=25 format=3 uid="uid://b2encyf73hip4"]
 
 [ext_resource type="Script" path="res://scenes/device/social_media/social_media.gd" id="1_6rg46"]
 [ext_resource type="Texture2D" uid="uid://bu8k43hl1ehm8" path="res://assets/images/device/phone_social_media.png" id="1_xk37a"]
@@ -16,6 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://bhvnhn0d1k8xa" path="res://scenes/device/social_media/log_in_screen.tscn" id="14_a6p00"]
 [ext_resource type="PackedScene" uid="uid://d00gwn0gxvdse" path="res://scenes/device/social_media/permissions_screen.tscn" id="14_a51wq"]
 [ext_resource type="PackedScene" uid="uid://c2jeqygg3v1kt" path="res://scenes/device/social_media/profile_feed.tscn" id="16_4k71l"]
+[ext_resource type="Texture2D" uid="uid://dwatwmev1y31r" path="res://assets/images/device/phone_social_media_signup.png" id="17_bhwia"]
+[ext_resource type="Texture2D" uid="uid://dn5xa63wfiwbf" path="res://assets/images/device/phone_social_media_down.png" id="18_rj2ns"]
+[ext_resource type="FontFile" uid="uid://bod6xenwo2la3" path="res://assets/font/ark_pixel_finale.ttf" id="19_h0hv3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c7uk"]
 
@@ -248,6 +251,37 @@ visible = false
 
 [node name="LogIn" parent="." instance=ExtResource("14_a6p00")]
 visible = false
+
+[node name="DisabledScreen" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BG" type="TextureRect" parent="DisabledScreen"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("17_bhwia")
+
+[node name="DownLogo" type="TextureRect" parent="DisabledScreen"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("18_rj2ns")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DisabledScreen"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 72.0
+offset_right = 61.0
+offset_bottom = 112.0
+theme = ExtResource("9_nmfo4")
+theme_override_fonts/normal_font = ExtResource("19_h0hv3")
+theme_override_font_sizes/normal_font_size = 5
+text = "Woops, looks like we're down for the moment.
+
+Come back when we've finished fixing everything!"
+fit_content = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

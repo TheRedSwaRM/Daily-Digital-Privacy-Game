@@ -15,7 +15,11 @@ func _ready():
 		print("Skipping to Day 3")
 		Events.change_game_switch("WARNING_permissions_set", true)
 		Events.day_counter = 3
-		
+	
+	# We'll make the day faster.
+	if Events.day_counter == 3:
+		Events.change_game_switch("deactivate_social_media", true)
+		Events.game_speed = 20
 	
 	Events.pause_game_time(false)
 	Events.change_map.emit("res://scenes/areas/bedroom_laptop.tscn", false)

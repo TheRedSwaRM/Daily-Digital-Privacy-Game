@@ -11,6 +11,7 @@ extends Control
 @onready var login_screen = $LogIn
 @onready var permission_screen = $PermissionsScreen
 @onready var new_post_screen = $NewPostPanel
+@onready var disable_screen = $DisabledScreen
 
 @onready var sns_post_num: int = 0
 
@@ -25,9 +26,13 @@ func _ready():
 	Events.sns_new_notif.connect(_new_notification_item)
 	Events.connection_change.connect(_check_for_wifi_connection)
 	Events.back_button_pressed.connect(_phone_back_button_pressed)
+	
 	signup_screen.signup_complete.connect(login_screen.registration_successful)
 	_check_for_wifi_connection("none")
 	#Events.location_change.connect(_change_location_debug)
+	
+	# When Day 3 arrives.
+	Events.game_switch_changed.connect(_disable_social_media)
 	
 	# initialization
 	login_screen.show()
@@ -239,4 +244,7 @@ func _new_notification_item(post_type: Events.NotifType, content_string: String)
 		#Events.NotifType.FOLLOW:
 			#
 
-
+func _disable_social_media(key: String, _value: bool):
+	if Events.check_game_switch(key) && key == "deactivate_social_media":
+		Events.game_switch_changed.disconnect(_disable_social_media)
+		disable_screen.show()

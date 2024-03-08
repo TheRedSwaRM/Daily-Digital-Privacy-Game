@@ -16,9 +16,7 @@ func _ready():
 	day_label.hide()
 	await get_tree().create_timer(1).timeout
 	
-	# We'll make the day faster.
-	if Events.day_counter == 3:
-		Events.game_speed = 20
+	
 	
 	Events.game_time = 6.0
 	
