@@ -24,7 +24,7 @@ func _ready():
 	AudioManager.is_call_finished.connect(_phone_call_end)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func change_caller_name(call_name: String):

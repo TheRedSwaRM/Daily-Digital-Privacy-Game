@@ -20,6 +20,10 @@ func _process(_delta):
 	pass
 
 func _on_pillow_input_detected():
+	if Events.day_counter == 3:
+		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/sleeping_time.dialogue"), "day_3_moment")
+		return
+	
 	if Events.game_time > 18.0:
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/sleeping_time.dialogue"), "sleepy_time")
 	elif Events.game_time < 10.0:
@@ -27,20 +31,7 @@ func _on_pillow_input_detected():
 	else:
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/sleeping_time.dialogue"), "nap_time")
 	
-	#if Events.check_game_switch("WARNING_permissions_set") and Events.day_counter == 1:
-		#
-	#elif Events.check_game_switch("posted_in_sns") and Events.day_counter == 2:
-		#DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/sleeping_time.dialogue"), "sleepy_time")
-	#else:
-		#DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/sleeping_time.dialogue"), "still_active")
-	#
 	
-	
-	# Legacy code for demo.
-	#if Events.check_game_switch("night"):
-		#DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/knocking.dialogue"), "pillow_check")
-	#else:
-		#DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/sleeping_time.dialogue"))
 
 
 func _on_clock_pressed():

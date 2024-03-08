@@ -143,11 +143,7 @@ func _cutscene_social_post(key: String, _value: bool):
 		await DialogueManager.dialogue_ended
 
 # Day 3 Events
-func _hacker_attack_message(key: String, _value: bool):
-	if Events.check_game_switch(key) && key == "PLAYER_is_aware":
-		Events.game_switch_changed.disconnect(_hacker_attack_message)
-		await get_tree().create_timer(90).timeout
-		Events.new_phone_message.emit("Alison", "😀")
+
 
 func _alison_texts_back_1(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "ALISON_call_rejected":
@@ -156,6 +152,8 @@ func _alison_texts_back_1(key: String, _value: bool):
 		Events.new_phone_message.emit("Unknown", "girl, you there?")
 		Events.new_phone_message.emit("Unknown", "Who's this?", true, true)
 		Events.new_phone_message.emit("Unknown", "[Block phone number]", true, true)
+
+
 
 
 #==============================================================================
@@ -298,3 +296,12 @@ func _message_received(respondent: String, text: String):
 		["Unknown", "[Block her out of annoyance]"]:
 			Events.change_game_switch("BLOCK_alison_prank", true)
 			
+#==============================================================================
+# Message Attack Time.
+#==============================================================================
+
+func _hacker_attack_message(key: String, _value: bool):
+	if Events.check_game_switch(key) && key == "ATTACKER_begin":
+		Events.game_switch_changed.disconnect(_hacker_attack_message)
+		await get_tree().create_timer(30).timeout
+		Events.new_phone_message.emit("Alison", "😀")
