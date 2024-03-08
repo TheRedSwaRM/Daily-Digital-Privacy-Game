@@ -94,6 +94,9 @@ var day_counter: int = 1 :
 	"ATTACKER_call_accepted": false,
 	"ATTACKER_call_rejected": false,
 	
+	## Attack phase
+	"ATTACKER_begin": false,
+	
 	# Player knows about attacker
 	"PLAYER_is_aware": false,
 	"BLOCK_alison_new_num": false,
