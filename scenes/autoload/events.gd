@@ -182,11 +182,15 @@ func background_audio_check():
 ## For specific things, use Events.check_game_switch.
 func hack_checker() -> int:
 	var hacking_check: bool = false
-	if Events.check_game_switch("WARNING_permissions_set"): hacking_check = true
-	if Events.check_game_switch("WARNING_posted_with_location"): hacking_check = true
+	if check_game_switch("WARNING_permissions_set"): hacking_check = true
+	if check_game_switch("WARNING_posted_with_location"): hacking_check = true
 
 	return hacking_check
 
+## Day 3 specific that only works
+func begin_attacker_phase() -> void:
+	change_game_switch("ATTACKER_begin", true)
+	
 ## Exactly what it says in the tin.
 ## Doesn't work.
 #func wait(seconds: float) -> void:

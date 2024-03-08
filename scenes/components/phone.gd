@@ -220,11 +220,13 @@ func _on_phone_call_call_rejected():
 		Events.change_game_switch("ALISON_call_rejected", true)
 	if phone_call_instance.current_caller() == "Alison":
 		Events.change_game_switch("ATTACKER_call_rejected", true)
+	Events.begin_attacker_phase()
 	animation_player.stop()
 	phone_call_instance.hide()
 
 func _on_phone_call_call_ended():
 	phone_call_instance.hide()
+	Events.begin_attacker_phase() # The attacks begin.
 	
 	
 

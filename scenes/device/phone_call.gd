@@ -80,6 +80,7 @@ func _phone_call_end():
 	call_ended.emit()
 	
 	
+	
 
 func _on_timer_timeout():
 	internal_time += 1

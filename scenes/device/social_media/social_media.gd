@@ -246,5 +246,6 @@ func _new_notification_item(post_type: Events.NotifType, content_string: String)
 
 func _disable_social_media(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "deactivate_social_media":
+		print("Disabled social media.")
 		Events.game_switch_changed.disconnect(_disable_social_media)
 		disable_screen.show()

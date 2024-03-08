@@ -157,6 +157,7 @@ func _alison_texts_back_1(key: String, _value: bool):
 		Events.new_phone_message.emit("Unknown", "Who's this?", true, true)
 		Events.new_phone_message.emit("Unknown", "[Block phone number]", true, true)
 
+
 #==============================================================================
 # Timed Events
 #==============================================================================
@@ -223,9 +224,20 @@ func _cutscene_complete_signup(key: String, _value: bool):
 #==============================================================================
 
 func _message_received(respondent: String, text: String):
-	Events.new_phone_message.emit(respondent, text, true)
 	var text_message = [respondent, text]
 	
+	# In case of blocking
+	match text_message:
+		["Unknown", "[Block her out of annoyance]"]:
+			pass
+		["Unknown", "[Block phone number]"]:
+			pass
+		_:
+			Events.new_phone_message.emit(respondent, text, true)
+	
+	
+	
+	# Events
 	match text_message:
 		["Alison", "Yeah, it's fine."]:
 			await get_tree().create_timer(1).timeout
@@ -281,6 +293,7 @@ func _message_received(respondent: String, text: String):
 			Events.new_phone_message.emit("Unknown", "aight, good to know. stay safe, okay?")
 			await get_tree().create_timer(1).timeout
 			Events.new_phone_message.emit("Unknown", "Alright, alright.", true)
+			Events.change_game_switch("PLAYER_is_aware", true)
 
 		["Unknown", "[Block her out of annoyance]"]:
 			Events.change_game_switch("BLOCK_alison_prank", true)
