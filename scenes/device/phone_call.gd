@@ -34,7 +34,7 @@ func current_caller():
 	return caller_name.text
 
 func reset_state():
-	Events.game_speed = 20
+	#Events.game_speed = 20
 	caller_name.text = "Unknown"
 	call_time.text = "00:00"
 	timer_tick.stop()
@@ -43,7 +43,7 @@ func reset_state():
 	internal_time = 0
 
 func _on_phone_accept_pressed():
-	Events.game_speed = 1
+	#Events.game_speed = 1
 	call_accepted.emit()
 	timer_tick.start()
 	

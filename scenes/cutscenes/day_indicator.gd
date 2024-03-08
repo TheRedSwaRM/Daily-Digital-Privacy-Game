@@ -18,7 +18,7 @@ func _ready():
 	
 	# We'll make the day faster.
 	if Events.day_counter == 3:
-		Events.game_speed = 40
+		Events.game_speed = 20
 	
 	Events.game_time = 6.0
 	

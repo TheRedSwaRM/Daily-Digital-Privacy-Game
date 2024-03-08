@@ -35,19 +35,9 @@ func _process(_delta):
 	pass
 
 func _on_laptop_pressed():
-	#Events.incoming_call.emit(0)
-	#AudioManager.dizzy_changer(true)
 	pass
 	
 func _on_clock_pressed():
-	#match randi() % 3:
-		#0:
-			#Events.game_time = 5.5
-		#1:
-			#Events.game_time = 12
-		#2:
-			#Events.game_time = 17
-	#print(Events.game_time)
 	DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/room.dialogue"), "clock")
 
 

@@ -198,6 +198,9 @@ func _on_messaging_button_pressed():
 ## If 1, then it's the hacker calling. Same checks on phone_call
 
 func _phone_call(value: int):
+	## Game speed is now set to a minimum. Finale is now beginning.
+	Events.game_speed = 1 
+
 	match value:
 		0:
 			phone_call_instance.change_caller_name("Unknown")
