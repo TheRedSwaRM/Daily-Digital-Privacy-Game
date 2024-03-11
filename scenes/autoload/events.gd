@@ -79,7 +79,7 @@ var day_counter: int = 1 :
 	"app_installed": false,
 	"posted_in_sns": false,
 	"signup_complete": false,
-	"contacting_friend": true,
+	"contacting_friend": false,
 	"shower_taken": false,
 	
 	# Data Privacy Violations
