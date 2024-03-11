@@ -13,9 +13,11 @@ signal call_ended
 
 @onready var good_call = "res://assets/audio/cutscene/not_much_bitcrushed.wav"
 @onready var bad_call = "res://assets/audio/cutscene/violated_new_bitcrushed.wav"
+@onready var skip_call = "res://assets/audio/sfx/new_phone_ring.mp3"
 @onready var horror_droning = "res://assets/audio/cutscene/horror_droning_heartbeat.wav"
 @onready var end_call_button = $OngoingCall/EndCall
 
+@export var skip_the_calls: bool = false 
 
 var internal_time = 0
 # Called when the node enters the scene tree for the first time.
@@ -57,16 +59,16 @@ func _on_phone_accept_pressed():
 			
 			if hack_check:
 				print("Walahi, we're finished.")
-				AudioManager.phone_call(bad_call)
+				_activate_call(bad_call)
 				AudioManager.horror_play(horror_droning)
 				Events.change_game_switch("PLAYER_is_aware", true)
 			else: 
 				print("Good call fr.")
-				AudioManager.phone_call(good_call)
+				_activate_call(good_call)
 		"Alison":
 			pass
 		_:
-			AudioManager.phone_call(good_call)
+			_activate_call(good_call)
 			
 	incoming_layer.hide()
 	outgoing_layer.show()
@@ -79,8 +81,11 @@ func _phone_call_end():
 	reset_state()
 	call_ended.emit()
 	
-	
-	
+func _activate_call(call_file: String):
+	if not skip_the_calls:
+		AudioManager.phone_call(call_file)
+	else: 
+		AudioManager.phone_call(skip_call)
 
 func _on_timer_timeout():
 	internal_time += 1
