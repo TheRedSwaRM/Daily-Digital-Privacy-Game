@@ -41,10 +41,7 @@ Module['instantiateWasm'] = (info, receiveInstance) => {
   // We don't need the module anymore; new threads will be spawned from the main thread.
   Module['wasmModule'] = null;
   var instance = new WebAssembly.Instance(module, info);
-  // TODO: Due to Closure regression https://github.com/google/closure-compiler/issues/3193,
-  // the above line no longer optimizes out down to the following line.
-  // When the regression is fixed, we can remove this if/else.
-  return receiveInstance(instance);
+  return receiveInstance(instance, module);
 }
 
 // Turn unhandled rejected promises into errors so that the main thread will be
@@ -76,6 +73,8 @@ function handleMessage(e) {
 
       // Module and memory were sent from main thread
       Module['wasmModule'] = e.data.wasmModule;
+
+      Module['dynamicLibraries'] = e.data.dynamicLibraries;
 
       // Use `const` here to ensure that the variable is scoped only to
       // that iteration, allowing safe reference from a closure.
