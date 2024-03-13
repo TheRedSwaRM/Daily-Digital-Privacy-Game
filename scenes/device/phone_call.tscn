@@ -21,6 +21,7 @@ anchors_preset = 0
 offset_right = 66.0
 offset_bottom = 131.0
 script = ExtResource("1_t7f2u")
+skip_the_calls = true
 
 [node name="BG" type="TextureRect" parent="."]
 layout_mode = 0

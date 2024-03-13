@@ -144,7 +144,6 @@ func _cutscene_social_post(key: String, _value: bool):
 
 # Day 3 Events
 
-
 func _alison_texts_back_1(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "ALISON_call_rejected":
 		Events.game_switch_changed.disconnect(_alison_texts_back_1)
