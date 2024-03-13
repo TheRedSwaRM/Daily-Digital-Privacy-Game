@@ -295,7 +295,36 @@ func _message_received(respondent: String, text: String):
 		#["Unknown", "[Block her out of annoyance]"]:
 			#Events.change_game_switch("BLOCK_alison_prank", true)
 		
+		["Alison", "Your mom."]:
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Alison", "What?")
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Alison", "You're not getting anything from me.", true)
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Alison", "Goodbye.", true)
+			await get_tree().create_timer(1).timeout
+			Events.change_game_switch("BLOCK_attacker_num", true)
 		
+		["Alison", "Fine, what about you?"]:
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Alison", "Same. I'm just bored, Friendster's currently down.")
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Alison", "You're really addicted, huh?", true)
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Alison", "Well, what can I say? I'm quite famous there.")
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Alison", "Just a micro-celeb, FYI.", true)
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Alison", "Pssh. You're just jealous, girl.")
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Alison", "Anyway, wanna check out a game? I'm really bored now.")
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Alison", "I guess I can. I got nothing to do anyway.", true)
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Alison", "Alright! Here's the link.")
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Alison", "[url='www.idiotAHAHAHAHA.com']Withering Tides Link[/url]")
+			
 #==============================================================================
 # Message Attack Time.
 #==============================================================================
@@ -303,5 +332,19 @@ func _message_received(respondent: String, text: String):
 func _hacker_attack_message(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "ATTACKER_begin":
 		Events.game_switch_changed.disconnect(_hacker_attack_message)
+		_friender_warning()
 		await get_tree().create_timer(30).timeout
-		Events.new_phone_message.emit("Alison", "😀")
+		## If player goofed around
+		if Events.hack_checker():
+			Events.incoming_call.emit(1)
+		## If player did not goof around.
+		else:
+			Events.new_phone_message.emit("Alison", "Yo, girl. Wassup?")
+			await get_tree().create_timer(1).timeout
+			if Events.check_game_switch("PLAYER_is_aware"):
+				Events.new_phone_message.emit("Alison", "Your mom.", true, true)
+			else:
+				Events.new_phone_message.emit("Alison", "Fine, what about you?", true, true)
+
+func _friender_warning() -> void:
+	Events.new_phone_message.emit("Friender", "Reminder to all users of Friender to be vigilant.")
