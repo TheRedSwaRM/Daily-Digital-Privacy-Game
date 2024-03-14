@@ -11,7 +11,7 @@ bus = &"BGM"
 
 [node name="BGS" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-bus = &"BGM"
+bus = &"BGS"
 
 [node name="PhoneCall" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
