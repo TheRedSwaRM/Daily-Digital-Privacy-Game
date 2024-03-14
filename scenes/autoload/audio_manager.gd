@@ -6,6 +6,7 @@ extends Node
 signal is_call_finished
 
 @onready var background_music = %BGM
+@onready var background_sound = %BGS
 @onready var call_stream = %PhoneCall
 @onready var sound_effect_queue = $SFX
 @onready var horror_stream = %Horror
@@ -40,6 +41,23 @@ func bgm_play(path: String):
 	background_music.stream.loop = true
 	background_music.play()
 
+## Plays BGS. Replaces if BGS currently playing.
+func bgs_play(path: String):
+	var new_music = load(path)
+	
+	# Check if BGM is the same
+	if background_sound.stream == new_music:
+		print("The same music.")
+		return
+	
+	# Switches BGM.
+	if background_sound.playing:
+		bgs_stop()
+	
+	background_sound.stream = load(path)
+	background_sound.stream.loop = true
+	background_sound.play()
+
 ## Makes phone call
 func phone_call(path: String):
 	call_stream.stream = load(path)
@@ -54,6 +72,11 @@ func horror_play(path: String):
 func bgm_stop():
 	background_music.stop()
 	background_music.stream = null
+
+## Stops BGS, as expected.
+func bgs_stop():
+	background_sound.stop()
+	background_sound.stream = null
 
 func sfx_play(path: String):
 	# Check first if it's allowed to play the phone sounds. Better to stop it

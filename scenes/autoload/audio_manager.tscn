@@ -9,6 +9,10 @@ script = ExtResource("1_fowy0")
 unique_name_in_owner = true
 bus = &"BGM"
 
+[node name="BGS" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+bus = &"BGM"
+
 [node name="PhoneCall" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 bus = &"PhoneCall"
