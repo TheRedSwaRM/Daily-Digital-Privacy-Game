@@ -103,6 +103,9 @@ var day_counter: int = 1 :
 	"BLOCK_alison_new_num": false,
 	"BLOCK_alison_prank": false,
 	"BLOCK_attacker_num": false,
+	
+	# Hacker
+	"HACKER_spam_attack": false,
 }
 
 @onready var wifi_connection: String = "None" :

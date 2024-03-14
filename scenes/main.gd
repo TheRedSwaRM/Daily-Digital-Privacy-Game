@@ -47,6 +47,8 @@ func _ready():
 	Events.game_switch_changed.connect(_cutscene_social_post)
 	Events.game_switch_changed.connect(_cutscene_complete_signup)
 	Events.game_switch_changed.connect(_hacker_attack_message)
+	Events.game_switch_changed.connect(_hacker_spam_attack)
+	Events.game_switch_changed.connect(_actual_spam_attack)
 	#Events.game_switch_changed.connect(_alison_texts_back_1)
 	
 	#===========================================================================
@@ -301,7 +303,7 @@ func _message_received(respondent: String, text: String):
 			await get_tree().create_timer(1).timeout
 			Events.new_phone_message.emit("Alison", "You're not getting anything from me.", true)
 			await get_tree().create_timer(1).timeout
-			Events.new_phone_message.emit("Alison", "Goodbye.", true)
+			Events.new_phone_message.emit("Alison", "Fuck you for stealing my friend's phone.", true)
 			await get_tree().create_timer(1).timeout
 			Events.change_game_switch("BLOCK_attacker_num", true)
 		
@@ -345,6 +347,23 @@ func _hacker_attack_message(key: String, _value: bool):
 				Events.new_phone_message.emit("Alison", "Your mom.", true, true)
 			else:
 				Events.new_phone_message.emit("Alison", "Fine, what about you?", true, true)
+				
+func _hacker_spam_attack(key: String, _value: bool):
+	if Events.check_game_switch(key) && key == "BLOCK_attacker_num":
+		await get_tree().create_timer(5).timeout
+		Events.change_game_switch("HACKER_spam_attack", true)
+
+func _actual_spam_attack(key: String, _value: bool):
+	if Events.check_game_switch(key) && key == "HACKER_spam_attack":
+		var rng = int(randf_range(0,4))
+		while true:
+			rng = int(randf_range(0,4))
+			match rng:
+				0: Events.new_phone_message.emit("Alison", "Message 1")
+				1: Events.new_phone_message.emit("Alison", "Message 2")
+				2: Events.new_phone_message.emit("Alison", "Message 3")
+				_: Events.new_phone_message.emit("Alison", "Message 4")
+			await get_tree().create_timer(0.5).timeout
 
 func _friender_warning() -> void:
 	Events.new_phone_message.emit("Friender", "Reminder to all users of Friender to be vigilant.")

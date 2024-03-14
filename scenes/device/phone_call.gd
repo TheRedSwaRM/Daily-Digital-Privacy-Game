@@ -61,10 +61,11 @@ func _on_phone_accept_pressed():
 				print("Walahi, we're finished.")
 				_activate_call(bad_call)
 				AudioManager.horror_play(horror_droning)
-				Events.change_game_switch("PLAYER_is_aware", true)
 			else: 
 				print("Good call fr.")
 				_activate_call(good_call)
+				
+			Events.change_game_switch("PLAYER_is_aware", true)
 		"Alison":
 			pass
 		_:
