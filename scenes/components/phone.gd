@@ -74,7 +74,7 @@ func _ready():
 	Events.force_phone_go_to.connect(_force_phone_goto)
 	Events.game_switch_changed.connect(_should_app_be_installed)
 	Events.incoming_call.connect(_phone_call)
-	Events.enable_phone.connect(_phone_enable)
+	Events.phone_change_function.connect(_phone_change_function)
 	#Events.change_time.connect(_change_time)
 	
 	_change_time(Events.game_time)
@@ -322,11 +322,14 @@ func _force_phone_goto(module: String, subcomponent: String = ""):
 		"Installer":
 			installer_app.show()
 
-func _phone_enable(value: bool):
-	if value:
-		phone_background.texture = load("res://assets/images/device/phone.png")
-		phone_contents.show()
-	else:
-		phone_background.texture = load("res://assets/images/device/phone_off.png")
-		phone_contents.hide()
-
+func _phone_change_function(func_string: String, show_buttons: bool):
+	match func_string:
+		"active":
+			phone_background.texture = load("res://assets/images/device/phone.png")
+		"off":
+			phone_background.texture = load("res://assets/images/device/phone_off.png")
+		
+	if show_buttons: phone_contents.show()
+	else: phone_contents.hide()
+	
+	

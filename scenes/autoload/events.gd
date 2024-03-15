@@ -42,7 +42,7 @@ signal back_button_pressed
 signal link_pressed(link_data: String)
 
 signal force_phone_go_to(module: String, subcomponent: String)
-signal enable_phone(value: bool)
+signal phone_change_function(function_value: String, special_value: bool)
 
 #===============================================================================
 # For Time Control
