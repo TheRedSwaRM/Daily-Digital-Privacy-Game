@@ -81,7 +81,8 @@ func _thumbnail_touched(node_name: String, special: bool = false):
 			link_label.text = child.link_name
 			
 			current_tab = child
-			if special: _on_refresh_button_pressed() # Only for the 1st time case
+			if node_name == "BrowserScare": pass
+			elif special: _on_refresh_button_pressed() # Only for the 1st time case
 			
 		else:
 			child.hide()	
@@ -99,7 +100,7 @@ func _show_tab(link: String):
 	Events.force_phone_go_to.emit("Browser")
 
 func _on_refresh_button_pressed():
-	if not current_tab == home or not current_tab == browser_scare:
+	if not current_tab == home:
 		current_tab.no_wifi_page(online)
 
 func _phone_back_button_pressed():
