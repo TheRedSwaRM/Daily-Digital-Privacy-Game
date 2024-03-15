@@ -20,27 +20,27 @@ enum NavigationState {
 @onready var current_state = State.IDLE
 
 # Buttons and Stuff
-@onready var quit_panel = $PhoneContainer/QuitPanel
-@onready var main_menu_buttons = $PhoneContainer/MainMenuButtons
+@onready var quit_panel = $PhoneContainer/PhoneFunctions/QuitPanel
+@onready var main_menu_buttons = $PhoneContainer/PhoneFunctions/MainMenuButtons
 
 # Phone Background
 @onready var main_menu_background = preload("res://assets/images/device/phone.png")
 @onready var settings_background = preload("res://assets/images/device/phone_settings.png")
-@onready var current_time_label = $PhoneContainer/CurrentTime
+@onready var current_time_label = $PhoneContainer/PhoneFunctions/CurrentTime
 
 # Settings
-@onready var settings_instance = $PhoneContainer/SettingsPanel
+@onready var settings_instance = $PhoneContainer/PhoneFunctions/SettingsPanel
 # Social Media
-@onready var social_media = $PhoneContainer/SocialMedia
-@onready var social_media_button = $PhoneContainer/MainMenuButtons/SocialMediaButton
+@onready var social_media = $PhoneContainer/PhoneFunctions/SocialMedia
+@onready var social_media_button = $PhoneContainer/PhoneFunctions/MainMenuButtons/SocialMediaButton
 # Messaging App
-@onready var messaging_app = $PhoneContainer/MessagingApp
+@onready var messaging_app = $PhoneContainer/PhoneFunctions/MessagingApp
 # Browser App
-@onready var browser_app = $PhoneContainer/Browser
+@onready var browser_app = $PhoneContainer/PhoneFunctions/Browser
 # Installer
-@onready var installer_app = $PhoneContainer/Installer
+@onready var installer_app = $PhoneContainer/PhoneFunctions/Installer
 ## Phone call instance, important
-@onready var phone_call_instance = $PhoneContainer/PhoneCall
+@onready var phone_call_instance = $PhoneContainer/PhoneFunctions/PhoneCall
 
 # Current State
 @onready var current_phone_location = NavigationState.HOME :

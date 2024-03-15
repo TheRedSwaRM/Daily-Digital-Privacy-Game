@@ -55,7 +55,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PhoneContainer/PhoneCall:visible")
+tracks/2/path = NodePath("PhoneContainer/PhoneFunctions/PhoneCall:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -99,7 +99,7 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PhoneContainer/PhoneCall:visible")
+tracks/0/path = NodePath("PhoneContainer/PhoneFunctions/PhoneCall:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -240,15 +240,12 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_edit_lock_ = true
 
-[node name="FlippingButton" type="Button" parent="PhoneContainer"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = -1.0
-offset_right = 108.0
-offset_bottom = 10.0
-theme = ExtResource("3_5n6g7")
+[node name="PhoneFunctions" type="Control" parent="PhoneContainer"]
+anchors_preset = 0
+offset_right = 144.0
+offset_bottom = 144.0
 
-[node name="MainMenuButtons" type="Control" parent="PhoneContainer"]
+[node name="MainMenuButtons" type="Control" parent="PhoneContainer/PhoneFunctions"]
 anchors_preset = 0
 offset_left = 39.0
 offset_top = 11.0
@@ -256,7 +253,7 @@ offset_right = 105.0
 offset_bottom = 134.0
 metadata/_edit_lock_ = true
 
-[node name="SettingsButton" type="Button" parent="PhoneContainer/MainMenuButtons"]
+[node name="SettingsButton" type="Button" parent="PhoneContainer/PhoneFunctions/MainMenuButtons"]
 layout_mode = 0
 offset_left = 46.0
 offset_top = 80.0
@@ -266,7 +263,7 @@ theme = ExtResource("5_u00af")
 icon = ExtResource("6_fbg00")
 metadata/_edit_lock_ = true
 
-[node name="QuitButton" type="Button" parent="PhoneContainer/MainMenuButtons"]
+[node name="QuitButton" type="Button" parent="PhoneContainer/PhoneFunctions/MainMenuButtons"]
 layout_mode = 0
 offset_left = 46.0
 offset_top = 101.0
@@ -276,7 +273,7 @@ theme = ExtResource("5_u00af")
 icon = ExtResource("7_uh2ou")
 metadata/_edit_lock_ = true
 
-[node name="SocialMediaButton" type="Button" parent="PhoneContainer/MainMenuButtons"]
+[node name="SocialMediaButton" type="Button" parent="PhoneContainer/PhoneFunctions/MainMenuButtons"]
 visible = false
 layout_mode = 0
 offset_left = 6.0
@@ -287,7 +284,7 @@ theme = ExtResource("5_u00af")
 icon = ExtResource("8_nbang")
 metadata/_edit_lock_ = true
 
-[node name="MessagingButton" type="Button" parent="PhoneContainer/MainMenuButtons"]
+[node name="MessagingButton" type="Button" parent="PhoneContainer/PhoneFunctions/MainMenuButtons"]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 80.0
@@ -297,7 +294,7 @@ theme = ExtResource("5_u00af")
 icon = ExtResource("9_a4gyf")
 metadata/_edit_lock_ = true
 
-[node name="BrowserButton" type="Button" parent="PhoneContainer/MainMenuButtons"]
+[node name="BrowserButton" type="Button" parent="PhoneContainer/PhoneFunctions/MainMenuButtons"]
 layout_mode = 0
 offset_left = 26.0
 offset_top = 80.0
@@ -307,7 +304,7 @@ theme = ExtResource("5_u00af")
 icon = ExtResource("9_pu4py")
 metadata/_edit_lock_ = true
 
-[node name="CurrentTime" type="Label" parent="PhoneContainer"]
+[node name="CurrentTime" type="Label" parent="PhoneContainer/PhoneFunctions"]
 layout_mode = 0
 offset_left = 45.0
 offset_top = 25.0
@@ -318,7 +315,7 @@ label_settings = SubResource("LabelSettings_twhqg")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MessagingApp" parent="PhoneContainer" instance=ExtResource("12_mrxmr")]
+[node name="MessagingApp" parent="PhoneContainer/PhoneFunctions" instance=ExtResource("12_mrxmr")]
 visible = false
 layout_mode = 1
 offset_left = 39.0
@@ -327,7 +324,7 @@ offset_right = -39.0
 offset_bottom = -10.0
 metadata/_edit_lock_ = true
 
-[node name="SettingsPanel" parent="PhoneContainer" instance=ExtResource("6_ppbmc")]
+[node name="SettingsPanel" parent="PhoneContainer/PhoneFunctions" instance=ExtResource("6_ppbmc")]
 visible = false
 layout_mode = 1
 offset_left = 39.0
@@ -335,7 +332,7 @@ offset_top = 10.0
 offset_right = -39.0
 offset_bottom = -10.0
 
-[node name="QuitPanel" type="Control" parent="PhoneContainer"]
+[node name="QuitPanel" type="Control" parent="PhoneContainer/PhoneFunctions"]
 visible = false
 anchors_preset = 0
 offset_left = 39.0
@@ -344,7 +341,7 @@ offset_right = 105.0
 offset_bottom = 134.0
 metadata/_edit_lock_ = true
 
-[node name="QuitBackground" type="TextureRect" parent="PhoneContainer/QuitPanel"]
+[node name="QuitBackground" type="TextureRect" parent="PhoneContainer/PhoneFunctions/QuitPanel"]
 layout_mode = 0
 offset_left = -3.0
 offset_top = -11.0
@@ -352,7 +349,7 @@ offset_right = 69.0
 offset_bottom = 133.0
 texture = ExtResource("5_dv2cq")
 
-[node name="QuitLabel" type="Label" parent="PhoneContainer/QuitPanel"]
+[node name="QuitLabel" type="Label" parent="PhoneContainer/PhoneFunctions/QuitPanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -370,7 +367,7 @@ label_settings = ExtResource("6_430b8")
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="QuitYes" type="TextureButton" parent="PhoneContainer/QuitPanel"]
+[node name="QuitYes" type="TextureButton" parent="PhoneContainer/PhoneFunctions/QuitPanel"]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 68.0
@@ -379,7 +376,7 @@ offset_bottom = 78.0
 texture_normal = ExtResource("10_00k5p")
 metadata/_edit_lock_ = true
 
-[node name="QuitNo" type="TextureButton" parent="PhoneContainer/QuitPanel"]
+[node name="QuitNo" type="TextureButton" parent="PhoneContainer/PhoneFunctions/QuitPanel"]
 layout_mode = 0
 offset_left = 39.0
 offset_top = 68.0
@@ -388,24 +385,24 @@ offset_bottom = 78.0
 texture_normal = ExtResource("11_6im80")
 metadata/_edit_lock_ = true
 
-[node name="SocialMedia" parent="PhoneContainer" instance=ExtResource("11_6o5jl")]
+[node name="SocialMedia" parent="PhoneContainer/PhoneFunctions" instance=ExtResource("11_6o5jl")]
 visible = false
 layout_mode = 1
 offset_left = 39.0
 offset_top = 10.0
-offset_right = -39.0
-offset_bottom = -10.0
+offset_right = 39.0
+offset_bottom = 10.0
 metadata/_edit_lock_ = true
 
-[node name="Browser" parent="PhoneContainer" instance=ExtResource("17_wscuv")]
+[node name="Browser" parent="PhoneContainer/PhoneFunctions" instance=ExtResource("17_wscuv")]
 visible = false
 layout_mode = 1
 offset_left = 39.0
 offset_top = 10.0
-offset_right = -39.0
-offset_bottom = -10.0
+offset_right = 39.0
+offset_bottom = 10.0
 
-[node name="Installer" parent="PhoneContainer" instance=ExtResource("18_6aphd")]
+[node name="Installer" parent="PhoneContainer/PhoneFunctions" instance=ExtResource("18_6aphd")]
 visible = false
 offset_left = 39.0
 offset_top = 10.0
@@ -413,7 +410,7 @@ offset_right = 105.0
 offset_bottom = 134.0
 metadata/_edit_lock_ = true
 
-[node name="HomeButton" type="Button" parent="PhoneContainer"]
+[node name="HomeButton" type="Button" parent="PhoneContainer/PhoneFunctions"]
 layout_mode = 0
 offset_left = 68.0
 offset_top = 134.0
@@ -422,7 +419,7 @@ offset_bottom = 141.0
 theme = ExtResource("5_u00af")
 metadata/_edit_lock_ = true
 
-[node name="BackButton" type="Button" parent="PhoneContainer"]
+[node name="BackButton" type="Button" parent="PhoneContainer/PhoneFunctions"]
 layout_mode = 0
 offset_left = 48.0
 offset_top = 134.0
@@ -431,13 +428,21 @@ offset_bottom = 141.0
 theme = ExtResource("5_u00af")
 metadata/_edit_lock_ = true
 
-[node name="PhoneCall" parent="PhoneContainer" instance=ExtResource("20_ter8n")]
+[node name="PhoneCall" parent="PhoneContainer/PhoneFunctions" instance=ExtResource("20_ter8n")]
 visible = false
 offset_left = 39.0
 offset_top = 10.0
 offset_right = 105.0
 offset_bottom = 141.0
 metadata/_edit_lock_ = true
+
+[node name="FlippingButton" type="Button" parent="PhoneContainer"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = -1.0
+offset_right = 108.0
+offset_bottom = 10.0
+theme = ExtResource("3_5n6g7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -450,19 +455,19 @@ bus = &"PhoneCall"
 [node name="PhoneTimerFrameUpdate" type="Timer" parent="."]
 autostart = true
 
+[connection signal="pressed" from="PhoneContainer/PhoneFunctions/MainMenuButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="PhoneContainer/PhoneFunctions/MainMenuButtons/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="PhoneContainer/PhoneFunctions/MainMenuButtons/SocialMediaButton" to="." method="_on_social_media_button_pressed"]
+[connection signal="pressed" from="PhoneContainer/PhoneFunctions/MainMenuButtons/MessagingButton" to="." method="_on_messaging_button_pressed"]
+[connection signal="pressed" from="PhoneContainer/PhoneFunctions/MainMenuButtons/BrowserButton" to="." method="_on_browser_button_pressed"]
+[connection signal="pressed" from="PhoneContainer/PhoneFunctions/QuitPanel/QuitYes" to="." method="_on_quit_yes_pressed"]
+[connection signal="pressed" from="PhoneContainer/PhoneFunctions/QuitPanel/QuitNo" to="." method="_on_quit_no_pressed"]
+[connection signal="pressed" from="PhoneContainer/PhoneFunctions/HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="PhoneContainer/PhoneFunctions/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="call_accepted" from="PhoneContainer/PhoneFunctions/PhoneCall" to="." method="_on_phone_call_call_accepted"]
+[connection signal="call_ended" from="PhoneContainer/PhoneFunctions/PhoneCall" to="." method="_on_phone_call_call_ended"]
+[connection signal="call_rejected" from="PhoneContainer/PhoneFunctions/PhoneCall" to="." method="_on_phone_call_call_rejected"]
 [connection signal="mouse_entered" from="PhoneContainer/FlippingButton" to="." method="_on_flipping_button_mouse_entered"]
 [connection signal="mouse_exited" from="PhoneContainer/FlippingButton" to="." method="_on_flipping_button_mouse_exited"]
 [connection signal="pressed" from="PhoneContainer/FlippingButton" to="." method="_on_flipping_button_pressed"]
-[connection signal="pressed" from="PhoneContainer/MainMenuButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="PhoneContainer/MainMenuButtons/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="PhoneContainer/MainMenuButtons/SocialMediaButton" to="." method="_on_social_media_button_pressed"]
-[connection signal="pressed" from="PhoneContainer/MainMenuButtons/MessagingButton" to="." method="_on_messaging_button_pressed"]
-[connection signal="pressed" from="PhoneContainer/MainMenuButtons/BrowserButton" to="." method="_on_browser_button_pressed"]
-[connection signal="pressed" from="PhoneContainer/QuitPanel/QuitYes" to="." method="_on_quit_yes_pressed"]
-[connection signal="pressed" from="PhoneContainer/QuitPanel/QuitNo" to="." method="_on_quit_no_pressed"]
-[connection signal="pressed" from="PhoneContainer/HomeButton" to="." method="_on_home_button_pressed"]
-[connection signal="pressed" from="PhoneContainer/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="call_accepted" from="PhoneContainer/PhoneCall" to="." method="_on_phone_call_call_accepted"]
-[connection signal="call_ended" from="PhoneContainer/PhoneCall" to="." method="_on_phone_call_call_ended"]
-[connection signal="call_rejected" from="PhoneContainer/PhoneCall" to="." method="_on_phone_call_call_rejected"]
 [connection signal="timeout" from="PhoneTimerFrameUpdate" to="." method="_on_phone_timer_frame_update_timeout"]
