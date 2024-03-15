@@ -36,13 +36,13 @@ signal new_phone_message(user_name: String, message: String, is_player: bool, is
 signal message_response(respondent: String, text: String)
 signal incoming_call(value: int)
 
-
 # Back button activated. An all-around signal passer for everything.
 # Very intuitive design.
 signal back_button_pressed
 signal link_pressed(link_data: String)
 
 signal force_phone_go_to(module: String, subcomponent: String)
+signal enable_phone(value: bool)
 
 #===============================================================================
 # For Time Control

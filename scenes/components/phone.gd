@@ -16,6 +16,7 @@ enum NavigationState {
 # Other stuff (please arrange later)
 @onready var animation_player = $AnimationPlayer
 @onready var the_phone_container = $PhoneContainer
+@onready var phone_contents = $PhoneContainer/PhoneFunctions
 @onready var phone_background = $PhoneContainer/ThePhone
 @onready var current_state = State.IDLE
 
@@ -66,15 +67,19 @@ signal flipping_phone(value)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	# Connect to Events
 	Events.flip_phone.connect(_on_flipping_button_pressed)
 	Events.ring_phone.connect(_phone_ringing)
 	Events.force_phone_go_to.connect(_force_phone_goto)
 	Events.game_switch_changed.connect(_should_app_be_installed)
-	#Events.change_time.connect(_change_time)
 	Events.incoming_call.connect(_phone_call)
+	Events.enable_phone.connect(_phone_enable)
+	#Events.change_time.connect(_change_time)
 	
 	_change_time(Events.game_time)
 	
+	# Allow the app to be installed immediately regardless of date.
 	if install_app_immediately and OS.is_debug_build():
 		Events.change_game_switch("app_installed", true)
 
@@ -317,6 +322,11 @@ func _force_phone_goto(module: String, subcomponent: String = ""):
 		"Installer":
 			installer_app.show()
 
-
-
+func _phone_enable(value: bool):
+	if value:
+		phone_background.texture = load("res://assets/images/device/phone.png")
+		phone_contents.show()
+	else:
+		phone_background.texture = load("res://assets/images/device/phone_off.png")
+		phone_contents.hide()
 
