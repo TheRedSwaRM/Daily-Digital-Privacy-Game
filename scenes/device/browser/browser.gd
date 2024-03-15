@@ -8,6 +8,7 @@ extends Control
 
 @onready var online: bool = false
 @onready var home = $Tabs/Home
+@onready var browser_scare = $Tabs/BrowserScare
 
 var current_tab: Control
 
@@ -98,7 +99,7 @@ func _show_tab(link: String):
 	Events.force_phone_go_to.emit("Browser")
 
 func _on_refresh_button_pressed():
-	if not current_tab == home:
+	if not current_tab == home or not current_tab == browser_scare:
 		current_tab.no_wifi_page(online)
 
 func _phone_back_button_pressed():
