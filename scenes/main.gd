@@ -325,7 +325,7 @@ func _message_received(respondent: String, text: String):
 			await get_tree().create_timer(1).timeout
 			Events.new_phone_message.emit("Alison", "Alright! Here's the link.")
 			await get_tree().create_timer(1).timeout
-			Events.new_phone_message.emit("Alison", "[url='www.idiotAHAHAHAHA.com']Withering Tides Link[/url]")
+			Events.new_phone_message.emit("Alison", "[url='www.surprisesurprise.com']Withering Tides Link[/url]")
 			
 #==============================================================================
 # Message Attack Time.

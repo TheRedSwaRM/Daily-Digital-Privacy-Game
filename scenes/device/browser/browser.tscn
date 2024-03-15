@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dywh83w6ca1li"]
+[gd_scene load_steps=21 format=3 uid="uid://dywh83w6ca1li"]
 
 [ext_resource type="Texture2D" uid="uid://8h22dp266j4s" path="res://assets/images/device/phone_browser.png" id="1_87qls"]
 [ext_resource type="Script" path="res://scenes/device/browser/browser.gd" id="1_ulbgk"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://kcbjm4mxt1o6" path="res://scenes/device/browser/browser_app_installation.tscn" id="6_vbwcq"]
 [ext_resource type="Texture2D" uid="uid://cxhwlr12ftaka" path="res://assets/images/browser/browser_tab_control_bg.png" id="7_yoggs"]
 [ext_resource type="StyleBox" uid="uid://cni2mx04bkjec" path="res://scenes/components/tab_thumbnail_button.tres" id="9_e58oh"]
+[ext_resource type="PackedScene" uid="uid://bft2mvp46iwp3" path="res://scenes/device/browser/browser_scare.tscn" id="9_pjs3v"]
 [ext_resource type="FontFile" uid="uid://gpclpdmdi4ka" path="res://assets/font/pixel 3x4.ttf" id="10_7ipvv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdtuo"]
@@ -115,6 +116,12 @@ visible = false
 layout_mode = 1
 offset_right = 0.0
 offset_bottom = -12.0
+
+[node name="BrowserScare" parent="Tabs" instance=ExtResource("9_pjs3v")]
+visible = false
+layout_mode = 1
+offset_right = 0.0
+offset_bottom = 0.0
 
 [node name="TabSection" type="Control" parent="."]
 visible = false
