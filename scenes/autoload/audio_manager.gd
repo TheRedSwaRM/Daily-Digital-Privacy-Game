@@ -68,6 +68,11 @@ func horror_play(path: String):
 	horror_stream.stream = load(path)
 	horror_stream.play()
 
+## Stops horror, as expected.
+func horror_stop():
+	horror_stream.stop()
+	horror_stream.stream = null
+
 ## Stops BGM, as expected.
 func bgm_stop():
 	background_music.stop()

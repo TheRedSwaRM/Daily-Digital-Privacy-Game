@@ -13,7 +13,7 @@ func _ready():
 	
 	if skip_to_day_three and OS.is_debug_build():
 		print("Skipping to Day 3")
-		#Events.change_game_switch("WARNING_permissions_set", true)
+		Events.change_game_switch("WARNING_permissions_set", true)
 		Events.day_counter = 3
 	
 	# We'll make the day faster.
