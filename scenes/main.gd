@@ -353,7 +353,11 @@ func _hacker_attack_message(key: String, _value: bool):
 				Events.new_phone_message.emit("Alison", "Your mom.", true, true)
 			else:
 				Events.new_phone_message.emit("Alison", "Fine, what about you?", true, true)
-				
+
+#===============================================================================
+# START: Only if the player didn't get hacked.
+#===============================================================================
+
 func _hacker_spam_attack(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "BLOCK_attacker_num":
 		await get_tree().create_timer(5).timeout
@@ -373,3 +377,21 @@ func _actual_spam_attack(key: String, _value: bool):
 
 func _friender_warning() -> void:
 	Events.new_phone_message.emit("Friender", "Reminder to all users of Friender to be vigilant.")
+	
+#===============================================================================
+# END: Only if the player didn't get hacked.
+#===============================================================================
+	
+#===============================================================================
+# START: If player still gets hacked
+#===============================================================================
+func _if_hacked_then_call_accepted(key: String, _value: bool):
+	if Events.check_game_switch(key) && key == "ATTACKER_call_rejected":
+		for i in 6:
+			await get_tree().create_timer(0.5).timeout
+			Events.new_phone_message.emit("Alison", "[url='www.surprise.com']Withering Tides Link[/url]")
+		await get_tree().create_timer(3).timeout
+		Events.link_pressed.emit("www.surprise.com")
+#===============================================================================
+# END: If player still gets hacked
+#===============================================================================
