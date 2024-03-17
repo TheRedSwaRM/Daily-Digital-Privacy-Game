@@ -27,6 +27,7 @@ Take a nap?
 
 - Yes
 	do AudioManager.bgm_stop()
+	do AudioManager.bgs_stop()
 	do Events.close_blinking_eye.emit()
 	do Events.deactivate_phone.emit()
 	do wait(1)
@@ -47,5 +48,22 @@ Cheryl: I just woke up...
 ~ day_3_moment
 
 Cheryl: I'm not sleepy today... for some reason.
+
+=> END
+
+~ day_3_sleep
+
+Cheryl: Today's kind of tiring. Guess I'll sleep through it.
+
+Sleep?
+
+- Yes
+	do AudioManager.bgm_stop()
+	do AudioManager.bgs_stop()
+	do Events.deactivate_phone.emit()
+	
+	do Events.change_map.emit("res://scenes/game_end.tscn", false)
+- No
+	=> END
 
 => END

@@ -21,7 +21,10 @@ func _process(_delta):
 
 func _on_pillow_input_detected():
 	if Events.day_counter == 3:
-		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/sleeping_time.dialogue"), "day_3_moment")
+		if Events.check_game_switch("PLAYER_can_sleep"):
+			DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/sleeping_time.dialogue"), "day_3_sleep")
+		else:
+			DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/sleeping_time.dialogue"), "day_3_moment")
 		return
 	
 	if Events.game_time > 18.0:
