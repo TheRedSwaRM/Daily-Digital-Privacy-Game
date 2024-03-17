@@ -14,12 +14,15 @@ extends Control
 @onready var back_button = $Header/BackButton
 @onready var ui_header = $Header/UIHeader
 
+@onready var block_control = $BlockControl
+
 var current_message_list: ScrollContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Events.new_phone_message.connect(new_text_message)
 	Events.back_button_pressed.connect(_on_back_button_pressed)
+	Events.game_switch_changed.connect(_block_user)
 	_starting_messages()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -129,6 +132,10 @@ func contact_press_detected(user_name: String):
 	for user_message_list in message_lists.get_children():
 		# Then do and break
 		if user_message_list.name == user_name:
+			match user_name:
+				"Alison":
+					if Events.check_game_switch("BLOCK_attacker_num"): block_control.show()
+			
 			print("Found " + user_name)
 			current_message_list = user_message_list
 			ui_header.text = user_name
@@ -160,10 +167,16 @@ func _on_back_button_pressed():
 		back_button.hide()
 		current_message_list.hide()
 		contact_list.show()
-		
+		block_control.hide()
 		current_message_list = null
 		return
 	
 	# If no other stuff are open.
 	hide()
 	
+## Blocking event
+func _block_user(key: String, _value: bool):
+	if Events.check_game_switch(key) && key == "BLOCK_alison_prank":
+		if current_message_list.name == "??????": block_control.show()
+	if Events.check_game_switch(key) && key == "BLOCK_attacker_num":
+		if current_message_list.name == "Alison": block_control.show()

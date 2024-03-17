@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://7aeuu7qbe1ju"]
+[gd_scene load_steps=8 format=3 uid="uid://7aeuu7qbe1ju"]
 
 [ext_resource type="Script" path="res://scenes/device/messaging/messaging_app.gd" id="1_run1s"]
 [ext_resource type="Texture2D" uid="uid://bbb7m40xm3cqh" path="res://assets/images/device/phone_messaging.png" id="2_quiko"]
@@ -10,6 +10,10 @@
 [sub_resource type="LabelSettings" id="LabelSettings_62rmy"]
 font = ExtResource("4_hg2cf")
 font_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_dv5px"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
 
 [node name="MessagingApp" type="Control"]
 layout_mode = 3
@@ -71,6 +75,31 @@ offset_top = 10.0
 offset_right = 66.0
 offset_bottom = 124.0
 mouse_filter = 2
+
+[node name="BlockControl" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_top = 104.0
+offset_right = 66.0
+offset_bottom = 124.0
+
+[node name="BlockBG" type="ColorRect" parent="BlockControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
+
+[node name="Label" type="Label" parent="BlockControl"]
+layout_mode = 0
+offset_right = 66.0
+offset_bottom = 20.0
+text = "BLOCKED"
+label_settings = SubResource("LabelSettings_dv5px")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Debug" type="Button" parent="."]
 visible = false
