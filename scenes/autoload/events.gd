@@ -106,6 +106,9 @@ var day_counter: int = 1 :
 	
 	# Hacker
 	"HACKER_spam_attack": false,
+	
+	# Last Day
+	"PLAYER_can_sleep": false,
 }
 
 @onready var wifi_connection: String = "None" :

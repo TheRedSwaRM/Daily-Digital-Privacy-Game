@@ -335,12 +335,18 @@ func _hacker_attack_message(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "ATTACKER_begin":
 		Events.game_switch_changed.disconnect(_hacker_attack_message)
 		_friender_warning()
-		await get_tree().create_timer(5).timeout
+		
 		## If player goofed around
 		if Events.hack_checker():
+			await get_tree().create_timer(5).timeout
+			AudioManager.bgm_play("res://assets/audio/bgm/data_breach_1.ogg")
 			Events.incoming_call.emit(1)
 		## If player did not goof around.
 		else:
+			Events.change_game_switch("PLAYER_can_sleep", true)
+			await get_tree().create_timer(5).timeout
+			if Events.check_game_switch("PLAYER_is_aware"):
+				AudioManager.bgm_play("res://assets/audio/bgm/data_breach.ogg")
 			Events.new_phone_message.emit("Alison", "Yo, girl. Wassup?")
 			await get_tree().create_timer(1).timeout
 			if Events.check_game_switch("PLAYER_is_aware"):
@@ -359,10 +365,10 @@ func _actual_spam_attack(key: String, _value: bool):
 		while true:
 			rng = int(randf_range(0,4))
 			match rng:
-				0: Events.new_phone_message.emit("Alison", "Message 1")
-				1: Events.new_phone_message.emit("Alison", "Message 2")
-				2: Events.new_phone_message.emit("Alison", "Message 3")
-				_: Events.new_phone_message.emit("Alison", "Message 4")
+				0: Events.new_phone_message.emit("??????", "Message 1")
+				1: Events.new_phone_message.emit("??????", "Message 2")
+				2: Events.new_phone_message.emit("??????", "Message 3")
+				_: Events.new_phone_message.emit("??????", "Message 4")
 			await get_tree().create_timer(0.5).timeout
 
 func _friender_warning() -> void:
