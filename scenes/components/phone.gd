@@ -99,7 +99,7 @@ func _flip_phone(value: String):
 			current_state = State.RUNNING
 			blur_bg.show()
 			tween.tween_property(the_phone_container, "position", Vector2(56, 0), 0.1)
-			tween.tween_property(blur_bg, "shader_parameter/blur", 4, 0.1)
+			tween.tween_method(set_shader_value, 0, 4, 0.1)
 			await tween.finished
 			#animation_player.play("flip")
 			#await animation_player.animation_finished
@@ -111,13 +111,16 @@ func _flip_phone(value: String):
 			flipping_phone.emit(false)
 			current_state = State.IDLE
 			tween.tween_property(the_phone_container, "position", Vector2(56, 134), 0.1)
-			tween.tween_property(blur_bg, "shader_parameter/blur", 0, 0.1)
+			tween.tween_method(set_shader_value, 4, 0, 0.1)
 			await tween.finished
 			blur_bg.hide()
 			#animation_player.play("unflip")
 			#await animation_player.animation_finished
 		_:
 			print("Uh, hello? You forgot to state flipping?")
+
+func set_shader_value(value: float):
+	blur_bg.material.set_shader_parameter("shader_parameter/blur", value);
 
 func _on_flipping_button_pressed():
 	match current_state:
