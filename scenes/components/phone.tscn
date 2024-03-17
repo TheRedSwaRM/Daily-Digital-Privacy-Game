@@ -1,6 +1,7 @@
-[gd_scene load_steps=29 format=3 uid="uid://bijcfw81xkw7r"]
+[gd_scene load_steps=31 format=3 uid="uid://bijcfw81xkw7r"]
 
 [ext_resource type="Script" path="res://scenes/components/phone.gd" id="1_ldqut"]
+[ext_resource type="Shader" path="res://scenes/components/blur.gdshader" id="2_do2dh"]
 [ext_resource type="Texture2D" uid="uid://h2puqxkdjy5n" path="res://assets/images/device/phone.png" id="2_fd6mj"]
 [ext_resource type="Theme" uid="uid://cms308t78a7rj" path="res://scenes/components/social_media_permissions_buttons.tres" id="3_5n6g7"]
 [ext_resource type="Texture2D" uid="uid://w3nfv6j12y4n" path="res://assets/images/device/phone_settings_true_bg.png" id="5_dv2cq"]
@@ -21,6 +22,11 @@
 [ext_resource type="PackedScene" uid="uid://dxvgj5lduuvfn" path="res://scenes/device/installer/installer.tscn" id="18_6aphd"]
 [ext_resource type="PackedScene" uid="uid://bawosuv7ajtbn" path="res://scenes/device/phone_call.tscn" id="20_ter8n"]
 [ext_resource type="AudioStream" uid="uid://c2pahtecmjo6k" path="res://assets/audio/sfx/phone_ring.mp3" id="21_p1xh5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cuxgl"]
+shader = ExtResource("2_do2dh")
+shader_parameter/blur = 2.0
+shader_parameter/brightness = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_twhqg"]
 font = ExtResource("10_8isoo")
@@ -206,16 +212,21 @@ _data = {
 
 [node name="Phone" type="Control"]
 layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 144.0
+mouse_filter = 1
+script = ExtResource("1_ldqut")
+
+[node name="Blurry" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_cuxgl")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 13312.0
-offset_bottom = 7488.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
-script = ExtResource("1_ldqut")
-metadata/_edit_lock_ = true
 
 [node name="PhoneContainer" type="Control" parent="."]
 layout_mode = 3

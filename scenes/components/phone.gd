@@ -28,6 +28,7 @@ enum NavigationState {
 @onready var main_menu_background = preload("res://assets/images/device/phone.png")
 @onready var settings_background = preload("res://assets/images/device/phone_settings.png")
 @onready var current_time_label = $PhoneContainer/PhoneFunctions/CurrentTime
+@onready var blur_bg = $Blurry
 
 # Settings
 @onready var settings_instance = $PhoneContainer/PhoneFunctions/SettingsPanel
@@ -90,12 +91,15 @@ func _process(_delta):
 # Flip or unflip
 func _flip_phone(value: String):
 	var tween = get_tree().create_tween()
+	tween.set_parallel()
 	match value:
 		"open":
 			AudioManager.sfx_play("res://assets/audio/sfx/phone_open.mp3")
 			flipping_phone.emit(true)
 			current_state = State.RUNNING
+			blur_bg.show()
 			tween.tween_property(the_phone_container, "position", Vector2(56, 0), 0.1)
+			tween.tween_property(blur_bg, "shader_parameter/blur", 4, 0.1)
 			await tween.finished
 			#animation_player.play("flip")
 			#await animation_player.animation_finished
@@ -107,7 +111,9 @@ func _flip_phone(value: String):
 			flipping_phone.emit(false)
 			current_state = State.IDLE
 			tween.tween_property(the_phone_container, "position", Vector2(56, 134), 0.1)
+			tween.tween_property(blur_bg, "shader_parameter/blur", 0, 0.1)
 			await tween.finished
+			blur_bg.hide()
 			#animation_player.play("unflip")
 			#await animation_player.animation_finished
 		_:

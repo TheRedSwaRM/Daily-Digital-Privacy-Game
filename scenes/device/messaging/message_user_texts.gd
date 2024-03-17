@@ -55,3 +55,4 @@ func add_new_text(text_message: String, is_player: bool, is_choice: bool):
 func _on_message_text_list_draw():
 	print("Rect changed")
 	_change_message_text_list_position()
+
