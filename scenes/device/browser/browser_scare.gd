@@ -15,6 +15,7 @@ func _process(_delta):
 func _on_visibility_changed():
 	## TODO: Change audio for this.
 	if visible:
+		Events.change_game_switch("PLAYER_can_sleep", false)
 		AudioManager.sfx_play("res://assets/audio/sfx/monster.mp3")
 		await get_tree().create_timer(3).timeout
 		Events.phone_change_function.emit("off", false)

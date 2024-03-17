@@ -300,6 +300,7 @@ func _message_received(respondent: String, text: String):
 			#Events.change_game_switch("BLOCK_alison_prank", true)
 		
 		["Alison", "Your mom."]:
+			Events.change_game_switch("PLAYER_can_sleep", false)
 			await get_tree().create_timer(1).timeout
 			Events.new_phone_message.emit("Alison", "What?")
 			await get_tree().create_timer(1).timeout
