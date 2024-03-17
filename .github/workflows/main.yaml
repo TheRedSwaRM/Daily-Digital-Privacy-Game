@@ -32,6 +32,7 @@ jobs:
         godot_export_templates_download_url: http://downloads.tuxfamily.org/godotengine/4.2.1/Godot_v4.2.1-stable_export_templates.tpz
         relative_project_path: ./
         archive_output: true
+        export_debug: false
 
       #===========================================
       # THIS IS A CERTIFIED ARTIFACT CREATION ZONE
