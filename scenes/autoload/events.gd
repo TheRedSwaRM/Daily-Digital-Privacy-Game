@@ -109,6 +109,9 @@ var day_counter: int = 1 :
 	
 	# Last Day
 	"PLAYER_can_sleep": false,
+	
+	# Game End
+	"END_force_gameover": false,
 }
 
 @onready var wifi_connection: String = "None" :

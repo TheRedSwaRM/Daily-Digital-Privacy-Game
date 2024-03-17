@@ -49,6 +49,8 @@ func _ready():
 	Events.game_switch_changed.connect(_hacker_attack_message)
 	Events.game_switch_changed.connect(_hacker_spam_attack)
 	Events.game_switch_changed.connect(_actual_spam_attack)
+	Events.game_switch_changed.connect(_if_hacked_then_call_accepted)
+	Events.game_switch_changed.connect(_force_game_end)
 	#Events.game_switch_changed.connect(_alison_texts_back_1)
 	
 	#===========================================================================
@@ -395,3 +397,12 @@ func _if_hacked_then_call_accepted(key: String, _value: bool):
 #===============================================================================
 # END: If player still gets hacked
 #===============================================================================
+
+func _force_game_end(key: String, _value: bool):
+	if Events.check_game_switch(key) && key == "END_force_gameover":
+		await get_tree().create_timer(5).timeout
+		# Game ends.
+		_hide_phone()
+		AudioManager.bgs_stop()
+		Events.change_map.emit("res://scenes/game_end.tscn", false)
+		
