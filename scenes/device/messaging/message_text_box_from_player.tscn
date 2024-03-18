@@ -25,3 +25,5 @@ scroll_active = false
 
 [connection signal="gui_input" from="TextMessage" to="." method="_on_text_message_gui_input"]
 [connection signal="meta_clicked" from="TextMessage" to="." method="_on_text_message_meta_clicked"]
+[connection signal="mouse_entered" from="TextMessage" to="." method="_on_text_message_mouse_entered"]
+[connection signal="mouse_exited" from="TextMessage" to="." method="_on_text_message_mouse_exited"]

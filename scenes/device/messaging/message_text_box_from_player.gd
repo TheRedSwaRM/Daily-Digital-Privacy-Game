@@ -41,3 +41,11 @@ func _on_text_message_gui_input(event):
 
 func _remove_choices():
 	queue_free()
+
+
+func _on_text_message_mouse_entered():
+	if is_choice: GameSettings.change_cursor_look(GameSettings.CursorLook.INTERACT)
+
+
+func _on_text_message_mouse_exited():
+	GameSettings.change_cursor_look()
