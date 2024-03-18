@@ -71,6 +71,7 @@ func _on_phone_accept_pressed():
 			Events.change_game_switch("PLAYER_is_aware", true)
 		"Alison":
 			_activate_call(worst_call)
+			Events.change_game_switch("ATTACKER_irl_begin", true)
 			end_the_game = true
 		_:
 			_activate_call(good_call)
