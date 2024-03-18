@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://f4ikflxbqnmx"]
+[gd_scene load_steps=15 format=3 uid="uid://f4ikflxbqnmx"]
 
 [ext_resource type="Script" path="res://scenes/device/settings_phone.gd" id="1_ced6i"]
 [ext_resource type="Texture2D" uid="uid://w3nfv6j12y4n" path="res://assets/images/device/phone_settings_true_bg.png" id="2_d3c8c"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ds1qvwl7vloao" path="res://assets/images/device/wifi_haspass_icon.png" id="8_3qpag"]
 [ext_resource type="PackedScene" uid="uid://vkarcqx1hknc" path="res://scenes/device/settings/wifi_button.tscn" id="8_ce46u"]
 [ext_resource type="StyleBox" uid="uid://cf0dwxbaffuvq" path="res://scenes/components/wifi_pass_panel.tres" id="10_cev7i"]
+[ext_resource type="FontFile" uid="uid://bod6xenwo2la3" path="res://assets/font/ark_pixel_finale.ttf" id="11_knif5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_naxbi"]
 bg_color = Color(0, 0, 0, 1)
@@ -223,7 +224,6 @@ theme = ExtResource("6_ktjui")
 text = "No"
 
 [node name="WIFIPanel" type="Panel" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 5.0
 offset_top = 12.0
@@ -269,7 +269,6 @@ wifi_name = "Open_WIFI"
 
 [node name="WIFIPassPanel" type="Panel" parent="WIFIPanel"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 0
 offset_left = 6.0
 offset_top = 26.0
@@ -301,6 +300,27 @@ theme_override_styles/focus = ExtResource("10_cev7i")
 secret = true
 secret_character = "*"
 
+[node name="WIFIButtons" type="HBoxContainer" parent="WIFIPanel/WIFIPassPanel"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 28.0
+offset_right = 43.0
+offset_bottom = 38.0
+
+[node name="CancelButton" type="Button" parent="WIFIPanel/WIFIPassPanel/WIFIButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_mjkfs")
+theme_override_fonts/font = ExtResource("11_knif5")
+text = "Cancel"
+
+[node name="ConnectButton" type="Button" parent="WIFIPanel/WIFIPassPanel/WIFIButtons"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("3_mjkfs")
+theme_override_fonts/font = ExtResource("11_knif5")
+text = "Connect"
+
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
 [connection signal="pressed" from="SettingsList/WIFIHorz/WIFIButton" to="." method="_on_wifi_button_pressed"]
 [connection signal="toggled" from="SettingsList/LocationHorz/LocationButton" to="." method="_on_location_button_toggled"]
@@ -312,3 +332,5 @@ secret_character = "*"
 [connection signal="pressed" from="LocationWarningPanel/ButtonOptions/LocYesButton" to="." method="_on_loc_yes_button_pressed"]
 [connection signal="pressed" from="LocationWarningPanel/ButtonOptions/LocNoButton" to="." method="_on_loc_no_button_pressed"]
 [connection signal="text_submitted" from="WIFIPanel/WIFIPassPanel/PasswordKey" to="." method="_on_password_key_text_submitted"]
+[connection signal="pressed" from="WIFIPanel/WIFIPassPanel/WIFIButtons/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="WIFIPanel/WIFIPassPanel/WIFIButtons/ConnectButton" to="." method="_on_connect_button_pressed"]

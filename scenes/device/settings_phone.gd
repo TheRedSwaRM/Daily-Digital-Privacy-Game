@@ -175,6 +175,13 @@ func _wifi_pass_panel_handling():
 	connecting_wifi_button = null
 	%PasswordKey.text = ""
 
+func _on_cancel_button_pressed():
+	_wifi_pass_panel_handling()
+	wifi_panel.hide()
+
+func _on_connect_button_pressed():
+	_on_password_key_text_submitted(%PasswordKey.text)
+
 #===============================================================================
 # END: WI-FI
 #===============================================================================
@@ -193,6 +200,7 @@ func _on_panel_warning_hack_gui_input(event):
 			location_button.button_pressed = true
 			location_warning.hide()
 		if wifi_panel.visible:
+			_wifi_pass_panel_handling()
 			wifi_panel.hide()
 
 # Special function that no other function WILL INTERACT WITH.
@@ -228,6 +236,9 @@ func _play_accept():
 
 func _play_back():
 	AudioManager.sfx_play(AudioManager.phone_back_sfx)
+
+
+
 
 
 
