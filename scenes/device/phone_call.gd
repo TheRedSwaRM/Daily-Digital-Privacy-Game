@@ -11,10 +11,10 @@ signal call_ended
 @onready var incoming_layer = $IncomingCall
 @onready var outgoing_layer = $OngoingCall
 
-@onready var good_call = "res://assets/audio/cutscene/not_much_bitcrushed.wav"
-@onready var bad_call = "res://assets/audio/cutscene/violated_new_bitcrushed.wav"
+@onready var good_call = "res://assets/audio/cutscene/not_much_bitcrushed_2.wav"
+@onready var bad_call = "res://assets/audio/cutscene/violated_new_bitcrushed_2.wav"
 ## Change this later.
-@onready var worst_call = "res://assets/audio/cutscene/violated_new_bitcrushed.wav"
+@onready var worst_call = "res://assets/audio/cutscene/violated_new_bitcrushed_2.wav"
 @onready var skip_call = "res://assets/audio/sfx/new_phone_ring.mp3"
 @onready var horror_droning = "res://assets/audio/cutscene/horror_droning_heartbeat.wav"
 @onready var end_call_button = $OngoingCall/EndCall
