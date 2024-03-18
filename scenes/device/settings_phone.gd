@@ -177,7 +177,7 @@ func _wifi_pass_panel_handling():
 
 func _on_cancel_button_pressed():
 	_wifi_pass_panel_handling()
-	wifi_panel.hide()
+	wifi_pass_panel.hide()
 
 func _on_connect_button_pressed():
 	_on_password_key_text_submitted(%PasswordKey.text)

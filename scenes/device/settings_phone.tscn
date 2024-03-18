@@ -224,6 +224,7 @@ theme = ExtResource("6_ktjui")
 text = "No"
 
 [node name="WIFIPanel" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 5.0
 offset_top = 12.0
@@ -269,6 +270,7 @@ wifi_name = "Open_WIFI"
 
 [node name="WIFIPassPanel" type="Panel" parent="WIFIPanel"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 6.0
 offset_top = 26.0
