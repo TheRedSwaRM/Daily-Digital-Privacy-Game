@@ -121,6 +121,14 @@ cursor_look = 1
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pillow"]
 polygon = PackedVector2Array(175, 111, 208, 112, 208, 144, 155, 144, 155, 114)
 
+[node name="ToWindowView" parent="." instance=ExtResource("2_57hfl")]
+label_name = "Window View"
+cursor_look = 4
+transfer_area = "res://scenes/areas/window_view.tscn"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToWindowView"]
+polygon = PackedVector2Array(64, 32, 128, 32, 128, 89, 64, 89)
+
 [node name="ScreenTint" parent="." instance=ExtResource("7_1gegh")]
 
 [connection signal="mouse_entered" from="Clock" to="." method="_on_clock_mouse_entered"]

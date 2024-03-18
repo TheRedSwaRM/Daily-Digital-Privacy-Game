@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://bopxoqqnrbvty"]
+
+[ext_resource type="Script" path="res://scenes/areas/window_view.gd" id="1_fkd6m"]
+[ext_resource type="Texture2D" uid="uid://c10tcvl74kuht" path="res://assets/images/bg/window_view_none.png" id="1_mhlem"]
+[ext_resource type="Texture2D" uid="uid://g2217tdqx5ck" path="res://assets/images/bg/window_view_outside.png" id="2_uddmj"]
+[ext_resource type="PackedScene" uid="uid://bmjgtpycm4gd1" path="res://scenes/components/screen_tint.tscn" id="3_nuy0a"]
+[ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="4_2y6g7"]
+
+[node name="WindowView" type="Node2D"]
+script = ExtResource("1_fkd6m")
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 144.0
+mouse_filter = 1
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 144.0
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="BedroomWindow" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 144.0
+texture = ExtResource("1_mhlem")
+stretch_mode = 5
+
+[node name="ViewOutside" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 144.0
+texture = ExtResource("2_uddmj")
+stretch_mode = 5
+
+[node name="ToBedroomWindow" parent="." instance=ExtResource("4_2y6g7")]
+label_name = "Window"
+cursor_look = 2
+transfer_area = "res://scenes/areas/bedroom_window.tscn"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToBedroomWindow"]
+polygon = PackedVector2Array(24, 0, 48, 0, 48, 144, 24, 144)
+
+[node name="ScreenTint" parent="." instance=ExtResource("3_nuy0a")]
