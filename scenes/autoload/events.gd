@@ -112,6 +112,7 @@ var day_counter: int = 1 :
 	"PLAYER_can_sleep": false,
 	
 	# Game End
+	"NO_phone_sfx": false,
 	"END_force_gameover": false,
 }
 

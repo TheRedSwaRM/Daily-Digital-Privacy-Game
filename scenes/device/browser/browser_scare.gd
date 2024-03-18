@@ -19,4 +19,5 @@ func _on_visibility_changed():
 		AudioManager.sfx_play("res://assets/audio/sfx/monster.mp3")
 		await get_tree().create_timer(3).timeout
 		Events.phone_change_function.emit("off", false)
+		Events.change_game_switch("NO_phone_sfx", true)
 		Events.change_game_switch("END_force_gameover", true)

@@ -94,7 +94,8 @@ func _flip_phone(value: String):
 	tween.set_parallel()
 	match value:
 		"open":
-			AudioManager.sfx_play("res://assets/audio/sfx/phone_open.mp3")
+			if not Events.check_game_switch("NO_phone_sfx"):
+				AudioManager.sfx_play("res://assets/audio/sfx/phone_open.mp3")
 			flipping_phone.emit(true)
 			current_state = State.RUNNING
 			blur_bg.show()
@@ -104,7 +105,8 @@ func _flip_phone(value: String):
 			#animation_player.play("flip")
 			#await animation_player.animation_finished
 		"close":
-			AudioManager.sfx_play("res://assets/audio/sfx/phone_close.mp3")
+			if not Events.check_game_switch("NO_phone_sfx"):
+				AudioManager.sfx_play("res://assets/audio/sfx/phone_close.mp3")
 			
 			GameSettings.save_settings.emit() # Just in case
 			
@@ -289,10 +291,12 @@ func _should_app_be_installed(key: String, _value: bool):
 # Audios
 #===============================================================================
 func _play_accept():
-	AudioManager.sfx_play(AudioManager.phone_accept_sfx)
+	if not Events.check_game_switch("NO_phone_sfx"):
+		AudioManager.sfx_play(AudioManager.phone_accept_sfx)
 
 func _play_back():
-	AudioManager.sfx_play(AudioManager.phone_back_sfx)
+	if not Events.check_game_switch("NO_phone_sfx"):
+		AudioManager.sfx_play(AudioManager.phone_back_sfx)
 
 #===============================================================================
 # Phone interaction
