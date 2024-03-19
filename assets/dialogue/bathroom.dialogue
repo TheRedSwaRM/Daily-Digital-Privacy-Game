@@ -3,12 +3,13 @@
 if Events.check_game_switch("shower_taken")
 	Cheryl: I've already taken a shower.
 elif Events.game_time > 18.0:
-	Cheryl: Not gonna take a shower this late in the night.
+	Cheryl: I don't feel like taking a shower this late in the night.
 else:
 	Take a shower?
 	- Yes
 		do Events.deactivate_phone.emit()
 		do Events.close_blinking_eye.emit()
+		You've decided that, since it is now your sem break, you would like to reward yourself with a nice long shower... For 4 hours.
 		do wait(1)
 		do Events.game_time += 4
 		do Events.activate_phone.emit()
@@ -20,18 +21,18 @@ else:
 
 ~ toilet
 
-Cheryl: I don't have diarrhea.
+Cheryl: I don't need to use that right now.
 
 => END
 
 ~ mirror
 
-Cheryl: Hair's getting longer.
+Cheryl: Despite everything, it's still me.
 
 => END
 
 ~ faucet
 
-Cheryl: Not that wet.
+Cheryl: Splish splash splosh.
 
 => END
