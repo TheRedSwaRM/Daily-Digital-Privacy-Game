@@ -120,7 +120,9 @@ func _do_blink():
 func _unhandled_input(_event):
 	# Prints the game switches
 	if Input.is_action_just_pressed("debug_key"):
-		print(Events._game_switches)
+		for switches in Events._game_switches:
+			if Events.check_game_switch(str(switches)):
+				print(str(switches) + ": " + str(Events.check_game_switch(str(switches))))
 		print(Events.day_counter)
 		print("Connection: " + %ConName.text)
 		print("Loccation: " + %LocYesNo.text)
