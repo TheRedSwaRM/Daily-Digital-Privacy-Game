@@ -51,6 +51,7 @@ func _ready():
 	Events.game_switch_changed.connect(_actual_spam_attack)
 	Events.game_switch_changed.connect(_if_hacked_then_call_accepted)
 	Events.game_switch_changed.connect(_force_game_end)
+	Events.game_switch_changed.connect(_player_gets_hacked_like_an_idiot)
 	#Events.game_switch_changed.connect(_alison_texts_back_1)
 	
 	#===========================================================================
@@ -401,6 +402,19 @@ func _if_hacked_then_call_accepted(key: String, _value: bool):
 			Events.new_phone_message.emit("Alison", "[url='www.surprise.com']Withering Tides Link[/url]")
 		await get_tree().create_timer(3).timeout
 		Events.link_pressed.emit("www.surprise.com")
+		
+func _player_gets_hacked_like_an_idiot(key: String, _value: bool):
+	if Events.check_game_switch(key) && key == "PLAYER_bamboozle":
+		Events.new_phone_message.emit("Alison", "I can't believe you fell for it!")
+		await get_tree().create_timer(1).timeout
+		for i in 20:
+			await get_tree().create_timer(0.1).timeout
+			Events.new_phone_message.emit("Alison", "HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAH")
+			
+		Events.phone_change_function.emit("off", false)
+		Events.change_game_switch("NO_phone_sfx", true)
+		Events.change_game_switch("END_force_gameover", true)
+		
 #===============================================================================
 # END: If player still gets hacked
 #===============================================================================

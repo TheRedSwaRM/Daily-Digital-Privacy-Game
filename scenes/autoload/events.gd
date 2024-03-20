@@ -111,6 +111,7 @@ var day_counter: int = 1 :
 	
 	# Last Day
 	"PLAYER_can_sleep": false,
+	"PLAYER_bamboozle": false,
 	
 	# Game End
 	"NO_phone_sfx": false,
