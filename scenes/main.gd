@@ -365,18 +365,22 @@ func _hacker_spam_attack(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "BLOCK_attacker_num":
 		await get_tree().create_timer(5).timeout
 		Events.change_game_switch("HACKER_spam_attack", true)
+		await get_tree().create_timer(10).timeout
+		Events.change_game_switch("BLOCK_attacker_spam",true)
+		Events.change_game_switch("END_force_gameover", true)
 
 func _actual_spam_attack(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "HACKER_spam_attack":
 		var rng = int(randf_range(0,4))
 		while true:
+			if Events.check_game_switch("BLOCK_attacker_spam"): break
 			rng = int(randf_range(0,4))
 			match rng:
 				0: Events.new_phone_message.emit("??????", "Message 1")
 				1: Events.new_phone_message.emit("??????", "Message 2")
 				2: Events.new_phone_message.emit("??????", "Message 3")
 				_: Events.new_phone_message.emit("??????", "Message 4")
-			await get_tree().create_timer(0.5).timeout
+			await get_tree().create_timer(0.1).timeout
 
 func _friender_warning() -> void:
 	Events.new_phone_message.emit("Friender", "Reminder to all users of Friender to be vigilant.")
@@ -390,7 +394,7 @@ func _friender_warning() -> void:
 #===============================================================================
 func _if_hacked_then_call_accepted(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "ATTACKER_call_rejected":
-		for i in 6:
+		for i in 5:
 			await get_tree().create_timer(0.5).timeout
 			Events.new_phone_message.emit("Alison", "[url='www.surprise.com']Withering Tides Link[/url]")
 		await get_tree().create_timer(3).timeout
@@ -401,6 +405,7 @@ func _if_hacked_then_call_accepted(key: String, _value: bool):
 
 func _force_game_end(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "END_force_gameover":
+		Events.pause_game_time(true)
 		await get_tree().create_timer(5).timeout
 		# Game ends.
 		_hide_phone()

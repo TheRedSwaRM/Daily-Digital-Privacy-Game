@@ -14,7 +14,7 @@ func _ready():
 	Events.change_time.connect(_change_color_signal)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 	
 func _change_color(curr_time: float):

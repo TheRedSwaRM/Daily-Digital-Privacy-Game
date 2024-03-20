@@ -33,6 +33,9 @@ func _process(_delta):
 ## INITIAL MESSAGE IS VITAL. REALLY, REALLY VITAL!
 ## I MEAN, WE CAN HAVE BLANK BUT IT'S WEIRD.
 func new_text_message(user_name: String, starting_text: String, is_player: bool = false, is_option: bool = false):
+	if Events.check_game_switch("BLOCK_attacker_num") and user_name == "Alison": return
+	if Events.check_game_switch("BLOCK_attacker_spam") and user_name == "??????": return
+	
 	var checked_contact = _if_in_message_lists(user_name)
 	
 	# If null, creates a new message and contact list
