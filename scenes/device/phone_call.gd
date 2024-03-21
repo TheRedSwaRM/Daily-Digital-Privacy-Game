@@ -61,6 +61,7 @@ func _on_phone_accept_pressed():
 			hack_check = Events.hack_checker()
 			
 			if hack_check:
+				Events.change_game_switch("ATTACKER_irl_begin", true)
 				print("Walahi, we're finished.")
 				_activate_call(bad_call)
 				AudioManager.horror_play(horror_droning)
@@ -71,7 +72,6 @@ func _on_phone_accept_pressed():
 			Events.change_game_switch("PLAYER_is_aware", true)
 		"Alison":
 			_activate_call(worst_call)
-			Events.change_game_switch("ATTACKER_irl_begin", true)
 			end_the_game = true
 		_:
 			_activate_call(good_call)

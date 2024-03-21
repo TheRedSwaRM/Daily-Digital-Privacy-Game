@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://67ghl6x0il8n"]
+[gd_scene load_steps=7 format=3 uid="uid://67ghl6x0il8n"]
 
 [ext_resource type="Texture2D" uid="uid://dphefy5h6qh4n" path="res://assets/images/bg/hallway.png" id="1_3ys3m"]
 [ext_resource type="Script" path="res://scenes/areas/hallway.gd" id="1_xr127"]
 [ext_resource type="PackedScene" uid="uid://doa3baqaprvkj" path="res://scenes/components/click_area_component.tscn" id="3_6nv3q"]
 [ext_resource type="PackedScene" uid="uid://bmjgtpycm4gd1" path="res://scenes/components/screen_tint.tscn" id="4_err52"]
+[ext_resource type="PackedScene" uid="uid://dsrsqgh4ykadv" path="res://scenes/cutscenes/attacker_peek.tscn" id="4_m2aq1"]
+[ext_resource type="Texture2D" uid="uid://yjplbu8bqvxt" path="res://assets/images/npcs/attacker_hallway.png" id="5_yb0p2"]
 
 [node name="Hallway" type="Node2D"]
 script = ExtResource("1_xr127")
@@ -59,6 +61,15 @@ cursor_look = 1
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DoorHallway"]
 position = Vector2(-17, 12)
 polygon = PackedVector2Array(68, 45, 73, 45, 73, 55, 68, 55)
+
+[node name="AttackerPeek" parent="." instance=ExtResource("4_m2aq1")]
+visible = false
+offset_left = 69.0
+offset_top = 40.0
+offset_right = 94.0
+offset_bottom = 80.0
+texture = ExtResource("5_yb0p2")
+attacker_texture = ExtResource("5_yb0p2")
 
 [node name="ScreenTint" parent="." instance=ExtResource("4_err52")]
 
