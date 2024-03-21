@@ -2,16 +2,12 @@
 
 [ext_resource type="Script" path="res://scenes/cutscenes/attacker_peek.gd" id="1_no43r"]
 
-[node name="AttackerPeek" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="AttackerPeek" type="TextureRect"]
+offset_right = 11.0
+offset_bottom = 30.0
 mouse_filter = 2
+stretch_mode = 5
 script = ExtResource("1_no43r")
-
-[node name="AttackerTexture" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

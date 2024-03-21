@@ -1,11 +1,14 @@
+@tool
 extends Control
 
 @export_category("Attacker Look")
 @export var attacker_texture: Texture2D
+
 @onready var timer = $Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	self.texture = attacker_texture
 	hide()
 	if Events.check_game_switch("ATTACKER_irl_begin"):
 		var rng = randf()
@@ -16,7 +19,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	if Engine.is_editor_hint():
+		self.texture = attacker_texture
 
 func _on_timer_timeout():
 	Events.do_full_blink.emit()

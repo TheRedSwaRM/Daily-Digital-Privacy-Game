@@ -195,7 +195,7 @@ func background_audio_check():
 ## For specific things, use Events.check_game_switch.
 func hack_checker() -> int:
 	var hacking_check: bool = false
-	if check_game_switch("WARNING_permissions_set"): hacking_check = true
+	#if check_game_switch("WARNING_permissions_set"): hacking_check = true
 	if check_game_switch("WARNING_posted_with_location"): hacking_check = true
 
 	return hacking_check
