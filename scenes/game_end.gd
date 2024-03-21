@@ -11,4 +11,6 @@ func _process(_delta):
 
 # Checks on what to do when given something.
 func _check_for_route():
+	await get_tree().create_timer(5).timeout 
+	
 	Events.quit_game()
