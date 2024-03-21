@@ -3,8 +3,7 @@ extends Control
 @onready var animation_player = $AnimationPlayer
 @onready var hacked_text = $HackedText
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
+func _get_user_name_from_player():
 	var output = []
 	match OS.get_name():
 		"Windows":
@@ -19,6 +18,10 @@ func _ready():
 			output.append(OS.get_environment("USER"))
 		
 	hacked_text.text = "..." + str(output[0])
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	
 	
 	_check_for_route()
 
@@ -30,6 +33,7 @@ func _process(_delta):
 func _check_for_route():
 	## If player is hacked.
 	if Events.hack_checker():
+		_get_user_name_from_player()
 		animation_player.play("hacked_ending")
 		await animation_player.animation_finished
 		await get_tree().create_timer(2).timeout
