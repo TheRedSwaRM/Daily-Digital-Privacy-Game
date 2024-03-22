@@ -1,0 +1,113 @@
+[gd_scene load_steps=9 format=3 uid="uid://t1llj4u33uw7"]
+
+[ext_resource type="Texture2D" uid="uid://dt5pfrkdw63ga" path="res://assets/images/bg/laptop_view.png" id="1_hnhe4"]
+[ext_resource type="Script" path="res://scenes/laptop/laptop_view.gd" id="1_s8isk"]
+[ext_resource type="Texture2D" uid="uid://dop2nnotf8be4" path="res://assets/images/pong/pong_stick_2.png" id="2_k7q18"]
+[ext_resource type="Texture2D" uid="uid://0l1ef5t6uxv4" path="res://assets/images/pong/pong_stick_1.png" id="3_i50h4"]
+[ext_resource type="Script" path="res://scenes/laptop/player.gd" id="3_sjdr1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irc06"]
+size = Vector2(164, 21.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x54xr"]
+size = Vector2(20, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_me5kp"]
+size = Vector2(4, 20)
+
+[node name="LaptopView" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s8isk")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LaptopGlow" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 13.0
+offset_right = 217.0
+offset_bottom = 123.0
+color = Color(0.137255, 0.137255, 0.137255, 1)
+
+[node name="LaptopScreen" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 25.0
+offset_right = 231.0
+offset_bottom = 178.5
+texture = ExtResource("1_hnhe4")
+stretch_mode = 5
+
+[node name="GameInstance" type="Node2D" parent="."]
+
+[node name="Borders" type="StaticBody2D" parent="GameInstance"]
+
+[node name="Up" type="CollisionShape2D" parent="GameInstance/Borders"]
+position = Vector2(128, 10.5)
+shape = SubResource("RectangleShape2D_irc06")
+
+[node name="Bottom" type="CollisionShape2D" parent="GameInstance/Borders"]
+position = Vector2(128, 127)
+shape = SubResource("RectangleShape2D_irc06")
+
+[node name="RightBorder" type="CollisionShape2D" parent="GameInstance/Borders"]
+position = Vector2(220, 69)
+shape = SubResource("RectangleShape2D_x54xr")
+
+[node name="LeftBorder" type="CollisionShape2D" parent="GameInstance/Borders"]
+position = Vector2(36, 69)
+shape = SubResource("RectangleShape2D_x54xr")
+
+[node name="Player" type="StaticBody2D" parent="GameInstance"]
+position = Vector2(51, 69)
+script = ExtResource("3_sjdr1")
+
+[node name="TextureRect" type="TextureRect" parent="GameInstance/Player"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -10.0
+offset_right = 4.0
+offset_bottom = 10.0
+grow_vertical = 2
+texture = ExtResource("3_i50h4")
+expand_mode = 3
+
+[node name="ColShape" type="CollisionShape2D" parent="GameInstance/Player"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_me5kp")
+
+[node name="CPU" type="StaticBody2D" parent="GameInstance"]
+position = Vector2(201, 69)
+
+[node name="TextureRect" type="TextureRect" parent="GameInstance/CPU"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -10.0
+offset_right = 4.0
+offset_bottom = 10.0
+grow_vertical = 2
+texture = ExtResource("2_k7q18")
+expand_mode = 3
+
+[node name="ColShape" type="CollisionShape2D" parent="GameInstance/CPU"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_me5kp")
+
+[node name="Line2D" type="Line2D" parent="GameInstance"]
+position = Vector2(0, -0.228262)
+scale = Vector2(1, 1.01087)
+points = PackedVector2Array(128, 22, 128, 114.978)
+width = 1.0

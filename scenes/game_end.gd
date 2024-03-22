@@ -16,6 +16,8 @@ func _get_user_name_from_player():
 			output.append(OS.get_environment("USER"))
 		"iOS":
 			output.append(OS.get_environment("USER"))
+		_:
+			output.append(IP.get_local_addresses()[0])
 		
 	hacked_text.text = "..." + str(output[0])
 
@@ -62,6 +64,7 @@ func _check_for_route():
 		
 	## Failsafe.
 	else:
+		#_get_user_name_from_player()
 		#animation_player.play("hacked_ending")
 		#await animation_player.animation_finished
 		#await get_tree().create_timer(2).timeout

@@ -14,7 +14,7 @@ signal call_ended
 @onready var good_call = "res://assets/audio/cutscene/not_much_bitcrushed_2.wav"
 @onready var bad_call = "res://assets/audio/cutscene/violated_new_bitcrushed_2.wav"
 ## Change this later.
-@onready var worst_call = "res://assets/audio/cutscene/violated_new_bitcrushed_2.wav"
+@onready var worst_call = "res://assets/audio/cutscene/noise.wav"
 @onready var skip_call = "res://assets/audio/sfx/new_phone_ring.mp3"
 @onready var horror_droning = "res://assets/audio/cutscene/horror_droning_heartbeat.wav"
 @onready var end_call_button = $OngoingCall/EndCall
@@ -90,7 +90,7 @@ func _phone_call_end():
 	call_ended.emit()
 	
 func _activate_call(call_file: String):
-	if not skip_the_calls and OS.is_debug_build():
+	if OS.is_debug_build():
 		AudioManager.phone_call(call_file)
 	else: 
 		AudioManager.phone_call(skip_call)
@@ -103,7 +103,7 @@ func _on_timer_timeout():
 	call_time.text = "%02d:%02d" % [minutes, seconds]
 	
 	## Additional effects. This is a quick hack btw, there should be a better fix.
-	if seconds > 30 and seconds < 55\
+	if seconds > 26 and seconds < 45\
 	and caller_name.text == "Unknown" \
 	and Events.hack_checker():
 		AudioManager.dizzy_changer(true)
