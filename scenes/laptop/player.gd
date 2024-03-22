@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends CharacterBody2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -7,4 +7,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	position.y += Input.get_axis("ui_down","ui_up") * delta * 20
+	var input_direction = Input.get_axis("ui_up","ui_down")
+	velocity = Vector2(0, input_direction).normalized() * delta * 100
+	move_and_collide(velocity)
