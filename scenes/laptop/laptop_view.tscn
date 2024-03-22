@@ -1,13 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://t1llj4u33uw7"]
+[gd_scene load_steps=16 format=3 uid="uid://t1llj4u33uw7"]
 
 [ext_resource type="Texture2D" uid="uid://dt5pfrkdw63ga" path="res://assets/images/bg/laptop_view.png" id="1_hnhe4"]
 [ext_resource type="Script" path="res://scenes/laptop/laptop_view.gd" id="1_s8isk"]
 [ext_resource type="Texture2D" uid="uid://dop2nnotf8be4" path="res://assets/images/pong/pong_stick_2.png" id="2_k7q18"]
+[ext_resource type="Script" path="res://scenes/laptop/game_instance.gd" id="3_4qxvw"]
 [ext_resource type="Texture2D" uid="uid://0l1ef5t6uxv4" path="res://assets/images/pong/pong_stick_1.png" id="3_i50h4"]
 [ext_resource type="Script" path="res://scenes/laptop/player.gd" id="3_sjdr1"]
 [ext_resource type="Texture2D" uid="uid://cev0ohxla32w7" path="res://assets/images/pong/pong_ball.png" id="6_3rxys"]
 [ext_resource type="Script" path="res://scenes/laptop/ball.gd" id="6_ixn4q"]
 [ext_resource type="Script" path="res://scenes/laptop/cpu.gd" id="7_yw07c"]
+[ext_resource type="LabelSettings" uid="uid://be01wlf5hchuk" path="res://scenes/components/score_font_label.tres" id="9_jbtps"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irc06"]
 size = Vector2(164, 21.5)
@@ -59,6 +61,7 @@ texture = ExtResource("1_hnhe4")
 stretch_mode = 5
 
 [node name="GameInstance" type="Node2D" parent="."]
+script = ExtResource("3_4qxvw")
 
 [node name="Borders" type="StaticBody2D" parent="GameInstance"]
 
@@ -161,5 +164,24 @@ shape = SubResource("RectangleShape2D_q2gbi")
 position = Vector2(207, 69)
 shape = SubResource("RectangleShape2D_q2gbi")
 
-[node name="RayCast2D" type="RayCast2D" parent="GameInstance"]
-target_position = Vector2(-19, 1)
+[node name="PlayerScore" type="Label" parent="GameInstance"]
+offset_left = 46.0
+offset_top = 21.0
+offset_right = 128.0
+offset_bottom = 117.0
+text = "0"
+label_settings = ExtResource("9_jbtps")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CPUScore" type="Label" parent="GameInstance"]
+offset_left = 128.0
+offset_top = 21.0
+offset_right = 210.0
+offset_bottom = 117.0
+text = "0"
+label_settings = ExtResource("9_jbtps")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pong_score" from="GameInstance/Ball" to="GameInstance" method="_on_ball_pong_score"]
