@@ -35,7 +35,7 @@ func _process(_delta):
 	pass
 
 func _on_laptop_pressed():
-	pass
+	Events.change_map.emit("res://scenes/laptop/laptop_view.tscn")
 	
 func _on_clock_pressed():
 	DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/room.dialogue"), "clock")

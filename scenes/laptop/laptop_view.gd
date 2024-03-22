@@ -11,3 +11,6 @@ func _process(delta):
 
 func _on_ball_pong_score(scorer):
 	pass # Replace with function body.
+
+func _on_back_button_pressed():
+	Events.change_map.emit("res://scenes/areas/bedroom_laptop.tscn")
