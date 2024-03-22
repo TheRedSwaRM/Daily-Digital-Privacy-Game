@@ -20,7 +20,9 @@ jobs:
       # Always include the checkout step so that 
       # your project is available for Godot to export
     - name: Checkout
-      uses: actions/checkout@v3.3.0
+      uses: actions/checkout@v4
+      with:
+        lfs: true
   
     - name: Exporting Game
       id: export
@@ -48,7 +50,7 @@ jobs:
     #     files: ${{ steps.export.outputs.archive_directory }}/*
 
     - name: create release
-      uses: ncipollo/release-action@v1.13.0
+      uses: ncipollo/release-action@v1.14.0
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         generateReleaseNotes: true
@@ -57,13 +59,13 @@ jobs:
 
 
     # - name: Create Windows Artifact
-    #   uses: actions/upload-artifact@v3.1.3
+    #   uses: actions/upload-artifact@v4
     #   with:
     #     name: windows
     #     path: ${{ steps.export.outputs.build_directory }}/Windows Desktop
 
     # - name: Create Linux Artifact
-    #   uses: actions/upload-artifact@v3.1.3
+    #   uses: actions/upload-artifact@v4
     #   with:
     #     name: windows
     #     path: ${{ steps.export.outputs.build_directory }}/LinuxX11
