@@ -185,7 +185,7 @@ func _cutscene_friend_message_2():
 	await get_tree().create_timer(1).timeout
 	Events.new_phone_message.emit("Alison", "And because of that, I got something just for you.")
 	await get_tree().create_timer(1).timeout
-	Events.new_phone_message.emit("Alison", "There's this new social media app I wanna try, and it's called Friendster!")
+	Events.new_phone_message.emit("Alison", "There's this new social media app I wanna try, and it's called Friender!")
 	await get_tree().create_timer(1).timeout
 	Events.new_phone_message.emit("Alison", "And everyone's getting on it, girl! You have to hop in!")
 	await get_tree().create_timer(1).timeout
@@ -315,7 +315,7 @@ func _message_received(respondent: String, text: String):
 		
 		["Alison", "Fine, what about you?"]:
 			await get_tree().create_timer(1).timeout
-			Events.new_phone_message.emit("Alison", "Same. I'm just bored, Friendster's currently down.")
+			Events.new_phone_message.emit("Alison", "Same. I'm just bored, Friender's currently down.")
 			await get_tree().create_timer(1).timeout
 			Events.new_phone_message.emit("Alison", "You're really addicted, huh?", true)
 			await get_tree().create_timer(1).timeout
