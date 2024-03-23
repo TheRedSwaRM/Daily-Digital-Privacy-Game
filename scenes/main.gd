@@ -379,10 +379,10 @@ func _actual_spam_attack(key: String, _value: bool):
 			if Events.check_game_switch("BLOCK_attacker_spam"): break
 			rng = int(randf_range(0,4))
 			match rng:
-				0: Events.new_phone_message.emit("??????", "Message 1")
-				1: Events.new_phone_message.emit("??????", "Message 2")
-				2: Events.new_phone_message.emit("??????", "Message 3")
-				_: Events.new_phone_message.emit("??????", "Message 4")
+				0: Events.new_phone_message.emit("??????", "YOU THINK YOU CAN PLAY ME LIKE THAT???")
+				1: Events.new_phone_message.emit("??????", "SEE YOU SOON")
+				2: Events.new_phone_message.emit("??????", "HAHAHAHAHAHAHHAHAHAHAHAHAHAHAHAHAHAHAHAHHAHAHAHAHAHAHAHAHAHAAHAHAHAHAHAHHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA")
+				_: Events.new_phone_message.emit("??????", "202.92.131.119")
 			await get_tree().create_timer(0.1).timeout
 
 func _friender_warning() -> void:
