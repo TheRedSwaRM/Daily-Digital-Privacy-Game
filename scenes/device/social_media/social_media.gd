@@ -6,6 +6,7 @@ extends Control
 
 @onready var home_post_list = $HomeFeed/HomePosts/TheActualPost
 @onready var notif_post_list = $NotificationFeed/NotifPosts/NotifList
+@onready var current_tab_label = $CurrentTabLabel
 
 @onready var signup_screen = $SignupScreen
 @onready var login_screen = $LogIn
@@ -104,19 +105,22 @@ func _hide_feeds():
 	notif_feed.hide()
 
 func _on_profile_button_pressed():
+	current_tab_label.text = "Profile"
 	profile_feed.show()
 
 func _on_friends_button_pressed():
-	pass
+	current_tab_label.text = "Friends"
 
 func _on_message_button_pressed():
-	pass
+	current_tab_label.text = "Message"
 
 func _on_notification_button_pressed():
+	current_tab_label.text = "Notifications"
 	_hide_feeds()
 	notif_feed.show()
 
 func _on_home_button_pressed():
+	current_tab_label.text = "home"
 	_hide_feeds()
 	home_feed.show()
 

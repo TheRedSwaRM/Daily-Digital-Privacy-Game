@@ -165,7 +165,6 @@ anchors_preset = 0
 offset_right = 256.0
 offset_bottom = 144.0
 script = ExtResource("1_574f2")
-skip_to_day_three = true
 
 [node name="BlackBack" type="ColorRect" parent="."]
 layout_mode = 1
@@ -185,8 +184,10 @@ anchor_left = -4.90625
 anchor_top = 7.54286
 anchor_right = -4.90625
 anchor_bottom = 7.54286
-offset_right = 256.0
-offset_bottom = 143.885
+offset_left = 1256.0
+offset_top = -1086.17
+offset_right = 1512.0
+offset_bottom = -942.287
 rotation = 1.5708
 texture = ExtResource("2_701y8")
 expand_mode = 2
