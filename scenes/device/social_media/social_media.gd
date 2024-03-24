@@ -21,6 +21,24 @@ extends Control
 @onready var connection_status_panel = $NoConnectionPanel
 @onready var anim_player = $AnimationPlayer
 
+## Social Media Buttons
+@onready var profile_button = $SNSButtons/ProfileButton
+@onready var friends_button = $SNSButtons/FriendsButton
+@onready var message_button = $SNSButtons/MessageButton
+@onready var notification_button = $SNSButtons/NotificationButton
+
+@onready var profile_button_idle = load("res://assets/images/social_media/social_media_prof.png")
+@onready var friends_button_idle = load("res://assets/images/social_media/social_media_friends.png")
+@onready var message_button_idle = load("res://assets/images/social_media/social_media_mes.png")
+@onready var notification_button_idle = load("res://assets/images/social_media/social_media_bell.png")
+
+
+@onready var profile_button_hover = load("res://assets/images/social_media/social_media_prof_active.png")
+@onready var friends_button_hover = load("res://assets/images/social_media/social_media_friends_active.png")
+@onready var message_button_hover = load("res://assets/images/social_media/social_media_mes_active.png")
+@onready var notification_button_hover = load("res://assets/images/social_media/social_media_bell_active.png")
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Events.sns_add_post.connect(sns_add)
@@ -36,19 +54,11 @@ func _ready():
 	Events.game_switch_changed.connect(_disable_social_media)
 	
 	# initialization
-	login_screen.show()
+	#login_screen.show()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
-#
-#signal connection_change(name: String)
-#signal location_change(value: bool)
-
-#func _signup_completed():
-	#Events.new_phone_message.emit("Friender", "Welcome to Friender!")
-	#Events.new_phone_message.emit("Friender", "Welcome to Friender!")
-	#signup_screen.hide()
 
 func _check_for_wifi_connection(connection_name: String):
 	match connection_name:
@@ -115,7 +125,7 @@ func _on_message_button_pressed():
 	current_tab_label.text = "Message"
 
 func _on_notification_button_pressed():
-	current_tab_label.text = "Notifications"
+	current_tab_label.text = "Alerts"
 	_hide_feeds()
 	notif_feed.show()
 
@@ -253,3 +263,31 @@ func _disable_social_media(key: String, _value: bool):
 		print("Disabled social media.")
 		Events.game_switch_changed.disconnect(_disable_social_media)
 		disable_screen.show()
+
+#===============================================================================
+#	Social Media Icons when Hovered
+#===============================================================================
+
+func _on_profile_button_mouse_entered():
+	profile_button.icon = profile_button_hover
+
+func _on_profile_button_mouse_exited():
+	profile_button.icon = profile_button_idle
+
+func _on_friends_button_mouse_entered():
+	friends_button.icon = friends_button_hover
+
+func _on_friends_button_mouse_exited():
+	friends_button.icon = friends_button_idle
+
+func _on_message_button_mouse_entered():
+	message_button.icon = message_button_hover
+
+func _on_message_button_mouse_exited():
+	message_button.icon = message_button_idle
+
+func _on_notification_button_mouse_entered():
+	notification_button.icon = notification_button_hover
+
+func _on_notification_button_mouse_exited():
+	notification_button.icon = notification_button_idle

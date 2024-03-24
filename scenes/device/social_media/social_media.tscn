@@ -92,7 +92,7 @@ vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="HomeButton" type="Button" parent="."]
-layout_mode = 0
+layout_mode = 2
 offset_left = 1.0
 offset_top = 2.0
 offset_right = 12.0
@@ -100,50 +100,47 @@ offset_bottom = 13.0
 theme = ExtResource("3_wwfvl")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 icon_alignment = 1
-metadata/_edit_lock_ = true
 
-[node name="ProfileButton" type="Button" parent="."]
+[node name="SNSButtons" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 2.0
 offset_top = 13.0
-offset_right = 11.0
+offset_right = 66.0
 offset_bottom = 22.0
+
+[node name="ProfileButton" type="Button" parent="SNSButtons"]
+custom_minimum_size = Vector2(11, 0)
+layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("3_wwfvl")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 icon = ExtResource("4_el5v2")
 icon_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="FriendsButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 13.0
-offset_right = 31.0
-offset_bottom = 22.0
+[node name="FriendsButton" type="Button" parent="SNSButtons"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("3_wwfvl")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 icon = ExtResource("5_flght")
 icon_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="MessageButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 39.0
-offset_top = 13.0
-offset_right = 48.0
-offset_bottom = 22.0
+[node name="MessageButton" type="Button" parent="SNSButtons"]
+custom_minimum_size = Vector2(13, 0)
+layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("3_wwfvl")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 icon = ExtResource("5_ftokl")
 icon_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="NotificationButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 55.0
-offset_top = 13.0
-offset_right = 64.0
-offset_bottom = 22.0
+[node name="NotificationButton" type="Button" parent="SNSButtons"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("3_wwfvl")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 icon = ExtResource("6_m0a4i")
@@ -291,10 +288,18 @@ libraries = {
 speed_scale = 2.0
 
 [connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
-[connection signal="pressed" from="ProfileButton" to="." method="_on_profile_button_pressed"]
-[connection signal="pressed" from="FriendsButton" to="." method="_on_friends_button_pressed"]
-[connection signal="pressed" from="MessageButton" to="." method="_on_message_button_pressed"]
-[connection signal="pressed" from="NotificationButton" to="." method="_on_notification_button_pressed"]
+[connection signal="mouse_entered" from="SNSButtons/ProfileButton" to="." method="_on_profile_button_mouse_entered"]
+[connection signal="mouse_exited" from="SNSButtons/ProfileButton" to="." method="_on_profile_button_mouse_exited"]
+[connection signal="pressed" from="SNSButtons/ProfileButton" to="." method="_on_profile_button_pressed"]
+[connection signal="mouse_entered" from="SNSButtons/FriendsButton" to="." method="_on_friends_button_mouse_entered"]
+[connection signal="mouse_exited" from="SNSButtons/FriendsButton" to="." method="_on_friends_button_mouse_exited"]
+[connection signal="pressed" from="SNSButtons/FriendsButton" to="." method="_on_friends_button_pressed"]
+[connection signal="mouse_entered" from="SNSButtons/MessageButton" to="." method="_on_message_button_mouse_entered"]
+[connection signal="mouse_exited" from="SNSButtons/MessageButton" to="." method="_on_message_button_mouse_exited"]
+[connection signal="pressed" from="SNSButtons/MessageButton" to="." method="_on_message_button_pressed"]
+[connection signal="mouse_entered" from="SNSButtons/NotificationButton" to="." method="_on_notification_button_mouse_entered"]
+[connection signal="mouse_exited" from="SNSButtons/NotificationButton" to="." method="_on_notification_button_mouse_exited"]
+[connection signal="pressed" from="SNSButtons/NotificationButton" to="." method="_on_notification_button_pressed"]
 [connection signal="gui_input" from="HomeFeed" to="." method="_on_home_feed_gui_input"]
 [connection signal="gui_input" from="NotificationFeed" to="." method="_on_notification_feed_gui_input"]
 [connection signal="back_button_pressed" from="ProfileFeed" to="." method="_on_profile_feed_back_button_pressed"]
