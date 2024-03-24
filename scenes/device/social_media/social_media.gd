@@ -117,7 +117,7 @@ func _hide_feeds():
 func _on_profile_button_pressed():
 	current_tab_label.text = "Profile"
 	profile_feed.show()
-
+	
 func _on_friends_button_pressed():
 	current_tab_label.text = "Friends"
 

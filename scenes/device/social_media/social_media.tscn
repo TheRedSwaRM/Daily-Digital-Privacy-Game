@@ -200,26 +200,6 @@ alignment = 1
 [node name="EndMarginRect" type="ReferenceRect" parent="NotificationFeed/NotifPosts"]
 layout_mode = 2
 
-[node name="ProfileFeed" parent="." instance=ExtResource("16_4k71l")]
-visible = false
-layout_mode = 1
-is_user = true
-
-[node name="AddPostButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 51.0
-offset_top = 107.0
-offset_right = 60.0
-offset_bottom = 116.0
-theme = ExtResource("3_wwfvl")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-icon = ExtResource("9_6ch0j")
-icon_alignment = 1
-
-[node name="NewPostPanel" parent="." instance=ExtResource("11_f6lsx")]
-visible = false
-offset_bottom = 124.0
-
 [node name="NoConnectionPanel" type="Panel" parent="."]
 visible = false
 layout_mode = 0
@@ -239,6 +219,26 @@ text = "No Connection."
 label_settings = SubResource("LabelSettings_ngwqi")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ProfileFeed" parent="." instance=ExtResource("16_4k71l")]
+visible = false
+layout_mode = 1
+is_user = true
+
+[node name="AddPostButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 107.0
+offset_right = 60.0
+offset_bottom = 116.0
+theme = ExtResource("3_wwfvl")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+icon = ExtResource("9_6ch0j")
+icon_alignment = 1
+
+[node name="NewPostPanel" parent="." instance=ExtResource("11_f6lsx")]
+visible = false
+offset_bottom = 124.0
 
 [node name="PermissionsScreen" parent="." instance=ExtResource("14_a51wq")]
 visible = false
