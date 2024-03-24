@@ -54,7 +54,7 @@ func _ready():
 	Events.game_switch_changed.connect(_disable_social_media)
 	
 	# initialization
-	#login_screen.show()
+	login_screen.show()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
