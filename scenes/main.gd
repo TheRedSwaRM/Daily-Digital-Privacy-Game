@@ -146,7 +146,7 @@ func _permissions_set(key: String, _value: bool):
 func _cutscene_social_post(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "posted_in_sns":
 		Events.game_switch_changed.disconnect(_cutscene_social_post)
-		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/intro.dialogue"))
+		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "social_media")
 		await DialogueManager.dialogue_ended
 
 # Day 3 Events
