@@ -269,25 +269,33 @@ func _disable_social_media(key: String, _value: bool):
 #===============================================================================
 
 func _on_profile_button_mouse_entered():
+	GameSettings.change_cursor_look(GameSettings.CursorLook.INTERACT)
 	profile_button.icon = profile_button_hover
 
 func _on_profile_button_mouse_exited():
+	GameSettings.change_cursor_look()
 	profile_button.icon = profile_button_idle
 
 func _on_friends_button_mouse_entered():
+	GameSettings.change_cursor_look(GameSettings.CursorLook.INTERACT)
 	friends_button.icon = friends_button_hover
 
 func _on_friends_button_mouse_exited():
+	GameSettings.change_cursor_look()
 	friends_button.icon = friends_button_idle
 
 func _on_message_button_mouse_entered():
+	GameSettings.change_cursor_look(GameSettings.CursorLook.INTERACT)
 	message_button.icon = message_button_hover
 
 func _on_message_button_mouse_exited():
+	GameSettings.change_cursor_look()
 	message_button.icon = message_button_idle
 
 func _on_notification_button_mouse_entered():
+	GameSettings.change_cursor_look(GameSettings.CursorLook.INTERACT)
 	notification_button.icon = notification_button_hover
 
 func _on_notification_button_mouse_exited():
+	GameSettings.change_cursor_look()
 	notification_button.icon = notification_button_idle
