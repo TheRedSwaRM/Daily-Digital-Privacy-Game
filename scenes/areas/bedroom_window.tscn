@@ -99,7 +99,7 @@ cursor_look = 2
 transfer_area = "res://scenes/areas/bedroom_laptop.tscn"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClickAreaComponent"]
-polygon = PackedVector2Array(24, 0, 48, 0, 48, 144, 24, 144)
+polygon = PackedVector2Array(0, 0, 48, 0, 48, 144, 0, 144)
 
 [node name="Clock" type="TextureButton" parent="."]
 offset_left = 115.0

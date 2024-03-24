@@ -35,7 +35,7 @@ transfer_area = "res://scenes/areas/bedroom_laptop.tscn"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToLaptop"]
 position = Vector2(184, 0)
-polygon = PackedVector2Array(48, 0, 24, 0, 24, 144, 48, 144)
+polygon = PackedVector2Array(72, 0, 24, 0, 24, 144, 72, 144)
 
 [node name="ToBathroom" parent="." instance=ExtResource("2_8n6js")]
 position = Vector2(-139, 12)

@@ -39,7 +39,7 @@ cursor_look = 2
 transfer_area = "res://scenes/areas/bedroom_front.tscn"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToFront"]
-polygon = PackedVector2Array(24, 0, 48, 0, 48, 144, 24, 144)
+polygon = PackedVector2Array(0, 0, 48, 0, 48, 144, 0, 144)
 
 [node name="ToWindow" parent="." instance=ExtResource("2_l4qen")]
 position = Vector2(184, 0)
@@ -48,7 +48,7 @@ cursor_look = 3
 transfer_area = "res://scenes/areas/bedroom_window.tscn"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToWindow"]
-polygon = PackedVector2Array(24, 0, 48, 0, 48, 144, 24, 144)
+polygon = PackedVector2Array(24, 0, 72, 0, 72, 144, 24, 144)
 
 [node name="Laptop" type="TextureButton" parent="."]
 offset_left = 128.0
