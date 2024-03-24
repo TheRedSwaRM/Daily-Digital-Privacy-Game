@@ -287,6 +287,8 @@ libraries = {
 }
 speed_scale = 2.0
 
+[connection signal="mouse_entered" from="HomeButton" to="." method="_on_home_button_mouse_entered"]
+[connection signal="mouse_exited" from="HomeButton" to="." method="_on_home_button_mouse_exited"]
 [connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
 [connection signal="mouse_entered" from="SNSButtons/ProfileButton" to="." method="_on_profile_button_mouse_entered"]
 [connection signal="mouse_exited" from="SNSButtons/ProfileButton" to="." method="_on_profile_button_mouse_exited"]

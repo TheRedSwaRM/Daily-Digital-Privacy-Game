@@ -299,3 +299,9 @@ func _on_notification_button_mouse_entered():
 func _on_notification_button_mouse_exited():
 	GameSettings.change_cursor_look()
 	notification_button.icon = notification_button_idle
+
+func _on_home_button_mouse_entered():
+	GameSettings.change_cursor_look(GameSettings.CursorLook.INTERACT)
+
+func _on_home_button_mouse_exited():
+	GameSettings.change_cursor_look()
