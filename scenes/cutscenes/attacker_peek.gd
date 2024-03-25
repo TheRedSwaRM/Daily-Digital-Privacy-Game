@@ -26,4 +26,5 @@ func _process(_delta):
 func _on_timer_timeout():
 	Events.do_full_blink.emit()
 	await get_tree().create_timer(0.1).timeout
+	timer.stop()
 	hide()

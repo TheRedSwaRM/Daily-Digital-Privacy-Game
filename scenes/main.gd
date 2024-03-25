@@ -423,8 +423,12 @@ func _force_game_end(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "END_force_gameover":
 		Events.pause_game_time(true)
 		await get_tree().create_timer(5).timeout
-		# Game ends.
 		_hide_phone()
 		AudioManager.bgs_stop()
-		Events.change_map.emit("res://scenes/game_end.tscn", false)
+		
+		# If hacked, go to another version.
+		if Events.check_game_switch("ATTACKER_call_accepted"):
+			get_tree().change_scene_to_file("res://scenes/cutscenes/hacked_scare_scene.tscn")
+		else:
+			Events.change_map.emit("res://scenes/game_end.tscn", false)
 		

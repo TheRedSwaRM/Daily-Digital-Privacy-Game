@@ -38,8 +38,10 @@ func _check_for_route():
 		_get_user_name_from_player()
 		animation_player.play("hacked_ending")
 		await animation_player.animation_finished
-		await get_tree().create_timer(2).timeout
-		get_tree().change_scene_to_file("res://scenes/cutscenes/hacked_scare_scene.tscn")
+		await get_tree().create_timer(2).timeout 
+		Events.quit_game()
+		#await get_tree().create_timer(2).timeout
+		#get_tree().change_scene_to_file("res://scenes/cutscenes/hacked_scare_scene.tscn")
 		
 	## If player can sleep.
 	elif Events.check_game_switch("PLAYER_can_sleep"):

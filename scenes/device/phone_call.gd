@@ -103,7 +103,7 @@ func _on_timer_timeout():
 	call_time.text = "%02d:%02d" % [minutes, seconds]
 	
 	## Additional effects. This is a quick hack btw, there should be a better fix.
-	if seconds > 26 and seconds < 45\
+	if seconds > 24 and seconds < 45\
 	and caller_name.text == "Unknown" \
 	and Events.hack_checker():
 		AudioManager.dizzy_changer(true)
