@@ -86,6 +86,7 @@ alignment = 1
 layout_mode = 2
 
 [node name="HeaderColor" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 66.0
 offset_bottom = 9.0
 color = Color(0.211765, 0.807843, 0.337255, 1)

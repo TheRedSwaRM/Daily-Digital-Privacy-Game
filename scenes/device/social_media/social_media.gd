@@ -4,10 +4,11 @@ extends Control
 
 @onready var home_feed = $HomeFeed
 @onready var notif_feed = $NotificationFeed
-@onready var profile_feed = $ProfileFeed
+@onready var profile_feed = $SocialMediaAccounts/Player
 
 @onready var home_post_list = $HomeFeed/HomePosts/TheActualPost
 @onready var notif_post_list = $NotificationFeed/NotifPosts/NotifList
+@onready var account_list = $SocialMediaAccounts
 @onready var current_tab_label = $CurrentTabLabel
 
 @onready var signup_screen = $SignupScreen
@@ -54,11 +55,14 @@ func _ready():
 	_check_for_wifi_connection("none")
 	#Events.location_change.connect(_change_location_debug)
 	
+	# Initializing Player's Stuff
+	
 	# When Day 3 arrives.
 	Events.game_switch_changed.connect(_disable_social_media)
 	
-	# initialization
-	login_screen.show()
+	# Added for debugging purposes.
+	if get_parent() != get_tree().root:
+		login_screen.show()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -113,9 +117,10 @@ func _hide_feeds():
 	home_feed.hide()
 	notif_feed.hide()
 
+## Special because this is different from the rest.
 func _on_profile_button_pressed():
 	current_tab_label.text = "Profile"
-	profile_feed.show()
+	_show_account_profile(profile_feed.name)
 	
 func _on_friends_button_pressed():
 	current_tab_label.text = "Friends"
@@ -208,6 +213,7 @@ func _phone_back_button_pressed():
 
 func _on_profile_feed_back_button_pressed():
 	profile_feed.hide()
+	account_list.hide()
 
 #endregion
 
@@ -232,6 +238,17 @@ func _new_notification_item(post_type: Events.NotifType, content_string: String)
 	#match post_type:
 		#Events.NotifType.FOLLOW:
 			#
+
+#region Specific Profile Accounts Handling
+
+func _show_account_profile(user_name: String):
+	for account in account_list.get_children():
+		if account.name == user_name:
+			account.show()
+			account_list.show()
+			break
+
+#endregion
 
 #region Miscellaneous Functions
 func _day_2_chatter_event():

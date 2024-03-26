@@ -16,6 +16,7 @@ signal back_button_pressed
 func _ready():
 	Events.sns_add_post.connect(_add_new_post)
 	if is_user:
+		
 		Events.get_social_media_name.connect(_change_player_username)
 
 
@@ -24,6 +25,9 @@ func _process(_delta):
 	pass
 		
 func _add_new_post(username: String, sns_text: String, loc: String = "", sns_image: Texture2D = null):
+	# If not similar to player, then reject.
+	if name != username: return 
+	
 	var new_post = preload("res://scenes/device/social_media/social_media_post.tscn")
 	var adding_post = new_post.instantiate()
 	
