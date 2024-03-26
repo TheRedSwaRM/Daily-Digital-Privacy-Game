@@ -49,5 +49,8 @@ func _process(_delta):
 			location_label.text = location
 		post_text_node.text = post_text
 
+func increase_likes():
+	print("Like increased for this post!")
+
 func _on_profile_pressed():
 	profile_link_pressed.emit(user_name)

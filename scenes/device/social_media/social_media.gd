@@ -379,9 +379,19 @@ func _on_home_button_mouse_exited():
 
 ## Randomly selects which one of your posts will have an increment.
 func _post_liker():
+	# This is not gonna look good at the pearly gates.
+	var player_posts = profile_feed.post_list
+	
 	# Get all posts under your profile.
-	for posts in profile_feed.post_list.get_children():
-		pass
+	if player_posts.get_child_count() == 0:
+		print("Post more stuff, you bum!")
+	
+	# Select which child post.
+	var rng = randi_range(0, player_posts.get_child_count())
+	
+	# And then just increase their like!
+	player_posts.get_child(rng).increase_likes()
+	_new_notification_item(Events.NotifType.LIKE, "Random Person")
 
 func _on_simulation_timer_timeout():
 	# Don't do anything if the following is on.
