@@ -96,6 +96,7 @@ var day_counter: int = 1 :
 	
 	## Attack phase
 	"deactivate_social_media": false,
+	"enable_social_media_simulation": false,
 	"ATTACKER_begin": false,
 	"ATTACKER_irl_begin": false,
 	

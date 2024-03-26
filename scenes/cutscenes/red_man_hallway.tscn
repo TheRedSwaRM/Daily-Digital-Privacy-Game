@@ -82,6 +82,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lcpjm")
+skip_animation = true
 
 [node name="BG" type="ColorRect" parent="."]
 layout_mode = 1

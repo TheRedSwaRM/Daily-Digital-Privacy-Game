@@ -428,7 +428,7 @@ func _force_game_end(key: String, _value: bool):
 		
 		# If hacked, go to another version.
 		if Events.check_game_switch("ATTACKER_call_accepted"):
-			get_tree().change_scene_to_file("res://scenes/cutscenes/hacked_scare_scene.tscn")
+			Events.change_map.emit("res://scenes/cutscenes/hacked_scare_scene.tscn", false)
 		else:
 			Events.change_map.emit("res://scenes/game_end.tscn", false)
 		
