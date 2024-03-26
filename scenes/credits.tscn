@@ -1,7 +1,68 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwnpydcyvnvx"]
+[gd_scene load_steps=6 format=3 uid="uid://dwnpydcyvnvx"]
 
 [ext_resource type="Script" path="res://scenes/credits.gd" id="1_qdmm6"]
 [ext_resource type="FontFile" uid="uid://bod6xenwo2la3" path="res://assets/font/ark_pixel_finale.ttf" id="2_alpev"]
+
+[sub_resource type="Animation" id="Animation_soovy"]
+resource_name = "credits"
+length = 25.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(48, 150), Vector2(48, -356)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 20, 25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cemso"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(48, 150)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m70mb"]
+_data = {
+"RESET": SubResource("Animation_cemso"),
+"credits": SubResource("Animation_soovy")
+}
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -23,17 +84,10 @@ color = Color(0, 0, 0, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -72.0
-offset_right = 80.0
-offset_bottom = 72.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 48.0
+offset_top = 150.0
+offset_right = 208.0
+offset_bottom = 595.0
 theme_override_fonts/normal_font = ExtResource("2_alpev")
 theme_override_fonts/bold_font = ExtResource("2_alpev")
 theme_override_fonts/italics_font = ExtResource("2_alpev")
@@ -113,9 +167,31 @@ Caleb Bunye
 Sebastian 'Basti' Ortiz
 Hans Salazar
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 And to you, the player!
 
 [/center]
 
 "
 fit_content = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_m70mb")
+}
