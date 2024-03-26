@@ -200,6 +200,25 @@ alignment = 1
 [node name="EndMarginRect" type="ReferenceRect" parent="NotificationFeed/NotifPosts"]
 layout_mode = 2
 
+[node name="FriendFeed" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 22.0
+offset_right = 66.0
+offset_bottom = 124.0
+
+[node name="FriendMasterList" type="VBoxContainer" parent="FriendFeed"]
+layout_mode = 2
+
+[node name="StartMarginRect" type="ReferenceRect" parent="FriendFeed/FriendMasterList"]
+layout_mode = 2
+
+[node name="FriendList" type="VBoxContainer" parent="FriendFeed/FriendMasterList"]
+layout_mode = 2
+
+[node name="EndMarginRect" type="ReferenceRect" parent="FriendFeed/FriendMasterList"]
+layout_mode = 2
+
 [node name="NoConnectionPanel" type="Panel" parent="."]
 visible = false
 layout_mode = 0
@@ -310,6 +329,7 @@ speed_scale = 2.0
 [connection signal="pressed" from="SNSButtons/NotificationButton" to="." method="_on_notification_button_pressed"]
 [connection signal="gui_input" from="HomeFeed" to="." method="_on_home_feed_gui_input"]
 [connection signal="gui_input" from="NotificationFeed" to="." method="_on_notification_feed_gui_input"]
+[connection signal="gui_input" from="FriendFeed" to="." method="_on_friend_feed_gui_input"]
 [connection signal="back_button_pressed" from="SocialMediaAccounts/Player" to="." method="_on_profile_feed_back_button_pressed"]
 [connection signal="pressed" from="AddPostButton" to="." method="_on_add_post_button_pressed"]
 [connection signal="send_attempt_on_no_wifi" from="NewPostPanel" to="." method="_on_new_post_panel_send_attempt_on_no_wifi"]

@@ -5,6 +5,7 @@ extends Control
 @onready var home_feed = $HomeFeed
 @onready var notif_feed = $NotificationFeed
 @onready var profile_feed = $SocialMediaAccounts/Player
+@onready var friend_feed = $FriendFeed
 
 @onready var home_post_list = $HomeFeed/HomePosts/TheActualPost
 @onready var notif_post_list = $NotificationFeed/NotifPosts/NotifList
@@ -84,6 +85,11 @@ func _on_notification_feed_gui_input(event):
 	if event is InputEventMouseMotion and event.button_mask > 0:
 		notif_feed.scroll_vertical = notif_feed.scroll_vertical - event.relative.y
 
+func _on_friend_feed_gui_input(event):
+	# For scrolling purposes.
+	if event is InputEventMouseMotion and event.button_mask > 0:
+		friend_feed.scroll_vertical = friend_feed.scroll_vertical - event.relative.y
+
 #endregion
 
 #region SNS Adding Function
@@ -124,17 +130,22 @@ func _on_new_post_panel_send_attempt_on_no_wifi():
 func _hide_feeds():
 	home_feed.hide()
 	notif_feed.hide()
+	friend_feed.hide()
 
 ## Special because this is different from the rest.
 func _on_profile_button_pressed():
 	current_tab_label.text = "Profile"
+	_hide_feeds()
 	_show_account_profile(profile_feed.name)
 	
 func _on_friends_button_pressed():
 	current_tab_label.text = "Friends"
+	_hide_feeds()
+	friend_feed.show()
 
 func _on_message_button_pressed():
 	current_tab_label.text = "Message"
+	_hide_feeds()
 
 func _on_notification_button_pressed():
 	current_tab_label.text = "Alerts"
@@ -334,5 +345,6 @@ func _on_home_button_mouse_exited():
 	GameSettings.change_cursor_look()
 
 #endregion
+
 
 

@@ -8,7 +8,6 @@ func _ready():
 func _process(delta):
 	pass
 
-
 func _on_ball_pong_score(scorer):
 	pass # Replace with function body.
 
