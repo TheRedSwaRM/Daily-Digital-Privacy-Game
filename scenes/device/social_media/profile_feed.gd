@@ -16,7 +16,6 @@ signal back_button_pressed
 func _ready():
 	Events.sns_add_post.connect(_add_new_post)
 	if is_user:
-		
 		Events.get_social_media_name.connect(_change_player_username)
 
 

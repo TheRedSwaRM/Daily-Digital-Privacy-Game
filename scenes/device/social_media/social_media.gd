@@ -52,10 +52,11 @@ func _ready():
 	Events.back_button_pressed.connect(_phone_back_button_pressed)
 	
 	signup_screen.signup_complete.connect(login_screen.registration_successful)
-	_check_for_wifi_connection("none")
+	
 	#Events.location_change.connect(_change_location_debug)
 	
-	# Initializing Player's Stuff
+	# Initializing Player Profile Account's Stuff when changing.
+	Events.get_social_media_name.connect(_change_player_profile)
 	
 	# When Day 3 arrives.
 	Events.game_switch_changed.connect(_disable_social_media)
@@ -63,6 +64,10 @@ func _ready():
 	# Added for debugging purposes.
 	if get_parent() != get_tree().root:
 		login_screen.show()
+	else:
+		Events.wifi_connection = "Yipee"
+	
+	_check_for_wifi_connection("none")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -96,6 +101,9 @@ func sns_add(username: String, sns_text: String, loc: String = "", sns_image: Te
 	adding_post.name = str(sns_post_num) 
 	
 	home_post_list.add_child(adding_post)
+	
+	## Connect signal in order for profile to show up. Like, for real.
+	adding_post.profile_link_pressed.connect(_show_account_profile)
 
 func _on_add_post_button_pressed():
 	new_post_screen.show()
@@ -243,10 +251,14 @@ func _new_notification_item(post_type: Events.NotifType, content_string: String)
 
 func _show_account_profile(user_name: String):
 	for account in account_list.get_children():
+		print(account.name, user_name)
 		if account.name == user_name:
 			account.show()
 			account_list.show()
 			break
+
+func _change_player_profile(username: String):
+	profile_feed.name = username
 
 #endregion
 
