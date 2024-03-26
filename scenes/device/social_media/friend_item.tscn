@@ -1,18 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbtm82ixh5xna"]
 
-[ext_resource type="StyleBox" uid="uid://c8ms74mj1q4gf" path="res://scenes/components/notification_item.tres" id="1_blna7"]
+[ext_resource type="StyleBox" uid="uid://dhbnlqh7lddxu" path="res://scenes/components/friend_item.tres" id="1_w4g1s"]
 [ext_resource type="Script" path="res://scenes/device/social_media/friend_item.gd" id="2_2sbjr"]
 [ext_resource type="Texture2D" uid="uid://oc3tq104bvcn" path="res://assets/images/social_media/notification_follow.png" id="3_umsyy"]
 [ext_resource type="FontFile" uid="uid://bod6xenwo2la3" path="res://assets/font/ark_pixel_finale.ttf" id="4_avbsb"]
 
 [node name="FriendItem" type="PanelContainer"]
-custom_minimum_size = Vector2(62, 15)
+custom_minimum_size = Vector2(62, 0)
 offset_right = 62.0
-offset_bottom = 15.0
+offset_bottom = 13.0
 size_flags_horizontal = 4
 size_flags_vertical = 3
 mouse_filter = 1
-theme_override_styles/panel = ExtResource("1_blna7")
+theme_override_styles/panel = ExtResource("1_w4g1s")
 script = ExtResource("2_2sbjr")
 
 [node name="FriendItems" type="HBoxContainer" parent="."]
@@ -20,6 +20,7 @@ layout_mode = 2
 size_flags_vertical = 4
 
 [node name="FriendIcon" type="TextureRect" parent="FriendItems"]
+custom_minimum_size = Vector2(9, 9)
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("3_umsyy")
