@@ -148,6 +148,33 @@ func _cutscene_social_post(key: String, _value: bool):
 		Events.game_switch_changed.disconnect(_cutscene_social_post)
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "social_media")
 		await DialogueManager.dialogue_ended
+		
+		# Message depends on what the player has done.
+		if Events.check_game_switch("WARNING_posted_with_location"):
+			# TODO: Add a kaomoji here or something.
+			Events.new_phone_message.emit("Alison", "oh, nice. i just followed you btw. nice post btw.")
+		else:
+			Events.new_phone_message.emit("Alison", "i saw you posting just now. also, followed now!")
+		
+		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "attacker_sent_message")
+		await DialogueManager.dialogue_ended
+		
+		Events.force_phone_go_to.emit("Messaging", "Alison")
+		
+		await get_tree().create_timer(1).timeout
+		Events.new_phone_message.emit("Alison", "yep, i sure did. i'll follow you as well!", true)
+		await get_tree().create_timer(1).timeout
+		Events.new_phone_message.emit("Alison", "of course you would, bestie. :3")
+		await get_tree().create_timer(1).timeout
+		if Events.check_game_switch("WARNING_posted_with_location"):
+			Events.new_phone_message.emit("Alison", "anyway, see you soon!")
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Alison", "...okay?", true)
+		else: 
+			Events.new_phone_message.emit("Alison", "well, you know where to find me, bestie!")
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Alison", "okay, you social media addict. :P", true)
+
 
 # Day 3 Events
 
@@ -158,8 +185,6 @@ func _cutscene_social_post(key: String, _value: bool):
 		#Events.new_phone_message.emit("Unknown", "girl, you there?")
 		#Events.new_phone_message.emit("Unknown", "Who's this?", true, true)
 		#Events.new_phone_message.emit("Unknown", "[Block phone number]", true, true)
-
-
 
 
 #==============================================================================
