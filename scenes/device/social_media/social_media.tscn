@@ -313,6 +313,7 @@ libraries = {
 speed_scale = 2.0
 
 [node name="SimulationTimer" type="Timer" parent="."]
+autostart = true
 
 [connection signal="mouse_entered" from="HomeButton" to="." method="_on_home_button_mouse_entered"]
 [connection signal="mouse_exited" from="HomeButton" to="." method="_on_home_button_mouse_exited"]

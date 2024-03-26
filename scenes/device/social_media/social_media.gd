@@ -370,11 +370,19 @@ func _on_home_button_mouse_exited():
 #===============================================================================
 # DANGER: Like, literal fucking danger. This is experimental at best.
 # Events.check_game_switch("enable_social_media_simulation")
+# DANGER: This thing will ALWAYS BE TICKING ONCE THE GAME STARTS. It only needs
+# DANGER: ONE SWITCH. And that is above this danger text. That's all!
 #===============================================================================
 
 #region Social Media Simulation
 func _on_simulation_timer_timeout():
-	pass # Replace with function body.
+	# Don't do anything if the following is on.
+	if not Events.check_game_switch("enable_social_media_simulation"): return
+	# And if this thing exists.
+	if Events.check_game_switch("deactivate_social_media"): return
+	
+	
+	
 #endregion
 
 

@@ -154,38 +154,6 @@ func _permissions_set(key: String, _value: bool):
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "installation")
 		await DialogueManager.dialogue_ended
 
-func _cutscene_social_post(key: String, _value: bool):
-	if Events.check_game_switch(key) && key == "posted_in_sns":
-		Events.game_switch_changed.disconnect(_cutscene_social_post)
-		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "social_media")
-		await DialogueManager.dialogue_ended
-		
-		# Message depends on what the player has done.
-		if Events.check_game_switch("WARNING_posted_with_location"):
-			# TODO: Add a kaomoji here or something.
-			Events.new_phone_message.emit("Alison", "oh, nice. i just followed you btw. nice post btw.")
-		else:
-			Events.new_phone_message.emit("Alison", "i saw you posting just now. also, followed now!")
-		
-		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "attacker_sent_message")
-		await DialogueManager.dialogue_ended
-		
-		Events.force_phone_go_to.emit("Messaging", "Alison")
-		
-		await get_tree().create_timer(1).timeout
-		Events.new_phone_message.emit("Alison", "yep, i sure did. i'll follow you as well!", true)
-		await get_tree().create_timer(1).timeout
-		Events.new_phone_message.emit("Alison", "of course you would, bestie. :3")
-		await get_tree().create_timer(1).timeout
-		if Events.check_game_switch("WARNING_posted_with_location"):
-			Events.new_phone_message.emit("Alison", "anyway, see you soon!")
-			await get_tree().create_timer(1).timeout
-			Events.new_phone_message.emit("Alison", "...okay?", true)
-		else: 
-			Events.new_phone_message.emit("Alison", "well, you know where to find me, bestie!")
-			await get_tree().create_timer(1).timeout
-			Events.new_phone_message.emit("Alison", "okay, you social media addict. :P", true)
-
 func _cutscene_friend_message(time: float):
 	if Events.day_counter == 1 and time >= 10.0:
 		Events.time_check.disconnect(_cutscene_friend_message)
@@ -242,6 +210,44 @@ func _cutscene_complete_signup(key: String, _value: bool):
 		Events.new_phone_message.emit("Alison", "Booooooo.")
 		await get_tree().create_timer(1).timeout
 		Events.new_phone_message.emit("Alison", "Okay, beb. See you soon! Mwa, mwa. 😘")
+
+func _cutscene_social_post(key: String, _value: bool):
+	if Events.check_game_switch(key) && key == "posted_in_sns":
+		Events.game_switch_changed.disconnect(_cutscene_social_post)
+		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "social_media")
+		await DialogueManager.dialogue_ended
+		
+		# Add Alison as a friend in Friender.
+		Events.sns_add_friend.emit("Alison")
+		
+		# Message depends on what the player has done.
+		if Events.check_game_switch("WARNING_posted_with_location"):
+			# TODO: Add a kaomoji here or something.
+			Events.new_phone_message.emit("Alison", "oh, nice. i just followed you btw. nice post btw.")
+		else:
+			Events.new_phone_message.emit("Alison", "i saw you posting just now. also, followed now!")
+		
+		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "attacker_sent_message")
+		await DialogueManager.dialogue_ended
+		
+		Events.force_phone_go_to.emit("Messaging", "Alison")
+		
+		await get_tree().create_timer(1).timeout
+		Events.new_phone_message.emit("Alison", "yep, i sure did. i'll follow you as well!", true)
+		await get_tree().create_timer(1).timeout
+		Events.new_phone_message.emit("Alison", "of course you would, bestie. :3")
+		await get_tree().create_timer(1).timeout
+		if Events.check_game_switch("WARNING_posted_with_location"):
+			Events.new_phone_message.emit("Alison", "anyway, see you soon!")
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Alison", "...okay?", true)
+		else: 
+			Events.new_phone_message.emit("Alison", "well, you know where to find me, bestie!")
+			await get_tree().create_timer(1).timeout
+			Events.new_phone_message.emit("Alison", "okay, you social media addict. :P", true)
+
+		# Allow social media simulations to begin.
+		Events.change_game_switch("enable_social_media_simulation", true)
 		
 #endregion
 

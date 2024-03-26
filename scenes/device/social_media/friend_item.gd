@@ -1,7 +1,7 @@
 extends PanelContainer
 
-@onready var friend_icon_texture = $friendItems/friendIcon
-@onready var friend_text_line = $friendItems/friendText
+@onready var friend_icon_texture = $FriendItems/FriendIcon
+@onready var friend_text_line = $FriendItems/FriendsText
 
 @export var friend_name: String
 
