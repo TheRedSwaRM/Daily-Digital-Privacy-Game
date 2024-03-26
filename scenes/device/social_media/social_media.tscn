@@ -312,6 +312,8 @@ libraries = {
 }
 speed_scale = 2.0
 
+[node name="SimulationTimer" type="Timer" parent="."]
+
 [connection signal="mouse_entered" from="HomeButton" to="." method="_on_home_button_mouse_entered"]
 [connection signal="mouse_exited" from="HomeButton" to="." method="_on_home_button_mouse_exited"]
 [connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
@@ -339,3 +341,4 @@ speed_scale = 2.0
 [connection signal="signup_return_button" from="SignupScreen" to="." method="_on_signup_screen_signup_return_button"]
 [connection signal="login_button_pressed" from="LogIn" to="." method="_on_log_in_login_button_pressed"]
 [connection signal="signup_button_pressed" from="LogIn" to="." method="_on_log_in_signup_button_pressed"]
+[connection signal="timeout" from="SimulationTimer" to="." method="_on_simulation_timer_timeout"]

@@ -9,14 +9,21 @@ enum NotifType {
 ## First is path. Second if you want to blink. Third is special.
 signal change_map(path: String, can_blink: bool, special: bool)
 
+#region Data change signals
 signal connection_change(name: String)
 signal location_change(value: bool)
+#endregion
 
-# For social media posts :skull:
+#region Social Media Signals
 
 signal sns_add_post(username: String, sns_text: String, loc: String, sns_image: Texture2D)
 ## FOLLOW, LIKE, SHARE
 signal sns_new_notif(post_type: NotifType, username: String)
+signal sns_add_friend(user_name: String)
+
+#endregion
+
+#region Phone Signals
 signal flip_phone
 signal activate_phone
 signal deactivate_phone
@@ -24,6 +31,7 @@ signal ring_phone
 signal open_blinking_eye
 signal close_blinking_eye
 signal do_full_blink
+#endregion
 
 # Game Switch Change
 signal game_switch_changed(key: String, value: bool)
@@ -31,23 +39,20 @@ signal game_switch_changed(key: String, value: bool)
 # Dialogue selection
 signal response_taken
 
-# For adding new messages and calls to the phone :skull:
+#region For adding new messages and calls to the phone :skull:
 signal new_phone_message(user_name: String, message: String, is_player: bool, is_option: bool)
 signal message_response(respondent: String, text: String)
 signal incoming_call(value: int)
+#endregion
 
-# Back button activated. An all-around signal passer for everything.
-# Very intuitive design.
+#region Force phone signals
 signal back_button_pressed
 signal link_pressed(link_data: String)
-
 signal force_phone_go_to(module: String, subcomponent: String)
 signal phone_change_function(function_value: String, special_value: bool)
+#endregion
 
-#===============================================================================
-# For Time Control
-#===============================================================================
-
+#region Time Control Variables and Signals
 ## Changes the time currently in float.
 signal change_time(time: float)
 signal time_check(time: float)
@@ -62,14 +67,16 @@ var game_time: float = 6:
 		change_time.emit(game_time)
 		time_check.emit(game_time)
 		
-# Hamstrung solution to disallow any sounds for the phone.
-var phones_sounds: bool = false
 var day_counter: int = 1 :
 	get:
 		return day_counter
 	set(value):
 		print("Today is Day " + str(value))
 		day_counter = value
+#endregion
+
+# Hamstrung solution to disallow any sounds for the phone.
+var phones_sounds: bool = false
 
 @onready var _game_switches = {
 	"intro": false,
@@ -119,6 +126,7 @@ var day_counter: int = 1 :
 	"END_force_gameover": false,
 }
 
+#region Connection functions
 @onready var wifi_connection: String = "None" :
 	get:
 		return wifi_connection
@@ -134,14 +142,13 @@ var day_counter: int = 1 :
 		print("Current Loc Value set to " + str(value))
 		location = value
 		location_change.emit(value)
+#endregion
 
-#===============================================================================
-# Social Media Variables
-#===============================================================================
-
+#region Social Media variables and signals
 signal get_social_media_name(user_name: String)
 var social_media_username: String
 var social_media_location: String = "Yakal St."
+#endregion
 
 func _ready():
 	pass
@@ -155,7 +162,8 @@ func _process(delta):
 			
 func pause_game_time(value: bool):
 	time_passes_allowed = !value
-	
+
+#region Game Switch functions
 func change_game_switch(key: String, value: bool):
 	_game_switches[key] = value
 	print(key + " is now " + str(value))
@@ -163,6 +171,7 @@ func change_game_switch(key: String, value: bool):
 
 func check_game_switch(key: String):
 	return _game_switches[key]
+#endregion
 
 ## What it says in the tin, especially in the event that we're going back to the main menu.
 func reset_all():
@@ -192,6 +201,7 @@ func background_audio_check():
 	else:
 		AudioManager.bgs_play("res://assets/audio/bgm/night_ambience.mp3")
 
+#region Hack Checks
 ## Overall function that checks if the player fucked up FOR REAL.
 ## For specific things, use Events.check_game_switch.
 func hack_checker() -> int:
@@ -209,6 +219,7 @@ func begin_attacker_phase() -> void:
 ## Doesn't work.
 #func wait(seconds: float) -> void:
 	#await get_tree().create_timer(seconds).timeout
+#endregion
 
 #===============================================================================
 # DEBUG FUNCTIONS

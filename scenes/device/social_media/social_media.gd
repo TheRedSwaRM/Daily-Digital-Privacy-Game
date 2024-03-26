@@ -9,6 +9,7 @@ extends Control
 
 @onready var home_post_list = $HomeFeed/HomePosts/TheActualPost
 @onready var notif_post_list = $NotificationFeed/NotifPosts/NotifList
+@onready var friend_feed_list = $FriendFeed/FriendMasterList/FriendList
 @onready var account_list = $SocialMediaAccounts
 @onready var current_tab_label = $CurrentTabLabel
 
@@ -24,6 +25,7 @@ extends Control
 @onready var online: bool = false
 @onready var connection_status_panel = $NoConnectionPanel
 @onready var anim_player = $AnimationPlayer
+@onready var simulation_timer = $SimulationTimer
 
 ## Social Media Buttons
 @onready var profile_button = $SNSButtons/ProfileButton
@@ -49,6 +51,8 @@ extends Control
 func _ready():
 	Events.sns_add_post.connect(sns_add)
 	Events.sns_new_notif.connect(_new_notification_item)
+	Events.sns_add_friend.connect(_add_friend)
+	
 	Events.connection_change.connect(_check_for_wifi_connection)
 	Events.back_button_pressed.connect(_phone_back_button_pressed)
 	
@@ -89,7 +93,6 @@ func _on_friend_feed_gui_input(event):
 	# For scrolling purposes.
 	if event is InputEventMouseMotion and event.button_mask > 0:
 		friend_feed.scroll_vertical = friend_feed.scroll_vertical - event.relative.y
-
 #endregion
 
 #region SNS Adding Function
@@ -182,6 +185,24 @@ func _on_log_in_signup_button_pressed():
 	login_screen.hide()
 	signup_screen.show()
 
+#endregion
+
+#region Friend Feed Functions
+
+func _add_friend(user_name: String):
+	# Checking if the friend already exists, so we don't bother with possible
+	# re-friends. Not much time-consuming as most would expect.
+	for friend in friend_feed_list.get_children():
+		if friend.name == user_name: return
+
+	var new_friend = preload("res://scenes/device/social_media/friend_item.tscn")
+	var adding_friend = new_friend.instantiate()
+	adding_friend.friend_name = user_name
+
+	# Add and then make new notification.
+	friend_feed_list.add_child(adding_friend)
+	_new_notification_item(Events.NotifType.FOLLOW, user_name)
+	
 #endregion
 
 #region Permission Functions (obsolete)
@@ -345,6 +366,17 @@ func _on_home_button_mouse_exited():
 	GameSettings.change_cursor_look()
 
 #endregion
+
+#===============================================================================
+# DANGER: Like, literal fucking danger. This is experimental at best.
+# Events.check_game_switch("enable_social_media_simulation")
+#===============================================================================
+
+#region Social Media Simulation
+func _on_simulation_timer_timeout():
+	pass # Replace with function body.
+#endregion
+
 
 
 
