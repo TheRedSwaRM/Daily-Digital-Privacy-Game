@@ -39,7 +39,6 @@ func _check_for_route():
 		animation_player.play("hacked_ending")
 		await animation_player.animation_finished
 		await get_tree().create_timer(2).timeout 
-		Events.quit_game()
 		#await get_tree().create_timer(2).timeout
 		#get_tree().change_scene_to_file("res://scenes/cutscenes/hacked_scare_scene.tscn")
 		
@@ -48,21 +47,18 @@ func _check_for_route():
 		animation_player.play("sleep_ending")
 		await animation_player.animation_finished
 		await get_tree().create_timer(2).timeout 
-		Events.quit_game()
 		
 	## If player spams until player blocks.
 	elif Events.check_game_switch("BLOCK_attacker_num"):
 		animation_player.play("block_ending")
 		await animation_player.animation_finished
 		await get_tree().create_timer(2).timeout 
-		Events.quit_game()
 		
 	## If player gets jebaited.
 	elif Events.check_game_switch("PLAYER_bamboozle"):
 		animation_player.play("baited_ending")
 		await animation_player.animation_finished
 		await get_tree().create_timer(2).timeout 
-		Events.quit_game()
 		
 	## Failsafe.
 	else:
@@ -72,4 +68,5 @@ func _check_for_route():
 		#await get_tree().create_timer(2).timeout
 		#get_tree().change_scene_to_file("res://scenes/cutscenes/hacked_scare_scene.tscn")
 		await get_tree().create_timer(5).timeout 
-		Events.quit_game()
+	
+	get_tree().change_scene_to_file("res://scenes/credits.tscn")

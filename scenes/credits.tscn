@@ -1,0 +1,121 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwnpydcyvnvx"]
+
+[ext_resource type="Script" path="res://scenes/credits.gd" id="1_qdmm6"]
+[ext_resource type="FontFile" uid="uid://bod6xenwo2la3" path="res://assets/font/ark_pixel_finale.ttf" id="2_alpev"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qdmm6")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -72.0
+offset_right = 80.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_alpev")
+theme_override_fonts/bold_font = ExtResource("2_alpev")
+theme_override_fonts/italics_font = ExtResource("2_alpev")
+theme_override_fonts/bold_italics_font = ExtResource("2_alpev")
+theme_override_fonts/mono_font = ExtResource("2_alpev")
+theme_override_font_sizes/normal_font_size = 5
+theme_override_font_sizes/bold_font_size = 5
+theme_override_font_sizes/italics_font_size = 5
+theme_override_font_sizes/bold_italics_font_size = 5
+theme_override_font_sizes/mono_font_size = 5
+bbcode_enabled = true
+text = "[center]
+
+CAST
+
+Patricia Labitad as \"Alison\"
+Raco as \"Hacker\"
+
+
+
+Game Designer:
+
+Michael Sean Brian Omisol
+Ralf Michael Balatibat
+
+
+
+Programmer:
+
+Michael Sean Brian Omisol
+
+
+
+Graphic Designer:
+
+Ralf Michael Balatibat
+
+
+
+Sound Effects:
+
+Zapsplat
+
+
+
+Hacker Attack OST
+\"Data Breach\"
+by Raco
+
+
+
+\"Dialogue Manager\" Plugin for Godot
+by Nathan Hoad
+
+
+
+Interns:
+
+Jeremy S. Alicante
+Jason Xavier C. Amor
+Gabriel Yuri F. Bustamante
+Nevin Kenneth B. Dela Paz
+Karl A. Vergel Jr.
+
+
+
+Special Thanks to:
+
+Mrs. Rowena 'Weng' Solamo
+(best research adviser fr)
+
+Pe Arian Rey
+Sofia Canlas
+Ehtan Camingao
+Caleb Bunye
+
+Sebastian 'Basti' Ortiz
+Hans Salazar
+
+And to you, the player!
+
+[/center]
+
+"
+fit_content = true
