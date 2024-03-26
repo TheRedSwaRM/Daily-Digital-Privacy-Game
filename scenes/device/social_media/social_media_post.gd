@@ -1,6 +1,8 @@
 @tool
 extends PanelContainer
 
+signal profile_link_pressed(username: String)
+
 @export var user_name: String
 @export var post_image: Texture2D
 @export_multiline var location: String
@@ -46,3 +48,7 @@ func _process(_delta):
 			location_label.show()
 			location_label.text = location
 		post_text_node.text = post_text
+
+
+func _on_profile_pressed():
+	profile_link_pressed.emit()

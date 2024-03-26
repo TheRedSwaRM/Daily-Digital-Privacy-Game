@@ -1,5 +1,7 @@
 extends Control
 
+#region Initialization
+
 @onready var home_feed = $HomeFeed
 @onready var notif_feed = $NotificationFeed
 @onready var profile_feed = $ProfileFeed
@@ -39,6 +41,8 @@ extends Control
 @onready var notification_button_hover = load("res://assets/images/social_media/social_media_bell_active.png")
 
 
+#endregion
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Events.sns_add_post.connect(sns_add)
@@ -60,17 +64,7 @@ func _ready():
 func _process(_delta):
 	pass
 
-func _check_for_wifi_connection(connection_name: String):
-	match connection_name:
-		"none":
-			online = false
-			connection_status_panel.show()
-			print("SNS Offline")
-		_:
-			online = true
-			connection_status_panel.hide()
-			print("SNS Online")
-	
+#region Scrolling Functions
 func _on_home_feed_gui_input(event):
 	# For scrolling purposes.
 	if event is InputEventMouseMotion and event.button_mask > 0:
@@ -81,6 +75,9 @@ func _on_notification_feed_gui_input(event):
 	if event is InputEventMouseMotion and event.button_mask > 0:
 		notif_feed.scroll_vertical = notif_feed.scroll_vertical - event.relative.y
 
+#endregion
+
+#region SNS Adding Function
 func sns_add(username: String, sns_text: String, loc: String = "", sns_image: Texture2D = null):
 	var new_post = preload("res://scenes/device/social_media/social_media_post.tscn")
 	var adding_post = new_post.instantiate()
@@ -98,17 +95,19 @@ func sns_add(username: String, sns_text: String, loc: String = "", sns_image: Te
 
 func _on_add_post_button_pressed():
 	new_post_screen.show()
-	#if not online:
-		#anim_player.play("no_connection")
-		#AudioManager.sfx_play("res://assets/audio/sfx/error_social_media.mp3")
-		#return
-	#
-	#AudioManager.sfx_play("res://assets/audio/sfx/sns_notif.mp3")
-	#if Events.location:
-		#Events.sns_add_post.emit("Cheryl", "Kinda bored ngl.", "Yakal St.", load("res://assets/images/social_media/default_image.png"))
-		#Events.change_game_switch("posted_with_location", true)
-	#else:
-		#Events.sns_add_post.emit("Cheryl", "Kinda bored ngl.", "", null)
+	
+func _on_new_post_panel_return_button_pressed():
+	_on_home_button_pressed()
+
+func _on_new_post_panel_send_button_pressed():
+	new_post_screen.hide()
+
+func _on_new_post_panel_send_attempt_on_no_wifi():
+	anim_player.play("no_connection")
+	
+#endregion
+
+#region Button Pressing Functions
 
 func _hide_feeds():
 	home_feed.hide()
@@ -134,9 +133,9 @@ func _on_home_button_pressed():
 	_hide_feeds()
 	home_feed.show()
 
-#===============================================================================
-# LOGIN SCREEN FUNCTIONS
-#===============================================================================
+#endregion
+
+#region Log In Functions
 
 ## Only works if there is data in log-in.
 func _on_log_in_login_button_pressed():
@@ -159,22 +158,16 @@ func _on_log_in_signup_button_pressed():
 	login_screen.hide()
 	signup_screen.show()
 
-#===============================================================================
-# SIGNUP SCREEN FUNCTIONS
-#===============================================================================
+#endregion
 
+#region Permission Functions (obsolete)
 func _on_signup_screen_signup_return_button():
 	login_screen.show()
 	signup_screen.hide()
 
-#===============================================================================
-# PERMISSIONS SCREEN FUNCTIONS !OBSOLETE
-#===============================================================================
-
 func _on_permissions_screen_return_button_pressed():
 	permission_screen.hide()
 	login_screen.show()
-
 
 func _on_permissions_screen_continue_button_pressed(value: bool):
 	if value:
@@ -185,11 +178,10 @@ func _on_permissions_screen_continue_button_pressed(value: bool):
 	
 	# Forcing it back to the start.
 	_phone_back_button_pressed()
+	
+#endregion
 
-#===============================================================================
-# BACK PHONE FUNCTIONS
-#===============================================================================
-
+#region Phone Back options
 func _phone_back_button_pressed():
 	if not visible:
 		print("Social Media already not visible.")
@@ -217,25 +209,7 @@ func _phone_back_button_pressed():
 func _on_profile_feed_back_button_pressed():
 	profile_feed.hide()
 
-#===============================================================================
-# NEW POST FUNCTIONS
-#===============================================================================
-
-func _on_new_post_panel_return_button_pressed():
-	_on_home_button_pressed()
-
-func _on_new_post_panel_send_button_pressed():
-	new_post_screen.hide()
-
-func _on_new_post_panel_send_attempt_on_no_wifi():
-	anim_player.play("no_connection")
-
-func _day_2_chatter_event():
-	if Events.day_counter == 2:
-		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "checking_app")
-		
-	else:
-		print("Not yet Day 2")
+#endregion
 
 func _new_notification_item(post_type: Events.NotifType, content_string: String):
 	var new_notif_item = preload("res://scenes/device/social_media/notification_item.tscn")
@@ -259,15 +233,34 @@ func _new_notification_item(post_type: Events.NotifType, content_string: String)
 		#Events.NotifType.FOLLOW:
 			#
 
+#region Miscellaneous Functions
+func _day_2_chatter_event():
+	if Events.day_counter == 2:
+		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "checking_app")
+		
+	else:
+		print("Not yet Day 2")
+
 func _disable_social_media(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "deactivate_social_media":
 		print("Disabled social media.")
 		Events.game_switch_changed.disconnect(_disable_social_media)
 		disable_screen.show()
 
-#===============================================================================
-#	Social Media Icons when Hovered
-#===============================================================================
+func _check_for_wifi_connection(connection_name: String):
+	match connection_name:
+		"none":
+			online = false
+			connection_status_panel.show()
+			print("SNS Offline")
+		_:
+			online = true
+			connection_status_panel.hide()
+			print("SNS Online")
+
+#endregion
+
+#region Social Media Icons when Hovered
 
 func _on_profile_button_mouse_entered():
 	GameSettings.change_cursor_look(GameSettings.CursorLook.INTERACT)
@@ -306,3 +299,7 @@ func _on_home_button_mouse_entered():
 
 func _on_home_button_mouse_exited():
 	GameSettings.change_cursor_look()
+
+#endregion
+
+

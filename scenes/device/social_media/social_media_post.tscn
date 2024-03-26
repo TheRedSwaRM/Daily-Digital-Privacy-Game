@@ -68,3 +68,5 @@ fit_content = true
 visible = false
 layout_mode = 2
 mouse_filter = 1
+
+[connection signal="pressed" from="VBoxContainer/Profile" to="." method="_on_profile_pressed"]
