@@ -225,6 +225,8 @@ func _on_profile_feed_back_button_pressed():
 
 #endregion
 
+#region Notifications Tab
+
 func _new_notification_item(post_type: Events.NotifType, content_string: String):
 	var new_notif_item = preload("res://scenes/device/social_media/notification_item.tscn")
 	var adding_notif_item = new_notif_item.instantiate()
@@ -246,6 +248,8 @@ func _new_notification_item(post_type: Events.NotifType, content_string: String)
 	#match post_type:
 		#Events.NotifType.FOLLOW:
 			#
+
+#endregion
 
 #region Specific Profile Accounts Handling
 

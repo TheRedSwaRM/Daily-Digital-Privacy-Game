@@ -7,10 +7,10 @@ extends Node
 @export_file var starting_screen
 
 # Reserved for events... wait do I need it?
+# We actually don't need it. Why was this here?
 @onready var event_done_1: bool = false
 
 # Woops.
-
 
 func _ready():
 	#===========================================================================
@@ -60,7 +60,7 @@ func _ready():
 	Events.time_check.connect(_cutscene_friend_message)
 	Events.time_check.connect(_cutscene_call)
 
-	
+#region Area Change Functions
 ## First is path. Second if you want to blink. Third is special.
 func _goto_area(path: String, can_blink: bool = true, special: bool = false):
 	if ResourceLoader.exists(path):
@@ -85,7 +85,9 @@ func _deferred_change_area(path: String):
 	add_child(current_scene)
 	current_scene.name = "Area"
 	move_child(current_scene, 0)
-	
+#endregion
+
+#region Phone functions
 ## If true, allow filter to pass through... else.
 func _change_mouse_passing_for_phone(value: bool):
 	if value:
@@ -98,7 +100,9 @@ func _show_phone():
 
 func _hide_phone():
 	phone.hide()
+#endregion
 
+#region Eye Blinking functions
 func _open_blinking_eye():
 	transition_sprite.play_backwards("blinking_transition")
 	await transition_sprite.animation_finished
@@ -113,11 +117,9 @@ func _do_blink():
 		
 	transition_sprite.play_backwards("blinking_transition")
 	await transition_sprite.animation_finished
+#endregion
 
-#==============================================================================
-# Debugger function
-#==============================================================================
-
+#region Debugger functions
 func _unhandled_input(_event):
 	# Prints the game switches
 	if Input.is_action_just_pressed("debug_key"):
@@ -133,16 +135,25 @@ func _change_connection_debug(connection: String):
 	
 func _change_location_debug(value: bool):
 	%LocYesNo.text = str(value)
+#endregion
+		
+#region Obsolete Stuff
+#func _alison_texts_back_1(key: String, _value: bool):
+	#if Events.check_game_switch(key) && key == "ALISON_call_rejected":
+		#Events.game_switch_changed.disconnect(_alison_texts_back_1)
+		#await get_tree().create_timer(10).timeout
+		#Events.new_phone_message.emit("Unknown", "girl, you there?")
+		#Events.new_phone_message.emit("Unknown", "Who's this?", true, true)
+		#Events.new_phone_message.emit("Unknown", "[Block phone number]", true, true)
+#endregion
 
-#==============================================================================
-# Events
-#==============================================================================
+#region Cutscenes and Events
 func _permissions_set(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "signup_complete":
 		Events.game_switch_changed.disconnect(_permissions_set)
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue/social_media.dialogue"), "installation")
 		await DialogueManager.dialogue_ended
-		
+
 func _cutscene_social_post(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "posted_in_sns":
 		Events.game_switch_changed.disconnect(_cutscene_social_post)
@@ -174,22 +185,6 @@ func _cutscene_social_post(key: String, _value: bool):
 			Events.new_phone_message.emit("Alison", "well, you know where to find me, bestie!")
 			await get_tree().create_timer(1).timeout
 			Events.new_phone_message.emit("Alison", "okay, you social media addict. :P", true)
-
-
-# Day 3 Events
-
-#func _alison_texts_back_1(key: String, _value: bool):
-	#if Events.check_game_switch(key) && key == "ALISON_call_rejected":
-		#Events.game_switch_changed.disconnect(_alison_texts_back_1)
-		#await get_tree().create_timer(10).timeout
-		#Events.new_phone_message.emit("Unknown", "girl, you there?")
-		#Events.new_phone_message.emit("Unknown", "Who's this?", true, true)
-		#Events.new_phone_message.emit("Unknown", "[Block phone number]", true, true)
-
-
-#==============================================================================
-# Timed Events
-#==============================================================================
 
 func _cutscene_friend_message(time: float):
 	if Events.day_counter == 1 and time >= 10.0:
@@ -248,6 +243,8 @@ func _cutscene_complete_signup(key: String, _value: bool):
 		await get_tree().create_timer(1).timeout
 		Events.new_phone_message.emit("Alison", "Okay, beb. See you soon! Mwa, mwa. 😘")
 		
+#endregion
+
 #==============================================================================
 # Message Events
 #==============================================================================
@@ -359,7 +356,7 @@ func _message_received(respondent: String, text: String):
 			Events.new_phone_message.emit("Alison", "[url='www.surprise.com']Withering Tides Link[/url]")
 			
 #==============================================================================
-# Message Attack Time.
+# Hacker decision
 #==============================================================================
 
 func _hacker_attack_message(key: String, _value: bool):
@@ -385,9 +382,7 @@ func _hacker_attack_message(key: String, _value: bool):
 			else:
 				Events.new_phone_message.emit("Alison", "Fine, what about you?", true, true)
 
-#===============================================================================
-# START: Only if the player didn't get hacked.
-#===============================================================================
+#region If player is not hacked.
 
 func _hacker_spam_attack(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "BLOCK_attacker_num":
@@ -412,14 +407,10 @@ func _actual_spam_attack(key: String, _value: bool):
 
 func _friender_warning() -> void:
 	Events.new_phone_message.emit("Friender", "Reminder to all users of Friender to be vigilant.")
-	
-#===============================================================================
-# END: Only if the player didn't get hacked.
-#===============================================================================
-	
-#===============================================================================
-# START: If player still gets hacked
-#===============================================================================
+
+#endregion
+
+#region If player still got hacked
 func _if_hacked_then_call_accepted(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "ATTACKER_call_rejected":
 		for i in 5:
@@ -440,9 +431,7 @@ func _player_gets_hacked_like_an_idiot(key: String, _value: bool):
 		Events.change_game_switch("NO_phone_sfx", true)
 		Events.change_game_switch("END_force_gameover", true)
 		
-#===============================================================================
-# END: If player still gets hacked
-#===============================================================================
+#endregion
 
 func _force_game_end(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "END_force_gameover":
