@@ -58,8 +58,6 @@ func _ready():
 	
 	signup_screen.signup_complete.connect(login_screen.registration_successful)
 	
-	#Events.location_change.connect(_change_location_debug)
-	
 	# Initializing Player Profile Account's Stuff when changing.
 	Events.get_social_media_name.connect(_change_player_profile)
 	
@@ -112,7 +110,10 @@ func sns_add(username: String, sns_text: String, loc: String = "", sns_image: Te
 	home_post_list.add_child(adding_post)
 	
 	## Connect signal in order for profile to show up. Like, for real.
-	adding_post.profile_link_pressed.connect(_show_account_profile)
+	## DANGER: Cutting costs here. More customization means more time to waste.
+	
+	if username == Events.social_media_username:
+		adding_post.profile_link_pressed.connect(_show_account_profile)
 
 func _on_add_post_button_pressed():
 	new_post_screen.show()
@@ -375,13 +376,38 @@ func _on_home_button_mouse_exited():
 #===============================================================================
 
 #region Social Media Simulation
+
+## Randomly selects which one of your posts will have an increment.
+func _post_liker():
+	# Get all posts under your profile.
+	for posts in profile_feed.post_list.get_children():
+		pass
+
 func _on_simulation_timer_timeout():
 	# Don't do anything if the following is on.
 	if not Events.check_game_switch("enable_social_media_simulation"): return
 	# And if this thing exists.
 	if Events.check_game_switch("deactivate_social_media"): return
 	
+	# RNG moment
+	var rng = randi_range(1, 4)
 	
+	match rng:
+		# Someone adds you as a friend.
+		1:
+			_add_friend("Hello.")
+		
+		# Someone likes your post.
+		2:
+			_post_liker()
+		
+		# A random post is made. Does not require a random user.
+		3:
+			pass
+			
+		# Someone retweets your post.
+		4:
+			pass
 	
 #endregion
 
