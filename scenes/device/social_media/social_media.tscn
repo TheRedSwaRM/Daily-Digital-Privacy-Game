@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b2encyf73hip4"]
+[gd_scene load_steps=27 format=3 uid="uid://b2encyf73hip4"]
 
 [ext_resource type="Script" path="res://scenes/device/social_media/social_media.gd" id="1_6rg46"]
 [ext_resource type="Texture2D" uid="uid://bu8k43hl1ehm8" path="res://assets/images/device/phone_social_media.png" id="1_xk37a"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b2snt3d8ls41m" path="res://assets/images/social_media/social_media_bell.png" id="6_m0a4i"]
 [ext_resource type="Texture2D" uid="uid://d0svocs860006" path="res://assets/images/social_media/social_media_add_post.png" id="9_6ch0j"]
 [ext_resource type="Theme" uid="uid://b4a3rif2mhppr" path="res://scenes/components/no_scroll.tres" id="9_nmfo4"]
+[ext_resource type="Texture2D" uid="uid://bt7yi162t3ii5" path="res://assets/images/device/social_media_message_down.png" id="10_paiqs"]
 [ext_resource type="PackedScene" uid="uid://bn6kc48yw0681" path="res://scenes/device/social_media/new_post_panel.tscn" id="11_f6lsx"]
 [ext_resource type="FontFile" uid="uid://c833un1l5hy3i" path="res://assets/font/CG pixel 4x5.ttf" id="12_dn408"]
 [ext_resource type="PackedScene" uid="uid://dc3xdga8escv0" path="res://scenes/device/social_media/signup_screen.tscn" id="13_sy5mm"]
@@ -19,6 +20,12 @@
 [ext_resource type="Texture2D" uid="uid://dwatwmev1y31r" path="res://assets/images/device/phone_social_media_signup.png" id="17_bhwia"]
 [ext_resource type="Texture2D" uid="uid://dn5xa63wfiwbf" path="res://assets/images/device/phone_social_media_down.png" id="18_rj2ns"]
 [ext_resource type="FontFile" uid="uid://bod6xenwo2la3" path="res://assets/font/ark_pixel_finale.ttf" id="19_h0hv3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h23hb"]
+line_spacing = 1.0
+font = ExtResource("19_h0hv3")
+font_size = 5
+font_color = Color(0.211765, 0.807843, 0.337255, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c7uk"]
 
@@ -220,11 +227,36 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="MessageFeed" type="ScrollContainer" parent="."]
+visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_top = 22.0
+offset_right = 66.0
+offset_bottom = 124.0
+theme = ExtResource("9_nmfo4")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MessageFeed"]
+[node name="MessageList" type="VBoxContainer" parent="MessageFeed"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StartMarginRect" type="ReferenceRect" parent="MessageFeed/MessageList"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MessageFeed/MessageList"]
+layout_mode = 2
+texture = ExtResource("10_paiqs")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MessageFeed/MessageList"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "This page is a work in progress, thank you for your patience! 
+
+- Friender Team"
+label_settings = SubResource("LabelSettings_h23hb")
+autowrap_mode = 2
+
+[node name="EndMarginRect" type="ReferenceRect" parent="MessageFeed/MessageList"]
 layout_mode = 2
 
 [node name="NoConnectionPanel" type="Panel" parent="."]
