@@ -80,5 +80,5 @@ func _randomize_stats():
 	#if randi_range(1, 4) > 2:
 		#Events.sns_add_post.emit(name, "Test String", location)
 
-func create_post():
-	Events.sns_add_post.emit(name, "Test String", location)
+func create_post(content: String):
+	Events.sns_add_post.emit(name, content, location)

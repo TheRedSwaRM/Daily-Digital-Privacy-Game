@@ -45,7 +45,7 @@ extends Control
 @onready var message_button_hover = load("res://assets/images/social_media/social_media_mes_active.png")
 @onready var notification_button_hover = load("res://assets/images/social_media/social_media_bell_active.png")
 
-
+@onready var content_list: Variant
 #endregion
 
 # Called when the node enters the scene tree for the first time.
@@ -78,9 +78,18 @@ func _ready():
 	for profile in account_list.get_children():
 		profile.back_button_pressed.connect(_profile_feed_back_button_emitted)
 
+	read_json()
+	
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
+
+# Initialize random posts FR!
+func read_json():
+	var file = FileAccess.open("res://assets/text/random_posts.json", FileAccess.READ)
+	var content = file.get_as_text()
+	content_list = JSON.parse_string(content)
 
 #region Scrolling Functions
 func _on_home_feed_gui_input(event):
@@ -429,7 +438,9 @@ func _on_simulation_timer_timeout():
 	var rng = randi_range(2, account_list.get_child_count()-3)
 	
 	# Winning account creates post.
-	account_list.get_child(rng).create_post()
+	# print(content_list[0]["text"])
+	var rng_2 = randi_range(0, content_list.size()-1)
+	account_list.get_child(rng).create_post(content_list[rng_2]["text"])
 
 func _on_like_share_timer_timeout():
 	# Don't do anything if the following is on.
