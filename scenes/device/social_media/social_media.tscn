@@ -250,27 +250,33 @@ visible = false
 layout_mode = 1
 is_user = true
 
-[node name="ProfileFeed6" parent="SocialMediaAccounts" instance=ExtResource("16_4k71l")]
+[node name="Alison" parent="SocialMediaAccounts" instance=ExtResource("16_4k71l")]
+visible = false
 user_name = "Alison"
 location = "Yakal St."
 
 [node name="ProfileFeed" parent="SocialMediaAccounts" instance=ExtResource("16_4k71l")]
+visible = false
 user_name = "1"
 location = "location1"
 
 [node name="ProfileFeed2" parent="SocialMediaAccounts" instance=ExtResource("16_4k71l")]
+visible = false
 user_name = "2"
 location = "location2"
 
 [node name="ProfileFeed3" parent="SocialMediaAccounts" instance=ExtResource("16_4k71l")]
+visible = false
 user_name = "3"
 location = "location3"
 
 [node name="ProfileFeed4" parent="SocialMediaAccounts" instance=ExtResource("16_4k71l")]
+visible = false
 user_name = "4"
 location = "location4"
 
 [node name="ProfileFeed5" parent="SocialMediaAccounts" instance=ExtResource("16_4k71l")]
+visible = false
 user_name = "5"
 location = "location5"
 
@@ -358,7 +364,6 @@ autostart = true
 [connection signal="gui_input" from="HomeFeed" to="." method="_on_home_feed_gui_input"]
 [connection signal="gui_input" from="NotificationFeed" to="." method="_on_notification_feed_gui_input"]
 [connection signal="gui_input" from="FriendFeed" to="." method="_on_friend_feed_gui_input"]
-[connection signal="back_button_pressed" from="SocialMediaAccounts/Player" to="." method="_on_profile_feed_back_button_pressed"]
 [connection signal="pressed" from="AddPostButton" to="." method="_on_add_post_button_pressed"]
 [connection signal="send_attempt_on_no_wifi" from="NewPostPanel" to="." method="_on_new_post_panel_send_attempt_on_no_wifi"]
 [connection signal="send_button_pressed" from="NewPostPanel" to="." method="_on_new_post_panel_send_button_pressed"]
