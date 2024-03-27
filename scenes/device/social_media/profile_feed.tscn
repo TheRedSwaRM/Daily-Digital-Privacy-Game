@@ -114,4 +114,9 @@ offset_right = 66.0
 offset_bottom = 12.0
 theme_override_styles/separator = SubResource("StyleBoxLine_8cxa6")
 
+[node name="SimulationTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
 [connection signal="pressed" from="UpperLayer/ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="timeout" from="SimulationTimer" to="." method="_on_simulation_timer_timeout"]

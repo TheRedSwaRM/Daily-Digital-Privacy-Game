@@ -72,3 +72,10 @@ func increase_friends():
 ## Only for bots.
 func _randomize_stats():
 	friends_number = randi_range(1, 100000)
+
+# username: String, sns_text: String, loc: String, sns_image: Texture2D
+func _on_simulation_timer_timeout():
+	if is_user: return # Don't allow player to post their own stuff
+	
+	if randi_range(1, 4) > 2:
+		Events.sns_add_post.emit(name, "Test String", location)

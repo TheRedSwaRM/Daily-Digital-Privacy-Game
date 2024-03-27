@@ -402,15 +402,15 @@ func _on_simulation_timer_timeout():
 	# RNG moment
 	var rng = randi_range(1, 2)
 	
-	match rng:
-		# Someone adds you as a friend.
-		1:
-			_add_friend("Hello.")
-			
-		# A random post is made. Does not require a random user.
-		3:
-			pass
-			
+	#match rng:
+		## Someone adds you as a friend.
+		#1:
+			#_add_friend("Hello.")
+			#
+		## A random post is made. Does not require a random user.
+		#3:
+			#pass
+			#
 	
 #endregion
 
