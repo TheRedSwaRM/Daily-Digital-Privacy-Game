@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://h3n1guor5tpm"]
+[gd_scene load_steps=8 format=3 uid="uid://h3n1guor5tpm"]
 
 [ext_resource type="Script" path="res://scenes/cutscenes/red_man_hallway.gd" id="1_lcpjm"]
 [ext_resource type="SpriteFrames" uid="uid://dsuu7b3qp8vv1" path="res://scenes/cutscenes/red_man_attack.tres" id="2_ov1c4"]
 [ext_resource type="Texture2D" uid="uid://buyq8r1yv2qyy" path="res://assets/images/animation/hallway/hallway_cut.png" id="3_nsk1y"]
 [ext_resource type="Texture2D" uid="uid://bq4kyhxh1i8ry" path="res://assets/images/animation/hallway/hallway_attack.png" id="4_m54ro"]
+[ext_resource type="AudioStream" uid="uid://km4p1q3n26a7" path="res://assets/audio/cutscene/data_breach_1.ogg" id="5_7xemk"]
 
 [sub_resource type="Animation" id="Animation_6dr7c"]
 resource_name = "attack"
@@ -68,6 +69,21 @@ tracks/4/keys = {
 "update": 1,
 "values": [false, true, false]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer2D")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 60.8218,
+"start_offset": 0.0,
+"stream": ExtResource("5_7xemk")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wi7op"]
 _data = {
@@ -82,7 +98,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lcpjm")
-skip_animation = true
 
 [node name="BG" type="ColorRect" parent="."]
 layout_mode = 1
@@ -115,3 +130,7 @@ texture = ExtResource("4_m54ro")
 libraries = {
 "": SubResource("AnimationLibrary_wi7op")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = 20.0
+bus = &"Horror"
