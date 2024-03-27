@@ -22,6 +22,7 @@ custom_minimum_size = Vector2(54, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 3
 
 [node name="PsedoMargin2" type="ReferenceRect" parent="VBoxContainer"]
 visible = false
@@ -32,7 +33,7 @@ mouse_filter = 1
 layout_mode = 2
 
 [node name="ProfileIcon" type="TextureRect" parent="VBoxContainer/ProfileContainer"]
-custom_minimum_size = Vector2(4, 4)
+custom_minimum_size = Vector2(5, 5)
 layout_mode = 2
 size_flags_horizontal = 0
 texture = ExtResource("3_6ovd0")
@@ -46,7 +47,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 theme = ExtResource("2_uvcw3")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 4
+theme_override_font_sizes/font_size = 5
 alignment = 0
 text_overrun_behavior = 3
 clip_text = true
@@ -65,7 +66,7 @@ layout_mode = 2
 mouse_filter = 1
 theme_override_constants/line_separation = 1
 theme_override_fonts/normal_font = ExtResource("5_u02ha")
-theme_override_font_sizes/normal_font_size = 4
+theme_override_font_sizes/normal_font_size = 3
 fit_content = true
 
 [node name="Location" type="RichTextLabel" parent="VBoxContainer"]
