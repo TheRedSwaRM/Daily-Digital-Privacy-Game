@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bcgxjhdy1u8kn"]
+[gd_scene load_steps=12 format=3 uid="uid://bcgxjhdy1u8kn"]
 
 [ext_resource type="Script" path="res://scenes/cutscenes/hacked_scare_scene.gd" id="1_pyqlo"]
 [ext_resource type="Texture2D" uid="uid://md0j0h5b0dye" path="res://assets/images/bg/room1_night.png" id="1_rbmdx"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://drqj1evi6sd6w" path="res://assets/images/bg/clock_side_night.png" id="3_vlpu3"]
 [ext_resource type="PackedScene" uid="uid://smav7ilugg5n" path="res://scenes/components/blur.tscn" id="5_yulho"]
 [ext_resource type="AudioStream" uid="uid://eaqodn3256b3" path="res://assets/audio/cutscene/data_breach_fin.ogg" id="8_kxsvp"]
-[ext_resource type="AudioStream" uid="uid://3nsb508ebjlj" path="res://assets/audio/cutscene/mr_faith_man.wav" id="9_pkaua"]
 
 [sub_resource type="Animation" id="Animation_5qd3n"]
 length = 0.001
@@ -199,21 +198,6 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0.3)
 }
 tracks/7/use_blend = true
-tracks/8/type = "audio"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("RedManVoice")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("9_pkaua")
-}],
-"times": PackedFloat32Array(11.8)
-}
-tracks/8/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_160hn"]
 _data = {
@@ -318,7 +302,3 @@ libraries = {
 [node name="BGM" type="AudioStreamPlayer2D" parent="."]
 volume_db = 12.0
 bus = &"BGM"
-
-[node name="RedManVoice" type="AudioStreamPlayer2D" parent="."]
-volume_db = -15.0
-bus = &"Horror"
