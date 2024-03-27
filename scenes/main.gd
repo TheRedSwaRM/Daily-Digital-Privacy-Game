@@ -443,6 +443,7 @@ func _force_game_end(key: String, _value: bool):
 	if Events.check_game_switch(key) && key == "END_force_gameover":
 		Events.pause_game_time(true)
 		await get_tree().create_timer(5).timeout
+		Events.change_game_switch("NO_phone_sfx",true)
 		_hide_phone()
 		AudioManager.bgs_stop()
 		

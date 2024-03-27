@@ -62,6 +62,7 @@ Sleep?
 	do AudioManager.bgs_stop()
 	do Events.pause_game_time(true)
 	do Events.deactivate_phone.emit()
+	do Events.change_game_switch("NO_phone_sfx",true)
 	
 	do Events.change_map.emit("res://scenes/game_end.tscn", false)
 - No
