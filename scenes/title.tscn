@@ -72,6 +72,10 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Settings"
 
+[node name="Credits" parent="BoxContainer" instance=ExtResource("2_lg53f")]
+layout_mode = 2
+text = "Credits"
+
 [node name="Quit" parent="BoxContainer" instance=ExtResource("2_lg53f")]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -84,4 +88,5 @@ layout_mode = 1
 [connection signal="pressed" from="BoxContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="BoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="BoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="BoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="BoxContainer/Quit" to="." method="_on_quit_pressed"]
