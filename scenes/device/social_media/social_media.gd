@@ -411,8 +411,14 @@ func _on_simulation_timer_timeout():
 	
 	# Winning account creates post.
 	account_list.get_child(rng).create_post()
-	
+
+func _on_like_share_timer_timeout():
+	Events.sns_like_share_event.emit()
+
 #endregion
+
+
+
 
 
 

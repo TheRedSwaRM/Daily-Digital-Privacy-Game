@@ -20,6 +20,7 @@ signal sns_add_post(username: String, sns_text: String, loc: String, sns_image: 
 ## FOLLOW, LIKE, SHARE
 signal sns_new_notif(post_type: NotifType, username: String)
 signal sns_add_friend(user_name: String)
+signal sns_like_share_event
 
 #endregion
 
