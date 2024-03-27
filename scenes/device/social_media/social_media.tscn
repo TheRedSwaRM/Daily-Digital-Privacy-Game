@@ -219,6 +219,14 @@ layout_mode = 2
 [node name="EndMarginRect" type="ReferenceRect" parent="FriendFeed/FriendMasterList"]
 layout_mode = 2
 
+[node name="MessageFeed" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MessageFeed"]
+layout_mode = 2
+
 [node name="NoConnectionPanel" type="Panel" parent="."]
 visible = false
 layout_mode = 0
@@ -443,6 +451,7 @@ autostart = true
 [connection signal="gui_input" from="HomeFeed" to="." method="_on_home_feed_gui_input"]
 [connection signal="gui_input" from="NotificationFeed" to="." method="_on_notification_feed_gui_input"]
 [connection signal="gui_input" from="FriendFeed" to="." method="_on_friend_feed_gui_input"]
+[connection signal="gui_input" from="MessageFeed" to="." method="_on_message_feed_gui_input"]
 [connection signal="pressed" from="AddPostButton" to="." method="_on_add_post_button_pressed"]
 [connection signal="send_attempt_on_no_wifi" from="NewPostPanel" to="." method="_on_new_post_panel_send_attempt_on_no_wifi"]
 [connection signal="send_button_pressed" from="NewPostPanel" to="." method="_on_new_post_panel_send_button_pressed"]
