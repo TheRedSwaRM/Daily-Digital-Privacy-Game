@@ -90,10 +90,7 @@ func _phone_call_end():
 	call_ended.emit()
 	
 func _activate_call(call_file: String):
-	if OS.is_debug_build():
-		AudioManager.phone_call(call_file)
-	else: 
-		AudioManager.phone_call(skip_call)
+	AudioManager.phone_call(call_file)
 
 func _on_timer_timeout():
 	internal_time += 1
