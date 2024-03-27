@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bcgxjhdy1u8kn"]
+[gd_scene load_steps=13 format=3 uid="uid://bcgxjhdy1u8kn"]
 
 [ext_resource type="Script" path="res://scenes/cutscenes/hacked_scare_scene.gd" id="1_pyqlo"]
 [ext_resource type="Texture2D" uid="uid://md0j0h5b0dye" path="res://assets/images/bg/room1_night.png" id="1_rbmdx"]
@@ -7,6 +7,8 @@
 [ext_resource type="SpriteFrames" uid="uid://7eu3bga1f7hn" path="res://assets/images/animation/new_sprite_frames.tres" id="2_gmn7d"]
 [ext_resource type="Texture2D" uid="uid://drqj1evi6sd6w" path="res://assets/images/bg/clock_side_night.png" id="3_vlpu3"]
 [ext_resource type="PackedScene" uid="uid://smav7ilugg5n" path="res://scenes/components/blur.tscn" id="5_yulho"]
+[ext_resource type="AudioStream" uid="uid://eaqodn3256b3" path="res://assets/audio/cutscene/data_breach_fin.ogg" id="8_kxsvp"]
+[ext_resource type="AudioStream" uid="uid://3nsb508ebjlj" path="res://assets/audio/cutscene/mr_faith_man.wav" id="9_pkaua"]
 
 [sub_resource type="Animation" id="Animation_5qd3n"]
 length = 0.001
@@ -182,6 +184,36 @@ tracks/6/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("BGM")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_kxsvp")
+}],
+"times": PackedFloat32Array(0.3)
+}
+tracks/7/use_blend = true
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("RedManVoice")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("9_pkaua")
+}],
+"times": PackedFloat32Array(11.8)
+}
+tracks/8/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_160hn"]
 _data = {
@@ -243,7 +275,7 @@ grow_vertical = 1
 anchors_preset = 0
 offset_top = 144.0
 offset_right = 256.0
-offset_bottom = 288.0
+offset_bottom = 287.999
 
 [node name="PhoneBackground" type="TextureRect" parent="ScareContainer"]
 layout_mode = 1
@@ -282,3 +314,11 @@ zoom = Vector2(1.83, 1.83)
 libraries = {
 "": SubResource("AnimationLibrary_160hn")
 }
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+volume_db = 12.0
+bus = &"BGM"
+
+[node name="RedManVoice" type="AudioStreamPlayer2D" parent="."]
+volume_db = -15.0
+bus = &"Horror"
