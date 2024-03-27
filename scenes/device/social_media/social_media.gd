@@ -378,20 +378,20 @@ func _on_home_button_mouse_exited():
 #region Social Media Simulation
 
 ## Randomly selects which one of your posts will have an increment.
-func _post_liker():
-	# This is not gonna look good at the pearly gates.
-	var player_posts = profile_feed.post_list
-	
-	# Get all posts under your profile.
-	if player_posts.get_child_count() == 0:
-		print("Post more stuff, you bum!")
-	
-	# Select which child post.
-	var rng = randi_range(0, player_posts.get_child_count()-1)
-	
-	# And then just increase their like!
-	player_posts.get_child(rng).increase_likes()
-	_new_notification_item(Events.NotifType.LIKE, "Random Person")
+#func _post_liker():
+	## This is not gonna look good at the pearly gates.
+	#var player_posts = profile_feed.post_list
+	#
+	## Get all posts under your profile.
+	#if player_posts.get_child_count() == 0:
+		#print("Post more stuff, you bum!")
+	#
+	## Select which child post.
+	#var rng = randi_range(0, player_posts.get_child_count()-1)
+	#
+	## And then just increase their like!
+	#player_posts.get_child(rng).increase_likes()
+	#_new_notification_item(Events.NotifType.LIKE, "Random Person")
 
 func _on_simulation_timer_timeout():
 	# Don't do anything if the following is on.
@@ -400,24 +400,17 @@ func _on_simulation_timer_timeout():
 	if Events.check_game_switch("deactivate_social_media"): return
 	
 	# RNG moment
-	var rng = randi_range(1, 4)
+	var rng = randi_range(1, 2)
 	
 	match rng:
 		# Someone adds you as a friend.
 		1:
 			_add_friend("Hello.")
-		
-		# Someone likes your post.
-		2:
-			_post_liker()
-		
+			
 		# A random post is made. Does not require a random user.
 		3:
 			pass
 			
-		# Someone retweets your post.
-		4:
-			pass
 	
 #endregion
 

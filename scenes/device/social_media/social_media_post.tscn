@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dphuneonyspf2"]
+[gd_scene load_steps=9 format=3 uid="uid://dphuneonyspf2"]
 
 [ext_resource type="StyleBox" uid="uid://do4bmqqyq8ocb" path="res://scenes/components/social_media_post.tres" id="1_n1goa"]
 [ext_resource type="Script" path="res://scenes/device/social_media/social_media_post.gd" id="1_v3lyl"]
 [ext_resource type="Theme" uid="uid://dinj8j20l57j3" path="res://scenes/components/phone_button.tres" id="2_uvcw3"]
 [ext_resource type="Texture2D" uid="uid://ba6k4rffpt7hm" path="res://assets/images/social_media/social_media_post_icon.png" id="3_6ovd0"]
 [ext_resource type="FontFile" uid="uid://bod6xenwo2la3" path="res://assets/font/ark_pixel_finale.ttf" id="5_u02ha"]
+[ext_resource type="Texture2D" uid="uid://c5kyhv48r2fb1" path="res://assets/images/social_media/notification_like.png" id="6_8mhgd"]
+[ext_resource type="LabelSettings" uid="uid://baose8rej1sjm" path="res://scenes/components/social_media_post_stats.tres" id="7_knc06"]
+[ext_resource type="Texture2D" uid="uid://nuljllgssijf" path="res://assets/images/social_media/notification_share.png" id="8_4j7uu"]
 
 [node name="SocialMediaPost" type="PanelContainer"]
 offset_right = 62.0
@@ -61,7 +64,6 @@ layout_mode = 2
 mouse_filter = 1
 theme_override_colors/default_color = Color(0.266667, 0.266667, 0.266667, 1)
 theme_override_font_sizes/normal_font_size = 2
-text = "asasdsad"
 fit_content = true
 
 [node name="PsedoMargin" type="ReferenceRect" parent="VBoxContainer"]
@@ -69,4 +71,42 @@ visible = false
 layout_mode = 2
 mouse_filter = 1
 
+[node name="StatLine" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="LikeContainer" type="HBoxContainer" parent="VBoxContainer/StatLine"]
+layout_mode = 2
+
+[node name="LikeIcon" type="TextureRect" parent="VBoxContainer/StatLine/LikeContainer"]
+custom_minimum_size = Vector2(4, 4)
+layout_mode = 2
+texture = ExtResource("6_8mhgd")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="LikeNumber" type="Label" parent="VBoxContainer/StatLine/LikeContainer"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("7_knc06")
+
+[node name="ShareContainer" type="HBoxContainer" parent="VBoxContainer/StatLine"]
+layout_mode = 2
+
+[node name="ShareIcon" type="TextureRect" parent="VBoxContainer/StatLine/ShareContainer"]
+custom_minimum_size = Vector2(4, 4)
+layout_mode = 2
+texture = ExtResource("8_4j7uu")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ShareNumber" type="Label" parent="VBoxContainer/StatLine/ShareContainer"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("7_knc06")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
 [connection signal="pressed" from="VBoxContainer/Profile" to="." method="_on_profile_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

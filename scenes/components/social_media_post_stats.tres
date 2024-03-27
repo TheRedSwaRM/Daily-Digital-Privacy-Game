@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://baose8rej1sjm"]
+
+[ext_resource type="FontFile" uid="uid://bod6xenwo2la3" path="res://assets/font/ark_pixel_finale.ttf" id="1_bc1bm"]
+
+[resource]
+font = ExtResource("1_bc1bm")
+font_size = 4

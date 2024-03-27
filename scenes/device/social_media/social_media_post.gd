@@ -1,4 +1,4 @@
-@tool
+#@tool
 extends PanelContainer
 
 signal profile_link_pressed(username: String)
@@ -12,7 +12,8 @@ signal profile_link_pressed(username: String)
 @onready var image_node = $VBoxContainer/PostContainer/PostImage
 @onready var location_label = $VBoxContainer/Location
 @onready var post_text_node = $VBoxContainer/PostContainer/PostText
-
+@onready var like_number = $VBoxContainer/StatLine/LikeContainer/LikeNumber
+@onready var share_number = $VBoxContainer/StatLine/ShareContainer/ShareNumber
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -50,7 +51,22 @@ func _process(_delta):
 		post_text_node.text = post_text
 
 func increase_likes():
-	print("Like increased for this post!")
-
+	var random_number = randi_range(1, 10)
+	like_number.text = str(int(like_number.text) + random_number)
+	if user_name == Events.social_media_username:
+		Events.sns_new_notif.emit(Events.NotifType.LIKE, "Random Person")
+	
+func increase_shares():
+	var random_number = randi_range(1, 10)
+	share_number.text = str(int(share_number.text) + random_number)
+	if user_name == Events.social_media_username:
+		Events.sns_new_notif.emit(Events.NotifType.SHARE, "Random Person")
+	
 func _on_profile_pressed():
 	profile_link_pressed.emit(user_name)
+
+func _on_timer_timeout():
+	if randi_range(0, 4) > 2:
+		increase_likes()
+	if randi_range(0, 4) > 2:
+		increase_shares()
