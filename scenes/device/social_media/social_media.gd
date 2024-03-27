@@ -72,6 +72,11 @@ func _ready():
 	
 	_check_for_wifi_connection("none")
 
+	# Profile back button setup
+	# _profile_feed_back_button_emitted()
+	for profile in account_list.get_children():
+		profile.back_button_pressed.connect(_profile_feed_back_button_emitted)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
@@ -246,15 +251,17 @@ func _phone_back_button_pressed():
 		new_post_screen._on_return_button_pressed()
 		return
 	if profile_feed.visible:
-		_on_profile_feed_back_button_pressed()
+		_profile_feed_back_button_emitted()
 		return
 	
 	# If everything is not visible.
 	hide()
 
-func _on_profile_feed_back_button_pressed():
-	profile_feed.hide()
-	account_list.hide()
+func _profile_feed_back_button_emitted():
+	for profile in account_list.get_children():
+		account_list.hide()
+		profile.hide()
+		home_feed.show()
 
 #endregion
 
@@ -285,7 +292,6 @@ func _new_notification_item(post_type: Events.NotifType, content_string: String)
 #endregion
 
 #region Specific Profile Accounts Handling
-
 func _show_account_profile(user_name: String):
 	for account in account_list.get_children():
 		print(account.name, user_name)
@@ -413,6 +419,8 @@ func _on_simulation_timer_timeout():
 			#
 	
 #endregion
+
+
 
 
 

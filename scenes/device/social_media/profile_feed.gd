@@ -1,6 +1,6 @@
 extends Control
 
-signal back_button_pressed
+signal back_button_pressed()
 
 @onready var header_user_name_label = $UpperLayer/UserName
 @onready var user_name_label = $ProfileScroll/ProfileContainer/HeaderPart/HeaderContainer/UserName
