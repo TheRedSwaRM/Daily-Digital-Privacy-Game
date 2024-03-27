@@ -423,6 +423,7 @@ autostart = true
 
 [node name="LikeShareTimer" type="Timer" parent="."]
 wait_time = 4.0
+autostart = true
 
 [connection signal="mouse_entered" from="HomeButton" to="." method="_on_home_button_mouse_entered"]
 [connection signal="mouse_exited" from="HomeButton" to="." method="_on_home_button_mouse_exited"]

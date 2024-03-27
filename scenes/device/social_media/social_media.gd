@@ -413,6 +413,11 @@ func _on_simulation_timer_timeout():
 	account_list.get_child(rng).create_post()
 
 func _on_like_share_timer_timeout():
+	# Don't do anything if the following is on.
+	if not Events.check_game_switch("enable_social_media_simulation"): return
+	# And if this thing exists.
+	if Events.check_game_switch("deactivate_social_media"): return
+	
 	Events.sns_like_share_event.emit()
 
 #endregion
