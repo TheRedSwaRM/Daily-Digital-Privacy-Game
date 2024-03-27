@@ -398,26 +398,19 @@ func _on_home_button_mouse_exited():
 	## And then just increase their like!
 	#player_posts.get_child(rng).increase_likes()
 	#_new_notification_item(Events.NotifType.LIKE, "Random Person")
-
+	
 func _on_simulation_timer_timeout():
-	pass
-	## Don't do anything if the following is on.
-	#if not Events.check_game_switch("enable_social_media_simulation"): return
-	## And if this thing exists.
-	#if Events.check_game_switch("deactivate_social_media"): return
-	#
-	## RNG moment
-	#var rng = randi_range(1, 2)
-	#
-	##match rng:
-		### Someone adds you as a friend.
-		##1:
-			##_add_friend("Hello.")
-			##
-		### A random post is made. Does not require a random user.
-		##3:
-			##pass
-			##
+	# Don't do anything if the following is on.
+	if not Events.check_game_switch("enable_social_media_simulation"): return
+	# And if this thing exists.
+	if Events.check_game_switch("deactivate_social_media"): return
+	
+	# Accounts for all profiles
+	# 0th index moment
+	var rng = randi_range(2, account_list.get_child_count()-3)
+	
+	# Winning account creates post.
+	account_list.get_child(rng).create_post()
 	
 #endregion
 
