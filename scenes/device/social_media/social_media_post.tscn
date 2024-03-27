@@ -104,9 +104,4 @@ layout_mode = 2
 text = "0"
 label_settings = ExtResource("7_knc06")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
-autostart = true
-
 [connection signal="pressed" from="VBoxContainer/Profile" to="." method="_on_profile_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

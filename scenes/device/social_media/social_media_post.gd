@@ -17,6 +17,7 @@ signal profile_link_pressed(username: String)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Events.sns_like_share_event.connect(_randomized_like_share_get)
 	user_name_button.text = user_name
 	
 	if post_image == null:
@@ -65,7 +66,7 @@ func increase_shares():
 func _on_profile_pressed():
 	profile_link_pressed.emit(user_name)
 
-func _on_timer_timeout():
+func _randomized_like_share_get():
 	if randi_range(0, 4) > 2:
 		increase_likes()
 	if randi_range(0, 4) > 2:

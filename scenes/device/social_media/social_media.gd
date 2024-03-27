@@ -6,6 +6,7 @@ extends Control
 @onready var notif_feed = $NotificationFeed
 @onready var profile_feed = $SocialMediaAccounts/Player
 @onready var friend_feed = $FriendFeed
+@onready var message_feed = $MessageFeed
 
 @onready var home_post_list = $HomeFeed/HomePosts/TheActualPost
 @onready var notif_post_list = $NotificationFeed/NotifPosts/NotifList
@@ -96,6 +97,12 @@ func _on_friend_feed_gui_input(event):
 	# For scrolling purposes.
 	if event is InputEventMouseMotion and event.button_mask > 0:
 		friend_feed.scroll_vertical = friend_feed.scroll_vertical - event.relative.y
+
+func _on_message_feed_gui_input(event):
+	# For scrolling purposes.
+	if event is InputEventMouseMotion and event.button_mask > 0:
+		message_feed.scroll_vertical = message_feed.scroll_vertical - event.relative.y
+
 #endregion
 
 #region SNS Adding Function
@@ -140,6 +147,7 @@ func _hide_feeds():
 	home_feed.hide()
 	notif_feed.hide()
 	friend_feed.hide()
+	message_feed.hide()
 
 ## Special because this is different from the rest.
 func _on_profile_button_pressed():
@@ -155,6 +163,7 @@ func _on_friends_button_pressed():
 func _on_message_button_pressed():
 	current_tab_label.text = "Message"
 	_hide_feeds()
+	message_feed.show()
 
 func _on_notification_button_pressed():
 	current_tab_label.text = "Alerts"
@@ -253,6 +262,15 @@ func _phone_back_button_pressed():
 	if profile_feed.visible:
 		_profile_feed_back_button_emitted()
 		return
+	if notif_feed.visible:
+		_on_home_button_pressed()
+		return
+	if friend_feed.visible:
+		_on_home_button_pressed()
+		return
+	if message_feed.visible:
+		_on_home_button_pressed()
+		return
 	
 	# If everything is not visible.
 	hide()
@@ -261,7 +279,8 @@ func _profile_feed_back_button_emitted():
 	for profile in account_list.get_children():
 		account_list.hide()
 		profile.hide()
-		home_feed.show()
+	
+	_on_home_button_pressed()
 
 #endregion
 
@@ -398,28 +417,33 @@ func _on_home_button_mouse_exited():
 	## And then just increase their like!
 	#player_posts.get_child(rng).increase_likes()
 	#_new_notification_item(Events.NotifType.LIKE, "Random Person")
-
-func _on_simulation_timer_timeout():
-	pass
-	## Don't do anything if the following is on.
-	#if not Events.check_game_switch("enable_social_media_simulation"): return
-	## And if this thing exists.
-	#if Events.check_game_switch("deactivate_social_media"): return
-	#
-	## RNG moment
-	#var rng = randi_range(1, 2)
-	#
-	##match rng:
-		### Someone adds you as a friend.
-		##1:
-			##_add_friend("Hello.")
-			##
-		### A random post is made. Does not require a random user.
-		##3:
-			##pass
-			##
 	
+func _on_simulation_timer_timeout():
+	# Don't do anything if the following is on.
+	if not Events.check_game_switch("enable_social_media_simulation"): return
+	# And if this thing exists.
+	if Events.check_game_switch("deactivate_social_media"): return
+	
+	# Accounts for all profiles
+	# 0th index moment
+	var rng = randi_range(2, account_list.get_child_count()-3)
+	
+	# Winning account creates post.
+	account_list.get_child(rng).create_post()
+
+func _on_like_share_timer_timeout():
+	# Don't do anything if the following is on.
+	if not Events.check_game_switch("enable_social_media_simulation"): return
+	# And if this thing exists.
+	if Events.check_game_switch("deactivate_social_media"): return
+	
+	Events.sns_like_share_event.emit()
+
 #endregion
+
+
+
+
 
 
 
