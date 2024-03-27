@@ -8,7 +8,7 @@ signal profile_link_pressed(username: String)
 @export_multiline var location: String
 @export_multiline var post_text: String
 
-@onready var user_name_button = $VBoxContainer/Profile
+@onready var user_name_button = $VBoxContainer/ProfileContainer/ProfileButton
 @onready var image_node = $VBoxContainer/PostContainer/PostImage
 @onready var location_label = $VBoxContainer/Location
 @onready var post_text_node = $VBoxContainer/PostContainer/PostText
