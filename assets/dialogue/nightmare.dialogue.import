@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://gwihb3pn2p18"
+path="res://.godot/imported/nightmare.dialogue-a6f03a997f9b8dda0078e3aeaea93a04.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/nightmare.dialogue"
+dest_files=["res://.godot/imported/nightmare.dialogue-a6f03a997f9b8dda0078e3aeaea93a04.tres"]
+
+[params]
+
+defaults=true

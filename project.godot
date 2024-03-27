@@ -58,7 +58,7 @@ debug_key={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://assets/dialogue/sample.dialogue", "res://assets/dialogue/intro.dialogue", "res://assets/dialogue/bedroom.dialogue", "res://assets/dialogue/social_media.dialogue", "res://assets/dialogue/sleeping_time.dialogue", "res://assets/dialogue/knocking.dialogue", "res://assets/dialogue/bathroom.dialogue", "res://assets/dialogue/room.dialogue", "res://assets/dialogue/hallway.dialogue", "res://assets/dialogue/day_1_person.dialogue")
+locale/translations_pot_files=PackedStringArray("res://assets/dialogue/sample.dialogue", "res://assets/dialogue/intro.dialogue", "res://assets/dialogue/bedroom.dialogue", "res://assets/dialogue/social_media.dialogue", "res://assets/dialogue/sleeping_time.dialogue", "res://assets/dialogue/knocking.dialogue", "res://assets/dialogue/bathroom.dialogue", "res://assets/dialogue/room.dialogue", "res://assets/dialogue/hallway.dialogue", "res://assets/dialogue/day_1_person.dialogue", "res://assets/dialogue/nightmare.dialogue")
 
 [rendering]
 

@@ -125,6 +125,10 @@ var phones_sounds: bool = false
 	# Game End
 	"NO_phone_sfx": false,
 	"END_force_gameover": false,
+	
+	# Dream dialogue
+	"red_man_hallway_nightmare": false,
+	"red_man_room_nightmare": false,
 }
 
 #region Connection functions
