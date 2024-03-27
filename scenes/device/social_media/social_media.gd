@@ -111,9 +111,9 @@ func sns_add(username: String, sns_text: String, loc: String = "", sns_image: Te
 	
 	## Connect signal in order for profile to show up. Like, for real.
 	## DANGER: Cutting costs here. More customization means more time to waste.
-	
-	if username == Events.social_media_username:
-		adding_post.profile_link_pressed.connect(_show_account_profile)
+	## TODO: Nevermind.
+	# if username == Events.social_media_username:
+	adding_post.profile_link_pressed.connect(_show_account_profile)
 
 func _on_add_post_button_pressed():
 	new_post_screen.show()
@@ -387,7 +387,7 @@ func _post_liker():
 		print("Post more stuff, you bum!")
 	
 	# Select which child post.
-	var rng = randi_range(0, player_posts.get_child_count())
+	var rng = randi_range(0, player_posts.get_child_count()-1)
 	
 	# And then just increase their like!
 	player_posts.get_child(rng).increase_likes()

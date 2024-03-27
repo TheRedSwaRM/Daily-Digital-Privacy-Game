@@ -250,6 +250,30 @@ visible = false
 layout_mode = 1
 is_user = true
 
+[node name="ProfileFeed6" parent="SocialMediaAccounts" instance=ExtResource("16_4k71l")]
+user_name = "Alison"
+location = "Yakal St."
+
+[node name="ProfileFeed" parent="SocialMediaAccounts" instance=ExtResource("16_4k71l")]
+user_name = "1"
+location = "location1"
+
+[node name="ProfileFeed2" parent="SocialMediaAccounts" instance=ExtResource("16_4k71l")]
+user_name = "2"
+location = "location2"
+
+[node name="ProfileFeed3" parent="SocialMediaAccounts" instance=ExtResource("16_4k71l")]
+user_name = "3"
+location = "location3"
+
+[node name="ProfileFeed4" parent="SocialMediaAccounts" instance=ExtResource("16_4k71l")]
+user_name = "4"
+location = "location4"
+
+[node name="ProfileFeed5" parent="SocialMediaAccounts" instance=ExtResource("16_4k71l")]
+user_name = "5"
+location = "location5"
+
 [node name="AddPostButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 51.0
