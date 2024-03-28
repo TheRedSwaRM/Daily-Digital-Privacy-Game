@@ -7,6 +7,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Obsolete
+	AudioManager.bgs_volume(1)
+	
 	if Events.check_game_switch("night"):
 		background.texture = load("res://assets/images/bg/room1_night.png")
 		if Events.check_game_switch("laptop_checked"):
@@ -41,7 +43,6 @@ func _ready():
 	
 	# Events.sns_new_notif.emit(Events.NotifType.LIKE, "gay seggs")
 	
-	Events.background_audio_check()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

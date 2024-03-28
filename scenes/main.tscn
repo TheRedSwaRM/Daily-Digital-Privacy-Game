@@ -61,3 +61,8 @@ mouse_filter = 2
 position = Vector2(128, 72)
 sprite_frames = ExtResource("4_hkoyb")
 animation = &"blinking_transition"
+
+[node name="BackgroundAudioTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="BackgroundAudioTimer" to="." method="_on_background_audio_timer_timeout"]

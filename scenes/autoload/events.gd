@@ -199,13 +199,6 @@ func mouse_left_click(event):
 	else:
 		return false
 
-## In case for morning/night ambience.
-func background_audio_check():
-	if game_time < 18.00:
-		AudioManager.bgs_play("res://assets/audio/bgm/room_ambience.ogg")
-	else:
-		AudioManager.bgs_play("res://assets/audio/bgm/night_ambience.mp3")
-
 #region Hack Checks
 ## Overall function that checks if the player fucked up FOR REAL.
 ## For specific things, use Events.check_game_switch.

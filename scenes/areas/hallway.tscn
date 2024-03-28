@@ -63,7 +63,6 @@ position = Vector2(-17, 12)
 polygon = PackedVector2Array(68, 45, 73, 45, 73, 55, 68, 55)
 
 [node name="AttackerPeek" parent="." instance=ExtResource("4_m2aq1")]
-visible = false
 offset_left = 69.0
 offset_top = 40.0
 offset_right = 94.0

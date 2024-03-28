@@ -24,6 +24,7 @@ func _ready():
 func _process(_delta):
 	pass
 
+#region BGM
 ## Plays BGM. Replaces if BGM currently playing.
 func bgm_play(path: String):
 	var new_music = load(path)
@@ -41,6 +42,35 @@ func bgm_play(path: String):
 	background_music.stream.loop = true
 	background_music.play()
 
+## Stops BGM, as expected.
+func bgm_stop():
+	background_music.stop()
+	background_music.stream = null
+
+
+#endregion
+
+#region Phone Call
+## Makes phone call
+func phone_call(path: String):
+	call_stream.stream = load(path)
+	call_stream.play()
+
+## Makes phone call
+func horror_play(path: String):
+	horror_stream.stream = load(path)
+	horror_stream.play()
+
+## Stops horror, as expected.
+func horror_stop():
+	horror_stream.stop()
+	horror_stream.stream = null
+	
+func _on_phone_call_finished():
+	is_call_finished.emit()
+#endregion
+
+#region BGS
 ## Plays BGS. Replaces if BGS currently playing.
 func bgs_play(path: String):
 	var new_music = load(path)
@@ -58,31 +88,16 @@ func bgs_play(path: String):
 	background_sound.stream.loop = true
 	background_sound.play()
 
-## Makes phone call
-func phone_call(path: String):
-	call_stream.stream = load(path)
-	call_stream.play()
-
-## Makes phone call
-func horror_play(path: String):
-	horror_stream.stream = load(path)
-	horror_stream.play()
-
-## Stops horror, as expected.
-func horror_stop():
-	horror_stream.stop()
-	horror_stream.stream = null
-
-## Stops BGM, as expected.
-func bgm_stop():
-	background_music.stop()
-	background_music.stream = null
-
 ## Stops BGS, as expected.
 func bgs_stop():
 	background_sound.stop()
 	background_sound.stream = null
 
+func bgs_volume(volume: float):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("BGS"),linear_to_db(volume))
+#endregion
+
+#region SFX
 func sfx_play(path: String):
 	# Check first if it's allowed to play the phone sounds. Better to stop it
 	# here than ANYWHERE ELSE.
@@ -104,13 +119,11 @@ func sfx_play(path: String):
 	
 func _sfx_free(sfx_node):
 	sfx_node.queue_free()
-
-func _on_phone_call_finished():
-	is_call_finished.emit()
+#endregion
 
 func dizzy_changer(value: bool):
-	AudioServer.set_bus_effect_enabled (AudioServer.get_bus_index("BGS"), 0, value)
-	AudioServer.set_bus_effect_enabled (AudioServer.get_bus_index("SFX"), 0, value)
-	AudioServer.set_bus_effect_enabled (AudioServer.get_bus_index("BGM"), 0, value)
+	AudioServer.set_bus_effect_enabled(AudioServer.get_bus_index("BGS"), 0, value)
+	AudioServer.set_bus_effect_enabled(AudioServer.get_bus_index("SFX"), 0, value)
+	AudioServer.set_bus_effect_enabled(AudioServer.get_bus_index("BGM"), 0, value)
 	
 	

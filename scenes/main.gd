@@ -453,3 +453,9 @@ func _force_game_end(key: String, _value: bool):
 		else:
 			Events.change_map.emit("res://scenes/game_end.tscn", false)
 		
+func _on_background_audio_timer_timeout():
+	if Events.game_time < 18.00:
+		AudioManager.bgs_play("res://assets/audio/bgm/room_ambience.ogg")
+	else:
+		AudioManager.bgs_play("res://assets/audio/bgm/night_ambience.mp3")
+		

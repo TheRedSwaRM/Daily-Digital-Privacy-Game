@@ -5,6 +5,8 @@ extends Control
 
 func _ready():	
 	AudioManager.sfx_play("res://assets/audio/sfx/phone_alarm.mp3")
+	AudioManager.bgs_volume(0)
+	
 	anim_player.play("intro")
 	await anim_player.animation_finished
 	
