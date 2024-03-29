@@ -32,6 +32,7 @@ Take a nap?
 	do Events.deactivate_phone.emit()
 	do wait(1)
 	do Events.game_time += 5
+	do AudioManager.bgs_volume(1)
 	do Events.activate_phone.emit()
 	do Events.open_blinking_eye.emit()
 - No
