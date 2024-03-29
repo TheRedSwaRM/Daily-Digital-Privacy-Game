@@ -187,8 +187,16 @@ collision_mask = 2
 position = Vector2(48.5, 68.5)
 shape = SubResource("RectangleShape2D_q2gbi")
 
+[node name="LeftBorder4" type="CollisionShape2D" parent="CanvasLayer2/GameInstance/PlayerCPUBorders"]
+position = Vector2(58.5, 68.5)
+shape = SubResource("RectangleShape2D_q2gbi")
+
 [node name="LeftBorder3" type="CollisionShape2D" parent="CanvasLayer2/GameInstance/PlayerCPUBorders"]
-position = Vector2(207, 69)
+position = Vector2(208, 69)
+shape = SubResource("RectangleShape2D_q2gbi")
+
+[node name="LeftBorder5" type="CollisionShape2D" parent="CanvasLayer2/GameInstance/PlayerCPUBorders"]
+position = Vector2(198, 69)
 shape = SubResource("RectangleShape2D_q2gbi")
 
 [node name="PlayerScore" type="Label" parent="CanvasLayer2/GameInstance"]
