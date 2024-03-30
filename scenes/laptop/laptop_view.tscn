@@ -17,7 +17,7 @@
 size = Vector2(164, 21.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x54xr"]
-size = Vector2(20, 96)
+size = Vector2(26.25, 96)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8c0ns"]
 radius = 2.5
@@ -103,13 +103,13 @@ shape = SubResource("RectangleShape2D_irc06")
 [node name="PlayerSide" type="StaticBody2D" parent="CanvasLayer2/GameInstance"]
 
 [node name="LeftBorder" type="CollisionShape2D" parent="CanvasLayer2/GameInstance/PlayerSide"]
-position = Vector2(36, 69)
+position = Vector2(37.875, 69)
 shape = SubResource("RectangleShape2D_x54xr")
 
 [node name="CPUSide" type="StaticBody2D" parent="CanvasLayer2/GameInstance"]
 
 [node name="RightBorder" type="CollisionShape2D" parent="CanvasLayer2/GameInstance/CPUSide"]
-position = Vector2(220, 69)
+position = Vector2(218.75, 69)
 shape = SubResource("RectangleShape2D_x54xr")
 
 [node name="Line2D" type="Line2D" parent="CanvasLayer2/GameInstance"]
