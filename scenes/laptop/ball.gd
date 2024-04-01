@@ -6,12 +6,12 @@ signal pong_score(scorer: String)
 
 func _ready():
 	add_to_group("ball")
-	direction = Vector2(randf_range(-0.5, 0.5), randf_range(-0.15, 0.15)).normalized()
+	direction = Vector2(randf_range(0.5, 0.2), randf_range(-0.15, 0.15)).normalized()
 
 func _randomized_direction():
 	position = Vector2(125.5, 69)
 	speed = 100
-	direction = Vector2(randf_range(-0.5, 0.5), randf_range(-0.15, 0.15)).normalized()
+	direction = Vector2(randf_range(0.5, 0.2), randf_range(-0.15, 0.15)).normalized()
 
 func _physics_process(delta):
 	velocity = speed * direction
@@ -24,7 +24,7 @@ func _physics_process(delta):
 		# And then a few things
 		match collision.get_collider().name:
 			"CPU", "Player":
-				speed += 50
+				speed += 10
 			"PlayerSide":
 				pong_score.emit("CPU")
 				_randomized_direction()
