@@ -49,7 +49,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_f5uin"]
 resource_name = "baited_ending"
-length = 12.0
+length = 15.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -57,12 +57,23 @@ tracks/0/path = NodePath("EndingText:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2, 2.1, 6, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1e-05),
 "update": 0,
-"values": ["", "You've been played...", "You've been played...", "You've been played...
+"values": ["", "You've been played...", "You've been played... 
 
-Who knows when this will happen again."]
+...................................", "You've been played...
+
+Who knows when this will happen again.", "You've been played...
+
+Who knows when this will happen again.
+
+
+
+
+
+
+ENDING 4: LURED"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -71,7 +82,7 @@ tracks/1/path = NodePath("EndingText:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(9, 12),
+"times": PackedFloat32Array(12, 15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
@@ -79,7 +90,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_cw7t6"]
 resource_name = "block_ending"
-length = 12.0
+length = 15.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -87,12 +98,23 @@ tracks/0/path = NodePath("EndingText:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2, 4, 6, 8, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": ["", "You were able to continue your day despite what happened earlier.", "You were able to continue your day despite what happened earlier.", "You were able to continue your day despite what happened earlier.
 
-The rest of the day felt quiet... For now."]
+The rest of the day felt quiet...", "You were able to continue your day despite what happened earlier.
+
+The rest of the day felt quiet.
+
+For now...", "You were able to continue your day despite what happened earlier.
+
+The rest of the day felt quiet... For now.
+
+
+
+
+ENDING 3: BLOCKED"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -101,7 +123,7 @@ tracks/1/path = NodePath("EndingText:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(9, 12),
+"times": PackedFloat32Array(12, 15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
@@ -117,8 +139,8 @@ tracks/0/path = NodePath("EndingText:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 3, 5, 6, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2, 3, 5, 6, 8, 9, 10, 12, 14, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": ["", "They know everything about you.
 
@@ -132,7 +154,39 @@ I know everything about you.", "They know everything about you.
 
 I know everything about you.
 
-See you soon..."]
+See you soon...", "They know everything about you.
+
+I know everything about you.
+
+AHAHAHAHAH...", "They know everything about you.
+
+I know everything about you.
+
+See you soon...", "They know everything about you.
+
+I know everything about you.
+
+See you soon...", "They know everything about you.
+
+I know everything about you.
+
+See you soon...
+
+
+
+
+
+ENDING 1: HACKED", "They know everything about you.
+
+I know everything about you.
+
+See you soon...
+
+
+
+
+
+ENDING 1: HACKED"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -161,7 +215,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_s6gw7"]
 resource_name = "sleep_ending"
-length = 12.0
+length = 15.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -169,12 +223,19 @@ tracks/0/path = NodePath("EndingText:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2, 4, 6, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": ["", "After the whole fiasco from earlier, nothing much seemed to happen.", "After the whole fiasco from earlier, nothing much seemed to happen.", "After the whole fiasco from earlier, nothing much seemed to happen.
 
-Which is better than something bad happening..."]
+Which is better than something bad happening...", "After the whole fiasco from earlier, nothing much seemed to happen.
+
+Which is better than something bad happening...
+
+
+
+
+ENDING 2: PRIVACY"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -183,7 +244,7 @@ tracks/1/path = NodePath("EndingText:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(9, 12),
+"times": PackedFloat32Array(12, 15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
@@ -226,6 +287,7 @@ offset_right = 80.0
 offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1, 0.996975)
 theme_override_fonts/normal_font = ExtResource("2_ar7bn")
 theme_override_fonts/bold_font = ExtResource("2_ar7bn")
 theme_override_fonts/italics_font = ExtResource("2_ar7bn")
