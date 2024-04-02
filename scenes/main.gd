@@ -412,7 +412,8 @@ func _actual_spam_attack(key: String, _value: bool):
 			await get_tree().create_timer(0.1).timeout
 
 func _friender_warning() -> void:
-	Events.new_phone_message.emit("Friender", "Reminder to all users of Friender to be vigilant.")
+	pass
+	#Events.new_phone_message.emit("Friender", "Reminder to all users of Friender to be vigilant.")
 
 #endregion
 
