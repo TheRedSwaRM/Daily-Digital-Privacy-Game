@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cev0ohxla32w7" path="res://assets/images/pong/pong_ball.png" id="6_3rxys"]
 [ext_resource type="Script" path="res://scenes/laptop/ball.gd" id="6_ixn4q"]
 [ext_resource type="Script" path="res://scenes/laptop/cpu.gd" id="7_yw07c"]
-[ext_resource type="LabelSettings" uid="uid://be01wlf5hchuk" path="res://scenes/components/score_font_label.tres" id="9_jbtps"]
+[ext_resource type="LabelSettings" path="res://scenes/components/score_font_label.tres" id="9_jbtps"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irc06"]
 size = Vector2(164, 21.5)

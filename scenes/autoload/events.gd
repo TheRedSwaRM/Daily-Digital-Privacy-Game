@@ -206,6 +206,7 @@ func hack_checker() -> int:
 	var hacking_check: bool = false
 	#if check_game_switch("WARNING_permissions_set"): hacking_check = true
 	if check_game_switch("WARNING_posted_with_location"): hacking_check = true
+	if wifi_connection == "Open_WIFI": hacking_check = true
 
 	return hacking_check
 
