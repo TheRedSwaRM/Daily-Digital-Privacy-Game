@@ -69,4 +69,5 @@ func _check_for_route():
 		#get_tree().change_scene_to_file("res://scenes/cutscenes/hacked_scare_scene.tscn")
 		await get_tree().create_timer(5).timeout 
 	
+
 	get_tree().change_scene_to_file("res://scenes/credits.tscn")
