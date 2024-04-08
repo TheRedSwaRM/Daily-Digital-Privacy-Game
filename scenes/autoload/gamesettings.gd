@@ -12,6 +12,7 @@ signal save_settings
 @onready var fullscreen_value: bool
 @onready var music_volume: float
 @onready var sfx_volume: float
+@onready var game_cleared: bool
 
 var default_cursor = load(ProjectSettings.get_setting("display/mouse_cursor/custom_image"))
 var cursor_interact = preload("res://assets/images/cursor/cursor_interact.png")
@@ -104,6 +105,7 @@ func _default_settings():
 	music_volume = 1.0
 	sfx_volume = 1.0
 	fullscreen_value = true
+	game_cleared = false
 
 func _load_settings():
 	# Creates new ConfigFile object
@@ -133,6 +135,22 @@ func _save_settings():
 	config.set_value("Music", "music_volume", music_volume)
 	config.set_value("Music", "sfx_volume", sfx_volume)
 	config.set_value("Window", "window_mode", fullscreen_value)
+	
+	config.set_value("Game", "cleared", game_cleared)
 
 	# It's saving time! (No need to close, Godot already does the job for us)
 	config.save("user://settings.cfg")
+
+## Created under the assumption that we have made settings beforehand.
+func check_if_cleared():
+	var config = ConfigFile.new()
+	var err = config.load("user://settings.cfg")
+	
+	# Creation means that it is the player's first time.
+	if config.get_value("Game", "cleared") == true:
+		return true
+	else:
+		game_cleared = true
+		_save_settings()
+		return false
+		
