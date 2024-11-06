@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="Project - Privacy"
+config/tags=PackedStringArray("my_work")
 run/main_scene="res://scenes/title.tscn"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://assets/images/bg/laptop.png"
 
 [autoload]
@@ -52,7 +53,7 @@ theme/default_font_antialiasing=0
 
 debug_key={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":96,"key_label":0,"unicode":96,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":96,"key_label":0,"unicode":96,"location":0,"echo":false,"script":null)
 ]
 }
 
